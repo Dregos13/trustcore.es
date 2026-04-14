@@ -204,7 +204,7 @@
 
                 <!-- Mobile menu button -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Abrir menú">
-                    <i class="fas fa-bars text-xl"></i>
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
@@ -300,48 +300,62 @@
                     <div class="tt-hero-panel">
                         <div class="flex items-start justify-between gap-4 text-white">
                             <div>
-                                <p class="text-xs font-bold uppercase tracking-[0.28em] text-cyan-light">Vista operativa</p>
-                                <h3 class="mt-3 text-2xl font-extrabold leading-tight">Más control para RRHH. Menos fricción para el equipo.</h3>
+                                <p class="text-sm font-bold uppercase tracking-widest text-cyan-light">Vista operativa</p>
+                                <h3 class="mt-3 text-2xl font-extrabold leading-snug">Más control para RRHH. Menos fricción para el equipo.</h3>
                             </div>
-                            <span class="shrink-0 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-emerald-200">En directo</span>
+                            <span class="shrink-0 rounded-full border border-emerald-300/50 bg-emerald-400/20 px-3 py-1.5 text-xs font-bold uppercase text-emerald-200">En directo</span>
                         </div>
 
                         <div class="mt-6 grid grid-cols-2 gap-4 text-white">
                             <div class="tt-hero-metric">
-                                <p class="text-xs uppercase tracking-[0.2em] text-blue-100/70">Fichajes hoy</p>
-                                <p class="mt-2 text-3xl font-extrabold">124</p>
-                                <p class="mt-1 text-xs text-emerald-200">Sincronizados al instante</p>
+                                <p class="text-sm font-semibold text-blue-200">Fichajes hoy</p>
+                                <p class="mt-2 text-4xl font-extrabold">124</p>
+                                <p class="mt-1 text-sm text-emerald-300">Sincronizados al instante</p>
                             </div>
                             <div class="tt-hero-metric">
-                                <p class="text-xs uppercase tracking-[0.2em] text-blue-100/70">Incidencias</p>
-                                <p class="mt-2 text-3xl font-extrabold">02</p>
-                                <p class="mt-1 text-xs text-cyan-light">Resueltas desde el panel</p>
+                                <p class="text-sm font-semibold text-blue-200">Incidencias</p>
+                                <p class="mt-2 text-4xl font-extrabold">02</p>
+                                <p class="mt-1 text-sm text-cyan-light">Resueltas desde el panel</p>
                             </div>
                         </div>
 
-                        <div class="mt-6 rounded-[1.75rem] border border-white/10 bg-[#07112e] p-4 shadow-2xl shadow-black/20">
-                            <div class="flex items-center justify-between text-xs font-semibold text-blue-100/80">
-                                <span>App del empleado</span>
-                                <span>Panel del manager</span>
-                            </div>
-                            <div class="mt-4 grid grid-cols-[112px_minmax(0,1fr)] gap-4 items-center">
-                                <div class="overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950 shadow-xl">
-                                    <img src="../assets/trustintime-app-screenshot.jpeg" alt="Pantalla real de TrustinTime mostrando el fichaje digital" class="block h-56 w-full object-cover object-top">
-                                </div>
-                                <div class="space-y-3 text-white">
-                                    <div class="rounded-2xl border border-white/8 bg-white/5 p-4">
-                                        <p class="text-sm font-bold">Fichaje en un toque</p>
-                                        <p class="mt-1 text-xs leading-relaxed text-blue-100/75">Entrada, salida y pausas con app, QR, PIN o biometría según cada centro.</p>
+                        <div class="mt-6 space-y-3">
+                            <div class="rounded-2xl border border-white/15 bg-white/10 p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-cyan-light/20 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-mobile-screen-button text-cyan-light text-lg"></i>
                                     </div>
-                                    <div class="rounded-2xl border border-white/8 bg-white/5 p-4">
-                                        <p class="text-sm font-bold">Alertas y trazabilidad</p>
-                                        <p class="mt-1 text-xs leading-relaxed text-blue-100/75">Retrasos, ausencias e incidencias visibles en tiempo real para responsables.</p>
+                                    <div class="text-white">
+                                        <p class="font-bold">Fichaje en un toque</p>
+                                        <p class="text-sm text-blue-100 mt-0.5">App, QR, PIN o biometría según cada centro.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-2xl border border-white/15 bg-white/10 p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-cyan-light/20 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-bell text-cyan-light text-lg"></i>
+                                    </div>
+                                    <div class="text-white">
+                                        <p class="font-bold">Alertas en tiempo real</p>
+                                        <p class="text-sm text-blue-100 mt-0.5">Retrasos y ausencias visibles al instante para managers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-2xl border border-white/15 bg-white/10 p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-cyan-light/20 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-shield-halved text-cyan-light text-lg"></i>
+                                    </div>
+                                    <div class="text-white">
+                                        <p class="font-bold">Cumplimiento RDL 8/2019</p>
+                                        <p class="text-sm text-blue-100 mt-0.5">Registros con trazabilidad completa, listos para inspección.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-5 flex flex-wrap gap-3">
+                        <div class="mt-5 flex flex-wrap gap-2">
                             <span class="tt-device-chip"><i class="fas fa-mobile-screen-button mr-2"></i>App móvil</span>
                             <span class="tt-device-chip"><i class="fas fa-qrcode mr-2"></i>QR</span>
                             <span class="tt-device-chip"><i class="fas fa-keyboard mr-2"></i>PIN</span>
@@ -384,56 +398,56 @@
             <div class="text-center mb-14">
                 <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Funcionalidades</p>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Todo lo que necesitas para un control horario profesional</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Desde el fichaje diario hasta la gestión de turnos, vacaciones e incidencias. Panel para administradores y portal para empleados.</p>
+                <p class="text-gray-700 text-lg max-w-2xl mx-auto">Desde el fichaje diario hasta la gestión de turnos, vacaciones e incidencias. Panel para administradores y portal para empleados.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-royal/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-clock text-blue-royal text-xl"></i>
+                    <div class="w-14 h-14 bg-blue-royal/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-blue-royal text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-navy text-lg mb-2">Fichaje en tiempo real</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Registro de entrada y salida con un toque. App móvil, QR, PIN o biometría. Geolocalización incluida y datos sincronizados al instante en la nube.</p>
+                    <h3 class="font-bold text-navy text-xl mb-3">Fichaje en tiempo real</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">Registro de entrada y salida con un toque. App móvil, QR, PIN o biometría. Geolocalización incluida y datos sincronizados al instante en la nube.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-chart-bar text-cyan-600 text-xl"></i>
+                    <div class="w-14 h-14 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-bar text-cyan-600 text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-navy text-lg mb-2">Reportes y estadísticas</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Informes detallados de asistencia, puntualidad, horas extra y ausencias. Exporta a Excel o PDF para auditoría y RRHH en cualquier momento.</p>
+                    <h3 class="font-bold text-navy text-xl mb-3">Reportes y estadísticas</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">Informes detallados de asistencia, puntualidad, horas extra y ausencias. Exporta a Excel o PDF para auditoría y RRHH en cualquier momento.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-blue-royal/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-calendar-alt text-blue-royal text-xl"></i>
+                    <div class="w-14 h-14 bg-blue-royal/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-blue-royal text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-navy text-lg mb-2">Gestión de turnos</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Planifica turnos rotativos, fijos o flexibles. Calendario visual para que cada empleado conozca su horario. Festivos por comunidad autónoma.</p>
+                    <h3 class="font-bold text-navy text-xl mb-3">Gestión de turnos</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">Planifica turnos rotativos, fijos o flexibles. Calendario visual para que cada empleado conozca su horario. Festivos por comunidad autónoma.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-shield-alt text-green-600 text-xl"></i>
+                    <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-navy text-lg mb-2">Seguridad y RGPD</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Cifrado de datos en tránsito y en reposo. Trazabilidad completa de fichajes. Cumplimiento íntegro del RGPD y la LOPDGDD. Servidores europeos.</p>
+                    <h3 class="font-bold text-navy text-xl mb-3">Seguridad y RGPD</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">Cifrado de datos en tránsito y en reposo. Trazabilidad completa de fichajes. Cumplimiento íntegro del RGPD y la LOPDGDD. Servidores europeos.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-bell text-amber-600 text-xl"></i>
+                    <div class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-bell text-amber-600 text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-navy text-lg mb-2">Alertas y notificaciones</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Avisos automáticos por retrasos, ausencias e incidencias. Notificaciones push para empleados y alertas por email para responsables.</p>
+                    <h3 class="font-bold text-navy text-xl mb-3">Alertas y notificaciones</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">Avisos automáticos por retrasos, ausencias e incidencias. Notificaciones push para empleados y alertas por email para responsables.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
-                        <i class="fas fa-users-cog text-purple-600 text-xl"></i>
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-users-cog text-purple-600 text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-navy text-lg mb-2">Gestión de personal</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Vacaciones, permisos, bajas y documentos por empleado. Panel centralizado para RRHH con aprobaciones y flujo de solicitudes integrado.</p>
+                    <h3 class="font-bold text-navy text-xl mb-3">Gestión de personal</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">Vacaciones, permisos, bajas y documentos por empleado. Panel centralizado para RRHH con aprobaciones y flujo de solicitudes integrado.</p>
                 </div>
             </div>
         </div>
@@ -445,7 +459,7 @@
             <div class="text-center mb-14">
                 <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Cómo funciona</p>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Activo en 3 pasos, sin complicaciones</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Empieza a controlar la jornada de tu equipo en menos de 24 horas. Sin instalaciones complejas ni formaciones largas.</p>
+                <p class="text-gray-700 text-lg max-w-2xl mx-auto">Empieza a controlar la jornada de tu equipo en menos de 24 horas. Sin instalaciones complejas ni formaciones largas.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -471,14 +485,14 @@
             <!-- App download -->
             <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="https://play.google.com/store/apps/details?id=es.trustintime.inout&pcampaignid=web_share" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-3.5 bg-gray-900 text-white rounded-xl font-semibold text-sm hover:bg-navy transition-colors shadow-md">
-                    <i class="fab fa-google-play text-xl"></i>
+                    <i class="fab fa-google-play text-2xl"></i>
                     <div class="text-left">
                         <p class="text-[10px] text-gray-400 leading-none mb-0.5">Disponible en</p>
                         <p class="font-bold leading-none">Google Play</p>
                     </div>
                 </a>
                 <a href="#" class="inline-flex items-center gap-3 px-6 py-3.5 bg-gray-900 text-white rounded-xl font-semibold text-sm hover:bg-navy transition-colors shadow-md">
-                    <i class="fab fa-apple text-xl"></i>
+                    <i class="fab fa-apple text-2xl"></i>
                     <div class="text-left">
                         <p class="text-[10px] text-gray-400 leading-none mb-0.5">Disponible en</p>
                         <p class="font-bold leading-none">App Store</p>
@@ -495,7 +509,7 @@
                 <div>
                     <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Operativa diaria</p>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">No solo fichas: ordenas turnos, ausencias e incidencias</h2>
-                    <p class="text-gray-500 max-w-xl mb-8">TrustinTime concentra la operativa diaria en un flujo claro para empleado, manager y RRHH. Cada acción deja trazabilidad y cada responsable ve solo lo que necesita.</p>
+                    <p class="text-gray-700 text-lg max-w-xl mb-8">TrustinTime concentra la operativa diaria en un flujo claro para empleado, manager y RRHH. Cada acción deja trazabilidad y cada responsable ve solo lo que necesita.</p>
                     <div class="space-y-4">
                         <div class="flex items-start gap-4 rounded-2xl bg-white border border-gray-100 p-5 shadow-sm">
                             <div class="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center text-blue-royal shrink-0"><i class="fas fa-user-check"></i></div>
@@ -570,7 +584,7 @@
             <div class="text-center mb-14">
                 <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Multidispositivo</p>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Ficha desde cualquier lugar</h2>
-                <p class="text-gray-500 max-w-xl mx-auto">Tu equipo puede fichar desde móvil, tablet o navegador web. Todos los registros se sincronizan al instante para RRHH y managers.</p>
+                <p class="text-gray-700 text-lg max-w-xl mx-auto">Tu equipo puede fichar desde móvil, tablet o navegador web. Todos los registros se sincronizan al instante para RRHH y managers.</p>
             </div>
             <div class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <div class="flex items-start gap-4 rounded-2xl bg-slate-50 border border-gray-100 p-5">
@@ -648,7 +662,7 @@
             <div class="text-center mb-14">
                 <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Precios</p>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Tres planes, precios claros</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Pagas por empleados activos, sin permanencia. El plan Básico cubre el cumplimiento legal. Estándar y Avanzado añaden gestión RRHH completa y automatizaciones.</p>
+                <p class="text-gray-700 text-lg max-w-2xl mx-auto">Pagas por empleados activos, sin permanencia. El plan Básico cubre el cumplimiento legal. Estándar y Avanzado añaden gestión RRHH completa y automatizaciones.</p>
                 <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-xs font-semibold">
                     <i class="fas fa-bolt"></i>
                     Precio especial de lanzamiento — exclusivo para los primeros clientes
