@@ -8,7 +8,7 @@
 variable "github_repo" {
   description = "GitHub repository in owner/name format."
   type        = string
-  default     = "dregos/trustcore.es"
+  default     = "Dregos13/trustcore.es"
 }
 
 # OIDC provider — created once per AWS account; ignore error if it exists.
