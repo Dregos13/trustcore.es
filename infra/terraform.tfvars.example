@@ -1,0 +1,10 @@
+domain_name   = "trustcore.es"
+hosted_zone_id = "ZXXXXXXXXXXXX"
+aws_region    = "eu-west-1"
+create_www    = true
+price_class   = "PriceClass_100"
+force_destroy = false
+
+tags = {
+  project = "trustcore"
+}

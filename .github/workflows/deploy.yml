@@ -1,0 +1,47 @@
+name: Deploy to S3 + CloudFront
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'site/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: eu-west-1
+
+      - name: Sync site to S3
+        run: |
+          aws s3 sync site/ s3://trustcore.es/ \
+            --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html" \
+            --exclude "*.xml" \
+            --exclude "*.txt"
+          aws s3 sync site/ s3://trustcore.es/ \
+            --delete \
+            --cache-control "no-cache, no-store, must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.xml" \
+            --include "*.txt"
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E3DUTT7AH6H3WN \
+            --paths "/*"

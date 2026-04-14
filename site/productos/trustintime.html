@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PRFRSKZL');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustinTime — Control Horario y Fichaje Digital para Empresas | TrustCore</title>
+    <meta name="description" content="TrustinTime: software de control horario y fichaje digital con app móvil, QR y biometría. Cumple RDL 8/2019 y RGPD. Parte de TrustCore. Desde 5,99€/empleado/mes.">
+    <meta name="author" content="TrustCore S.L.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#040F3F">
+    <link rel="canonical" href="https://www.trustcore.es/productos/trustintime.html">
+    <link rel="alternate" hreflang="es" href="https://www.trustcore.es/productos/trustintime.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/productos/trustintime.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.trustcore.es/productos/trustintime.html">
+    <meta property="og:title" content="TrustinTime — Control Horario y Fichaje Digital para Empresas">
+    <meta property="og:description" content="Registra la jornada de tu equipo con app móvil, QR, PIN o biometría. Cumplimiento RDL 8/2019 y RGPD. Parte de la suite TrustCore.">
+    <meta property="og:image" content="https://www.trustcore.es/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="TrustCore">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TrustinTime — Control Horario y Fichaje Digital para Empresas">
+    <meta name="twitter:description" content="Registra la jornada con app, QR, PIN o biometría. Cumplimiento RDL 8/2019 y RGPD. Desde 5,99€/empleado.">
+    <meta name="twitter:image" content="https://www.trustcore.es/assets/og-image.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TrustinTime",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Android, iOS, Web",
+        "description": "Software de control horario y fichaje digital para empresas. Cumple con la Ley de Registro de Jornada (RDL 8/2019). Fichaje por app móvil, QR, PIN y biometría.",
+        "url": "https://www.trustcore.es/productos/trustintime.html",
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "5.99",
+            "highPrice": "7.99",
+            "priceCurrency": "EUR",
+            "offerCount": "3"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "TrustCore S.L.",
+            "url": "https://www.trustcore.es/",
+            "logo": "https://www.trustcore.es/assets/trustcore-icon.png"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "TrustCore", "item": "https://www.trustcore.es/" },
+            { "@type": "ListItem", "position": 2, "name": "TrustinTime", "item": "https://www.trustcore.es/productos/trustintime.html" }
+        ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#040F3F',
+                        'navy-deep': '#020A2A',
+                        'blue-corp': '#0B2572',
+                        'blue-royal': '#2071D5',
+                        'cyan-light': '#53CDFE',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/trustcore-icon.png">
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .tt-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .tt-hero-panel {
+            position: relative;
+            width: min(460px, 100%);
+            margin-inline: auto;
+            border-radius: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(180deg, rgba(5, 19, 70, 0.94), rgba(8, 18, 54, 0.86));
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 35px 80px rgba(2, 10, 42, 0.45);
+            backdrop-filter: blur(16px);
+        }
+
+        .tt-hero-metric {
+            border-radius: 1.25rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.06);
+            padding: 1rem;
+        }
+
+        .tt-device-chip {
+            border-radius: 9999px;
+            border: 1px solid rgba(83,205,254,0.25);
+            background: rgba(83,205,254,0.08);
+            padding: 0.55rem 0.8rem;
+            color: #dbeafe;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        @media (min-width: 1024px) {
+            .tt-grid {
+                grid-template-columns: minmax(0, 1.05fr) minmax(320px, 420px);
+                align-items: center;
+            }
+        }
+    </style>
+    <!-- HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148252702.js"></script>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRFRSKZL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-shadow duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-3 shrink-0">
+                    <img src="../assets/trustcore-icon.png" alt="TrustCore" class="h-10 md:h-12 w-auto">
+                    <span class="text-navy font-extrabold text-xl md:text-2xl tracking-tight">TrustCore</span>
+                </a>
+
+                <!-- Nav Desktop -->
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="/" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+                    <div class="relative group">
+                        <button type="button" class="inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors">
+                            Productos
+                            <i class="fas fa-chevron-down text-[10px]"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0">
+                            <div class="w-80 rounded-2xl border border-gray-200 bg-white p-3 shadow-2xl shadow-slate-900/10">
+                                <a href="/productos/trustintime.html" class="block rounded-xl px-4 py-3 bg-slate-50 transition-colors">
+                                    <span class="block text-sm font-bold text-navy">TrustinTime</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Control horario, vacaciones y RRHH dentro de TrustCore.</span>
+                                </a>
+                                <a href="/productos/trustinfacts.html" class="mt-1 block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors">
+                                    <span class="block text-sm font-bold text-navy">TrustinFacts</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Facturación VeriFactu, stock y trazabilidad comercial.</span>
+                                </a>
+                                <a href="/#precios" class="mt-1 block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors">
+                                    <span class="block text-sm font-bold text-navy">Precios unificados</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Una sola entrada comercial para elegir producto o suite.</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/#precios" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Precios</a>
+                    <a href="/comparativa" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Comparativa</a>
+                    <a href="/quienes-somos" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Nosotros</a>
+                    <a href="/article" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Artículos</a>
+                    <a href="/contacto" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Contacto</a>
+                    <label class="inline-flex items-center gap-2 pl-2 border-l border-gray-200 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                        <span data-lang-label>Idioma</span>
+                        <select data-lang-switcher aria-label="Seleccionar idioma" class="rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-xs font-semibold text-navy focus:border-blue-royal focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <option value="es">ES</option>
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </label>
+                    <a href="/contacto" class="inline-flex items-center px-5 py-2.5 bg-blue-corp text-white text-sm font-semibold rounded-lg hover:bg-navy transition-colors duration-200">
+                        Hablar con ventas
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Abrir menú">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Home</a>
+                <div class="py-2">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">Productos</p>
+                    <a href="/productos/trustintime.html" class="block text-sm font-semibold text-navy py-1.5">TrustinTime</a>
+                    <a href="/productos/trustinfacts.html" class="block text-sm font-medium text-gray-600 hover:text-navy py-1.5">TrustinFacts</a>
+                </div>
+                <a href="/#precios" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Precios</a>
+                <a href="/comparativa" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Comparativa</a>
+                <a href="/quienes-somos" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Nosotros</a>
+                <a href="/article" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Artículos</a>
+                <a href="/contacto" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Contacto</a>
+                <label class="flex items-center justify-between gap-3 py-2">
+                    <span data-lang-label class="text-xs font-semibold uppercase tracking-wide text-gray-500">Idioma</span>
+                    <select data-lang-switcher aria-label="Seleccionar idioma" class="rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-xs font-semibold text-navy focus:border-blue-royal focus:outline-none focus:ring-2 focus:ring-blue-200">
+                        <option value="es">ES</option>
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </label>
+                <a href="/contacto" class="block text-center px-5 py-2.5 bg-blue-corp text-white text-sm font-semibold rounded-lg hover:bg-navy transition-colors">
+                    Hablar con ventas
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 60%, #1a3a8a 100%);">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-10" style="background: radial-gradient(circle, #53CDFE, transparent);"></div>
+            <div class="absolute -bottom-20 -left-20 w-72 h-72 rounded-full opacity-10" style="background: radial-gradient(circle, #2071D5, transparent);"></div>
+            <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><rect width=%2260%22 height=%2260%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.5%22/></svg>');"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 md:pt-32 md:pb-24">
+            <div class="tt-grid">
+            <div class="max-w-3xl">
+                <!-- Breadcrumb -->
+                <div class="flex items-center gap-2 text-cyan-light/70 text-xs mb-6">
+                    <a href="/" class="hover:text-cyan-light transition-colors">TrustCore</a>
+                    <i class="fas fa-chevron-right text-[9px]"></i>
+                    <a href="/" class="hover:text-cyan-light transition-colors">Productos</a>
+                    <i class="fas fa-chevron-right text-[9px]"></i>
+                    <span class="text-cyan-light font-semibold">TrustinTime</span>
+                </div>
+
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-royal/20 border border-cyan-light/30 rounded-full mb-6 backdrop-blur-md">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-light opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-light"></span>
+                    </span>
+                    <span class="text-cyan-light text-xs font-bold tracking-wide uppercase">Control Horario · RDL 8/2019 · RGPD</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
+                    Fichaje digital <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-light to-blue-royal">simple, seguro y legal.</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
+                    Registra la jornada de tu equipo en segundos. Fichaje por <strong class="text-white">app, QR, PIN o biometría</strong> con trazabilidad completa y cumplimiento automático del RDL 8/2019.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/contacto" class="group relative inline-flex items-center justify-center px-8 py-3.5 bg-blue-royal text-white font-bold rounded-xl overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(32,113,213,0.5)]">
+                        <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 skew-x-12 -ml-4"></div>
+                        Solicitar demo gratuita
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#precios" class="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300">
+                        Ver precios
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">RDL 8/2019</span>
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">RGPD Cumplimiento</span>
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">Sin permanencia</span>
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">Soporte incluido</span>
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">Activo en 24 h</span>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <div class="relative">
+                    <div class="absolute -top-12 -right-10 h-40 w-40 rounded-full bg-cyan-light/20 blur-3xl"></div>
+                    <div class="absolute -bottom-10 -left-10 h-36 w-36 rounded-full bg-blue-royal/25 blur-3xl"></div>
+                    <div class="tt-hero-panel">
+                        <div class="flex items-start justify-between gap-4 text-white">
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-[0.28em] text-cyan-light">Vista operativa</p>
+                                <h3 class="mt-3 text-2xl font-extrabold leading-tight">Más control para RRHH. Menos fricción para el equipo.</h3>
+                            </div>
+                            <span class="shrink-0 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-emerald-200">En directo</span>
+                        </div>
+
+                        <div class="mt-6 grid grid-cols-2 gap-4 text-white">
+                            <div class="tt-hero-metric">
+                                <p class="text-xs uppercase tracking-[0.2em] text-blue-100/70">Fichajes hoy</p>
+                                <p class="mt-2 text-3xl font-extrabold">124</p>
+                                <p class="mt-1 text-xs text-emerald-200">Sincronizados al instante</p>
+                            </div>
+                            <div class="tt-hero-metric">
+                                <p class="text-xs uppercase tracking-[0.2em] text-blue-100/70">Incidencias</p>
+                                <p class="mt-2 text-3xl font-extrabold">02</p>
+                                <p class="mt-1 text-xs text-cyan-light">Resueltas desde el panel</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 rounded-[1.75rem] border border-white/10 bg-[#07112e] p-4 shadow-2xl shadow-black/20">
+                            <div class="flex items-center justify-between text-xs font-semibold text-blue-100/80">
+                                <span>App del empleado</span>
+                                <span>Panel del manager</span>
+                            </div>
+                            <div class="mt-4 grid grid-cols-[112px_minmax(0,1fr)] gap-4 items-center">
+                                <div class="overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950 shadow-xl">
+                                    <img src="../assets/trustintime-app-screenshot.jpeg" alt="Pantalla real de TrustinTime mostrando el fichaje digital" class="block h-56 w-full object-cover object-top">
+                                </div>
+                                <div class="space-y-3 text-white">
+                                    <div class="rounded-2xl border border-white/8 bg-white/5 p-4">
+                                        <p class="text-sm font-bold">Fichaje en un toque</p>
+                                        <p class="mt-1 text-xs leading-relaxed text-blue-100/75">Entrada, salida y pausas con app, QR, PIN o biometría según cada centro.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-white/8 bg-white/5 p-4">
+                                        <p class="text-sm font-bold">Alertas y trazabilidad</p>
+                                        <p class="mt-1 text-xs leading-relaxed text-blue-100/75">Retrasos, ausencias e incidencias visibles en tiempo real para responsables.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 flex flex-wrap gap-3">
+                            <span class="tt-device-chip"><i class="fas fa-mobile-screen-button mr-2"></i>App móvil</span>
+                            <span class="tt-device-chip"><i class="fas fa-qrcode mr-2"></i>QR</span>
+                            <span class="tt-device-chip"><i class="fas fa-keyboard mr-2"></i>PIN</span>
+                            <span class="tt-device-chip"><i class="fas fa-fingerprint mr-2"></i>Biometría</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TRUST BAR ==================== -->
+    <section class="bg-white border-b border-gray-100 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+                <div>
+                    <p class="text-2xl font-extrabold text-navy">RDL 8/2019</p>
+                    <p class="text-xs text-gray-500 mt-1">Cumplimiento garantizado</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-extrabold text-navy">4 años</p>
+                    <p class="text-xs text-gray-500 mt-1">Conservación legal de datos</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-extrabold text-navy">4 métodos</p>
+                    <p class="text-xs text-gray-500 mt-1">App, QR, PIN, biometría</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-extrabold text-navy">&lt; 24 h</p>
+                    <p class="text-xs text-gray-500 mt-1">Activo desde el primer día</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section id="funcionalidades" class="scroll-mt-28 py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Funcionalidades</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Todo lo que necesitas para un control horario profesional</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Desde el fichaje diario hasta la gestión de turnos, vacaciones e incidencias. Panel para administradores y portal para empleados.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-royal/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-blue-royal text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Fichaje en tiempo real</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Registro de entrada y salida con un toque. App móvil, QR, PIN o biometría. Geolocalización incluida y datos sincronizados al instante en la nube.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-bar text-cyan-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Reportes y estadísticas</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Informes detallados de asistencia, puntualidad, horas extra y ausencias. Exporta a Excel o PDF para auditoría y RRHH en cualquier momento.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-royal/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-blue-royal text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Gestión de turnos</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Planifica turnos rotativos, fijos o flexibles. Calendario visual para que cada empleado conozca su horario. Festivos por comunidad autónoma.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Seguridad y RGPD</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Cifrado de datos en tránsito y en reposo. Trazabilidad completa de fichajes. Cumplimiento íntegro del RGPD y la LOPDGDD. Servidores europeos.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-bell text-amber-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Alertas y notificaciones</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Avisos automáticos por retrasos, ausencias e incidencias. Notificaciones push para empleados y alertas por email para responsables.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-users-cog text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Gestión de personal</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Vacaciones, permisos, bajas y documentos por empleado. Panel centralizado para RRHH con aprobaciones y flujo de solicitudes integrado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section id="como-funciona" class="scroll-mt-28 py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Cómo funciona</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Activo en 3 pasos, sin complicaciones</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Empieza a controlar la jornada de tu equipo en menos de 24 horas. Sin instalaciones complejas ni formaciones largas.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center text-center p-6">
+                    <div class="w-16 h-16 rounded-full bg-navy text-white font-extrabold text-2xl flex items-center justify-center mb-5 shadow-lg">1</div>
+                    <h3 class="font-bold text-navy text-xl mb-3">Configura tu empresa</h3>
+                    <p class="text-gray-500">Crea tu cuenta, añade empleados y define turnos, horarios y políticas. Te acompañamos durante todo el proceso de implantación.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-6">
+                    <div class="w-16 h-16 rounded-full bg-blue-royal text-white font-extrabold text-2xl flex items-center justify-center mb-5 shadow-lg">2</div>
+                    <h3 class="font-bold text-navy text-xl mb-3">Empleados descargan la app</h3>
+                    <p class="text-gray-500">Envía el enlace de descarga. Cada empleado se registra en segundos con su PIN o biometría. Disponible en Android e iOS.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-6">
+                    <div class="w-16 h-16 rounded-full bg-cyan-500 text-white font-extrabold text-2xl flex items-center justify-center mb-5 shadow-lg">3</div>
+                    <h3 class="font-bold text-navy text-xl mb-3">Controla desde el panel</h3>
+                    <p class="text-gray-500">Visualiza fichajes en tiempo real, genera reportes, gestiona incidencias y asegura el cumplimiento legal desde un único panel centralizado.</p>
+                </div>
+            </div>
+
+            <!-- App download -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://play.google.com/store/apps/details?id=es.trustintime.inout&pcampaignid=web_share" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-6 py-3.5 bg-gray-900 text-white rounded-xl font-semibold text-sm hover:bg-navy transition-colors shadow-md">
+                    <i class="fab fa-google-play text-xl"></i>
+                    <section class="py-20 bg-slate-50">
+                        <p class="text-[10px] text-gray-400 leading-none mb-0.5">Disponible en</p>
+                        <p class="font-bold leading-none">Google Play</p>
+                    </div>
+                                    <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Operativa diaria</p>
+                                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">No solo fichas: ordenas turnos, ausencias e incidencias</h2>
+                                    <p class="text-gray-500 max-w-xl">TrustinTime concentra la operativa diaria en un flujo claro para empleado, manager y RRHH. Cada acción deja trazabilidad y cada responsable ve solo lo que necesita.</p>
+                    <div class="text-left">
+                        <p class="text-[10px] text-gray-400 leading-none mb-0.5">Disponible en</p>
+                                            <div class="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center text-blue-royal"><i class="fas fa-user-check"></i></div>
+                    </div>
+                                                <p class="font-bold text-navy">Empleado autónomo</p>
+                                                <p class="text-sm text-gray-500 mt-1">Ficha, revisa horas, solicita vacaciones y responde incidencias desde app o web sin depender de RRHH.</p>
+        </div>
+    </section>
+
+                                            <div class="w-11 h-11 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-600"><i class="fas fa-user-gear"></i></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                                <p class="font-bold text-navy">Manager con contexto</p>
+                                                <p class="text-sm text-gray-500 mt-1">Ve quién está dentro, quién llega tarde y qué solicitudes requieren aprobación desde un solo panel.</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Multidispositivo</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Ficha desde cualquier lugar</h2>
+                    <p class="text-gray-500 max-w-xl">Tu equipo puede fichar desde móvil, tablet o navegador web. Todos los registros se sincronizan al instante para RRHH y managers.</p>
+                                            <div class="w-11 h-11 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600"><i class="fas fa-building-shield"></i></div>
+                        <div class="flex items-start gap-4 rounded-2xl bg-white border border-gray-100 p-5 shadow-sm">
+                                                <p class="font-bold text-navy">RRHH con respaldo legal</p>
+                                                <p class="text-sm text-gray-500 mt-1">Exporta informes, conserva registros 4 años y atiende una inspección con evidencias ordenadas.</p>
+                                <p class="font-bold text-navy">App móvil</p>
+                                <p class="text-sm text-gray-500 mt-1">Android e iOS para fichaje individual, recordatorios y consulta de jornada.</p>
+                            </div>
+                        </div>
+                                <div class="rounded-[2rem] bg-gradient-to-br from-navy to-blue-corp p-8 border border-blue-900/40 shadow-2xl">
+                                    <div class="grid gap-4">
+                                        <div class="rounded-2xl bg-white/10 border border-white/10 p-5 text-white">
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="text-xs uppercase tracking-[0.24em] text-cyan-light">Centro operativo</p>
+                                                    <p class="mt-2 text-2xl font-extrabold">Todo el equipo bajo control</p>
+                                                </div>
+                                                <div class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-right">
+                                                    <p class="text-[11px] uppercase tracking-wide text-blue-100/70">Estado</p>
+                                                    <p class="mt-1 text-sm font-bold text-emerald-200">Cumplimiento activo</p>
+                                                </div>
+                    <div class="grid gap-4">
+                        <div class="rounded-2xl bg-white/10 border border-white/10 p-5 text-white">
+                                        <div class="rounded-2xl bg-white p-5 shadow-xl">
+                                            <div class="grid gap-4 sm:grid-cols-2">
+                                                <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                                                    <p class="text-xs font-bold uppercase tracking-wide text-blue-royal">Punto fijo</p>
+                                                    <p class="mt-2 font-bold text-navy">Recepción, fábrica u obra</p>
+                                                    <p class="mt-1 text-sm text-gray-500">Convierte una tablet en terminal de fichaje con QR, PIN o biometría según el entorno.</p>
+                                                </div>
+                                                <div class="rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                                                    <p class="text-xs font-bold uppercase tracking-wide text-blue-royal">Portal manager</p>
+                                                    <p class="mt-2 font-bold text-navy">Decisiones rápidas</p>
+                                                    <p class="mt-1 text-sm text-gray-500">Aprueba vacaciones, revisa ausencias y corrige incidencias sin perseguir hojas de cálculo.</p>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 rounded-2xl border border-slate-100 bg-slate-50 p-4">
+                                                <div class="flex items-center justify-between gap-4">
+                                                    <div>
+                                                        <p class="text-xs font-bold uppercase tracking-wide text-blue-royal">Informe listo para inspección</p>
+                                                        <p class="mt-2 font-bold text-navy">Exportación inmediata y trazabilidad por empleado</p>
+                                                    </div>
+                                                    <span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">4 años</span>
+                                                </div>
+                                                <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+                                                    <div class="rounded-xl bg-white p-3">
+                                                        <p class="text-xl font-extrabold text-navy">QR</p>
+                                                        <p class="text-[11px] text-gray-500 mt-1">Punto común</p>
+                                                    </div>
+                                                    <div class="rounded-xl bg-white p-3">
+                                                        <p class="text-xl font-extrabold text-navy">APP</p>
+                                                        <p class="text-[11px] text-gray-500 mt-1">Trabajo móvil</p>
+                                                    </div>
+                                                    <div class="rounded-xl bg-white p-3">
+                                                        <p class="text-xl font-extrabold text-navy">BIO</p>
+                                                        <p class="text-[11px] text-gray-500 mt-1">Máxima evidencia</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COMPLIANCE ==================== -->
+    <section class="py-20" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl mb-6">
+                    <i class="fas fa-shield-halved text-cyan-light text-2xl"></i>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Cumplimiento legal garantizado</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">El Real Decreto-ley 8/2019 obliga a todas las empresas en España a registrar la jornada laboral. TrustinTime automatiza este cumplimiento para que no tengas que preocuparte.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+                    <div class="w-10 h-10 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-gavel text-cyan-light text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">RDL 8/2019</h4>
+                    <p class="text-gray-300 text-sm">Registro de jornada obligatorio con conservación de datos durante 4 años conforme a la ley española.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+                    <div class="w-10 h-10 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-lock text-cyan-light text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">RGPD y LOPDGDD</h4>
+                    <p class="text-gray-300 text-sm">Datos cifrados, consentimiento explícito y derechos de acceso, rectificación y supresión garantizados.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+                    <div class="w-10 h-10 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-clipboard-check text-cyan-light text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Inspección de Trabajo</h4>
+                    <p class="text-gray-300 text-sm">Reportes listos para presentar ante una inspección. Trazabilidad completa de cada fichaje registrado.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+                    <div class="w-10 h-10 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-fingerprint text-cyan-light text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Evidencia digital</h4>
+                    <p class="text-gray-300 text-sm">Cada registro incluye timestamp, geolocalización opcional y método de fichaje como prueba legal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRICING ==================== -->
+    <section id="precios" class="scroll-mt-28 py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Precios</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Tres planes, precios claros</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Pagas por empleados activos, sin permanencia. El plan Básico cubre el cumplimiento legal. Estándar y Avanzado añaden gestión RRHH completa y automatizaciones.</p>
+                <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-xs font-semibold">
+                    <i class="fas fa-bolt"></i>
+                    Precio especial de lanzamiento — exclusivo para los primeros clientes
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Básico -->
+                <div class="bg-white rounded-2xl p-7 border border-gray-200 shadow-sm flex flex-col">
+                    <div class="mb-5">
+                        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">Plan Básico</p>
+                        <p class="text-sm text-gray-500">Cumplimiento legal</p>
+                    </div>
+                    <div class="flex items-end gap-1 mb-1">
+                        <span class="text-4xl font-extrabold text-navy">5,99€</span>
+                        <span class="text-sm text-gray-400 mb-1">/ empleado · mes</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6">Mínimo 35€/mes</p>
+                    <ul class="space-y-2.5 text-sm text-gray-600 flex-1 mb-7">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Fichaje entrada/salida</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Historial de fichajes</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Geolocalización en fichajes</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Punto de fichaje por tablet</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Gestión de empleados</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Datos empresa (CIF) y DNI</li>
+                    </ul>
+                    <a href="/contacto" class="block text-center px-6 py-3 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-colors text-sm">Pedir demo</a>
+                </div>
+
+                <!-- Estándar (highlighted) -->
+                <div class="bg-navy rounded-2xl p-7 border border-blue-corp shadow-2xl flex flex-col relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-royal text-white text-xs font-bold rounded-full tracking-wide whitespace-nowrap">MÁS POPULAR</div>
+                    <div class="mb-5">
+                        <p class="text-xs font-bold uppercase tracking-wide text-cyan-light mb-1">Plan Estándar</p>
+                        <p class="text-sm text-gray-300">RRHH completo</p>
+                    </div>
+                    <div class="flex items-end gap-1 mb-1">
+                        <span class="text-4xl font-extrabold text-white">6,99€</span>
+                        <span class="text-sm text-gray-400 mb-1">/ empleado · mes</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6">Mínimo 50€/mes</p>
+                    <ul class="space-y-2.5 text-sm text-gray-200 flex-1 mb-7">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Todo lo del plan Básico</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Vacaciones y ausencias</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Festivos por calendario</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Documentos por empleado</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Informes semanales</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Exportación CSV</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Notificaciones push</li>
+                    </ul>
+                    <a href="/contacto" class="block text-center px-6 py-3 bg-blue-royal text-white font-bold rounded-xl hover:bg-blue-700 transition-colors text-sm">Hablar con ventas</a>
+                </div>
+
+                <!-- Avanzado -->
+                <div class="bg-white rounded-2xl p-7 border border-gray-200 shadow-sm flex flex-col">
+                    <div class="mb-5">
+                        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">Plan Avanzado</p>
+                        <p class="text-sm text-gray-500">Control total</p>
+                    </div>
+                    <div class="flex items-end gap-1 mb-1">
+                        <span class="text-4xl font-extrabold text-navy">7,99€</span>
+                        <span class="text-sm text-gray-400 mb-1">/ empleado · mes</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6">Mínimo 60€/mes</p>
+                    <ul class="space-y-2.5 text-sm text-gray-600 flex-1 mb-7">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Todo lo del plan Estándar</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Fichajes automáticos (AutoShift)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Infracciones y faltas</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Informes mensuales</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Registro legal completo</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Tareas y gestión de tareas</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Permisos granulares</li>
+                    </ul>
+                    <a href="/contacto" class="block text-center px-6 py-3 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-colors text-sm">Solicitar propuesta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">FAQ</p>
+                <h2 class="text-3xl font-extrabold text-navy">Preguntas frecuentes</h2>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿Es obligatorio el registro de jornada en España?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">Sí, desde mayo de 2019, el Real Decreto-ley 8/2019 obliga a todas las empresas en España a registrar la jornada laboral de sus empleados. TrustinTime automatiza este cumplimiento de forma sencilla y digital.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿Qué métodos de fichaje ofrece TrustinTime?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">TrustinTime ofrece fichaje mediante app móvil (Android e iOS), código QR, PIN personal y biometría. Todos los métodos son seguros, trazables y cumplen plenamente con el RGPD.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿TrustinTime cumple con el RGPD?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">Sí, TrustinTime cumple íntegramente con el Reglamento General de Protección de Datos (RGPD) y la LOPDGDD. Los datos se cifran en tránsito y en reposo, y se almacenan en servidores europeos.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿Puedo gestionar vacaciones y turnos con TrustinTime?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">Sí, TrustinTime incluye gestión de turnos, calendario operativo, control de vacaciones y permisos, y reportes detallados para RRHH. Estas funcionalidades están disponibles a partir del Plan Estándar.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿Cuánto tiempo lleva implementar TrustinTime?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">La implantación típica lleva menos de 24 horas. Nuestro equipo te acompaña durante la configuración inicial y los empleados pueden empezar a fichar el mismo día.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="py-24 text-center" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 100%);">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">¿Listo para cumplir la ley sin complicaciones?</h2>
+            <p class="text-gray-300 text-lg mb-10">Agenda una demo gratuita y te mostramos cómo TrustinTime se adapta a tu empresa en menos de 24 horas.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contacto" class="inline-flex items-center gap-3 px-10 py-4 bg-white text-navy font-bold text-lg rounded-xl hover:bg-gray-100 transition-colors shadow-xl shadow-black/20">
+                    <i class="fas fa-calendar-check"></i>
+                    Solicitar demo gratuita
+                </a>
+                <a href="/productos/trustinfacts.html" class="inline-flex items-center gap-3 px-10 py-4 border border-white/20 text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-colors">
+                    <i class="fas fa-file-invoice"></i>
+                    Ver TrustinFacts
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#020A2A] border-t border-blue-900/40 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-8 md:grid-cols-[1.1fr_auto_0.9fr] items-center">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="../assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed max-w-md">
+                        Facturación VeriFactu y control horario con cumplimiento real y menos carga operativa.
+                    </p>
+                </div>
+
+                <div class="w-full md:w-auto md:justify-self-center min-w-[280px] max-w-[360px]">
+                    <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+                        <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-[15px] font-medium text-slate-800 hover:bg-[#F9FFFC] transition-colors">
+                            Reseñanos en
+                            <i class="fas fa-star text-[#00B67A]"></i>
+                            <span class="font-semibold text-slate-900">Trustpilot</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-left md:text-right">
+                    <a href="/" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Home</a>
+                    <a href="/productos/trustintime.html" class="block text-white font-semibold text-sm transition-colors mb-2">TrustinTime</a>
+                    <a href="/productos/trustinfacts.html" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">TrustinFacts</a>
+                    <a href="/#precios" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Precios</a>
+                    <a href="/article" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Artículos</a>
+                    <a href="/comparativa" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Comparativa</a>
+                    <a href="/contacto" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Contacto</a>
+                    <a href="https://www.trustcore.es/" class="text-slate-300 hover:text-white text-sm transition-colors">www.trustcore.es</a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-white/10 text-xs text-slate-400 text-center md:text-left">
+                &copy; 2026 TrustCore S.L. — Todos los derechos reservados.
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 text-center">
+                <p class="text-xs uppercase tracking-widest text-slate-500 mb-4">Acelerado por</p>
+                <img src="/COF_Logo.png" alt="COF" style="max-width:480px;width:100%;height:auto;display:inline-block;filter:brightness(0) invert(1);">
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('shadow-md', window.scrollY > 10);
+        });
+    </script>
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <script src="/assets/lang-switcher.js"></script>
+</body>
+</html>

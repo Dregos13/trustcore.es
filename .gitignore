@@ -1,0 +1,16 @@
+# Terraform
+infra/.terraform/
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+infra/tfplan*
+infra/*.tfvars
+!infra/*.tfvars.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

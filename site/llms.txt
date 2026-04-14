@@ -1,0 +1,41 @@
+# TrustCore S.L. — Facturación VeriFactu y Control Horario para Empresas
+
+> TrustCore ofrece una suite para centralizar facturación VeriFactu y control horario, con foco en cumplimiento legal, automatización operativa y trazabilidad de datos para pymes y empresas en España.
+
+TrustCore unifica dos áreas clave de gestión empresarial:
+- Facturación electrónica alineada con requisitos regulatorios (Ley Antifraude / VeriFactu).
+- Registro de jornada y procesos de RRHH asociados al control horario.
+
+El objetivo del producto es reducir tareas manuales, minimizar riesgo de sanciones y mantener la operación lista para auditoría.
+
+## Sitio principal
+- [TrustCore](https://www.trustcore.es/)
+- [Comparativa](https://www.trustcore.es/comparativa.html)
+- [Artículos](https://www.trustcore.es/article.html)
+
+## Productos y servicios
+- TrustinFacts: facturación electrónica, stock y márgenes, integraciones y trazabilidad de datos.
+- TrustinTime: registro horario digital, control de jornada, vacaciones y datos de RRHH.
+- Suite combinada: operación centralizada para facturación y jornada laboral.
+
+## Cumplimiento normativo
+- Enfoque de cumplimiento para normativa de control horario.
+- Enfoque de cumplimiento para Ley Antifraude / VeriFactu.
+- Tratamiento de datos con medidas de seguridad y trazabilidad orientadas a auditoría.
+
+## Capacidades destacadas
+- Automatización de procesos de facturación y fichaje.
+- Registro y seguimiento estructurado de operaciones.
+- Visibilidad operativa para dirección y administración.
+- Plataforma orientada a reducir errores manuales y riesgos de incumplimiento.
+
+## Recursos relacionados
+- [TrustinTime](https://trustintime.es/)
+- [TrustinFacts](https://trustinfacts.com/)
+
+## Contacto
+- [rami@trustcore.es](mailto:rami@trustcore.es)
+
+## Contenido secundario
+- Guías prácticas y artículos sobre IPSI, control horario y cumplimiento.
+- Comparativas de soluciones para pymes y empresas.

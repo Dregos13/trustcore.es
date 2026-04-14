@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PRFRSKZL');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustinFacts — Facturación VeriFactu e IPSI/IVA para PYMES y Autónomos | TrustCore</title>
+    <meta name="description" content="TrustinFacts: gestión comercial y facturación con VeriFactu, IPSI/IVA/mixtos y flujo Presupuesto→Venta→Factura. Evita errores fiscales. Parte de TrustCore. Desde 20€/mes.">
+    <meta name="author" content="TrustCore S.L.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#040F3F">
+    <link rel="canonical" href="https://www.trustcore.es/productos/trustinfacts.html">
+    <link rel="alternate" hreflang="es" href="https://www.trustcore.es/productos/trustinfacts.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/productos/trustinfacts.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.trustcore.es/productos/trustinfacts.html">
+    <meta property="og:title" content="TrustinFacts — Facturación VeriFactu e IPSI/IVA para PYMES y Autónomos">
+    <meta property="og:description" content="Flujo Presupuesto→Venta→Factura. IPSI, IVA y regímenes mixtos. Cronología fiscal correcta. Parte de la suite TrustCore. Desde 20€/mes.">
+    <meta property="og:image" content="https://www.trustcore.es/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="TrustCore">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TrustinFacts — Facturación VeriFactu e IPSI/IVA para PYMES y Autónomos">
+    <meta name="twitter:description" content="Flujo Presupuesto→Venta→Factura. IPSI, IVA y regímenes mixtos. Cronología fiscal correcta. Desde 20€/mes.">
+    <meta name="twitter:image" content="https://www.trustcore.es/assets/og-image.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TrustinFacts",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, macOS, Linux, Web",
+        "description": "Aplicación de gestión comercial y facturación para PYMES y autónomos. Flujo Presupuesto→Venta→Factura, soporte nativo IPSI/IVA/mixtos, cumplimiento Veri*factu.",
+        "url": "https://www.trustcore.es/productos/trustinfacts.html",
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "20",
+            "highPrice": "45",
+            "priceCurrency": "EUR",
+            "offerCount": "3"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "TrustCore S.L.",
+            "url": "https://www.trustcore.es/",
+            "logo": "https://www.trustcore.es/assets/trustcore-icon.png"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "TrustCore", "item": "https://www.trustcore.es/" },
+            { "@type": "ListItem", "position": 2, "name": "TrustinFacts", "item": "https://www.trustcore.es/productos/trustinfacts.html" }
+        ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#040F3F',
+                        'navy-deep': '#020A2A',
+                        'blue-corp': '#0B2572',
+                        'blue-royal': '#2071D5',
+                        'cyan-light': '#53CDFE',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/trustcore-icon.png">
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .tif-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .tif-mock {
+            border-radius: 2rem;
+            background: rgba(255,255,255,0.78);
+            border: 1px solid rgba(255,255,255,0.58);
+            box-shadow: 0 30px 70px rgba(4, 15, 63, 0.28);
+            overflow: hidden;
+        }
+
+        .tif-mock-top {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(15,23,42,0.08);
+            background: rgba(255,255,255,0.72);
+        }
+
+        .tif-dot {
+            width: 0.65rem;
+            height: 0.65rem;
+            border-radius: 999px;
+        }
+
+        @media (min-width: 1024px) {
+            .tif-grid {
+                grid-template-columns: minmax(0, 1.05fr) minmax(340px, 460px);
+                align-items: center;
+            }
+        }
+    </style>
+    <!-- HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148252702.js"></script>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRFRSKZL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-shadow duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-3 shrink-0">
+                    <img src="../assets/trustcore-icon.png" alt="TrustCore" class="h-10 md:h-12 w-auto">
+                    <span class="text-navy font-extrabold text-xl md:text-2xl tracking-tight">TrustCore</span>
+                </a>
+
+                <!-- Nav Desktop -->
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="/" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Home</a>
+                    <div class="relative group">
+                        <button type="button" class="inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors">
+                            Productos
+                            <i class="fas fa-chevron-down text-[10px]"></i>
+                        </button>
+                        <div class="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0">
+                            <div class="w-80 rounded-2xl border border-gray-200 bg-white p-3 shadow-2xl shadow-slate-900/10">
+                                <a href="/productos/trustintime.html" class="block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors">
+                                    <span class="block text-sm font-bold text-navy">TrustinTime</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Control horario, vacaciones y RRHH dentro de TrustCore.</span>
+                                </a>
+                                <a href="/productos/trustinfacts.html" class="mt-1 block rounded-xl px-4 py-3 bg-slate-50 transition-colors">
+                                    <span class="block text-sm font-bold text-navy">TrustinFacts</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Facturación VeriFactu, stock y trazabilidad comercial.</span>
+                                </a>
+                                <a href="/#precios" class="mt-1 block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors">
+                                    <span class="block text-sm font-bold text-navy">Precios unificados</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Una sola entrada comercial para elegir producto o suite.</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/#precios" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Precios</a>
+                    <a href="/comparativa" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Comparativa</a>
+                    <a href="/quienes-somos" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Nosotros</a>
+                    <a href="/article" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Artículos</a>
+                    <a href="/contacto" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Contacto</a>
+                    <label class="inline-flex items-center gap-2 pl-2 border-l border-gray-200 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                        <span data-lang-label>Idioma</span>
+                        <select data-lang-switcher aria-label="Seleccionar idioma" class="rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-xs font-semibold text-navy focus:border-blue-royal focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <option value="es">ES</option>
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </label>
+                    <a href="/contacto" class="inline-flex items-center px-5 py-2.5 bg-blue-corp text-white text-sm font-semibold rounded-lg hover:bg-navy transition-colors duration-200">
+                        Hablar con ventas
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Abrir menú">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Home</a>
+                <div class="py-2">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">Productos</p>
+                    <a href="/productos/trustintime.html" class="block text-sm font-medium text-gray-600 hover:text-navy py-1.5">TrustinTime</a>
+                    <a href="/productos/trustinfacts.html" class="block text-sm font-semibold text-navy py-1.5">TrustinFacts</a>
+                </div>
+                <a href="/#precios" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Precios</a>
+                <a href="/comparativa" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Comparativa</a>
+                <a href="/quienes-somos" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Nosotros</a>
+                <a href="/article" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Artículos</a>
+                <a href="/contacto" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Contacto</a>
+                <label class="flex items-center justify-between gap-3 py-2">
+                    <span data-lang-label class="text-xs font-semibold uppercase tracking-wide text-gray-500">Idioma</span>
+                    <select data-lang-switcher aria-label="Seleccionar idioma" class="rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-xs font-semibold text-navy focus:border-blue-royal focus:outline-none focus:ring-2 focus:ring-blue-200">
+                        <option value="es">ES</option>
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </label>
+                <a href="/contacto" class="block text-center px-5 py-2.5 bg-blue-corp text-white text-sm font-semibold rounded-lg hover:bg-navy transition-colors">
+                    Hablar con ventas
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 60%, #1a3a8a 100%);">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-10" style="background: radial-gradient(circle, #53CDFE, transparent);"></div>
+            <div class="absolute -bottom-20 -left-20 w-72 h-72 rounded-full opacity-10" style="background: radial-gradient(circle, #2071D5, transparent);"></div>
+            <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><rect width=%2260%22 height=%2260%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.5%22/></svg>');"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 md:pt-32 md:pb-24">
+            <div class="tif-grid">
+            <div class="max-w-3xl">
+                <!-- Breadcrumb -->
+                <div class="flex items-center gap-2 text-cyan-light/70 text-xs mb-6">
+                    <a href="/" class="hover:text-cyan-light transition-colors">TrustCore</a>
+                    <i class="fas fa-chevron-right text-[9px]"></i>
+                    <a href="/" class="hover:text-cyan-light transition-colors">Productos</a>
+                    <i class="fas fa-chevron-right text-[9px]"></i>
+                    <span class="text-cyan-light font-semibold">TrustinFacts</span>
+                </div>
+
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-royal/20 border border-cyan-light/30 rounded-full mb-6 backdrop-blur-md">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-light opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-light"></span>
+                    </span>
+                    <span class="text-cyan-light text-xs font-bold tracking-wide uppercase">Facturación · Veri*factu · IPSI/IVA</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
+                    Tu facturación, <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-light to-blue-royal">ordenada y sin errores fiscales.</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
+                    Gestiona el ciclo <strong class="text-white">Presupuesto → Venta → Factura</strong> con cronología fiscal correcta. La única herramienta con soporte nativo para IPSI, IVA y regímenes mixtos.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/contacto" class="group relative inline-flex items-center justify-center px-8 py-3.5 bg-blue-royal text-white font-bold rounded-xl overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(32,113,213,0.5)]">
+                        <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 skew-x-12 -ml-4"></div>
+                        Solicitar demo gratuita
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#precios" class="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300">
+                        Ver precios
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">Veri*factu</span>
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">IPSI / IVA / mixtos</span>
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">Ceuta y Melilla</span>
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">Sin permanencia</span>
+                    <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white text-xs font-medium">Soporte dedicado</span>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <div class="tif-mock">
+                    <div class="tif-mock-top">
+                        <span class="tif-dot bg-red-400"></span>
+                        <span class="tif-dot bg-amber-400"></span>
+                        <span class="tif-dot bg-emerald-400"></span>
+                        <p class="ml-3 text-sm font-semibold text-slate-600">TrustinFacts · Flujo comercial</p>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-white to-slate-50">
+                        <div class="flex gap-2 flex-wrap mb-5 text-xs font-bold">
+                            <span class="px-3 py-2 rounded-full bg-blue-100 text-blue-700">Presupuesto</span>
+                            <span class="px-3 py-2 rounded-full bg-blue-100 text-blue-700">Venta</span>
+                            <span class="px-3 py-2 rounded-full bg-emerald-100 text-emerald-700">Factura</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 mb-5">
+                            <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mx-auto"><i class="fas fa-file-signature"></i></div>
+                                <p class="mt-3 text-sm font-bold text-navy">Presupuesto</p>
+                                <p class="text-xs text-slate-500 mt-1">Sin deuda fiscal</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center mx-auto"><i class="fas fa-handshake"></i></div>
+                                <p class="mt-3 text-sm font-bold text-navy">Venta</p>
+                                <p class="text-xs text-slate-500 mt-1">Contrato vivo</p>
+                            </div>
+                            <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-center shadow-sm">
+                                <div class="w-11 h-11 rounded-xl bg-white text-emerald-700 flex items-center justify-center mx-auto"><i class="fas fa-file-invoice"></i></div>
+                                <p class="mt-3 text-sm font-bold text-navy">Factura</p>
+                                <p class="text-xs text-slate-500 mt-1">Cronología correcta</p>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl bg-navy p-5 text-white">
+                            <p class="text-xs uppercase tracking-[0.24em] text-cyan-light">Control fiscal</p>
+                            <p class="mt-3 text-sm leading-relaxed text-slate-200">Cronología correcta, anticipos, cuotas, regímenes especiales y trazabilidad del documento desde el primer presupuesto hasta el cobro final.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TRUST BAR ==================== -->
+    <section class="bg-white border-b border-gray-100 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+                <div>
+                    <p class="text-2xl font-extrabold text-navy">Veri*factu</p>
+                    <p class="text-xs text-gray-500 mt-1">Cumplimiento garantizado</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-extrabold text-navy">3 regímenes</p>
+                    <p class="text-xs text-gray-500 mt-1">IPSI, IVA y mixtos nativos</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-extrabold text-navy">Desde 20€</p>
+                    <p class="text-xs text-gray-500 mt-1">Sin permanencia</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-extrabold text-navy">0 errores</p>
+                    <p class="text-xs text-gray-500 mt-1">Cronología fiscal bloqueada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DIFERENCIA ==================== -->
+    <section id="diferencia" class="scroll-mt-28 py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Por qué TrustinFacts</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">No es solo facturar, es dormir tranquilo</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Otras herramientas te permiten cometer errores que cuestan dinero. Nosotros validamos la coherencia de cada operación antes de que sea tarde.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-7 border border-red-100 shadow-sm">
+                    <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-triangle-exclamation text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-3">El riesgo de las apps genéricas</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Te dejan mezclar impuestos, romper la cronología de facturas y tratar anticipos incorrectamente. El resultado: sanciones y caos administrativo en cada trimestre.</p>
+                </div>
+
+                <div class="bg-navy rounded-2xl p-7 border border-blue-corp shadow-xl">
+                    <div class="w-12 h-12 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-halved text-cyan-light text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-3">La seguridad de TrustinFacts</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Un flujo blindado: Presupuesto → Venta → Factura. Trazabilidad completa, control de vendedores y gestión automática de regímenes especiales en cada documento.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-7 border border-green-100 shadow-sm">
+                    <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-link text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-3">Integración Veri*factu</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Preparado para cumplir con Veri*factu: trazabilidad de facturas y envío de información a la AEAT cuando sea obligatorio. No tendrás que migrar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FLUJO REAL ==================== -->
+    <section id="flujo" class="scroll-mt-28 py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Flujo de trabajo</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Un flujo que tiene sentido real</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Adaptado a la realidad de tu negocio. Desde la primera llamada hasta el cobro final, cada paso queda registrado y vinculado.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-10">
+                <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100 flex flex-col">
+                    <div class="w-12 h-12 bg-blue-royal/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-file-lines text-blue-royal text-xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-full bg-navy text-white text-sm font-bold flex items-center justify-center shrink-0">1</span>
+                        <h3 class="font-bold text-navy text-lg">Negocia (Presupuesto)</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1">Crea propuestas profesionales con estados claros. Negocia sin miedo: aquí no se genera deuda ni obligaciones fiscales hasta que el cliente acepte.</p>
+                </div>
+
+                <div class="bg-navy rounded-2xl p-7 border border-blue-corp flex flex-col shadow-xl">
+                    <div class="w-12 h-12 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-handshake text-cyan-light text-xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-full bg-blue-royal text-white text-sm font-bold flex items-center justify-center shrink-0">2</span>
+                        <h3 class="font-bold text-white text-lg">Cierra el trato (Venta)</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed flex-1">Tu contrato activo. Define qué vendes, plazos y régimen fiscal. El sistema bloquea cambios que rompan la coherencia legal y la cronología de facturas.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100 flex flex-col">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-file-invoice text-green-600 text-xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 rounded-full bg-green-600 text-white text-sm font-bold flex items-center justify-center shrink-0">3</span>
+                        <h3 class="font-bold text-navy text-lg">Factura y Cobra</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed flex-1">Emite la factura solo cuando toca: parcial, por hitos o total. Siempre vinculada a la venta original para trazabilidad perfecta ante Hacienda.</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-2xl p-5 flex items-start gap-4">
+                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-lightbulb text-blue-royal text-lg"></i>
+                </div>
+                <div>
+                    <p class="font-semibold text-navy text-sm mb-1">Ventaja clave para obras y servicios largos</p>
+                    <p class="text-gray-500 text-sm">Evita adelantar el pago de impuestos por facturas emitidas antes de tiempo. TrustinFacts valida que la factura solo se emita cuando la obligación fiscal existe realmente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div class="rounded-[2rem] bg-slate-50 border border-slate-200 p-8 shadow-sm">
+                    <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Diseñado para no equivocarte</p>
+                    <h2 class="text-3xl font-extrabold text-navy mb-4">Una interfaz que te guía mientras trabajas</h2>
+                    <p class="text-gray-500">Mantengo aquí la lógica de la landing original: claridad visual, pocas decisiones ambiguas y validaciones antes de que cometas un error fiscal.</p>
+                    <div class="mt-8 space-y-4">
+                        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+                            <p class="font-bold text-navy">Asistente fiscal</p>
+                            <p class="text-sm text-gray-500 mt-2">Te avisa si intentas facturar algo que no cuadra con el régimen del cliente o con la venta original.</p>
+                        </div>
+                        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+                            <p class="font-bold text-navy">Todo en su sitio</p>
+                            <p class="text-sm text-gray-500 mt-2">Presupuesto, venta, factura, stock, gastos e informes dentro de un solo flujo coherente.</p>
+                        </div>
+                        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+                            <p class="font-bold text-navy">Búsqueda instantánea</p>
+                            <p class="text-sm text-gray-500 mt-2">Factura, cliente o presupuesto localizable en segundos, incluso con muchas operaciones activas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-[2rem] bg-gradient-to-br from-navy to-blue-corp p-8 border border-blue-900/40 shadow-2xl">
+                    <p class="text-xs font-bold uppercase tracking-widest text-cyan-light mb-3">Lo que se ha replicado mejor</p>
+                    <h3 class="text-3xl font-extrabold text-white mb-4">La narrativa original de TrustinFacts</h3>
+                    <div class="space-y-4 text-sm text-slate-200 leading-relaxed">
+                        <p>1. No vender “una app de facturas”, sino un sistema que evita errores y ordena el negocio.</p>
+                        <p>2. Hacer visible el flujo Presupuesto → Venta → Factura, que es la base diferencial real.</p>
+                        <p>3. Dar más peso a IPSI/IVA/mixtos y a Veri*factu, porque ahí está la propuesta difícil de copiar.</p>
+                        <p>4. Mantener la entrada comercial en TrustCore, pero sin perder el tono propio del producto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== IPSI / IVA ==================== -->
+    <section id="ipsi" class="scroll-mt-28 py-20" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl mb-6">
+                    <i class="fas fa-map-location-dot text-cyan-light text-2xl"></i>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Expertos en fiscalidad compleja: IPSI y IVA</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Si operas en Ceuta, Melilla o tienes clientes con regímenes mixtos, sabes el dolor de cabeza que supone. TrustinFacts lo gestiona de forma nativa, no como parche.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+                    <div class="w-10 h-10 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-triangle-exclamation text-cyan-light text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Detección automática de conflictos</h4>
+                    <p class="text-gray-300 text-sm">¿Mezclando servicios y productos con distinto tratamiento? El sistema te avisa y te guía para separarlos correctamente en la factura, antes de emitirla.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+                    <div class="w-10 h-10 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-sliders text-cyan-light text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Reglas fiscales por cliente</h4>
+                    <p class="text-gray-300 text-sm">Configura el régimen una vez. El sistema aplica IPSI, IVA o Exento automáticamente en cada documento, sin que tengas que recordarlo en cada operación.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+                    <div class="w-10 h-10 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-receipt text-cyan-light text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Facturas mixtas sin errores</h4>
+                    <p class="text-gray-300 text-sm">Una misma factura puede contener líneas con IPSI y líneas con IVA correctamente separadas y etiquetadas. TrustinFacts lo gestiona automáticamente.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
+                    <div class="w-10 h-10 bg-cyan-light/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-cyan-light text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Control de equipo comercial</h4>
+                    <p class="text-gray-300 text-sm">Mide la eficacia real: presupuestos ganados vs perdidos. Calcula comisiones sobre ventas cerradas y cobradas, no sobre estimaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== INFORMES ==================== -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Informes y datos</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Datos para tomar decisiones, no solo para Hacienda</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Entiende la salud real de tu negocio. ¿Quién vende más? ¿Cuánto vas a cobrar el mes que viene? Toda esa información disponible en segundos.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-royal/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-blue-royal text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Rendimiento comercial</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Métricas reales de tu equipo: presupuestos enviados, ventas cerradas y cobros. Comisiones calculadas sobre operaciones reales, no sobre aire.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-money-bill-trend-up text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Previsión de tesorería</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Anticípate a los pagos de impuestos y gastos. Visualiza tu flujo de caja futuro basado en las ventas vivas y los cobros pendientes.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-file-export text-amber-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Informes para tu gestoría</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Toda la documentación ordenada y lista para tu asesor fiscal. Sin retrabajos, sin correcciones de última hora antes de presentar impuestos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PARA QUIÉN ==================== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">¿Es para ti?</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">TrustinFacts está pensado para negocios reales</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-green-50 rounded-2xl p-7 border border-green-100">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-thumbs-up text-green-600 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-navy text-xl">Te encantará si…</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500 mt-0.5 shrink-0"></i>
+                            Gestionas obras, proyectos largos o servicios recurrentes.
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500 mt-0.5 shrink-0"></i>
+                            Tienes equipo comercial y necesitas medir su rendimiento real.
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500 mt-0.5 shrink-0"></i>
+                            Operas en Ceuta, Melilla o con clientes con distintos regímenes fiscales.
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500 mt-0.5 shrink-0"></i>
+                            Estás cansado de corregir facturas trimestralmente con tu gestor.
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-600">
+                            <i class="fas fa-check text-green-500 mt-0.5 shrink-0"></i>
+                            Quieres cumplir Veri*factu sin cambiar de herramienta en 2026.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-thumbs-down text-gray-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-navy text-xl">Quizás no es para ti si…</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2 text-sm text-gray-500">
+                            <i class="fas fa-times text-gray-400 mt-0.5 shrink-0"></i>
+                            Prefieres gestionar todo el proceso de forma manual.
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-500">
+                            <i class="fas fa-times text-gray-400 mt-0.5 shrink-0"></i>
+                            Buscas la opción más barata del mercado sin importar el soporte.
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-500">
+                            <i class="fas fa-times text-gray-400 mt-0.5 shrink-0"></i>
+                            Prefieres seguir usando Excel aunque te quite tiempo cada trimestre.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VERIFACTU ==================== -->
+    <section class="py-20" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 100%);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white/10 backdrop-blur rounded-3xl p-8 border border-white/10">
+                <div class="flex items-start gap-6 mb-8">
+                    <div class="w-16 h-16 bg-cyan-light/20 rounded-2xl flex items-center justify-center shrink-0">
+                        <i class="fas fa-file-contract text-cyan-light text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-cyan-light">Cumplimiento normativo</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Veri*factu — TrustinFacts ya está adaptado</h2>
+                        <p class="text-gray-300 mt-3 text-sm leading-relaxed">Sistemas de facturación con integridad, conservación, accesibilidad, legibilidad, trazabilidad e inalterabilidad de los registros de facturación, tal y como exige la AEAT.</p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                    <div class="bg-white/10 rounded-2xl p-5 border border-white/10">
+                        <p class="text-white font-bold text-lg mb-1">Enero 2027</p>
+                        <p class="text-gray-300 text-sm">Obligatorio para contribuyentes del Impuesto sobre Sociedades.</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-5 border border-white/10">
+                        <p class="text-white font-bold text-lg mb-1">Julio 2027</p>
+                        <p class="text-gray-300 text-sm">Obligatorio para el resto de obligados tributarios (autónomos y PYMES).</p>
+                    </div>
+                </div>
+
+                <div class="bg-red-900/30 border border-red-500/30 rounded-xl p-4 text-sm text-red-200 mb-6">
+                    <i class="fas fa-exclamation-circle mr-2"></i>
+                    No cumplir puede implicar sanciones de hasta <strong>50.000 €/ejercicio</strong> para usuarios y <strong>150.000 €/ejercicio</strong> por tipo de software para fabricantes.
+                </div>
+
+                <a href="/contacto" class="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-royal text-white font-bold rounded-xl hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-calendar-check"></i>
+                    Solicitar información y demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRICING ==================== -->
+    <section id="precios" class="scroll-mt-28 py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">Precios</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-4">Tres planes para facturar bien</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">El plan Básico cubre el cumplimiento legal con Veri*factu. Estándar y Avanzado añaden inventario, gestión de gastos y preparación para tu gestoría.</p>
+                <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-xs font-semibold">
+                    <i class="fas fa-bolt"></i>
+                    Precio especial de lanzamiento — exclusivo para los primeros clientes
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Básico -->
+                <div class="bg-white rounded-2xl p-7 border border-gray-200 shadow-sm flex flex-col">
+                    <div class="mb-5">
+                        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">Plan Básico</p>
+                        <p class="text-sm text-gray-500">Cumplimiento legal</p>
+                    </div>
+                    <div class="flex items-end gap-1 mb-1">
+                        <span class="text-4xl font-extrabold text-navy">20€</span>
+                        <span class="text-sm text-gray-400 mb-1">/ mes</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6">Facturación ilimitada incluida</p>
+                    <ul class="space-y-2.5 text-sm text-gray-600 flex-1 mb-7">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Facturación ilimitada</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Presupuestos y ventas</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Cumplimiento Veri*factu</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Gestión de clientes</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Cronología fiscal correcta</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> IPSI / IVA / mixtos</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Exportación PDF</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Soporte por email</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times text-gray-300 w-4 shrink-0"></i> <span class="text-gray-400">Inventario y stock</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times text-gray-300 w-4 shrink-0"></i> <span class="text-gray-400">Gestión de gastos</span></li>
+                    </ul>
+                    <a href="/contacto" class="block text-center px-6 py-3 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-colors text-sm">Solicitar demo</a>
+                </div>
+
+                <!-- Estándar (highlighted) -->
+                <div class="bg-navy rounded-2xl p-7 border border-blue-corp shadow-2xl flex flex-col relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-royal text-white text-xs font-bold rounded-full tracking-wide whitespace-nowrap">MÁS COMPLETO</div>
+                    <div class="mb-5">
+                        <p class="text-xs font-bold uppercase tracking-wide text-cyan-light mb-1">Plan Estándar</p>
+                        <p class="text-sm text-gray-300">Gestión completa</p>
+                    </div>
+                    <div class="flex items-end gap-1 mb-1">
+                        <span class="text-4xl font-extrabold text-white">35€</span>
+                        <span class="text-sm text-gray-400 mb-1">/ mes</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6">Todo el Básico más inventario y gastos</p>
+                    <ul class="space-y-2.5 text-sm text-gray-200 flex-1 mb-7">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Todo lo del plan Básico</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Inventario y control de stock</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Gestión de gastos</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Categorización de gastos</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Informes de gastos por período</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Exportación CSV</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light w-4 shrink-0"></i> Soporte prioritario</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times text-gray-500 w-4 shrink-0"></i> <span class="text-gray-400">Modelos fiscales</span></li>
+                    </ul>
+                    <a href="/contacto" class="block text-center px-6 py-3 bg-blue-royal text-white font-bold rounded-xl hover:bg-blue-700 transition-colors text-sm">Solicitar demo</a>
+                </div>
+
+                <!-- Avanzado -->
+                <div class="bg-white rounded-2xl p-7 border border-gray-200 shadow-sm flex flex-col">
+                    <div class="mb-5">
+                        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">Plan Avanzado</p>
+                        <p class="text-sm text-gray-500">Gestión fiscal completa</p>
+                    </div>
+                    <div class="flex items-end gap-1 mb-1">
+                        <span class="text-4xl font-extrabold text-navy">45€</span>
+                        <span class="text-sm text-gray-400 mb-1">/ mes</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6">Preparación completa para tu gestoría</p>
+                    <ul class="space-y-2.5 text-sm text-gray-600 flex-1 mb-7">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Todo lo del plan Estándar</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Modelos fiscales (130, 303, 390…)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Previsión de impuestos trimestral</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Informes listos para gestoría</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Resumen fiscal por período</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Conciliación facturas y gastos</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 w-4 shrink-0"></i> Soporte dedicado</li>
+                    </ul>
+                    <a href="/contacto" class="block text-center px-6 py-3 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-colors text-sm">Solicitar propuesta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-royal mb-3">FAQ</p>
+                <h2 class="text-3xl font-extrabold text-navy">Preguntas frecuentes</h2>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿TrustinFacts sustituye a mi gestoría?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">No, pero facilita enormemente su trabajo. Tu gestor recibirá la información ordenada, trazable y sin errores de base, lo que agiliza las declaraciones y evita rectificaciones costosas.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿Cómo gestiona TrustinFacts el IPSI y el IVA a la vez?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">TrustinFacts permite configurar el régimen fiscal de cada cliente (IPSI, IVA o mixto) y lo aplica automáticamente en cada documento. El sistema detecta y avisa si detecta conflictos antes de que emitas la factura.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿Qué es Veri*factu y por qué me afecta?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">Veri*factu es la normativa de la AEAT que obliga a los sistemas de facturación a garantizar la integridad, trazabilidad e inalterabilidad de los registros. Será obligatorio para sociedades desde enero 2027 y para autónomos desde julio 2027. TrustinFacts ya cumple todos los requisitos.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿Puedo facturar por hitos o de forma parcial?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">Sí. TrustinFacts permite emitir facturas parciales, por hitos o totales, siempre vinculadas a la venta original. Esto es especialmente útil para obras, proyectos largos o servicios con pagos escalonados.</p>
+                </details>
+                <details class="group bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-navy list-none">
+                        ¿Qué diferencia hay entre TrustinFacts y otras apps de facturación?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-3"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">La mayoría de apps solo generan PDFs. TrustinFacts valida la fiscalidad antes de emitir, bloquea cronologías incorrectas, gestiona IPSI/IVA/mixtos de forma nativa y está preparado para Veri*factu. No es una app de facturas, es un sistema de gestión comercial que también factura correctamente.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="py-24 text-center" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 100%);">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">¿Listo para facturar sin sustos con Hacienda?</h2>
+            <p class="text-gray-300 text-lg mb-10">Agenda una demo gratuita y te mostramos cómo TrustinFacts se adapta a tu flujo de trabajo real en 20 minutos.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contacto" class="inline-flex items-center gap-3 px-10 py-4 bg-white text-navy font-bold text-lg rounded-xl hover:bg-gray-100 transition-colors shadow-xl shadow-black/20">
+                    <i class="fas fa-calendar-check"></i>
+                    Solicitar demo gratuita
+                </a>
+                <a href="/productos/trustintime.html" class="inline-flex items-center gap-3 px-10 py-4 border border-white/20 text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-colors">
+                    <i class="fas fa-clock"></i>
+                    Ver TrustinTime
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#020A2A] border-t border-blue-900/40 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-8 md:grid-cols-[1.1fr_auto_0.9fr] items-center">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="../assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed max-w-md">
+                        Facturación VeriFactu y control horario con cumplimiento real y menos carga operativa.
+                    </p>
+                </div>
+
+                <div class="w-full md:w-auto md:justify-self-center min-w-[280px] max-w-[360px]">
+                    <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+                        <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-[15px] font-medium text-slate-800 hover:bg-[#F9FFFC] transition-colors">
+                            Reseñanos en
+                            <i class="fas fa-star text-[#00B67A]"></i>
+                            <span class="font-semibold text-slate-900">Trustpilot</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-left md:text-right">
+                    <a href="/" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Home</a>
+                    <a href="/productos/trustintime.html" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">TrustinTime</a>
+                    <a href="/productos/trustinfacts.html" class="block text-white font-semibold text-sm transition-colors mb-2">TrustinFacts</a>
+                    <a href="/#precios" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Precios</a>
+                    <a href="/article" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Artículos</a>
+                    <a href="/comparativa" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Comparativa</a>
+                    <a href="/contacto" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Contacto</a>
+                    <a href="https://www.trustcore.es/" class="text-slate-300 hover:text-white text-sm transition-colors">www.trustcore.es</a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-white/10 text-xs text-slate-400 text-center md:text-left">
+                &copy; 2026 TrustCore S.L. — Todos los derechos reservados.
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 text-center">
+                <p class="text-xs uppercase tracking-widest text-slate-500 mb-4">Acelerado por</p>
+                <img src="/COF_Logo.png" alt="COF" style="max-width:480px;width:100%;height:auto;display:inline-block;filter:brightness(0) invert(1);">
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('shadow-md', window.scrollY > 10);
+        });
+    </script>
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <script src="/assets/lang-switcher.js"></script>
+</body>
+</html>
