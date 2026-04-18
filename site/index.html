@@ -299,43 +299,74 @@
                     </div>
                 </div>
 
-                <!-- Hero Showcase -->
+                <!-- Hero Dashboard — CSS puro, sin imágenes -->
                 <div class="relative" data-reveal>
-                    <div class="tc-showcase">
-                        <div class="tc-showcase__window bg-gradient-to-br from-slate-900 to-navy">
-                            <img src="/assets/trustintime-app-screenshot.jpeg"
-                                 alt="Dashboard TrustCore en acción — control horario y facturación VeriFactu"
-                                 loading="eager" fetchpriority="high">
+                    <div class="rounded-2xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,.45)] border border-white/10" style="background:linear-gradient(155deg,#0d1b45 0%,#060e29 100%);">
+                        <!-- Window chrome -->
+                        <div class="flex items-center gap-1.5 px-4 py-3 border-b border-white/8" style="border-color:rgba(255,255,255,.08)">
+                            <span class="w-3 h-3 rounded-full" style="background:#FF5F57"></span>
+                            <span class="w-3 h-3 rounded-full" style="background:#FFBD2E"></span>
+                            <span class="w-3 h-3 rounded-full" style="background:#28CA41"></span>
+                            <span class="ml-3 text-[11px] font-mono" style="color:rgba(255,255,255,.3)">app.trustcore.es · dashboard</span>
                         </div>
-                    </div>
-                    <!-- Floating VeriFactu panel -->
-                    <div class="hidden md:block absolute -left-6 top-10 w-[270px] rounded-2xl bg-white/95 backdrop-blur border border-white/40 shadow-2xl p-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="flex items-center gap-2">
-                                <span class="w-9 h-9 rounded-lg bg-green-100 grid place-items-center"><i class="fas fa-file-invoice text-green-600"></i></span>
-                                <div>
-                                    <p class="text-navy font-bold text-sm leading-tight">VeriFactu</p>
-                                    <p class="text-slate-500 text-[11px]">Hacienda · en directo</p>
+                        <!-- Dashboard content -->
+                        <div class="p-5 space-y-3">
+                            <!-- VeriFactu row -->
+                            <div class="flex items-center justify-between rounded-xl p-4" style="background:rgba(255,255,255,.05);">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-10 h-10 rounded-xl grid place-items-center" style="background:rgba(34,197,94,.15);">
+                                        <i class="fas fa-file-invoice" style="color:#4ade80"></i>
+                                    </span>
+                                    <div>
+                                        <p class="text-white text-sm font-bold leading-tight">VeriFactu · Hacienda</p>
+                                        <p class="text-[11px]" style="color:rgba(255,255,255,.4)">Factura #247 remitida · 3 min</p>
+                                    </div>
+                                </div>
+                                <span class="flex items-center gap-1.5 text-xs font-bold" style="color:#4ade80;">
+                                    <span class="w-2 h-2 rounded-full animate-pulse" style="background:#4ade80;"></span>Conectado
+                                </span>
+                            </div>
+                            <!-- Control Horario row -->
+                            <div class="flex items-center justify-between rounded-xl p-4" style="background:rgba(255,255,255,.05);">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-10 h-10 rounded-xl grid place-items-center" style="background:rgba(32,113,213,.2);">
+                                        <i class="fas fa-users" style="color:#60a5fa"></i>
+                                    </span>
+                                    <div>
+                                        <p class="text-white text-sm font-bold leading-tight">Control Horario</p>
+                                        <p class="text-[11px]" style="color:rgba(255,255,255,.4)">RDL 8/2019 · 4 años conservación</p>
+                                    </div>
+                                </div>
+                                <span class="font-extrabold text-xl" style="color:#53CDFE;" id="hero-emp-count">12</span>
+                            </div>
+                            <!-- IPSI row -->
+                            <div class="flex items-center justify-between rounded-xl p-4 border" style="background:rgba(212,162,61,.08);border-color:rgba(212,162,61,.2);">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-10 h-10 rounded-xl grid place-items-center" style="background:rgba(212,162,61,.18);">
+                                        <i class="fas fa-percent" style="color:#D4A23D"></i>
+                                    </span>
+                                    <div>
+                                        <p class="text-white text-sm font-bold leading-tight">IPSI Ceuta · 0,5%</p>
+                                        <p class="text-[11px]" style="color:rgba(255,255,255,.4)">Único software con IPSI nativo</p>
+                                    </div>
+                                </div>
+                                <span class="px-2 py-1 rounded-full text-[10px] font-bold" style="background:rgba(212,162,61,.2);color:#D4A23D;">EXCLUSIVO</span>
+                            </div>
+                            <!-- Stats row -->
+                            <div class="grid grid-cols-3 gap-2 pt-1">
+                                <div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,.05);">
+                                    <p class="text-white font-extrabold text-xl">0</p>
+                                    <p class="text-[10px]" style="color:rgba(255,255,255,.4)">Sanciones</p>
+                                </div>
+                                <div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,.05);">
+                                    <p class="font-extrabold text-xl" style="color:#53CDFE;" id="hero-inv-count">247</p>
+                                    <p class="text-[10px]" style="color:rgba(255,255,255,.4)">Facturas</p>
+                                </div>
+                                <div class="rounded-xl p-3 text-center" style="background:rgba(255,255,255,.05);">
+                                    <p class="font-extrabold text-xl" style="color:#4ade80;">100%</p>
+                                    <p class="text-[10px]" style="color:rgba(255,255,255,.4)">Compliance</p>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-green-50 border border-green-200 rounded-full">
-                                <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                                <span class="text-green-700 text-[10px] font-bold">Conectado</span>
-                            </span>
-                        </div>
-                        <p class="text-xs text-slate-600">Factura #247 firmada y remitida hace 3 min</p>
-                    </div>
-                    <!-- Floating Control Horario panel -->
-                    <div class="hidden md:block absolute -right-4 -bottom-6 w-[240px] rounded-2xl bg-white/95 backdrop-blur border border-white/40 shadow-2xl p-4">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="w-9 h-9 rounded-lg bg-blue-100 grid place-items-center"><i class="fas fa-users-cog text-blue-royal"></i></span>
-                                <div>
-                                    <p class="text-navy font-bold text-sm leading-tight">Control horario</p>
-                                    <p class="text-slate-500 text-[11px]">Fichajes en vivo</p>
-                                </div>
-                            </div>
-                            <span class="text-blue-royal font-extrabold text-lg">12</span>
                         </div>
                     </div>
                 </div>
@@ -500,61 +531,44 @@
         </div>
     </section>
 
-    <!-- ==================== PRICING TEASER ==================== -->
-    <section id="precios" class="tc-section bg-slate-50 scroll-mt-24">
+    <!-- ==================== PRICING ANCHOR ==================== -->
+    <section id="precios" class="tc-section scroll-mt-24" style="background:var(--tc-surface-alt)">
         <div class="tc-container">
-            <div class="max-w-2xl mx-auto text-center mb-12" data-reveal>
-                <span class="tc-eyebrow">Planes y precios</span>
-                <h2 class="tc-display tc-display-lg mt-4 mb-4">Transparencia. Sin letra pequeña.</h2>
-                <p class="text-slate-600 text-lg">
-                    Contrata solo lo que necesitas hoy. Escala a la suite completa cuando el negocio lo pida.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <div class="tc-pricing" data-reveal>
-                    <p class="tc-pricing__name">Control Horario Lite</p>
-                    <p class="tc-pricing__price">2 € <small>/usuario/mes</small></p>
-                    <ul class="tc-pricing__features">
-                        <li>Fichaje geoposicionado</li>
-                        <li>Registro de jornada legal</li>
-                        <li>Exportación mensual</li>
-                        <li>Soporte por email</li>
-                    </ul>
-                    <a href="/plan-lite-cumplimiento-basico-empresa" class="tc-btn tc-btn-secondary mt-auto" data-track="pricing_lite">Ver detalle</a>
+            <div class="max-w-4xl mx-auto" data-reveal>
+                <div class="text-center mb-10">
+                    <span class="tc-eyebrow">Planes y precios</span>
+                    <h2 class="tc-display tc-display-lg mt-4 mb-3">Sin letra pequeña. Sin sorpresas.</h2>
+                    <p class="text-slate-600 text-lg">Desde 2 €/usuario/mes. Cancela cuando quieras.</p>
                 </div>
 
-                <div class="tc-pricing tc-pricing--featured" data-reveal>
-                    <p class="tc-pricing__name">RRHH completo</p>
-                    <p class="tc-pricing__price">Desde 6,99 € <small>/empleado/mes</small></p>
-                    <ul class="tc-pricing__features">
-                        <li>Todo lo anterior</li>
-                        <li>Vacaciones, turnos y festivos CCAA</li>
-                        <li>Portal del empleado + app móvil</li>
-                        <li>Asistente IA incluido</li>
-                        <li>Dashboards en tiempo real</li>
-                    </ul>
-                    <button type="button" data-calendar-open data-track="pricing_rrhh" class="tc-btn tc-btn-primary mt-auto">Agendar demo</button>
+                <!-- Price anchors strip -->
+                <div class="grid sm:grid-cols-3 gap-4 mb-8">
+                    <div class="rounded-2xl bg-white border p-5 text-center" style="border-color:#e8edf5;">
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Control Horario Lite</p>
+                        <p class="text-3xl font-extrabold" style="color:var(--tc-navy)">2 €</p>
+                        <p class="text-sm text-slate-500">/usuario/mes</p>
+                    </div>
+                    <div class="rounded-2xl border p-5 text-center relative" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%);border-color:transparent;">
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-bold uppercase" style="background:var(--tc-gold);color:#fff;">Más popular</span>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-300 mb-2">RRHH Profesional</p>
+                        <p class="text-3xl font-extrabold text-white">6,99 €</p>
+                        <p class="text-sm text-slate-300">/usuario/mes</p>
+                    </div>
+                    <div class="rounded-2xl bg-white border p-5 text-center" style="border-color:#e8edf5;">
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Suite TrustCore</p>
+                        <p class="text-3xl font-extrabold" style="color:var(--tc-navy)">A medida</p>
+                        <p class="text-sm text-slate-500">VeriFactu + RRHH + IA</p>
+                    </div>
                 </div>
 
-                <div class="tc-pricing" data-reveal>
-                    <p class="tc-pricing__name">Suite TrustCore</p>
-                    <p class="tc-pricing__price">A medida</p>
-                    <ul class="tc-pricing__features">
-                        <li>VeriFactu + Control horario</li>
-                        <li>IPSI Ceuta/Melilla nativo</li>
-                        <li>Asistente IA sin límites</li>
-                        <li>Onboarding guiado</li>
-                        <li>Soporte prioritario</li>
-                    </ul>
-                    <a href="/contacto" class="tc-btn tc-btn-secondary mt-auto" data-track="pricing_suite">Pedir propuesta</a>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a href="/precios" class="tc-btn tc-btn-primary !px-8 !py-3.5" data-track="home_pricing_cta">
+                        <i class="fas fa-tag"></i> Ver todos los planes detallados
+                    </a>
+                    <a href="/comparativa" class="tc-btn !px-8 !py-3.5 border border-slate-200 text-slate-700 hover:bg-slate-50" data-track="home_compare_cta">
+                        Comparar con Holded y Quipu
+                    </a>
                 </div>
-            </div>
-
-            <div class="text-center mt-10">
-                <a href="/comparativa" class="inline-flex items-center gap-2 text-blue-royal font-semibold hover:gap-3 transition-all" data-track="pricing_compare">
-                    Ver comparativa completa con Holded, Quipu y Sesame <i class="fas fa-arrow-right text-xs"></i>
-                </a>
             </div>
         </div>
     </section>
