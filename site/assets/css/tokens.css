@@ -1,0 +1,104 @@
+/* =========================================================================
+ * TrustCore Design Tokens
+ * Fuente de verdad para colores, spacing, tipografía, radios y sombras.
+ * Consumido por components.css y referenciado desde Tailwind config.
+ * ========================================================================= */
+
+:root {
+  /* ---- Brand colors ---- */
+  --tc-navy:          #040F3F;
+  --tc-navy-deep:     #020A2A;
+  --tc-blue-corp:     #0B2572;
+  --tc-blue-royal:    #2071D5;
+  --tc-blue-soft:     #E8F0FE;
+  --tc-cyan-light:    #53CDFE;
+  --tc-cyan-glow:     #B3E8FF;
+
+  /* ---- Semantic colors ---- */
+  --tc-success:       #0FA06F;
+  --tc-warning:       #F59E0B;
+  --tc-danger:        #DC2626;
+  --tc-info:          var(--tc-blue-royal);
+
+  /* ---- Gold / award accent ---- */
+  --tc-gold:          #D4A23D;
+  --tc-gold-soft:     #FBE9B7;
+  --tc-gold-deep:     #8A6215;
+
+  /* ---- Neutrals ---- */
+  --tc-ink:           #0F172A;
+  --tc-ink-mute:      #334155;
+  --tc-slate:         #64748B;
+  --tc-slate-soft:    #94A3B8;
+  --tc-line:          #E2E8F0;
+  --tc-line-soft:     #F1F5F9;
+  --tc-surface:       #FFFFFF;
+  --tc-surface-alt:   #F8FAFC;
+
+  /* ---- Typography ---- */
+  --tc-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --tc-font-display: 'Inter', system-ui, sans-serif;
+
+  /* Fluid type scale (clamp min / preferred / max) */
+  --tc-text-xs:   clamp(0.75rem,  0.72rem + 0.12vw, 0.8rem);
+  --tc-text-sm:   clamp(0.875rem, 0.84rem + 0.15vw, 0.925rem);
+  --tc-text-base: clamp(1rem,     0.97rem + 0.2vw,  1.0625rem);
+  --tc-text-lg:   clamp(1.125rem, 1.07rem + 0.3vw,  1.25rem);
+  --tc-text-xl:   clamp(1.25rem,  1.15rem + 0.5vw,  1.5rem);
+  --tc-text-2xl:  clamp(1.5rem,   1.3rem + 1vw,     2rem);
+  --tc-text-3xl:  clamp(1.875rem, 1.5rem + 1.8vw,  2.75rem);
+  --tc-text-4xl:  clamp(2.25rem,  1.7rem + 2.8vw,  3.75rem);
+  --tc-text-5xl:  clamp(2.75rem,  2rem + 4vw,      4.75rem);
+
+  /* ---- Spacing (8pt base) ---- */
+  --tc-space-1:   0.25rem;
+  --tc-space-2:   0.5rem;
+  --tc-space-3:   0.75rem;
+  --tc-space-4:   1rem;
+  --tc-space-6:   1.5rem;
+  --tc-space-8:   2rem;
+  --tc-space-12:  3rem;
+  --tc-space-16:  4rem;
+  --tc-space-24:  6rem;
+  --tc-space-32:  8rem;
+
+  /* ---- Radii ---- */
+  --tc-radius-sm:  0.375rem;
+  --tc-radius-md:  0.625rem;
+  --tc-radius-lg:  1rem;
+  --tc-radius-xl:  1.25rem;
+  --tc-radius-2xl: 1.75rem;
+  --tc-radius-pill: 9999px;
+
+  /* ---- Shadows (soft, premium-feel) ---- */
+  --tc-shadow-xs:  0 1px 2px rgba(4, 15, 63, 0.06);
+  --tc-shadow-sm:  0 2px 6px rgba(4, 15, 63, 0.06), 0 1px 2px rgba(4, 15, 63, 0.04);
+  --tc-shadow-md:  0 8px 24px -6px rgba(4, 15, 63, 0.12), 0 2px 6px rgba(4, 15, 63, 0.05);
+  --tc-shadow-lg:  0 24px 48px -12px rgba(4, 15, 63, 0.18), 0 4px 12px rgba(4, 15, 63, 0.06);
+  --tc-shadow-xl:  0 40px 80px -20px rgba(4, 15, 63, 0.28), 0 8px 24px rgba(4, 15, 63, 0.08);
+  --tc-shadow-glow: 0 0 0 6px rgba(32, 113, 213, 0.15);
+  --tc-shadow-gold: 0 0 0 4px rgba(212, 162, 61, 0.18);
+
+  /* ---- Transitions ---- */
+  --tc-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --tc-ease-spring: cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  --tc-duration-fast:   150ms;
+  --tc-duration-base:   220ms;
+  --tc-duration-slow:   400ms;
+
+  /* ---- Layout ---- */
+  --tc-container-max: 1280px;
+  --tc-container-pad: clamp(1rem, 3vw, 2rem);
+  --tc-header-height: 80px;
+  --tc-section-pad-y: clamp(3rem, 6vw, 6rem);
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
