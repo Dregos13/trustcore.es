@@ -59,7 +59,8 @@
   <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -401,7 +402,7 @@
       <div class="grid md:grid-cols-4 gap-10">
         <div class="md:col-span-1">
           <a href="/" class="flex items-center gap-2 mb-4">
-            <img src="assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto">
+            <img src="assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto" loading="lazy">
             <span class="text-white font-extrabold text-lg">TrustCore</span>
           </a>
           <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
@@ -443,7 +444,7 @@
           </div>
           <div class="mt-6 pt-6 border-t border-white/10 text-center">
             <p class="text-xs uppercase tracking-widest opacity-40 mb-3">Acelerado por</p>
-            <img src="/COF_Logo.png" alt="COF" style="max-width:200px;width:100%;height:auto;filter:brightness(0) invert(1);opacity:0.6">
+            <img src="/COF_Logo.png" alt="COF" style="max-width:200px;width:100%;height:auto;filter:brightness(0) invert(1);opacity:0.6" loading="lazy">
           </div>
         </div>
       </div>

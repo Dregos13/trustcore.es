@@ -33,11 +33,41 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Es TrustCore más barato que Holded?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. TrustCore ofrece control horario desde 2 €/usuario/mes y facturación desde 9,99 €/mes, frente a los 10 €/usuario de Holded para RRHH. Para una pyme de 10 empleados, TrustCore cuesta ~30 € menos al mes con más funcionalidades de cumplimiento." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué software tiene soporte IPSI para Ceuta y Melilla?",
+        "acceptedAnswer": { "@type": "Answer", "text": "TrustCore es el único software del mercado con soporte IPSI (0,5 %) integrado de forma nativa. Holded, Quipu y Sesame no soportan IPSI sin configuración manual, lo que genera errores en facturas para empresas de Ceuta y Melilla." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puede Quipu gestionar el control horario?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Quipu es un software de facturación y contabilidad pero no incluye control horario. Para cumplir el RDL 8/2019 necesitas una herramienta separada o usar TrustCore, que integra ambas funciones." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta Sesame HR por empleado?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sesame HR cobra 6 €/usuario/mes con un mínimo de 15 usuarios (90 €/mes mínimo), subiendo a 6,75 € en plan medio y 9 € en avanzado. TrustinTime ofrece control horario desde 2 €/usuario/mes sin mínimo de usuarios." }
+      }
+    ]
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -374,7 +404,7 @@
       <div class="grid md:grid-cols-4 gap-10">
         <div class="md:col-span-1">
           <a href="/" class="flex items-center gap-2 mb-4">
-            <img src="assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto">
+            <img src="assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto" loading="lazy">
             <span class="text-white font-extrabold text-lg">TrustCore</span>
           </a>
           <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
@@ -416,7 +446,7 @@
           </div>
           <div class="mt-6 pt-6 border-t border-white/10 text-center">
             <p class="text-xs uppercase tracking-widest opacity-40 mb-3">Acelerado por</p>
-            <img src="/COF_Logo.png" alt="COF" style="max-width:200px;width:100%;height:auto;filter:brightness(0) invert(1);opacity:0.6">
+            <img src="/COF_Logo.png" alt="COF" style="max-width:200px;width:100%;height:auto;filter:brightness(0) invert(1);opacity:0.6" loading="lazy">
           </div>
         </div>
       </div>
