@@ -419,3 +419,51 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* =====================================================================
+ * ACCESSIBILITY — WCAG AA
+ * ===================================================================== */
+
+/* Focus ring — visible on keyboard nav, invisible on mouse click */
+:focus-visible {
+  outline: 2px solid var(--tc-blue-royal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Remove default outline where :focus-visible is supported */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Skip-to-content — sr-only until focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: var(--tc-navy);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.skip-link:focus {
+  left: 1rem;
+  outline: 2px solid var(--tc-blue-royal);
+}
+
+/* Reduced motion — respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .tc-marquee__track {
+    animation: none;
+  }
+}

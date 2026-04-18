@@ -74,6 +74,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
     <style>
+        :focus-visible { outline: 2px solid #2071D5; outline-offset: 3px; border-radius: 4px; }
+        :focus:not(:focus-visible) { outline: none; }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
         .contact-form-card {
             background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
         }
@@ -219,6 +223,7 @@
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148252702.js"></script>
 </head>
 <body class="font-sans text-gray-800 antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRFRSKZL"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -273,7 +278,7 @@
                         Ver precios
                     </a>
                 </nav>
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Abrir menú">
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
@@ -522,7 +527,10 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
             mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
+            mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
             const icon = mobileMenuBtn.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
