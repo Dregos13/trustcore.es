@@ -30,6 +30,24 @@
     <meta name="twitter:description" content="Contacta con TrustCore S.L. para facturación VeriFactu y control horario.">
     <meta name="twitter:image" content="https://www.trustcore.es/assets/og-image.png">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contacto — TrustCore",
+      "url": "https://www.trustcore.es/contacto",
+      "description": "Agenda una demo gratuita o escríbenos. TrustCore ofrece facturación VeriFactu y control horario para pymes y autónomos en España.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "TrustCore S.L.",
+        "url": "https://www.trustcore.es",
+        "email": "rami@trustcore.es",
+        "address": { "@type": "PostalAddress", "addressLocality": "Ceuta", "addressCountry": "ES" },
+        "award": ["#1 CeutaTech Summit 2026", "Pase de Oro Alhambra Venture 2026"]
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -222,11 +240,11 @@
                         </button>
                         <div class="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0">
                             <div class="w-80 rounded-2xl border border-gray-200 bg-white p-3 shadow-2xl shadow-slate-900/10">
-                                <a href="/productos/trustintime.html" class="block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors">
+                                <a href="/productos/trustintime" class="block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors">
                                     <span class="block text-sm font-bold text-navy">TrustinTime</span>
                                     <span class="block text-xs text-gray-500 mt-1">Control horario y RRHH dentro de TrustCore.</span>
                                 </a>
-                                <a href="/productos/trustinfacts.html" class="mt-1 block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors">
+                                <a href="/productos/trustinfacts" class="mt-1 block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors">
                                     <span class="block text-sm font-bold text-navy">TrustinFacts</span>
                                     <span class="block text-xs text-gray-500 mt-1">Facturación VeriFactu, stock y trazabilidad.</span>
                                 </a>
@@ -240,7 +258,7 @@
                     <a href="/#precios" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Precios</a>
                     <a href="/comparativa" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Comparativa</a>
                     <a href="/quienes-somos" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Nosotros</a>
-                    <a href="/article" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Artículos</a>
+                    <a href="/blog" class="text-sm font-medium text-gray-600 hover:text-navy transition-colors">Blog</a>
                     <a href="/contacto" class="text-sm font-semibold text-navy border-b-2 border-blue-royal pb-0.5 transition-colors">Contacto</a>
                     <label class="inline-flex items-center gap-2 pl-2 border-l border-gray-200 text-xs font-semibold uppercase tracking-wide text-gray-500">
                         <span data-lang-label>Idioma</span>
@@ -264,13 +282,13 @@
                 <a href="/" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Home</a>
                 <div class="py-2">
                     <p class="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">Productos</p>
-                    <a href="/productos/trustintime.html" class="block text-sm font-medium text-gray-600 hover:text-navy py-1.5">TrustinTime</a>
-                    <a href="/productos/trustinfacts.html" class="block text-sm font-medium text-gray-600 hover:text-navy py-1.5">TrustinFacts</a>
+                    <a href="/productos/trustintime" class="block text-sm font-medium text-gray-600 hover:text-navy py-1.5">TrustinTime</a>
+                    <a href="/productos/trustinfacts" class="block text-sm font-medium text-gray-600 hover:text-navy py-1.5">TrustinFacts</a>
                 </div>
                 <a href="/#precios" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Precios</a>
                 <a href="/comparativa" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Comparativa</a>
                 <a href="/quienes-somos" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Nosotros</a>
-                <a href="/article" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Artículos</a>
+                <a href="/blog" class="block text-sm font-medium text-gray-600 hover:text-navy py-2">Blog</a>
                 <a href="/contacto" class="block text-sm font-semibold text-navy py-2">Contacto</a>
                 <label class="flex items-center justify-between gap-3 py-2">
                     <span data-lang-label class="text-xs font-semibold uppercase tracking-wide text-gray-500">Idioma</span>
@@ -293,9 +311,14 @@
         <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 100%);">
             <div class="absolute inset-0 opacity-[0.08]" style="background-image: radial-gradient(circle at 20% 20%, #53CDFE 0, transparent 35%), radial-gradient(circle at 80% 80%, #2071D5 0, transparent 30%);"></div>
             <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-white">
-                <p class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-light/20 border border-cyan-light/30 rounded-full text-xs font-semibold tracking-wider uppercase">
-                    <i class="fas fa-headset"></i> Contacto
-                </p>
+                <div class="flex flex-wrap items-center gap-3">
+                    <p class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-light/20 border border-cyan-light/30 rounded-full text-xs font-semibold tracking-wider uppercase">
+                        <i class="fas fa-headset"></i> Contacto
+                    </p>
+                    <a href="https://ceuta.digital/ceutatech-summit-2026/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider" style="background:rgba(255,183,0,0.18);border:1px solid rgba(255,183,0,0.45);color:#FFB700;">
+                        <i class="fas fa-trophy"></i> #1 CeutaTech Summit 2026
+                    </a>
+                </div>
                 <h1 class="mt-5 text-3xl md:text-5xl font-extrabold leading-tight">Hablemos de tu empresa</h1>
                 <p class="mt-5 text-lg text-gray-200 max-w-3xl">Agenda una demo gratuita, escríbenos directamente o consulta nuestros datos. Estamos aquí para ayudarte a cumplir la normativa sin complicaciones.</p>
             </div>
@@ -352,7 +375,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-navy mt-10 mb-4">Productos dentro de TrustCore</h3>
                     <div class="space-y-3">
-                        <a href="/productos/trustintime.html" class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50/50 transition-colors group">
+                        <a href="/productos/trustintime" class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50/50 transition-colors group">
                             <div class="flex items-center gap-3">
                                 <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-white border border-gray-100">
                                     <img src="assets/trustintime-logo.png" alt="TrustinTime" class="h-8 w-8 object-contain">
@@ -364,7 +387,7 @@
                             </div>
                             <i class="fas fa-arrow-right text-gray-300 group-hover:text-blue-royal transition-colors"></i>
                         </a>
-                        <a href="/productos/trustinfacts.html" class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50/50 transition-colors group">
+                        <a href="/productos/trustinfacts" class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50/50 transition-colors group">
                             <div class="flex items-center gap-3">
                                 <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-white border border-gray-100">
                                     <img src="assets/trustinfacts-logo.png" alt="TrustinFacts" class="h-8 w-8 object-contain">
@@ -389,7 +412,7 @@
                         <p class="text-gray-300 leading-relaxed mb-8">
                             30 minutos para ver en directo cómo TrustCore automatiza tu facturación y fichajes. Sin compromiso, sin presión.
                         </p>
-                        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Ow7HzstHH5pm8DcEiS39JHxT7YvijSbM2Hj_nvTOuebcpR1fXVL8Yrecyp4xJ4i8SfZogboFA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-navy font-bold text-base rounded-xl hover:bg-gray-100 transition-colors duration-200 shadow-xl shadow-black/20 w-full justify-center">
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Ow7HzstHH5pm8DcEiS39JHxT7YvijSbM2Hj_nvTOuebcpR1fXVL8Yrecyp4xJ4i8SfZogboFA" target="_blank" rel="noopener noreferrer" data-track="cta_click" data-cta-label="reservar_demo_contacto" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-navy font-bold text-base rounded-xl hover:bg-gray-100 transition-colors duration-200 shadow-xl shadow-black/20 w-full justify-center">
                             <i class="fas fa-calendar-check"></i>
                             Reservar demo
                         </a>
@@ -473,10 +496,10 @@
 
                 <div class="text-left md:text-right">
                     <a href="/" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Home</a>
-                    <a href="/productos/trustintime.html" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">TrustinTime</a>
-                    <a href="/productos/trustinfacts.html" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">TrustinFacts</a>
+                    <a href="/productos/trustintime" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">TrustinTime</a>
+                    <a href="/productos/trustinfacts" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">TrustinFacts</a>
                     <a href="/#precios" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Precios</a>
-                    <a href="/article" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Artículos</a>
+                    <a href="/blog" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Blog</a>
                     <a href="/comparativa" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Comparativa</a>
                     <a href="/contacto" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Contacto</a>
                     <a href="https://www.trustcore.es/" class="text-slate-300 hover:text-white text-sm transition-colors">www.trustcore.es</a>
