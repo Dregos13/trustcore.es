@@ -92,6 +92,21 @@
     btn.addEventListener('click', openCalendar);
   });
 
+  // ---------- Active nav highlight (auto-detects current page) ----------
+  (function () {
+    var path = window.location.pathname.replace(/\/+$/, '') || '/';
+    document.querySelectorAll('.tc-nav-link').forEach(function (a) {
+      var href = (a.getAttribute('href') || '').replace(/\/+$/, '') || '/';
+      var isActive = href !== '/' && path === href;
+      if (isActive) {
+        a.style.color = 'var(--tc-navy)';
+        a.style.fontWeight = '700';
+        a.style.borderBottom = '2px solid var(--tc-blue-royal)';
+        a.style.paddingBottom = '2px';
+      }
+    });
+  })();
+
   // ---------- GTM tracking for primary CTAs ----------
   document.querySelectorAll('[data-track]').forEach(function (el) {
     el.addEventListener('click', function () {
