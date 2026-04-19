@@ -46,7 +46,7 @@
   <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}}</script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148252702.js"></script>
 
   <style>
@@ -270,7 +270,19 @@
                 <p class="text-slate-500 text-sm mt-1 leading-relaxed">Te respondemos en menos de 24h laborables con el producto y el siguiente paso que más sentido tenga para tu empresa.</p>
               </div>
             </div>
-            <div id="hs-form-wrapper" style="min-height:540px;"></div>
+            <div id="hs-form-wrapper" style="min-height:540px;">
+              <!-- Fallback visible while/if HubSpot loads -->
+              <div id="hs-fallback" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:540px;text-align:center;gap:1rem;">
+                <div style="width:56px;height:56px;border-radius:50%;background:rgba(32,113,213,.08);display:grid;place-items:center;">
+                  <i class="fas fa-envelope-open-text" style="color:var(--tc-blue-royal);font-size:1.5rem;"></i>
+                </div>
+                <p style="font-weight:700;color:var(--tc-navy);font-size:1rem;">Cargando formulario…</p>
+                <p style="color:#64748b;font-size:.875rem;max-width:280px;line-height:1.5;">Si no carga, escríbenos directamente a<br><a href="mailto:rami@trustcore.es" style="color:var(--tc-blue-royal);font-weight:700;">rami@trustcore.es</a></p>
+                <a href="https://calendly.com/rami-trustcore" target="_blank" rel="noopener" class="tc-btn tc-btn-secondary" style="margin-top:.5rem;">
+                  <i class="fas fa-calendar-check"></i> O agenda demo
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -282,49 +294,77 @@
   <!-- FOOTER -->
   <footer style="background:var(--tc-navy-deep);color:rgba(255,255,255,0.6)" class="py-16">
     <div class="tc-container">
-      <div class="grid gap-8 md:grid-cols-[1.2fr_auto_0.8fr] items-start">
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <img src="assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto" loading="lazy">
-            <span class="font-extrabold text-xl text-white">TrustCore</span>
-          </div>
-          <p class="text-sm leading-relaxed max-w-xs">Facturación VeriFactu e IPSI y control horario RDL 8/2019. Cumplimiento real para pymes y autónomos.</p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style="background:rgba(212,162,61,.15);border:1px solid rgba(212,162,61,.3);color:#D4A23D;"><i class="fas fa-trophy"></i> #1 CeutaTech 2026</span>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style="background:rgba(83,205,254,.1);border:1px solid rgba(83,205,254,.2);color:#53CDFE;"><i class="fas fa-medal"></i> Alhambra Venture 2026</span>
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-1">
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto" loading="lazy">
+            <span class="text-white font-extrabold text-lg">TrustCore</span>
+          </a>
+          <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
+              <i class="fas fa-trophy"></i> Alhambra Venture 2026
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
+              <i class="fas fa-award"></i> #1 CeutaTech 2026
+            </span>
           </div>
         </div>
-        <nav aria-label="Footer">
-          <p class="text-xs font-bold uppercase tracking-widest text-white mb-4">Páginas</p>
-          <div class="space-y-2 text-sm">
-            <a href="/" class="block hover:text-white transition-colors">Home</a>
-            <a href="/productos/trustintime" class="block hover:text-white transition-colors">TrustinTime</a>
-            <a href="/productos/trustinfacts" class="block hover:text-white transition-colors">TrustinFacts</a>
-            <a href="/precios" class="block hover:text-white transition-colors">Precios</a>
-            <a href="/comparativa" class="block hover:text-white transition-colors">Comparativa</a>
-            <a href="/quienes-somos" class="block hover:text-white transition-colors">Nosotros</a>
-            <a href="/blog" class="block hover:text-white transition-colors">Blog</a>
-            <a href="/contacto" class="block text-white font-semibold">Contacto</a>
-          </div>
-        </nav>
         <div>
-          <p class="text-xs font-bold uppercase tracking-widest text-white mb-4">Contacto</p>
-          <a href="mailto:rami@trustcore.es" class="text-sm hover:text-white transition-colors block mb-2">rami@trustcore.es</a>
-          <p class="text-sm mb-6">Ceuta, España</p>
-          <button class="tc-btn tc-btn-primary w-full" data-calendar-open data-track="contact_footer_demo">Agendar demo</button>
+          <p class="text-white font-semibold text-sm mb-4">Productos</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/productos/trustintime" class="hover:text-white transition-colors">TrustinTime</a></li>
+            <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">TrustinFacts</a></li>
+            <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
+            <li><a href="/comparativa" class="hover:text-white transition-colors">Comparativa</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Empresa</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/quienes-somos" class="hover:text-white transition-colors">Qui&eacute;nes somos</a></li>
+            <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
+            <li><a href="https://app.trustcore.es" class="hover:text-white transition-colors">Acceso clientes</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Legal</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/aviso-legal" class="hover:text-white transition-colors">Aviso legal</a></li>
+            <li><a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a></li>
+            <li><a href="/cookies" class="hover:text-white transition-colors">Cookies</a></li>
+          </ul>
+          <div class="mt-5">
+            <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+              <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
+                Rese&ntilde;anos en <i class="fas fa-star" style="color:#00B67A"></i> <strong class="text-slate-900">Trustpilot</strong>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-xs">&copy; 2026 TrustCore S.L. · Todos los derechos reservados.</p>
-        <img src="/COF_Logo.png" alt="Acelerado por COF" style="max-width:160px;height:auto;filter:brightness(0) invert(1);opacity:.5;" loading="lazy">
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <p>&copy; 2026 TrustCore S.L. &mdash; Ceuta, Espa&ntilde;a</p>
+        <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
+      </div>
+      <div class="mt-8 pt-8 border-t border-white/10 text-center">
+        <p class="text-xs uppercase tracking-widest opacity-40 mb-4">Acelerado por</p>
+        <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El &Aacute;ngulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
       </div>
     </div>
   </footer>
+
 
   <script src="assets/js/components.js"></script>
   <script src="/assets/lang-switcher.js"></script>
   <script src="https://js-eu1.hsforms.net/forms/embed/v2.js" defer></script>
   <script>
+    // Hide fallback when HubSpot form renders
+    function hideFallback() {
+      var fb = document.getElementById('hs-fallback');
+      if (fb) fb.style.display = 'none';
+    }
     window.hsFormsOnReady = window.hsFormsOnReady || [];
     window.hsFormsOnReady.push(function() {
       hbspt.forms.create({
@@ -332,11 +372,20 @@
         portalId: '148252702',
         formId: '2b49a390-3c95-42a0-a687-c8a9da3a5034',
         target: '#hs-form-wrapper',
+        onFormReady: hideFallback,
         onFormSubmitted: function() {
           if (window.dataLayer) window.dataLayer.push({ event: 'form_submit', form_id: 'contacto' });
         }
       });
     });
+    // If HubSpot scripts are blocked, show fallback message after 4s
+    setTimeout(function() {
+      var wrapper = document.getElementById('hs-form-wrapper');
+      var fb = document.getElementById('hs-fallback');
+      if (fb && wrapper && !wrapper.querySelector('form')) {
+        fb.querySelector('p[style*="Cargando"]') && (fb.querySelector('p').innerText = 'El formulario no está disponible ahora.');
+      }
+    }, 4000);
   </script>
 </body>
 </html>
