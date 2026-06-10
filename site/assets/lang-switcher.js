@@ -7,8 +7,15 @@
     };
 
     var LOCALIZED_PAGES = {
-        en: new Set(['/', '/article', '/comparativa', '/ipsi-ceuta-melilla-guia-practica', '/ipsi-en-factura-ejemplo-completo', '/ipsi-quipu-alternativas-para-pymes', '/errores-ipsi-autonomos-y-pymes', '/control-horario-obligatorio-guia-2026', '/control-horario-fichaje-remoto-sin-riesgos', '/auditoria-control-horario-checklist', '/plan-lite-cumplimiento-basico-empresa', '/plan-lite-vs-plan-pro-cumplimiento', '/cumplimiento-basico-en-30-dias']),
-        fr: new Set(['/', '/article', '/comparativa', '/ipsi-ceuta-melilla-guia-practica', '/ipsi-en-factura-ejemplo-completo', '/ipsi-quipu-alternativas-para-pymes', '/errores-ipsi-autonomos-y-pymes', '/control-horario-obligatorio-guia-2026', '/control-horario-fichaje-remoto-sin-riesgos', '/auditoria-control-horario-checklist', '/plan-lite-cumplimiento-basico-empresa', '/plan-lite-vs-plan-pro-cumplimiento', '/cumplimiento-basico-en-30-dias'])
+        en: new Set(['/', '/article', '/comparativa', '/ipsi-ceuta-melilla-guia-practica', '/ipsi-en-factura-ejemplo-completo', '/ipsi-quipu-alternativas-para-pymes', '/errores-ipsi-autonomos-y-pymes', '/control-horario-obligatorio-guia-2026', '/control-horario-fichaje-remoto-sin-riesgos', '/auditoria-control-horario-checklist', '/plan-lite-cumplimiento-basico-empresa', '/plan-lite-vs-plan-pro-cumplimiento', '/cumplimiento-basico-en-30-dias', '/precios', '/pricing']),
+        fr: new Set(['/', '/article', '/comparativa', '/ipsi-ceuta-melilla-guia-practica', '/ipsi-en-factura-ejemplo-completo', '/ipsi-quipu-alternativas-para-pymes', '/errores-ipsi-autonomos-y-pymes', '/control-horario-obligatorio-guia-2026', '/control-horario-fichaje-remoto-sin-riesgos', '/auditoria-control-horario-checklist', '/plan-lite-cumplimiento-basico-empresa', '/plan-lite-vs-plan-pro-cumplimiento', '/cumplimiento-basico-en-30-dias', '/precios', '/tarifs'])
+    };
+
+    // Pages where the slug differs per locale (es/en/fr don't share the same slug)
+    var CROSS_LOCALE_PATHS = {
+        '/precios': { es: '/precios',     en: '/en/pricing', fr: '/fr/tarifs' },
+        '/pricing': { es: '/precios',     en: '/en/pricing', fr: '/fr/tarifs' },
+        '/tarifs':  { es: '/precios',     en: '/en/pricing', fr: '/fr/tarifs' }
     };
 
     function detectLocale(pathname) {
@@ -68,6 +75,11 @@
     }
 
     function buildTargetPath(locale, basePath) {
+        // Cross-locale slug overrides (e.g. /precios → /en/pricing)
+        if (CROSS_LOCALE_PATHS[basePath] && CROSS_LOCALE_PATHS[basePath][locale] !== undefined) {
+            return CROSS_LOCALE_PATHS[basePath][locale];
+        }
+
         if (locale === 'es') {
             return basePath;
         }

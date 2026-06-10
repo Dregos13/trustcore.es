@@ -4,14 +4,35 @@
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PRFRSKZL');</script>
   <!-- End Google Tag Manager -->
+  <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  STRIPE PAYMENT LINKS — reemplaza los "#" de los botones    ║
+    ║  con tus URLs de Stripe Checkout:                           ║
+    ║                                                              ║
+    ║  data-stripe="time_basico_monthly"    → TrustinTime Básico/mes    ║
+    ║  data-stripe="time_basico_annual"     → TrustinTime Básico/año    ║
+    ║  data-stripe="time_std_monthly"       → TrustinTime Estándar/mes  ║
+    ║  data-stripe="time_std_annual"        → TrustinTime Estándar/año  ║
+    ║  data-stripe="time_avanzado_monthly"  → TrustinTime Avanzado/mes  ║
+    ║  data-stripe="time_avanzado_annual"   → TrustinTime Avanzado/año  ║
+    ║  data-stripe="facts_auto_monthly"     → TrustinFacts Autónomo/mes ║
+    ║  data-stripe="facts_auto_annual"      → TrustinFacts Autónomo/año ║
+    ║  data-stripe="facts_pyme_monthly"     → TrustinFacts Pyme/mes     ║
+    ║  data-stripe="facts_pyme_annual"      → TrustinFacts Pyme/año     ║
+    ║  data-stripe="facts_avanzado_monthly" → TrustinFacts Avanzado/mes ║
+    ║  data-stripe="facts_avanzado_annual"  → TrustinFacts Avanzado/año ║
+    ╚══════════════════════════════════════════════════════════════╝
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Precios TrustCore — VeriFactu y Control Horario</title>
-  <meta name="description" content="Planes desde 2 €/usuario/mes. Control horario RDL 8/2019, facturación VeriFactu e IPSI para pymes y autónomos. Sin permanencia. Cancela cuando quieras.">
+  <meta name="description" content="Control horario desde 5,99 €/usuario/mes. Facturación VeriFactu e IPSI desde 19,99 €/mes. Planes Starter, Pro y Business para autónomos y empresas. Sin permanencia.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#040F3F">
   <link rel="canonical" href="https://www.trustcore.es/precios">
   <link rel="alternate" hreflang="es" href="https://www.trustcore.es/precios">
+  <link rel="alternate" hreflang="en" href="https://www.trustcore.es/en/pricing">
+  <link rel="alternate" hreflang="fr" href="https://www.trustcore.es/fr/tarifs">
   <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/precios">
 
   <meta property="og:type" content="website">
@@ -40,7 +61,7 @@
       {
         "@type": "Question",
         "name": "¿Cuánto cuesta TrustCore?",
-        "acceptedAnswer": { "@type": "Answer", "text": "TrustinTime (control horario) desde 2 €/usuario/mes en el plan Lite y 6,99 €/usuario/mes en Profesional. TrustinFacts (facturación VeriFactu) desde 9,99 €/mes para autónomos y 19,99 €/mes para pymes. La suite combinada se presupuesta a medida." }
+        "acceptedAnswer": { "@type": "Answer", "text": "TrustinTime (control horario) desde 5,99 €/usuario/mes en el plan Básico, 6,99 € en Estándar y 7,99 € en Avanzado. TrustinFacts (facturación VeriFactu) desde 19,99 €/mes en el plan Starter, 39,99 €/mes en el plan Pro y 49,99 €/mes en el plan Business. El plan anual incluye 2 meses gratis." }
       },
       {
         "@type": "Question",
@@ -55,7 +76,12 @@
       {
         "@type": "Question",
         "name": "¿El IPSI de Ceuta y Melilla está incluido en todos los planes?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí. El soporte IPSI nativo está incluido en todos los planes de TrustinFacts sin coste adicional. Es el único software del mercado que lo ofrece de forma nativa." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. El soporte IPSI nativo está incluido en todos los planes de TrustinFacts sin coste adicional." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué descuento tiene el plan anual?",
+        "acceptedAnswer": { "@type": "Answer", "text": "El plan anual equivale a pagar 10 meses y recibir 12, es decir, 2 meses completamente gratis. El pago se realiza de forma anual por adelantado." }
       }
     ]
   }
@@ -69,14 +95,161 @@
   <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}}</script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148252702.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TrustCore",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "url": "https://www.trustcore.es",
+    "description": "Suite de gestión empresarial para pymes y autónomos en España. VeriFactu con IPSI nativo y control horario RDL 8/2019.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "TrustinTime Básico",
+        "price": "5.99",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "5.99", "priceCurrency": "EUR", "unitText": "usuario/mes" },
+        "eligibleRegion": { "@type": "Country", "name": "ES" }
+      },
+      {
+        "@type": "Offer",
+        "name": "TrustinTime Estándar",
+        "price": "6.99",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "6.99", "priceCurrency": "EUR", "unitText": "usuario/mes" },
+        "eligibleRegion": { "@type": "Country", "name": "ES" }
+      },
+      {
+        "@type": "Offer",
+        "name": "TrustinTime Avanzado",
+        "price": "7.99",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "7.99", "priceCurrency": "EUR", "unitText": "usuario/mes" },
+        "eligibleRegion": { "@type": "Country", "name": "ES" }
+      },
+      {
+        "@type": "Offer",
+        "name": "TrustinFacts Starter",
+        "price": "19.99",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "19.99", "priceCurrency": "EUR", "unitText": "mes" },
+        "eligibleRegion": { "@type": "Country", "name": "ES" }
+      },
+      {
+        "@type": "Offer",
+        "name": "TrustinFacts Pro",
+        "price": "39.99",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "39.99", "priceCurrency": "EUR", "unitText": "mes" },
+        "eligibleRegion": { "@type": "Country", "name": "ES" }
+      },
+      {
+        "@type": "Offer",
+        "name": "TrustinFacts Business",
+        "price": "49.99",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "49.99", "priceCurrency": "EUR", "unitText": "mes" },
+        "eligibleRegion": { "@type": "Country", "name": "ES" }
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "32"
+    }
+  }
+  </script>
+
+  <style>
+    /* Billing toggle */
+    .billing-toggle-track {
+      width: 52px; height: 28px;
+      background: rgba(255,255,255,.2);
+      border: 1.5px solid rgba(255,255,255,.35);
+      border-radius: 9999px;
+      position: relative;
+      cursor: pointer;
+      transition: background 220ms ease;
+      flex-shrink: 0;
+    }
+    .billing-toggle-track.is-annual {
+      background: #2071D5;
+      border-color: #2071D5;
+    }
+    .billing-toggle-thumb {
+      width: 22px; height: 22px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px; left: 2px;
+      transition: transform 220ms cubic-bezier(0.2,0.9,0.3,1.2);
+      box-shadow: 0 1px 4px rgba(0,0,0,.2);
+    }
+    .billing-toggle-track.is-annual .billing-toggle-thumb {
+      transform: translateX(24px);
+    }
+
+    /* Featured card glow */
+    .pricing-featured {
+      background: linear-gradient(160deg, #020A2A 0%, #0B2572 100%);
+      border: 2px solid rgba(83,205,254,.4);
+      box-shadow: 0 0 0 4px rgba(83,205,254,.06), 0 24px 60px -12px rgba(32,113,213,.5);
+      color: white;
+      position: relative;
+    }
+    .pricing-featured .tc-pricing__price { color: white; }
+    .pricing-featured .tc-pricing__price small { color: rgba(226,232,240,.55); }
+
+    /* Section sticky nav */
+    .pricing-section-nav {
+      position: sticky;
+      top: var(--tc-header-height);
+      z-index: 40;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--tc-line);
+    }
+
+    /* Annual fallback CTA (shown when annual toggle is on) */
+    .annual-contact-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .875rem 1.25rem;
+      font-size: .9rem;
+      font-weight: 600;
+      border-radius: var(--tc-radius-md);
+      border: 1.5px dashed var(--tc-blue-royal);
+      color: var(--tc-blue-royal);
+      background: var(--tc-blue-soft);
+      transition: background 200ms ease, border-color 200ms ease;
+    }
+    .annual-contact-cta:hover {
+      background: #dbeafe;
+      border-color: var(--tc-blue-corp);
+    }
+    .annual-contact-cta--dark {
+      border-color: rgba(83,205,254,.5);
+      color: #53CDFE;
+      background: rgba(83,205,254,.06);
+    }
+    .annual-contact-cta--dark:hover {
+      background: rgba(83,205,254,.12);
+    }
+  </style>
 </head>
 <body class="font-sans antialiased" style="background:var(--tc-surface-alt)">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRFRSKZL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- HEADER -->
+  <!-- HEADER -->
   <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300" style="height:var(--tc-header-height)">
     <div class="tc-container flex items-center justify-between h-full">
       <a href="/" class="flex items-center gap-3 shrink-0">
@@ -135,202 +308,421 @@
     </div>
   </header>
 
-
   <main id="main-content" style="padding-top:var(--tc-header-height)">
 
-    <!-- HERO -->
-    <section class="relative overflow-hidden" style="background:linear-gradient(130deg,var(--tc-navy-deep) 0%,var(--tc-blue-corp) 60%,var(--tc-blue-royal) 100%);padding-block:3.5rem 3rem;">
+    <!-- ═══ HERO ═══ -->
+    <section style="background:linear-gradient(130deg,var(--tc-navy-deep) 0%,var(--tc-blue-corp) 60%,var(--tc-blue-royal) 100%);padding-block:3.5rem 4rem;position:relative;overflow:hidden;">
       <div class="tc-bg-orbs" aria-hidden="true"></div>
       <div class="tc-container relative text-white text-center">
+
         <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="tc-award mb-6 inline-flex" data-track="pricing_award">
           <span class="tc-award__icon"><i class="fas fa-trophy"></i></span>
           #1 CeutaTech Summit 2026 · Pase de Oro Alhambra Venture
         </a>
-        <h1 class="font-extrabold leading-tight mb-4" style="font-size:var(--tc-text-4xl)">Precios claros. Sin sorpresas.</h1>
-        <p class="text-slate-300 text-xl max-w-2xl mx-auto mb-8">Pago mensual, sin permanencia. Contrata solo lo que necesitas y escala cuando tu negocio lo pida.</p>
-        <div class="flex flex-wrap gap-4 justify-center text-sm">
+
+        <h1 class="font-extrabold leading-tight mb-3" style="font-size:var(--tc-text-4xl)">Precios claros. Sin sorpresas.</h1>
+        <p class="text-slate-300 text-lg max-w-xl mx-auto mb-8">Sin permanencia. Actívate en 30 minutos. Contrata solo lo que necesitas.</p>
+
+        <!-- Billing toggle -->
+        <div class="flex items-center justify-center gap-4" role="group" aria-label="Ciclo de facturación">
+          <span id="lbl-monthly" class="text-base font-bold text-white transition-all duration-200">Mensual</span>
+          <button id="billing-toggle"
+                  class="billing-toggle-track"
+                  role="switch"
+                  aria-checked="false"
+                  aria-labelledby="billing-toggle-label"
+                  data-track="billing_toggle">
+            <span class="billing-toggle-thumb" aria-hidden="true"></span>
+          </button>
+          <span id="lbl-annual" class="text-base font-semibold text-slate-400 transition-all duration-200 flex items-center gap-2">
+            Anual
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold" style="background:rgba(16,185,129,.2);color:#6ee7b7;border:1px solid rgba(16,185,129,.3)">
+              <i class="fas fa-tag text-[9px]"></i> 2 meses gratis
+            </span>
+          </span>
+        </div>
+        <p id="billing-toggle-label" class="sr-only">Cambiar entre facturación mensual y anual</p>
+
+        <div class="flex flex-wrap gap-4 justify-center text-sm mt-6">
           <span class="flex items-center gap-2 text-slate-300"><i class="fas fa-check-circle text-cyan-light"></i> Sin contrato mínimo</span>
           <span class="flex items-center gap-2 text-slate-300"><i class="fas fa-check-circle text-cyan-light"></i> Cancela en cualquier momento</span>
-          <span class="flex items-center gap-2 text-slate-300"><i class="fas fa-check-circle text-cyan-light"></i> Activación en 30 minutos</span>
+          <span class="flex items-center gap-2 text-slate-300"><i class="fas fa-check-circle text-cyan-light"></i> Soporte incluido</span>
         </div>
       </div>
     </section>
 
-    <!-- TRUSTINTIME PRICING -->
+    <!-- ═══ SECTION NAV ═══ -->
+    <nav class="pricing-section-nav" aria-label="Secciones de precios">
+      <div class="tc-container flex items-center gap-1 overflow-x-auto" style="height:52px;scrollbar-width:none">
+        <a href="#trustintime" class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-xl transition-colors hover:bg-slate-100" style="color:var(--tc-navy)">
+          <i class="fas fa-clock text-xs" style="color:var(--tc-blue-royal)"></i> TrustinTime
+        </a>
+        <a href="#trustinfacts" class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-xl transition-colors hover:bg-slate-100" style="color:var(--tc-navy)">
+          <i class="fas fa-file-invoice text-xs" style="color:var(--tc-blue-royal)"></i> TrustinFacts
+        </a>
+        <a href="#suite" class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-xl transition-colors hover:bg-slate-100" style="color:var(--tc-navy)">
+          <i class="fas fa-layer-group text-xs" style="color:var(--tc-blue-royal)"></i> Suite completa
+        </a>
+        <a href="#faq-precios" class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-xl transition-colors hover:bg-slate-100 text-slate-500 ml-auto">
+          FAQ
+        </a>
+      </div>
+    </nav>
+
+    <!-- ═══ TRUSTINTIME ═══ -->
     <section class="tc-section bg-white" id="trustintime">
       <div class="tc-container">
-        <div class="max-w-2xl mb-12" data-reveal>
-          <span class="tc-eyebrow">TrustinTime</span>
-          <h2 class="tc-display tc-display-lg mt-3 mb-3">Control Horario y RRHH</h2>
-          <p class="text-slate-600">Cumple el RDL 8/2019 desde el primer empleado. Fichaje en app, web, tablet kiosko o PIN.</p>
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12" data-reveal>
+          <div>
+            <span class="tc-eyebrow"><i class="fas fa-clock mr-1"></i> TrustinTime</span>
+            <h2 class="tc-display tc-display-lg mt-3 mb-2">Control Horario y RRHH</h2>
+            <p class="text-slate-600 max-w-lg">Cumple el RDL 8/2019 desde el primer empleado. Fichaje en app, web, tablet kiosko o PIN.</p>
+          </div>
+          <a href="#trustinfacts" class="shrink-0 inline-flex items-center gap-2 text-sm font-semibold transition-all hover:gap-3" style="color:var(--tc-blue-royal)">
+            Ver facturación VeriFactu <i class="fas fa-arrow-down text-xs"></i>
+          </a>
         </div>
+
+        <!-- Cards -->
         <div class="grid md:grid-cols-3 gap-6 max-w-5xl" data-reveal>
 
-          <!-- Lite -->
-          <div class="tc-pricing">
-            <p class="tc-pricing__name">Lite</p>
-            <p class="tc-pricing__price">2 € <small>/usuario/mes</small></p>
-            <ul class="tc-pricing__features">
-              <li>Fichaje web y app móvil</li>
+          <!-- Básico -->
+          <div class="tc-pricing flex flex-col">
+            <p class="tc-pricing__name">B&aacute;sico</p>
+            <div class="mt-1 mb-1">
+              <p class="tc-pricing__price">
+                <span class="price-monthly">5,99 €</span>
+                <span class="price-annual hidden">4,99 €</span>
+                <small>/usuario/mes</small>
+              </p>
+              <p class="text-xs text-slate-500 mt-1" style="min-height:1.25rem">
+                <span class="savings-note hidden font-medium" style="color:#059669">Facturado 59,90 €/año · 2 meses gratis</span>
+              </p>
+            </div>
+            <ul class="tc-pricing__features mt-3">
+              <li>Fichaje web y app m&oacute;vil</li>
               <li>Registro de jornada RDL 8/2019</li>
-              <li>Exportación mensual PDF/CSV</li>
-              <li>Conservación 4 años</li>
+              <li>Exportaci&oacute;n mensual PDF/CSV</li>
+              <li>Conservaci&oacute;n 4 a&ntilde;os (legal)</li>
               <li>Soporte por email</li>
             </ul>
-            <a href="/contacto" class="tc-btn tc-btn-secondary mt-auto" data-track="pricing_time_lite">Empezar gratis 14 días</a>
+            <div class="mt-auto pt-6 space-y-2.5">
+              <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="#" data-stripe="time_basico_monthly" data-track="pricing_time_basico_monthly" target="_blank" rel="noopener">
+                <i class="fas fa-credit-card text-sm"></i> Contratar B&aacute;sico
+              </a>
+              <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="#" data-stripe="time_basico_annual" data-track="pricing_time_basico_annual" target="_blank" rel="noopener">
+                <i class="fas fa-credit-card text-sm"></i> Contratar B&aacute;sico anual
+              </a>
+              <p class="flex items-center justify-center gap-1.5 text-xs text-slate-400">
+                <i class="fas fa-rotate-left text-[10px]"></i> 14 d&iacute;as de prueba gratis
+              </p>
+            </div>
           </div>
 
-          <!-- Profesional -->
-          <div class="tc-pricing tc-pricing--featured">
-            <p class="tc-pricing__name">Profesional</p>
-            <p class="tc-pricing__price">6,99 € <small>/usuario/mes</small></p>
-            <ul class="tc-pricing__features">
-              <li>Todo lo del plan Lite</li>
-              <li>Vacaciones, ausencias y CCAA</li>
-              <li>Turnos y horarios</li>
-              <li>Portal del empleado + app</li>
-              <li>Geolocalización en fichaje</li>
+          <!-- Profesional (featured) -->
+          <div class="pricing-featured tc-pricing flex flex-col" style="border-radius:var(--tc-radius-2xl)">
+            <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;padding:.3rem 1.1rem;border-radius:9999px;font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 14px rgba(32,113,213,.4)">
+              &#9733; M&aacute;s elegido
+            </div>
+            <p class="tc-pricing__name" style="color:#53CDFE">Est&aacute;ndar</p>
+            <div class="mt-1 mb-1">
+              <p class="tc-pricing__price">
+                <span class="price-monthly">6,99 €</span>
+                <span class="price-annual hidden">5,83 €</span>
+                <small>/usuario/mes</small>
+              </p>
+              <p class="text-xs mt-1" style="min-height:1.25rem;color:rgba(226,232,240,.6)">
+                <span class="savings-note hidden font-medium" style="color:#86efac">Facturado 69,90 €/año · 2 meses gratis</span>
+              </p>
+            </div>
+            <ul class="list-none p-0 m-0 flex flex-col gap-2.5 mt-3">
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Todo lo del plan B&aacute;sico</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Vacaciones, ausencias y CCAA</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Turnos y horarios</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Portal del empleado + app</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Soporte prioritario por email</span></li>
+            </ul>
+            <div class="mt-auto pt-6 space-y-2.5">
+              <a class="cta-monthly tc-btn w-full font-bold" style="background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;box-shadow:0 10px 24px -10px rgba(83,205,254,.5)" href="#" data-stripe="time_std_monthly" data-track="pricing_time_std_monthly" target="_blank" rel="noopener">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Est&aacute;ndar
+              </a>
+              <a class="cta-annual hidden tc-btn w-full font-bold" style="background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;box-shadow:0 10px 24px -10px rgba(83,205,254,.5)" href="#" data-stripe="time_std_annual" data-track="pricing_time_std_annual" target="_blank" rel="noopener">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Est&aacute;ndar anual
+              </a>
+              <button type="button" data-calendar-open data-track="pricing_time_std_demo" class="tc-btn w-full" style="border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);background:transparent;font-size:.875rem">
+                <i class="fas fa-calendar text-sm"></i> Ver demo antes
+              </button>
+            </div>
+          </div>
+
+          <!-- Avanzado -->
+          <div class="tc-pricing flex flex-col">
+            <p class="tc-pricing__name">Avanzado</p>
+            <div class="mt-1 mb-1">
+              <p class="tc-pricing__price">
+                <span class="price-monthly">7,99 €</span>
+                <span class="price-annual hidden">6,66 €</span>
+                <small>/usuario/mes</small>
+              </p>
+              <p class="text-xs text-slate-500 mt-1" style="min-height:1.25rem">
+                <span class="savings-note hidden font-medium" style="color:#059669">Facturado 79,90 €/año · 2 meses gratis</span>
+              </p>
+            </div>
+            <ul class="tc-pricing__features mt-3">
+              <li>Todo lo del plan Est&aacute;ndar</li>
+              <li>Geolocalizaci&oacute;n en fichaje</li>
               <li>Dashboards RRHH en tiempo real</li>
               <li>Asistente IA incluido</li>
+              <li>Multi-sede y multi-empresa</li>
+              <li>SLA y soporte prioritario 24/5</li>
+              <li>Exportaci&oacute;n SII / SEPE</li>
             </ul>
-            <button type="button" data-calendar-open data-track="pricing_time_pro" class="tc-btn tc-btn-primary mt-auto">Agendar demo</button>
+            <div class="mt-auto pt-6 space-y-2.5">
+              <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="#" data-stripe="time_avanzado_monthly" data-track="pricing_time_avanzado_monthly" target="_blank" rel="noopener">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Avanzado
+              </a>
+              <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="#" data-stripe="time_avanzado_annual" data-track="pricing_time_avanzado_annual" target="_blank" rel="noopener">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Avanzado anual
+              </a>
+              <p class="flex items-center justify-center gap-1.5 text-xs text-slate-400">
+                <i class="fas fa-rotate-left text-[10px]"></i> 14 d&iacute;as de prueba gratis
+              </p>
+            </div>
           </div>
 
-          <!-- Suite -->
-          <div class="tc-pricing">
-            <p class="tc-pricing__name">Suite</p>
-            <p class="tc-pricing__price">A medida</p>
-            <ul class="tc-pricing__features">
-              <li>Todo lo del plan Profesional</li>
-              <li>Multi-sede y multi-empresa</li>
-              <li>Integraciones ERP y nómina</li>
-              <li>Onboarding guiado dedicado</li>
-              <li>SLA y soporte prioritario</li>
-              <li>Exportación SII / SEPE</li>
-            </ul>
-            <a href="/contacto" class="tc-btn tc-btn-secondary mt-auto" data-track="pricing_time_suite">Pedir propuesta</a>
-          </div>
+        </div><!-- /grid -->
+
+        <!-- Trust strip -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-400 max-w-5xl" data-reveal>
+          <span class="flex items-center gap-1.5"><i class="fas fa-lock"></i> Pago seguro con Stripe</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-rotate-left"></i> Sin permanencia</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-bolt"></i> Activaci&oacute;n en 30 min</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved"></i> RGPD &bull; Cloud europeo</span>
         </div>
 
-        <!-- Feature matrix TrustinTime -->
+        <!-- Feature matrix -->
         <div class="mt-14 max-w-5xl overflow-x-auto" data-reveal>
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Comparativa de funcionalidades</p>
           <table class="w-full text-sm border-collapse">
             <thead>
               <tr style="border-bottom:2px solid #e8edf5;">
                 <th class="text-left py-3 pr-6 font-semibold text-slate-500 w-1/2">Funcionalidad</th>
-                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-navy)">Lite</th>
-                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-blue-royal)">Pro</th>
-                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-navy)">Suite</th>
+                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-navy)">B&aacute;sico</th>
+                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-blue-royal)">Est&aacute;ndar</th>
+                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-navy)">Avanzado</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
               <tr><td class="py-3 pr-6 text-slate-700">Fichaje web, app, PIN</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Conservación 4 años (legal)</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Exportación PDF/CSV</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Vacaciones y ausencias</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Turnos y horarios</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Geolocalización</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Dashboards RRHH + IA</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Multi-sede / ERP</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Conservaci&oacute;n 4 a&ntilde;os (legal)</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Exportaci&oacute;n PDF/CSV</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Vacaciones y ausencias</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Turnos y horarios</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Portal del empleado</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Geolocalizaci&oacute;n</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Dashboards RRHH + IA</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Multi-sede / ERP</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">SLA y soporte 24/5</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
             </tbody>
           </table>
         </div>
+
       </div>
     </section>
 
-    <!-- TRUSTINFACTS PRICING -->
+    <!-- ═══ TRUSTINFACTS ═══ -->
     <section class="tc-section" id="trustinfacts" style="background:var(--tc-surface-alt)">
       <div class="tc-container">
-        <div class="max-w-2xl mb-12" data-reveal>
-          <span class="tc-eyebrow">TrustinFacts</span>
-          <h2 class="tc-display tc-display-lg mt-3 mb-3">Facturación VeriFactu e IPSI</h2>
-          <p class="text-slate-600">El único software con soporte IPSI nativo para Ceuta y Melilla. Homologado por la AEAT desde Q3 2025.</p>
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12" data-reveal>
+          <div>
+            <span class="tc-eyebrow"><i class="fas fa-file-invoice mr-1"></i> TrustinFacts</span>
+            <h2 class="tc-display tc-display-lg mt-3 mb-2">Facturaci&oacute;n VeriFactu e IPSI</h2>
+            <p class="text-slate-600 max-w-lg">El &uacute;nico software con soporte IPSI nativo para Ceuta y Melilla. Homologado por la AEAT desde Q3&nbsp;2025.</p>
+          </div>
+          <a href="#trustintime" class="shrink-0 inline-flex items-center gap-2 text-sm font-semibold transition-all hover:gap-3" style="color:var(--tc-blue-royal)">
+            Ver control horario <i class="fas fa-arrow-up text-xs"></i>
+          </a>
         </div>
+
+        <!-- Cards -->
         <div class="grid md:grid-cols-3 gap-6 max-w-5xl" data-reveal>
 
-          <!-- Autónomo -->
-          <div class="tc-pricing">
-            <p class="tc-pricing__name">Autónomo</p>
-            <p class="tc-pricing__price">9,99 € <small>/mes</small></p>
-            <ul class="tc-pricing__features">
+          <!-- Starter -->
+          <div class="tc-pricing flex flex-col">
+            <p class="tc-pricing__name">Starter</p>
+            <div class="mt-1 mb-1">
+              <p class="tc-pricing__price">
+                <span class="price-monthly">19,99 €</span>
+                <span class="price-annual hidden">16,66 €</span>
+                <small>/mes</small>
+              </p>
+              <p class="text-xs text-slate-500 mt-1" style="min-height:1.25rem">
+                <span class="savings-note hidden font-medium" style="color:#059669">Facturado 199,90 €/año · 2 meses gratis</span>
+              </p>
+            </div>
+            <ul class="tc-pricing__features mt-3">
               <li>Facturas VeriFactu ilimitadas</li>
               <li>IPSI Ceuta/Melilla nativo</li>
               <li>Presupuestos y albaranes</li>
-              <li>QR + hash AEAT automático</li>
-              <li>1 usuario</li>
+              <li>QR + hash AEAT autom&aacute;tico</li>
+              <li>1 usuario incluido</li>
             </ul>
-            <a href="/contacto" class="tc-btn tc-btn-secondary mt-auto" data-track="pricing_facts_autonomo">Empezar gratis 14 días</a>
+            <div class="mt-auto pt-6 space-y-2.5">
+              <a class="cta-monthly tc-btn tc-btn-secondary w-full"
+                 href="https://buy.stripe.com/8x2dR9frg6qg2I15KOcs803" target="_blank" rel="noopener"
+                 data-track="pricing_facts_starter_monthly">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Starter
+              </a>
+              <a class="cta-annual hidden annual-contact-cta"
+                 href="/contacto?plan=facts-starter-anual"
+                 data-track="pricing_facts_starter_annual_contact">
+                <i class="fas fa-envelope text-sm"></i> Solicitar plan anual
+              </a>
+              <p class="flex items-center justify-center gap-1.5 text-xs text-slate-400 mt-1">
+                <i class="fas fa-lock text-[9px]"></i> Sin permanencia
+              </p>
+            </div>
           </div>
 
-          <!-- Pyme -->
-          <div class="tc-pricing tc-pricing--featured">
-            <p class="tc-pricing__name">Pyme</p>
-            <p class="tc-pricing__price">19,99 € <small>/mes</small></p>
-            <ul class="tc-pricing__features">
-              <li>Todo lo del plan Autónomo</li>
-              <li>Hasta 5 usuarios</li>
-              <li>Gestión de stock y márgenes</li>
-              <li>Dashboards contables IA</li>
-              <li>Multilingüe ES/EN/FR</li>
-              <li>Análisis de impagados</li>
+          <!-- Pro (featured) -->
+          <div class="pricing-featured tc-pricing flex flex-col" style="border-radius:var(--tc-radius-2xl)">
+            <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;padding:.3rem 1.1rem;border-radius:9999px;font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 14px rgba(32,113,213,.4)">
+              &#9733; M&aacute;s elegido
+            </div>
+            <p class="tc-pricing__name" style="color:#53CDFE">Pro</p>
+            <div class="mt-1 mb-1">
+              <p class="tc-pricing__price">
+                <span class="price-monthly">39,99 €</span>
+                <span class="price-annual hidden">33,33 €</span>
+                <small>/mes</small>
+              </p>
+              <p class="text-xs mt-1" style="min-height:1.25rem;color:rgba(226,232,240,.6)">
+                <span class="savings-note hidden font-medium" style="color:#86efac">Facturado 399,90 €/año · 2 meses gratis</span>
+              </p>
+            </div>
+            <ul class="list-none p-0 m-0 flex flex-col gap-2.5 mt-3">
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Todo lo del plan Starter</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Hasta 5 usuarios</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Gesti&oacute;n de stock y m&aacute;rgenes</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Dashboards contables IA</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Multiling&uuml;e ES / EN / FR</span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">An&aacute;lisis de impagados</span></li>
             </ul>
-            <button type="button" data-calendar-open data-track="pricing_facts_pyme" class="tc-btn tc-btn-primary mt-auto">Agendar demo</button>
+            <div class="mt-auto pt-6 space-y-2.5">
+              <a class="cta-monthly tc-btn w-full font-bold"
+                 style="background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;box-shadow:0 10px 24px -10px rgba(83,205,254,.5)"
+                 href="https://buy.stripe.com/aFa28r1AqcOEeqJ1uycs804" target="_blank" rel="noopener"
+                 data-track="pricing_facts_pro_monthly">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Pro
+              </a>
+              <a class="cta-annual hidden annual-contact-cta annual-contact-cta--dark"
+                 href="/contacto?plan=facts-pro-anual"
+                 data-track="pricing_facts_pro_annual_contact">
+                <i class="fas fa-envelope text-sm"></i> Solicitar plan anual
+              </a>
+              <button type="button" data-calendar-open data-track="pricing_facts_pro_demo"
+                      class="tc-btn w-full"
+                      style="border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);background:transparent;font-size:.875rem">
+                <i class="fas fa-calendar text-sm"></i> Ver demo antes
+              </button>
+            </div>
           </div>
 
-          <!-- Asesoría -->
-          <div class="tc-pricing">
-            <p class="tc-pricing__name">Asesoría</p>
-            <p class="tc-pricing__price">A medida</p>
-            <ul class="tc-pricing__features">
-              <li>Multi-cliente ilimitado</li>
-              <li>Panel de asesor dedicado</li>
-              <li>Exportación SII automática</li>
-              <li>Notas de crédito y rectificativas</li>
-              <li>Soporte prioritario</li>
+          <!-- Business -->
+          <div class="tc-pricing flex flex-col">
+            <p class="tc-pricing__name">Business</p>
+            <div class="mt-1 mb-1">
+              <p class="tc-pricing__price">
+                <span class="price-monthly">49,99 €</span>
+                <span class="price-annual hidden">41,66 €</span>
+                <small>/mes</small>
+              </p>
+              <p class="text-xs text-slate-500 mt-1" style="min-height:1.25rem">
+                <span class="savings-note hidden font-medium" style="color:#059669">Facturado 499,90 €/año · 2 meses gratis</span>
+              </p>
+            </div>
+            <ul class="tc-pricing__features mt-3">
+              <li>Todo lo del plan Pro</li>
+              <li>Usuarios ilimitados</li>
+              <li>Integraciones API / ERP</li>
+              <li>Onboarding dedicado incluido</li>
+              <li>Notas de cr&eacute;dito y rectificativas</li>
+              <li>SLA y soporte prioritario</li>
+              <li>Exportaci&oacute;n SII autom&aacute;tica</li>
             </ul>
-            <a href="/contacto" class="tc-btn tc-btn-secondary mt-auto" data-track="pricing_facts_asesoria">Pedir propuesta</a>
+            <div class="mt-auto pt-6 space-y-2.5">
+              <a class="cta-monthly tc-btn tc-btn-secondary w-full"
+                 href="https://buy.stripe.com/aFa4gzenc9CsfuNgpscs805" target="_blank" rel="noopener"
+                 data-track="pricing_facts_business_monthly">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Business
+              </a>
+              <a class="cta-annual hidden annual-contact-cta"
+                 href="/contacto?plan=facts-business-anual"
+                 data-track="pricing_facts_business_annual_contact">
+                <i class="fas fa-envelope text-sm"></i> Solicitar plan anual
+              </a>
+              <p class="flex items-center justify-center gap-1.5 text-xs text-slate-400 mt-1">
+                <i class="fas fa-lock text-[9px]"></i> Sin permanencia
+              </p>
+            </div>
           </div>
+
+        </div><!-- /grid -->
+
+        <!-- Trust strip -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-400 max-w-5xl" data-reveal>
+          <span class="flex items-center gap-1.5"><i class="fas fa-lock"></i> Pago seguro con Stripe</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-rotate-left"></i> Sin permanencia</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-trophy text-yellow-500"></i> &Uacute;nico con IPSI nativo en Espa&ntilde;a</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-certificate"></i> AEAT homologado Q3 2025</span>
         </div>
 
-        <!-- Feature matrix TrustinFacts -->
+        <!-- Feature matrix -->
         <div class="mt-14 max-w-5xl overflow-x-auto" data-reveal>
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Comparativa de funcionalidades</p>
           <table class="w-full text-sm border-collapse">
             <thead>
               <tr style="border-bottom:2px solid #e8edf5;">
                 <th class="text-left py-3 pr-6 font-semibold text-slate-500 w-1/2">Funcionalidad</th>
-                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-navy)">Autónomo</th>
-                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-blue-royal)">Pyme</th>
-                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-navy)">Asesoría</th>
+                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-navy)">Starter</th>
+                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-blue-royal)">Pro</th>
+                <th class="text-center py-3 px-4 font-bold" style="color:var(--tc-navy)">Business</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
               <tr><td class="py-3 pr-6 text-slate-700">VeriFactu homologado AEAT</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
               <tr><td class="py-3 pr-6 text-slate-700">IPSI Ceuta/Melilla nativo</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
               <tr><td class="py-3 pr-6 text-slate-700">Facturas ilimitadas</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Stock y márgenes</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Dashboards IA</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Multi-cliente / asesoría</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
-              <tr><td class="py-3 pr-6 text-slate-700">Exportación SII</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3 text-slate-300">—</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Presupuestos y albaranes</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Stock y m&aacute;rgenes</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Dashboards IA</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Hasta 5 usuarios</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Usuarios ilimitados</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Integraciones API / ERP</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">Exportaci&oacute;n SII autom&aacute;tica</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3 text-slate-300">&mdash;</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
             </tbody>
           </table>
         </div>
+
       </div>
     </section>
 
-    <!-- SUITE COMBINADA -->
-    <section class="tc-section bg-white">
+    <!-- ═══ SUITE COMBINADA ═══ -->
+    <section class="tc-section bg-white" id="suite">
       <div class="tc-container">
         <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden border" style="border-color:#e8edf5;" data-reveal>
           <div class="p-8 md:p-12 text-white" style="background:linear-gradient(135deg,var(--tc-navy-deep) 0%,var(--tc-blue-corp) 100%);">
             <div class="flex flex-wrap items-start justify-between gap-6">
               <div>
-                <span class="tc-eyebrow !text-cyan-light">Suite completa</span>
+                <span class="tc-eyebrow !text-cyan-light"><i class="fas fa-layer-group mr-1"></i> Suite completa</span>
                 <h2 class="tc-display tc-display-lg mt-3 mb-3 !text-white">TrustinTime + TrustinFacts</h2>
-                <p class="text-slate-300 text-lg max-w-xl">Una sola plataforma para el control horario y la facturación VeriFactu. Un solo proveedor, una sola factura, datos cruzados.</p>
+                <p class="text-slate-300 text-lg max-w-xl">Una sola plataforma para el control horario y la facturaci&oacute;n VeriFactu. Un solo proveedor, una sola factura, datos cruzados entre m&oacute;dulos.</p>
               </div>
               <div class="shrink-0 text-center">
                 <p class="text-4xl font-extrabold text-white">A medida</p>
-                <p class="text-slate-300 text-sm mt-1">según empleados y volumen</p>
+                <p class="text-slate-300 text-sm mt-1">seg&uacute;n empleados y volumen</p>
               </div>
             </div>
             <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -359,7 +751,7 @@
               <button type="button" data-calendar-open data-track="pricing_suite_demo" class="tc-btn bg-white !font-bold hover:bg-slate-50" style="color:var(--tc-navy)">
                 <i class="fas fa-calendar-check"></i> Agendar demo gratuita
               </button>
-              <a href="/contacto" class="tc-btn border border-white/30 text-white hover:bg-white/10" data-track="pricing_suite_contact">
+              <a href="/contacto" class="tc-btn border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.3)" data-track="pricing_suite_contact">
                 Pedir propuesta personalizada
               </a>
             </div>
@@ -368,48 +760,74 @@
       </div>
     </section>
 
-    <!-- FAQ PRECIOS -->
-    <section class="tc-section" style="background:var(--tc-surface-alt)">
+    <!-- ═══ GESTORÍAS CTA ═══ -->
+    <section class="tc-section" style="background:var(--tc-surface-alt);padding-block:3rem">
+      <div class="tc-container">
+        <div class="max-w-4xl mx-auto rounded-2xl border border-slate-200 bg-white p-8 md:p-10 flex flex-col md:flex-row items-center gap-8" data-reveal>
+          <div class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
+            <i class="fas fa-building-columns" style="color:var(--tc-blue-royal)"></i>
+          </div>
+          <div class="flex-1 text-center md:text-left">
+            <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--tc-blue-royal)">&iquest;Eres gestor&iacute;a o asesor&iacute;a?</p>
+            <h3 class="text-xl font-extrabold mb-2" style="color:var(--tc-navy)">Tenemos una soluci&oacute;n espec&iacute;fica para ti</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Gestiona el cumplimiento normativo de todos tus clientes desde un panel centralizado. VeriFactu + control horario para tu cartera entera, con precios adaptados a tu volumen.</p>
+          </div>
+          <a href="/gestoria" class="shrink-0 tc-btn tc-btn-primary whitespace-nowrap" data-track="pricing_gestoria_cta">
+            <i class="fas fa-arrow-right text-sm"></i> Ver soluciones para gestor&iacute;as
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="tc-section" id="faq-precios" style="background:var(--tc-surface-alt)">
       <div class="tc-container max-w-3xl">
         <div class="text-center mb-10" data-reveal>
           <span class="tc-eyebrow">FAQ</span>
-          <h2 class="tc-display tc-display-lg mt-3">Preguntas frecuentes sobre precios</h2>
+          <h2 class="tc-display tc-display-lg mt-3">Preguntas sobre precios</h2>
         </div>
         <div class="space-y-3" data-reveal>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
-              ¿Hay permanencia o contrato mínimo?
+              &iquest;Qu&eacute; incluye el plan anual?
               <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
             </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">No. TrustCore es pago mensual sin permanencia. Puedes cancelar desde tu panel en cualquier momento, sin penalizaciones ni letras pequeñas.</p>
+            <p class="mt-4 text-slate-600 leading-relaxed">El plan anual equivale a pagar 10 meses y recibir 12 (2 meses gratis). El pago se realiza de forma anual por adelantado. Las funcionalidades son id&eacute;nticas al plan mensual del mismo nivel.</p>
           </details>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
-              ¿Puedo contratar solo control horario o solo facturación?
+              &iquest;Hay permanencia o contrato m&iacute;nimo?
               <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
             </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">Sí. TrustinTime y TrustinFacts funcionan de forma completamente independiente. Contrata el módulo que necesitas hoy y añade el otro en cualquier momento.</p>
+            <p class="mt-4 text-slate-600 leading-relaxed">No. TrustCore es pago mensual sin permanencia en el plan mensual. El plan anual se factura por adelantado una vez al a&ntilde;o, pero no tiene penalizaci&oacute;n por cancelaci&oacute;n anticipada m&aacute;s all&aacute; del periodo facturado.</p>
           </details>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
-              ¿El IPSI está incluido en todos los planes de facturación?
+              &iquest;Puedo contratar solo control horario o solo facturaci&oacute;n?
               <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
             </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">Sí. El soporte IPSI nativo (0,5 %) para Ceuta y Melilla está incluido en todos los planes de TrustinFacts sin coste adicional. Es el único software del mercado que lo ofrece de fábrica.</p>
+            <p class="mt-4 text-slate-600 leading-relaxed">S&iacute;. TrustinTime y TrustinFacts funcionan de forma completamente independiente. Contrata el m&oacute;dulo que necesitas hoy y a&ntilde;ade el otro en cualquier momento.</p>
           </details>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
-              ¿Cuánto tarda la activación?
+              &iquest;El IPSI est&aacute; incluido en todos los planes de facturaci&oacute;n?
               <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
             </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">30 minutos. Sin hardware, sin instalación. Agenda una demo y configuramos tu cuenta en la misma sesión.</p>
+            <p class="mt-4 text-slate-600 leading-relaxed">S&iacute;. El soporte IPSI nativo (0,5&nbsp;%) para Ceuta y Melilla est&aacute; incluido en todos los planes de TrustinFacts sin coste adicional. Es el &uacute;nico software del mercado que lo ofrece de f&aacute;brica.</p>
           </details>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
-              ¿Hay descuento por volumen o por suite completa?
+              &iquest;Cu&aacute;nto tarda la activaci&oacute;n?
               <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
             </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">Sí. La suite combinada (TrustinTime + TrustinFacts) tiene precio negociado. Agenda una demo o escríbenos y preparamos una propuesta a medida para tu operativa.</p>
+            <p class="mt-4 text-slate-600 leading-relaxed">30 minutos. Sin hardware, sin instalaci&oacute;n. Agenda una demo y configuramos tu cuenta en la misma sesi&oacute;n.</p>
+          </details>
+          <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
+              &iquest;Hay descuento por volumen o por suite completa?
+              <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
+            </summary>
+            <p class="mt-4 text-slate-600 leading-relaxed">S&iacute;. La suite combinada (TrustinTime + TrustinFacts) tiene precio negociado. Agenda una demo o escr&iacute;benos y preparamos una propuesta a medida para tu operativa.</p>
           </details>
         </div>
         <div class="text-center mt-10" data-reveal>
@@ -420,17 +838,17 @@
       </div>
     </section>
 
-    <!-- CTA FINAL -->
+    <!-- ═══ CTA FINAL ═══ -->
     <section class="tc-section" style="background:linear-gradient(135deg,var(--tc-navy-deep) 0%,var(--tc-blue-corp) 100%);">
       <div class="tc-container text-center text-white" data-reveal>
-        <h2 class="tc-display tc-display-lg mb-4 !text-white">¿Dudas sobre qué plan necesitas?</h2>
-        <p class="text-slate-300 text-lg mb-8 max-w-xl mx-auto">En 30 minutos te explicamos qué cubre cada plan para tu caso concreto. Sin compromiso.</p>
+        <h2 class="tc-display tc-display-lg mb-4 !text-white">&iquest;Dudas sobre qu&eacute; plan necesitas?</h2>
+        <p class="text-slate-300 text-lg mb-8 max-w-xl mx-auto">En 30 minutos te explicamos qu&eacute; cubre cada plan para tu caso concreto. Sin compromiso.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <button type="button" data-calendar-open data-track="pricing_final_demo" class="tc-btn tc-btn-primary !px-8 !py-4 !text-base shadow-[0_14px_30px_-10px_rgba(83,205,254,.5)]">
             <i class="fas fa-calendar-check"></i> Agendar demo gratuita
           </button>
-          <a href="/contacto" class="tc-btn !px-8 !py-4 !text-base border border-white/25 text-white hover:bg-white/10" data-track="pricing_final_contact">
-            Escríbenos directamente
+          <a href="/contacto" class="tc-btn !px-8 !py-4 !text-base border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.25)" data-track="pricing_final_contact">
+            Escr&iacute;benos directamente
           </a>
         </div>
       </div>
@@ -447,7 +865,7 @@
             <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto" loading="lazy">
             <span class="text-white font-extrabold text-lg">TrustCore</span>
           </a>
-          <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
+          <p class="text-sm leading-relaxed">Tu empresa, 100&nbsp;% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
           <div class="flex flex-wrap gap-2 mt-5">
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
               <i class="fas fa-trophy"></i> Alhambra Venture 2026
@@ -502,8 +920,50 @@
     </div>
   </footer>
 
-
   <script src="assets/js/components.js"></script>
   <script src="/assets/lang-switcher.js"></script>
+
+  <script>
+  (function () {
+    var toggle = document.getElementById('billing-toggle');
+    var lblMonthly = document.getElementById('lbl-monthly');
+    var lblAnnual  = document.getElementById('lbl-annual');
+    var isAnnual   = false;
+
+    function applyBilling(annual) {
+      isAnnual = annual;
+      toggle.setAttribute('aria-checked', annual ? 'true' : 'false');
+      toggle.classList.toggle('is-annual', annual);
+
+      document.querySelectorAll('.price-monthly').forEach(function (el) { el.hidden = annual; });
+      document.querySelectorAll('.price-annual').forEach(function (el)  { el.hidden = !annual; });
+      document.querySelectorAll('.savings-note').forEach(function (el)  { el.hidden = !annual; el.classList.toggle('hidden', !annual); });
+      document.querySelectorAll('.cta-monthly').forEach(function (el)   { el.hidden = annual;  el.classList.toggle('hidden', annual); });
+      document.querySelectorAll('.cta-annual').forEach(function (el)    { el.hidden = !annual; el.classList.toggle('hidden', !annual); });
+
+      if (annual) {
+        lblAnnual.style.color  = '#fff';
+        lblAnnual.style.fontWeight = '700';
+        lblMonthly.style.color = 'rgba(226,232,240,.5)';
+        lblMonthly.style.fontWeight = '400';
+      } else {
+        lblMonthly.style.color = '#fff';
+        lblMonthly.style.fontWeight = '700';
+        lblAnnual.style.color  = 'rgba(226,232,240,.55)';
+        lblAnnual.style.fontWeight = '600';
+      }
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', function () { applyBilling(!isAnnual); });
+      toggle.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); applyBilling(!isAnnual); }
+      });
+    }
+
+    applyBilling(false);
+  })();
+  </script>
+
 </body>
 </html>

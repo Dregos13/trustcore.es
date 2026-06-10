@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "**/*",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/precios",     "destination": "/precios.html" },
+    { "source": "/gestoria",    "destination": "/gestoria.html" },
+    { "source": "/comparativa", "destination": "/comparativa.html" },
+    { "source": "/blog",        "destination": "/blog.html" },
+    { "source": "/contacto",    "destination": "/contacto.html" },
+    { "source": "/quienes-somos", "destination": "/quienes-somos.html" },
+    { "source": "/en/pricing",  "destination": "/en/pricing.html" },
+    { "source": "/fr/tarifs",   "destination": "/fr/tarifs.html" }
+  ]
+}
