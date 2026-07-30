@@ -6,6 +6,29 @@
 (function () {
   'use strict';
 
+  function track(eventName, payload) {
+    var eventPayload = Object.assign({
+      event: eventName,
+      page_path: window.location.pathname,
+      page_title: document.title
+    }, payload || {});
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(eventPayload);
+
+    if (
+      typeof window.gtag === 'function' &&
+      typeof window.tcCanTrackAnalytics === 'function' &&
+      window.tcCanTrackAnalytics()
+    ) {
+      var gaPayload = Object.assign({}, eventPayload);
+      delete gaPayload.event;
+      window.gtag('event', eventName, gaPayload);
+    }
+  }
+
+  track('tc_page_ready');
+
   // ---------- Reveal on scroll ----------
   var revealEls = document.querySelectorAll('[data-reveal]');
   if (revealEls.length && 'IntersectionObserver' in window) {
@@ -76,8 +99,7 @@
     document.addEventListener('keydown', onKey);
     document.body.appendChild(overlay);
     document.body.style.overflow = 'hidden';
-    // GTM event
-    if (window.dataLayer) window.dataLayer.push({ event: 'demo_modal_open' });
+    track('demo_modal_open');
   }
   function closeCalendar() {
     if (!overlay) return;
@@ -110,13 +132,111 @@
   // ---------- GTM tracking for primary CTAs ----------
   document.querySelectorAll('[data-track]').forEach(function (el) {
     el.addEventListener('click', function () {
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          event: 'cta_click',
-          cta_label: el.dataset.track,
-          cta_href: el.getAttribute('href') || ''
-        });
-      }
+      track('cta_click', {
+        cta_label: el.dataset.track,
+        cta_href: el.getAttribute('href') || '',
+        cta_text: (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 120)
+      });
     });
   });
+
+  // ---------- Learning videos: auto-enable when MP4 exists in CloudFront ----------
+  (function () {
+    var lessonButtons = document.querySelectorAll('[data-video-src]');
+    if (!lessonButtons.length) return;
+
+    var videoOverlay = null;
+
+    function setVideoState(button, state) {
+      var status = button.querySelector('[data-video-state]');
+      button.classList.remove('is-checking', 'is-ready', 'is-pending');
+      button.classList.add('is-' + state);
+
+      if (state === 'ready') {
+        button.disabled = false;
+        button.setAttribute('aria-disabled', 'false');
+        if (status) status.textContent = 'Disponible';
+        return;
+      }
+
+      button.disabled = true;
+      button.setAttribute('aria-disabled', 'true');
+      if (status) status.textContent = state === 'checking' ? 'Comprobando vídeo' : 'Próximamente';
+    }
+
+    function closeVideo() {
+      if (!videoOverlay) return;
+      videoOverlay.remove();
+      videoOverlay = null;
+      document.removeEventListener('keydown', onVideoKey);
+      document.body.style.overflow = '';
+    }
+
+    function onVideoKey(event) {
+      if (event.key === 'Escape') closeVideo();
+    }
+
+    function openVideo(button) {
+      var src = button.dataset.videoSrc;
+      var title = button.dataset.videoTitle || (button.textContent || 'Vídeo TrustCore').trim();
+      if (!src || !button.classList.contains('is-ready')) return;
+
+      closeVideo();
+      videoOverlay = document.createElement('div');
+      videoOverlay.setAttribute('role', 'dialog');
+      videoOverlay.setAttribute('aria-modal', 'true');
+      videoOverlay.setAttribute('aria-label', title);
+      videoOverlay.style.cssText = [
+        'position:fixed',
+        'inset:0',
+        'z-index:10000',
+        'display:grid',
+        'place-items:center',
+        'background:rgba(2,10,42,.72)',
+        'backdrop-filter:blur(6px)',
+        'padding:1rem'
+      ].join(';');
+      videoOverlay.innerHTML =
+        '<div style="position:relative;width:min(100%,860px);background:#020A2A;border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden;box-shadow:0 34px 90px rgba(2,10,42,.44)">' +
+          '<button type="button" aria-label="Cerrar vídeo" data-video-close style="position:absolute;top:.75rem;right:.75rem;z-index:2;width:40px;height:40px;border:0;border-radius:999px;background:rgba(255,255,255,.94);color:#040F3F;font-size:1.35rem;font-weight:800;cursor:pointer">&times;</button>' +
+          '<video src="' + src + '" controls autoplay muted playsinline style="display:block;width:100%;aspect-ratio:16/9;background:#020A2A"></video>' +
+          '<div style="padding:1rem 1.1rem;color:white;font-weight:800">' + title + '</div>' +
+        '</div>';
+      videoOverlay.addEventListener('click', function (event) {
+        if (event.target === videoOverlay || event.target.closest('[data-video-close]')) closeVideo();
+      });
+      document.addEventListener('keydown', onVideoKey);
+      document.body.appendChild(videoOverlay);
+      var activeVideo = videoOverlay.querySelector('video');
+      if (activeVideo) {
+        activeVideo.defaultMuted = true;
+        activeVideo.muted = true;
+        activeVideo.volume = 0;
+      }
+      document.body.style.overflow = 'hidden';
+      track('learn_video_open', { video_src: src, video_title: title });
+    }
+
+    lessonButtons.forEach(function (button) {
+      var src = button.dataset.videoSrc;
+      setVideoState(button, 'checking');
+
+      button.addEventListener('click', function () {
+        openVideo(button);
+      });
+
+      if (!src || !window.fetch) {
+        setVideoState(button, 'pending');
+        return;
+      }
+
+      fetch(src, { method: 'HEAD', cache: 'no-store' })
+        .then(function (response) {
+          setVideoState(button, response.ok ? 'ready' : 'pending');
+        })
+        .catch(function () {
+          setVideoState(button, 'pending');
+        });
+    });
+  })();
 })();

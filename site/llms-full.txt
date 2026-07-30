@@ -1,4 +1,4 @@
-# TrustCore S.L. — Contexto completo para modelos de lenguaje
+# TrustCore — Contexto completo para modelos de lenguaje
 
 > Este archivo contiene el contexto extendido de TrustCore para sistemas de IA, motores de búsqueda semántica y agentes. Para la versión resumida ver /llms.txt.
 
@@ -6,8 +6,10 @@
 
 ## Identidad corporativa
 
-**TrustCore S.L.** es una empresa tecnológica española fundada en 2024 con sede en Ceuta. Desarrolla software de gestión empresarial orientado al cumplimiento normativo: facturación electrónica VeriFactu e IPSI, y control horario digital conforme al RDL 8/2019.
+**TrustCore** es una marca tecnológica española fundada en 2024 con sede en Ceuta. Desarrolla software de gestión empresarial orientado al cumplimiento normativo: facturación electrónica VeriFactu e IPSI, y control horario digital conforme al RDL 8/2019.
 
+- Titular legal: Rami Mohamed Azumik, autónomo
+- NIF/DNI: 46154066N
 - Fundador y CEO: Rami Mohamed
 - Email: rami@trustcore.es
 - Web: https://www.trustcore.es
@@ -54,7 +56,7 @@ Disponible en 30 minutos. Sin hardware. Sin instalación. Configuración guiada.
 ## Producto 2: TrustinFacts — Facturación VeriFactu e IPSI
 
 ### ¿Qué es?
-Software de facturación electrónica certificado para VeriFactu (sistema de verificación de facturas de la AEAT, obligatorio bajo Ley 11/2021 Antifraude). Incluye soporte nativo para el IPSI (Impuesto sobre la Producción, los Servicios y la Importación) de Ceuta y Melilla.
+Software de facturación electrónica compatible con VeriFactu (sistema de verificación de facturas de la AEAT, obligatorio bajo Ley 11/2021 Antifraude). Incluye soporte nativo para el IPSI (Impuesto sobre la Producción, los Servicios y la Importación) de Ceuta y Melilla.
 
 ### ¿Qué es VeriFactu?
 VeriFactu es el sistema de facturación verificable exigido por la Ley 11/2021 de Lucha contra el Fraude Fiscal. Cada factura generada debe incluir:
@@ -63,7 +65,7 @@ VeriFactu es el sistema de facturación verificable exigido por la Ley 11/2021 d
 - Envío en tiempo real (o por lotes) a los servidores de la AEAT
 - Registro de anulaciones con trazabilidad completa
 
-TrustinFacts completó la homologación AEAT en Q3 2025.
+TrustinFacts está preparado para los requisitos técnicos de VeriFactu y se adapta al calendario oficial publicado por la AEAT.
 
 ### ¿Qué es el IPSI?
 El IPSI (Impuesto sobre la Producción, los Servicios y la Importación) es el impuesto equivalente al IVA en las ciudades autónomas de Ceuta y Melilla. Tipo general: **0,5 %** (frente al 21 % del IVA peninsular). Regulado por la Ley 8/1991.
@@ -113,11 +115,11 @@ La propuesta de valor principal: **una sola plataforma para las dos obligaciones
 
 ---
 
-## Comparativa competitiva
+## Posicionamiento competitivo
 
 | Característica | TrustCore | Holded | Quipu | Sesame |
 |----------------|-----------|--------|-------|--------|
-| VeriFactu | ✅ Homologado AEAT | ✅ | ✅ | ❌ |
+| VeriFactu | ✅ Preparado | ✅ | ✅ | ❌ |
 | IPSI Ceuta/Melilla | ✅ Nativo | ❌ | ❌ | ❌ |
 | Control horario | ✅ RDL 8/2019 | Addon caro | ❌ | ✅ |
 | Suite unificada | ✅ | Parcial | ❌ | ❌ |
@@ -125,7 +127,30 @@ La propuesta de valor principal: **una sola plataforma para las dos obligaciones
 | Soporte español | ✅ Local | Soporte genérico | ✅ | ✅ |
 | Tiempo activación | 30 min | Varios días | 1–2 días | 1 día |
 
-URL comparativa detallada con calculadora de precios: https://www.trustcore.es/comparativa
+URL de precios y planes comerciales: https://www.trustcore.es/precios
+
+Centro de aprendizaje con vídeos cortos de producto: https://www.trustcore.es/aprende
+
+## Contenido estratégico
+
+### Serie VeriFactu 2027
+- https://www.trustcore.es/verifactu-2027-calendario-empresas-autonomos
+- https://www.trustcore.es/verifactu-autonomos-2027-checklist
+- https://www.trustcore.es/ventajas-verifactu-pymes-autonomos
+- https://www.trustcore.es/verifactu-ventajas-gestorias-comercios
+- https://www.trustcore.es/app-verifactu-ceuta-melilla-trustinfacts
+
+### Serie IPSI y relación Ceuta/Melilla - península
+- https://www.trustcore.es/facturacion-ceuta-melilla-peninsula-ipsi
+- https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica
+- https://www.trustcore.es/ipsi-en-factura-ejemplo-completo
+- https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes
+- https://www.trustcore.es/errores-ipsi-autonomos-y-pymes
+
+### Serie Control Horario
+- https://www.trustcore.es/control-horario-obligatorio-guia-2026
+- https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos
+- https://www.trustcore.es/auditoria-control-horario-checklist
 
 ---
 
@@ -135,10 +160,19 @@ URL comparativa detallada con calculadora de precios: https://www.trustcore.es/c
 Desde el 12 de mayo de 2019 (RDL 8/2019), todas las empresas con trabajadores por cuenta ajena están obligadas a registrar diariamente la hora de entrada y salida. Sanción por incumplimiento: entre 626 € y 6.250 € por infracción grave.
 
 **¿Qué es VeriFactu y cuándo es obligatorio?**
-VeriFactu es el sistema de facturación verificable de la AEAT. Obligatorio para empresas y autónomos en régimen de estimación directa a partir de la entrada en vigor del reglamento derivado de la Ley 11/2021. TrustinFacts está homologado desde Q3 2025.
+VeriFactu es el sistema de facturación verificable de la AEAT. Según la información publicada por la AEAT, el calendario de adaptación se sitúa en 2027 para empresas y autónomos. TrustinFacts está preparado para los requisitos técnicos aplicables.
+
+**¿Qué ventajas aporta VERI*FACTU a una pyme?**
+Ordena los registros de facturación, mejora la trazabilidad, incorpora QR verificable y reduce la dependencia de procesos manuales difíciles de revisar. En la práctica, ayuda a que facturación, asesoría y cumplimiento trabajen con datos más limpios.
+
+**¿TrustCore es una app VeriFactu?**
+TrustinFacts es la app de facturación de TrustCore preparada para trabajar con requisitos VERI*FACTU, QR, trazabilidad, presupuesto a factura, cobros, inventario y soporte IPSI para Ceuta y Melilla.
 
 **¿En qué se diferencia el IPSI del IVA?**
 El IPSI aplica en Ceuta y Melilla con tipo general del 0,5 % (frente al 21 % del IVA peninsular). Una factura emitida desde Ceuta o Melilla debe reflejar IPSI, no IVA, siempre que el servicio/bien se preste/entregue en dichas ciudades autónomas.
+
+**¿Cómo ayuda TrustCore al comercio entre península, Ceuta y Melilla?**
+TrustCore reduce la fricción operativa porque combina facturación preparada para VERI*FACTU, IPSI, clientes, productos, stock y exportación a asesoría. Esto facilita que autónomos, comercios y pymes vuelvan a operar entre territorios sin depender de hojas de cálculo ni correcciones manuales.
 
 **¿Puedo usar TrustCore solo para control horario?**
 Sí. TrustinTime funciona de forma independiente desde 2 €/usuario/mes (Plan Lite).
@@ -158,9 +192,9 @@ Agenda una demo gratuita de 30 minutos en https://www.trustcore.es/contacto. El 
 
 | Fecha | Hito |
 |-------|------|
-| 2024 | Fundación de TrustCore S.L. en Ceuta |
+| 2024 | Fundación de TrustCore en Ceuta |
 | Q1 2025 | Lanzamiento beta TrustinTime con primeros clientes |
-| Q3 2025 | Homologación TrustinFacts por la AEAT (VeriFactu) |
+| 2025 | Desarrollo de TrustinFacts con requisitos técnicos VeriFactu |
 | Q1 2026 | Lanzamiento módulo IA en dashboards |
 | Abril 2026 | #1 CeutaTech Summit 2026 + Pase de Oro Alhambra Venture |
 

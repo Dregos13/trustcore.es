@@ -25,6 +25,9 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "site" {
   bucket = aws_s3_bucket.site.id
 
   rule {
+    blocked_encryption_types = ["SSE-C"]
+    bucket_key_enabled       = false
+
     apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"
     }
@@ -77,6 +80,14 @@ resource "aws_acm_certificate_validation" "site" {
 
 data "aws_cloudfront_cache_policy" "optimized" {
   name = "Managed-CachingOptimized"
+}
+
+data "aws_cloudfront_cache_policy" "disabled" {
+  name = "Managed-CachingDisabled"
+}
+
+data "aws_cloudfront_origin_request_policy" "all_viewer_except_host" {
+  name = "Managed-AllViewerExceptHostHeader"
 }
 
 resource "aws_cloudfront_function" "canonical_redirect" {
@@ -154,12 +165,41 @@ resource "aws_cloudfront_function" "canonical_redirect" {
       };
     }
 
+    function legacyRedirectTarget(uri) {
+      if (uri === "/comparativa" || uri === "/en/comparativa" || uri === "/fr/comparativa") {
+        return "/precios";
+      }
+
+      if (uri === "/article" || uri === "/en/article" || uri === "/fr/article") {
+        return "/blog";
+      }
+
+      if (uri === "/en/" || uri === "/fr/") {
+        return "/";
+      }
+
+      if (uri === "/en/pricing" || uri === "/fr/tarifs") {
+        return "/precios";
+      }
+
+      if (uri.indexOf("/en/") === 0 || uri.indexOf("/fr/") === 0) {
+        return uri.substring(3) || "/";
+      }
+
+      return null;
+    }
+
     function handler(event) {
       var request = event.request;
       var host = request.headers.host.value.toLowerCase();
       var uri = normalizeCanonicalPath(request.uri);
       var query = buildQueryString(request.querystring);
       var shouldRedirectUri = uri !== request.uri;
+      var legacyTarget = legacyRedirectTarget(uri);
+
+      if (legacyTarget) {
+        return redirect("https://${local.canonical_host}" + legacyTarget + query);
+      }
 
       if (host !== "${local.canonical_host}" || shouldRedirectUri) {
         return redirect("https://${local.canonical_host}" + uri + query);
@@ -184,6 +224,71 @@ resource "aws_cloudfront_function" "canonical_redirect" {
   EOT
 }
 
+data "archive_file" "contact_form" {
+  type        = "zip"
+  source_dir  = "${path.module}/lambda/contact-form"
+  output_path = "${path.module}/.terraform/contact-form.zip"
+}
+
+data "aws_iam_policy_document" "contact_form_assume_role" {
+  statement {
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["lambda.amazonaws.com"]
+    }
+  }
+}
+
+resource "aws_iam_role" "contact_form" {
+  name               = "${replace(var.domain_name, ".", "-")}-contact-form"
+  assume_role_policy = data.aws_iam_policy_document.contact_form_assume_role.json
+  tags               = var.tags
+}
+
+resource "aws_iam_role_policy_attachment" "contact_form_basic" {
+  role       = aws_iam_role.contact_form.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+resource "aws_lambda_function" "contact_form" {
+  function_name    = "${replace(var.domain_name, ".", "-")}-contact-form"
+  description      = "Forwards trustcore.es contact form submissions to HubSpot."
+  role             = aws_iam_role.contact_form.arn
+  handler          = "index.handler"
+  runtime          = "nodejs20.x"
+  architectures    = ["arm64"]
+  filename         = data.archive_file.contact_form.output_path
+  source_code_hash = data.archive_file.contact_form.output_base64sha256
+  timeout          = 10
+  memory_size      = 128
+
+  environment {
+    variables = {
+      ALLOWED_ORIGIN    = "https://${local.canonical_host}"
+      SECONDARY_ORIGIN  = "https://${var.domain_name}"
+      HUBSPOT_PORTAL_ID = "148252702"
+      HUBSPOT_FORM_GUID = "2b49a390-3c95-42a0-a687-c8a9da3a5034"
+    }
+  }
+
+  tags = var.tags
+}
+
+resource "aws_lambda_function_url" "contact_form" {
+  function_name      = aws_lambda_function.contact_form.function_name
+  authorization_type = "NONE"
+
+  cors {
+    allow_credentials = false
+    allow_headers     = ["content-type"]
+    allow_methods     = ["POST"]
+    allow_origins     = ["https://${local.canonical_host}", "https://${var.domain_name}"]
+    max_age           = 300
+  }
+}
+
 resource "aws_cloudfront_distribution" "site" {
   enabled             = true
   is_ipv6_enabled     = true
@@ -192,10 +297,49 @@ resource "aws_cloudfront_distribution" "site" {
   price_class         = var.price_class
   aliases             = local.aliases
 
+  custom_error_response {
+    error_code            = 403
+    response_code         = 404
+    response_page_path    = "/404.html"
+    error_caching_min_ttl = 60
+  }
+
+  custom_error_response {
+    error_code            = 404
+    response_code         = 404
+    response_page_path    = "/404.html"
+    error_caching_min_ttl = 60
+  }
+
   origin {
     domain_name              = aws_s3_bucket.site.bucket_regional_domain_name
     origin_id                = "s3-${aws_s3_bucket.site.id}"
     origin_access_control_id = aws_cloudfront_origin_access_control.site.id
+  }
+
+  origin {
+    domain_name = trimsuffix(trimprefix(aws_lambda_function_url.contact_form.function_url, "https://"), "/")
+    origin_id   = "lambda-contact-form"
+
+    custom_origin_config {
+      http_port              = 80
+      https_port             = 443
+      origin_protocol_policy = "https-only"
+      origin_ssl_protocols   = ["TLSv1.2"]
+    }
+  }
+
+  ordered_cache_behavior {
+    path_pattern           = "/api/contacto"
+    target_origin_id       = "lambda-contact-form"
+    viewer_protocol_policy = "redirect-to-https"
+
+    allowed_methods = ["GET", "HEAD", "OPTIONS", "POST", "PUT", "PATCH", "DELETE"]
+    cached_methods  = ["GET", "HEAD", "OPTIONS"]
+    compress        = true
+
+    cache_policy_id          = data.aws_cloudfront_cache_policy.disabled.id
+    origin_request_policy_id = data.aws_cloudfront_origin_request_policy.all_viewer_except_host.id
   }
 
   default_cache_behavior {
@@ -290,4 +434,9 @@ resource "aws_s3_object" "site" {
     length(regexall("\\.[^.]+$", each.value)) > 0 ? lower(element(regexall("\\.[^.]+$", each.value), 0)) : "",
     "application/octet-stream"
   )
+
+  cache_control = contains(
+    [".html", ".json", ".xml", ".txt", ".js", ".css"],
+    length(regexall("\\.[^.]+$", each.value)) > 0 ? lower(element(regexall("\\.[^.]+$", each.value), 0)) : ""
+  ) ? "no-cache, no-store, must-revalidate" : "public, max-age=31536000, immutable"
 }

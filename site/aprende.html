@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprende TrustCore — Vídeos cortos de TrustinFacts y TrustinTime</title>
+  <meta name="description" content="Aprende a usar TrustCore con vídeos cortos: facturas, presupuestos, gastos, inventario, control horario, turnos y ausencias. Guías prácticas para pymes y gestorías.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#040F3F">
+  <link rel="canonical" href="https://www.trustcore.es/aprende">
+  <link rel="alternate" hreflang="es" href="https://www.trustcore.es/aprende">
+  <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/aprende">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.trustcore.es/aprende">
+  <meta property="og:title" content="Aprende TrustCore — Vídeos cortos de producto">
+  <meta property="og:description" content="Centro de aprendizaje para dominar TrustinFacts y TrustinTime en vídeos cortos y guías prácticas.">
+  <meta property="og:image" content="https://www.trustcore.es/assets/og-image.png">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="TrustCore">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Aprende TrustCore",
+    "url": "https://www.trustcore.es/aprende",
+    "description": "Centro de aprendizaje con vídeos cortos y guías prácticas para usar TrustinFacts y TrustinTime.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TrustCore",
+      "logo": "https://www.trustcore.es/assets/trustcore-icon.png"
+    },
+    "hasPart": [
+      { "@type": "LearningResource", "name": "Crear clientes, proveedores, productos y servicios", "learningResourceType": "Video tutorial" },
+      { "@type": "LearningResource", "name": "Crear y editar presupuestos", "learningResourceType": "Video tutorial" },
+      { "@type": "LearningResource", "name": "Crear facturas y facturas desde venta", "learningResourceType": "Video tutorial" },
+      { "@type": "LearningResource", "name": "Registrar gastos, pagos e informes fiscales", "learningResourceType": "Video tutorial" },
+      { "@type": "LearningResource", "name": "Gestionar inventario y stock", "learningResourceType": "Video tutorial" }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="/assets/trustcore-icon.png">
+  <link rel="stylesheet" href="/assets/css/components.css">
+</head>
+<body class="font-sans text-gray-800 antialiased" style="background:var(--tc-surface-alt)">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="/" class="flex items-center gap-3 shrink-0" aria-label="TrustCore inicio">
+          <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
+          <span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
+          <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
+          <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+          <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
+          <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
+          <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
+          <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
+          <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
+      <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
+      <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
+      <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
+      <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
+      <a href="/aprende" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Aprende</a>
+      <a href="/contacto" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Contacto</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="relative overflow-hidden" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%);padding-top:calc(var(--tc-header-height) + 2.25rem);padding-bottom:3.25rem;">
+      <div class="absolute inset-0 opacity-[0.045]" aria-hidden="true" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:44px 44px;"></div>
+      <div class="tc-container relative">
+        <div class="grid lg:grid-cols-[1fr_.82fr] gap-12 items-center">
+          <div data-reveal>
+            <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Aprende TrustCore</span>
+            <h1 class="mt-4 max-w-3xl text-white font-extrabold leading-tight" style="font-size:clamp(2.15rem,8vw,4.7rem);letter-spacing:0;">
+              Aprende TrustCore por tareas, no por manuales eternos
+            </h1>
+            <p class="mt-5 sm:mt-6 max-w-2xl text-blue-100/85 text-base sm:text-lg leading-relaxed">
+              Lecciones de 10 a 15 segundos para facturas, presupuestos, gastos, inventario, fichajes, turnos y ausencias. Cuando subas un MP4 a CloudFront, su lección se activa automáticamente.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#modulos" class="tc-btn tc-btn-primary"><i class="fas fa-play-circle"></i> Ver módulos</a>
+              <a href="/blog" class="inline-flex min-h-12 items-center gap-2 rounded-xl border border-white/25 px-5 py-3 font-bold text-white transition-colors hover:bg-white/10">Leer guías <i class="fas fa-arrow-right text-xs"></i></a>
+            </div>
+          </div>
+          <div class="tc-learning-console" data-reveal>
+            <div class="tc-learning-console__bar">
+              <span></span><span></span><span></span>
+              <strong>trustcore.es/aprende</strong>
+            </div>
+            <div class="tc-learning-console__screen">
+              <div class="tc-learning-player" aria-label="Vista previa de vídeo didáctico">
+                <div class="tc-learning-player__play"><i class="fas fa-play"></i></div>
+                <div>
+                  <p class="tc-learning-player__label">S3 pendiente</p>
+                  <p class="tc-learning-player__title">Crear factura VeriFactu</p>
+                  <p class="tc-learning-player__meta">12 s · TrustinFacts</p>
+                </div>
+              </div>
+              <div class="tc-learning-steps">
+                <span><i class="fas fa-check"></i> Cliente</span>
+                <span><i class="fas fa-check"></i> Líneas</span>
+                <span><i class="fas fa-qrcode"></i> QR VeriFactu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modulos" class="tc-section">
+      <div class="tc-container">
+        <div class="max-w-3xl" data-reveal>
+          <span class="tc-eyebrow">Módulos</span>
+          <h2 class="tc-display tc-display-lg mt-4">Rutas de aprendizaje por tarea</h2>
+          <p class="mt-4 text-slate-600 text-lg leading-relaxed">Cada tarjeta comprueba si su vídeo existe en CloudFront y se activa automáticamente. Los clips de TrustinFacts ya quedan ordenados por tarea para aprender sin manuales largos.</p>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
+            <div class="tc-learning-module__icon"><i class="fas fa-address-book"></i></div>
+            <p class="tc-learning-module__kicker">TrustinFacts</p>
+            <h3>Clientes, proveedores y catálogo</h3>
+            <p>Base comercial para trabajar con clientes, proveedores, productos, servicios y stock sin duplicar datos.</p>
+            <ul class="tc-lesson-list">
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear cliente" data-video-src="/videos/aprende/trustinfacts/crear-cliente.mp4">
+                  <span>Crear cliente <small>Alta de datos comerciales básicos y contacto.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear proveedor" data-video-src="/videos/aprende/trustinfacts/crear-proveedor.mp4">
+                  <span>Crear proveedor <small>Registro del proveedor para compras y gastos.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear producto" data-video-src="/videos/aprende/trustinfacts/crear-producto.mp4">
+                  <span>Crear producto <small>Ficha de producto con precio, coste y control.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear servicio" data-video-src="/videos/aprende/trustinfacts/crear-servicio.mp4">
+                  <span>Crear servicio <small>Alta de servicios facturables sin stock asociado.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear stock" data-video-src="/videos/aprende/trustinfacts/crear-stock.mp4">
+                  <span>Crear stock <small>Configuración inicial para controlar existencias.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Añadir stock" data-video-src="/videos/aprende/trustinfacts/anadir-stock.mp4">
+                  <span>Añadir stock <small>Entrada de unidades y actualización de inventario.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Mover a tienda" data-video-src="/videos/aprende/trustinfacts/mover-a-tienda.mp4">
+                  <span>Mover a tienda <small>Traslado de stock entre almacén y punto de venta.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+            </ul>
+          </article>
+
+          <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
+            <div class="tc-learning-module__icon"><i class="fas fa-file-contract"></i></div>
+            <p class="tc-learning-module__kicker">TrustinFacts</p>
+            <h3>Presupuestos, ventas y cobros</h3>
+            <p>Flujo comercial completo: presupuesto, venta, factura, liquidación y pagos registrados.</p>
+            <ul class="tc-lesson-list">
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear presupuesto" data-video-src="/videos/aprende/trustinfacts/crear-presupuesto.mp4">
+                  <span>Crear presupuesto <small>Primer documento comercial antes de vender.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Editar presupuesto" data-video-src="/videos/aprende/trustinfacts/editar-presupuesto.mp4">
+                  <span>Editar presupuesto <small>Ajustes de líneas, importes y condiciones.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear venta desde presupuesto" data-video-src="/videos/aprende/trustinfacts/crear-venta-presupuesto.mp4">
+                  <span>Crear venta desde presupuesto <small>Conversión del presupuesto aceptado en venta.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Ver venta y crear factura" data-video-src="/videos/aprende/trustinfacts/ver-venta-y-crear-factura.mp4">
+                  <span>Ver venta y crear factura <small>Revisión de la venta antes de facturar.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Cobrar venta y generar liquidación" data-video-src="/videos/aprende/trustinfacts/cobrar-venta-y-generar-liquidacion.mp4">
+                  <span>Cobrar venta y generar liquidación <small>Registro del cobro y cierre de la operación.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Registrar pago" data-video-src="/videos/aprende/trustinfacts/registrar-pago.mp4">
+                  <span>Registrar pago <small>Control de pagos asociados a una operación.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+            </ul>
+          </article>
+
+          <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
+            <div class="tc-learning-module__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <p class="tc-learning-module__kicker">TrustinFacts</p>
+            <h3>Facturación, modelos e informes</h3>
+            <p>Creación de facturas, facturación desde venta, modelos fiscales e informes para revisar la actividad.</p>
+            <ul class="tc-lesson-list">
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear factura" data-video-src="/videos/aprende/trustinfacts/crear-factura.mp4">
+                  <span>Crear factura <small>Emisión directa de una factura desde cero.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Crear factura desde venta" data-video-src="/videos/aprende/trustinfacts/crear-factura-desde-venta.mp4">
+                  <span>Crear factura desde venta <small>Facturación de una venta ya registrada.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Modelo 001" data-video-src="/videos/aprende/trustinfacts/modelo001.mp4">
+                  <span>Modelo 001 <small>Consulta y preparación del modelo correspondiente.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Modelo 130" data-video-src="/videos/aprende/trustinfacts/modelo130.mp4">
+                  <span>Modelo 130 <small>Revisión de datos para pagos fraccionados.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Informes 1" data-video-src="/videos/aprende/trustinfacts/informes-1.mp4">
+                  <span>Informes 1 <small>Primer vistazo a métricas y actividad.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Informes 2" data-video-src="/videos/aprende/trustinfacts/informes-2.mp4">
+                  <span>Informes 2 <small>Lectura de datos para controlar el negocio.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Informes 3" data-video-src="/videos/aprende/trustinfacts/informes-3.mp4">
+                  <span>Informes 3 <small>Revisión avanzada para tomar decisiones.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+            </ul>
+          </article>
+
+          <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
+            <div class="tc-learning-module__icon"><i class="fas fa-receipt"></i></div>
+            <p class="tc-learning-module__kicker">TrustinFacts</p>
+            <h3>Gastos y deducciones</h3>
+            <p>Registro de gastos simples, gastos con albarán y otros gastos deducibles para mantener costes controlados.</p>
+            <ul class="tc-lesson-list">
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Registrar gasto" data-video-src="/videos/aprende/trustinfacts/registrar-gasto.mp4">
+                  <span>Registrar gasto <small>Alta rápida de un gasto del negocio.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Registrar gasto con albarán" data-video-src="/videos/aprende/trustinfacts/registrar-gasto-con-albaran.mp4">
+                  <span>Registrar gasto con albarán <small>Gasto vinculado a documento o entrega.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Registrar otros gastos deducibles" data-video-src="/videos/aprende/trustinfacts/registrar-otros-gastos-deducibles.mp4">
+                  <span>Registrar otros gastos deducibles <small>Clasificación de deducciones habituales.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+            </ul>
+          </article>
+
+          <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
+            <div class="tc-learning-module__icon"><i class="fas fa-fingerprint"></i></div>
+            <p class="tc-learning-module__kicker">TrustinTime</p>
+            <h3>Control horario y RRHH</h3>
+            <p>Primeros pasos para fichar, gestionar ausencias y exportar evidencias listas para auditoría.</p>
+            <ul class="tc-lesson-list">
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Fichar una jornada" data-video-src="/videos/aprende/trustintime/fichar-jornada.mp4">
+                  <span>Fichar una jornada <small>Entrada y salida diaria del trabajador.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Gestionar vacaciones" data-video-src="/videos/aprende/trustintime/gestionar-ausencia.mp4">
+                  <span>Gestionar vacaciones <small>Solicitud, revisión y control de ausencias.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="tc-lesson-trigger" data-video-title="Exportar informe legal" data-video-src="/videos/aprende/trustintime/exportar-informe.mp4">
+                  <span>Exportar informe legal <small>Evidencias listas para auditoría o inspección.</small></span><strong>Vídeo</strong><em class="tc-video-state" data-video-state>Comprobando vídeo</em>
+                </button>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tc-section bg-white">
+      <div class="tc-container">
+        <div class="grid lg:grid-cols-[.85fr_1.15fr] gap-10 items-start">
+          <div data-reveal>
+            <span class="tc-eyebrow">Activación</span>
+            <h2 class="tc-display tc-display-md mt-4">Ruta de 7 días para dejar la operativa lista</h2>
+            <p class="mt-4 text-slate-600 leading-relaxed">El objetivo no es consumir vídeos: es que cada negocio llegue a 2027 con facturación, IPSI y control horario funcionando sin improvisar.</p>
+            <a href="/blog" class="tc-btn tc-btn-secondary mt-7"><i class="fas fa-book-open"></i> Leer guías de apoyo</a>
+          </div>
+          <div class="tc-learn-roadmap" data-reveal>
+            <article class="tc-learn-roadmap__item"><div><h3>Diagnóstico de facturación</h3><p>Series, impuestos, clientes, productos y operaciones Ceuta/Melilla - península.</p></div></article>
+            <article class="tc-learn-roadmap__item"><div><h3>Primer flujo TrustinFacts</h3><p>Presupuesto, factura, QR, cobro y revisión de margen con datos reales.</p></div></article>
+            <article class="tc-learn-roadmap__item"><div><h3>Control horario operativo</h3><p>Usuarios, fichajes, incidencias, ausencias y exportación de evidencias.</p></div></article>
+            <article class="tc-learn-roadmap__item"><div><h3>Revisión con asesoría</h3><p>Permisos, exportaciones, reporting y calendario de obligaciones antes de VeriFactu 2027.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tc-section bg-white">
+      <div class="tc-container">
+        <div class="grid lg:grid-cols-[.85fr_1.15fr] gap-10 items-start">
+          <div data-reveal>
+            <span class="tc-eyebrow">Webinars</span>
+            <h2 class="tc-display tc-display-md mt-4">Sesiones largas para onboarding y gestorías</h2>
+            <p class="mt-4 text-slate-600 leading-relaxed">Además de los clips rápidos, esta zona queda preparada para webinars propios, grabaciones de formación y recorridos por sector.</p>
+            <a href="/contacto" class="tc-btn tc-btn-secondary mt-7"><i class="fas fa-calendar-check"></i> Pedir sesión guiada</a>
+          </div>
+          <div class="grid md:grid-cols-2 gap-5">
+            <article class="tc-webinar-card" data-reveal>
+              <span>30 min</span>
+              <h3>Implantación de control horario en una pyme</h3>
+              <p>Usuarios, ubicaciones, fichajes, ausencias y exportación mensual.</p>
+            </article>
+            <article class="tc-webinar-card" data-reveal>
+              <span>25 min</span>
+              <h3>Facturación VeriFactu e IPSI sin errores</h3>
+              <p>Flujo comercial, impuestos, QR, cobros y revisión de datos.</p>
+            </article>
+            <article class="tc-webinar-card" data-reveal>
+              <span>40 min</span>
+              <h3>Operativa para gestorías</h3>
+              <p>Clientes, permisos, supervisión y reporting de cumplimiento.</p>
+            </article>
+            <article class="tc-webinar-card" data-reveal>
+              <span>20 min</span>
+              <h3>Primeros 7 días con TrustCore</h3>
+              <p>Checklist de arranque para dejar la herramienta lista.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tc-section" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%)">
+      <div class="tc-container text-center max-w-3xl" data-reveal>
+        <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Siguiente paso</span>
+        <h2 class="tc-display tc-display-lg mt-4 text-white">Convierte aprendizaje en activación real</h2>
+        <p class="mt-5 text-blue-100/80 text-lg leading-relaxed">Si tu equipo necesita empezar ya, revisamos contigo facturación, control horario y usuarios en una demo corta.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <button class="tc-btn tc-btn-primary" data-calendar-open data-track="aprende_cta_demo"><i class="fas fa-calendar-check"></i> Agendar demo</button>
+          <a href="/contacto" class="tc-btn tc-btn-ghost" data-track="aprende_cta_contacto">Hablar con TrustCore</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:var(--tc-navy-deep);color:rgba(255,255,255,0.6)" class="py-16">
+    <div class="tc-container">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-1">
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto" loading="lazy">
+            <span class="text-white font-extrabold text-lg">TrustCore</span>
+          </a>
+          <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gestión empresarial para pymes y autónomos.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
+              <i class="fas fa-trophy"></i> Alhambra Venture 2026
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
+              <i class="fas fa-award"></i> #1 CeutaTech 2026
+            </span>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Productos</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/productos/trustintime" class="hover:text-white transition-colors">TrustinTime</a></li>
+            <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">TrustinFacts</a></li>
+            <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Empresa</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/quienes-somos" class="hover:text-white transition-colors">Quiénes somos</a></li>
+            <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/aprende" class="hover:text-white transition-colors">Aprende</a></li>
+            <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Legal</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/aviso-legal" class="hover:text-white transition-colors">Aviso legal</a></li>
+            <li><a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a></li>
+            <li><a href="/cookies" class="hover:text-white transition-colors">Cookies</a></li>
+            <li><a href="/terminos" class="hover:text-white transition-colors">Términos</a></li>
+            <li><button type="button" data-cookie-settings class="hover:text-white transition-colors text-left">Configurar cookies</button></li>
+          </ul>
+          <div class="mt-5">
+            <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+              <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
+                Reseñanos en <i class="fas fa-star" style="color:#00B67A"></i> <strong class="text-slate-900">Trustpilot</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <p>&copy; 2026 TrustCore &mdash; Ceuta, España</p>
+        <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
+      </div>
+      <div class="mt-8 pt-8 border-t border-white/10 text-center">
+        <p class="text-xs uppercase tracking-widest opacity-50 mb-4">Acelerado y respaldado por</p>
+        <div class="flex flex-col items-center gap-4">
+          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
+          <div class="inline-flex max-w-full flex-col sm:flex-row items-center justify-center gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+            <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" class="h-8 w-auto object-contain" loading="lazy">
+            <span class="hidden sm:block h-8 w-px bg-slate-200" aria-hidden="true"></span>
+            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/components.js" defer></script>
+</body>
+</html>

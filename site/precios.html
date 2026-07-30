@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PRFRSKZL');</script>
-  <!-- End Google Tag Manager -->
   <!--
     ╔══════════════════════════════════════════════════════════════╗
     ║  STRIPE PAYMENT LINKS — reemplaza los "#" de los botones    ║
     ║  con tus URLs de Stripe Checkout:                           ║
     ║                                                              ║
-    ║  data-stripe="time_basico_monthly"    → TrustinTime Básico/mes    ║
-    ║  data-stripe="time_basico_annual"     → TrustinTime Básico/año    ║
-    ║  data-stripe="time_std_monthly"       → TrustinTime Estándar/mes  ║
-    ║  data-stripe="time_std_annual"        → TrustinTime Estándar/año  ║
-    ║  data-stripe="time_avanzado_monthly"  → TrustinTime Avanzado/mes  ║
-    ║  data-stripe="time_avanzado_annual"   → TrustinTime Avanzado/año  ║
+    ║  TrustinTime dirige a contacto hasta tener checkout publicado.    ║
     ║  data-stripe="facts_auto_monthly"     → TrustinFacts Autónomo/mes ║
     ║  data-stripe="facts_auto_annual"      → TrustinFacts Autónomo/año ║
     ║  data-stripe="facts_pyme_monthly"     → TrustinFacts Pyme/mes     ║
@@ -31,8 +23,6 @@
   <meta name="theme-color" content="#040F3F">
   <link rel="canonical" href="https://www.trustcore.es/precios">
   <link rel="alternate" hreflang="es" href="https://www.trustcore.es/precios">
-  <link rel="alternate" hreflang="en" href="https://www.trustcore.es/en/pricing">
-  <link rel="alternate" hreflang="fr" href="https://www.trustcore.es/fr/tarifs">
   <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/precios">
 
   <meta property="og:type" content="website">
@@ -96,7 +86,6 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148252702.js"></script>
 
   <script type="application/ld+json">
   {
@@ -247,64 +236,37 @@
 </head>
 <body class="font-sans antialiased" style="background:var(--tc-surface-alt)">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRFRSKZL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HEADER -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300" style="height:var(--tc-header-height)">
-    <div class="tc-container flex items-center justify-between h-full">
-      <a href="/" class="flex items-center gap-3 shrink-0">
-        <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
-        <span class="font-extrabold text-xl tracking-tight" style="color:var(--tc-navy)">TrustCore</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6" aria-label="Navegaci&oacute;n principal">
-        <div class="relative group">
-          <button type="button" class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-navy transition-colors" aria-haspopup="true" aria-expanded="false">
-            Productos <i class="fas fa-chevron-down text-[10px]"></i>
-          </button>
-          <div class="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0" role="menu">
-            <div class="w-72 rounded-2xl border border-gray-200 bg-white p-3 shadow-2xl shadow-slate-900/10">
-              <a href="/productos/trustintime" class="block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors" role="menuitem">
-                <span class="block text-sm font-bold" style="color:var(--tc-navy)">TrustinTime</span>
-                <span class="block text-xs text-gray-500 mt-0.5">Control horario, turnos, vacaciones y RRHH.</span>
-              </a>
-              <a href="/productos/trustinfacts" class="mt-1 block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors" role="menuitem">
-                <span class="block text-sm font-bold" style="color:var(--tc-navy)">TrustinFacts</span>
-                <span class="block text-xs text-gray-500 mt-0.5">Facturaci&oacute;n VeriFactu, IPSI y stock.</span>
-              </a>
-              <div class="mt-2 pt-2 border-t border-gray-100">
-                <a href="/precios" class="block rounded-xl px-4 py-2 text-xs font-semibold hover:bg-slate-50 transition-colors" style="color:var(--tc-blue-royal)">Ver planes y precios &rarr;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Precios</a>
-        <a href="/comparativa" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Comparativa</a>
-        <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Nosotros</a>
-        <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Blog</a>
-        <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Contacto</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://app.trustcore.es" class="text-sm font-semibold text-gray-600 hover:text-navy transition-colors">Iniciar sesi&oacute;n</a>
-        <button class="tc-btn tc-btn-primary" data-calendar-open data-track="header_demo">
-          <i class="fas fa-calendar-check"></i> Agendar demo
+  <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="/" class="flex items-center gap-3 shrink-0" aria-label="TrustCore inicio">
+          <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
+          <span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
+        <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
+        <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+        <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
+        <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
+        <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
+        <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
+        <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
         </button>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" aria-label="Abrir men&uacute;" aria-expanded="false">
-        <i class="fas fa-bars text-lg"></i>
-      </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
-      <a href="/productos/trustintime" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">TrustinTime</a>
-      <a href="/productos/trustinfacts" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">TrustinFacts</a>
-      <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Precios</a>
-      <a href="/comparativa" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Comparativa</a>
-      <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Nosotros</a>
-      <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Blog</a>
-      <a href="/contacto" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Contacto</a>
-      <a href="https://app.trustcore.es" class="block py-2.5 text-sm font-semibold text-gray-700 hover:text-navy">Iniciar sesi&oacute;n</a>
-      <button class="tc-btn tc-btn-primary w-full mt-3" data-calendar-open data-track="mobile_demo">
-        <i class="fas fa-calendar-check"></i> Agendar demo
-      </button>
+      <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
+      <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
+      <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
+      <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
+      <a href="/aprende" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Aprende</a>
+      <a href="/contacto" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Contacto</a>
     </div>
   </header>
 
@@ -408,11 +370,11 @@
               <li>Soporte por email</li>
             </ul>
             <div class="mt-auto pt-6 space-y-2.5">
-              <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="#" data-stripe="time_basico_monthly" data-track="pricing_time_basico_monthly" target="_blank" rel="noopener">
-                <i class="fas fa-credit-card text-sm"></i> Contratar B&aacute;sico
+              <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="/contacto?plan=trustintime-basico-mensual" data-track="pricing_time_basico_monthly">
+                <i class="fas fa-paper-plane text-sm"></i> Solicitar B&aacute;sico
               </a>
-              <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="#" data-stripe="time_basico_annual" data-track="pricing_time_basico_annual" target="_blank" rel="noopener">
-                <i class="fas fa-credit-card text-sm"></i> Contratar B&aacute;sico anual
+              <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="/contacto?plan=trustintime-basico-anual" data-track="pricing_time_basico_annual">
+                <i class="fas fa-paper-plane text-sm"></i> Solicitar B&aacute;sico anual
               </a>
               <p class="flex items-center justify-center gap-1.5 text-xs text-slate-400">
                 <i class="fas fa-rotate-left text-[10px]"></i> 14 d&iacute;as de prueba gratis
@@ -444,11 +406,11 @@
               <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#53CDFE;font-size:.8125rem"></i><span style="color:rgba(226,232,240,.85);font-size:.9375rem">Soporte prioritario por email</span></li>
             </ul>
             <div class="mt-auto pt-6 space-y-2.5">
-              <a class="cta-monthly tc-btn w-full font-bold" style="background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;box-shadow:0 10px 24px -10px rgba(83,205,254,.5)" href="#" data-stripe="time_std_monthly" data-track="pricing_time_std_monthly" target="_blank" rel="noopener">
-                <i class="fas fa-credit-card text-sm"></i> Contratar Est&aacute;ndar
+              <a class="cta-monthly tc-btn w-full font-bold" style="background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;box-shadow:0 10px 24px -10px rgba(83,205,254,.5)" href="/contacto?plan=trustintime-estandar-mensual" data-track="pricing_time_std_monthly">
+                <i class="fas fa-paper-plane text-sm"></i> Solicitar Est&aacute;ndar
               </a>
-              <a class="cta-annual hidden tc-btn w-full font-bold" style="background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;box-shadow:0 10px 24px -10px rgba(83,205,254,.5)" href="#" data-stripe="time_std_annual" data-track="pricing_time_std_annual" target="_blank" rel="noopener">
-                <i class="fas fa-credit-card text-sm"></i> Contratar Est&aacute;ndar anual
+              <a class="cta-annual hidden tc-btn w-full font-bold" style="background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;box-shadow:0 10px 24px -10px rgba(83,205,254,.5)" href="/contacto?plan=trustintime-estandar-anual" data-track="pricing_time_std_annual">
+                <i class="fas fa-paper-plane text-sm"></i> Solicitar Est&aacute;ndar anual
               </a>
               <button type="button" data-calendar-open data-track="pricing_time_std_demo" class="tc-btn w-full" style="border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);background:transparent;font-size:.875rem">
                 <i class="fas fa-calendar text-sm"></i> Ver demo antes
@@ -479,11 +441,11 @@
               <li>Exportaci&oacute;n SII / SEPE</li>
             </ul>
             <div class="mt-auto pt-6 space-y-2.5">
-              <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="#" data-stripe="time_avanzado_monthly" data-track="pricing_time_avanzado_monthly" target="_blank" rel="noopener">
-                <i class="fas fa-credit-card text-sm"></i> Contratar Avanzado
+              <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="/contacto?plan=trustintime-avanzado-mensual" data-track="pricing_time_avanzado_monthly">
+                <i class="fas fa-paper-plane text-sm"></i> Solicitar Avanzado
               </a>
-              <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="#" data-stripe="time_avanzado_annual" data-track="pricing_time_avanzado_annual" target="_blank" rel="noopener">
-                <i class="fas fa-credit-card text-sm"></i> Contratar Avanzado anual
+              <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="/contacto?plan=trustintime-avanzado-anual" data-track="pricing_time_avanzado_annual">
+                <i class="fas fa-paper-plane text-sm"></i> Solicitar Avanzado anual
               </a>
               <p class="flex items-center justify-center gap-1.5 text-xs text-slate-400">
                 <i class="fas fa-rotate-left text-[10px]"></i> 14 d&iacute;as de prueba gratis
@@ -495,7 +457,7 @@
 
         <!-- Trust strip -->
         <div class="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-400 max-w-5xl" data-reveal>
-          <span class="flex items-center gap-1.5"><i class="fas fa-lock"></i> Pago seguro con Stripe</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-headset"></i> Activaci&oacute;n guiada</span>
           <span class="flex items-center gap-1.5"><i class="fas fa-rotate-left"></i> Sin permanencia</span>
           <span class="flex items-center gap-1.5"><i class="fas fa-bolt"></i> Activaci&oacute;n en 30 min</span>
           <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved"></i> RGPD &bull; Cloud europeo</span>
@@ -575,10 +537,10 @@
                  data-track="pricing_facts_starter_monthly">
                 <i class="fas fa-credit-card text-sm"></i> Contratar Starter
               </a>
-              <a class="cta-annual hidden annual-contact-cta"
-                 href="/contacto?plan=facts-starter-anual"
-                 data-track="pricing_facts_starter_annual_contact">
-                <i class="fas fa-envelope text-sm"></i> Solicitar plan anual
+              <a class="cta-annual hidden tc-btn tc-btn-secondary w-full"
+                 href="https://buy.stripe.com/aFa3cvdj8dSI4Q97SWcs806" target="_blank" rel="noopener"
+                 data-track="pricing_facts_starter_annual">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Starter anual
               </a>
               <p class="flex items-center justify-center gap-1.5 text-xs text-slate-400 mt-1">
                 <i class="fas fa-lock text-[9px]"></i> Sin permanencia
@@ -617,10 +579,11 @@
                  data-track="pricing_facts_pro_monthly">
                 <i class="fas fa-credit-card text-sm"></i> Contratar Pro
               </a>
-              <a class="cta-annual hidden annual-contact-cta annual-contact-cta--dark"
-                 href="/contacto?plan=facts-pro-anual"
-                 data-track="pricing_facts_pro_annual_contact">
-                <i class="fas fa-envelope text-sm"></i> Solicitar plan anual
+              <a class="cta-annual hidden tc-btn w-full font-bold"
+                 style="background:linear-gradient(135deg,#2071D5,#53CDFE);color:#fff;box-shadow:0 10px 24px -10px rgba(83,205,254,.5)"
+                 href="https://buy.stripe.com/28E3cv7YOcOEaatgpscs809" target="_blank" rel="noopener"
+                 data-track="pricing_facts_pro_annual">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Pro anual
               </a>
               <button type="button" data-calendar-open data-track="pricing_facts_pro_demo"
                       class="tc-btn w-full"
@@ -658,10 +621,10 @@
                  data-track="pricing_facts_business_monthly">
                 <i class="fas fa-credit-card text-sm"></i> Contratar Business
               </a>
-              <a class="cta-annual hidden annual-contact-cta"
-                 href="/contacto?plan=facts-business-anual"
-                 data-track="pricing_facts_business_annual_contact">
-                <i class="fas fa-envelope text-sm"></i> Solicitar plan anual
+              <a class="cta-annual hidden tc-btn tc-btn-secondary w-full"
+                 href="https://buy.stripe.com/7sYeVd2Eu9Csbex8X0cs807" target="_blank" rel="noopener"
+                 data-track="pricing_facts_business_annual">
+                <i class="fas fa-credit-card text-sm"></i> Contratar Business anual
               </a>
               <p class="flex items-center justify-center gap-1.5 text-xs text-slate-400 mt-1">
                 <i class="fas fa-lock text-[9px]"></i> Sin permanencia
@@ -676,7 +639,7 @@
           <span class="flex items-center gap-1.5"><i class="fas fa-lock"></i> Pago seguro con Stripe</span>
           <span class="flex items-center gap-1.5"><i class="fas fa-rotate-left"></i> Sin permanencia</span>
           <span class="flex items-center gap-1.5"><i class="fas fa-trophy text-yellow-500"></i> &Uacute;nico con IPSI nativo en Espa&ntilde;a</span>
-          <span class="flex items-center gap-1.5"><i class="fas fa-certificate"></i> AEAT homologado Q3 2025</span>
+          <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved"></i> Preparado para VeriFactu</span>
         </div>
 
         <!-- Feature matrix -->
@@ -692,7 +655,7 @@
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
-              <tr><td class="py-3 pr-6 text-slate-700">VeriFactu homologado AEAT</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
+              <tr><td class="py-3 pr-6 text-slate-700">VeriFactu compatible</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
               <tr><td class="py-3 pr-6 text-slate-700">IPSI Ceuta/Melilla nativo</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
               <tr><td class="py-3 pr-6 text-slate-700">Facturas ilimitadas</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
               <tr><td class="py-3 pr-6 text-slate-700">Presupuestos y albaranes</td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td><td class="text-center py-3"><i class="fas fa-check text-green-500"></i></td></tr>
@@ -734,7 +697,7 @@
               <div class="rounded-xl p-4" style="background:rgba(255,255,255,.08);">
                 <i class="fas fa-file-invoice text-cyan-light mb-2"></i>
                 <p class="text-white font-bold text-sm">VeriFactu</p>
-                <p class="text-slate-300 text-xs mt-1">AEAT homologado</p>
+                <p class="text-slate-300 text-xs mt-1">Preparado VeriFactu</p>
               </div>
               <div class="rounded-xl p-4" style="background:rgba(255,255,255,.08);">
                 <i class="fas fa-percent text-cyan-light mb-2"></i>
@@ -831,9 +794,6 @@
           </details>
         </div>
         <div class="text-center mt-10" data-reveal>
-          <a href="/comparativa" class="inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all" style="color:var(--tc-blue-royal)">
-            Ver comparativa completa vs Holded, Quipu y Sesame <i class="fas fa-arrow-right text-xs"></i>
-          </a>
         </div>
       </div>
     </section>
@@ -881,7 +841,6 @@
             <li><a href="/productos/trustintime" class="hover:text-white transition-colors">TrustinTime</a></li>
             <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">TrustinFacts</a></li>
             <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
-            <li><a href="/comparativa" class="hover:text-white transition-colors">Comparativa</a></li>
           </ul>
         </div>
         <div>
@@ -889,8 +848,8 @@
           <ul class="space-y-2.5 text-sm">
             <li><a href="/quienes-somos" class="hover:text-white transition-colors">Qui&eacute;nes somos</a></li>
             <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/aprende" class="hover:text-white transition-colors">Aprende</a></li>
             <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
-            <li><a href="https://app.trustcore.es" class="hover:text-white transition-colors">Acceso clientes</a></li>
           </ul>
         </div>
         <div>
@@ -899,6 +858,8 @@
             <li><a href="/aviso-legal" class="hover:text-white transition-colors">Aviso legal</a></li>
             <li><a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a></li>
             <li><a href="/cookies" class="hover:text-white transition-colors">Cookies</a></li>
+            <li><a href="/terminos" class="hover:text-white transition-colors">Términos</a></li>
+            <li><button type="button" data-cookie-settings class="hover:text-white transition-colors text-left">Configurar cookies</button></li>
           </ul>
           <div class="mt-5">
             <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
@@ -910,18 +871,22 @@
         </div>
       </div>
       <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <p>&copy; 2026 TrustCore S.L. &mdash; Ceuta, Espa&ntilde;a</p>
+        <p>&copy; 2026 TrustCore &mdash; Ceuta, Espa&ntilde;a</p>
         <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
       </div>
       <div class="mt-8 pt-8 border-t border-white/10 text-center">
-        <p class="text-xs uppercase tracking-widest opacity-40 mb-4">Acelerado por</p>
-        <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El &Aacute;ngulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
+        <p class="text-xs uppercase tracking-widest opacity-50 mb-4">Acelerado y respaldado por</p>
+        <div class="flex flex-col items-center gap-4">
+          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
+          <div class="inline-flex max-w-full flex-col sm:flex-row items-center justify-center gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+            <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" class="h-8 w-auto object-contain" loading="lazy">
+            <span class="hidden sm:block h-8 w-px bg-slate-200" aria-hidden="true"></span>
+            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
+          </div>
+        </div>
       </div>
     </div>
   </footer>
-
-  <script src="assets/js/components.js"></script>
-  <script src="/assets/lang-switcher.js"></script>
 
   <script>
   (function () {
@@ -965,5 +930,8 @@
   })();
   </script>
 
+  <script src="/assets/js/consent.js" defer></script>
+
+  <script src="/assets/js/components.js" defer></script>
 </body>
 </html>

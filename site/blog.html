@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PRFRSKZL');</script>
-  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog TrustCore — IPSI, VeriFactu y Control Horario</title>
-  <meta name="description" content="Guías prácticas sobre IPSI, VeriFactu, control horario y gestión para pymes y autónomos. Escritas por el equipo de TrustCore, #1 CeutaTech Summit 2026.">
+  <meta name="description" content="Guías prácticas sobre IPSI, app VeriFactu, ventajas de VERI*FACTU, control horario y gestión para pymes y autónomos. Escritas por el equipo de TrustCore.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#040F3F">
   <link rel="canonical" href="https://www.trustcore.es/blog">
@@ -17,7 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.trustcore.es/blog">
   <meta property="og:title" content="Blog TrustCore — IPSI, VeriFactu y Control Horario para Pymes">
-  <meta property="og:description" content="Guías prácticas sobre gestión legal y fiscal para pymes. IPSI, VeriFactu, RDL 8/2019 y más.">
+  <meta property="og:description" content="Guías prácticas sobre gestión legal y fiscal para pymes. IPSI, app VeriFactu, ventajas VERI*FACTU, RDL 8/2019 y más.">
   <meta property="og:image" content="https://www.trustcore.es/assets/og-image.png">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="TrustCore">
@@ -28,10 +25,10 @@
     "@type": "Blog",
     "name": "Blog TrustCore",
     "url": "https://www.trustcore.es/blog",
-    "description": "Guías prácticas sobre IPSI, VeriFactu, control horario y gestión para pymes.",
+    "description": "Guías prácticas sobre IPSI, app VeriFactu, ventajas de VERI*FACTU, control horario y gestión para pymes.",
     "publisher": {
       "@type": "Organization",
-      "name": "TrustCore S.L.",
+      "name": "TrustCore",
       "logo": "https://www.trustcore.es/assets/trustcore-icon.png"
     }
   }
@@ -46,70 +43,40 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
   <link rel="stylesheet" href="assets/css/components.css">
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148252702.js"></script>
 </head>
 <body class="font-sans text-gray-800 antialiased" style="background:var(--tc-surface-alt)">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRFRSKZL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- HEADER -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300" style="height:var(--tc-header-height)">
-    <div class="tc-container flex items-center justify-between h-full">
-      <a href="/" class="flex items-center gap-3 shrink-0">
-        <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
-        <span class="font-extrabold text-xl tracking-tight" style="color:var(--tc-navy)">TrustCore</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6" aria-label="Navegaci&oacute;n principal">
-        <div class="relative group">
-          <button type="button" class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-navy transition-colors" aria-haspopup="true" aria-expanded="false">
-            Productos <i class="fas fa-chevron-down text-[10px]"></i>
-          </button>
-          <div class="absolute left-0 top-full pt-3 opacity-0 invisible translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0" role="menu">
-            <div class="w-72 rounded-2xl border border-gray-200 bg-white p-3 shadow-2xl shadow-slate-900/10">
-              <a href="/productos/trustintime" class="block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors" role="menuitem">
-                <span class="block text-sm font-bold" style="color:var(--tc-navy)">TrustinTime</span>
-                <span class="block text-xs text-gray-500 mt-0.5">Control horario, turnos, vacaciones y RRHH.</span>
-              </a>
-              <a href="/productos/trustinfacts" class="mt-1 block rounded-xl px-4 py-3 hover:bg-slate-50 transition-colors" role="menuitem">
-                <span class="block text-sm font-bold" style="color:var(--tc-navy)">TrustinFacts</span>
-                <span class="block text-xs text-gray-500 mt-0.5">Facturaci&oacute;n VeriFactu, IPSI y stock.</span>
-              </a>
-              <div class="mt-2 pt-2 border-t border-gray-100">
-                <a href="/precios" class="block rounded-xl px-4 py-2 text-xs font-semibold hover:bg-slate-50 transition-colors" style="color:var(--tc-blue-royal)">Ver planes y precios &rarr;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Gestor&iacute;as</a>
-        <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Precios</a>
-        <a href="/comparativa" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Comparativa</a>
-        <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Nosotros</a>
-        <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Blog</a>
-        <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-navy transition-colors">Contacto</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://app.trustcore.es" class="text-sm font-semibold text-gray-600 hover:text-navy transition-colors">Iniciar sesi&oacute;n</a>
-        <button class="tc-btn tc-btn-primary" data-calendar-open data-track="header_demo">
-          <i class="fas fa-calendar-check"></i> Agendar demo
+  <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="/" class="flex items-center gap-3 shrink-0" aria-label="TrustCore inicio">
+          <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
+          <span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
+        <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
+        <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+        <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
+        <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
+        <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
+        <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
+        <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
         </button>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" aria-label="Abrir men&uacute;" aria-expanded="false">
-        <i class="fas fa-bars text-lg"></i>
-      </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
-      <a href="/productos/trustintime" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">TrustinTime</a>
-      <a href="/productos/trustinfacts" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">TrustinFacts</a>
-      <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Gestor&iacute;as</a>
-      <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Precios</a>
-      <a href="/comparativa" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Comparativa</a>
-      <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Nosotros</a>
-      <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Blog</a>
-      <a href="/contacto" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-navy">Contacto</a>
-      <a href="https://app.trustcore.es" class="block py-2.5 text-sm font-semibold text-gray-700 hover:text-navy">Iniciar sesi&oacute;n</a>
-      <button class="tc-btn tc-btn-primary w-full mt-3" data-calendar-open data-track="mobile_demo">
-        <i class="fas fa-calendar-check"></i> Agendar demo
-      </button>
+      <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
+      <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
+      <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
+      <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
+      <a href="/aprende" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Aprende</a>
+      <a href="/contacto" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Contacto</a>
     </div>
   </header>
 
@@ -121,7 +88,7 @@
     <div class="tc-container relative text-white">
       <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Blog TrustCore</span>
       <h1 class="font-extrabold leading-tight max-w-3xl mt-4" style="font-size:var(--tc-text-4xl)">
-        Gu&iacute;as pr&aacute;cticas para operar <span class="tc-gradient-text">100% dentro de la ley</span>
+        Gu&iacute;as pr&aacute;cticas para operar <span style="color:var(--tc-cyan-light)">100% dentro de la ley</span>
       </h1>
       <p class="mt-5 text-blue-100/80 max-w-2xl" style="font-size:var(--tc-text-lg)">
         IPSI, VeriFactu, control horario, RGPD y gesti&oacute;n de pymes. Sin tecnicismos innecesarios. Escritas por el equipo de TrustCore.
@@ -132,7 +99,92 @@
         <button class="blog-filter text-xs font-semibold px-4 py-2 rounded-full border border-white/30 text-white/80 transition-all hover:bg-white/10" data-category="ipsi">IPSI</button>
         <button class="blog-filter text-xs font-semibold px-4 py-2 rounded-full border border-white/30 text-white/80 transition-all hover:bg-white/10" data-category="control-horario">Control horario</button>
         <button class="blog-filter text-xs font-semibold px-4 py-2 rounded-full border border-white/30 text-white/80 transition-all hover:bg-white/10" data-category="plan-lite">Plan Lite</button>
-        <button class="blog-filter text-xs font-semibold px-4 py-2 rounded-full border border-white/30 text-white/80 transition-all hover:bg-white/10" data-category="verifactu">VeriFactu</button>
+        <button class="blog-filter text-xs font-semibold px-4 py-2 rounded-full border border-white/30 text-white/80 transition-all hover:bg-white/10" data-category="verifactu">VeriFactu 2027</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- APRENDE -->
+  <section class="py-10 bg-white border-b border-slate-200">
+    <div class="tc-container" data-reveal>
+      <div class="grid lg:grid-cols-[1fr_auto] gap-6 items-center">
+        <div>
+          <span class="tc-eyebrow">Aprendizaje</span>
+          <h2 class="mt-3 text-2xl md:text-3xl font-extrabold leading-tight" style="color:var(--tc-navy)">Vídeos cortos para ver TrustCore en acción</h2>
+          <p class="mt-3 text-slate-600 max-w-3xl leading-relaxed">La teoría del blog se conecta con clips de 10 a 15 segundos para facturas, presupuestos, gastos, inventario, fichajes y ausencias.</p>
+        </div>
+        <a href="/aprende" class="tc-btn tc-btn-secondary justify-self-start lg:justify-self-end" data-track="blog_learning_hub">
+          <i class="fas fa-play-circle"></i> Ir a Aprende
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERIES EDITORIALES -->
+  <section class="py-10 border-b border-slate-200" style="background:var(--tc-surface-alt)">
+    <div class="tc-container">
+      <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-8 items-start">
+        <div data-reveal>
+          <span class="tc-eyebrow">Series</span>
+          <h2 class="mt-3 text-2xl md:text-3xl font-extrabold leading-tight" style="color:var(--tc-navy)">Contenido pensado para decidir, no para rellenar SEO</h2>
+          <p class="mt-3 text-slate-600 leading-relaxed">Cada línea editorial conecta una obligación legal con una decisión operativa: qué software usar, cómo formar al equipo y cuándo pedir ayuda a la asesoría.</p>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-4" data-reveal>
+          <a href="#articles-grid" class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+            <i class="fas fa-qrcode mb-4" style="color:var(--tc-blue-royal)"></i>
+            <h3 class="font-extrabold" style="color:var(--tc-navy)">VeriFactu 2027</h3>
+            <p class="mt-2 text-sm text-slate-500 leading-relaxed">Calendario, checklist y preparación real para pymes y autónomos.</p>
+          </a>
+          <a href="#articles-grid" class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+            <i class="fas fa-percent mb-4" style="color:var(--tc-blue-royal)"></i>
+            <h3 class="font-extrabold" style="color:var(--tc-navy)">IPSI</h3>
+            <p class="mt-2 text-sm text-slate-500 leading-relaxed">Ceuta, Melilla, península y fiscalidad que el software genérico suele ignorar.</p>
+          </a>
+          <a href="#articles-grid" class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+            <i class="fas fa-clock mb-4" style="color:var(--tc-blue-royal)"></i>
+            <h3 class="font-extrabold" style="color:var(--tc-navy)">Control horario</h3>
+            <p class="mt-2 text-sm text-slate-500 leading-relaxed">Evidencias, fichajes, auditorías y hábitos para trabajar sin sobresaltos.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERIFACTU Y COMERCIO -->
+  <section class="py-12 bg-white border-b border-slate-200">
+    <div class="tc-container">
+      <div class="grid lg:grid-cols-[.75fr_1.25fr] gap-8 items-start">
+        <div data-reveal>
+          <span class="tc-eyebrow">VeriFactu y comercio</span>
+          <h2 class="mt-3 text-2xl md:text-3xl font-extrabold leading-tight" style="color:var(--tc-navy)">Ventajas, app y comercio real entre península, Ceuta y Melilla</h2>
+          <p class="mt-3 text-slate-600 leading-relaxed">Esta serie posiciona TrustCore donde más aporta: facturación preparada para VERI*FACTU, IPSI bien modelado y una operativa que vuelve viable vender entre territorios sin hojas manuales.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4" data-reveal>
+          <a href="/ventajas-verifactu-pymes-autonomos" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:bg-white hover:shadow-md transition-all">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl mb-4" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><i class="fas fa-shield-alt"></i></span>
+            <h3 class="font-extrabold leading-snug" style="color:var(--tc-navy)">Ventajas de VERI*FACTU para pymes</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">Trazabilidad, QR verificable, registros ordenados y menos improvisación fiscal.</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer ventajas <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+          </a>
+          <a href="/verifactu-ventajas-gestorias-comercios" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:bg-white hover:shadow-md transition-all">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl mb-4" style="background:rgba(15,160,111,0.1);color:var(--tc-success)"><i class="fas fa-store"></i></span>
+            <h3 class="font-extrabold leading-snug" style="color:var(--tc-navy)">Ventajas para gestorías y comercios</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">Menos correcciones manuales, mejores exportaciones y clientes con más confianza.</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer enfoque <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+          </a>
+          <a href="/app-verifactu-ceuta-melilla-trustinfacts" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:bg-white hover:shadow-md transition-all">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl mb-4" style="background:rgba(212,162,61,0.12);color:var(--tc-gold)"><i class="fas fa-mobile-screen-button"></i></span>
+            <h3 class="font-extrabold leading-snug" style="color:var(--tc-navy)">App VeriFactu: TrustinFacts</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">Software VeriFactu, IPSI, inventario y facturación para autónomos y pymes.</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Ver app VeriFactu <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+          </a>
+          <a href="/facturacion-ceuta-melilla-peninsula-ipsi" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:bg-white hover:shadow-md transition-all">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl mb-4" style="background:rgba(83,205,254,0.14);color:var(--tc-blue-royal)"><i class="fas fa-route"></i></span>
+            <h3 class="font-extrabold leading-snug" style="color:var(--tc-navy)">Reactivar comercio Península-Ceuta/Melilla</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">Cómo una app que entiende IPSI puede desbloquear operaciones que antes se evitaban.</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer visión <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -187,6 +239,60 @@
 
       <!-- Grid de artículos -->
       <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <a href="/verifactu-2027-calendario-empresas-autonomos" class="blog-card group bg-white rounded-2xl border border-gray-200 p-7 transition-all hover:shadow-lg hover:-translate-y-0.5" data-category="verifactu" data-reveal>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full mb-4" style="background:rgba(32,113,213,0.08);color:var(--tc-blue-royal)">
+            <i class="fas fa-qrcode text-xs"></i> VeriFactu 2027
+          </span>
+          <h2 class="font-bold text-lg leading-snug mb-3 group-hover:text-blue-700 transition-colors" style="color:var(--tc-navy)">VeriFactu 2027: calendario para empresas y aut&oacute;nomos</h2>
+          <p class="text-gray-500 text-sm leading-relaxed">Fechas clave, riesgos de esperar y plan de transición antes de la obligatoriedad.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer art&iacute;culo <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+        </a>
+
+        <a href="/verifactu-autonomos-2027-checklist" class="blog-card group bg-white rounded-2xl border border-gray-200 p-7 transition-all hover:shadow-lg hover:-translate-y-0.5" data-category="verifactu" data-reveal>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full mb-4" style="background:rgba(32,113,213,0.08);color:var(--tc-blue-royal)">
+            <i class="fas fa-list-check text-xs"></i> VeriFactu 2027
+          </span>
+          <h2 class="font-bold text-lg leading-snug mb-3 group-hover:text-blue-700 transition-colors" style="color:var(--tc-navy)">Checklist VeriFactu para aut&oacute;nomos antes de 2027</h2>
+          <p class="text-gray-500 text-sm leading-relaxed">Datos fiscales, series, clientes, impuestos y pruebas de flujo antes de migrar.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer art&iacute;culo <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+        </a>
+
+        <a href="/ventajas-verifactu-pymes-autonomos" class="blog-card group bg-white rounded-2xl border border-gray-200 p-7 transition-all hover:shadow-lg hover:-translate-y-0.5" data-category="verifactu" data-reveal>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full mb-4" style="background:rgba(32,113,213,0.08);color:var(--tc-blue-royal)">
+            <i class="fas fa-shield-alt text-xs"></i> Ventajas VERI*FACTU
+          </span>
+          <h2 class="font-bold text-lg leading-snug mb-3 group-hover:text-blue-700 transition-colors" style="color:var(--tc-navy)">Ventajas de VERI*FACTU para pymes y aut&oacute;nomos</h2>
+          <p class="text-gray-500 text-sm leading-relaxed">Trazabilidad, QR verificable, registros ordenados y menos improvisación fiscal.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer art&iacute;culo <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+        </a>
+
+        <a href="/verifactu-ventajas-gestorias-comercios" class="blog-card group bg-white rounded-2xl border border-gray-200 p-7 transition-all hover:shadow-lg hover:-translate-y-0.5" data-category="verifactu" data-reveal>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full mb-4" style="background:rgba(32,113,213,0.08);color:var(--tc-blue-royal)">
+            <i class="fas fa-store text-xs"></i> VeriFactu comercios
+          </span>
+          <h2 class="font-bold text-lg leading-snug mb-3 group-hover:text-blue-700 transition-colors" style="color:var(--tc-navy)">Ventajas de VERI*FACTU para gestorías y comercios</h2>
+          <p class="text-gray-500 text-sm leading-relaxed">Menos correcciones manuales, registros exportables y mejor cierre con asesoría.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer art&iacute;culo <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+        </a>
+
+        <a href="/app-verifactu-ceuta-melilla-trustinfacts" class="blog-card group bg-white rounded-2xl border border-gray-200 p-7 transition-all hover:shadow-lg hover:-translate-y-0.5" data-category="verifactu" data-reveal>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full mb-4" style="background:rgba(32,113,213,0.08);color:var(--tc-blue-royal)">
+            <i class="fas fa-mobile-screen-button text-xs"></i> App VeriFactu
+          </span>
+          <h2 class="font-bold text-lg leading-snug mb-3 group-hover:text-blue-700 transition-colors" style="color:var(--tc-navy)">App VeriFactu para Ceuta y Melilla: TrustinFacts</h2>
+          <p class="text-gray-500 text-sm leading-relaxed">Software VeriFactu con foco en IPSI, inventario, autónomos, pymes y operaciones con península.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer art&iacute;culo <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+        </a>
+
+        <a href="/facturacion-ceuta-melilla-peninsula-ipsi" class="blog-card group bg-white rounded-2xl border border-gray-200 p-7 transition-all hover:shadow-lg hover:-translate-y-0.5" data-category="ipsi" data-reveal>
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full mb-4" style="background:rgba(32,113,213,0.08);color:var(--tc-blue-royal)">
+            <i class="fas fa-route text-xs"></i> IPSI
+          </span>
+          <h2 class="font-bold text-lg leading-snug mb-3 group-hover:text-blue-700 transition-colors" style="color:var(--tc-navy)">Reactivar comercio entre península, Ceuta y Melilla</h2>
+          <p class="text-gray-500 text-sm leading-relaxed">La tesis de TrustCore: desbloquear una actividad empresarial que el software genérico dejó atrás.</p>
+          <span class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--tc-blue-royal)">Leer art&iacute;culo <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i></span>
+        </a>
 
         <a href="/ipsi-en-factura-ejemplo-completo" class="blog-card group bg-white rounded-2xl border border-gray-200 p-7 transition-all hover:shadow-lg hover:-translate-y-0.5" data-category="ipsi" data-reveal>
           <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full mb-4" style="background:rgba(32,113,213,0.08);color:var(--tc-blue-royal)">
@@ -283,6 +389,7 @@
         <button class="tc-btn tc-btn-primary" data-calendar-open data-track="blog_cta_demo">
           <i class="fas fa-calendar-check mr-2"></i>Agendar demo gratuita
         </button>
+        <a href="/aprende" class="tc-btn tc-btn-secondary" data-track="blog_cta_aprende">Ver vídeos cortos</a>
         <a href="/contacto" class="tc-btn tc-btn-ghost" data-track="blog_cta_contacto">Enviar consulta</a>
       </div>
     </div>
@@ -315,7 +422,6 @@
             <li><a href="/productos/trustintime" class="hover:text-white transition-colors">TrustinTime</a></li>
             <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">TrustinFacts</a></li>
             <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
-            <li><a href="/comparativa" class="hover:text-white transition-colors">Comparativa</a></li>
           </ul>
         </div>
         <div>
@@ -323,8 +429,8 @@
           <ul class="space-y-2.5 text-sm">
             <li><a href="/quienes-somos" class="hover:text-white transition-colors">Qui&eacute;nes somos</a></li>
             <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/aprende" class="hover:text-white transition-colors">Aprende</a></li>
             <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
-            <li><a href="https://app.trustcore.es" class="hover:text-white transition-colors">Acceso clientes</a></li>
           </ul>
         </div>
         <div>
@@ -333,6 +439,8 @@
             <li><a href="/aviso-legal" class="hover:text-white transition-colors">Aviso legal</a></li>
             <li><a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a></li>
             <li><a href="/cookies" class="hover:text-white transition-colors">Cookies</a></li>
+            <li><a href="/terminos" class="hover:text-white transition-colors">Términos</a></li>
+            <li><button type="button" data-cookie-settings class="hover:text-white transition-colors text-left">Configurar cookies</button></li>
           </ul>
           <div class="mt-5">
             <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
@@ -344,19 +452,24 @@
         </div>
       </div>
       <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <p>&copy; 2026 TrustCore S.L. &mdash; Ceuta, Espa&ntilde;a</p>
+        <p>&copy; 2026 TrustCore &mdash; Ceuta, Espa&ntilde;a</p>
         <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
       </div>
       <div class="mt-8 pt-8 border-t border-white/10 text-center">
-        <p class="text-xs uppercase tracking-widest opacity-40 mb-4">Acelerado por</p>
-        <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El &Aacute;ngulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
+        <p class="text-xs uppercase tracking-widest opacity-50 mb-4">Acelerado y respaldado por</p>
+        <div class="flex flex-col items-center gap-4">
+          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
+          <div class="inline-flex max-w-full flex-col sm:flex-row items-center justify-center gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+            <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" class="h-8 w-auto object-contain" loading="lazy">
+            <span class="hidden sm:block h-8 w-px bg-slate-200" aria-hidden="true"></span>
+            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 
 
-  <script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-  <script src="assets/js/components.js" defer></script>
   <script>
   (function () {
     var filters = document.querySelectorAll('.blog-filter');
@@ -391,5 +504,7 @@
     });
   })();
   </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/components.js" defer></script>
 </body>
 </html>

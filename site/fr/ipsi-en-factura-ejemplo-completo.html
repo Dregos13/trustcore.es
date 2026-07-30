@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PRFRSKZL');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comment mettre l IPSI sur une facture: exemple complet | TrustCore</title>
     <meta name="description" content="Exemple complet de facture avec IPSI pour independants et PME: structure, champs cles, calcul et controles avant emission.">
     <meta name="keywords" content="exemple facture IPSI, structure facture, calcul IPSI, controle fiscal">
-    <meta name="author" content="TrustCore S.L.">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="TrustCore">
+    <meta name="robots" content="noindex, follow">
+    <meta name="googlebot" content="noindex, follow">
+    <meta name="bingbot" content="noindex, follow">
     <meta name="theme-color" content="#040F3F">
     <link rel="canonical" href="https://www.trustcore.es/fr/ipsi-en-factura-ejemplo-completo">
     <link rel="alternate" hreflang="es" href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo">
-    <link rel="alternate" hreflang="en" href="https://www.trustcore.es/en/ipsi-en-factura-ejemplo-completo">
-    <link rel="alternate" hreflang="fr" href="https://www.trustcore.es/fr/ipsi-en-factura-ejemplo-completo">
     <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo">
 
     <meta property="og:type" content="article">
@@ -56,11 +47,11 @@
       },
       "author": {
         "@type": "Organization",
-        "name": "TrustCore S.L."
+        "name": "TrustCore"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "TrustCore S.L.",
+        "name": "TrustCore",
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.trustcore.es/assets/trustcore-icon.png"
@@ -93,36 +84,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="/assets/trustcore-icon.png">
-    <!-- HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148252702.js"></script>
 </head>
 <body class="font-sans text-gray-800 antialiased bg-slate-50">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRFRSKZL"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="/fr/" class="flex items-center gap-3">
-                <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto">
-                <span class="text-navy font-extrabold text-xl tracking-tight">TrustCore</span>
-            </a>
-            <nav class="flex items-center gap-6 text-sm font-medium">
-                <a href="/fr/" class="text-gray-600 hover:text-navy transition-colors">Accueil</a>
-                <a href="/fr/article" class="text-navy">Articles</a>
-                <a href="/fr/#contact" class="text-gray-600 hover:text-navy transition-colors">Contact</a>
-                <label class="inline-flex items-center gap-2 pl-2 border-l border-gray-200 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                    <span data-lang-label>Langue</span>
-                    <select data-lang-switcher aria-label="Changer de langue" class="rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-xs font-semibold text-navy focus:border-blue-royal focus:outline-none focus:ring-2 focus:ring-blue-200">
-                        <option value="es">ES</option>
-                        <option value="en">EN</option>
-                        <option value="fr">FR</option>
-                    </select>
-                </label>
-            </nav>
-        </div>
-    </header>
+    <header id="header" class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="/" class="flex items-center gap-3 shrink-0" aria-label="TrustCore inicio">
+          <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
+          <span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
+        <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
+        <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+        <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
+        <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
+        <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
+        <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
+        <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
+      <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
+      <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
+      <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
+      <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
+      <a href="/aprende" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Aprende</a>
+      <a href="/contacto" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Contacto</a>
+    </div>
+  </header>
 
     <main>
         <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 100%);">
@@ -132,7 +127,7 @@
                     <i class="fas fa-newspaper"></i> Article
                 </p>
                 <h1 class="mt-5 text-3xl md:text-5xl font-extrabold leading-tight">Comment mettre l IPSI sur une facture avec un exemple complet</h1>
-                <p class="mt-6 text-sm text-gray-300">Publie le 31 mars 2026 par TrustCore S.L.</p>
+                <p class="mt-6 text-sm text-gray-300">Publie le 31 mars 2026 par TrustCore</p>
             </div>
         </section>
 
@@ -197,25 +192,35 @@
                 <div class="text-left md:text-right">
                     <a href="/fr/" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Accueil</a>
                     <a href="/fr/article" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Articles</a>
-                    <a href="/fr/comparativa" class="block text-slate-200 hover:text-white text-sm transition-colors mb-2">Comparaison</a>
                     <a href="https://www.trustcore.es/fr/" class="text-slate-300 hover:text-white text-sm transition-colors">www.trustcore.es/fr/</a>
                 </div>
             </div>
 
             <div class="mt-8 pt-4 border-t border-white/10 text-xs text-slate-400 text-center md:text-left">
-                &copy; 2026 TrustCore S.L. - Tous droits reserves.
+                &copy; 2026 TrustCore - Tous droits reserves.
             </div>
-            <div class="mt-8 pt-6 border-t border-white/10 text-center">
-                <p class="text-xs uppercase tracking-widest text-slate-500 mb-4">Accéléré par</p>
-                <img src="/COF_Logo.png" alt="COF" style="max-width:480px;width:100%;height:auto;display:inline-block;filter:brightness(0) invert(1);">
-            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 text-center">
+        <p class="text-xs uppercase tracking-widest opacity-50 mb-4">Acelerado y respaldado por</p>
+        <div class="flex flex-col items-center gap-4">
+          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
+          <div class="inline-flex max-w-full flex-col sm:flex-row items-center justify-center gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+            <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" class="h-8 w-auto object-contain" loading="lazy">
+            <span class="hidden sm:block h-8 w-px bg-slate-200" aria-hidden="true"></span>
+            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
+          </div>
+        </div>
+      </div>
 
-        </div></footer>
+        </div>
+            <div class="mt-6 flex flex-wrap justify-center md:justify-end gap-4 text-xs text-slate-400">
+                <a href="/aviso-legal" class="hover:text-white transition-colors">Aviso legal</a>
+                <a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a>
+                <a href="/cookies" class="hover:text-white transition-colors">Cookies</a>
+                <a href="/terminos" class="hover:text-white transition-colors">Términos</a>
+                <button type="button" data-cookie-settings class="hover:text-white transition-colors">Configurar cookies</button>
+            </div></footer>
 
-    <script src="/assets/lang-switcher.js"></script>
-
-    <!-- TrustBox script -->
-    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-    <!-- End TrustBox script -->
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/components.js" defer></script>
 </body>
 </html>

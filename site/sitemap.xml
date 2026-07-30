@@ -2,490 +2,228 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ═══ HOMEPAGE ═══ -->
+  <!-- URLs canonicas indexables en espanol -->
   <url>
     <loc>https://www.trustcore.es/</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://www.trustcore.es/en/</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
-  <!-- ═══ PRODUCTOS ═══ -->
   <url>
     <loc>https://www.trustcore.es/productos/trustintime</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/productos/trustintime" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/productos/trustintime" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/productos/trustintime" />
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://www.trustcore.es/productos/trustinfacts</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/productos/trustinfacts" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/productos/trustinfacts" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/productos/trustinfacts" />
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ═══ GESTORÍAS ═══ -->
   <url>
     <loc>https://www.trustcore.es/gestoria</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/gestoria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/gestoria" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/gestoria" />
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ═══ PRECIOS (trilingüe) ═══ -->
   <url>
     <loc>https://www.trustcore.es/precios</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/precios" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/pricing" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/tarifs" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/precios" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/precios" />
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
-  <url>
-    <loc>https://www.trustcore.es/en/pricing</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/precios" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/pricing" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/tarifs" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/precios" />
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/tarifs</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/precios" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/pricing" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/tarifs" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/precios" />
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
 
-  <!-- ═══ COMPARATIVA (trilingüe) ═══ -->
-  <url>
-    <loc>https://www.trustcore.es/comparativa</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/comparativa" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/comparativa" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/comparativa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/comparativa" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/en/comparativa</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/comparativa" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/comparativa" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/comparativa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/comparativa" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/comparativa</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/comparativa" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/comparativa" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/comparativa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/comparativa" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ═══ PÁGINAS CORPORATIVAS ═══ -->
   <url>
     <loc>https://www.trustcore.es/quienes-somos</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/quienes-somos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/quienes-somos" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/quienes-somos" />
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.trustcore.es/contacto</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/contacto" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/contacto" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/contacto" />
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.trustcore.es/blog</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/blog" />
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ═══ ARTÍCULOS (trilingüe) ═══ -->
   <url>
-    <loc>https://www.trustcore.es/article</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/article" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/article" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/article" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/article" />
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://www.trustcore.es/aprende</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/aprende" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/aprende" />
+    <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/en/article</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/article" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/article" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/article" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/article" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/article</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/article" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/article" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/article" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/article" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
 
-  <!-- ═══ IPSI — guías (trilingüe) ═══ -->
   <url>
     <loc>https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-ceuta-melilla-guia-practica" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-ceuta-melilla-guia-practica" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://www.trustcore.es/en/ipsi-ceuta-melilla-guia-practica</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-ceuta-melilla-guia-practica" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-ceuta-melilla-guia-practica" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica" />
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://www.trustcore.es/verifactu-2027-calendario-empresas-autonomos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/verifactu-2027-calendario-empresas-autonomos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/verifactu-2027-calendario-empresas-autonomos" />
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
+
   <url>
-    <loc>https://www.trustcore.es/fr/ipsi-ceuta-melilla-guia-practica</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-ceuta-melilla-guia-practica" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-ceuta-melilla-guia-practica" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica" />
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://www.trustcore.es/verifactu-autonomos-2027-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/verifactu-autonomos-2027-checklist" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/verifactu-autonomos-2027-checklist" />
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.82</priority>
   </url>
+
+  <url>
+    <loc>https://www.trustcore.es/facturacion-ceuta-melilla-peninsula-ipsi</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/facturacion-ceuta-melilla-peninsula-ipsi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/facturacion-ceuta-melilla-peninsula-ipsi" />
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trustcore.es/ventajas-verifactu-pymes-autonomos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/ventajas-verifactu-pymes-autonomos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ventajas-verifactu-pymes-autonomos" />
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.84</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trustcore.es/verifactu-ventajas-gestorias-comercios</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/verifactu-ventajas-gestorias-comercios" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/verifactu-ventajas-gestorias-comercios" />
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trustcore.es/app-verifactu-ceuta-melilla-trustinfacts</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/app-verifactu-ceuta-melilla-trustinfacts" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/app-verifactu-ceuta-melilla-trustinfacts" />
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.86</priority>
+  </url>
+
   <url>
     <loc>https://www.trustcore.es/ipsi-en-factura-ejemplo-completo</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-en-factura-ejemplo-completo" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-en-factura-ejemplo-completo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.trustcore.es/en/ipsi-en-factura-ejemplo-completo</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-en-factura-ejemplo-completo" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-en-factura-ejemplo-completo" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/ipsi-en-factura-ejemplo-completo</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-en-factura-ejemplo-completo" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-en-factura-ejemplo-completo" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-en-factura-ejemplo-completo" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-quipu-alternativas-para-pymes" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-quipu-alternativas-para-pymes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.trustcore.es/en/ipsi-quipu-alternativas-para-pymes</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-quipu-alternativas-para-pymes" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-quipu-alternativas-para-pymes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/ipsi-quipu-alternativas-para-pymes</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/ipsi-quipu-alternativas-para-pymes" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/ipsi-quipu-alternativas-para-pymes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://www.trustcore.es/errores-ipsi-autonomos-y-pymes</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/errores-ipsi-autonomos-y-pymes" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/errores-ipsi-autonomos-y-pymes" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/errores-ipsi-autonomos-y-pymes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/errores-ipsi-autonomos-y-pymes" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/errores-ipsi-autonomos-y-pymes" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/en/errores-ipsi-autonomos-y-pymes</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/errores-ipsi-autonomos-y-pymes" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/errores-ipsi-autonomos-y-pymes" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/errores-ipsi-autonomos-y-pymes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/errores-ipsi-autonomos-y-pymes" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/errores-ipsi-autonomos-y-pymes</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/errores-ipsi-autonomos-y-pymes" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/errores-ipsi-autonomos-y-pymes" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/errores-ipsi-autonomos-y-pymes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/errores-ipsi-autonomos-y-pymes" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
-  <!-- ═══ CONTROL HORARIO — guías (trilingüe) ═══ -->
   <url>
     <loc>https://www.trustcore.es/control-horario-obligatorio-guia-2026</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/control-horario-obligatorio-guia-2026" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/control-horario-obligatorio-guia-2026" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/control-horario-obligatorio-guia-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/control-horario-obligatorio-guia-2026" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/control-horario-obligatorio-guia-2026" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.trustcore.es/en/control-horario-obligatorio-guia-2026</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/control-horario-obligatorio-guia-2026" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/control-horario-obligatorio-guia-2026" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/control-horario-obligatorio-guia-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/control-horario-obligatorio-guia-2026" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/control-horario-obligatorio-guia-2026</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/control-horario-obligatorio-guia-2026" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/control-horario-obligatorio-guia-2026" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/control-horario-obligatorio-guia-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/control-horario-obligatorio-guia-2026" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/control-horario-fichaje-remoto-sin-riesgos" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/control-horario-fichaje-remoto-sin-riesgos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
-  <url>
-    <loc>https://www.trustcore.es/en/control-horario-fichaje-remoto-sin-riesgos</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/control-horario-fichaje-remoto-sin-riesgos" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/control-horario-fichaje-remoto-sin-riesgos" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/control-horario-fichaje-remoto-sin-riesgos</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/control-horario-fichaje-remoto-sin-riesgos" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/control-horario-fichaje-remoto-sin-riesgos" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://www.trustcore.es/auditoria-control-horario-checklist</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/auditoria-control-horario-checklist" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/auditoria-control-horario-checklist" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/auditoria-control-horario-checklist" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/auditoria-control-horario-checklist" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/auditoria-control-horario-checklist" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
+
   <url>
-    <loc>https://www.trustcore.es/en/auditoria-control-horario-checklist</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/auditoria-control-horario-checklist" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/auditoria-control-horario-checklist" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/auditoria-control-horario-checklist" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/auditoria-control-horario-checklist" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/auditoria-control-horario-checklist</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/auditoria-control-horario-checklist" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/auditoria-control-horario-checklist" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/auditoria-control-horario-checklist" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/auditoria-control-horario-checklist" />
-    <lastmod>2026-04-02</lastmod>
+    <loc>https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa" />
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ═══ PLANES — artículos de blog (trilingüe) ═══ -->
-  <url>
-    <loc>https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/en/plan-lite-cumplimiento-basico-empresa</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/plan-lite-cumplimiento-basico-empresa</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/plan-lite-cumplimiento-basico-empresa" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
   <url>
     <loc>https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/plan-lite-vs-plan-pro-cumplimiento" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/plan-lite-vs-plan-pro-cumplimiento" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/en/plan-lite-vs-plan-pro-cumplimiento</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/plan-lite-vs-plan-pro-cumplimiento" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/plan-lite-vs-plan-pro-cumplimiento" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/plan-lite-vs-plan-pro-cumplimiento</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/plan-lite-vs-plan-pro-cumplimiento" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/plan-lite-vs-plan-pro-cumplimiento" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://www.trustcore.es/cumplimiento-basico-en-30-dias</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/cumplimiento-basico-en-30-dias" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/cumplimiento-basico-en-30-dias" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/cumplimiento-basico-en-30-dias" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/en/cumplimiento-basico-en-30-dias</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/cumplimiento-basico-en-30-dias" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/cumplimiento-basico-en-30-dias" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/cumplimiento-basico-en-30-dias" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias" />
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.trustcore.es/fr/cumplimiento-basico-en-30-dias</loc>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.trustcore.es/cumplimiento-basico-en-30-dias" />
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.trustcore.es/en/cumplimiento-basico-en-30-dias" />
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.trustcore.es/fr/cumplimiento-basico-en-30-dias" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias" />
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

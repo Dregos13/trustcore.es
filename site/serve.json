@@ -9,14 +9,26 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/comparativa", "destination": "/precios", "type": 301 },
+    { "source": "/article", "destination": "/blog", "type": 301 },
+    { "source": "/en", "destination": "/", "type": 301 },
+    { "source": "/en/", "destination": "/", "type": 301 },
+    { "source": "/en/pricing", "destination": "/precios", "type": 301 },
+    { "source": "/fr", "destination": "/", "type": 301 },
+    { "source": "/fr/", "destination": "/", "type": 301 },
+    { "source": "/fr/tarifs", "destination": "/precios", "type": 301 }
+  ],
   "rewrites": [
     { "source": "/precios",     "destination": "/precios.html" },
     { "source": "/gestoria",    "destination": "/gestoria.html" },
-    { "source": "/comparativa", "destination": "/comparativa.html" },
     { "source": "/blog",        "destination": "/blog.html" },
+    { "source": "/aprende",     "destination": "/aprende.html" },
     { "source": "/contacto",    "destination": "/contacto.html" },
     { "source": "/quienes-somos", "destination": "/quienes-somos.html" },
-    { "source": "/en/pricing",  "destination": "/en/pricing.html" },
-    { "source": "/fr/tarifs",   "destination": "/fr/tarifs.html" }
+    { "source": "/aviso-legal", "destination": "/aviso-legal.html" },
+    { "source": "/privacidad", "destination": "/privacidad.html" },
+    { "source": "/cookies", "destination": "/cookies.html" },
+    { "source": "/terminos", "destination": "/terminos.html" }
   ]
 }
