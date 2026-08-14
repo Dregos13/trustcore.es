@@ -1,115 +1,122 @@
 #!/usr/bin/env node
 /**
- * seo-i18n.mjs — hreflang recíproco + sitemap con alternates ES/EN/FR.
+ * seo-i18n.mjs — mantiene hreflang y sitemap alineados con lo que el CDN sirve.
  *
- * Problema que resuelve: las 14 páginas traducidas de /en/ y /fr/ no estaban en
- * el sitemap y cada página solo declaraba hreflang="es" + x-default, así que
- * Google no las veía como alternativas de idioma (hreflang exige reciprocidad).
+ * ⚠️ CONTEXTO IMPORTANTE (verificado en producción el 2026-08-14):
  *
- * Qué hace, de forma idempotente:
- *   1. En cada página de un trío ES/EN/FR, sustituye el bloque de
- *      <link rel="alternate" hreflang="…"> por el clúster completo
- *      (es + en + fr + x-default→es), justo después del canonical.
- *   2. Regenera site/sitemap.xml: URLs ES existentes + todas las EN/FR
- *      traducidas, con xhtml:link alternates en cada <url> de un trío.
+ * Las páginas /en/* y /fr/* EXISTEN en el repo y en S3, pero NO son accesibles:
+ * la CloudFront Function `trustcore-es-canonical-redirect` (viewer-request)
+ * devuelve un 301 permanente de toda /en/* y /fr/* hacia su equivalente en
+ * español. Es una decisión deliberada de consolidación de dominio, recogida en
+ * docs/domain-consolidation-seo-plan.md ("consolidar TrustCore como web
+ * comercial unica").
  *
- * Uso: node scripts/seo-i18n.mjs        (desde la raíz del repo)
+ * Consecuencia para SEO — y el motivo de que este script exista:
+ *   · Un sitemap que liste URLs que responden 301 hace que Search Console
+ *     marque "Página con redirección" y no indexe ninguna de ellas.
+ *   · Un hreflang que apunte a URLs redirigidas es inválido: Google exige que
+ *     cada alternate devuelva 200 y sea recíproco. Un clúster con enlaces
+ *     muertos se descarta entero, incluido el x-default.
+ *
+ * Por eso el estado correcto AHORA es monolingüe:
+ *   · sitemap.xml solo con URLs ES que devuelven 200
+ *   · hreflang solo es + x-default (ambos apuntando a la propia URL ES)
+ *
+ * SI ALGÚN DÍA SE REACTIVA EL MULTIIDIOMA hay que hacer las dos cosas, en este
+ * orden: (1) quitar /en/ y /fr/ de `legacyRedirectTarget` en la CloudFront
+ * Function y desplegarla; (2) volver a poner aquí los clústeres completos
+ * es/en/fr/x-default y las URLs traducidas en el sitemap. Cambiar solo esto
+ * sin tocar el CDN reintroduce exactamente el problema que arregla.
+ *
+ * Uso: node scripts/seo-i18n.mjs
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ORIGIN = 'https://www.trustcore.es';
 const SITE = 'site';
 const TODAY = new Date().toISOString().slice(0, 10);
 
-// Tríos: nombre de archivo ES → rutas públicas (extensionless, como sirve CloudFront).
-const SAME_NAME = [
-  'article', 'auditoria-control-horario-checklist', 'comparativa',
-  'control-horario-fichaje-remoto-sin-riesgos', 'control-horario-obligatorio-guia-2026',
-  'cumplimiento-basico-en-30-dias', 'errores-ipsi-autonomos-y-pymes',
-  'ipsi-ceuta-melilla-guia-practica', 'ipsi-en-factura-ejemplo-completo',
-  'ipsi-quipu-alternativas-para-pymes', 'plan-lite-cumplimiento-basico-empresa',
-  'plan-lite-vs-plan-pro-cumplimiento',
-];
+// Las rutas ES indexables se DERIVAN del disco: una lista fija se queda
+// desactualizada en silencio en cuanto alguien añade una página (ya pasó).
+// Solo se enumeran las exclusiones, cada una con su motivo.
+const EXCLUDE = new Map([
+  ['404', 'página de error'],
+  ['og-image', 'plantilla para generar la imagen OG, no es contenido'],
+  ['article', '301 → /blog en la CloudFront Function'],
+  ['comparativa', '301 → /precios en la CloudFront Function'],
+  // Legales: accesibles (200) y enlazadas desde el footer, pero fuera del
+  // sitemap igual que antes — no son páginas de captación.
+  ['aviso-legal', 'legal, fuera del sitemap por decisión previa'],
+  ['cookies', 'legal, fuera del sitemap por decisión previa'],
+  ['privacidad', 'legal, fuera del sitemap por decisión previa'],
+  ['terminos', 'legal, fuera del sitemap por decisión previa'],
+]);
 
-/** @type {Array<{es:string,en:string,fr:string,files:{es:string,en:string,fr:string}}>} */
-const TRIOS = [
-  { es: '/', en: '/en/', fr: '/fr/', files: { es: 'index.html', en: 'en/index.html', fr: 'fr/index.html' } },
-  { es: '/precios', en: '/en/pricing', fr: '/fr/tarifs', files: { es: 'precios.html', en: 'en/pricing.html', fr: 'fr/tarifs.html' } },
-  ...SAME_NAME.map((n) => ({
-    es: `/${n}`, en: `/en/${n}`, fr: `/fr/${n}`,
-    files: { es: `${n}.html`, en: `en/${n}.html`, fr: `fr/${n}.html` },
-  })),
-];
+function esRoutes() {
+  const routes = [];
+  const scan = (dir, prefix) => {
+    for (const entry of readdirSync(join(SITE, dir), { withFileTypes: true })) {
+      if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
+      const slug = entry.name.replace(/\.html$/, '');
+      if (EXCLUDE.has(slug)) continue;
+      routes.push(slug === 'index' && !prefix ? '/' : `${prefix}/${slug}`);
+    }
+  };
+  scan('.', '');                    // raíz
+  scan('productos', '/productos');
+  scan('comparativa', '/comparativa');
+  return routes.sort((a, b) => (a === '/' ? -1 : b === '/' ? 1 : a.localeCompare(b)));
+}
 
-// --- 1. hreflang por página -------------------------------------------------
-const cluster = (trio) => [
-  `  <link rel="alternate" hreflang="es" href="${ORIGIN}${trio.es}">`,
-  `  <link rel="alternate" hreflang="en" href="${ORIGIN}${trio.en}">`,
-  `  <link rel="alternate" hreflang="fr" href="${ORIGIN}${trio.fr}">`,
-  `  <link rel="alternate" hreflang="x-default" href="${ORIGIN}${trio.es}">`,
-].join('\n');
+const ES_URLS = esRoutes();
+
+// --- 1. hreflang: es + x-default, nada más --------------------------------
+// Se aplica a TODAS las páginas del sitio, incluidas /en/ y /fr/: aunque hoy
+// sean inalcanzables, dejarlas con alternates a URLs redirigidas sería una
+// trampa para el día que alguien las vuelva a servir.
+function selfUrl(file) {
+  let route = '/' + file.replace(/\\/g, '/').replace(/index\.html$/, '').replace(/\.html$/, '');
+  return ORIGIN + (route === '/' ? '/' : route);
+}
+
+function walk(dir, base = '') {
+  const out = [];
+  for (const entry of readdirSync(join(SITE, dir), { withFileTypes: true })) {
+    const rel = base ? `${base}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) {
+      if (['assets', 'videos'].includes(entry.name)) continue;
+      out.push(...walk(join(dir, entry.name), rel));
+    } else if (entry.name.endsWith('.html')) out.push(rel);
+  }
+  return out;
+}
 
 let patched = 0;
-for (const trio of TRIOS) {
-  for (const lang of ['es', 'en', 'fr']) {
-    const path = join(SITE, trio.files[lang]);
-    if (!existsSync(path)) { console.error(`! falta ${path} — trío incompleto, lo salto`); continue; }
-    let html = readFileSync(path, 'utf8');
-    const before = html;
-    if (/<link rel="alternate" hreflang=/.test(html)) {
-      // Sustituye el bloque contiguo de alternates existente por el clúster.
-      html = html.replace(
-        /(?:[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">\s*\n)+/,
-        cluster(trio) + '\n',
-      );
-    } else {
-      // Sin alternates previos: insertar tras el canonical.
-      html = html.replace(
-        /([ \t]*<link rel="canonical"[^>]*>\n)/,
-        `$1${cluster(trio)}\n`,
-      );
-    }
-    if (html !== before) { writeFileSync(path, html); patched++; }
-  }
+for (const file of walk('.')) {
+  const path = join(SITE, file);
+  let html = readFileSync(path, 'utf8');
+  if (!/<link rel="alternate" hreflang=/.test(html)) continue;
+
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1] ?? selfUrl(file);
+  const block =
+    `  <link rel="alternate" hreflang="es" href="${canonical}">\n` +
+    `  <link rel="alternate" hreflang="x-default" href="${canonical}">\n`;
+
+  const next = html.replace(
+    /(?:[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">\s*\n)+/,
+    block,
+  );
+  if (next !== html) { writeFileSync(path, next); patched++; }
 }
-console.log(`hreflang: ${patched} páginas actualizadas`);
+console.log(`hreflang: ${patched} páginas → solo es + x-default`);
 
-// --- 2. sitemap -------------------------------------------------------------
-// Fuente de verdad de indexables ES: el sitemap actual.
-const current = readFileSync(join(SITE, 'sitemap.xml'), 'utf8');
-const esUrls = [...current.matchAll(/<loc>([^<]+)<\/loc>/g)]
-  .map((m) => m[1].replace(ORIGIN, '') || '/')
-  .filter((u) => !u.startsWith('/en/') && !u.startsWith('/fr/'));
-
-const trioByEs = new Map(TRIOS.map((t) => [t.es, t]));
-const xhtml = (trio) => [
-  `    <xhtml:link rel="alternate" hreflang="es" href="${ORIGIN}${trio.es}"/>`,
-  `    <xhtml:link rel="alternate" hreflang="en" href="${ORIGIN}${trio.en}"/>`,
-  `    <xhtml:link rel="alternate" hreflang="fr" href="${ORIGIN}${trio.fr}"/>`,
-  `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}${trio.es}"/>`,
-].join('\n');
-
-const urlEntry = (path, trio) => {
-  const alt = trio ? '\n' + xhtml(trio) : '';
-  return `  <url>\n    <loc>${ORIGIN}${path}</loc>\n    <lastmod>${TODAY}</lastmod>${alt}\n  </url>`;
-};
-
-const entries = [];
-for (const es of esUrls) {
-  const trio = trioByEs.get(es);
-  entries.push(urlEntry(es, trio));
-  if (trio) {
-    entries.push(urlEntry(trio.en, trio));
-    entries.push(urlEntry(trio.fr, trio));
-  }
-}
-
+// --- 2. sitemap: solo URLs ES que responden 200 ----------------------------
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${entries.join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${ES_URLS.map((u) => `  <url>\n    <loc>${ORIGIN}${u}</loc>\n    <lastmod>${TODAY}</lastmod>\n  </url>`).join('\n')}
 </urlset>
 `;
 writeFileSync(join(SITE, 'sitemap.xml'), sitemap);
-console.log(`sitemap: ${entries.length} URLs (antes: ${esUrls.length} ES sin alternates)`);
+console.log(`sitemap: ${ES_URLS.length} URLs ES (sin /en/ ni /fr/: responden 301)`);
