@@ -10,9 +10,10 @@
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#040F3F">
     <link rel="canonical" href="https://www.trustcore.es/fr/">
-    <link rel="alternate" hreflang="es" href="https://www.trustcore.es/">
-    <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/">
-
+  <link rel="alternate" hreflang="es" href="https://www.trustcore.es/">
+  <link rel="alternate" hreflang="en" href="https://www.trustcore.es/en/">
+  <link rel="alternate" hreflang="fr" href="https://www.trustcore.es/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.trustcore.es/fr/">
     <meta property="og:title" content="TrustCore - Conformite et operations dans une seule suite">
@@ -29,29 +30,11 @@
     <meta name="twitter:description" content="La suite qui unifie facturation VeriFactu et suivi du temps pour reduire le risque de non-conformite.">
     <meta name="twitter:image" content="https://www.trustcore.es/assets/og-image.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#040F3F',
-                        'navy-deep': '#020A2A',
-                        'blue-corp': '#0B2572',
-                        'blue-royal': '#2071D5',
-                        'cyan-light': '#53CDFE'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="/assets/trustcore-icon.png">
     <style>
         html { scroll-behavior: smooth; }
@@ -76,7 +59,7 @@
         <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
         <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+          <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
         </button>
       </div>
     </div>
@@ -121,7 +104,7 @@
                         <a href="#solutions" class="group relative inline-flex items-center justify-center px-8 py-3.5 bg-blue-royal text-white font-bold rounded-xl overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(32,113,213,0.5)]">
                             <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 skew-x-12 -ml-4"></div>
                             Voir les solutions
-                            <i class="fas fa-shield-alt ml-2"></i>
+                            <svg class="tc-icon ml-2"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg>
                         </a>
                         <a href="#apropos" class="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300">
                             En savoir plus
@@ -140,10 +123,10 @@
 
     <div class="bg-navy border-y border-white/10 py-6">
         <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
-            <div class="flex items-center gap-2 text-white/80 font-semibold"><i class="fas fa-lock text-cyan-light"></i> Chiffrement AES-256</div>
-            <div class="flex items-center gap-2 text-white/80 font-semibold"><i class="fas fa-server text-cyan-light"></i> Infrastructure cloud UE</div>
-            <div class="flex items-center gap-2 text-white/80 font-semibold"><i class="fas fa-certificate text-cyan-light"></i> Aligne VeriFactu</div>
-            <div class="flex items-center gap-2 text-white/80 font-semibold"><i class="fas fa-shield-alt text-cyan-light"></i> RGPD</div>
+            <div class="flex items-center gap-2 text-white/80 font-semibold"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-lock"/></svg> Chiffrement AES-256</div>
+            <div class="flex items-center gap-2 text-white/80 font-semibold"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-server"/></svg> Infrastructure cloud UE</div>
+            <div class="flex items-center gap-2 text-white/80 font-semibold"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-certificate"/></svg> Aligne VeriFactu</div>
+            <div class="flex items-center gap-2 text-white/80 font-semibold"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg> RGPD</div>
         </div>
     </div>
 
@@ -164,7 +147,7 @@
                             <p class="text-gray-600 mb-8 text-lg">Pointage, gestion des absences, processus RH et tracabilite dans un seul flux.</p>
                             <a href="https://trustintime.es" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-royal text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors">
                                 Aller sur TrustinTime
-                                <i class="fas fa-external-link-alt text-xs opacity-70"></i>
+                                <svg class="tc-icon text-xs opacity-70"><use href="/assets/icons/sprite.svg#fa-external-link-alt"/></svg>
                             </a>
                         </div>
                     </div>
@@ -179,7 +162,7 @@
                             <p class="text-gray-300 mb-8 text-lg">Facturation connectee, suivi de stock et controle des marges avec donnees fiables.</p>
                             <a href="https://trustinfacts.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-light text-navy font-semibold rounded-lg hover:bg-cyan-400 transition-colors">
                                 Aller sur TrustinFacts
-                                <i class="fas fa-external-link-alt text-xs opacity-70"></i>
+                                <svg class="tc-icon text-xs opacity-70"><use href="/assets/icons/sprite.svg#fa-external-link-alt"/></svg>
                             </a>
                         </div>
                     </div>
@@ -224,7 +207,7 @@
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6">Passez a une conformite maitrisee</h2>
             <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">Planifiez une demo et obtenez une feuille de route adaptee a votre entreprise.</p>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Ow7HzstHH5pm8DcEiS39JHxT7YvijSbM2Hj_nvTOuebcpR1fXVL8Yrecyp4xJ4i8SfZogboFA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-10 py-4 bg-white text-navy font-bold text-lg rounded-xl hover:bg-gray-100 transition-colors duration-200">
-                <i class="fas fa-calendar-check"></i>
+                <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>
                 Reserver une demo
             </a>
         </div>
@@ -245,7 +228,7 @@
                     <div class="trustpilot-widget" data-locale="fr-FR" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
                         <a href="https://fr.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-[15px] font-medium text-slate-800 hover:bg-[#F9FFFC] transition-colors">
                             Donnez votre avis sur
-                            <i class="fas fa-star text-[#00B67A]"></i>
+                            <svg class="tc-icon text-[#00B67A]"><use href="/assets/icons/sprite.svg#fa-star"/></svg>
                             <span class="font-semibold text-slate-900">Trustpilot</span>
                         </a>
                     </div>

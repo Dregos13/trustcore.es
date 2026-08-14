@@ -69,7 +69,11 @@
       {
         "@type": "Question",
         "name": "¿El IPSI de Ceuta y Melilla está soportado para gestorías?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí. TrustCore es el único software del mercado con soporte IPSI nativo (0,5%). Funciona automáticamente para todos los clientes en Ceuta y Melilla sin configuración adicional." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. TrustCore incorpora soporte IPSI para clientes de Ceuta y Melilla. La AEAT indica que en estas ciudades no se aplica IVA y que, en su lugar, se aplica el Impuesto sobre la Producción, los Servicios y la Importación.",
+          "citation": ["https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html", "https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645"]
+        }
       }
     ]
   }
@@ -79,11 +83,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
   <link rel="stylesheet" href="assets/css/components.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
+  <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
 </head>
 <body class="font-sans antialiased" style="background:var(--tc-surface-alt)">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
@@ -99,20 +102,32 @@
         <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
         <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
         <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+        <a href="/clientes" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Clientes</a>
         <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
         <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
         <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
         <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
         <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" data-calendar-open data-track="header_demo"
+                  class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#040F3F] text-white text-sm font-bold shadow-sm hover:bg-[#0B2572] transition-colors">
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Demo 15 min
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+            <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
+          </button>
+        </div>
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
+      <button type="button" data-calendar-open data-track="header_demo_mobile"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 mt-1 mb-3 rounded-full bg-[#040F3F] text-white text-sm font-bold">
+        <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo 15 min
+      </button>
       <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
       <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/clientes" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Clientes</a>
       <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
       <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
       <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
@@ -129,7 +144,7 @@
       <div class="tc-container relative">
         <div class="max-w-3xl">
           <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-6" style="background:rgba(83,205,254,.15);color:#53CDFE;border:1px solid rgba(83,205,254,.25)">
-            <i class="fas fa-building-columns text-[10px]"></i> Para gestor&iacute;as y asesor&iacute;as
+            <svg class="tc-icon text-[10px]"><use href="/assets/icons/sprite.svg#fa-building-columns"/></svg> Para gestor&iacute;as y asesor&iacute;as
           </span>
           <h1 class="font-extrabold leading-tight text-white mb-5" style="font-size:var(--tc-text-5xl)">
             Gestiona el cumplimiento de toda tu cartera,<br>
@@ -140,7 +155,7 @@
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
             <button type="button" data-calendar-open data-track="gestoria_hero_demo" class="tc-btn tc-btn-primary !px-8 !py-4 !text-base shadow-[0_14px_30px_-10px_rgba(83,205,254,.5)]">
-              <i class="fas fa-calendar-check"></i> Ver demo para gestor&iacute;as
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Ver demo para gestor&iacute;as
             </button>
             <a href="/contacto" class="tc-btn !px-8 !py-4 !text-base border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.25)" data-track="gestoria_hero_contact">
               Hablar con un especialista
@@ -162,21 +177,21 @@
         <div class="grid md:grid-cols-3 gap-6 max-w-5xl" data-reveal>
           <div class="tc-bento__card p-6 rounded-2xl border border-slate-200 bg-white">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(220,38,38,.08)">
-              <i class="fas fa-table-list" style="color:#DC2626"></i>
+              <svg class="tc-icon" style="color:#DC2626"><use href="/assets/icons/sprite.svg#fa-table-list"/></svg>
             </div>
             <h3 class="font-bold text-base mb-2" style="color:var(--tc-navy)">Una herramienta por cliente</h3>
             <p class="text-slate-500 text-sm leading-relaxed">Cada empresa tiene su acceso, su login, su interfaz. Saltar entre paneles consume el tiempo que podrías dedicar a asesorar.</p>
           </div>
           <div class="tc-bento__card p-6 rounded-2xl border border-slate-200 bg-white">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(245,158,11,.08)">
-              <i class="fas fa-triangle-exclamation" style="color:#D97706"></i>
+              <svg class="tc-icon" style="color:#D97706"><use href="/assets/icons/sprite.svg#fa-triangle-exclamation"/></svg>
             </div>
-            <h3 class="font-bold text-base mb-2" style="color:var(--tc-navy)">IPSI que nadie soporta bien</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">Tus clientes en Ceuta y Melilla siguen haciendo los cálculos del 0,5 % a mano. O te los envían a ti para que los corrijas.</p>
+            <h3 class="font-bold text-base mb-2" style="color:var(--tc-navy)">IPSI que el software genérico no resuelve bien</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Tus clientes en Ceuta y Melilla siguen revisando tipos IPSI a mano. O te los envían a ti para que los corrijas.</p>
           </div>
           <div class="tc-bento__card p-6 rounded-2xl border border-slate-200 bg-white">
             <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(32,113,213,.08)">
-              <i class="fas fa-file-circle-question" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-file-circle-question"/></svg>
             </div>
             <h3 class="font-bold text-base mb-2" style="color:var(--tc-navy)">Registros horarios que no convencen</h3>
             <p class="text-slate-500 text-sm leading-relaxed">Tus clientes te llaman cuando la Inspección pide los registros de jornada. Y los ficheros que entregan no tienen la estructura que exige el RDL.</p>
@@ -198,7 +213,7 @@
           <div class="space-y-6">
             <div class="flex gap-4">
               <div class="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
-                <i class="fas fa-users" style="color:var(--tc-blue-royal)"></i>
+                <svg class="tc-icon" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-users"/></svg>
               </div>
               <div>
                 <h3 class="font-bold text-base mb-1" style="color:var(--tc-navy)">Panel multi-cliente centralizado</h3>
@@ -207,16 +222,16 @@
             </div>
             <div class="flex gap-4">
               <div class="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
-                <i class="fas fa-file-invoice" style="color:var(--tc-blue-royal)"></i>
+                <svg class="tc-icon" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg>
               </div>
               <div>
-                <h3 class="font-bold text-base mb-1" style="color:var(--tc-navy)">VeriFactu + IPSI preparado para AEAT</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Facturas electr&oacute;nicas compatibles con QR y hash para todos tus clientes. IPSI nativo para Ceuta y Melilla sin configuraci&oacute;n manual.</p>
+                <h3 class="font-bold text-base mb-1" style="color:var(--tc-navy)">SIF/VERI*FACTU + IPSI preparado</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Facturas con QR, hash y trazabilidad para tus clientes. IPSI nativo para Ceuta y Melilla sin plantillas manuales.</p>
               </div>
             </div>
             <div class="flex gap-4">
               <div class="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
-                <i class="fas fa-clock" style="color:var(--tc-blue-royal)"></i>
+                <svg class="tc-icon" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-clock"/></svg>
               </div>
               <div>
                 <h3 class="font-bold text-base mb-1" style="color:var(--tc-navy)">Control horario a prueba de Inspecci&oacute;n</h3>
@@ -225,7 +240,7 @@
             </div>
             <div class="flex gap-4">
               <div class="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
-                <i class="fas fa-file-export" style="color:var(--tc-blue-royal)"></i>
+                <svg class="tc-icon" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-file-export"/></svg>
               </div>
               <div>
                 <h3 class="font-bold text-base mb-1" style="color:var(--tc-navy)">Exportaci&oacute;n SII autom&aacute;tica</h3>
@@ -283,8 +298,8 @@
                   </div>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                  <span><i class="fas fa-chart-line mr-1"></i> 47 facturas emitidas hoy</span>
-                  <span><i class="fas fa-clock mr-1"></i> 0 incidencias horarias</span>
+                  <span><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-chart-line"/></svg> 47 facturas emitidas hoy</span>
+                  <span><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-clock"/></svg> 0 incidencias horarias</span>
                 </div>
               </div>
             </div>
@@ -298,33 +313,33 @@
       <div class="tc-container">
         <div class="grid md:grid-cols-2 gap-16 max-w-5xl items-center">
           <div data-reveal>
-            <span class="tc-eyebrow"><i class="fas fa-file-invoice mr-1"></i> TrustinFacts</span>
+            <span class="tc-eyebrow"><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg> TrustinFacts</span>
             <h2 class="tc-display tc-display-md mt-3 mb-4">Facturaci&oacute;n VeriFactu para toda tu cartera</h2>
             <p class="text-slate-600 mb-8 leading-relaxed">Da a tus clientes acceso a una plataforma de facturaci&oacute;n preparada para VeriFactu. T&uacute; supervisas, ellos operan. Sin instalar nada, sin formaci&oacute;n de horas.</p>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:var(--tc-success)"></i>
+                <svg class="tc-icon mt-0.5 flex-shrink-0" style="color:var(--tc-success)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
                 <div>
                   <p class="font-semibold text-sm" style="color:var(--tc-navy)">IPSI nativo para Ceuta y Melilla</p>
-                  <p class="text-slate-500 text-sm mt-0.5">El &uacute;nico software del mercado con soporte IPSI (0,5&nbsp;%) de f&aacute;brica. Sin plugins, sin workarounds.</p>
+                  <p class="text-slate-500 text-sm mt-0.5">Soporte IPSI de f&aacute;brica para evitar plugins, plantillas duplicadas y correcciones manuales.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:var(--tc-success)"></i>
+                <svg class="tc-icon mt-0.5 flex-shrink-0" style="color:var(--tc-success)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
                 <div>
                   <p class="font-semibold text-sm" style="color:var(--tc-navy)">Notas de cr&eacute;dito y facturas rectificativas</p>
                   <p class="text-slate-500 text-sm mt-0.5">Manejo completo del ciclo de facturaci&oacute;n, con exportaci&oacute;n SII lista para presentar a Hacienda.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:var(--tc-success)"></i>
+                <svg class="tc-icon mt-0.5 flex-shrink-0" style="color:var(--tc-success)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
                 <div>
                   <p class="font-semibold text-sm" style="color:var(--tc-navy)">Panel de asesor dedicado</p>
                   <p class="text-slate-500 text-sm mt-0.5">Acceso de supervisor para revisar, aprobar y exportar la actividad de cada cliente sin alterar su operativa diaria.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:var(--tc-success)"></i>
+                <svg class="tc-icon mt-0.5 flex-shrink-0" style="color:var(--tc-success)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
                 <div>
                   <p class="font-semibold text-sm" style="color:var(--tc-navy)">Dashboards contables con IA</p>
                   <p class="text-slate-500 text-sm mt-0.5">An&aacute;lisis autom&aacute;tico de m&aacute;rgenes, impagados y tendencias para cada empresa de tu cartera.</p>
@@ -336,7 +351,7 @@
             <div class="p-6" style="background:linear-gradient(160deg,#020A2A,#0B2572)">
               <div class="flex items-center gap-3 mb-4">
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(83,205,254,.15)">
-                  <i class="fas fa-file-invoice" style="color:#53CDFE"></i>
+                  <svg class="tc-icon" style="color:#53CDFE"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg>
                 </div>
                 <div>
                   <p class="text-white font-bold text-sm">TrustinFacts</p>
@@ -347,7 +362,7 @@
                 <div class="rounded-xl p-3" style="background:rgba(255,255,255,.06)">
                   <p style="color:rgba(226,232,240,.5);font-size:.6875rem;text-transform:uppercase;letter-spacing:.08em">Facturas hoy</p>
                   <p class="text-2xl font-extrabold text-white mt-1">47</p>
-                  <p style="color:#86efac;font-size:.75rem" class="mt-1"><i class="fas fa-arrow-up text-[10px]"></i> +12 vs ayer</p>
+                  <p style="color:#86efac;font-size:.75rem" class="mt-1"><svg class="tc-icon text-[10px]"><use href="/assets/icons/sprite.svg#fa-arrow-up"/></svg> +12 vs ayer</p>
                 </div>
                 <div class="rounded-xl p-3" style="background:rgba(255,255,255,.06)">
                   <p style="color:rgba(226,232,240,.5);font-size:.6875rem;text-transform:uppercase;letter-spacing:.08em">Clientes activos</p>
@@ -407,40 +422,40 @@
                 <span class="text-xs px-2 py-0.5 rounded-full" style="background:rgba(245,158,11,.1);color:#D97706;font-weight:600">Ausencia</span>
               </div>
               <div class="pt-2 flex items-center justify-between text-xs text-slate-400">
-                <span><i class="fas fa-shield-halved mr-1"></i> RDL 8/2019 conforme</span>
-                <button class="font-semibold" style="color:var(--tc-blue-royal)"><i class="fas fa-download mr-1"></i> Exportar PDF</button>
+                <span><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-shield-halved"/></svg> RDL 8/2019 documentado</span>
+                <button class="font-semibold" style="color:var(--tc-blue-royal)"><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-download"/></svg> Exportar PDF</button>
               </div>
             </div>
           </div>
 
           <div class="order-1 md:order-2" data-reveal>
-            <span class="tc-eyebrow"><i class="fas fa-clock mr-1"></i> TrustinTime</span>
+            <span class="tc-eyebrow"><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-clock"/></svg> TrustinTime</span>
             <h2 class="tc-display tc-display-md mt-3 mb-4">Control horario para los empleados de tus clientes</h2>
             <p class="text-slate-600 mb-8 leading-relaxed">Cuando la Inspecci&oacute;n llama, los registros de jornada de tus clientes ya est&aacute;n listos. T&uacute; no tienes que correr.</p>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:var(--tc-success)"></i>
+                <svg class="tc-icon mt-0.5 flex-shrink-0" style="color:var(--tc-success)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
                 <div>
                   <p class="font-semibold text-sm" style="color:var(--tc-navy)">Conservaci&oacute;n legal de 4 a&ntilde;os</p>
-                  <p class="text-slate-500 text-sm mt-0.5">Todos los registros se almacenan con firma digital cumpliendo el art&iacute;culo 34 del Estatuto de los Trabajadores.</p>
+                  <p class="text-slate-500 text-sm mt-0.5">Los registros se almacenan con trazabilidad y firma digital para cubrir la conservaci&oacute;n exigida por el art&iacute;culo 34 del Estatuto de los Trabajadores.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:var(--tc-success)"></i>
+                <svg class="tc-icon mt-0.5 flex-shrink-0" style="color:var(--tc-success)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
                 <div>
                   <p class="font-semibold text-sm" style="color:var(--tc-navy)">Exportaci&oacute;n SII y SEPE</p>
                   <p class="text-slate-500 text-sm mt-0.5">Los ficheros de horas y ausencias en el formato que exigen los organismos, sin retoques manuales.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:var(--tc-success)"></i>
+                <svg class="tc-icon mt-0.5 flex-shrink-0" style="color:var(--tc-success)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
                 <div>
                   <p class="font-semibold text-sm" style="color:var(--tc-navy)">Portal del empleado autogestionado</p>
                   <p class="text-slate-500 text-sm mt-0.5">Los empleados de tus clientes fichan, solicitan vacaciones y consultan n&oacute;minas sin que t&uacute; intervengas.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:var(--tc-success)"></i>
+                <svg class="tc-icon mt-0.5 flex-shrink-0" style="color:var(--tc-success)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
                 <div>
                   <p class="font-semibold text-sm" style="color:var(--tc-navy)">Alertas de incumplimiento en tiempo real</p>
                   <p class="text-slate-500 text-sm mt-0.5">Te avisamos si alguna empresa de tu cartera tiene registros incompletos antes de que llegue la Inspecci&oacute;n.</p>
@@ -462,31 +477,31 @@
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto" data-reveal>
           <div class="rounded-2xl p-6 text-center border border-slate-200 bg-white">
             <div class="w-12 h-12 mx-auto rounded-2xl flex items-center justify-center mb-4" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
-              <i class="fas fa-percent" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-percent"/></svg>
             </div>
-            <p class="font-bold mb-2" style="color:var(--tc-navy)">&Uacute;nico IPSI nativo</p>
-            <p class="text-slate-500 text-sm">El 0,5 % de Ceuta y Melilla, calculado autom&aacute;ticamente en cada factura.</p>
+            <p class="font-bold mb-2" style="color:var(--tc-navy)">IPSI nativo</p>
+            <p class="text-slate-500 text-sm">Tipos IPSI de Ceuta y Melilla configurables por operaci&oacute;n y factura.</p>
           </div>
           <div class="rounded-2xl p-6 text-center border border-slate-200 bg-white">
             <div class="w-12 h-12 mx-auto rounded-2xl flex items-center justify-center mb-4" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
-              <i class="fas fa-certificate" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-certificate"/></svg>
             </div>
             <p class="font-bold mb-2" style="color:var(--tc-navy)">Preparado para VeriFactu</p>
             <p class="text-slate-500 text-sm">Facturaci&oacute;n adaptada a los requisitos de la Ley Antifraude. Tus clientes trabajan con trazabilidad desde el primer d&iacute;a.</p>
           </div>
           <div class="rounded-2xl p-6 text-center border border-slate-200 bg-white">
             <div class="w-12 h-12 mx-auto rounded-2xl flex items-center justify-center mb-4" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
-              <i class="fas fa-trophy" style="color:var(--tc-gold)"></i>
+              <svg class="tc-icon" style="color:var(--tc-gold)"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg>
             </div>
             <p class="font-bold mb-2" style="color:var(--tc-navy)">#1 CeutaTech 2026</p>
             <p class="text-slate-500 text-sm">Reconocidos como la mejor propuesta de cumplimiento normativo para pymes espa&ntilde;olas.</p>
           </div>
           <div class="rounded-2xl p-6 text-center border border-slate-200 bg-white">
             <div class="w-12 h-12 mx-auto rounded-2xl flex items-center justify-center mb-4" style="background:linear-gradient(135deg,var(--tc-blue-soft),#EEF4FF)">
-              <i class="fas fa-shield-halved" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-shield-halved"/></svg>
             </div>
             <p class="font-bold mb-2" style="color:var(--tc-navy)">Cloud europeo RGPD</p>
-            <p class="text-slate-500 text-sm">Datos alojados en infraestructura europea. Cumplimiento total con RGPD y normativa espa&ntilde;ola.</p>
+            <p class="text-slate-500 text-sm">Datos alojados en infraestructura europea, con trazabilidad y enfoque alineado con RGPD.</p>
           </div>
         </div>
       </div>
@@ -497,24 +512,24 @@
       <div class="tc-container">
         <div class="max-w-4xl mx-auto text-center text-white" data-reveal>
           <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-6" style="background:rgba(83,205,254,.15);color:#53CDFE;border:1px solid rgba(83,205,254,.25)">
-            <i class="fas fa-tag text-[10px]"></i> Precios para gestor&iacute;as
+            <svg class="tc-icon text-[10px]"><use href="/assets/icons/sprite.svg#fa-tag"/></svg> Precios para gestor&iacute;as
           </span>
           <h2 class="tc-display tc-display-lg mb-4 !text-white">Precios adaptados a tu cartera</h2>
           <p class="text-slate-300 text-lg mb-10 max-w-xl mx-auto">No cobramos lo mismo si gestionas 5 clientes que si gestionas 50. H&aacute;blanos de tu operativa y te preparamos una propuesta a medida.</p>
 
           <div class="grid sm:grid-cols-3 gap-5 mb-10">
             <div class="rounded-2xl p-6 text-left" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)">
-              <i class="fas fa-store text-cyan-light text-2xl mb-4"></i>
+              <svg class="tc-icon text-cyan-light text-2xl mb-4"><use href="/assets/icons/sprite.svg#fa-store"/></svg>
               <h3 class="font-bold text-white mb-2">Peque&ntilde;a gestor&iacute;a</h3>
               <p style="color:rgba(226,232,240,.6);font-size:.9375rem" class="leading-relaxed">Hasta 15 clientes. Precio fijo mensual con soporte incluido y configuraci&oacute;n inicial guiada.</p>
             </div>
             <div class="rounded-2xl p-6 text-left" style="background:rgba(83,205,254,.08);border:1px solid rgba(83,205,254,.2)">
-              <i class="fas fa-building text-cyan-light text-2xl mb-4"></i>
+              <svg class="tc-icon text-cyan-light text-2xl mb-4"><use href="/assets/icons/sprite.svg#fa-building"/></svg>
               <h3 class="font-bold text-white mb-2">Asesor&iacute;a mediana</h3>
               <p style="color:rgba(226,232,240,.6);font-size:.9375rem" class="leading-relaxed">16 a 50 clientes. Descuento por volumen, onboarding dedicado y SLA con tiempo de respuesta garantizado.</p>
             </div>
             <div class="rounded-2xl p-6 text-left" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)">
-              <i class="fas fa-city text-cyan-light text-2xl mb-4"></i>
+              <svg class="tc-icon text-cyan-light text-2xl mb-4"><use href="/assets/icons/sprite.svg#fa-city"/></svg>
               <h3 class="font-bold text-white mb-2">Gran despacho</h3>
               <p style="color:rgba(226,232,240,.6);font-size:.9375rem" class="leading-relaxed">+50 clientes. Contrato marco, integraciones ERP/CRM a medida y gestor de cuenta dedicado.</p>
             </div>
@@ -522,7 +537,7 @@
 
           <div class="flex flex-col sm:flex-row gap-3 justify-center">
             <button type="button" data-calendar-open data-track="gestoria_pricing_demo" class="tc-btn bg-white !font-bold hover:bg-slate-50 !px-8 !py-4 !text-base" style="color:var(--tc-navy)">
-              <i class="fas fa-calendar-check"></i> Pedir propuesta personalizada
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Pedir propuesta personalizada
             </button>
             <a href="/contacto" class="tc-btn !px-8 !py-4 !text-base border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.25)" data-track="gestoria_pricing_contact">
               Hablar con ventas
@@ -543,35 +558,36 @@
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
               &iquest;Puedo gestionar varias empresas desde una sola cuenta?
-              <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
             </summary>
             <p class="mt-4 text-slate-600 leading-relaxed">S&iacute;. El panel de gestor&iacute;a te permite cambiar entre empresas cliente sin cerrar sesi&oacute;n. Cada cliente tiene su propia instancia de datos, pero t&uacute; las supervisas todas desde un &uacute;nico acceso.</p>
           </details>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
               &iquest;Los clientes pueden operar solos o necesitan que yo est&eacute; presente?
-              <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
             </summary>
             <p class="mt-4 text-slate-600 leading-relaxed">Pueden operar completamente aut&oacute;nomos. T&uacute; tienes acceso de revisor/supervisor: ves todo, puedes corregir lo que necesites, pero no bloqueas su operativa diaria.</p>
           </details>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
               &iquest;Qui&eacute;n paga la suscripci&oacute;n, la gestor&iacute;a o cada cliente?
-              <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
             </summary>
             <p class="mt-4 text-slate-600 leading-relaxed">Depende de c&oacute;mo quieras estructurarlo. Puedes contratar t&uacute; la licencia global y repercutirla en tus honorarios, o bien cada cliente tiene su propia suscripci&oacute;n y t&uacute; eres el administrador. Lo definimos en la propuesta.</p>
           </details>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
               &iquest;Funciona para clientes que no est&eacute;n en Ceuta o Melilla?
-              <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
             </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">S&iacute;. TrustCore funciona para cualquier empresa en Espa&ntilde;a. El soporte IPSI es una funcionalidad adicional que se activa autom&aacute;ticamente para clientes en Ceuta y Melilla, pero no afecta al resto.</p>
+            <p class="mt-4 text-slate-600 leading-relaxed">S&iacute;. TrustCore funciona para cualquier empresa en Espa&ntilde;a. El soporte IPSI es una funcionalidad adicional para clientes en Ceuta y Melilla, donde la AEAT indica que no se aplica IVA y se aplica IPSI.</p>
+            <p class="mt-3 text-xs text-slate-400"><strong>Fuente:</strong> <a href="https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html" target="_blank" rel="noopener" class="font-bold text-blue-600">AEAT, Ceuta y Melilla</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645" target="_blank" rel="noopener" class="font-bold text-blue-600">BOE, Ley 8/1991</a>.</p>
           </details>
           <details class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-royal/40 transition-colors open:border-blue-royal/60 open:bg-blue-50/30">
             <summary class="flex items-center justify-between cursor-pointer font-bold text-navy text-base">
               &iquest;Hay formaci&oacute;n o soporte para empezar?
-              <i class="fas fa-plus transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"></i>
+              <svg class="tc-icon transition-transform group-open:rotate-45" style="color:var(--tc-blue-royal)"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
             </summary>
             <p class="mt-4 text-slate-600 leading-relaxed">S&iacute;. Todas las gestiones de incorporaci&oacute;n incluyen una sesi&oacute;n de onboarding guiado donde configuramos tu panel junto a ti. Las licencias de alto volumen incluyen onboarding dedicado y un gestor de cuenta asignado.</p>
           </details>
@@ -585,14 +601,14 @@
         <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden" data-reveal>
           <div class="p-8 md:p-14 text-white text-center" style="background:linear-gradient(135deg,var(--tc-navy-deep) 0%,var(--tc-blue-corp) 100%);">
             <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="tc-award mb-6 inline-flex" data-track="gestoria_award">
-              <span class="tc-award__icon"><i class="fas fa-trophy"></i></span>
+              <span class="tc-award__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg></span>
               #1 CeutaTech Summit 2026 · Pase de Oro Alhambra Venture
             </a>
             <h2 class="tc-display tc-display-lg mb-4 !text-white">Lista para dar el salto?</h2>
             <p class="text-slate-300 text-lg mb-8 max-w-xl mx-auto">En 30 minutos te mostramos el panel de gestor&iacute;a con datos reales y diseñamos contigo la estructura de acceso que mejor se adapta a tu cartera.</p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
               <button type="button" data-calendar-open data-track="gestoria_final_demo" class="tc-btn tc-btn-primary !px-8 !py-4 !text-base shadow-[0_14px_30px_-10px_rgba(83,205,254,.5)]">
-                <i class="fas fa-calendar-check"></i> Demo para gestor&iacute;as
+                <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Demo para gestor&iacute;as
               </button>
               <a href="/contacto" class="tc-btn !px-8 !py-4 !text-base border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.25)" data-track="gestoria_final_contact">
                 Escr&iacute;benos directamente
@@ -617,10 +633,10 @@
           <p class="text-sm leading-relaxed">Tu empresa, 100&nbsp;% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
           <div class="flex flex-wrap gap-2 mt-5">
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
-              <i class="fas fa-trophy"></i> Alhambra Venture 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
             </span>
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
-              <i class="fas fa-award"></i> #1 CeutaTech 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-award"/></svg> #1 CeutaTech 2026
             </span>
           </div>
         </div>

@@ -12,9 +12,10 @@
     <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#040F3F">
     <link rel="canonical" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias">
-    <link rel="alternate" hreflang="es" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias">
-    <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias">
-
+  <link rel="alternate" hreflang="es" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias">
+  <link rel="alternate" hreflang="en" href="https://www.trustcore.es/en/cumplimiento-basico-en-30-dias">
+  <link rel="alternate" hreflang="fr" href="https://www.trustcore.es/fr/cumplimiento-basico-en-30-dias">
+  <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/cumplimiento-basico-en-30-dias">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.trustcore.es/cumplimiento-basico-en-30-dias">
     <meta property="og:title" content="Cumplimiento básico en 30 días para pymes">
@@ -61,28 +62,11 @@
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#040F3F',
-                        'blue-corp': '#0B2572',
-                        'blue-royal': '#2071D5',
-                        'cyan-light': '#53CDFE'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
 </head>
 <body class="font-sans text-gray-800 antialiased bg-slate-50">
@@ -104,7 +88,7 @@
         <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
         <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+          <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
         </button>
       </div>
     </div>
@@ -124,7 +108,7 @@
             <div class="absolute inset-0 opacity-[0.08]" style="background-image: radial-gradient(circle at 20% 20%, #53CDFE 0, transparent 35%), radial-gradient(circle at 80% 80%, #2071D5 0, transparent 30%);"></div>
             <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-white">
                 <p class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-light/20 border border-cyan-light/30 rounded-full text-xs font-semibold tracking-wider uppercase">
-                    <i class="fas fa-newspaper"></i> Article
+                    <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-newspaper"/></svg> Article
                 </p>
                 <h1 class="mt-5 text-3xl md:text-5xl font-extrabold leading-tight">Cumplimiento básico en 30 días para pymes</h1>
                 <p class="mt-6 text-sm text-gray-300">Publicado el 31 de marzo de 2026 por TrustCore</p>
@@ -161,7 +145,7 @@
                     <div class="flex flex-wrap gap-3">
                         <a href="blog" class="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-300 text-gray-700 text-sm font-semibold rounded-lg hover:border-navy hover:text-navy transition-colors">Ver todos los artículos</a>
                         <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Ow7HzstHH5pm8DcEiS39JHxT7YvijSbM2Hj_nvTOuebcpR1fXVL8Yrecyp4xJ4i8SfZogboFA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-corp text-white text-sm font-semibold rounded-lg hover:bg-navy transition-colors">
-                            <i class="fas fa-calendar-check"></i> Agendar demo
+                            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo
                         </a>
                     </div>
                 </div>
@@ -187,7 +171,7 @@
                     <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
                         <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-[15px] font-medium text-slate-800 hover:bg-[#F9FFFC] transition-colors">
                             Reseñanos en
-                            <i class="fas fa-star text-[#00B67A]"></i>
+                            <svg class="tc-icon text-[#00B67A]"><use href="/assets/icons/sprite.svg#fa-star"/></svg>
                             <span class="font-semibold text-slate-900">Trustpilot</span>
                         </a>
                     </div>

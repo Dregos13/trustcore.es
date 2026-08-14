@@ -29,3 +29,5 @@ ds-bundle/
 .design-sync/verify/proof.png
 .design-sync/verify/node_modules
 .design-sync/.upload-list.txt
+.design-sync/verify/audit*/
+.design-sync/verify/interact/

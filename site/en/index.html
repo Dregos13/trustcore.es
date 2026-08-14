@@ -10,9 +10,10 @@
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#040F3F">
     <link rel="canonical" href="https://www.trustcore.es/en/">
-    <link rel="alternate" hreflang="es" href="https://www.trustcore.es/">
-    <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/">
-
+  <link rel="alternate" hreflang="es" href="https://www.trustcore.es/">
+  <link rel="alternate" hreflang="en" href="https://www.trustcore.es/en/">
+  <link rel="alternate" hreflang="fr" href="https://www.trustcore.es/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.trustcore.es/en/">
     <meta property="og:title" content="TrustCore - Compliance and Operations in One Suite">
@@ -48,29 +49,11 @@
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#040F3F',
-                        'navy-deep': '#020A2A',
-                        'blue-corp': '#0B2572',
-                        'blue-royal': '#2071D5',
-                        'cyan-light': '#53CDFE'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="/assets/trustcore-icon.png">
     <style>
         html { scroll-behavior: smooth; }
@@ -95,7 +78,7 @@
         <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
         <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+          <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
         </button>
       </div>
     </div>
@@ -140,7 +123,7 @@
                         <a href="#services" class="group relative inline-flex items-center justify-center px-8 py-3.5 bg-blue-royal text-white font-bold rounded-xl overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(32,113,213,0.5)]">
                             <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 skew-x-12 -ml-4"></div>
                             Explore solutions
-                            <i class="fas fa-shield-alt ml-2"></i>
+                            <svg class="tc-icon ml-2"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg>
                         </a>
                         <a href="#about" class="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300">
                             Learn more
@@ -159,7 +142,7 @@
                                 <div class="flex items-center justify-between mb-2.5">
                                     <div class="flex items-center gap-2">
                                         <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center">
-                                            <i class="fas fa-file-invoice text-green-400 text-sm"></i>
+                                            <svg class="tc-icon text-green-400 text-sm"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg>
                                         </div>
                                         <div>
                                             <p class="text-white font-bold text-xs">VeriFactu</p>
@@ -172,8 +155,8 @@
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-4 text-[10px] text-gray-300">
-                                    <span><i class="fas fa-check-circle text-green-400 mr-1"></i> 247 invoices sent</span>
-                                    <span><i class="fas fa-clock text-cyan-light mr-1"></i> Last sync: 3 min ago</span>
+                                    <span><svg class="tc-icon text-green-400 mr-1"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg> 247 invoices sent</span>
+                                    <span><svg class="tc-icon text-cyan-light mr-1"><use href="/assets/icons/sprite.svg#fa-clock"/></svg> Last sync: 3 min ago</span>
                                 </div>
                             </div>
 
@@ -181,7 +164,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-2">
                                         <div class="w-8 h-8 bg-blue-royal/30 rounded-lg flex items-center justify-center">
-                                            <i class="fas fa-users-cog text-cyan-light text-sm"></i>
+                                            <svg class="tc-icon text-cyan-light text-sm"><use href="/assets/icons/sprite.svg#fa-users-cog"/></svg>
                                         </div>
                                         <div>
                                             <p class="text-white font-bold text-xs">Time Tracking</p>
@@ -224,10 +207,10 @@
 
     <div class="bg-navy border-y border-white/10 py-6">
         <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            <div class="flex items-center gap-2 text-white/80 font-semibold"><i class="fas fa-lock text-cyan-light"></i> AES-256 Encryption</div>
-            <div class="flex items-center gap-2 text-white/80 font-semibold"><i class="fas fa-server text-cyan-light"></i> EU Cloud Infrastructure</div>
-            <div class="flex items-center gap-2 text-white/80 font-semibold"><i class="fas fa-certificate text-cyan-light"></i> VeriFactu-aligned</div>
-            <div class="flex items-center gap-2 text-white/80 font-semibold"><i class="fas fa-shield-alt text-cyan-light"></i> GDPR-ready</div>
+            <div class="flex items-center gap-2 text-white/80 font-semibold"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-lock"/></svg> AES-256 Encryption</div>
+            <div class="flex items-center gap-2 text-white/80 font-semibold"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-server"/></svg> EU Cloud Infrastructure</div>
+            <div class="flex items-center gap-2 text-white/80 font-semibold"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-certificate"/></svg> VeriFactu-aligned</div>
+            <div class="flex items-center gap-2 text-white/80 font-semibold"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg> GDPR-ready</div>
         </div>
     </div>
 
@@ -243,7 +226,7 @@
             <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
                 <div class="group relative rounded-3xl p-1 bg-gradient-to-b from-blue-royal to-navy shadow-2xl hover:shadow-[0_20px_50px_rgba(32,113,213,0.3)] transition-all duration-500">
                     <div class="bg-white h-full w-full rounded-[20px] p-8 lg:p-12 relative overflow-hidden">
-                        <i class="fas fa-clock absolute -right-10 -bottom-10 text-[10rem] text-blue-royal/5 group-hover:scale-110 transition-transform duration-500"></i>
+                        <svg class="tc-icon absolute -right-10 -bottom-10 text-[10rem] text-blue-royal/5 group-hover:scale-110 transition-transform duration-500"><use href="/assets/icons/sprite.svg#fa-clock"/></svg>
                         <div class="relative z-10">
                             <div class="mb-6 group-hover:scale-105 transition-transform duration-300">
                                 <img src="/assets/optimized-trustintime-logo.webp" alt="TrustinTime" class="w-auto max-w-[340px] h-auto">
@@ -252,13 +235,13 @@
                             <div class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-4">TIME TRACKING LAW</div>
                             <p class="text-gray-600 mb-8 text-lg">Immutable workday records, leave management, and HR operations in one flow for managers and employees.</p>
                             <ul class="space-y-3 mb-8 text-gray-500">
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Geo-located clock-ins</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Employee mobile portal</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Leave and absence workflows</li>
+                                <li class="flex items-center gap-2"><svg class="tc-icon text-green-500"><use href="/assets/icons/sprite.svg#fa-check"/></svg> Geo-located clock-ins</li>
+                                <li class="flex items-center gap-2"><svg class="tc-icon text-green-500"><use href="/assets/icons/sprite.svg#fa-check"/></svg> Employee mobile portal</li>
+                                <li class="flex items-center gap-2"><svg class="tc-icon text-green-500"><use href="/assets/icons/sprite.svg#fa-check"/></svg> Leave and absence workflows</li>
                             </ul>
                             <a href="https://trustintime.es" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-royal text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors duration-200">
                                 Visit TrustinTime
-                                <i class="fas fa-external-link-alt text-xs opacity-70"></i>
+                                <svg class="tc-icon text-xs opacity-70"><use href="/assets/icons/sprite.svg#fa-external-link-alt"/></svg>
                             </a>
                         </div>
                     </div>
@@ -266,7 +249,7 @@
 
                 <div class="group relative rounded-3xl p-1 bg-gradient-to-b from-cyan-light to-blue-corp shadow-2xl hover:shadow-[0_20px_50px_rgba(83,205,254,0.3)] transition-all duration-500">
                     <div class="bg-navy-deep h-full w-full rounded-[20px] p-8 lg:p-12 relative overflow-hidden">
-                        <i class="fas fa-file-invoice-dollar absolute -right-10 -bottom-10 text-[10rem] text-white/5 group-hover:scale-110 transition-transform duration-500"></i>
+                        <svg class="tc-icon absolute -right-10 -bottom-10 text-[10rem] text-white/5 group-hover:scale-110 transition-transform duration-500"><use href="/assets/icons/sprite.svg#fa-file-invoice-dollar"/></svg>
                         <div class="relative z-10">
                             <div class="mb-6 group-hover:scale-105 transition-transform duration-300">
                                 <img src="/assets/trustinfacts-logo.png" alt="TrustinFacts" class="w-auto max-w-[340px] h-auto">
@@ -275,13 +258,13 @@
                             <div class="inline-block px-3 py-1 rounded-full bg-cyan-light/20 text-cyan-light text-xs font-bold mb-4 border border-cyan-light/30">ANTI-FRAUD LAW / VERIFACTU</div>
                             <p class="text-gray-300 mb-8 text-lg">VeriFactu-ready invoicing, stock traceability and margin visibility so decisions are based on verified numbers.</p>
                             <ul class="space-y-3 mb-8 text-gray-400">
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light"></i> VeriFactu invoice issuance</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light"></i> Stock traceability</li>
-                                <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-light"></i> Margin control</li>
+                                <li class="flex items-center gap-2"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-check"/></svg> VeriFactu invoice issuance</li>
+                                <li class="flex items-center gap-2"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-check"/></svg> Stock traceability</li>
+                                <li class="flex items-center gap-2"><svg class="tc-icon text-cyan-light"><use href="/assets/icons/sprite.svg#fa-check"/></svg> Margin control</li>
                             </ul>
                             <a href="https://trustinfacts.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-light text-navy font-semibold rounded-lg hover:bg-cyan-400 transition-colors duration-200">
                                 Visit TrustinFacts
-                                <i class="fas fa-external-link-alt text-xs opacity-70"></i>
+                                <svg class="tc-icon text-xs opacity-70"><use href="/assets/icons/sprite.svg#fa-external-link-alt"/></svg>
                             </a>
                         </div>
                     </div>
@@ -298,9 +281,9 @@
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy tracking-tight mb-5">Compare cost, coverage, and compliance approach</h2>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">Use our comparison page to evaluate real pricing scenarios and understand where hidden operational cost appears as teams scale.</p>
                     <div class="space-y-3 mb-8">
-                        <div class="flex items-start gap-3 text-gray-700"><i class="fas fa-check-circle text-green-500 mt-1"></i><span>Scenario-based monthly pricing comparisons.</span></div>
-                        <div class="flex items-start gap-3 text-gray-700"><i class="fas fa-check-circle text-green-500 mt-1"></i><span>Feature matrix focused on legal coverage.</span></div>
-                        <div class="flex items-start gap-3 text-gray-700"><i class="fas fa-check-circle text-green-500 mt-1"></i><span>Source references and review date for each public price.</span></div>
+                        <div class="flex items-start gap-3 text-gray-700"><svg class="tc-icon text-green-500 mt-1"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg><span>Scenario-based monthly pricing comparisons.</span></div>
+                        <div class="flex items-start gap-3 text-gray-700"><svg class="tc-icon text-green-500 mt-1"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg><span>Feature matrix focused on legal coverage.</span></div>
+                        <div class="flex items-start gap-3 text-gray-700"><svg class="tc-icon text-green-500 mt-1"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg><span>Source references and review date for each public price.</span></div>
                     </div>
                 </div>
 
@@ -336,7 +319,7 @@
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6">Build your compliance stack with confidence</h2>
             <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">Book a demo and get a practical implementation plan adapted to your team size, tools, and regulatory exposure.</p>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Ow7HzstHH5pm8DcEiS39JHxT7YvijSbM2Hj_nvTOuebcpR1fXVL8Yrecyp4xJ4i8SfZogboFA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-10 py-4 bg-white text-navy font-bold text-lg rounded-xl hover:bg-gray-100 transition-colors duration-200 shadow-xl shadow-black/20">
-                <i class="fas fa-calendar-check"></i>
+                <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>
                 Schedule demo
             </a>
         </div>
@@ -357,7 +340,7 @@
                     <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
                         <a href="https://www.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-[15px] font-medium text-slate-800 hover:bg-[#F9FFFC] transition-colors">
                             Review us on
-                            <i class="fas fa-star text-[#00B67A]"></i>
+                            <svg class="tc-icon text-[#00B67A]"><use href="/assets/icons/sprite.svg#fa-star"/></svg>
                             <span class="font-semibold text-slate-900">Trustpilot</span>
                         </a>
                     </div>

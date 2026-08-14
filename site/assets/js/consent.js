@@ -112,6 +112,12 @@
         page_path: window.location.pathname
       });
     }
+
+    // Notifica a otros scripts (components.js) que analytics acaba de habilitarse,
+    // para que puedan disparar eventos pendientes (p. ej. tc_page_ready).
+    try {
+      window.dispatchEvent(new CustomEvent('tc:consent:analytics-granted'));
+    } catch (error) { /* IE11 no soporta CustomEvent constructor: ignoramos */ }
   }
 
   window.tcCanTrackAnalytics = function () {

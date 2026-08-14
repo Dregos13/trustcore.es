@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TrustinTime — Control Horario Digital | TrustCore</title>
-  <meta name="description" content="TrustinTime: control horario digital con app móvil, QR y biometría. Cumple RDL 8/2019 y RGPD. #1 CeutaTech Summit 2026. Desde 2€/usuario/mes.">
+  <meta name="description" content="TrustinTime: control horario digital con app móvil, QR y biometría. Ayuda a cumplir el RDL 8/2019 y RGPD. #1 CeutaTech Summit 2026. Desde 2€/usuario/mes.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#040F3F">
   <link rel="canonical" href="https://www.trustcore.es/productos/trustintime">
@@ -63,18 +63,29 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿TrustinTime cumple con la Ley de Registro de Jornada (RDL 8/2019)?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí. TrustinTime garantiza registro obligatorio, inalterabilidad de datos, conservación 4 años, acceso inmediato a la Inspección de Trabajo y firma electrónica. Todo conforme al RDL 8/2019." }
+        "name": "¿TrustinTime cubre la Ley de Registro de Jornada (RDL 8/2019)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TrustinTime cubre los elementos operativos que exige el registro de jornada: entrada y salida diaria, conservación durante cuatro años, exportación de registros y disponibilidad para Inspección de Trabajo. La correcta configuración y uso diario dependen de cada empresa.",
+          "citation": ["https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481", "https://www.mites.gob.es/ficheros/ministerio/GuiaRegistroJornada.pdf"]
+        }
       },
       {
         "@type": "Question",
         "name": "¿Desde qué dispositivos pueden fichar mis empleados?",
-        "acceptedAnswer": { "@type": "Answer", "text": "App iOS y Android, código QR en tablet o panel físico, PIN web, huella dactilar (biometría) o reconocimiento facial. Tú decides qué métodos activas." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pueden fichar desde app móvil, código QR en tablet o panel físico, PIN web y métodos biométricos cuando la empresa tenga base legal y configuración de privacidad adecuadas. Tú decides qué métodos activas por sede o equipo."
+        }
       },
       {
         "@type": "Question",
         "name": "¿Cuánto cuesta TrustinTime?",
-        "acceptedAnswer": { "@type": "Answer", "text": "El plan Control Horario Lite cuesta 2€ por usuario/mes. El plan RRHH Completo con vacaciones, nóminas y ausencias desde 6,99€/empleado/mes. Sin permanencia." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TrustinTime tiene planes de control horario y RRHH según funcionalidades y número de usuarios. La referencia actualizada está en la página de precios de TrustCore.",
+          "citation": ["https://www.trustcore.es/precios"]
+        }
       },
       {
         "@type": "Question",
@@ -85,13 +96,12 @@
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
+  <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="../assets/trustcore-icon.png">
   <link rel="stylesheet" href="../assets/css/components.css">
 </head>
@@ -109,20 +119,32 @@
         <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
         <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
         <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+        <a href="/clientes" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Clientes</a>
         <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
         <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
         <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
         <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
         <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" data-calendar-open data-track="header_demo"
+                  class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#040F3F] text-white text-sm font-bold shadow-sm hover:bg-[#0B2572] transition-colors">
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Demo 15 min
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+            <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
+          </button>
+        </div>
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
+      <button type="button" data-calendar-open data-track="header_demo_mobile"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 mt-1 mb-3 rounded-full bg-[#040F3F] text-white text-sm font-bold">
+        <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo 15 min
+      </button>
       <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
       <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/clientes" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Clientes</a>
       <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
       <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
       <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
@@ -139,25 +161,25 @@
     <div class="tc-container grid lg:grid-cols-2 gap-14 items-center">
       <div data-reveal>
         <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="tc-award mb-6 inline-flex" data-track="tt_award_link">
-          <span class="tc-award__icon"><i class="fas fa-trophy"></i></span>
+          <span class="tc-award__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg></span>
           #1 CeutaTech Summit 2026 &middot; Pase de Oro Alhambra Venture
         </a>
         <h1 class="font-extrabold text-white leading-tight tracking-tight" style="font-size:var(--tc-text-5xl)">
           Control horario<br><span class="tc-gradient-text">sin excusas ni lagunas</span>
         </h1>
         <p class="mt-6 text-blue-100/80 max-w-lg leading-relaxed" style="font-size:var(--tc-text-lg)">
-          TrustinTime registra la jornada de cada empleado &mdash; app, QR, PIN o biometr&iacute;a &mdash; y te entrega los informes legales listos para la Inspecci&oacute;n de Trabajo. <strong class="text-white">RDL 8/2019 cumplido desde el d&iacute;a uno.</strong>
+          TrustinTime registra la jornada de cada empleado &mdash; app, QR, PIN o biometr&iacute;a &mdash; y te entrega informes listos para revisar con la Inspecci&oacute;n de Trabajo. <strong class="text-white">RDL 8/2019 cubierto desde el d&iacute;a uno si el sistema se configura y usa correctamente.</strong>
         </p>
         <div class="flex flex-wrap gap-3 mt-8">
           <button class="tc-btn tc-btn-primary" data-calendar-open data-track="tt_hero_demo">
-            <i class="fas fa-calendar-check mr-2"></i>Demo gratuita 15 min
+            <svg class="tc-icon mr-2"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>Demo gratuita 15 min
           </button>
           <a class="tc-btn tc-btn-ghost" href="#precios" data-track="tt_hero_precios">Ver precios</a>
         </div>
         <ul class="mt-8 space-y-2">
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><i class="fas fa-check-circle shrink-0" style="color:var(--tc-cyan-light)"></i>Sin permanencia &mdash; cancela cuando quieras</li>
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><i class="fas fa-check-circle shrink-0" style="color:var(--tc-cyan-light)"></i>Datos en cloud europeo (RGPD compliant)</li>
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><i class="fas fa-check-circle shrink-0" style="color:var(--tc-cyan-light)"></i>Onboarding en 30 minutos con tu asesor&iacute;a</li>
+          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>Sin permanencia &mdash; cancela cuando quieras</li>
+          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>Datos en cloud europeo (RGPD compliant)</li>
+          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>Onboarding en 30 minutos con tu asesor&iacute;a</li>
         </ul>
       </div>
 
@@ -174,7 +196,7 @@
                 <p class="text-white text-sm font-medium truncate">Mar&iacute;a Rodr&iacute;guez</p>
                 <p class="text-blue-300 text-xs">Entrada &middot; 08:02 &middot; App m&oacute;vil</p>
               </div>
-              <i class="fas fa-circle text-green-400 text-xs shrink-0"></i>
+              <svg class="tc-icon text-green-400 text-xs shrink-0"><use href="/assets/icons/sprite.svg#fa-circle"/></svg>
             </div>
             <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(255,255,255,0.05)">
               <span class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0" style="background:var(--tc-blue-corp);color:#fff">JL</span>
@@ -182,7 +204,7 @@
                 <p class="text-white text-sm font-medium truncate">Jos&eacute; L&oacute;pez</p>
                 <p class="text-blue-300 text-xs">Entrada &middot; 08:15 &middot; QR oficina</p>
               </div>
-              <i class="fas fa-circle text-green-400 text-xs shrink-0"></i>
+              <svg class="tc-icon text-green-400 text-xs shrink-0"><use href="/assets/icons/sprite.svg#fa-circle"/></svg>
             </div>
             <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(255,255,255,0.05)">
               <span class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0" style="background:#1a3a8a;color:#fff">AG</span>
@@ -190,7 +212,7 @@
                 <p class="text-white text-sm font-medium truncate">Ana Garc&iacute;a</p>
                 <p class="text-blue-300 text-xs">Ausencia &middot; Vacaciones aprobadas</p>
               </div>
-              <i class="fas fa-circle text-yellow-400 text-xs shrink-0"></i>
+              <svg class="tc-icon text-yellow-400 text-xs shrink-0"><use href="/assets/icons/sprite.svg#fa-circle"/></svg>
             </div>
           </div>
           <div class="grid grid-cols-3 gap-2 mt-4">
@@ -218,7 +240,7 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div class="tc-metric" data-reveal>
           <span class="tc-metric__value">RDL 8/2019</span>
-          <span class="tc-metric__label">Cumplimiento legal garantizado</span>
+          <span class="tc-metric__label">Cumplimiento legal documentado</span>
         </div>
         <div class="tc-metric" data-reveal>
           <span class="tc-metric__value">4 modos</span>
@@ -293,38 +315,38 @@
       </div>
       <div class="tc-bento">
         <article class="tc-bento__card tc-bento--two-thirds" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-mobile-alt"/></svg></div>
           <h3 class="tc-bento__title">Fichaje desde cualquier dispositivo</h3>
           <p class="tc-bento__body">App iOS/Android con geolocalizaci&oacute;n, QR en panel f&iacute;sico, PIN web y huella dactilar. El empleado elige, t&uacute; controlas.</p>
           <div class="flex flex-wrap gap-2 mt-4">
-            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><i class="fas fa-mobile-alt mr-1"></i>App</span>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><i class="fas fa-qrcode mr-1"></i>QR</span>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><i class="fas fa-fingerprint mr-1"></i>Biometr&iacute;a</span>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><i class="fas fa-lock mr-1"></i>PIN</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-mobile-alt"/></svg>App</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-qrcode"/></svg>QR</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-fingerprint"/></svg>Biometr&iacute;a</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)"><svg class="tc-icon mr-1"><use href="/assets/icons/sprite.svg#fa-lock"/></svg>PIN</span>
           </div>
         </article>
         <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-file-signature"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-signature"/></svg></div>
           <h3 class="tc-bento__title">Informes legales al instante</h3>
           <p class="tc-bento__body">Exporta el libro de horas en PDF firmado digitalmente. Listo para la Inspecci&oacute;n de Trabajo en segundos.</p>
         </article>
         <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-calendar-alt"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-alt"/></svg></div>
           <h3 class="tc-bento__title">Gesti&oacute;n de ausencias y vacaciones</h3>
           <p class="tc-bento__body">Calendario visual con flujo de solicitud y aprobaci&oacute;n. El equipo ve sus saldos, t&uacute; apruebas con un clic.</p>
         </article>
         <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-clock"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-clock"/></svg></div>
           <h3 class="tc-bento__title">Turnos y horarios flexibles</h3>
           <p class="tc-bento__body">Define turnos rotativos, jornada partida o flexible. Alerta autom&aacute;tica si alguien llega tarde o no ficha.</p>
         </article>
         <article class="tc-bento__card tc-bento--half" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-map-marker-alt"/></svg></div>
           <h3 class="tc-bento__title">Geolocalizaci&oacute;n y multisede</h3>
           <p class="tc-bento__body">Verifica que el fichaje se hace en el lugar correcto. Gestiona varias sedes o trabajadores en remoto desde un solo panel.</p>
         </article>
         <article class="tc-bento__card tc-bento--half" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-chart-bar"/></svg></div>
           <h3 class="tc-bento__title">Dashboards y alertas en tiempo real</h3>
           <p class="tc-bento__body">Visualiza qui&eacute;n est&aacute; trabajando ahora mismo, detecta horas extra acumuladas y recibe alertas antes de incumplir el convenio.</p>
         </article>
@@ -362,38 +384,80 @@
     </div>
   </section>
 
+  <!-- SIMULADOR: pru&eacute;balo ahora -->
+  <section id="pruebalo" class="tc-section scroll-mt-28" style="background:var(--tc-surface-alt)">
+    <div class="tc-container">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <span class="tc-eyebrow justify-center">Pru&eacute;balo ahora</span>
+        <h2 class="tc-display tc-display-lg mt-4 mb-4">As&iacute; se ficha con TrustinTime</h2>
+        <p class="text-lg text-slate-600">Sin registro. Ficha entrada y salida y mira c&oacute;mo cada registro queda firmado y listo para la Inspecci&oacute;n.</p>
+      </div>
+
+      <div class="tc-sim max-w-5xl mx-auto" data-sim="fichaje" data-reveal>
+        <div class="tc-sim__controls">
+          <div class="flex items-center gap-3">
+            <div class="tc-testimonial__avatar" aria-hidden="true">AG</div>
+            <div>
+              <p class="font-bold" style="color:var(--tc-navy)">Ana Garc&iacute;a</p>
+              <p class="text-sm text-slate-500">Empleada de prueba &middot; turno de ma&ntilde;ana</p>
+            </div>
+          </div>
+          <div class="tc-sim__options">
+            <span class="tc-sim__opt is-active" aria-hidden="true"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-map-marker-alt"/></svg> Oficina Ceuta &middot; dentro del geofence de 50 m</span>
+          </div>
+          <button type="button" class="tc-btn tc-btn-primary w-full" data-sim-fichar>Fichar entrada</button>
+          <p class="text-xs text-slate-400">Cada fichaje se firma en el momento y no puede modificarse despu&eacute;s: eso es lo que pide el RDL 8/2019.</p>
+        </div>
+        <div class="tc-sim__stage">
+          <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--tc-cyan-light)">Registro de jornada &middot; hoy</p>
+          <ul class="tc-sim__log" data-sim-log aria-live="polite">
+            <li class="tc-sim__empty" data-sim-empty style="list-style:none">A&uacute;n no hay fichajes. Pulsa &laquo;Fichar entrada&raquo;.</li>
+          </ul>
+          <div class="mt-4" data-sim-summary hidden>
+            <p class="text-white text-sm mb-3">Jornada registrada: <strong data-sim-jornada>0 h</strong> &middot; conservaci&oacute;n autom&aacute;tica 4 a&ntilde;os</p>
+          </div>
+          <p class="mt-2">
+            <button type="button" class="tc-btn tc-btn-secondary w-full" data-sim-export hidden>
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-export"/></svg> Exportar informe para Inspecci&oacute;n
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- COMPLIANCE -->
   <section class="tc-section" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%)">
     <div class="tc-container">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div data-reveal>
           <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Cumplimiento legal</span>
-          <h2 class="tc-display tc-display-lg mt-4 text-white">Cero riesgo ante la Inspecci&oacute;n de Trabajo</h2>
-          <p class="mt-5 text-blue-100/80 leading-relaxed">La normativa es clara: toda empresa con empleados debe registrar la jornada. Las sanciones van de <strong class="text-white">626&euro; a 6.250&euro; por infracci&oacute;n</strong>. TrustinTime te protege con tecnolog&iacute;a, no con promesas.</p>
+          <h2 class="tc-display tc-display-lg mt-4 text-white">Menos riesgo ante la Inspecci&oacute;n de Trabajo</h2>
+          <p class="mt-5 text-blue-100/80 leading-relaxed">La normativa es clara: toda empresa con empleados debe registrar la jornada diaria, conservar los registros durante cuatro a&ntilde;os y tenerlos disponibles. TrustinTime convierte esa obligaci&oacute;n en evidencias ordenadas, exportables y revisables.</p>
           <ul class="mt-8 space-y-4">
             <li class="flex items-start gap-3">
-              <i class="fas fa-shield-alt mt-0.5 shrink-0" style="color:var(--tc-cyan-light)"></i>
+              <svg class="tc-icon mt-0.5 shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg>
               <div>
                 <p class="font-semibold text-white text-sm">Registros inalterables</p>
                 <p class="text-blue-200/70 text-sm">Ning&uacute;n administrador puede modificar los fichajes retroactivamente. Auditor&iacute;a completa de cambios.</p>
               </div>
             </li>
             <li class="flex items-start gap-3">
-              <i class="fas fa-lock mt-0.5 shrink-0" style="color:var(--tc-cyan-light)"></i>
+              <svg class="tc-icon mt-0.5 shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-lock"/></svg>
               <div>
                 <p class="font-semibold text-white text-sm">Conservaci&oacute;n 4 a&ntilde;os</p>
                 <p class="text-blue-200/70 text-sm">Almacenamiento autom&aacute;tico en cloud europeo. Exportaci&oacute;n en cualquier momento para la Inspecci&oacute;n.</p>
               </div>
             </li>
             <li class="flex items-start gap-3">
-              <i class="fas fa-pen-nib mt-0.5 shrink-0" style="color:var(--tc-cyan-light)"></i>
+              <svg class="tc-icon mt-0.5 shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-pen-nib"/></svg>
               <div>
                 <p class="font-semibold text-white text-sm">Firma electr&oacute;nica</p>
                 <p class="text-blue-200/70 text-sm">El empleado confirma su jornada con firma digital. Validez legal equiparable a la firma manuscrita.</p>
               </div>
             </li>
             <li class="flex items-start gap-3">
-              <i class="fas fa-user-check mt-0.5 shrink-0" style="color:var(--tc-cyan-light)"></i>
+              <svg class="tc-icon mt-0.5 shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-user-check"/></svg>
               <div>
                 <p class="font-semibold text-white text-sm">RGPD nativo</p>
                 <p class="text-blue-200/70 text-sm">Datos biom&eacute;tricos tratados en Europa, con consentimiento expl&iacute;cito y pol&iacute;tica de retenci&oacute;n configurable.</p>
@@ -406,27 +470,27 @@
           <div class="space-y-3">
             <div class="flex items-center justify-between py-3 border-b border-white/10">
               <span class="text-blue-100 text-sm">Registro diario de entrada y salida</span>
-              <i class="fas fa-check-circle text-green-400"></i>
+              <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
             </div>
             <div class="flex items-center justify-between py-3 border-b border-white/10">
               <span class="text-blue-100 text-sm">Inalterabilidad del registro (RDL 8/2019)</span>
-              <i class="fas fa-check-circle text-green-400"></i>
+              <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
             </div>
             <div class="flex items-center justify-between py-3 border-b border-white/10">
               <span class="text-blue-100 text-sm">Conservaci&oacute;n 4 a&ntilde;os en servidor</span>
-              <i class="fas fa-check-circle text-green-400"></i>
+              <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
             </div>
             <div class="flex items-center justify-between py-3 border-b border-white/10">
               <span class="text-blue-100 text-sm">Acceso inmediato Inspecci&oacute;n de Trabajo</span>
-              <i class="fas fa-check-circle text-green-400"></i>
+              <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
             </div>
             <div class="flex items-center justify-between py-3 border-b border-white/10">
               <span class="text-blue-100 text-sm">Control de horas extra y descansos</span>
-              <i class="fas fa-check-circle text-green-400"></i>
+              <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
             </div>
             <div class="flex items-center justify-between py-3">
               <span class="text-blue-100 text-sm">Tratamiento biom&eacute;trico conforme RGPD</span>
-              <i class="fas fa-check-circle text-green-400"></i>
+              <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
             </div>
           </div>
           <button class="tc-btn tc-btn-primary w-full mt-6" data-calendar-open data-track="tt_compliance_demo">Agenda una demostraci&oacute;n</button>
@@ -453,12 +517,12 @@
           </div>
           <p class="text-sm text-gray-500 mt-1 mb-6">Cumplimiento b&aacute;sico sin complicaciones</p>
           <ul class="tc-pricing__features">
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Fichaje app, QR y PIN</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Informes legales PDF</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Conservaci&oacute;n 4 a&ntilde;os</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Panel supervisor en tiempo real</li>
-            <li class="tc-pricing__missing"><i class="fas fa-times text-gray-300 shrink-0"></i>Gesti&oacute;n de vacaciones</li>
-            <li class="tc-pricing__missing"><i class="fas fa-times text-gray-300 shrink-0"></i>Geolocalizaci&oacute;n avanzada</li>
+            <li>Fichaje app, QR y PIN</li>
+            <li>Informes legales PDF</li>
+            <li>Conservaci&oacute;n 4 a&ntilde;os</li>
+            <li>Panel supervisor en tiempo real</li>
+            <li class="tc-pricing__missing"><svg class="tc-icon text-gray-300 shrink-0"><use href="/assets/icons/sprite.svg#fa-times"/></svg>Gesti&oacute;n de vacaciones</li>
+            <li class="tc-pricing__missing"><svg class="tc-icon text-gray-300 shrink-0"><use href="/assets/icons/sprite.svg#fa-times"/></svg>Geolocalizaci&oacute;n avanzada</li>
           </ul>
           <button class="tc-btn tc-btn-secondary w-full" data-calendar-open data-track="tt_price_lite">Empezar con Lite</button>
         </div>
@@ -471,12 +535,12 @@
           </div>
           <p class="text-sm opacity-70 mt-1 mb-6">El m&aacute;s elegido por pymes con plantilla</p>
           <ul class="tc-pricing__features">
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Todo lo del plan Lite</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Biometr&iacute;a (huella + facial)</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Vacaciones y ausencias</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Turnos rotativos</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Geolocalizaci&oacute;n y multisede</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Integraci&oacute;n n&oacute;minas</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Todo lo del plan Lite</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Biometr&iacute;a (huella + facial)</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Vacaciones y ausencias</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Turnos rotativos</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Geolocalizaci&oacute;n y multisede</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Integraci&oacute;n n&oacute;minas</li>
           </ul>
           <button class="tc-btn w-full font-semibold" style="background:white;color:var(--tc-blue-corp)" data-calendar-open data-track="tt_price_pro">Agendar demo</button>
         </div>
@@ -484,16 +548,16 @@
           <p class="font-semibold text-sm mb-1" style="color:var(--tc-slate)">Suite TrustCore</p>
           <p class="tc-pricing__name">A medida</p>
           <div class="tc-pricing__price">
-            <span class="tc-pricing__amount">&euro; &euro;&euro;</span>
+            <span class="tc-pricing__amount tc-pricing__amount--text">Personalizado</span>
           </div>
           <p class="text-sm text-gray-500 mt-1 mb-6">Para asesor&iacute;as y empresas con necesidades especiales</p>
           <ul class="tc-pricing__features">
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Todo lo del plan Profesional</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>TrustinFacts incluido</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>IPSI para Ceuta/Melilla</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>API + integraciones custom</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Cuenta manager dedicada</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>SLA prioritario</li>
+            <li>Todo lo del plan Profesional</li>
+            <li>TrustinFacts incluido</li>
+            <li>IPSI para Ceuta/Melilla</li>
+            <li>API + integraciones custom</li>
+            <li>Cuenta manager dedicada</li>
+            <li>SLA prioritario</li>
           </ul>
           <a href="/contacto" class="tc-btn tc-btn-secondary w-full" data-track="tt_price_suite">Hablemos</a>
         </div>
@@ -512,31 +576,34 @@
       <div class="space-y-3" data-reveal>
         <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
-            &iquest;TrustinTime cumple con el RDL 8/2019?
-            <i class="fas fa-plus text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"></i>
+            &iquest;TrustinTime cubre el RDL 8/2019?
+            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">S&iacute;. Cubre todos los requisitos: registro obligatorio, inalterabilidad, conservaci&oacute;n 4 a&ntilde;os, acceso inmediato a la Inspecci&oacute;n de Trabajo y firma electr&oacute;nica del empleado.</div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+            S&iacute;. Cubre registro diario, conservaci&oacute;n durante cuatro a&ntilde;os, exportaci&oacute;n y disponibilidad para Inspecci&oacute;n de Trabajo. La empresa debe configurarlo bien y usarlo cada d&iacute;a para que el cumplimiento sea defendible.
+            <p class="mt-3 text-xs text-slate-400"><strong>Fuente:</strong> <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481" target="_blank" rel="noopener" class="font-bold text-blue-600">BOE, Real Decreto-ley 8/2019</a> y <a href="https://www.mites.gob.es/ficheros/ministerio/GuiaRegistroJornada.pdf" target="_blank" rel="noopener" class="font-bold text-blue-600">Gu&iacute;a del Ministerio de Trabajo</a>.</p>
+          </div>
         </details>
         <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
             &iquest;Desde qu&eacute; dispositivos pueden fichar los empleados?
-            <i class="fas fa-plus text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"></i>
+            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">App iOS y Android (con geolocalizaci&oacute;n), c&oacute;digo QR en tablet o panel f&iacute;sico, PIN desde cualquier navegador web, y huella dactilar o facial (biometr&iacute;a). T&uacute; decides qu&eacute; m&eacute;todos activas por sede o por empleado.</div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">App iOS y Android, c&oacute;digo QR en tablet o panel f&iacute;sico, PIN desde navegador web y m&eacute;todos biom&eacute;tricos cuando la empresa tenga base legal y configuraci&oacute;n de privacidad adecuadas. T&uacute; decides qu&eacute; m&eacute;todos activas por sede o por equipo.</div>
         </details>
         <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
             &iquest;Puedo gestionar vacaciones y ausencias tambi&eacute;n?
-            <i class="fas fa-plus text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"></i>
+            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Con el plan RRHH Completo s&iacute;. Incluye calendario de ausencias, solicitudes con flujo de aprobaci&oacute;n, gesti&oacute;n de turnos rotativos e informes de incumplimiento autom&aacute;ticos.</div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Con el plan RRHH Completo s&iacute;. Incluye calendario de ausencias, solicitudes con flujo de aprobaci&oacute;n, gesti&oacute;n de turnos rotativos e informes de incidencias.</div>
         </details>
         <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
             &iquest;Cu&aacute;nto tarda la implantaci&oacute;n?
-            <i class="fas fa-plus text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"></i>
+            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">La mayor&iacute;a de empresas est&aacute;n operativas en menos de 30 minutos. Nuestro equipo te acompa&ntilde;a en el onboarding y podemos coordinarnos directamente con tu asesor&iacute;a laboral.</div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Muchas empresas pueden empezar en una sesi&oacute;n corta si ya tienen plantilla, sedes y horarios claros. Nuestro equipo te acompa&ntilde;a en el onboarding y puede coordinarse con tu asesor&iacute;a laboral.</div>
         </details>
       </div>
     </div>
@@ -550,7 +617,7 @@
       <p class="mt-5 text-blue-100/80" style="font-size:var(--tc-text-lg)">Demo gratuita de 15 min con nuestro equipo. Sin compromiso. Sin tarjeta de cr&eacute;dito.</p>
       <div class="flex flex-wrap justify-center gap-4 mt-8">
         <button class="tc-btn tc-btn-primary" data-calendar-open data-track="tt_cta_demo">
-          <i class="fas fa-calendar-check mr-2"></i>Agendar demo gratuita
+          <svg class="tc-icon mr-2"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>Agendar demo gratuita
         </button>
         <a href="/contacto" class="tc-btn tc-btn-ghost" data-track="tt_cta_contacto">Enviar consulta</a>
       </div>
@@ -571,10 +638,10 @@
           <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
           <div class="flex flex-wrap gap-2 mt-5">
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
-              <i class="fas fa-trophy"></i> Alhambra Venture 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
             </span>
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
-              <i class="fas fa-award"></i> #1 CeutaTech 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-award"/></svg> #1 CeutaTech 2026
             </span>
           </div>
         </div>
@@ -607,7 +674,7 @@
           <div class="mt-5">
             <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
               <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
-                Rese&ntilde;anos en <i class="fas fa-star" style="color:#00B67A"></i> <strong class="text-slate-900">Trustpilot</strong>
+                Rese&ntilde;anos en <svg class="tc-icon" style="color:#00B67A"><use href="/assets/icons/sprite.svg#fa-star"/></svg> <strong class="text-slate-900">Trustpilot</strong>
               </a>
             </div>
           </div>

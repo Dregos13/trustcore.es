@@ -57,13 +57,12 @@
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
+  <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="assets/trustcore-icon.png">
   <link rel="stylesheet" href="assets/css/components.css">
   <style>
@@ -481,20 +480,32 @@
         <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
         <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
         <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+        <a href="/clientes" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Clientes</a>
         <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
         <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
         <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
         <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
         <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" data-calendar-open data-track="header_demo"
+                  class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#040F3F] text-white text-sm font-bold shadow-sm hover:bg-[#0B2572] transition-colors">
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Demo 15 min
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+            <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
+          </button>
+        </div>
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
+      <button type="button" data-calendar-open data-track="header_demo_mobile"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 mt-1 mb-3 rounded-full bg-[#040F3F] text-white text-sm font-bold">
+        <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo 15 min
+      </button>
       <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
       <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/clientes" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Clientes</a>
       <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
       <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
       <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
@@ -511,7 +522,7 @@
       <div class="tc-about-hero__grid">
         <div class="text-white" data-reveal>
           <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="tc-award mb-6 inline-flex" data-track="about_award_link">
-            <span class="tc-award__icon"><i class="fas fa-trophy" aria-hidden="true"></i></span>
+            <span class="tc-award__icon"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg></span>
             #1 CeutaTech Summit 2026 &middot; Pase de Oro Alhambra Venture
           </a>
           <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-4xl">
@@ -538,22 +549,22 @@
             </div>
           </div>
           <div class="tc-about-route__node tc-about-route__node--ceuta">
-            <i class="fas fa-location-dot" aria-hidden="true"></i>
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-location-dot"/></svg>
             <strong>Ceuta y Melilla</strong>
             <span>IPSI, comercios y asesor&iacute;as con necesidades propias.</span>
           </div>
           <div class="tc-about-route__node tc-about-route__node--webinars">
-            <i class="fas fa-chalkboard-user" aria-hidden="true"></i>
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-chalkboard-user"/></svg>
             <strong>Talleres y webinars</strong>
             <span>Concienciaci&oacute;n pr&aacute;ctica antes del cambio normativo.</span>
           </div>
           <div class="tc-about-route__node tc-about-route__node--verifactu">
-            <i class="fas fa-file-invoice" aria-hidden="true"></i>
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg>
             <strong>VeriFactu 2027</strong>
             <span>Preparar a aut&oacute;nomos y pymes con tiempo.</span>
           </div>
           <div class="tc-about-route__node tc-about-route__node--peninsula">
-            <i class="fas fa-route" aria-hidden="true"></i>
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-route"/></svg>
             <strong>Expansi&oacute;n peninsular</strong>
             <span>Puente comercial Pen&iacute;nsula - ciudades especiales.</span>
           </div>
@@ -584,10 +595,10 @@
               <span>La base desde la que dise&ntilde;amos TrustCore.</span>
             </div>
           </div>
-          <div class="tc-about-flow__tag tc-about-flow__tag--one"><i class="fas fa-balance-scale" aria-hidden="true"></i> Legal primero</div>
-          <div class="tc-about-flow__tag tc-about-flow__tag--two"><i class="fas fa-handshake" aria-hidden="true"></i> Proximidad real</div>
-          <div class="tc-about-flow__tag tc-about-flow__tag--three"><i class="fas fa-eye" aria-hidden="true"></i> Precios claros</div>
-          <div class="tc-about-flow__tag tc-about-flow__tag--four"><i class="fas fa-sync-alt" aria-hidden="true"></i> Actualizaci&oacute;n continua</div>
+          <div class="tc-about-flow__tag tc-about-flow__tag--one"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-balance-scale"/></svg> Legal primero</div>
+          <div class="tc-about-flow__tag tc-about-flow__tag--two"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-handshake"/></svg> Proximidad real</div>
+          <div class="tc-about-flow__tag tc-about-flow__tag--three"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-eye"/></svg> Precios claros</div>
+          <div class="tc-about-flow__tag tc-about-flow__tag--four"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-sync-alt"/></svg> Actualizaci&oacute;n continua</div>
         </div>
       </div>
     </div>
@@ -635,7 +646,7 @@
             <h3>#1 CeutaTech Summit y Pase de Oro</h3>
             <p>El jurado del II Ceuta Tech Summit otorga a TrustCore el primer puesto y el Pase de Oro a Alhambra Venture.</p>
             <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold mt-3" style="color:var(--tc-blue-royal)">
-              Leer la nota de prensa <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              Leer la nota de prensa <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-external-link-alt"/></svg>
             </a>
           </div>
         </li>
@@ -655,22 +666,22 @@
       </div>
       <ol class="tc-road-track">
         <li class="tc-road-step" data-reveal>
-          <div class="tc-road-step__pin"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+          <div class="tc-road-step__pin"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-location-dot"/></svg></div>
           <h3>Ceuta y Melilla</h3>
           <p>Producto adaptado a IPSI, asesor&iacute;as y negocios que operan con particularidades reales.</p>
         </li>
         <li class="tc-road-step" data-reveal>
-          <div class="tc-road-step__pin tc-road-step__pin--gold"><i class="fas fa-chalkboard-user" aria-hidden="true"></i></div>
+          <div class="tc-road-step__pin tc-road-step__pin--gold"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-chalkboard-user"/></svg></div>
           <h3>Talleres y webinars</h3>
           <p>Formaci&oacute;n pr&aacute;ctica para aterrizar facturaci&oacute;n, gastos, inventario y control horario.</p>
         </li>
         <li class="tc-road-step" data-reveal>
-          <div class="tc-road-step__pin"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
+          <div class="tc-road-step__pin"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg></div>
           <h3>VeriFactu 2027</h3>
           <p>Sociedades antes del 1 de enero de 2027; resto de obligados, incluidos aut&oacute;nomos, antes del 1 de julio de 2027. <a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html" target="_blank" rel="noopener" class="font-semibold" style="color:var(--tc-blue-royal)">Ver AEAT</a>.</p>
         </li>
         <li class="tc-road-step" data-reveal>
-          <div class="tc-road-step__pin"><i class="fas fa-bridge" aria-hidden="true"></i></div>
+          <div class="tc-road-step__pin"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bridge"/></svg></div>
           <h3>Pen&iacute;nsula</h3>
           <p>Reducir la fricci&oacute;n operativa entre Pen&iacute;nsula y ciudades con r&eacute;gimen fiscal especial.</p>
         </li>
@@ -689,11 +700,11 @@
             TrustCore fue reconocido como #1 en el II Ceuta Tech Summit y obtuvo el Pase de Oro a Alhambra Venture, con evaluaci&oacute;n de inversores, instituciones y ecosistema emprendedor.
           </p>
           <div class="mt-6 flex flex-wrap gap-2">
-            <span class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold" style="background:rgba(212,162,61,0.16);color:var(--tc-gold)"><i class="fas fa-trophy" aria-hidden="true"></i> #1 CeutaTech 2026</span>
-            <span class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold" style="background:rgba(83,205,254,0.14);color:var(--tc-cyan-light)"><i class="fas fa-star" aria-hidden="true"></i> Pase de Oro Alhambra Venture</span>
+            <span class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold" style="background:rgba(212,162,61,0.16);color:var(--tc-gold)"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> #1 CeutaTech 2026</span>
+            <span class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold" style="background:rgba(83,205,254,0.14);color:var(--tc-cyan-light)"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-star"/></svg> Pase de Oro Alhambra Venture</span>
           </div>
           <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-7 text-sm font-semibold" style="color:var(--tc-cyan-light)" data-track="about_press_link">
-            Leer nota de prensa <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            Leer nota de prensa <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-external-link-alt"/></svg>
           </a>
         </div>
         <div class="tc-proof-panel" data-reveal>
@@ -737,7 +748,7 @@
       <p class="mt-5 text-lg md:text-xl text-blue-100/80">Demo gratuita de 15 min. Sin compromiso. Sin tarjeta de cr&eacute;dito.</p>
       <div class="flex flex-wrap justify-center gap-4 mt-8">
         <button class="tc-btn tc-btn-primary" data-calendar-open data-track="about_cta_demo">
-          <i class="fas fa-calendar-check mr-2"></i>Agendar demo gratuita
+          <svg class="tc-icon mr-2"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>Agendar demo gratuita
         </button>
         <a href="/contacto" class="tc-btn tc-btn-ghost" data-track="about_cta_contacto">Enviar consulta</a>
       </div>
@@ -758,10 +769,10 @@
           <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
           <div class="flex flex-wrap gap-2 mt-5">
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
-              <i class="fas fa-trophy"></i> Alhambra Venture 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
             </span>
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
-              <i class="fas fa-award"></i> #1 CeutaTech 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-award"/></svg> #1 CeutaTech 2026
             </span>
           </div>
         </div>
@@ -794,7 +805,7 @@
           <div class="mt-5">
             <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
               <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
-                Rese&ntilde;anos en <i class="fas fa-star" style="color:#00B67A"></i> <strong class="text-slate-900">Trustpilot</strong>
+                Rese&ntilde;anos en <svg class="tc-icon" style="color:#00B67A"><use href="/assets/icons/sprite.svg#fa-star"/></svg> <strong class="text-slate-900">Trustpilot</strong>
               </a>
             </div>
           </div>

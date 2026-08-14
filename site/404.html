@@ -13,25 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/components.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: '#040F3F',
-            'blue-royal': '#2071D5',
-            'cyan-light': '#53CDFE'
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
@@ -53,7 +37,7 @@
           <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
         <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+          <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
         </button>
       </div>
     </div>
@@ -76,9 +60,9 @@
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight">Esta página no existe.</h1>
           <p class="mt-6 text-lg md:text-xl text-blue-100 leading-relaxed">Puede que el enlace haya cambiado durante la actualización de la web. Te dejamos accesos directos a las zonas importantes.</p>
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="/" class="tc-btn tc-btn-primary"><i class="fas fa-house"></i> Ir al inicio</a>
-            <a href="/precios" class="tc-btn bg-white font-bold hover:bg-slate-50" style="color:#040F3F"><i class="fas fa-tag"></i> Ver precios</a>
-            <a href="/contacto" class="tc-btn border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.35)"><i class="fas fa-envelope"></i> Contacto</a>
+            <a href="/" class="tc-btn tc-btn-primary"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-house"/></svg> Ir al inicio</a>
+            <a href="/precios" class="tc-btn bg-white font-bold hover:bg-slate-50" style="color:#040F3F"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-tag"/></svg> Ver precios</a>
+            <a href="/contacto" class="tc-btn border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.35)"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-envelope"/></svg> Contacto</a>
           </div>
         </div>
       </div>
@@ -88,17 +72,17 @@
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid sm:grid-cols-3 gap-4">
           <a href="/productos/trustintime" class="rounded-lg border border-slate-200 p-5 hover:border-blue-300 hover:shadow-sm transition-all">
-            <i class="fas fa-clock mb-4" style="color:#2071D5"></i>
+            <svg class="tc-icon mb-4" style="color:#2071D5"><use href="/assets/icons/sprite.svg#fa-clock"/></svg>
             <p class="font-bold" style="color:#040F3F">TrustinTime</p>
             <p class="text-sm text-slate-500 mt-1">Control horario y RRHH.</p>
           </a>
           <a href="/productos/trustinfacts" class="rounded-lg border border-slate-200 p-5 hover:border-blue-300 hover:shadow-sm transition-all">
-            <i class="fas fa-file-invoice mb-4" style="color:#2071D5"></i>
+            <svg class="tc-icon mb-4" style="color:#2071D5"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg>
             <p class="font-bold" style="color:#040F3F">TrustinFacts</p>
             <p class="text-sm text-slate-500 mt-1">Facturación VeriFactu e IPSI.</p>
           </a>
           <a href="/aprende" class="rounded-lg border border-slate-200 p-5 hover:border-blue-300 hover:shadow-sm transition-all">
-            <i class="fas fa-graduation-cap mb-4" style="color:#2071D5"></i>
+            <svg class="tc-icon mb-4" style="color:#2071D5"><use href="/assets/icons/sprite.svg#fa-graduation-cap"/></svg>
             <p class="font-bold" style="color:#040F3F">Aprende</p>
             <p class="text-sm text-slate-500 mt-1">Guías y vídeos didácticos.</p>
           </a>

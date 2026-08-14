@@ -41,15 +41,624 @@
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
+  <!-- HowTo: emitir una factura VeriFactu paso a paso -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo emitir una factura VeriFactu paso a paso con TrustinFacts",
+    "description": "Flujo completo para emitir una factura preparada para SIF/VERI*FACTU en TrustCore: alta de cliente, producto, presupuesto, venta y factura con QR y trazabilidad.",
+    "totalTime": "PT5M",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "EUR", "value": "0" },
+    "inLanguage": "es-ES",
+    "tool": [
+      { "@type": "HowToTool", "name": "TrustinFacts (suite TrustCore)" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Dar de alta al cliente",
+        "text": "Registra los datos comerciales y de contacto del cliente al que vas a facturar.",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Crear cliente",
+          "description": "Alta de datos comerciales básicos y contacto.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-cliente.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Crear el producto o servicio a facturar",
+        "text": "Da de alta la ficha con precio, coste e impuesto (IVA o IPSI para Ceuta y Melilla).",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Crear producto",
+          "description": "Ficha de producto con precio, coste y control.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-producto.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Emitir un presupuesto (opcional)",
+        "text": "Envía primero un presupuesto al cliente y espera aceptación antes de facturar.",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Crear presupuesto",
+          "description": "Primer documento comercial antes de vender.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-presupuesto.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Convertir presupuesto en venta",
+        "text": "Cuando el cliente acepta, el presupuesto se transforma en venta lista para facturar.",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Crear venta desde presupuesto",
+          "description": "Conversión del presupuesto aceptado en venta.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-venta-presupuesto.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Emitir la factura",
+        "text": "Genera la factura desde la venta. TrustinFacts añade QR, huella criptográfica y registro alineado con requisitos SIF/VERI*FACTU (RD 1007/2023).",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Crear factura desde venta",
+          "description": "Facturación de una venta ya registrada.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-factura-desde-venta.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Registrar el cobro",
+        "text": "Al recibir el pago, registra el cobro para cerrar la operación y actualizar la liquidación.",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Cobrar venta y generar liquidación",
+          "description": "Registro del cobro y cierre de la operación.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/cobrar-venta-y-generar-liquidacion.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- HowTo: registrar la jornada laboral legal (RDL 8/2019) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo registrar la jornada laboral legal (RDL 8/2019) con TrustinTime",
+    "description": "Cumple con el registro diario de jornada, gestiona ausencias y exporta el informe listo para la Inspección de Trabajo desde TrustinTime.",
+    "totalTime": "PT3M",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "EUR", "value": "2" },
+    "inLanguage": "es-ES",
+    "tool": [
+      { "@type": "HowToTool", "name": "TrustinTime (suite TrustCore)" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Fichar entrada y salida diaria",
+        "text": "El trabajador ficha desde móvil o web. TrustinTime firma cada fichaje con geoposición y sello de tiempo.",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Fichar una jornada",
+          "description": "Entrada y salida diaria del trabajador.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustintime/fichar-jornada.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Gestionar vacaciones y ausencias",
+        "text": "Solicita, aprueba y controla vacaciones, bajas y permisos. Los festivos se aplican automáticamente por CCAA.",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Gestionar vacaciones",
+          "description": "Solicitud, revisión y control de ausencias.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustintime/gestionar-ausencia.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Exportar informe legal para auditoría o Inspección",
+        "text": "Genera el PDF/CSV firmado con los registros de jornada listos para conservar 4 años y presentar a la Inspección de Trabajo si se solicitan.",
+        "url": "https://www.trustcore.es/aprende#modulos",
+        "video": {
+          "@type": "VideoObject",
+          "name": "Exportar informe legal",
+          "description": "Evidencias listas para auditoría o inspección.",
+          "contentUrl": "https://www.trustcore.es/videos/aprende/trustintime/exportar-informe.mp4",
+          "uploadDate": "2026-07-05"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="/assets/trustcore-icon.png">
   <link rel="stylesheet" href="/assets/css/components.css">
+<script type="application/ld+json" data-generated="aprende-videos">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Lecciones en vídeo de TrustCore",
+  "description": "Micro-lecciones en vídeo para aprender TrustinFacts y TrustinTime tarea a tarea.",
+  "numberOfItems": 23,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "VideoObject",
+        "position": 1,
+        "name": "Crear cliente",
+        "description": "Alta de datos comerciales básicos y contacto.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-cliente.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "VideoObject",
+        "position": 2,
+        "name": "Crear proveedor",
+        "description": "Registro del proveedor para compras y gastos.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-proveedor.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "VideoObject",
+        "position": 3,
+        "name": "Crear producto",
+        "description": "Ficha de producto con precio, coste y control.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-producto.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "VideoObject",
+        "position": 4,
+        "name": "Crear servicio",
+        "description": "Alta de servicios facturables sin stock asociado.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-servicio.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "VideoObject",
+        "position": 5,
+        "name": "Crear stock",
+        "description": "Configuración inicial para controlar existencias.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-stock.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "VideoObject",
+        "position": 6,
+        "name": "Añadir stock",
+        "description": "Entrada de unidades y actualización de inventario.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/anadir-stock.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "VideoObject",
+        "position": 7,
+        "name": "Mover a tienda",
+        "description": "Traslado de stock entre almacén y punto de venta.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/mover-a-tienda.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "VideoObject",
+        "position": 8,
+        "name": "Crear presupuesto",
+        "description": "Primer documento comercial antes de vender.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-presupuesto.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "VideoObject",
+        "position": 9,
+        "name": "Editar presupuesto",
+        "description": "Ajustes de líneas, importes y condiciones.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/editar-presupuesto.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "VideoObject",
+        "position": 10,
+        "name": "Crear venta desde presupuesto",
+        "description": "Conversión del presupuesto aceptado en venta.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-venta-presupuesto.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "VideoObject",
+        "position": 11,
+        "name": "Ver venta y crear factura",
+        "description": "Revisión de la venta antes de facturar.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/ver-venta-y-crear-factura.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "VideoObject",
+        "position": 12,
+        "name": "Cobrar venta y generar liquidación",
+        "description": "Registro del cobro y cierre de la operación.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/cobrar-venta-y-generar-liquidacion.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "VideoObject",
+        "position": 13,
+        "name": "Registrar pago",
+        "description": "Control de pagos asociados a una operación.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/registrar-pago.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "VideoObject",
+        "position": 14,
+        "name": "Crear factura",
+        "description": "Emisión directa de una factura desde cero.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-factura.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "VideoObject",
+        "position": 15,
+        "name": "Crear factura desde venta",
+        "description": "Facturación de una venta ya registrada.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/crear-factura-desde-venta.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "item": {
+        "@type": "VideoObject",
+        "position": 16,
+        "name": "Modelo 001",
+        "description": "Consulta y preparación del modelo correspondiente.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/modelo001.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "item": {
+        "@type": "VideoObject",
+        "position": 17,
+        "name": "Modelo 130",
+        "description": "Revisión de datos para pagos fraccionados.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/modelo130.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "item": {
+        "@type": "VideoObject",
+        "position": 18,
+        "name": "Informes 1",
+        "description": "Primer vistazo a métricas y actividad.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/informes-1.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "item": {
+        "@type": "VideoObject",
+        "position": 19,
+        "name": "Informes 2",
+        "description": "Lectura de datos para controlar el negocio.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/informes-2.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "item": {
+        "@type": "VideoObject",
+        "position": 20,
+        "name": "Informes 3",
+        "description": "Revisión avanzada para tomar decisiones.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/informes-3.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 21,
+      "item": {
+        "@type": "VideoObject",
+        "position": 21,
+        "name": "Registrar gasto",
+        "description": "Alta rápida de un gasto del negocio.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/registrar-gasto.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 22,
+      "item": {
+        "@type": "VideoObject",
+        "position": 22,
+        "name": "Registrar gasto con albarán",
+        "description": "Gasto vinculado a documento o entrega.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/registrar-gasto-con-albaran.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 23,
+      "item": {
+        "@type": "VideoObject",
+        "position": 23,
+        "name": "Registrar otros gastos deducibles",
+        "description": "Clasificación de deducciones habituales.",
+        "contentUrl": "https://www.trustcore.es/videos/aprende/trustinfacts/registrar-otros-gastos-deducibles.mp4",
+        "thumbnailUrl": "https://www.trustcore.es/assets/trustinfacts-dashboard.png",
+        "uploadDate": "2026-07-05",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TrustCore",
+          "url": "https://www.trustcore.es"
+        }
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="font-sans text-gray-800 antialiased" style="background:var(--tc-surface-alt)">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
@@ -63,22 +672,34 @@
           <span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span>
         </a>
         <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
-          <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
-          <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
-          <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
-          <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
-          <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
-          <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
-          <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
+        <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
+        <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+        <a href="/clientes" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Clientes</a>
+        <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
+        <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
+        <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
+        <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
+        <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" data-calendar-open data-track="header_demo"
+                  class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#040F3F] text-white text-sm font-bold shadow-sm hover:bg-[#0B2572] transition-colors">
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Demo 15 min
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+            <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
+          </button>
+        </div>
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
+      <button type="button" data-calendar-open data-track="header_demo_mobile"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 mt-1 mb-3 rounded-full bg-[#040F3F] text-white text-sm font-bold">
+        <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo 15 min
+      </button>
       <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
       <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/clientes" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Clientes</a>
       <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
       <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
       <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
@@ -98,11 +719,11 @@
               Aprende TrustCore por tareas, no por manuales eternos
             </h1>
             <p class="mt-5 sm:mt-6 max-w-2xl text-blue-100/85 text-base sm:text-lg leading-relaxed">
-              Lecciones de 10 a 15 segundos para facturas, presupuestos, gastos, inventario, fichajes, turnos y ausencias. Cuando subas un MP4 a CloudFront, su lección se activa automáticamente.
+              Lecciones de 10 a 15 segundos para facturas, presupuestos, gastos, inventario, fichajes, turnos y ausencias. Ve directo a la tarea que necesitas y resuélvela en menos de un minuto.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#modulos" class="tc-btn tc-btn-primary"><i class="fas fa-play-circle"></i> Ver módulos</a>
-              <a href="/blog" class="inline-flex min-h-12 items-center gap-2 rounded-xl border border-white/25 px-5 py-3 font-bold text-white transition-colors hover:bg-white/10">Leer guías <i class="fas fa-arrow-right text-xs"></i></a>
+              <a href="#modulos" class="tc-btn tc-btn-primary"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-play-circle"/></svg> Ver módulos</a>
+              <a href="/blog" class="inline-flex min-h-12 items-center gap-2 rounded-xl border border-white/25 px-5 py-3 font-bold text-white transition-colors hover:bg-white/10">Leer guías <svg class="tc-icon text-xs"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg></a>
             </div>
           </div>
           <div class="tc-learning-console" data-reveal>
@@ -112,17 +733,17 @@
             </div>
             <div class="tc-learning-console__screen">
               <div class="tc-learning-player" aria-label="Vista previa de vídeo didáctico">
-                <div class="tc-learning-player__play"><i class="fas fa-play"></i></div>
+                <div class="tc-learning-player__play"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-play"/></svg></div>
                 <div>
-                  <p class="tc-learning-player__label">S3 pendiente</p>
+                  <p class="tc-learning-player__label">Próximamente</p>
                   <p class="tc-learning-player__title">Crear factura VeriFactu</p>
                   <p class="tc-learning-player__meta">12 s · TrustinFacts</p>
                 </div>
               </div>
               <div class="tc-learning-steps">
-                <span><i class="fas fa-check"></i> Cliente</span>
-                <span><i class="fas fa-check"></i> Líneas</span>
-                <span><i class="fas fa-qrcode"></i> QR VeriFactu</span>
+                <span><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-check"/></svg> Cliente</span>
+                <span><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-check"/></svg> Líneas</span>
+                <span><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-qrcode"/></svg> QR VeriFactu</span>
               </div>
             </div>
           </div>
@@ -135,12 +756,12 @@
         <div class="max-w-3xl" data-reveal>
           <span class="tc-eyebrow">Módulos</span>
           <h2 class="tc-display tc-display-lg mt-4">Rutas de aprendizaje por tarea</h2>
-          <p class="mt-4 text-slate-600 text-lg leading-relaxed">Cada tarjeta comprueba si su vídeo existe en CloudFront y se activa automáticamente. Los clips de TrustinFacts ya quedan ordenados por tarea para aprender sin manuales largos.</p>
+          <p class="mt-4 text-slate-600 text-lg leading-relaxed">Cada lección se activa automáticamente en cuanto su vídeo está disponible. Los clips están ordenados por tarea para que aprendas sin manuales largos.</p>
         </div>
 
         <div class="mt-10 grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
           <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
-            <div class="tc-learning-module__icon"><i class="fas fa-address-book"></i></div>
+            <div class="tc-learning-module__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-address-book"/></svg></div>
             <p class="tc-learning-module__kicker">TrustinFacts</p>
             <h3>Clientes, proveedores y catálogo</h3>
             <p>Base comercial para trabajar con clientes, proveedores, productos, servicios y stock sin duplicar datos.</p>
@@ -184,7 +805,7 @@
           </article>
 
           <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
-            <div class="tc-learning-module__icon"><i class="fas fa-file-contract"></i></div>
+            <div class="tc-learning-module__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-contract"/></svg></div>
             <p class="tc-learning-module__kicker">TrustinFacts</p>
             <h3>Presupuestos, ventas y cobros</h3>
             <p>Flujo comercial completo: presupuesto, venta, factura, liquidación y pagos registrados.</p>
@@ -223,7 +844,7 @@
           </article>
 
           <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
-            <div class="tc-learning-module__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <div class="tc-learning-module__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-invoice-dollar"/></svg></div>
             <p class="tc-learning-module__kicker">TrustinFacts</p>
             <h3>Facturación, modelos e informes</h3>
             <p>Creación de facturas, facturación desde venta, modelos fiscales e informes para revisar la actividad.</p>
@@ -267,7 +888,7 @@
           </article>
 
           <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
-            <div class="tc-learning-module__icon"><i class="fas fa-receipt"></i></div>
+            <div class="tc-learning-module__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-receipt"/></svg></div>
             <p class="tc-learning-module__kicker">TrustinFacts</p>
             <h3>Gastos y deducciones</h3>
             <p>Registro de gastos simples, gastos con albarán y otros gastos deducibles para mantener costes controlados.</p>
@@ -291,7 +912,7 @@
           </article>
 
           <article class="tc-learning-module rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm" data-reveal>
-            <div class="tc-learning-module__icon"><i class="fas fa-fingerprint"></i></div>
+            <div class="tc-learning-module__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-fingerprint"/></svg></div>
             <p class="tc-learning-module__kicker">TrustinTime</p>
             <h3>Control horario y RRHH</h3>
             <p>Primeros pasos para fichar, gestionar ausencias y exportar evidencias listas para auditoría.</p>
@@ -324,7 +945,7 @@
             <span class="tc-eyebrow">Activación</span>
             <h2 class="tc-display tc-display-md mt-4">Ruta de 7 días para dejar la operativa lista</h2>
             <p class="mt-4 text-slate-600 leading-relaxed">El objetivo no es consumir vídeos: es que cada negocio llegue a 2027 con facturación, IPSI y control horario funcionando sin improvisar.</p>
-            <a href="/blog" class="tc-btn tc-btn-secondary mt-7"><i class="fas fa-book-open"></i> Leer guías de apoyo</a>
+            <a href="/blog" class="tc-btn tc-btn-secondary mt-7"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-book-open"/></svg> Leer guías de apoyo</a>
           </div>
           <div class="tc-learn-roadmap" data-reveal>
             <article class="tc-learn-roadmap__item"><div><h3>Diagnóstico de facturación</h3><p>Series, impuestos, clientes, productos y operaciones Ceuta/Melilla - península.</p></div></article>
@@ -343,7 +964,7 @@
             <span class="tc-eyebrow">Webinars</span>
             <h2 class="tc-display tc-display-md mt-4">Sesiones largas para onboarding y gestorías</h2>
             <p class="mt-4 text-slate-600 leading-relaxed">Además de los clips rápidos, esta zona queda preparada para webinars propios, grabaciones de formación y recorridos por sector.</p>
-            <a href="/contacto" class="tc-btn tc-btn-secondary mt-7"><i class="fas fa-calendar-check"></i> Pedir sesión guiada</a>
+            <a href="/contacto" class="tc-btn tc-btn-secondary mt-7"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Pedir sesión guiada</a>
           </div>
           <div class="grid md:grid-cols-2 gap-5">
             <article class="tc-webinar-card" data-reveal>
@@ -377,7 +998,7 @@
         <h2 class="tc-display tc-display-lg mt-4 text-white">Convierte aprendizaje en activación real</h2>
         <p class="mt-5 text-blue-100/80 text-lg leading-relaxed">Si tu equipo necesita empezar ya, revisamos contigo facturación, control horario y usuarios en una demo corta.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <button class="tc-btn tc-btn-primary" data-calendar-open data-track="aprende_cta_demo"><i class="fas fa-calendar-check"></i> Agendar demo</button>
+          <button class="tc-btn tc-btn-primary" data-calendar-open data-track="aprende_cta_demo"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo</button>
           <a href="/contacto" class="tc-btn tc-btn-ghost" data-track="aprende_cta_contacto">Hablar con TrustCore</a>
         </div>
       </div>
@@ -395,10 +1016,10 @@
           <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gestión empresarial para pymes y autónomos.</p>
           <div class="flex flex-wrap gap-2 mt-5">
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
-              <i class="fas fa-trophy"></i> Alhambra Venture 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
             </span>
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
-              <i class="fas fa-award"></i> #1 CeutaTech 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-award"/></svg> #1 CeutaTech 2026
             </span>
           </div>
         </div>
@@ -431,7 +1052,7 @@
           <div class="mt-5">
             <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
               <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
-                Reseñanos en <i class="fas fa-star" style="color:#00B67A"></i> <strong class="text-slate-900">Trustpilot</strong>
+                Reseñanos en <svg class="tc-icon" style="color:#00B67A"><use href="/assets/icons/sprite.svg#fa-star"/></svg> <strong class="text-slate-900">Trustpilot</strong>
               </a>
             </div>
           </div>

@@ -30,12 +30,11 @@
     "image": "https://www.trustcore.es/assets/og-image.png"
   }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
+  <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="/assets/trustcore-icon.png">
   <link rel="stylesheet" href="/assets/css/components.css">
 </head>
@@ -44,7 +43,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16 md:h-20">
       <a href="/" class="flex items-center gap-3 shrink-0" aria-label="TrustCore inicio"><img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto"><span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span></a>
       <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal"><a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600">Productos</a><a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600">Gestorías</a><a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600">Precios</a><a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600">Nosotros</a><a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600">Blog</a><a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600">Aprende</a><a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600">Contacto</a></nav>
-      <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars text-lg"></i></button>
+      <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100" aria-label="Abrir menú" aria-expanded="false"><svg class="tc-icon text-lg"><use href="/assets/icons/sprite.svg#fa-bars"/></svg></button>
     </div></div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2"><a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700">Productos</a><a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700">Gestorías</a><a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700">Precios</a><a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700">Nosotros</a><a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700">Blog</a><a href="/aprende" class="block py-2.5 text-sm font-medium text-gray-700">Aprende</a><a href="/contacto" class="block py-2.5 text-sm font-medium text-gray-700">Contacto</a></div>
   </header>
@@ -52,7 +51,7 @@
   <main id="main-content" style="padding-top:var(--tc-header-height)">
     <section style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%);padding-block:4rem 4.5rem">
       <div class="tc-container max-w-4xl text-white">
-        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-bold mb-6" style="color:var(--tc-cyan-light)"><i class="fas fa-arrow-left"></i> Blog</a>
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-bold mb-6" style="color:var(--tc-cyan-light)"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-arrow-left"/></svg> Blog</a>
         <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Gestorías y comercios</span>
         <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">Ventajas de VERI*FACTU para gestorías y comercios</h1>
         <p class="mt-5 text-blue-100/85 text-lg leading-relaxed">Para una gestoría o un comercio, VERI*FACTU no debería ser una carga extra: debería ser una oportunidad para que cada factura salga más limpia desde el origen.</p>
@@ -86,13 +85,13 @@
         <section class="rounded-xl border border-blue-100 bg-blue-50 p-6">
           <h2 class="text-xl font-extrabold mb-3" style="color:var(--tc-navy)">Qué mirar antes de elegir software</h2>
           <ul class="grid gap-3 text-slate-700">
-            <li class="flex gap-3"><i class="fas fa-check-circle mt-1 text-green-500"></i><span>Que el flujo cubra presupuesto, factura, cobro, rectificativa y exportación.</span></li>
-            <li class="flex gap-3"><i class="fas fa-check-circle mt-1 text-green-500"></i><span>Que permita trabajar con impuestos especiales sin parches manuales.</span></li>
-            <li class="flex gap-3"><i class="fas fa-check-circle mt-1 text-green-500"></i><span>Que la asesoría pueda revisar datos sin rehacer el trabajo del cliente.</span></li>
+            <li class="flex gap-3"><svg class="tc-icon mt-1 text-green-500"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg><span>Que el flujo cubra presupuesto, factura, cobro, rectificativa y exportación.</span></li>
+            <li class="flex gap-3"><svg class="tc-icon mt-1 text-green-500"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg><span>Que permita trabajar con impuestos especiales sin parches manuales.</span></li>
+            <li class="flex gap-3"><svg class="tc-icon mt-1 text-green-500"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg><span>Que la asesoría pueda revisar datos sin rehacer el trabajo del cliente.</span></li>
           </ul>
           <div class="mt-5 flex flex-wrap gap-3">
-            <a href="/gestoria" class="tc-btn tc-btn-secondary"><i class="fas fa-briefcase"></i> Solución para gestorías</a>
-            <a href="/contacto" class="tc-btn tc-btn-primary"><i class="fas fa-calendar-check"></i> Revisar caso</a>
+            <a href="/gestoria" class="tc-btn tc-btn-secondary"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-briefcase"/></svg> Solución para gestorías</a>
+            <a href="/contacto" class="tc-btn tc-btn-primary"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Revisar caso</a>
           </div>
         </section>
 

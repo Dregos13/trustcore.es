@@ -34,12 +34,11 @@
     "image": "https://www.trustcore.es/assets/og-image.png"
   }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
+  <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="/assets/trustcore-icon.png">
   <link rel="stylesheet" href="/assets/css/components.css">
 </head>
@@ -59,7 +58,7 @@
           <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
           <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars text-lg"></i></button>
+        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false"><svg class="tc-icon text-lg"><use href="/assets/icons/sprite.svg#fa-bars"/></svg></button>
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
@@ -76,7 +75,7 @@
   <main id="main-content" style="padding-top:var(--tc-header-height)">
     <section class="relative overflow-hidden" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%);padding-block:4rem 4.5rem">
       <div class="tc-container relative text-white max-w-4xl">
-        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-bold mb-6" style="color:var(--tc-cyan-light)"><i class="fas fa-arrow-left"></i> Blog</a>
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-bold mb-6" style="color:var(--tc-cyan-light)"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-arrow-left"/></svg> Blog</a>
         <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">VeriFactu 2027</span>
         <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">Calendario VeriFactu para empresas y autónomos</h1>
         <p class="mt-5 text-blue-100/85 text-lg leading-relaxed">La clave no es esperar al último trimestre: es ordenar facturación, series, impuestos y flujo de trabajo antes de que el cambio sea obligatorio.</p>
@@ -111,8 +110,8 @@
           <h2 class="text-xl font-extrabold mb-3" style="color:var(--tc-navy)">Cómo lo enfoca TrustCore</h2>
           <p class="text-slate-700 leading-relaxed">TrustinFacts está diseñado para preparar facturación VeriFactu con soporte IPSI nativo, y TrustinTime cubre control horario en el mismo ecosistema. La idea es que la empresa no llegue a 2027 con dos herramientas inconexas y hojas manuales entre medias.</p>
           <div class="mt-5 flex flex-wrap gap-3">
-            <a href="/aprende" class="tc-btn tc-btn-secondary"><i class="fas fa-play-circle"></i> Ver rutas de aprendizaje</a>
-            <a href="/contacto" class="tc-btn tc-btn-primary"><i class="fas fa-calendar-check"></i> Revisar mi caso</a>
+            <a href="/aprende" class="tc-btn tc-btn-secondary"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-play-circle"/></svg> Ver rutas de aprendizaje</a>
+            <a href="/contacto" class="tc-btn tc-btn-primary"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Revisar mi caso</a>
           </div>
         </section>
 

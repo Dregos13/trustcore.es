@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TrustinFacts — Facturación VeriFactu e IPSI | TrustCore</title>
-  <meta name="description" content="TrustinFacts: facturación compatible con VeriFactu, IPSI Ceuta/Melilla, stock y trazabilidad. Cumple la nueva Ley Antifraude. #1 CeutaTech Summit 2026.">
+  <meta name="description" content="TrustinFacts: facturación preparada para requisitos SIF/VERI*FACTU, IPSI Ceuta/Melilla, stock y trazabilidad. #1 CeutaTech Summit 2026.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#040F3F">
   <link rel="canonical" href="https://www.trustcore.es/productos/trustinfacts">
@@ -63,35 +63,49 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Qué es VeriFactu y cuándo es obligatorio?",
-        "acceptedAnswer": { "@type": "Answer", "text": "VeriFactu es el sistema de verificación de facturas exigido por la Ley Antifraude. Según la AEAT, el calendario de adaptación se sitúa en 2027 para empresas y autónomos. TrustinFacts está adaptado a los requisitos técnicos aplicables." }
+        "name": "¿Qué es VERI*FACTU y cuándo deben adaptarse los sistemas de facturación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VERI*FACTU es una modalidad de remisión de registros dentro del Reglamento de sistemas informáticos de facturación. Según la AEAT, las entidades que presentan Impuesto sobre Sociedades deberán adaptar sus SIF antes del 1 de enero de 2027; el resto de obligados tributarios, antes del 1 de julio de 2027. TrustinFacts está preparado para trabajar con esos requisitos técnicos.",
+          "citation": ["https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html", "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840"]
+        }
       },
       {
         "@type": "Question",
         "name": "¿TrustinFacts soporta el IPSI de Ceuta y Melilla?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí. TrustinFacts es uno de los pocos softwares del mercado con soporte nativo para el Impuesto sobre la Producción, los Servicios y la Importación (IPSI) de Ceuta y Melilla." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. TrustinFacts incorpora IPSI para facturas de Ceuta y Melilla. La AEAT indica que en estas ciudades no se aplica IVA y que en su lugar se aplica el Impuesto sobre la Producción, los Servicios y la Importación.",
+          "citation": ["https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html", "https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645"]
+        }
       },
       {
         "@type": "Question",
-        "name": "¿Puedo gestionar stock y presupuestos también?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí. TrustinFacts incluye gestión de stock con alertas de mínimos, presupuestos convertibles a facturas con un clic, albaranes y seguimiento de pedidos." }
+        "name": "¿Puedo gestionar stock, presupuestos y cobros también?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. TrustinFacts permite trabajar el flujo presupuesto, pedido o albarán, factura, cobro, stock y dashboard sin duplicar datos entre hojas de cálculo."
+        }
       },
       {
         "@type": "Question",
         "name": "¿Cuánto cuesta TrustinFacts?",
-        "acceptedAnswer": { "@type": "Answer", "text": "El plan Autónomo parte de 9,99€/mes. El plan Pyme desde 19,99€/mes con multi-usuario y stock. Suite completa a medida para asesorías y grupos empresariales." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TrustinFacts tiene planes para autónomos, pymes y necesidades avanzadas. La referencia actualizada está en la página de precios de TrustCore, con contratación mensual o anual según el plan.",
+          "citation": ["https://www.trustcore.es/precios"]
+        }
       }
     ]
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#040F3F','navy-deep':'#020A2A','blue-corp':'#0B2572','blue-royal':'#2071D5','cyan-light':'#53CDFE',gold:'#D4A23D'},fontFamily:{sans:['Inter','system-ui','-apple-system','sans-serif']}}}}</script>
+  <!-- Tailwind (build local, tailwind.config.js) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="../assets/trustcore-icon.png">
   <link rel="stylesheet" href="../assets/css/components.css">
 </head>
@@ -109,20 +123,32 @@
         <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
         <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
         <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
+        <a href="/clientes" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Clientes</a>
         <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
         <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
         <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
         <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
         <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-          <i class="fas fa-bars text-lg" aria-hidden="true"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" data-calendar-open data-track="header_demo"
+                  class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#040F3F] text-white text-sm font-bold shadow-sm hover:bg-[#0B2572] transition-colors">
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Demo 15 min
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+            <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
+          </button>
+        </div>
       </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
+      <button type="button" data-calendar-open data-track="header_demo_mobile"
+              class="w-full inline-flex items-center justify-center gap-2 py-3 mt-1 mb-3 rounded-full bg-[#040F3F] text-white text-sm font-bold">
+        <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo 15 min
+      </button>
       <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
       <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
+      <a href="/clientes" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Clientes</a>
       <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
       <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
       <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
@@ -139,25 +165,25 @@
     <div class="tc-container grid lg:grid-cols-2 gap-14 items-center">
       <div data-reveal>
         <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="tc-award mb-6 inline-flex" data-track="tf_award_link">
-          <span class="tc-award__icon"><i class="fas fa-trophy"></i></span>
+          <span class="tc-award__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg></span>
           #1 CeutaTech Summit 2026 &middot; Pase de Oro Alhambra Venture
         </a>
         <h1 class="font-extrabold text-white leading-tight tracking-tight" style="font-size:var(--tc-text-5xl)">
-          Facturas que<br><span class="tc-gradient-text">Hacienda no puede cuestionar</span>
+          Facturas preparadas<br><span class="tc-gradient-text">para los requisitos VeriFactu</span>
         </h1>
         <p class="mt-6 text-blue-100/80 max-w-lg leading-relaxed" style="font-size:var(--tc-text-lg)">
-          TrustinFacts genera facturas compatibles con <strong class="text-white">VeriFactu</strong>, gestiona tu stock y te da dashboards en tiempo real. Con soporte nativo para <strong class="text-white">IPSI de Ceuta y Melilla</strong> &mdash; una rareza en el mercado.
+          TrustinFacts genera facturas preparadas para requisitos <strong class="text-white">SIF/VERI*FACTU</strong>, gestiona tu stock y te da dashboards en tiempo real. Con soporte nativo para <strong class="text-white">IPSI de Ceuta y Melilla</strong>, pensado desde la operativa local.
         </p>
         <div class="flex flex-wrap gap-3 mt-8">
           <button class="tc-btn tc-btn-primary" data-calendar-open data-track="tf_hero_demo">
-            <i class="fas fa-calendar-check mr-2"></i>Demo gratuita 15 min
+            <svg class="tc-icon mr-2"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>Demo gratuita 15 min
           </button>
           <a class="tc-btn tc-btn-ghost" href="#precios" data-track="tf_hero_precios">Ver precios</a>
         </div>
         <ul class="mt-8 space-y-2">
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><i class="fas fa-check-circle shrink-0" style="color:var(--tc-cyan-light)"></i>Preparado para VeriFactu desde hoy</li>
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><i class="fas fa-check-circle shrink-0" style="color:var(--tc-cyan-light)"></i>IPSI Ceuta/Melilla nativo (IVA tambi&eacute;n)</li>
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><i class="fas fa-check-circle shrink-0" style="color:var(--tc-cyan-light)"></i>Migraci&oacute;n desde otro software en 48 h</li>
+          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>Preparado para VeriFactu desde hoy</li>
+          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>IPSI Ceuta/Melilla nativo (IVA tambi&eacute;n)</li>
+          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>Migraci&oacute;n desde otro software en 48 h</li>
         </ul>
       </div>
 
@@ -202,8 +228,8 @@
               <p class="text-blue-300 text-xs">Errores</p>
             </div>
             <div class="rounded-xl p-2.5 text-center" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)">
-              <p class="text-white font-bold text-lg">100%</p>
-              <p class="text-blue-300 text-xs">AEAT</p>
+              <p class="text-white font-bold text-lg">SIF</p>
+              <p class="text-blue-300 text-xs">Trazable</p>
             </div>
           </div>
         </div>
@@ -268,35 +294,35 @@
       </div>
       <div class="tc-bento">
         <article class="tc-bento__card tc-bento--two-thirds" data-reveal>
-          <div class="tc-bento__icon" style="color:var(--tc-gold)"><i class="fas fa-file-invoice"></i></div>
-          <h3 class="tc-bento__title">Facturaci&oacute;n VeriFactu compatible</h3>
-          <p class="tc-bento__body">Genera facturas con c&oacute;digo QR verificable, huella criptogr&aacute;fica y env&iacute;o autom&aacute;tico a la AEAT. Cumple la Ley Antifraude desde el primer d&iacute;a sin configuraci&oacute;n extra.</p>
+          <div class="tc-bento__icon" style="color:var(--tc-gold)"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg></div>
+          <h3 class="tc-bento__title">Facturaci&oacute;n preparada para SIF/VERI*FACTU</h3>
+          <p class="tc-bento__body">Genera facturas con c&oacute;digo QR, trazabilidad de registros y huella criptogr&aacute;fica. El modo VERI*FACTU permite remisi&oacute;n a la AEAT cuando corresponda.</p>
           <div class="mt-4 flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full w-fit" style="background:rgba(212,162,61,0.12);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.25)">
-            <i class="fas fa-shield-alt"></i> Compatible VeriFactu &middot; Ley 11/2021
+            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg> Compatible VeriFactu &middot; Ley 11/2021
           </div>
         </article>
         <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-map-marked-alt"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-map-marked-alt"/></svg></div>
           <h3 class="tc-bento__title">IPSI para Ceuta y Melilla</h3>
-          <p class="tc-bento__body">Uno de los pocos softwares del mercado con IPSI nativo. Sin plugins, sin parches manuales. Calcula el impuesto correcto en cada factura autom&aacute;ticamente.</p>
+          <p class="tc-bento__body">IPSI nativo para Ceuta y Melilla. Sin plugins ni parches manuales: configura el tipo aplicable por operación y reduce correcciones con la asesoría.</p>
         </article>
         <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-boxes"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-boxes"/></svg></div>
           <h3 class="tc-bento__title">Control de stock en tiempo real</h3>
           <p class="tc-bento__body">Almac&eacute;n actualizado autom&aacute;ticamente con cada venta o compra. Alertas de m&iacute;nimos, movimientos y valoraci&oacute;n instant&aacute;nea.</p>
         </article>
         <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-robot"></i></div>
-          <h3 class="tc-bento__title">Asistente IA integrado</h3>
-          <p class="tc-bento__body">Detecta errores antes de emitir, sugiere el tipo impositivo correcto y genera borradores de factura a partir de un presupuesto.</p>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-robot"/></svg></div>
+          <h3 class="tc-bento__title">TrusTy te avisa antes de emitir</h3>
+          <p class="tc-bento__body">Cuando una venta mezcla territorio, impuesto o datos sensibles, TrusTy la convierte en una revisión concreta para tu equipo o tu asesoría.</p>
         </article>
         <article class="tc-bento__card tc-bento--half" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-globe"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-globe"/></svg></div>
           <h3 class="tc-bento__title">Facturas en 3 idiomas</h3>
           <p class="tc-bento__body">Emite en espa&ntilde;ol, ingl&eacute;s y franc&eacute;s. Ideal para empresas con clientes internacionales o distribuidores en el norte de &Aacute;frica.</p>
         </article>
         <article class="tc-bento__card tc-bento--half" data-reveal>
-          <div class="tc-bento__icon"><i class="fas fa-chart-line"></i></div>
+          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-chart-line"/></svg></div>
           <h3 class="tc-bento__title">Dashboards financieros</h3>
           <p class="tc-bento__body">Cobros pendientes, flujo de caja, comparativa mensual y alertas de deuda. Todo visible en tiempo real sin exportar a Excel.</p>
         </article>
@@ -315,7 +341,7 @@
       <div class="grid md:grid-cols-5 gap-4 items-center">
         <div class="text-center" data-reveal>
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)">
-            <i class="fas fa-file-alt"></i>
+            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-alt"/></svg>
           </div>
           <p class="font-semibold text-sm" style="color:var(--tc-navy)">Presupuesto</p>
           <p class="text-xs text-gray-400 mt-1">Crea y env&iacute;a por email</p>
@@ -323,7 +349,7 @@
         <div class="text-center text-gray-300 text-2xl hidden md:block">&rarr;</div>
         <div class="text-center" data-reveal>
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)">
-            <i class="fas fa-check-square"></i>
+            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-check-square"/></svg>
           </div>
           <p class="font-semibold text-sm" style="color:var(--tc-navy)">Pedido / albar&aacute;n</p>
           <p class="text-xs text-gray-400 mt-1">Convierte con un clic</p>
@@ -331,10 +357,10 @@
         <div class="text-center text-gray-300 text-2xl hidden md:block">&rarr;</div>
         <div class="text-center" data-reveal>
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(212,162,61,0.15);color:var(--tc-gold)">
-            <i class="fas fa-file-invoice-dollar"></i>
+            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-invoice-dollar"/></svg>
           </div>
           <p class="font-semibold text-sm" style="color:var(--tc-navy)">Factura VeriFactu</p>
-          <p class="text-xs text-gray-400 mt-1">Emitida y registrada AEAT</p>
+              <p class="text-xs text-gray-400 mt-1">Preparada para registro SIF</p>
         </div>
       </div>
       <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mt-6 items-center justify-center">
@@ -342,14 +368,14 @@
         <div class="text-center text-gray-300 text-2xl hidden md:block">&darr;</div>
         <div class="text-center" data-reveal>
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(15,160,111,0.1);color:var(--tc-success)">
-            <i class="fas fa-coins"></i>
+            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-coins"/></svg>
           </div>
           <p class="font-semibold text-sm" style="color:var(--tc-navy)">Cobro registrado</p>
           <p class="text-xs text-gray-400 mt-1">Conciliaci&oacute;n autom&aacute;tica</p>
         </div>
         <div class="text-center" data-reveal>
           <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-royal)">
-            <i class="fas fa-chart-pie"></i>
+            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-chart-pie"/></svg>
           </div>
           <p class="font-semibold text-sm" style="color:var(--tc-navy)">Dashboard actualizado</p>
           <p class="text-xs text-gray-400 mt-1">Datos en tiempo real</p>
@@ -368,7 +394,7 @@
         <div data-reveal>
           <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Fiscalidad avanzada</span>
           <h2 class="tc-display tc-display-lg mt-4 text-white">Expertos en IPSI y la fiscalidad de Ceuta y Melilla</h2>
-          <p class="mt-5 text-blue-100/80 leading-relaxed">El IPSI no es IVA y la mayor&iacute;a de softwares gen&eacute;ricos lo tratan mal. TrustinFacts fue dise&ntilde;ado desde Ceuta para Ceuta &mdash; y para cualquier empresa espa&ntilde;ola que necesite facturar correctamente.</p>
+          <p class="mt-5 text-blue-100/80 leading-relaxed">El IPSI no es IVA y muchos softwares gen&eacute;ricos lo tratan como una excepci&oacute;n manual. TrustinFacts fue dise&ntilde;ado desde Ceuta para Ceuta &mdash; y para cualquier empresa espa&ntilde;ola que necesite facturar correctamente.</p>
           <div class="grid grid-cols-2 gap-4 mt-8">
             <div class="rounded-2xl p-5 border border-white/10" style="background:rgba(255,255,255,0.05)">
               <p class="text-2xl font-black" style="color:var(--tc-cyan-light)">IPSI</p>
@@ -386,7 +412,7 @@
           <div class="rounded-3xl p-8 border border-white/10" style="background:rgba(255,255,255,0.05)">
             <div class="flex items-center gap-3 mb-6">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(212,162,61,0.2)">
-                <i class="fas fa-shield-alt" style="color:var(--tc-gold)"></i>
+                <svg class="tc-icon" style="color:var(--tc-gold)"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg>
               </div>
               <div>
                 <p class="text-white font-bold">VeriFactu &mdash; Ley Antifraude</p>
@@ -396,27 +422,81 @@
             <div class="space-y-3">
               <div class="flex items-center justify-between py-3 border-b border-white/10">
                 <span class="text-blue-100 text-sm">Huella criptogr&aacute;fica por factura</span>
-                <i class="fas fa-check-circle text-green-400"></i>
+                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
               </div>
               <div class="flex items-center justify-between py-3 border-b border-white/10">
                 <span class="text-blue-100 text-sm">QR verificable por el cliente</span>
-                <i class="fas fa-check-circle text-green-400"></i>
+                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
               </div>
               <div class="flex items-center justify-between py-3 border-b border-white/10">
-                <span class="text-blue-100 text-sm">Env&iacute;o autom&aacute;tico a AEAT</span>
-                <i class="fas fa-check-circle text-green-400"></i>
+                <span class="text-blue-100 text-sm">Remisi&oacute;n a AEAT en modalidad VERI*FACTU</span>
+                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
               </div>
               <div class="flex items-center justify-between py-3 border-b border-white/10">
                 <span class="text-blue-100 text-sm">Inalterabilidad de registros</span>
-                <i class="fas fa-check-circle text-green-400"></i>
+                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
               </div>
               <div class="flex items-center justify-between py-3">
                 <span class="text-blue-100 text-sm">Compatible con TicketBAI</span>
-                <i class="fas fa-check-circle text-green-400"></i>
+                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
               </div>
             </div>
             <button class="tc-btn tc-btn-primary w-full mt-6" data-calendar-open data-track="tf_ipsi_demo">Ver demo VeriFactu + IPSI</button>
+            <a href="/software-verifactu-ipsi-ceuta-melilla" class="tc-btn tc-btn-secondary w-full mt-3" data-track="tf_ipsi_guide">Ver guía con fuentes</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR: pru&eacute;balo ahora -->
+  <section id="pruebalo" class="tc-section bg-white scroll-mt-28">
+    <div class="tc-container">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <span class="tc-eyebrow justify-center">Pru&eacute;balo ahora</span>
+        <h2 class="tc-display tc-display-lg mt-4 mb-4">Calcula una factura IPSI en 20 segundos</h2>
+        <p class="text-lg text-slate-600">Sin registro. Elige qu&eacute; vendes y d&oacute;nde facturas: el impuesto correcto se aplica solo, igual que en TrustinFacts.</p>
+      </div>
+
+      <div class="tc-sim max-w-5xl mx-auto" data-sim="factura" data-reveal>
+        <div class="tc-sim__controls">
+          <div>
+            <p class="tc-sim__label mb-2">1 &middot; &iquest;Qu&eacute; vendes?</p>
+            <div class="tc-sim__options" role="group" aria-label="Tipo de operaci&oacute;n">
+              <button type="button" class="tc-sim__opt is-active" data-sim-producto="1200" data-sim-concepto="Servicios de consultor&iacute;a">Consultor&iacute;a &middot; 1.200 &euro;</button>
+              <button type="button" class="tc-sim__opt" data-sim-producto="8500" data-sim-concepto="Reforma de local">Reforma &middot; 8.500 &euro;</button>
+              <button type="button" class="tc-sim__opt" data-sim-producto="950" data-sim-concepto="Venta de equipo inform&aacute;tico">Comercio &middot; 950 &euro;</button>
+            </div>
+          </div>
+          <div>
+            <p class="tc-sim__label mb-2">2 &middot; &iquest;D&oacute;nde facturas?</p>
+            <div class="tc-sim__options" role="group" aria-label="R&eacute;gimen fiscal">
+              <button type="button" class="tc-sim__opt is-active" data-sim-tax="ipsi-servicios">Ceuta/Melilla &middot; servicios</button>
+              <button type="button" class="tc-sim__opt" data-sim-tax="ipsi-comercio">Ceuta/Melilla &middot; comercio</button>
+              <button type="button" class="tc-sim__opt" data-sim-tax="ipsi-obras">Ceuta/Melilla &middot; obras</button>
+              <button type="button" class="tc-sim__opt" data-sim-tax="iva">Pen&iacute;nsula &middot; IVA</button>
+            </div>
+          </div>
+          <div class="mt-2">
+            <button type="button" class="tc-btn tc-btn-primary w-full" data-sim-emitir>
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-export"/></svg> Emitir factura de prueba
+            </button>
+            <p class="text-xs text-slate-400 mt-3">C&aacute;lculo real de este simulador. En TrustinFacts ocurre autom&aacute;ticamente en cada factura, con QR y registro VeriFactu.</p>
+          </div>
+        </div>
+        <div class="tc-sim__stage">
+          <div class="tc-sim__doc" aria-live="polite">
+            <div class="flex items-center justify-between mb-3">
+              <strong>Factura <span data-sim-serie>#2026-0001</span></strong>
+              <span class="tc-sim__stamp" data-sim-stamp><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg> VeriFactu &middot; registrada</span>
+            </div>
+            <div class="tc-sim__doc-row"><span data-sim-doc-concepto>Servicios de consultor&iacute;a</span><span data-sim-base>1.200,00 &euro;</span></div>
+            <div class="tc-sim__doc-row"><span data-sim-taxlabel>IPSI servicios 4%</span><span data-sim-cuota>48,00 &euro;</span></div>
+            <div class="tc-sim__doc-row tc-sim__doc-row--total"><span>Total</span><span data-sim-total>1.248,00 &euro;</span></div>
+          </div>
+          <p class="text-center mt-6">
+            <button type="button" class="tc-btn tc-btn-secondary" data-calendar-open data-track="tf_sim_demo">&iquest;Te encaja? Agenda una demo con tus datos</button>
+          </p>
         </div>
       </div>
     </div>
@@ -432,38 +512,38 @@
       <div class="grid md:grid-cols-3 gap-8">
         <div class="rounded-3xl p-7 border border-gray-200" data-reveal>
           <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(32,113,213,0.1)">
-            <i class="fas fa-user-tie text-blue-600 text-xl"></i>
+            <svg class="tc-icon text-blue-600 text-xl"><use href="/assets/icons/sprite.svg#fa-user-tie"/></svg>
           </div>
           <h3 class="font-bold text-lg mb-3" style="color:var(--tc-navy)">Aut&oacute;nomos</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Factura en minutos, controla lo que te deben y deja el tema fiscal en manos del software. Sin saber de contabilidad.</p>
           <ul class="mt-4 space-y-2 text-sm text-gray-500">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>Desde 9,99&euro;/mes</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>Serie de facturas propia</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>Env&iacute;o directo por email</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Desde 9,99&euro;/mes</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Serie de facturas propia</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Env&iacute;o directo por email</li>
           </ul>
         </div>
         <div class="rounded-3xl p-7 border-2" style="border-color:var(--tc-blue-royal)" data-reveal>
           <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(32,113,213,0.1)">
-            <i class="fas fa-building text-blue-600 text-xl"></i>
+            <svg class="tc-icon text-blue-600 text-xl"><use href="/assets/icons/sprite.svg#fa-building"/></svg>
           </div>
           <h3 class="font-bold text-lg mb-3" style="color:var(--tc-navy)">Pymes</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Multi-usuario, stock, presupuestos, albaranes y dashboards financieros. Todo integrado con TrustinTime si tienes empleados.</p>
           <ul class="mt-4 space-y-2 text-sm text-gray-500">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>Desde 19,99&euro;/mes</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>Hasta 5 usuarios</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>IPSI + IVA nativo</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Desde 19,99&euro;/mes</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Hasta 5 usuarios</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>IPSI + IVA nativo</li>
           </ul>
         </div>
         <div class="rounded-3xl p-7 border border-gray-200" data-reveal>
           <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(32,113,213,0.1)">
-            <i class="fas fa-calculator text-blue-600 text-xl"></i>
+            <svg class="tc-icon text-blue-600 text-xl"><use href="/assets/icons/sprite.svg#fa-calculator"/></svg>
           </div>
           <h3 class="font-bold text-lg mb-3" style="color:var(--tc-navy)">Asesor&iacute;as</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Gestiona la facturaci&oacute;n de todos tus clientes desde un &uacute;nico panel. Acceso multi-empresa, informes consolidados y soporte prioritario.</p>
           <ul class="mt-4 space-y-2 text-sm text-gray-500">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>Multi-empresa</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>Panel de asesor&iacute;a dedicado</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i>Precio a medida</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Multi-empresa</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Panel de asesor&iacute;a dedicado</li>
+            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Precio a medida</li>
           </ul>
         </div>
       </div>
@@ -488,12 +568,12 @@
           </div>
           <p class="text-sm text-gray-500 mt-1 mb-6">Para aut&oacute;nomos y microempresas</p>
           <ul class="tc-pricing__features">
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Facturas ilimitadas</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>VeriFactu compatible</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>IPSI y IVA</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Presupuestos y albaranes</li>
-            <li class="tc-pricing__missing"><i class="fas fa-times text-gray-300 shrink-0"></i>Gesti&oacute;n de stock</li>
-            <li class="tc-pricing__missing"><i class="fas fa-times text-gray-300 shrink-0"></i>Multi-usuario</li>
+            <li>Facturas ilimitadas</li>
+            <li>Preparado para SIF/VERI*FACTU</li>
+            <li>IPSI y IVA</li>
+            <li>Presupuestos y albaranes</li>
+            <li class="tc-pricing__missing"><svg class="tc-icon text-gray-300 shrink-0"><use href="/assets/icons/sprite.svg#fa-times"/></svg>Gesti&oacute;n de stock</li>
+            <li class="tc-pricing__missing"><svg class="tc-icon text-gray-300 shrink-0"><use href="/assets/icons/sprite.svg#fa-times"/></svg>Multi-usuario</li>
           </ul>
           <button class="tc-btn tc-btn-secondary w-full" data-calendar-open data-track="tf_price_starter">Empezar con Starter</button>
         </div>
@@ -506,12 +586,12 @@
           </div>
           <p class="text-sm opacity-70 mt-1 mb-6">El m&aacute;s elegido por pymes con facturaci&oacute;n activa</p>
           <ul class="tc-pricing__features">
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Todo lo del plan Starter</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Hasta 5 usuarios</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Control de stock</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Facturas en 3 idiomas</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Dashboards financieros</li>
-            <li><i class="fas fa-check shrink-0" style="color:var(--tc-cyan-light)"></i>Asistente IA</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Todo lo del plan Starter</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Hasta 5 usuarios</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Control de stock</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Facturas en 3 idiomas</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Dashboards financieros</li>
+            <li><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Copiloto TrusTy</li>
           </ul>
           <button class="tc-btn w-full font-semibold" style="background:white;color:var(--tc-blue-corp)" data-calendar-open data-track="tf_price_business">Agendar demo</button>
         </div>
@@ -519,16 +599,16 @@
           <p class="font-semibold text-sm mb-1" style="color:var(--tc-slate)">Suite TrustCore</p>
           <p class="tc-pricing__name">A medida</p>
           <div class="tc-pricing__price">
-            <span class="tc-pricing__amount">&euro; &euro;&euro;</span>
+            <span class="tc-pricing__amount tc-pricing__amount--text">Personalizado</span>
           </div>
           <p class="text-sm text-gray-500 mt-1 mb-6">Asesor&iacute;as y grupos empresariales</p>
           <ul class="tc-pricing__features">
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Todo lo del plan Business</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>TrustinTime incluido</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Multi-empresa</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>API + integraciones custom</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>Manager dedicado</li>
-            <li><i class="fas fa-check text-green-500 shrink-0"></i>SLA prioritario</li>
+            <li>Todo lo del plan Business</li>
+            <li>TrustinTime incluido</li>
+            <li>Multi-empresa</li>
+            <li>API + integraciones custom</li>
+            <li>Manager dedicado</li>
+            <li>SLA prioritario</li>
           </ul>
           <a href="/contacto" class="tc-btn tc-btn-secondary w-full" data-track="tf_price_suite">Hablemos</a>
         </div>
@@ -547,31 +627,37 @@
       <div class="space-y-3" data-reveal>
         <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
-            &iquest;Qu&eacute; es VeriFactu y cu&aacute;ndo es obligatorio?
-            <i class="fas fa-plus text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"></i>
+            &iquest;Qu&eacute; es VERI*FACTU y cu&aacute;ndo deben adaptarse los SIF?
+            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">VeriFactu es el sistema de verificaci&oacute;n de facturas exigido por la Ley Antifraude (Ley 11/2021). Seg&uacute;n la AEAT, el calendario de adaptaci&oacute;n se sit&uacute;a en 2027 para empresas y aut&oacute;nomos. TrustinFacts est&aacute; adaptado a los requisitos t&eacute;cnicos aplicables.</div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+            VERI*FACTU es una modalidad de remisi&oacute;n de registros dentro del Reglamento de sistemas inform&aacute;ticos de facturaci&oacute;n. La AEAT sit&uacute;a la adaptaci&oacute;n antes del 1 de enero de 2027 para entidades sujetas al Impuesto sobre Sociedades y antes del 1 de julio de 2027 para el resto de obligados.
+            <p class="mt-3 text-xs text-slate-400"><strong>Fuente:</strong> <a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html" target="_blank" rel="noopener" class="font-bold text-blue-600">AEAT, plazos SIF</a> y <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840" target="_blank" rel="noopener" class="font-bold text-blue-600">BOE, RD 1007/2023</a>.</p>
+          </div>
         </details>
         <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
             &iquest;TrustinFacts soporta el IPSI de Ceuta y Melilla?
-            <i class="fas fa-plus text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"></i>
+            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">S&iacute;. Es uno de los pocos softwares del mercado con soporte nativo para el Impuesto sobre la Producci&oacute;n, los Servicios y la Importaci&oacute;n (IPSI). Calcula autom&aacute;ticamente el tipo correcto seg&uacute;n la actividad.</div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+            S&iacute;. TrustinFacts incorpora IPSI para Ceuta y Melilla. La AEAT recuerda que en estas ciudades no se aplica IVA y que, en su lugar, se aplica IPSI.
+            <p class="mt-3 text-xs text-slate-400"><strong>Fuente:</strong> <a href="/software-verifactu-ipsi-ceuta-melilla" class="font-bold text-blue-600">guía TrustCore</a>, <a href="https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html" target="_blank" rel="noopener" class="font-bold text-blue-600">AEAT, Ceuta y Melilla</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645" target="_blank" rel="noopener" class="font-bold text-blue-600">BOE, Ley 8/1991</a>.</p>
+          </div>
         </details>
         <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
-            &iquest;Puedo gestionar stock y presupuestos tambi&eacute;n?
-            <i class="fas fa-plus text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"></i>
+            &iquest;Puedo gestionar stock, presupuestos y cobros tambi&eacute;n?
+            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">S&iacute;. TrustinFacts incluye gesti&oacute;n de stock con alertas de m&iacute;nimos, presupuestos convertibles a facturas con un clic, albaranes y seguimiento de pedidos desde el plan Business.</div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">S&iacute;. TrustinFacts trabaja el flujo presupuesto, pedido o albar&aacute;n, factura, cobro, stock y dashboard sin duplicar datos entre hojas de c&aacute;lculo.</div>
         </details>
         <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
             &iquest;Es dif&iacute;cil migrar desde otro software?
-            <i class="fas fa-plus text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"></i>
+            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
           </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">No. Nuestro equipo realiza la migraci&oacute;n en 48 horas h&aacute;biles. Importamos clientes, proveedores, cat&aacute;logo de productos y facturas historizadas desde la mayor&iacute;a de softwares del mercado.</div>
+          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">No tiene por qu&eacute; serlo. Revisamos clientes, proveedores, cat&aacute;logo de productos y facturas historizadas antes de migrar, y acordamos contigo qu&eacute datos merece la pena importar para empezar limpio.</div>
         </details>
       </div>
     </div>
@@ -585,7 +671,7 @@
       <p class="mt-5 text-blue-100/80" style="font-size:var(--tc-text-lg)">Demo gratuita de 15 min. Te mostramos VeriFactu, IPSI y el flujo completo en vivo.</p>
       <div class="flex flex-wrap justify-center gap-4 mt-8">
         <button class="tc-btn tc-btn-primary" data-calendar-open data-track="tf_cta_demo">
-          <i class="fas fa-calendar-check mr-2"></i>Agendar demo gratuita
+          <svg class="tc-icon mr-2"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>Agendar demo gratuita
         </button>
         <a href="/contacto" class="tc-btn tc-btn-ghost" data-track="tf_cta_contacto">Enviar consulta</a>
       </div>
@@ -606,10 +692,10 @@
           <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
           <div class="flex flex-wrap gap-2 mt-5">
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
-              <i class="fas fa-trophy"></i> Alhambra Venture 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
             </span>
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
-              <i class="fas fa-award"></i> #1 CeutaTech 2026
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-award"/></svg> #1 CeutaTech 2026
             </span>
           </div>
         </div>
@@ -642,7 +728,7 @@
           <div class="mt-5">
             <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
               <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
-                Rese&ntilde;anos en <i class="fas fa-star" style="color:#00B67A"></i> <strong class="text-slate-900">Trustpilot</strong>
+                Rese&ntilde;anos en <svg class="tc-icon" style="color:#00B67A"><use href="/assets/icons/sprite.svg#fa-star"/></svg> <strong class="text-slate-900">Trustpilot</strong>
               </a>
             </div>
           </div>
