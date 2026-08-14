@@ -1,0 +1,201 @@
+<!doctype html>
+<!--
+  Fidelity proof for the TrustCore Claude Design bundle.
+
+  This page links ONLY ds-bundle/styles.css — exactly the closure a rendered design
+  receives — and exercises every layer of it: self-hosted Inter, Font Awesome glyphs,
+  the --tc-* tokens, the tc-* component vocabulary, and the expanded Tailwind utilities.
+  Markup is lifted from the real site (see .design-sync/NOTES.md).
+
+  Rendered + screenshotted by .design-sync/verify/shoot.mjs.
+-->
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>TrustCore DS — fidelity proof</title>
+    <link rel="stylesheet" href="../../ds-bundle/styles.css" />
+  </head>
+  <body class="font-sans text-gray-800 antialiased">
+    <section class="tc-section">
+      <div class="tc-container">
+        <!-- 1. type scale + eyebrow + gradient -->
+        <span class="tc-eyebrow">Suite modular</span>
+        <h1 class="tc-display tc-display-xl mt-4 mb-3">
+          Cumplimiento sin <span class="tc-gradient-text">fricción</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-3xl">
+          Prueba de fidelidad del sistema de diseño: tipografía Inter autoalojada,
+          iconos Font Awesome, tokens <code>--tc-*</code> y utilidades Tailwind.
+        </p>
+
+        <!-- 2. buttons -->
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href="#" class="tc-btn tc-btn-primary !px-8 !py-3.5">
+            <i class="fa-solid fa-rocket"></i> Ver planes
+          </a>
+          <a href="#" class="tc-btn tc-btn-secondary">
+            <i class="fa-solid fa-book-open"></i> Guía IPSI
+          </a>
+          <a href="#" class="tc-btn tc-btn-ghost">
+            <i class="fa-solid fa-arrow-right"></i> Saber más
+          </a>
+        </div>
+
+        <!-- 3. bento grid -->
+        <div class="tc-bento mt-12">
+          <div class="tc-bento__card tc-bento--half">
+            <div class="tc-bento__icon"><i class="fa-solid fa-fingerprint"></i></div>
+            <h3 class="tc-bento__title">Confianza clara</h3>
+            <p class="tc-bento__desc">
+              Nombre, producto, territorio y fuentes dentro de una misma historia comercial.
+            </p>
+          </div>
+          <div class="tc-bento__card tc-bento--half">
+            <div class="tc-bento__icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="tc-bento__title">Prueba legal</h3>
+            <p class="tc-bento__desc">
+              Logs firmados y cuatro años de conservación, listos para la Inspección.
+            </p>
+          </div>
+          <div class="tc-bento__card tc-bento--third">
+            <div class="tc-bento__icon"><i class="fa-solid fa-table-list"></i></div>
+            <h3 class="tc-bento__title">IPSI en factura</h3>
+            <p class="tc-bento__desc">Ceuta y Melilla, sin plantillas manuales.</p>
+          </div>
+          <div class="tc-bento__card tc-bento--two-thirds">
+            <div class="tc-bento__icon"><i class="fa-solid fa-clock"></i></div>
+            <h3 class="tc-bento__title">Control horario</h3>
+            <p class="tc-bento__desc">Fichaje geoposicionado y exportación firmada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. metrics + answer card + flow, on the alt surface -->
+    <section class="tc-section bg-slate-50">
+      <div class="tc-container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="tc-metric">
+            <span class="tc-metric__value">100%</span>
+            <span class="tc-metric__label">Cumplimiento normativo documentado</span>
+          </div>
+          <div class="tc-metric">
+            <span class="tc-metric__value">4 años</span>
+            <span class="tc-metric__label">Conservación de registros</span>
+          </div>
+          <div class="tc-metric">
+            <span class="tc-metric__value">2 €</span>
+            <span class="tc-metric__label">Por usuario y mes</span>
+          </div>
+        </div>
+
+        <article class="tc-answer-card mt-12">
+          <div class="tc-bento__icon"><i class="fa-solid fa-circle-question"></i></div>
+          <h3 class="text-xl font-extrabold" style="color: var(--tc-navy)">
+            ¿Qué es el IPSI?
+          </h3>
+          <p class="mt-3 text-slate-600 leading-relaxed">
+            El Impuesto sobre la Producción, los Servicios y la Importación sustituye al
+            IVA en Ceuta y Melilla.
+          </p>
+        </article>
+
+        <div class="tc-flow-map mt-12">
+          <div class="tc-flow-step"><b>Permiso</b><small>Validar logo y alcance.</small></div>
+          <div class="tc-flow-step"><b>Caso</b><small>Problema, solución y resultado.</small></div>
+          <div class="tc-flow-step"><b>Mención</b><small>Publicar en web y LinkedIn.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. pricing + testimonial -->
+    <section class="tc-section">
+      <div class="tc-container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="tc-pricing flex flex-col">
+            <p class="tc-pricing__name">Básico</p>
+            <p class="tc-pricing__price">5,99 €<small>/usuario/mes</small></p>
+            <ul class="tc-pricing__features">
+              <li>Control horario</li>
+              <li>App móvil</li>
+              <li>Exportación PDF</li>
+            </ul>
+            <a href="#" class="tc-btn tc-btn-secondary mt-auto">Empezar</a>
+          </div>
+          <div class="tc-pricing tc-pricing--featured flex flex-col">
+            <p class="tc-pricing__name">Pro</p>
+            <p class="tc-pricing__price">9,99 €<small>/usuario/mes</small></p>
+            <ul class="tc-pricing__features">
+              <li>Todo lo de Básico</li>
+              <li>Facturación IPSI</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="#" class="tc-btn tc-btn-primary mt-auto">Empezar</a>
+          </div>
+          <div class="tc-pricing flex flex-col">
+            <p class="tc-pricing__name">Empresa</p>
+            <p class="tc-pricing__price">A medida</p>
+            <ul class="tc-pricing__features">
+              <li>Integraciones ERP</li>
+              <li>SLA dedicado</li>
+              <li>Formación</li>
+            </ul>
+            <a href="#" class="tc-btn tc-btn-secondary mt-auto">Hablar con ventas</a>
+          </div>
+        </div>
+
+        <div class="tc-testimonial mt-12">
+          <p class="tc-testimonial__quote">
+            "TrustCore convierte la burocracia en datos reales."
+          </p>
+          <div class="tc-testimonial__author">
+            <div class="tc-testimonial__avatar">AG</div>
+            <div>
+              <div class="tc-testimonial__name">Ana García</div>
+              <div class="tc-testimonial__role">Directora, Gestoría Estrecho</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. dark surface: bg utilities + brand palette + reveal-trap check -->
+    <section class="tc-section" style="background: var(--tc-navy)">
+      <div class="tc-container">
+        <span class="tc-eyebrow" style="color: var(--tc-cyan-light)">Verificación</span>
+        <!-- NOTE: !text-white, not text-white. components.css loads after Tailwind, so
+             .tc-display's navy color beats a non-important utility and this heading
+             would render navy-on-navy. This is the site's own idiom. -->
+        <h2 class="tc-display tc-display-md !text-white mt-4 mb-6">
+          Sobre superficie oscura
+        </h2>
+        <p class="!text-slate-300 max-w-2xl mb-6">
+          Este texto usa <code>!text-slate-300</code> sobre fondo oscuro.
+        </p>
+        <!-- data-reveal would be opacity:0 without the site's JS — the compat layer
+             in the generated stylesheet must make this visible. -->
+        <p data-reveal class="text-slate-300 max-w-2xl">
+          Este párrafo lleva <code>data-reveal</code>. Si se ve, la capa de
+          compatibilidad funciona correctamente.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-8">
+          <span class="px-4 py-2 rounded-full bg-blue-royal text-white text-sm font-semibold">blue-royal</span>
+          <span class="px-4 py-2 rounded-full bg-cyan-light text-navy text-sm font-semibold">cyan-light</span>
+          <span class="px-4 py-2 rounded-full bg-gold text-navy text-sm font-semibold">gold</span>
+          <span class="px-4 py-2 rounded-full bg-blue-corp text-white text-sm font-semibold">blue-corp</span>
+        </div>
+        <p class="mt-8 text-slate-400 text-sm">
+          Iconos de marca:
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+          <i class="fa-regular fa-envelope"></i>
+          — pesos Inter: <span class="font-normal">400</span>
+          <span class="font-medium">500</span>
+          <span class="font-semibold">600</span>
+          <span class="font-bold">700</span>
+          <span class="font-extrabold">800</span>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

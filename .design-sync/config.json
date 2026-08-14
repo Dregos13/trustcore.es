@@ -1,0 +1,17 @@
+{
+  "pkg": "trustcore-site",
+  "projectId": "9c87f4ee-9876-4ab5-bf2c-3c3ac9d26b79",
+  "globalName": "TrustCore",
+  "shape": "package",
+  "cssEntry": ".design-sync/css/trustcore-ds.css",
+  "extraFonts": [
+    ".design-sync/fonts/inter.css",
+    ".design-sync/fonts/fontawesome.css"
+  ],
+  "readmeHeader": ".design-sync/conventions.md",
+  "guidelinesGlob": [
+    "docs/design-system.md",
+    "docs/brand-voice.md",
+    "docs/content-playbook.md"
+  ]
+}
