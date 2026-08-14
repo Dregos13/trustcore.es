@@ -77,9 +77,26 @@
 .tc-display.text-white { color: #fff; }
 .tc-display.text-slate-300 { color: #cbd5e1; }
 .tc-display.text-cyan-light { color: var(--tc-cyan-light); }
-.tc-display-xl { font-size: var(--tc-text-5xl); }
-.tc-display-lg { font-size: var(--tc-text-4xl); }
-.tc-display-md { font-size: var(--tc-text-3xl); }
+/* Escala de display contenida.
+   Antes: xl llegaba a 76px y lg a 60px. A ese tamaño un titular de 6 palabras
+   parte en 3-4 líneas, y centrado obliga al ojo a volver al principio en cada
+   salto: se lee peor cuanto más grande. Estos topes (56/40/30px) mantienen la
+   jerarquía pero dejan el titular en 1-2 líneas. */
+.tc-display-xl { font-size: clamp(2.25rem, 1.8rem + 2.2vw, 3.5rem); }
+.tc-display-lg { font-size: clamp(1.875rem, 1.55rem + 1.5vw, 2.5rem); }
+.tc-display-md { font-size: clamp(1.5rem, 1.35rem + 0.7vw, 1.875rem); }
+
+/* Un titular no debe pasar de ~20 caracteres por línea: por encima deja de
+   leerse como una unidad. `balance` reparte las líneas en vez de dejar una
+   palabra suelta colgando. */
+.tc-display {
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.tc-display-md { max-width: 26ch; }
+/* Centrado: el max-width necesita márgenes automáticos para seguir centrado. */
+.text-center > .tc-display,
+.tc-section-head--center .tc-display { margin-inline: auto; }
 
 .tc-gradient-text {
   background: linear-gradient(120deg, var(--tc-blue-royal) 0%, var(--tc-cyan-light) 55%, var(--tc-blue-corp) 100%);
@@ -87,6 +104,63 @@
           background-clip: text;
   -webkit-text-fill-color: transparent;
           color: transparent;
+}
+
+/* ------------------------- Section head (editorial) -------------------------
+   Sustituye al bloque centrado "eyebrow → titular enorme → subtítulo" que se
+   repetía en todas las secciones. Aquí el titular ocupa la columna izquierda y
+   el texto de apoyo la derecha, alineados por la línea base superior: el ojo
+   entra por el titular y baja al cuerpo sin volver al centro. Además acorta
+   ambas medidas de línea, que es lo que realmente hace que se lea.
+   En móvil colapsa a una columna sin perder nada. */
+.tc-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+@media (max-width: 900px) {
+  .tc-section-head { grid-template-columns: 1fr; align-items: start; gap: 1rem; }
+}
+.tc-section-head__lead {
+  color: var(--tc-ink-mute);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  max-width: 48ch;
+  margin: 0;
+}
+/* Filo superior: una línea fina como ancla visual, más sobria que un eyebrow
+   centrado en cada sección. */
+.tc-section-head .tc-eyebrow { margin-bottom: 0.875rem; }
+.tc-section-head .tc-display { margin-bottom: 0; }
+
+/* Variante centrada, para las 2-3 secciones donde el centrado sí aporta
+   (cierre, CTA final). No debe ser el patrón por defecto. */
+.tc-section-head--center {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+.tc-section-head--center .tc-section-head__lead { max-width: 56ch; }
+.tc-section-head--center .tc-eyebrow { justify-content: center; }
+
+/* ------------------------- FAQ / respuestas con fuentes -------------------------
+   Eran 7 bloques a ancho completo apilados: ~4 scrolls de pared de texto. En dos
+   columnas con masonry el bloque se lee en diagonal y ocupa la mitad. Se mantiene
+   todo el contenido en el DOM (es la sección que sostiene el AEO), solo cambia
+   cómo se reparte. La primera tarjeta ocupa las dos columnas: es la respuesta
+   destacada y así conserva su peso. */
+.tc-faq-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.tc-faq-grid > :first-child { grid-column: 1 / -1; }
+@media (max-width: 900px) {
+  .tc-faq-grid { grid-template-columns: 1fr; }
+  .tc-faq-grid > :first-child { grid-column: auto; }
 }
 
 /* ------------------------- Buttons ------------------------- */
@@ -270,6 +344,28 @@
   border: 1px solid var(--tc-line);
   border-radius: var(--tc-radius-lg);
   box-shadow: var(--tc-shadow-xs);
+}
+/* Variante sin caja para barras de confianza (la fila bajo el hero).
+   Cuatro tarjetas idénticas con borde y sombra compiten con el hero y no
+   aportan jerarquía: el dato ya destaca por tamaño. Sin caja, separados por
+   una línea fina, se leen como una franja de datos y no como cuatro bloques. */
+.tc-metric-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+.tc-metric-row > .tc-metric {
+  background: none;
+  border: 0;
+  border-left: 1px solid var(--tc-line);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.25rem 1.75rem;
+}
+.tc-metric-row > .tc-metric:first-child { border-left: 0; padding-left: 0; }
+@media (max-width: 860px) {
+  .tc-metric-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 0; }
+  .tc-metric-row > .tc-metric:nth-child(odd) { border-left: 0; padding-left: 0; }
 }
 .tc-metric__value {
   font-size: var(--tc-text-2xl);
@@ -839,7 +935,7 @@
   line-height: 1.45;
 }
 .tc-source-list li::before {
-  content: "\f0c1";
+  content: "\2197";
   display: grid;
   place-items: center;
   width: 1.5rem;
@@ -847,9 +943,8 @@
   border-radius: 8px;
   background: rgba(32, 113, 213, 0.09);
   color: var(--tc-blue-royal);
-  font-family: "Font Awesome 6 Free";
-  font-size: 0.68rem;
-  font-weight: 900;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 .tc-trusty-panel {
   position: relative;
@@ -971,11 +1066,10 @@
   line-height: 1.45;
 }
 .tc-trusty-line span::before {
-  content: "\f00c";
+  content: "\2713";
   color: var(--tc-cyan-light);
-  font-family: "Font Awesome 6 Free";
-  font-size: 0.72rem;
-  font-weight: 900;
+  font-size: 0.86rem;
+  font-weight: 700;
   margin-top: 0.18rem;
 }
 @keyframes tc-trusty-float {
@@ -1452,17 +1546,13 @@
   transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
 .tc-lesson-trigger::before {
-  content: "\f144";
-  display: grid;
-  place-items: center;
+  content: "";
   width: 2rem;
   height: 2rem;
   border-radius: 999px;
-  background: rgba(32, 113, 213, 0.1);
-  color: var(--tc-blue-royal);
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 0.82rem;
+  /* El icono va como background-image, no como mask: la máscara recortaría
+     también el círculo de fondo. El color va dentro del propio SVG. */
+  background: rgba(32, 113, 213, 0.1) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' fill='rgb(32,113,213)'><path d='M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z'/></svg>") center / 0.7rem no-repeat;
 }
 .tc-lesson-trigger span {
   display: grid;
@@ -1513,9 +1603,7 @@
   opacity: 0.82;
 }
 .tc-lesson-trigger.is-pending::before {
-  content: "\f017";
-  background: #fff7ed;
-  color: #9a3412;
+  background: #fff7ed url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='rgb(154,52,18)'><path d='M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z'/></svg>") center / 0.8rem no-repeat;
 }
 .tc-learn-roadmap {
   display: grid;
