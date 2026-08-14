@@ -483,6 +483,38 @@
 /* El CTA siempre anclado abajo: tarjetas hermanas alineadas aunque difieran las features. */
 .tc-pricing > .tc-btn:last-child, .tc-pricing > a:last-child { margin-top: auto; }
 
+/* ------------------------- Franja de venta cruzada de la suite -------------------------
+   Antes la suite ocupaba una tarjeta más dentro de la rejilla de precios, lo
+   que hacía que pareciera un cuarto plan y dejaba fuera un plan real. Como
+   franja horizontal se lee como lo que es —una oferta distinta— y de paso
+   rompe la sucesión de tarjetas. */
+.tc-suite-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius-2xl);
+  box-shadow: var(--tc-shadow-sm);
+}
+.tc-suite-strip__title {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--tc-navy);
+}
+.tc-suite-strip__desc {
+  margin: 0;
+  max-width: 60ch;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--tc-ink-mute);
+}
+
 /* ------------------------- Dashboard showcase frame ------------------------- */
 .tc-showcase {
   position: relative;
@@ -540,8 +572,34 @@
   opacity: 0.35;
   pointer-events: none;
 }
-.tc-bg-orbs::before { width: 480px; height: 480px; top: -120px; right: -120px; background: var(--tc-cyan-light); }
-.tc-bg-orbs::after  { width: 420px; height: 420px; bottom: -160px; left: -80px;   background: var(--tc-blue-royal); }
+/* Al 35% el orbe cian teñía media sección de celeste y chocaba con el blanco
+   de la sección anterior. Bajado a 0.16 y desplazado fuera del encuadre: sigue
+   dando profundidad, pero se lee como luz, no como un bloque de color. */
+.tc-bg-orbs::before { width: 620px; height: 620px; top: -280px; right: -220px; background: var(--tc-cyan-light); }
+.tc-bg-orbs::after  { width: 520px; height: 520px; bottom: -260px; left: -180px; background: var(--tc-blue-royal); }
+.tc-bg-orbs::before, .tc-bg-orbs::after { opacity: 0.16; filter: blur(120px); }
+
+/* ------------------------- Fundido entre secciones -------------------------
+   El salto azul oscuro → blanco → celeste se veía como tres bloques pegados
+   con una línea dura. Aquí la sección oscura lleva su propio degradado de
+   entrada y salida hacia el color de la sección vecina, así el cambio ocurre
+   a lo largo de ~100px en vez de en 1px.
+
+   Se implementa con capas de background (no con ::before/::after) para no
+   crear contextos de apilamiento: el contenido de la sección nunca queda
+   tapado y no hay que tocar z-index.
+
+   Uso:  <section class="tc-blend" style="--blend-base: <degradado>;
+                                          --blend-from: #fff; --blend-to: #F8FAFC"> */
+.tc-blend {
+  --blend-h: clamp(56px, 8vw, 120px);
+  background-image:
+    linear-gradient(180deg, var(--blend-from, transparent) 0%, transparent var(--blend-h)),
+    linear-gradient(0deg,   var(--blend-to,   transparent) 0%, transparent var(--blend-h)),
+    var(--blend-base, none);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 
 /* ------------------------- Simulador interactivo (Pruébalo) ------------------------- */
 .tc-sim {

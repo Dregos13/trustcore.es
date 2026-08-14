@@ -155,7 +155,7 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "La cartera inicial de TrustCore incluye Barnosi Group, Fariña, Sofertón de Ceuta, Mármoles Román, El Técnico en Huelva y Gestoría Mughili en Ceuta. Son comercios, servicios y asesorías que necesitan facturación, IPSI, control horario o seguimiento operativo.",
-                    "citation": ["https://www.trustcore.es/clientes", "https://barnosigroup.com/", "https://soferton.com/nuestras-tiendas/", "https://www.facebook.com/p/El-t%C3%A9cnico-Huelva-100080124263367/", "https://www.guiaempresas.info/b/gestorias/ceuta/"]
+                    "citation": ["https://barnosigroup.com/", "https://soferton.com/nuestras-tiendas/", "https://www.facebook.com/p/El-t%C3%A9cnico-Huelva-100080124263367/", "https://www.guiaempresas.info/b/gestorias/ceuta/"]
                 }
             },
             {
@@ -203,7 +203,6 @@
         <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
         <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
         <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
-        <a href="/clientes" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Clientes</a>
         <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
         <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
         <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
@@ -228,7 +227,6 @@
       </button>
       <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
       <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
-      <a href="/clientes" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Clientes</a>
       <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
       <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
       <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
@@ -240,7 +238,7 @@
 
   <main id="main-content">
     <!-- ==================== HERO ==================== -->
-    <section class="relative overflow-hidden pt-28 md:pt-32 pb-16 md:pb-24" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 55%, #1a3a8a 100%);">
+    <section class="relative overflow-hidden pt-28 md:pt-32 pb-16 md:pb-24 tc-blend"  style="--blend-base: linear-gradient(135deg, #040F3F 0%, #0B2572 55%, #1a3a8a 100%); --blend-to: #FFFFFF;">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full opacity-20" style="background: radial-gradient(circle, #53CDFE, transparent 60%);"></div>
             <div class="absolute -bottom-20 -left-20 w-96 h-96 rounded-full opacity-15" style="background: radial-gradient(circle, #2071D5, transparent 60%);"></div>
@@ -396,7 +394,7 @@
     </section>
 
     <!-- ==================== MÓDULOS (BENTO) ==================== -->
-    <section id="modulos" class="tc-section tc-bg-orbs bg-slate-50">
+    <section id="modulos" class="tc-section tc-bg-orbs bg-slate-50 tc-blend" style="--blend-from: #FFFFFF">
         <div class="tc-container">
             <div class="tc-section-head" data-reveal>
                 <div>
@@ -463,7 +461,7 @@
 
     <!-- ==================== PRODUCTOS (cards TrustinTime / TrustinFacts) ==================== -->
     <!-- ==================== PRODUCTOS (THEATER) ==================== -->
-    <section id="productos" style="background:radial-gradient(ellipse at top,#040F3F 0%,#020A2A 70%);padding:88px 0 96px;position:relative;overflow:hidden;font-family:'Inter',system-ui,sans-serif;color:#fff;">
+    <section id="productos" class="tc-blend" style="--blend-base: radial-gradient(ellipse at top,#040F3F 0%,#020A2A 70%); --blend-from: #F8FAFC; --blend-to: #F8FAFC; padding:88px 0 96px;position:relative;overflow:hidden;font-family:'Inter',system-ui,sans-serif;color:#fff;">
       <!-- backdrop orbs -->
       <div id="tc-prod-orb-top" style="position:absolute;top:-220px;right:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,#2071D522,transparent 65%);pointer-events:none;transition:background 1s ease;"></div>
       <div id="tc-prod-orb-bot" style="position:absolute;bottom:-180px;left:-140px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,#53CDFE1a,transparent 65%);pointer-events:none;transition:background 1s ease;"></div>
@@ -863,30 +861,7 @@
                     <h3 class="text-xl font-extrabold text-navy">¿Quiénes son clientes de TrustCore?</h3>
                     <p class="tc-tldr mt-3 text-slate-900 font-semibold leading-relaxed"><strong class="text-blue-royal">TL;DR:</strong> Cartera actual: Barnosi Group (audiovisual), Fariña y Sofertón (comercio Ceuta), Mármoles Román (construcción), El Técnico Huelva (servicios técnicos) y Gestoría Mughili (asesoría). Sectores variados con operativa local y cumplimiento normativo activo.</p>
                     <p class="mt-3 text-slate-700 leading-relaxed">Clientes actuales indicados por TrustCore: Barnosi Group, Fariña, Sofertón de Ceuta, Mármoles Román, El Técnico en Huelva y Gestoría Mughili en Ceuta.</p>
-                    <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong> <a href="/clientes" class="font-bold text-blue-royal">página de clientes TrustCore</a>; cartera confirmada por TrustCore; referencias públicas de actividad: <a href="https://barnosigroup.com/" target="_blank" rel="noopener" class="font-bold text-blue-royal">Barnosi Group</a>, <a href="https://soferton.com/nuestras-tiendas/" target="_blank" rel="noopener" class="font-bold text-blue-royal">Sofertón</a>, <a href="https://elfarodeceuta.es/almacenes-farina-sastreria-ropa-hogar-mas-80-anos-historia/" target="_blank" rel="noopener" class="font-bold text-blue-royal">Fariña</a>, <a href="https://www.facebook.com/roman.marmoles/" target="_blank" rel="noopener" class="font-bold text-blue-royal">Mármoles Román</a>, <a href="https://www.facebook.com/p/El-t%C3%A9cnico-Huelva-100080124263367/" target="_blank" rel="noopener" class="font-bold text-blue-royal">El Técnico en Huelva</a> y <a href="https://www.guiaempresas.info/b/gestorias/ceuta/" target="_blank" rel="noopener" class="font-bold text-blue-royal">Gestoría Mughili</a>.</p>
-                </article>
-
-                <article class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                    <h3 class="text-xl font-extrabold text-navy">¿Qué reconocimiento público tiene TrustCore?</h3>
-                    <p class="tc-tldr mt-3 text-slate-900 font-semibold leading-relaxed"><strong class="text-blue-royal">TL;DR:</strong> TrustCore ganó el II Ceuta Tech Summit 2026 con 18 fichas del jurado inversor y obtuvo el pase dorado a Alhambra Venture (Granada, julio 2026). Es la validación técnica y de inversión más reciente de la suite.</p>
-                    <p class="mt-3 text-slate-700 leading-relaxed">TrustCore fue reconocido en el II Ceuta Tech Summit 2026 y obtuvo pase dorado a Alhambra Venture, un hito que refuerza su posicionamiento como tecnología local con ambición nacional.</p>
-                    <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong> <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="font-bold text-blue-royal">publicación oficial de Ceuta Tech Summit</a>.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== APRENDE ==================== -->
-    <section class="tc-section bg-slate-50">
-        <div class="tc-container">
-            <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-10 items-center">
-                <div data-reveal>
-                    <span class="tc-eyebrow">Aprende TrustCore</span>
-                    <h2 class="tc-display tc-display-lg mt-4">Vídeos cortos para activar al equipo más rápido</h2>
-                    <p class="mt-5 text-slate-600 text-lg leading-relaxed">Creamos una zona de aprendizaje para que usuarios y gestorías vean las tareas clave en clips directos: facturas, presupuestos, gastos, inventario, fichajes, turnos e informes.</p>
-                    <div class="mt-7 flex flex-wrap gap-3">
-                        <a href="/aprende" class="tc-btn tc-btn-secondary" data-track="home_learning_hub"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-play-circle"/></svg> Ir a Aprende</a>
-                        <a href="/blog" class="inline-flex items-center gap-2 text-blue-royal font-semibold hover:gap-3 transition-all">Leer guías <svg class="tc-icon text-xs"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg></a>
+                    <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong>                        <a href="/blog" class="inline-flex items-center gap-2 text-blue-royal font-semibold hover:gap-3 transition-all">Leer guías <svg class="tc-icon text-xs"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg></a>
                     </div>
                 </div>
                 <div class="grid sm:grid-cols-2 gap-4" data-reveal>
@@ -908,7 +883,7 @@
     </section>
 
     <!-- ==================== CTA FINAL (Contacto + Calendar) ==================== -->
-    <section id="contacto-home" class="relative overflow-hidden" style="background: linear-gradient(135deg, #040F3F 0%, #0B2572 100%);">
+    <section id="contacto-home" class="relative overflow-hidden tc-blend"  style="--blend-base: linear-gradient(135deg, #040F3F 0%, #0B2572 100%); --blend-from: #F8FAFC;">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute top-20 right-20 w-80 h-80 rounded-full opacity-20" style="background: radial-gradient(circle, #53CDFE, transparent 60%);"></div>
             <div class="absolute bottom-10 left-10 w-64 h-64 rounded-full opacity-15" style="background: radial-gradient(circle, #2071D5, transparent 60%);"></div>
