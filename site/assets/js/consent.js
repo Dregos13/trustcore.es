@@ -134,25 +134,28 @@
     var style = document.createElement('style');
     style.id = 'tc-cookie-styles';
     style.textContent = [
-      '#tc-cookie-consent{position:fixed;inset:auto 16px 16px 16px;z-index:10000;display:flex;justify-content:center;pointer-events:none}',
+      /* Tarjeta discreta anclada abajo a la izquierda: no debe tapar el contenido
+         ni competir con la burbuja de Trusty, que vive abajo a la derecha. */
+      '#tc-cookie-consent{position:fixed;inset:auto auto 16px 16px;z-index:10000;pointer-events:none}',
       '#tc-cookie-consent *{box-sizing:border-box}',
-      '.tc-cookie-card{pointer-events:auto;width:min(100%,920px);background:#fff;border:1px solid rgba(15,23,42,.16);border-radius:12px;box-shadow:0 24px 80px rgba(4,15,63,.28);color:#0f172a;overflow:hidden}',
-      '.tc-cookie-body{padding:18px;display:grid;gap:14px}',
-      '.tc-cookie-title{margin:0;color:#040F3F;font-size:18px;line-height:1.25;font-weight:800}',
-      '.tc-cookie-text{margin:0;color:#475569;font-size:14px;line-height:1.55}',
-      '.tc-cookie-text a{color:#2071D5;font-weight:700;text-decoration:none}',
-      '.tc-cookie-actions{display:flex;flex-wrap:wrap;gap:10px}',
-      '.tc-cookie-btn{appearance:none;border:1px solid rgba(32,113,213,.24);border-radius:8px;padding:10px 14px;font-size:14px;font-weight:800;cursor:pointer;background:#fff;color:#040F3F;min-height:42px}',
+      '.tc-cookie-card{pointer-events:auto;width:min(calc(100vw - 32px),380px);background:#fff;border:1px solid rgba(15,23,42,.14);border-radius:14px;box-shadow:0 18px 48px -12px rgba(4,15,63,.32),0 2px 6px rgba(4,15,63,.06);color:#0f172a;overflow:hidden}',
+      '.tc-cookie-body{padding:16px;display:grid;gap:12px}',
+      '.tc-cookie-title{margin:0;color:#040F3F;font-size:15px;line-height:1.3;font-weight:800}',
+      '.tc-cookie-text{margin:0;color:#475569;font-size:13px;line-height:1.5}',
+      '.tc-cookie-text a{color:#2071D5;font-weight:700;text-decoration:underline;text-underline-offset:2px}',
+      '.tc-cookie-actions{display:flex;flex-wrap:wrap;gap:8px}',
+      '.tc-cookie-btn{appearance:none;border:1px solid rgba(32,113,213,.24);border-radius:8px;padding:9px 12px;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:#040F3F;min-height:40px;flex:1 1 auto}',
       '.tc-cookie-btn:hover{border-color:#2071D5}',
+      '.tc-cookie-btn:focus-visible{outline:2px solid #2071D5;outline-offset:2px}',
       '.tc-cookie-btn-primary{background:#2071D5;border-color:#2071D5;color:#fff}',
       '.tc-cookie-btn-danger{background:#0f172a;border-color:#0f172a;color:#fff}',
-      '.tc-cookie-panel{border-top:1px solid rgba(15,23,42,.12);background:#f8fafc;padding:0 18px 18px;display:none}',
+      '.tc-cookie-panel{border-top:1px solid rgba(15,23,42,.12);background:#f8fafc;padding:0 16px 16px;display:none;max-height:52vh;overflow-y:auto}',
       '.tc-cookie-panel.is-open{display:block}',
-      '.tc-cookie-option{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;margin-top:14px;padding:14px;border:1px solid rgba(15,23,42,.12);border-radius:10px;background:#fff}',
-      '.tc-cookie-option strong{display:block;color:#040F3F;font-size:14px}',
-      '.tc-cookie-option span{display:block;margin-top:4px;color:#64748b;font-size:13px;line-height:1.45}',
-      '.tc-cookie-toggle{width:48px;height:28px;accent-color:#2071D5}',
-      '@media (max-width:640px){#tc-cookie-consent{inset:auto 10px 10px 10px}.tc-cookie-actions{display:grid}.tc-cookie-btn{width:100%}.tc-cookie-option{grid-template-columns:1fr}}'
+      '.tc-cookie-option{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:12px;padding:12px;border:1px solid rgba(15,23,42,.12);border-radius:10px;background:#fff}',
+      '.tc-cookie-option strong{display:block;color:#040F3F;font-size:13px}',
+      '.tc-cookie-option span{display:block;margin-top:3px;color:#64748b;font-size:12px;line-height:1.45}',
+      '.tc-cookie-toggle{width:44px;height:26px;accent-color:#2071D5;flex:none}',
+      '@media (max-width:640px){#tc-cookie-consent{inset:auto 10px 10px 10px}.tc-cookie-card{width:100%}}'
     ].join('');
     document.head.appendChild(style);
   }
@@ -173,13 +176,13 @@
     root.id = 'tc-cookie-consent';
     root.setAttribute('role', 'dialog');
     root.setAttribute('aria-modal', 'false');
-    root.setAttribute('aria-label', 'Configuracion de cookies');
+    root.setAttribute('aria-label', 'Configuración de cookies');
     root.innerHTML =
       '<div class="tc-cookie-card">' +
         '<div class="tc-cookie-body">' +
           '<div>' +
             '<h2 class="tc-cookie-title">Cookies de TrustCore</h2>' +
-            '<p class="tc-cookie-text">Usamos cookies tecnicas necesarias y, solo si aceptas, Google Analytics para medir visitas y mejorar la web. Puedes aceptar, rechazar o configurar por finalidad. <a href="/cookies">Ver politica de cookies</a>.</p>' +
+            '<p class="tc-cookie-text">Usamos cookies técnicas necesarias y, solo si aceptas, Google Analytics para medir visitas. Puedes aceptar, rechazar o configurar por finalidad. <a href="/cookies">Ver política de cookies</a>.</p>' +
           '</div>' +
           '<div class="tc-cookie-actions" aria-label="Opciones de cookies">' +
             '<button type="button" class="tc-cookie-btn tc-cookie-btn-primary" data-cookie-accept>Aceptar</button>' +
@@ -189,11 +192,11 @@
         '</div>' +
         '<div class="tc-cookie-panel' + (openSettings ? ' is-open' : '') + '" data-cookie-panel>' +
           '<label class="tc-cookie-option">' +
-            '<span><strong>Necesarias</strong><span>Seguridad, preferencias legales y funcionamiento basico del sitio. Siempre activas.</span></span>' +
+            '<span><strong>Necesarias</strong><span>Seguridad, preferencias legales y funcionamiento básico del sitio. Siempre activas.</span></span>' +
             '<input class="tc-cookie-toggle" type="checkbox" checked disabled>' +
           '</label>' +
           '<label class="tc-cookie-option">' +
-            '<span><strong>Analiticas</strong><span>Google Analytics 4 para estadisticas agregadas de navegacion y conversiones.</span></span>' +
+            '<span><strong>Analíticas</strong><span>Google Analytics 4 para estadísticas agregadas de navegación y conversiones.</span></span>' +
             '<input class="tc-cookie-toggle" type="checkbox" data-cookie-analytics' + (current.analytics ? ' checked' : '') + '>' +
           '</label>' +
           '<label class="tc-cookie-option">' +

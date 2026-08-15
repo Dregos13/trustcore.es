@@ -626,9 +626,9 @@
     var root = document.createElement('div');
     root.className = 'tc-bot';
     root.innerHTML =
-      '<button type="button" class="tc-bot__fab" aria-expanded="false" aria-controls="tc-bot-panel">' +
+      '<button type="button" class="tc-bot__fab" aria-expanded="false" aria-controls="tc-bot-panel" aria-label="' + t.open + '">' +
         '<svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-robot"/></svg>' +
-        '<span>' + t.open + '</span>' +
+        '<span aria-hidden="true">' + t.open + '</span>' +
       '</button>' +
       '<section id="tc-bot-panel" class="tc-bot__panel" role="dialog" aria-label="' + t.title + '" hidden>' +
         '<header class="tc-bot__head">' +

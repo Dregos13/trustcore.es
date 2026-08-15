@@ -30,8 +30,15 @@ const MENU = [
       ['Facturación VeriFactu', '/productos/trustinfacts'],
       ['Control horario', '/productos/trustintime'],
       ['IPSI Ceuta y Melilla', '/software-verifactu-ipsi-ceuta-melilla'],
+      ['Funcionalidades', '/funcionalidades'],
+      ['Cómo funciona', '/como-funciona'],
   ]},
+  // No hay segmentación por sectores: TrustCore vende a todo tipo de empresa.
+  // Estas dos entradas no son una taxonomía, son los dos perfiles que mejor
+  // encajan hoy — tiendas que emiten factura e instaladores autónomos.
   { label: 'Soluciones', items: [
+      ['Para tiendas', '/facturacion-para-tiendas'],
+      ['Para instaladores', '/facturacion-para-instaladores'],
       ['Para gestorías', '/gestoria'],
       ['Comparativa con un ERP', '/comparativa/verifactu-ipsi-trustcore-vs-erp-generico'],
   ]},
@@ -40,6 +47,7 @@ const MENU = [
   // vídeos y se quiere visible sin desplegar nada.
   { label: 'Aprende', href: '/aprende' },
   { label: 'Recursos', items: [
+      ['Clientes', '/clientes'],
       ['Blog', '/blog'],
       ['Guía de control horario', '/control-horario-obligatorio-guia-2026'],
       ['Guía de IPSI', '/ipsi-ceuta-melilla-guia-practica'],

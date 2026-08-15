@@ -45,23 +45,29 @@
 }
 
 /* ------------------------- Eyebrow / kicker ------------------------- */
+/* Eyebrow como chip, no como guion.
+   Se tiñe con `currentColor`, así que funciona igual sobre fondo claro (texto
+   azul → chip azul pálido) que sobre navy (texto cian → chip cian translúcido)
+   sin tocar el marcado: las páginas que ya fijan `color` en línea siguen
+   valiendo. El `background` plano de la primera línea es el respaldo para
+   navegadores sin color-mix. */
 .tc-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.3125rem 0.6875rem;
+  border-radius: var(--tc-radius-pill);
+  background: var(--tc-blue-soft);
+  background: color-mix(in srgb, currentColor 13%, transparent);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--tc-blue-royal);
+  line-height: 1.2;
+  color: var(--tc-blue-eyebrow);
 }
-.tc-eyebrow::before {
-  content: "";
-  width: 24px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--tc-blue-royal), var(--tc-cyan-light));
-  border-radius: 2px;
-}
+/* El guion de 24px sobraba en cuanto el eyebrow pasó a ser chip: dos marcas
+   decorativas seguidas compiten entre sí y ninguna gana. */
 
 /* ------------------------- Display headlines ------------------------- */
 .tc-display {
@@ -77,22 +83,25 @@
 .tc-display.text-white { color: #fff; }
 .tc-display.text-slate-300 { color: #cbd5e1; }
 .tc-display.text-cyan-light { color: var(--tc-cyan-light); }
-/* Escala de display contenida.
-   Antes: xl llegaba a 76px y lg a 60px. A ese tamaño un titular de 6 palabras
-   parte en 3-4 líneas, y centrado obliga al ojo a volver al principio en cada
-   salto: se lee peor cuanto más grande. Estos topes (56/40/30px) mantienen la
-   jerarquía pero dejan el titular en 1-2 líneas. */
-.tc-display-xl { font-size: clamp(2.25rem, 1.8rem + 2.2vw, 3.5rem); }
-.tc-display-lg { font-size: clamp(1.875rem, 1.55rem + 1.5vw, 2.5rem); }
-.tc-display-md { font-size: clamp(1.5rem, 1.35rem + 0.7vw, 1.875rem); }
+/* Escala de display.
+   Histórico: xl llegó a 76px, luego se capó a 56 porque a ese tamaño un titular
+   centrado de 6 palabras partía en 3-4 líneas y se leía peor.
+   F1 la sube a 72/48/34 sin repetir aquel error: el problema no era el tamaño
+   sino el ancho de línea. Un titular a 72px dentro de una caja de 20ch parte en
+   4; dentro de 22ch y alineado a la izquierda, en 2. Tamaño y ancho se suben
+   juntos o no se suben. */
+.tc-display-xl { font-size: clamp(2.5rem,   1.7rem  + 3.4vw, 4.5rem); }   /* 72px */
+.tc-display-lg { font-size: clamp(2rem,     1.6rem  + 2vw,   3rem); }     /* 48px */
+.tc-display-md { font-size: clamp(1.625rem, 1.4rem  + 1vw,   2.125rem); } /* 34px */
 
-/* Un titular no debe pasar de ~20 caracteres por línea: por encima deja de
+/* Un titular no debe pasar de ~22 caracteres por línea: por encima deja de
    leerse como una unidad. `balance` reparte las líneas en vez de dejar una
    palabra suelta colgando. */
 .tc-display {
   max-width: 20ch;
   text-wrap: balance;
 }
+.tc-display-xl { max-width: 22ch; }
 .tc-display-md { max-width: 26ch; }
 /* Centrado: el max-width necesita márgenes automáticos para seguir centrado. */
 .text-center > .tc-display,
@@ -511,9 +520,11 @@ footer img[src*="logo-impulsa"] {
 @keyframes tc-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
 @media (prefers-reduced-motion: reduce) { .tc-hero-chip__dot { animation: none; } }
 
-.tc-hero-chip--a { top: 8%;  left: -6%; }
-.tc-hero-chip--b { top: 45%; right: -4%; }
-.tc-hero-chip--c { bottom: 9%; left: 2%; }
+/* Las tres tarjetas muerden el borde de la captura; ninguna se posa encima de
+   los datos, porque tapar las cifras del propio producto es tapar la demo. */
+.tc-hero-chip--a { top: 6%;   left: -9%; }
+.tc-hero-chip--b { top: 42%;  right: -6%; }
+.tc-hero-chip--c { bottom: 7%; left: -7%; }
 
 /* Se apilan debajo hasta que el hero pasa a una columna (lg = 1024px):
    flotando taparían la captura y a 768px se salían del viewport. */
@@ -1191,22 +1202,51 @@ nav[aria-label] > a.tc-nav-link,
 
 /* ------------------------- TrusTy: widget de dudas ------------------------- */
 .tc-bot { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 900; font-family: var(--tc-font-sans); }
+/* FAB circular de 56px. La etiqueta existe en el DOM pero solo se despliega al
+   pasar el ratón o al recibir foco: en reposo no debe tapar contenido. */
 .tc-bot__fab {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.125rem;
+  justify-content: center;
+  gap: 0;
+  width: 56px;
+  height: 56px;
+  padding: 0;
   border: 0;
   border-radius: var(--tc-radius-pill);
   background: linear-gradient(135deg, var(--tc-blue-royal), var(--tc-blue-corp));
   color: #fff;
   font-weight: 700;
   font-size: 0.875rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
   cursor: pointer;
   box-shadow: 0 12px 28px -8px rgba(4, 15, 63, 0.45);
-  transition: transform var(--tc-duration-base) var(--tc-ease-spring), box-shadow var(--tc-duration-base) var(--tc-ease-out);
+  transition:
+    width var(--tc-duration-base) var(--tc-ease-out),
+    gap var(--tc-duration-base) var(--tc-ease-out),
+    padding var(--tc-duration-base) var(--tc-ease-out),
+    box-shadow var(--tc-duration-base) var(--tc-ease-out);
 }
-.tc-bot__fab:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -10px rgba(4, 15, 63, 0.55); }
+.tc-bot__fab .tc-icon { flex: none; font-size: 1.25rem; }
+.tc-bot__fab span {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width var(--tc-duration-base) var(--tc-ease-out), opacity var(--tc-duration-fast) var(--tc-ease-out);
+}
+@media (hover: hover) and (min-width: 768px) {
+  .tc-bot__fab:hover,
+  .tc-bot__fab:focus-visible {
+    width: auto;
+    gap: 0.5rem;
+    padding: 0 1.125rem;
+    box-shadow: 0 18px 36px -10px rgba(4, 15, 63, 0.55);
+  }
+  .tc-bot__fab:hover span,
+  .tc-bot__fab:focus-visible span { max-width: 14rem; opacity: 1; }
+}
 .tc-bot__fab:focus-visible { outline: none; box-shadow: var(--tc-shadow-glow); }
 .tc-bot.is-open .tc-bot__fab { display: none; }
 .tc-bot__panel {
@@ -1292,7 +1332,6 @@ nav[aria-label] > a.tc-nav-link,
 @media (max-width: 480px) {
   .tc-bot { right: 0.75rem; bottom: 0.75rem; }
   .tc-bot__fab span { display: none; }           /* solo icono en móvil */
-  .tc-bot__fab { padding: 0.875rem; }
   .tc-bot__panel { right: 0.5rem; bottom: 0.5rem; }
 }
 @media print { .tc-bot { display: none; } }
@@ -2399,3 +2438,349 @@ nav[aria-label] > a.tc-nav-link,
 #tc-prod-chip {
   transition: opacity .3s ease;
 }
+
+/* =========================================================================
+ * F1 · Sistema de composición
+ * Traducción al navy de TrustCore de los mecanismos de proqio.com.
+ * Ver docs/proqio-benchmark-plan.md §2.
+ * ========================================================================= */
+
+/* ---------- Panel: la unidad base. Nada flota sobre el fondo desnudo ------ */
+.tc-panel {
+  background: var(--tc-panel);
+  border: 1px solid var(--tc-panel-border);
+  border-radius: var(--tc-radius-lg);
+  box-shadow: var(--tc-shadow-sm);
+  padding: clamp(1.25rem, 2.2vw, 1.75rem);
+}
+.tc-panel--flush { padding: 0; overflow: hidden; }
+.tc-panel--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--tc-duration-base) var(--tc-ease-out),
+              box-shadow var(--tc-duration-base) var(--tc-ease-out),
+              transform var(--tc-duration-base) var(--tc-ease-out);
+}
+.tc-panel--link:hover {
+  border-color: var(--tc-panel-hover);
+  box-shadow: var(--tc-shadow-md);
+  transform: translateY(-2px);
+}
+.tc-panel--link:focus-visible { outline: 2px solid var(--tc-blue-royal); outline-offset: 3px; }
+
+/* ---------- Spotlight: rompe el ritmo una o dos veces por página ---------- */
+.tc-spotlight {
+  background: var(--tc-spotlight);
+  border: 1px solid var(--tc-panel-border);
+  border-radius: var(--tc-radius-panel);
+  padding: clamp(1.75rem, 4vw, 3rem);
+}
+@media (max-width: 640px) {
+  .tc-spotlight { border-radius: var(--tc-radius-xl); }
+}
+
+/* ---------- Captura de producto ------------------------------------------
+   El defecto que corrige: capturas de 600px recortadas a media tabla, que
+   parecen accidentes en vez de demos. Aquí la imagen manda el alto y el marco
+   la enmarca; nunca al revés. */
+.tc-shot {
+  display: block;
+  border-radius: var(--tc-radius-lg);
+  border: 1px solid var(--tc-panel-border);
+  background: var(--tc-panel);
+  box-shadow: var(--tc-shadow-lg);
+  overflow: hidden;
+}
+.tc-shot img,
+.tc-shot video { display: block; width: 100%; height: auto; }
+/* A sangre por un lado: la captura se sale del contenedor hacia el borde de la
+   ventana, como en las filas alternas de Proqio. */
+@media (min-width: 1024px) {
+  .tc-shot--bleed-right { margin-right: calc(50% - 50vw); border-radius: var(--tc-radius-lg) 0 0 var(--tc-radius-lg); border-right: 0; }
+  .tc-shot--bleed-left  { margin-left:  calc(50% - 50vw); border-radius: 0 var(--tc-radius-lg) var(--tc-radius-lg) 0; border-left: 0; }
+}
+
+/* ---------- Raíl horizontal ----------------------------------------------
+   Enseña 6-9 elementos sin alargar la página. Con teclado se recorre con Tab,
+   y el scroll-snap deja cada tarjeta alineada al borde del contenedor. */
+.tc-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(clamp(15rem, 70vw, 19rem), 1fr);
+  gap: var(--tc-space-4);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--tc-container-pad);
+  padding-block-end: var(--tc-space-3);
+  /* El raíl se sale hasta el borde de la ventana para que la última tarjeta se
+     vea cortada: es la señal de que hay más a la derecha. */
+  margin-inline: calc(var(--tc-container-pad) * -1);
+  padding-inline: var(--tc-container-pad);
+  scrollbar-width: thin;
+}
+.tc-rail > * { scroll-snap-align: start; }
+.tc-rail::-webkit-scrollbar { height: 6px; }
+.tc-rail::-webkit-scrollbar-thumb { background: var(--tc-line); border-radius: 999px; }
+.tc-rail::-webkit-scrollbar-track { background: transparent; }
+/* `grid-auto-flow: row` es imprescindible aquí: con `column` heredado, el
+   cuarto elemento crea una columna implícita en vez de bajar a la segunda
+   fila, y una rejilla de "3 en fila" con 6 tarjetas sale como 6 columnas
+   estrechas. */
+@media (min-width: 1024px) {
+  .tc-rail--fit-4,
+  .tc-rail--fit-3 {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    overflow-x: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  .tc-rail--fit-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .tc-rail--fit-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ---------- Subrayado del sustantivo clave -------------------------------
+   El trazo va bajo la línea base con `box-shadow` interior en vez de
+   `text-decoration`, para que no se corte con las descendentes. */
+.tc-underline {
+  position: relative;
+  white-space: nowrap;
+}
+.tc-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.08em;
+  height: 0.09em;
+  min-height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--tc-blue-royal), var(--tc-cyan-light));
+}
+.tc-underline--on-dark::after { background: var(--tc-cyan-light); }
+
+/* ---------- Franja de logos ----------------------------------------------
+   Los logos de aceleradoras y avales institucionales NO se redimensionan ni se
+   recortan: la franja se adapta a ellos, nunca al revés. Solo `align-items` y
+   `gap`; ninguna regla de ancho o alto sobre las imágenes. */
+.tc-logostrip {
+  background: var(--tc-band);
+  border-block: 1px solid var(--tc-panel-border);
+  padding-block: var(--tc-space-6);
+}
+.tc-logostrip__label {
+  display: block;
+  text-align: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tc-slate);
+  margin-bottom: var(--tc-space-6);
+}
+.tc-logostrip__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+/* ---------- Avales dentro del hero ---------------------------------------
+   Los logos de aceleradoras y organismos NO se redimensionan, no se recortan y
+   no se recolorean: el `max-width` de 480px es el mismo que ya usaba el pie.
+   Ninguna regla toca `filter`, `height` ni `object-fit`. */
+.tc-avales {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.75rem, 3vw, 2.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+.tc-avales__label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+}
+.tc-avales__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+.tc-avales__row img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Tira de tipos de dato -----------------------------------------
+   Antes de abrir las pestañas, decir qué entra en la cuenta. Es la traducción
+   del bloque "All your infrastructure data" de Proqio: no vende funciones,
+   dimensiona la plataforma. */
+.tc-datachips {
+  list-style: none;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+.tc-datachips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--tc-panel-border);
+  border-radius: var(--tc-radius-pill);
+  background: var(--tc-panel);
+  color: var(--tc-ink-mute);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.tc-datachips .tc-icon { color: var(--tc-blue-royal); flex: none; }
+
+/* Variante spotlight del bloque de vídeo: hereda todo de .tc-demo y solo cambia
+   superficie y radio, para que el sistema siga siendo uno y no dos. */
+.tc-demo--spotlight {
+  background-color: var(--tc-spotlight);
+  border-color: var(--tc-panel-border);
+  border-radius: var(--tc-radius-panel);
+  box-shadow: none;
+}
+@media (max-width: 640px) {
+  .tc-demo--spotlight { border-radius: var(--tc-radius-xl); }
+}
+
+/* ---------- Ruta destacada -----------------------------------------------
+   Tres cajas idénticas no son una tabla de precios, son un folleto: nada dirige
+   la mirada. La suite lleva el peso porque es la que incluye todo. El resalte
+   es de superficie y borde, no de tamaño: una tarjeta más alta rompería la
+   rejilla en cuanto el texto crezca. */
+.tc-route--featured {
+  position: relative;
+  background-color: var(--tc-spotlight);
+  border-color: var(--tc-blue-royal);
+  box-shadow: var(--tc-shadow-md);
+}
+.tc-route__flag {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--tc-radius-pill);
+  background: var(--tc-blue-corp);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.tc-route--featured .tc-route__name { color: var(--tc-blue-eyebrow); }
+
+/* ---------- Ficha de cliente ---------------------------------------------
+   Sin logotipo a propósito: no tenemos los ficheros y recortar la marca de un
+   tercero de su web sería usarla sin permiso. El nombre y el enlace a su propia
+   página es lo que de verdad le da visibilidad al cliente. */
+.tc-client { display: flex; flex-direction: column; gap: 0.375rem; }
+.tc-client__name {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--tc-navy);
+}
+.tc-client__meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--tc-slate);
+}
+.tc-client__link {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--tc-blue-eyebrow);
+  text-decoration: none;
+}
+.tc-client__link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.tc-client__link:focus-visible { outline: 2px solid var(--tc-blue-royal); outline-offset: 3px; border-radius: var(--tc-radius-sm); }
+.tc-client__link .tc-icon { font-size: 0.75rem; }
+
+/* Nombres de cliente en la franja de la home. Tipografía, no imagen: sin
+   logotipos de terceros no hay riesgo de marca y la franja sigue leyéndose
+   como prueba social. */
+.tc-clientname {
+  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--tc-ink-mute);
+  white-space: nowrap;
+}
+.tc-logostrip__foot {
+  margin: var(--tc-space-6) 0 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+.tc-logostrip__foot a {
+  color: var(--tc-blue-eyebrow);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tc-logostrip__foot a:focus-visible { outline: 2px solid var(--tc-blue-royal); outline-offset: 3px; border-radius: var(--tc-radius-sm); }
+
+/* ---------- Pasos numerados (/como-funciona) -----------------------------
+   Los números 01-04 no son decoración: el alta es una secuencia real y el
+   orden es información que el lector necesita. Si algún día estos bloques
+   dejan de depender uno del otro, hay que quitarles la numeración. */
+.tc-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--tc-space-4);
+}
+@media (min-width: 900px) {
+  .tc-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--tc-space-6); }
+}
+.tc-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  background: var(--tc-panel);
+  border: 1px solid var(--tc-panel-border);
+  border-radius: var(--tc-radius-lg);
+  box-shadow: var(--tc-shadow-sm);
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+}
+.tc-step__n {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--tc-blue-eyebrow);
+  background: var(--tc-spotlight);
+  border-radius: var(--tc-radius-md);
+  padding: 0.375rem 0.625rem;
+  line-height: 1.2;
+}
+.tc-step__title {
+  margin: 0 0 0.375rem;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--tc-navy);
+}
+.tc-step__desc { margin: 0; color: var(--tc-ink-mute); line-height: 1.6; font-size: 0.9375rem; }
+.tc-step__note { margin: 0.625rem 0 0; font-size: 0.8125rem; color: var(--tc-slate); }

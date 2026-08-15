@@ -10,6 +10,11 @@
   --tc-navy-deep:     #020A2A;
   --tc-blue-corp:     #0B2572;
   --tc-blue-royal:    #2071D5;
+  /* Azul de eyebrow. #2071D5 sobre #F8FAFC daba 4,58:1 — pasaba AA por los
+     pelos. Al convertir el eyebrow en chip, el propio tinte del chip lo bajaba
+     a 3,87 y dejaba de pasar. Este tono mantiene la lectura de "azul de acento"
+     y sube a 4,75:1 en la peor superficie (chip sobre azul claro). */
+  --tc-blue-eyebrow:  #1A5CB0;
   --tc-blue-soft:     #E8F0FE;
   --tc-cyan-light:    #53CDFE;
   --tc-cyan-glow:     #B3E8FF;
@@ -34,6 +39,15 @@
   --tc-line-soft:     #F1F5F9;
   --tc-surface:       #FFFFFF;
   --tc-surface-alt:   #F8FAFC;
+
+  /* ---- Superficies de composición (F1 · sistema de paneles) ----
+     La página nunca deja contenido flotando sobre el fondo desnudo: todo bloque
+     vive dentro de un panel, y el spotlight rompe el ritmo una o dos veces. */
+  --tc-panel:         #FFFFFF;
+  --tc-panel-border:  #E2E8F0;
+  --tc-panel-hover:   #CBD8EA;
+  --tc-spotlight:     #E8F0FE;
+  --tc-band:          #EEF3FA;
 
   /* ---- Typography ---- */
   --tc-font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -68,6 +82,7 @@
   --tc-radius-lg:  1rem;
   --tc-radius-xl:  1.25rem;
   --tc-radius-2xl: 1.75rem;
+  --tc-radius-panel: 2.5rem;   /* 40px — solo para .tc-spotlight */
   --tc-radius-pill: 9999px;
 
   /* ---- Shadows (soft, premium-feel) ---- */
@@ -90,7 +105,10 @@
   --tc-container-max: 1280px;
   --tc-container-pad: clamp(1rem, 3vw, 2rem);
   --tc-header-height: 80px;
-  --tc-section-pad-y: clamp(3rem, 6vw, 6rem);
+  /* Ritmo vertical. Antes: 96px por lado, que sumaba ~220-250px de hueco entre
+     secciones consecutivas y hacía que la página pareciera inacabada. 68px por
+     lado deja ~140px de respiro, que es lo que usa una landing densa. */
+  --tc-section-pad-y: clamp(2.75rem, 4.2vw, 4.25rem);
 }
 
 /* Respect user motion preferences */
