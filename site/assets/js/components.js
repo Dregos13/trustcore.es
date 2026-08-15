@@ -208,8 +208,18 @@
       // En escritorio con ratón, abrir al pasar por encima es lo esperado;
       // el click sigue funcionando para teclado y táctil.
       if (window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
-        menu.addEventListener('mouseenter', open);
-        menu.addEventListener('mouseleave', function () { close(menu); });
+        var closeTimer = null;
+        menu.addEventListener('mouseenter', function () {
+          clearTimeout(closeTimer);
+          open();
+        });
+        // Margen de 220ms antes de cerrar: sin él, rozar el borde un instante
+        // al mover el ratón en diagonal hacia un enlace cierra el menú y hay
+        // que empezar de nuevo.
+        menu.addEventListener('mouseleave', function () {
+          clearTimeout(closeTimer);
+          closeTimer = setTimeout(function () { close(menu); }, 220);
+        });
       }
     });
 

@@ -410,6 +410,8 @@
   padding-block: clamp(1.5rem, 3vw, 2.25rem);
   border-bottom: 1px solid var(--tc-line-soft);
 }
+/* Sin logos: los institucionales viven solo en el pie. Aquí queda una línea
+   con el reconocimiento, que es lo que pedía el brief. */
 .tc-trust-strip__label {
   text-align: center;
   font-size: 0.6875rem;
@@ -417,7 +419,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--tc-slate-soft);
-  margin: 0 0 1rem;
+  margin: 0 0 0.625rem;
 }
 .tc-trust-strip__row {
   display: flex;
@@ -552,18 +554,35 @@ footer img[src*="logo-impulsa"] {
 }
 .tc-navmenu__panel {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  /* top:100% y no `calc(100% + gap)`: cualquier hueco entre el botón y el
+     panel es zona muerta — al bajar el ratón se dispara mouseleave y el menú
+     se cierra antes de llegar a los enlaces. El aire se hace con un borde
+     superior transparente, que sí forma parte del elemento y mantiene el
+     puntero dentro. */
+  top: 100%;
   left: 0;
   z-index: 60;
-  min-width: 15rem;
+  min-width: 16rem;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0.375rem;
+  border-top: 0.5rem solid transparent;
   background-color: var(--tc-surface);
-  border: 1px solid var(--tc-line);
+  background-clip: padding-box;
+  border-left: 1px solid var(--tc-line);
+  border-right: 1px solid var(--tc-line);
+  border-bottom: 1px solid var(--tc-line);
   border-radius: var(--tc-radius-lg);
   box-shadow: var(--tc-shadow-lg);
   animation: tc-sim-pop 160ms var(--tc-ease-out);
+}
+/* Puente invisible que cubre el alto del botón: permite mover el ratón en
+   diagonal hacia el panel sin salirse del contenedor. */
+.tc-navmenu__panel::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem -0.5rem auto;
+  height: 1rem;
 }
 .tc-navmenu__item {
   padding: 0.5rem 0.75rem;
