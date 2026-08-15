@@ -528,11 +528,16 @@ footer img[src*="logo-impulsa"] {
    Recursos) despliegan un panel. El chevron se dibuja aquí porque el sprite no
    trae uno y no compensa ampliarlo por una flecha de 8px. */
 .tc-navmenu { position: relative; }
+/* El mismo padding en los enlaces planos (Precios, Aprende) que en los
+   botones con submenú: sin él quedaban pegados entre sí. */
+nav[aria-label] > a.tc-nav-link,
 .tc-navmenu__trigger {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   padding: 0.5rem 0.75rem;
+}
+.tc-navmenu__trigger {
   background: none;
   border: 0;
   cursor: pointer;

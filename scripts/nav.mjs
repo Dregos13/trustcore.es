@@ -30,13 +30,15 @@ const MENU = [
       ['Facturación VeriFactu', '/productos/trustinfacts'],
       ['Control horario', '/productos/trustintime'],
       ['IPSI Ceuta y Melilla', '/software-verifactu-ipsi-ceuta-melilla'],
-      ['Aprende a usarlo', '/aprende'],
   ]},
   { label: 'Soluciones', items: [
       ['Para gestorías', '/gestoria'],
       ['Comparativa con un ERP', '/comparativa/verifactu-ipsi-trustcore-vs-erp-generico'],
   ]},
   { label: 'Precios', href: '/precios' },
+  // Aprende va a primer nivel, no dentro de "Producto": es el centro de
+  // vídeos y se quiere visible sin desplegar nada.
+  { label: 'Aprende', href: '/aprende' },
   { label: 'Recursos', items: [
       ['Blog', '/blog'],
       ['Guía de control horario', '/control-horario-obligatorio-guia-2026'],
