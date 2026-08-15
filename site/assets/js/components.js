@@ -115,6 +115,75 @@
     });
   });
 
+  // ---------- Navegación con submenú (accesible) ----------
+  (function () {
+    var menus = [].slice.call(document.querySelectorAll('.tc-navmenu'));
+    if (!menus.length) return;
+
+    function close(menu) {
+      var t = menu.querySelector('.tc-navmenu__trigger');
+      var p = menu.querySelector('.tc-navmenu__panel');
+      if (!t || !p) return;
+      t.setAttribute('aria-expanded', 'false');
+      p.hidden = true;
+    }
+    function closeAll(except) {
+      menus.forEach(function (m) { if (m !== except) close(m); });
+    }
+
+    menus.forEach(function (menu) {
+      var trigger = menu.querySelector('.tc-navmenu__trigger');
+      var panel = menu.querySelector('.tc-navmenu__panel');
+      if (!trigger || !panel) return;
+      var items = [].slice.call(panel.querySelectorAll('[role="menuitem"]'));
+
+      function open() {
+        closeAll(menu);
+        trigger.setAttribute('aria-expanded', 'true');
+        panel.hidden = false;
+      }
+
+      trigger.addEventListener('click', function () {
+        var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        // Con ratón, mouseenter ya lo ha abierto antes de que llegue el click:
+        // un toggle normal lo cerraría en el mismo gesto. Si el puntero está
+        // encima, el click solo confirma la apertura.
+        if (isOpen && menu.matches(':hover')) return;
+        if (isOpen) close(menu); else open();
+      });
+
+      // Flecha abajo abre y enfoca el primer elemento: es lo que espera un
+      // lector de pantalla en un menú.
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault(); open(); if (items[0]) items[0].focus();
+        }
+      });
+
+      panel.addEventListener('keydown', function (e) {
+        var i = items.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown') { e.preventDefault(); (items[i + 1] || items[0]).focus(); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); (items[i - 1] || items[items.length - 1]).focus(); }
+        else if (e.key === 'Escape') { close(menu); trigger.focus(); }
+        else if (e.key === 'Tab' && i === items.length - 1 && !e.shiftKey) close(menu);
+      });
+
+      // En escritorio con ratón, abrir al pasar por encima es lo esperado;
+      // el click sigue funcionando para teclado y táctil.
+      if (window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
+        menu.addEventListener('mouseenter', open);
+        menu.addEventListener('mouseleave', function () { close(menu); });
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.tc-navmenu')) closeAll(null);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAll(null);
+    });
+  })();
+
   // ---------- Mobile menu toggle (idempotent, safe if button absent) ----------
   var mb = document.getElementById('mobile-menu-btn');
   var mm = document.getElementById('mobile-menu');

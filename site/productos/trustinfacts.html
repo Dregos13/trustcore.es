@@ -119,39 +119,72 @@
           <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-10 w-auto">
           <span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span>
         </a>
-        <nav class="hidden md:flex items-center gap-6" aria-label="Navegación principal">
-        <a href="/#productos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Productos</a>
-        <a href="/gestoria" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Gestorías</a>
-        <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
-        <a href="/quienes-somos" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Nosotros</a>
-        <a href="/blog" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Blog</a>
-        <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
-        <a href="/contacto" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Contacto</a>
+<!--NAV-->
+        <nav class="hidden md:flex items-center gap-1" aria-label="Navegación principal">
+          <div class="tc-navmenu">
+            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-producto" aria-haspopup="true">
+              Producto
+            </button>
+            <div class="tc-navmenu__panel" id="nav-producto" role="menu" hidden>
+              <a href="/productos/trustinfacts" role="menuitem" class="tc-navmenu__item">Facturación VeriFactu</a>
+              <a href="/productos/trustintime" role="menuitem" class="tc-navmenu__item">Control horario</a>
+              <a href="/software-verifactu-ipsi-ceuta-melilla" role="menuitem" class="tc-navmenu__item">IPSI Ceuta y Melilla</a>
+              <a href="/aprende" role="menuitem" class="tc-navmenu__item">Aprende a usarlo</a>
+            </div>
+          </div>
+          <div class="tc-navmenu">
+            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-soluciones" aria-haspopup="true">
+              Soluciones
+            </button>
+            <div class="tc-navmenu__panel" id="nav-soluciones" role="menu" hidden>
+              <a href="/gestoria" role="menuitem" class="tc-navmenu__item">Para gestorías</a>
+              <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" role="menuitem" class="tc-navmenu__item">Comparativa con un ERP</a>
+            </div>
+          </div>
+          <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
+          <div class="tc-navmenu">
+            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-recursos" aria-haspopup="true">
+              Recursos
+            </button>
+            <div class="tc-navmenu__panel" id="nav-recursos" role="menu" hidden>
+              <a href="/blog" role="menuitem" class="tc-navmenu__item">Blog</a>
+              <a href="/control-horario-obligatorio-guia-2026" role="menuitem" class="tc-navmenu__item">Guía de control horario</a>
+              <a href="/ipsi-ceuta-melilla-guia-practica" role="menuitem" class="tc-navmenu__item">Guía de IPSI</a>
+              <a href="/quienes-somos" role="menuitem" class="tc-navmenu__item">Sobre nosotros</a>
+              <a href="/contacto" role="menuitem" class="tc-navmenu__item">Contacto</a>
+            </div>
+          </div>
         </nav>
+<!--/NAV-->
         <div class="flex items-center gap-2">
           <button type="button" data-calendar-open data-track="header_demo"
                   class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#040F3F] text-white text-sm font-bold shadow-sm hover:bg-[#0B2572] transition-colors">
-            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Demo 15 min
-          </button>
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Ver demo</button>
           <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
             <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
           </button>
         </div>
       </div>
     </div>
+<!--MNAV-->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
-      <button type="button" data-calendar-open data-track="header_demo_mobile"
-              class="w-full inline-flex items-center justify-center gap-2 py-3 mt-1 mb-3 rounded-full bg-[#040F3F] text-white text-sm font-bold">
-        <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo 15 min
-      </button>
-      <a href="/#productos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Productos</a>
-      <a href="/gestoria" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Gestorías</a>
-      <a href="/precios" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Precios</a>
-      <a href="/quienes-somos" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Nosotros</a>
-      <a href="/blog" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Blog</a>
-      <a href="/aprende" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Aprende</a>
-      <a href="/contacto" class="block py-2.5 text-sm font-medium text-gray-700 hover:text-[#040F3F]">Contacto</a>
+      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-400">Producto</p>
+        <a href="/productos/trustinfacts" class="block py-2 pl-3 text-sm text-gray-600">Facturación VeriFactu</a>
+        <a href="/productos/trustintime" class="block py-2 pl-3 text-sm text-gray-600">Control horario</a>
+        <a href="/software-verifactu-ipsi-ceuta-melilla" class="block py-2 pl-3 text-sm text-gray-600">IPSI Ceuta y Melilla</a>
+        <a href="/aprende" class="block py-2 pl-3 text-sm text-gray-600">Aprende a usarlo</a>
+      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-400">Soluciones</p>
+        <a href="/gestoria" class="block py-2 pl-3 text-sm text-gray-600">Para gestorías</a>
+        <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="block py-2 pl-3 text-sm text-gray-600">Comparativa con un ERP</a>
+      <a href="/precios" class="block py-2.5 text-sm font-semibold text-gray-800">Precios</a>
+      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-400">Recursos</p>
+        <a href="/blog" class="block py-2 pl-3 text-sm text-gray-600">Blog</a>
+        <a href="/control-horario-obligatorio-guia-2026" class="block py-2 pl-3 text-sm text-gray-600">Guía de control horario</a>
+        <a href="/ipsi-ceuta-melilla-guia-practica" class="block py-2 pl-3 text-sm text-gray-600">Guía de IPSI</a>
+        <a href="/quienes-somos" class="block py-2 pl-3 text-sm text-gray-600">Sobre nosotros</a>
+        <a href="/contacto" class="block py-2 pl-3 text-sm text-gray-600">Contacto</a>
     </div>
+<!--/MNAV-->
   </header>
 
 

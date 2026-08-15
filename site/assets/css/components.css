@@ -106,6 +106,64 @@
           color: transparent;
 }
 
+/* ------------------------- Navegación con submenú -------------------------
+   Cuatro entradas en vez de ocho. Las que agrupan (Producto, Soluciones,
+   Recursos) despliegan un panel. El chevron se dibuja aquí porque el sprite no
+   trae uno y no compensa ampliarlo por una flecha de 8px. */
+.tc-navmenu { position: relative; }
+.tc-navmenu__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.tc-navmenu__trigger::after {
+  content: "";
+  width: 0.42em;
+  height: 0.42em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-0.1em, -0.1em);
+  transition: transform var(--tc-duration-fast) var(--tc-ease-out);
+  opacity: 0.6;
+}
+.tc-navmenu__trigger[aria-expanded="true"]::after {
+  transform: rotate(-135deg) translate(-0.1em, -0.1em);
+  opacity: 1;
+}
+.tc-navmenu__panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  z-index: 60;
+  min-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius-lg);
+  box-shadow: var(--tc-shadow-lg);
+  animation: tc-sim-pop 160ms var(--tc-ease-out);
+}
+.tc-navmenu__item {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--tc-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--tc-ink-mute);
+  white-space: nowrap;
+}
+.tc-navmenu__item:hover,
+.tc-navmenu__item:focus-visible {
+  background-color: var(--tc-blue-soft);
+  color: var(--tc-blue-corp);
+}
+
 /* ------------------------- Section head (editorial) -------------------------
    Sustituye al bloque centrado "eyebrow → titular enorme → subtítulo" que se
    repetía en todas las secciones. Aquí el titular ocupa la columna izquierda y
