@@ -11,7 +11,7 @@
  *   Soluciones ▾ Gestorías · Ceuta y Melilla · Comparativa
  *   Precios
  *   Recursos ▾   Blog · Guías · Sobre nosotros · Contacto
- *   [Ver demo]
+ *   [Agendar demo]
  *
  * No se incluye "Entrar": el sitio no enlaza ninguna aplicación. Cuando exista
  * la URL de login, añadirla aquí y volver a ejecutar.

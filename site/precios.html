@@ -261,7 +261,7 @@
         <div class="flex items-center gap-2">
           <button type="button" data-calendar-open data-track="header_demo"
                   class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#040F3F] text-white text-sm font-bold shadow-sm hover:bg-[#0B2572] transition-colors">
-            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Ver demo</button>
+            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo</button>
           <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
             <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
           </button>
@@ -437,7 +437,7 @@
                 <svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-paper-plane"/></svg> Solicitar Est&aacute;ndar anual
               </a>
               <button type="button" data-calendar-open data-track="pricing_time_std_demo" class="tc-btn w-full" style="border:1px solid rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.06);font-size:.875rem">
-                <svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-calendar"/></svg> Ver demo antes
+                <svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-calendar"/></svg> Agendar demo
               </button>
             </div>
           </div>
@@ -532,6 +532,27 @@
           </a>
         </div>
 
+        <!-- El calendario de la AEAT estaba fuerte en la home y desaparecía
+             aquí, que es donde se decide. Fechas literales de la nota
+             informativa, con enlace a la fuente. -->
+        <div class="tc-deadline" data-reveal>
+          <div class="tc-deadline__icon"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg></div>
+          <div>
+            <p class="tc-deadline__title">El calendario ya tiene fecha</p>
+            <p class="tc-deadline__text">
+              Las entidades sujetas al Impuesto sobre Sociedades deben tener adaptados sus sistemas de
+              facturaci&oacute;n <strong>antes del 1 de enero de 2027</strong>. El resto de obligados,
+              aut&oacute;nomos incluidos, <strong>antes del 1 de julio de 2027</strong>.
+              Llegar antes deja margen para probar presupuestos, rectificativas y exportaciones sin prisa.
+            </p>
+            <a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html"
+               target="_blank" rel="noopener" class="tc-deadline__src" data-track="precios_aeat">
+              Nota informativa de la AEAT
+              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-external-link-alt"/></svg>
+            </a>
+          </div>
+        </div>
+
         <!-- Cards -->
         <div class="grid md:grid-cols-3 gap-6 max-w-5xl" data-reveal>
 
@@ -612,7 +633,7 @@
               <button type="button" data-calendar-open data-track="pricing_facts_pro_demo"
                       class="tc-btn w-full"
                       style="border:1px solid rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.06);font-size:.875rem">
-                <svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-calendar"/></svg> Ver demo antes
+                <svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-calendar"/></svg> Agendar demo
               </button>
             </div>
           </div>
@@ -736,7 +757,7 @@
             </div>
             <div class="flex flex-col sm:flex-row gap-3 mt-8">
               <button type="button" data-calendar-open data-track="pricing_suite_demo" class="tc-btn bg-white !font-bold hover:bg-slate-50" style="color:var(--tc-navy)">
-                <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo gratuita
+                <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo
               </button>
               <a href="/contacto" class="tc-btn border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.3)" data-track="pricing_suite_contact">
                 Pedir propuesta personalizada
@@ -830,7 +851,7 @@
         <p class="text-slate-300 text-lg mb-8 max-w-xl mx-auto">En 30 minutos te explicamos qu&eacute; cubre cada plan para tu caso concreto. Sin compromiso.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <button type="button" data-calendar-open data-track="pricing_final_demo" class="tc-btn tc-btn-primary !px-8 !py-4 !text-base shadow-[0_14px_30px_-10px_rgba(83,205,254,.5)]">
-            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo gratuita
+            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo
           </button>
           <a href="/contacto" class="tc-btn !px-8 !py-4 !text-base border text-white hover:bg-white/10" style="border-color:rgba(255,255,255,.25)" data-track="pricing_final_contact">
             Escr&iacute;benos directamente

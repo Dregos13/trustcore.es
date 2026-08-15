@@ -2819,3 +2819,54 @@ nav[aria-label] > a.tc-nav-link,
   border-color: var(--tc-line);
 }
 .billing-toggle-track--on-light .billing-toggle-thumb { box-shadow: 0 1px 4px rgba(4, 15, 63, 0.25); }
+
+/* ---------- Franja de plazo normativo -------------------------------------
+   Un aviso, no una alarma: ámbar sobrio y fechas literales con su fuente. Sin
+   cuenta atrás ni "últimos días" — la fecha la pone el BOE, no el marketing. */
+.tc-deadline {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  max-width: 64rem;
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+  padding: clamp(1rem, 2.2vw, 1.5rem);
+  background: var(--tc-gold-soft);
+  border: 1px solid rgba(212, 162, 61, 0.4);
+  border-radius: var(--tc-radius-lg);
+}
+.tc-deadline__icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--tc-radius-md);
+  background: rgba(212, 162, 61, 0.22);
+  color: var(--tc-gold-deep);
+}
+.tc-deadline__icon .tc-icon { width: 1.125rem; height: 1.125rem; }
+.tc-deadline__title {
+  margin: 0 0 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--tc-gold-deep);
+}
+.tc-deadline__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--tc-ink-mute);
+}
+.tc-deadline__text strong { color: var(--tc-navy); font-weight: 700; }
+.tc-deadline__src {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--tc-gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tc-deadline__src .tc-icon { width: 0.75rem; height: 0.75rem; }

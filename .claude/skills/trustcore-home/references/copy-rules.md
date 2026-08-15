@@ -36,8 +36,20 @@ Del brief: *"Tendría solamente dos acciones coherentes en toda la página"*.
 
 | Nivel | Etiqueta | Destino |
 |---|---|---|
-| Primaria | **Ver demo** | Modal de calendario (`data-calendar-open`) |
+| Primaria | **Agendar demo** | Modal de calendario (`data-calendar-open`) |
 | Secundaria | **Explorar la plataforma** | Ancla a la sección de módulos |
+| Vídeo | **Ver vídeos cortos** | `/aprende` — solo si de verdad reproduce vídeo |
+
+> **Por qué ya no es "Ver demo".** Un lector externo señaló la trampa el
+> 16/08/2026: el botón decía *ver* y abría un calendario para reservar media
+> hora con el fundador. Quien esperaba un vídeo se sentía engañado, y quien
+> estaba listo para agendar no pulsaba porque creía que solo iba a mirar.
+> El audit encontró **14 etiquetas distintas para esa misma acción** y 43 CTAs
+> que había que renombrar. El verbo tiene que decir lo que pasa: *agendar*
+> reserva, *ver* reproduce. Nunca usar "Ver demo" para abrir el calendario.
+>
+> Misma regla para el pago: "Contratar" solo si lleva a Stripe. En TrustinTime
+> decía "Contratar Avanzado" y abría un calendario.
 
 El CTA final (fase 8) es la única excepción permitida: puede usar "Agendar una
 demo de 15 minutos" y "Hablar por WhatsApp", porque cierra el recorrido.
