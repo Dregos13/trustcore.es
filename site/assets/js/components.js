@@ -691,4 +691,61 @@
       if (e.key === 'Escape' && !panel.hidden) toggle(false);
     });
   })();
+
+  /* ------------------------------------------------------------------ *
+   * Interruptor mensual / anual
+   * ------------------------------------------------------------------
+   * Ojo con la clase `hidden`: los importes anuales nacen con
+   * `class="price-annual hidden"`, y esa utilidad de Tailwind es un
+   * display:none que el atributo `hidden` no deshace. Hay que quitar las dos
+   * cosas o el bloque de precio se queda en blanco al pasar a anual — que es
+   * justo el fallo que tenía /precios en producción.
+   * ------------------------------------------------------------------ */
+  function initBillingToggle() {
+    var toggle = document.getElementById('billing-toggle');
+    if (!toggle) return;
+
+    var lblMonthly = document.getElementById('lbl-monthly');
+    var lblAnnual = document.getElementById('lbl-annual');
+    var isAnnual = false;
+
+    function show(selector, visible) {
+      document.querySelectorAll(selector).forEach(function (el) {
+        el.hidden = !visible;
+        el.classList.toggle('hidden', !visible);
+      });
+    }
+
+    function applyBilling(annual) {
+      isAnnual = annual;
+      toggle.setAttribute('aria-checked', annual ? 'true' : 'false');
+      toggle.classList.toggle('is-annual', annual);
+
+      show('.price-monthly', !annual);
+      show('.price-annual', annual);
+      show('.savings-note', annual);
+      show('.cta-monthly', !annual);
+      show('.cta-annual', annual);
+
+      if (lblMonthly && lblAnnual) {
+        var onDark = !toggle.classList.contains('billing-toggle-track--on-light');
+        var off = onDark ? 'rgba(226,232,240,.55)' : 'var(--tc-slate)';
+        var on = onDark ? '#fff' : 'var(--tc-navy)';
+        lblMonthly.style.color = annual ? off : on;
+        lblMonthly.style.fontWeight = annual ? '400' : '700';
+        lblAnnual.style.color = annual ? on : off;
+        lblAnnual.style.fontWeight = annual ? '700' : '600';
+      }
+    }
+
+    toggle.addEventListener('click', function () { applyBilling(!isAnnual); });
+    toggle.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); applyBilling(!isAnnual); }
+    });
+
+    applyBilling(false);
+  }
+
+  initBillingToggle();
+
 })();

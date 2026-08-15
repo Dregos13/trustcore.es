@@ -597,13 +597,30 @@
         <span class="tc-eyebrow">Precios</span>
         <h2 class="tc-display tc-display-lg mt-4" style="color:var(--tc-navy)">Tres planes para facturar bien</h2>
         <p class="mt-4 text-gray-500">Sin permanencia. Sin sorpresas. Sin letra peque&ntilde;a.</p>
+
+        <!-- Mismo interruptor que /precios: el componente vive en components.css
+             y components.js, así que aquí solo va el marcado. -->
+        <div class="mt-7 flex items-center justify-center gap-4" role="group" aria-label="Ciclo de facturaci&oacute;n">
+          <span id="lbl-monthly" class="text-base font-bold transition-all duration-200" style="color:var(--tc-navy)">Mensual</span>
+          <button id="billing-toggle" class="billing-toggle-track billing-toggle-track--on-light" role="switch" aria-checked="false" aria-labelledby="billing-toggle-label" data-track="billing_toggle">
+            <span class="billing-toggle-thumb" aria-hidden="true"></span>
+          </button>
+          <span id="lbl-annual" class="text-base font-semibold transition-all duration-200 flex items-center gap-2" style="color:var(--tc-slate)">
+            Anual
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold" style="background:rgba(15,160,111,.12);color:#0B7A55;border:1px solid rgba(15,160,111,.25)">
+              <svg class="tc-icon text-[9px]"><use href="/assets/icons/sprite.svg#fa-tag"/></svg> 2 meses gratis
+            </span>
+          </span>
+        </div>
+        <p id="billing-toggle-label" class="sr-only">Cambiar entre facturaci&oacute;n mensual y anual</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <div class="tc-pricing" data-reveal>
           <p class="font-semibold text-sm mb-1" style="color:var(--tc-slate)">Aut&oacute;nomo</p>
           <p class="tc-pricing__name">Starter</p>
           <div class="tc-pricing__price">
-            <span class="tc-pricing__amount">19,99&euro;</span>
+            <span class="tc-pricing__amount price-monthly">19,99&euro;</span>
+            <span class="tc-pricing__amount price-annual hidden">16,66&euro;</span>
             <span class="tc-pricing__period">/mes</span>
           </div>
           <p class="text-sm text-gray-500 mt-1 mb-6">Para aut&oacute;nomos y microempresas</p>
@@ -616,13 +633,15 @@
             <li class="tc-pricing__missing"><svg class="tc-icon text-gray-300 shrink-0"><use href="/assets/icons/sprite.svg#fa-times"/></svg>Gesti&oacute;n de stock</li>
             <li class="tc-pricing__missing"><svg class="tc-icon text-gray-300 shrink-0"><use href="/assets/icons/sprite.svg#fa-times"/></svg>Multi-usuario</li>
           </ul>
-          <button class="tc-btn tc-btn-secondary w-full" data-calendar-open data-track="tf_price_starter">Empezar con Starter</button>
+          <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="https://buy.stripe.com/8x2dR9frg6qg2I15KOcs803" target="_blank" rel="noopener" data-track="tf_price_starter_monthly"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Starter</a>
+          <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="https://buy.stripe.com/aFa3cvdj8dSI4Q97SWcs806" target="_blank" rel="noopener" data-track="tf_price_starter_annual"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Starter anual</a>
         </div>
         <div class="tc-pricing tc-pricing--featured" data-reveal>
           <p class="font-semibold text-sm mb-1 opacity-80">Pyme</p>
           <p class="tc-pricing__name">Pro</p>
           <div class="tc-pricing__price">
-            <span class="tc-pricing__amount">39,99&euro;</span>
+            <span class="tc-pricing__amount price-monthly">39,99&euro;</span>
+            <span class="tc-pricing__amount price-annual hidden">33,33&euro;</span>
             <span class="tc-pricing__period">/mes</span>
           </div>
           <p class="text-sm opacity-70 mt-1 mb-6">El m&aacute;s elegido por pymes con facturaci&oacute;n activa</p>
@@ -634,13 +653,15 @@
             <li>Multiling&uuml;e ES / EN / FR</li>
             <li>An&aacute;lisis de impagados</li>
           </ul>
-          <button class="tc-btn w-full font-semibold" style="background:white;color:var(--tc-blue-corp)" data-calendar-open data-track="tf_price_pro">Agendar demo</button>
+          <a class="cta-monthly tc-btn w-full font-semibold" style="background:white;color:var(--tc-blue-corp)" href="https://buy.stripe.com/aFa28r1AqcOEeqJ1uycs804" target="_blank" rel="noopener" data-track="tf_price_pro_monthly"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Pro</a>
+          <a class="cta-annual hidden tc-btn w-full font-semibold" style="background:white;color:var(--tc-blue-corp)" href="https://buy.stripe.com/28E3cv7YOcOEaatgpscs809" target="_blank" rel="noopener" data-track="tf_price_pro_annual"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Pro anual</a>
         </div>
         <div class="tc-pricing" data-reveal>
           <p class="font-semibold text-sm mb-1" style="color:var(--tc-slate)">Asesor&iacute;as y grupos</p>
           <p class="tc-pricing__name">Business</p>
           <div class="tc-pricing__price">
-            <span class="tc-pricing__amount">49,99&euro;</span>
+            <span class="tc-pricing__amount price-monthly">49,99&euro;</span>
+            <span class="tc-pricing__amount price-annual hidden">41,66&euro;</span>
             <span class="tc-pricing__period">/mes</span>
           </div>
           <p class="text-sm text-gray-500 mt-1 mb-6">Volumen alto y varias empresas</p>
@@ -653,7 +674,8 @@
             <li>SLA y soporte prioritario</li>
             <li>Exportaci&oacute;n SII autom&aacute;tica</li>
           </ul>
-          <button class="tc-btn tc-btn-secondary w-full" data-calendar-open data-track="tf_price_business">Contratar Business</button>
+          <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="https://buy.stripe.com/aFa4gzenc9CsfuNgpscs805" target="_blank" rel="noopener" data-track="tf_price_business_monthly"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Business</a>
+          <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="https://buy.stripe.com/7sYeVd2Eu9Csbex8X0cs807" target="_blank" rel="noopener" data-track="tf_price_business_annual"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Business anual</a>
         </div>
       </div>
       <div class="tc-suite-strip" data-reveal>
@@ -664,7 +686,7 @@
         </div>
         <a href="/precios" class="tc-btn tc-btn-secondary whitespace-nowrap" data-track="tf_price_suite">Ver la suite completa</a>
       </div>
-      <p class="text-center text-sm text-gray-400 mt-8">Todos los precios sin IVA/IPSI. Facturaci&oacute;n mensual. Sin permanencia.</p>
+      <p class="text-center text-sm text-gray-400 mt-8">Todos los precios sin IVA/IPSI. Sin permanencia ni coste de alta. El plan anual se paga por adelantado y equivale a pagar diez meses.</p>
     </div>
   </section>
 

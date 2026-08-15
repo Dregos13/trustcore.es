@@ -2784,3 +2784,38 @@ nav[aria-label] > a.tc-nav-link,
 }
 .tc-step__desc { margin: 0; color: var(--tc-ink-mute); line-height: 1.6; font-size: 0.9375rem; }
 .tc-step__note { margin: 0.625rem 0 0; font-size: 0.8125rem; color: var(--tc-slate); }
+
+/* ---------- Interruptor mensual / anual ----------------------------------
+   Estaba en línea dentro de precios.html. Al necesitarlo también la página de
+   producto, se sube aquí: un solo sitio donde arreglarlo. */
+.billing-toggle-track {
+  width: 52px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--tc-radius-pill);
+  position: relative;
+  cursor: pointer;
+  transition: background var(--tc-duration-base) var(--tc-ease-out);
+  flex-shrink: 0;
+}
+.billing-toggle-track.is-annual { background: var(--tc-blue-royal); border-color: var(--tc-blue-royal); }
+.billing-toggle-track:focus-visible { outline: 2px solid var(--tc-cyan-light); outline-offset: 3px; }
+.billing-toggle-thumb {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform var(--tc-duration-base) var(--tc-ease-spring);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.billing-toggle-track.is-annual .billing-toggle-thumb { transform: translateX(24px); }
+/* Sobre fondo claro (página de producto) el carril necesita otro contraste. */
+.billing-toggle-track--on-light {
+  background: var(--tc-line);
+  border-color: var(--tc-line);
+}
+.billing-toggle-track--on-light .billing-toggle-thumb { box-shadow: 0 1px 4px rgba(4, 15, 63, 0.25); }

@@ -152,33 +152,7 @@
   </script>
 
   <style>
-    /* Billing toggle */
-    .billing-toggle-track {
-      width: 52px; height: 28px;
-      background: rgba(255,255,255,.2);
-      border: 1.5px solid rgba(255,255,255,.35);
-      border-radius: 9999px;
-      position: relative;
-      cursor: pointer;
-      transition: background 220ms ease;
-      flex-shrink: 0;
-    }
-    .billing-toggle-track.is-annual {
-      background: #2071D5;
-      border-color: #2071D5;
-    }
-    .billing-toggle-thumb {
-      width: 22px; height: 22px;
-      background: #fff;
-      border-radius: 50%;
-      position: absolute;
-      top: 2px; left: 2px;
-      transition: transform 220ms cubic-bezier(0.2,0.9,0.3,1.2);
-      box-shadow: 0 1px 4px rgba(0,0,0,.2);
-    }
-    .billing-toggle-track.is-annual .billing-toggle-thumb {
-      transform: translateX(24px);
-    }
+    /* El interruptor mensual/anual vive en components.css */
 
     /* Featured card glow */
     .pricing-featured {
@@ -956,47 +930,7 @@
   </footer>
 <!--/FOOTER-->
 
-  <script>
-  (function () {
-    var toggle = document.getElementById('billing-toggle');
-    var lblMonthly = document.getElementById('lbl-monthly');
-    var lblAnnual  = document.getElementById('lbl-annual');
-    var isAnnual   = false;
-
-    function applyBilling(annual) {
-      isAnnual = annual;
-      toggle.setAttribute('aria-checked', annual ? 'true' : 'false');
-      toggle.classList.toggle('is-annual', annual);
-
-      document.querySelectorAll('.price-monthly').forEach(function (el) { el.hidden = annual; });
-      document.querySelectorAll('.price-annual').forEach(function (el)  { el.hidden = !annual; });
-      document.querySelectorAll('.savings-note').forEach(function (el)  { el.hidden = !annual; el.classList.toggle('hidden', !annual); });
-      document.querySelectorAll('.cta-monthly').forEach(function (el)   { el.hidden = annual;  el.classList.toggle('hidden', annual); });
-      document.querySelectorAll('.cta-annual').forEach(function (el)    { el.hidden = !annual; el.classList.toggle('hidden', !annual); });
-
-      if (annual) {
-        lblAnnual.style.color  = '#fff';
-        lblAnnual.style.fontWeight = '700';
-        lblMonthly.style.color = 'rgba(226,232,240,.5)';
-        lblMonthly.style.fontWeight = '400';
-      } else {
-        lblMonthly.style.color = '#fff';
-        lblMonthly.style.fontWeight = '700';
-        lblAnnual.style.color  = 'rgba(226,232,240,.55)';
-        lblAnnual.style.fontWeight = '600';
-      }
-    }
-
-    if (toggle) {
-      toggle.addEventListener('click', function () { applyBilling(!isAnnual); });
-      toggle.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); applyBilling(!isAnnual); }
-      });
-    }
-
-    applyBilling(false);
-  })();
-  </script>
+  <!-- El interruptor mensual/anual lo gobierna components.js -->
 
   <script src="/assets/js/consent.js" defer></script>
 
