@@ -106,6 +106,194 @@
           color: transparent;
 }
 
+/* ------------------------- Tres beneficios ------------------------- */
+.tc-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+@media (max-width: 900px) { .tc-benefits { grid-template-columns: 1fr; } }
+.tc-benefit {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius-2xl);
+  box-shadow: var(--tc-shadow-sm);
+}
+.tc-benefit__icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  border-radius: var(--tc-radius-lg);
+  background-color: var(--tc-blue-soft);
+  color: var(--tc-blue-royal);
+  font-size: 1.05rem;
+}
+.tc-benefit__title { font-size: 1.125rem; font-weight: 800; color: var(--tc-navy); margin: 0 0 0.5rem; }
+.tc-benefit__desc { margin: 0; font-size: 0.9375rem; line-height: 1.65; color: var(--tc-ink-mute); }
+
+/* ------------------------- Demo en vídeo ------------------------- */
+.tc-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius-2xl);
+  box-shadow: var(--tc-shadow-md);
+}
+@media (max-width: 900px) { .tc-demo { grid-template-columns: 1fr; } }
+.tc-demo__desc { margin: 0.75rem 0 1.5rem; color: var(--tc-ink-mute); line-height: 1.65; max-width: 42ch; }
+.tc-demo__note { margin: 0.875rem 0 0; font-size: 0.8125rem; color: var(--tc-slate); }
+.tc-demo__player video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--tc-radius-lg);
+  border: 1px solid var(--tc-line);
+  box-shadow: var(--tc-shadow-lg);
+  background-color: var(--tc-navy);
+}
+
+/* ------------------------- Precios resumidos (3 rutas) ------------------------- */
+.tc-routes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+@media (max-width: 900px) { .tc-routes { grid-template-columns: 1fr; } }
+.tc-route {
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius-xl);
+  box-shadow: var(--tc-shadow-xs);
+}
+.tc-route__name { margin: 0 0 0.5rem; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--tc-blue-royal); }
+.tc-route__price { margin: 0 0 0.5rem; font-size: 1.5rem; font-weight: 800; color: var(--tc-navy); line-height: 1.15; }
+.tc-route__price span { display: block; font-size: 0.8125rem; font-weight: 500; color: var(--tc-slate); }
+.tc-route__desc { margin: 0; font-size: 0.875rem; color: var(--tc-ink-mute); }
+.tc-routes__cta { margin-top: 1.75rem; text-align: center; }
+
+/* ------------------------- FAQ en acordeón -------------------------
+   El brief pide 2-3 líneas visibles, no una segunda página dentro de la home.
+   Con <details> el contenido sigue en el DOM aunque esté plegado, que es lo
+   que necesita el AEO: se indexa igual, solo no se ve todo a la vez. */
+.tc-faq {
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius-xl);
+  padding: 0.25rem 1.25rem;
+}
+.tc-faq + .tc-faq { margin-top: 0.75rem; }
+.tc-faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tc-navy);
+  list-style: none;
+}
+.tc-faq__q::-webkit-details-marker { display: none; }
+.tc-faq__q::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.5em;
+  height: 0.5em;
+  border-right: 2px solid var(--tc-blue-royal);
+  border-bottom: 2px solid var(--tc-blue-royal);
+  transform: rotate(45deg);
+  transition: transform var(--tc-duration-fast) var(--tc-ease-out);
+}
+.tc-faq[open] .tc-faq__q::after { transform: rotate(-135deg); }
+.tc-faq__q:focus-visible { outline: 2px solid var(--tc-blue-royal); outline-offset: 2px; border-radius: var(--tc-radius-sm); }
+.tc-faq__a { padding-bottom: 1.25rem; }
+.tc-faq__a > *:first-child { margin-top: 0; }
+
+/* ------------------------- Problema → transformación -------------------------
+   El brief pide que no sean "dos listas estáticas" sino una transformación
+   visual. Izquierda: papeles sueltos, cada uno ligeramente girado y con su
+   propia sombra, como cosas apiladas sin orden. Derecha: un panel único donde
+   todo está alineado. La forma cuenta la historia antes de leer el texto. */
+.tc-shift {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .tc-shift { grid-template-columns: 1fr; }
+  .tc-shift__arrow { transform: rotate(90deg); justify-self: center; }
+}
+.tc-shift__caption {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tc-slate-soft);
+  margin: 0 0 1rem;
+}
+.tc-shift__caption--on { color: var(--tc-blue-royal); }
+
+.tc-shift__papers { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.tc-shift__paper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius-md);
+  box-shadow: var(--tc-shadow-xs);
+  font-size: 0.9375rem;
+  color: var(--tc-slate);
+  transition: transform var(--tc-duration-base) var(--tc-ease-out);
+}
+.tc-shift__paper .tc-icon { color: var(--tc-slate-soft); flex-shrink: 0; }
+/* Giros alternos: desorden, no ruido. */
+.tc-shift__paper:nth-child(1) { transform: rotate(-1.4deg) translateX(-6px); }
+.tc-shift__paper:nth-child(2) { transform: rotate(0.9deg)  translateX(10px); }
+.tc-shift__paper:nth-child(3) { transform: rotate(-0.6deg) translateX(-2px); }
+.tc-shift__paper:nth-child(4) { transform: rotate(1.5deg)  translateX(6px); }
+.tc-shift__paper:nth-child(5) { transform: rotate(-1deg)   translateX(-8px); }
+.tc-shift:hover .tc-shift__paper { transform: none; }
+
+.tc-shift__arrow {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--tc-blue-soft);
+  color: var(--tc-blue-royal);
+}
+
+.tc-shift__panel {
+  list-style: none;
+  margin: 0;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  display: grid;
+  gap: 1rem;
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-blue-soft);
+  border-radius: var(--tc-radius-xl);
+  box-shadow: var(--tc-shadow-md);
+}
+.tc-shift__panel li { display: grid; gap: 0.125rem; }
+.tc-shift__panel strong { color: var(--tc-navy); font-size: 0.9375rem; }
+.tc-shift__panel small { color: var(--tc-slate); font-size: 0.8125rem; }
+
 /* ------------------------- Plataforma por pestañas -------------------------
    El núcleo del rediseño: sustituye al bento de 6 módulos MÁS el teatro de 2
    productos, que decían lo mismo dos veces en 286 líneas. Cambiar de pestaña
@@ -247,12 +435,24 @@
   color: var(--tc-gold-deep);
 }
 .tc-trust-strip__award:hover { color: var(--tc-navy); }
-/* Sin grayscale ni opacidad: son marcas de terceros y no se recolorean.
-   Solo se escalan proporcionalmente. */
+/* Sin grayscale ni opacidad: son marcas de terceros y no se recolorean ni se
+   recortan. Solo se escalan proporcionalmente. */
 .tc-trust-strip__logo {
   height: 30px;
   width: auto;
+  max-width: 100%;
 }
+/* El logo de Cámara/Fondos Europeos es muy apaisado (1299×79): a una altura
+   fija su ancho se iba a ~790px y provocaba scroll horizontal en tablet, tanto
+   aquí como en el pie. Se le deja reducir la altura antes que desbordar. */
+.tc-trust-strip__logo,
+footer img[src*="logos-camara"],
+footer img[src*="logo-impulsa"] {
+  max-width: min(100%, 320px);
+  height: auto;
+  object-fit: contain;
+}
+.tc-trust-strip__logo { max-height: 30px; }
 
 /* ------------------------- Hero: captura real + tarjetas flotantes -------------------------
    El brief pide que el primer "ah, esto es una aplicación de verdad" ocurra en
@@ -313,8 +513,9 @@
 .tc-hero-chip--b { top: 45%; right: -4%; }
 .tc-hero-chip--c { bottom: 9%; left: 2%; }
 
-/* En móvil las tarjetas se apilan debajo: flotando taparían la captura. */
-@media (max-width: 767px) {
+/* Se apilan debajo hasta que el hero pasa a una columna (lg = 1024px):
+   flotando taparían la captura y a 768px se salían del viewport. */
+@media (max-width: 1023px) {
   .tc-hero-shot { display: flex; flex-direction: column; gap: 0.5rem; }
   .tc-hero-chip { position: static; white-space: normal; }
   .tc-hero-chip--a, .tc-hero-chip--b, .tc-hero-chip--c { inset: auto; }

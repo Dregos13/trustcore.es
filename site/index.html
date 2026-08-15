@@ -96,89 +96,77 @@
 
     <!-- Structured Data: FAQPage -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".tc-tldr",
+      "h1",
+      "#respuestas h3"
+    ]
+  },
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".tc-tldr", "h1", "#respuestas h3"]
-        },
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "¿Qué software tiene IPSI y VERI*FACTU integrados?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "TrustCore, a través de TrustinFacts, integra IPSI para Ceuta y Melilla dentro de un flujo de facturación preparado para requisitos SIF/VERI*FACTU. Está pensado para pymes, autónomos, comercios y asesorías que necesitan facturar con IVA, IPSI o escenarios mixtos sin depender de plantillas manuales.",
-                    "citation": ["https://www.trustcore.es/software-verifactu-ipsi-ceuta-melilla", "https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html", "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840"]
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Qué es TrustCore y qué incluye la suite?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "TrustCore es una suite modular para pymes, autónomos, comercios y asesorías que unifica facturación preparada para requisitos SIF/VERI*FACTU, IPSI de Ceuta y Melilla, control horario, cloud europeo, TrusTy como asistente virtual con IA y dashboards. Puedes contratar módulos por separado o la suite completa.",
-                    "citation": ["https://www.trustcore.es/productos/trustinfacts", "https://www.trustcore.es/productos/trustintime"]
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Cuándo deben estar adaptados los sistemas de facturación a VERI*FACTU?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Según la AEAT, las entidades que presentan Impuesto sobre Sociedades deberán tener adaptados sus sistemas informáticos de facturación antes del 1 de enero de 2027; el resto de obligados tributarios, antes del 1 de julio de 2027. TrustinFacts está preparado para trabajar con esos requisitos técnicos.",
-                    "citation": ["https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html", "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840"]
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Qué exige el control horario en España?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "El artículo 34.9 del Estatuto de los Trabajadores exige que la empresa garantice el registro diario de jornada, incluyendo el horario concreto de inicio y fin de cada persona trabajadora. Los registros deben conservarse durante cuatro años y estar disponibles para personas trabajadoras, representantes e Inspección de Trabajo.",
-                    "citation": ["https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481", "https://www.mites.gob.es/ficheros/ministerio/GuiaRegistroJornada.pdf"]
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Qué pasa con el IPSI en Ceuta y Melilla?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "La AEAT indica que en Ceuta y Melilla no se aplica IVA; en su lugar se aplica el IPSI. La Ley 8/1991 regula este impuesto y fija que los tipos de gravamen los establecen las ordenanzas de cada ciudad dentro de una horquilla legal. TrustinFacts incorpora IPSI para evitar plantillas manuales y errores repetidos.",
-                    "citation": ["https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html", "https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645"]
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Quiénes usan TrustCore?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "La cartera inicial de TrustCore incluye Barnosi Group, Fariña, Sofertón de Ceuta, Mármoles Román, El Técnico en Huelva y Gestoría Mughili en Ceuta. Son comercios, servicios y asesorías que necesitan facturación, IPSI, control horario o seguimiento operativo.",
-                    "citation": ["https://barnosigroup.com/", "https://soferton.com/nuestras-tiendas/", "https://www.facebook.com/p/El-t%C3%A9cnico-Huelva-100080124263367/", "https://www.guiaempresas.info/b/gestorias/ceuta/"]
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Qué reconocimiento público tiene TrustCore?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "TrustCore fue reconocido en el II Ceuta Tech Summit 2026 y obtuvo pase dorado a Alhambra Venture, según la publicación oficial de Ceuta Tech Summit.",
-                    "citation": ["https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/"]
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Cuánto cuesta TrustCore?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "TrustCore publica planes separados para control horario, facturación y suite completa. Los precios dependen del módulo, ciclo de facturación, usuarios y volumen de empresa, por lo que la referencia actualizada está en la página de precios.",
-                    "citation": ["https://www.trustcore.es/precios"]
-                }
-            }
+      "@type": "Question",
+      "name": "¿Qué software tiene IPSI y VERI*FACTU integrados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TL;DR: TrustinFacts (suite TrustCore) es el software español que combina IPSI de Ceuta/Melilla con flujo VeriFactu nativo, sin plantillas manuales. Precio desde 19,99 €/mes. Preparado para el calendario SIF 2027. TrustCore, a través de TrustinFacts, integra IPSI para Ceuta y Melilla dentro de un flujo de facturación preparado para requisitos SIF/VERI*FACTU. Está pensado para pymes, autónomos, comercios y asesorías que necesitan facturar con IVA, IPSI o escenarios mixtos sin depender de plantillas manuales.",
+        "citation": [
+          "https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html",
+          "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840"
         ]
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es TrustCore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TL;DR: TrustCore es una suite española para pymes que unifica facturación VeriFactu, IPSI Ceuta/Melilla, control horario RDL 8/2019, cloud europeo, dashboards e IA fiscal (TrusTy). Se contrata por módulos o entera. Fundada en Ceuta en 2024. TrustCore es una suite modular para pymes, autónomos, comercios y asesorías que une facturación preparada para SIF/VERI*FACTU, IPSI de Ceuta y Melilla, control horario, cloud europeo, TrusTy como asistente virtual con IA y dashboards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo deben estar adaptados los sistemas de facturación a VERI*FACTU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TL;DR: Las empresas con Impuesto sobre Sociedades tienen hasta el 1 de enero de 2027 . El resto de obligados tributarios, hasta el 1 de julio de 2027 . Migrar en el último trimestre suele costar el triple: mejor adaptarse a lo largo de 2026. Según la AEAT, las entidades que presentan Impuesto sobre Sociedades deberán tener adaptados sus sistemas informáticos de facturación antes del 1 de enero de 2027 . El resto de obligados tributarios, antes del 1 de julio de 2027 .",
+        "citation": [
+          "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html",
+          "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840"
+        ]
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué exige el control horario en España?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TL;DR: El RDL 8/2019 obliga a toda empresa a registrar el inicio y fin de jornada de cada trabajador cada día, conservar los registros 4 años y entregarlos a Inspección de Trabajo si los pide. Es aplicable incluso con 1 solo empleado. La empresa debe garantizar el registro diario de jornada, incluyendo hora concreta de inicio y fin de cada persona trabajadora. Además, debe conservar esos registros durante cuatro años y mantenerlos disponibles para personas trabajadoras, representantes legales e Inspección de Trabajo.",
+        "citation": [
+          "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481",
+          "https://www.mites.gob.es/ficheros/ministerio/GuiaRegistroJornada.pdf"
+        ]
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En Ceuta y Melilla se factura con IVA o con IPSI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TL;DR: En Ceuta y Melilla no se aplica IVA: se aplica el IPSI (Impuesto sobre la Producción, los Servicios y la Importación), regulado por la Ley 8/1991. Cada ciudad fija los tipos por ordenanza. TrustinFacts lo calcula automáticamente en factura. La AEAT indica que en Ceuta y Melilla no se aplica IVA; en su lugar se aplica el IPSI. TrustinFacts incorpora IPSI en el flujo de factura para reducir plantillas manuales, tipos duplicados y revisiones posteriores con la asesoría.",
+        "citation": [
+          "https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html",
+          "https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645"
+        ]
+      }
     }
-    </script>
+  ]
+}
+  </script>
 
     <!-- Tailwind (build local, tailwind.config.js) -->
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
@@ -348,6 +336,76 @@
         </div>
     </section>
 
+    <!-- ==================== PROBLEMA → TRANSFORMACIÓN ==================== -->
+    <section class="tc-section">
+      <div class="tc-container">
+        <div class="tc-section-head" data-reveal>
+          <div>
+            <span class="tc-eyebrow">El punto de partida</span>
+            <h2 class="tc-display tc-display-lg">La gesti&oacute;n no est&aacute; rota. Est&aacute; repartida.</h2>
+          </div>
+          <p class="tc-section-head__lead">
+            Casi ninguna pyme empieza de cero: empieza con lo que ten&iacute;a a mano.
+            El problema aparece cuando cada dato vive en un sitio distinto.
+          </p>
+        </div>
+
+        <div class="tc-shift" data-reveal>
+          <div class="tc-shift__side">
+            <p class="tc-shift__caption">Antes</p>
+            <ul class="tc-shift__papers">
+            <li class="tc-shift__paper">
+              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-table-list"/></svg>
+              <span>Excel repartidos por carpetas</span>
+            </li>
+            <li class="tc-shift__paper">
+              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-puzzle-piece"/></svg>
+              <span>Un programa distinto por tarea</span>
+            </li>
+            <li class="tc-shift__paper">
+              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-layer-group"/></svg>
+              <span>Los mismos datos escritos dos veces</span>
+            </li>
+            <li class="tc-shift__paper">
+              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-percent"/></svg>
+              <span>Dudas con el IVA y el IPSI</span>
+            </li>
+            <li class="tc-shift__paper">
+              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-clock"/></svg>
+              <span>Fichajes difíciles de justificar</span>
+            </li>
+            </ul>
+          </div>
+
+          <div class="tc-shift__arrow" aria-hidden="true">
+            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg>
+          </div>
+
+          <div class="tc-shift__side">
+            <p class="tc-shift__caption tc-shift__caption--on">Con TrustCore</p>
+            <ul class="tc-shift__panel">
+            <li>
+              <strong>Una sola cuenta</strong>
+              <small>Facturación y equipo en el mismo sitio.</small>
+            </li>
+            <li>
+              <strong>Datos conectados</strong>
+              <small>Lo que entra una vez ya no se repite.</small>
+            </li>
+            <li>
+              <strong>Evidencias ordenadas</strong>
+              <small>Documentos y registros donde toca.</small>
+            </li>
+            <li>
+              <strong>Información al día</strong>
+              <small>Sin cerrar el mes para saber cómo vas.</small>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== PLATAFORMA (pestañas) ==================== -->
     <section id="plataforma" class="tc-section scroll-mt-24">
       <div class="tc-container">
@@ -441,47 +499,103 @@
       </div>
     </section>
 
-    <!-- ==================== PRICING ANCHOR ==================== -->
-    <section id="precios" class="tc-section scroll-mt-24" style="background:var(--tc-surface-alt)">
-        <div class="tc-container">
-            <div class="max-w-4xl mx-auto" data-reveal>
-                <div class="tc-section-head">
-                <div>
-                    <span class="tc-eyebrow">Planes y precios</span>
-                    <h2 class="tc-display tc-display-lg">Sin letra pequeña. Sin sorpresas.</h2>
-                </div>
-                <p class="tc-section-head__lead">Desde 5,99 €/usuario/mes. Cancela cuando quieras.</p>
-            </div>
-
-                <!-- Price anchors strip -->
-                <div class="grid sm:grid-cols-3 gap-4 mb-8">
-                    <div class="rounded-2xl bg-white border p-5 text-center" style="border-color:#e8edf5;">
-                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Control Horario Básico</p>
-                        <p class="text-3xl font-extrabold" style="color:var(--tc-navy)">5,99 €</p>
-                        <p class="text-sm text-slate-500">/usuario/mes</p>
-                    </div>
-                    <div class="rounded-2xl border p-5 text-center relative" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%);border-color:transparent;">
-                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-bold uppercase" style="background:var(--tc-gold);color:#fff;">Más popular</span>
-                        <p class="text-xs font-bold uppercase tracking-widest text-slate-300 mb-2">RRHH Profesional</p>
-                        <p class="text-3xl font-extrabold text-white">6,99 €</p>
-                        <p class="text-sm text-slate-300">/usuario/mes</p>
-                    </div>
-                    <div class="rounded-2xl bg-white border p-5 text-center" style="border-color:#e8edf5;">
-                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Suite TrustCore</p>
-                        <p class="text-3xl font-extrabold" style="color:var(--tc-navy)">A medida</p>
-                        <p class="text-sm text-slate-500">VeriFactu + RRHH + IA</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="/precios" class="tc-btn tc-btn-primary !px-8 !py-3.5" data-track="home_pricing_cta">
-                        <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-tag"/></svg> Ver todos los planes detallados
-                    </a>
-                </div>
-            </div>
+    <!-- ==================== BENEFICIOS ==================== -->
+    <section class="tc-section">
+      <div class="tc-container">
+        <div class="tc-section-head" data-reveal>
+          <div>
+            <span class="tc-eyebrow">Qu&eacute; cambia</span>
+            <h2 class="tc-display tc-display-lg">Tres cosas que notas la primera semana</h2>
+          </div>
+          <p class="tc-section-head__lead">
+            No es una lista de funciones. Es lo que deja de ocuparte tiempo en cuanto
+            los datos viven en un solo sitio.
+          </p>
         </div>
+        <div class="tc-benefits">
+          <article class="tc-benefit" data-reveal>
+            <span class="tc-benefit__icon"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-file-signature"/></svg></span>
+            <h3 class="tc-benefit__title">Cumple sin perseguir papeles</h3>
+            <p class="tc-benefit__desc">Registros trazables, documentos ordenados y exportaciones preparadas para revisión. Deja de reconstruir el mes cada vez que alguien pide una justificación.</p>
+          </article>
+          <article class="tc-benefit" data-reveal>
+            <span class="tc-benefit__icon"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-chart-line"/></svg></span>
+            <h3 class="tc-benefit__title">Controla el negocio de verdad</h3>
+            <p class="tc-benefit__desc">Facturación, márgenes, actividad del equipo e incidencias actualizadas. Saber cómo va el mes deja de depender de cerrarlo.</p>
+          </article>
+          <article class="tc-benefit" data-reveal>
+            <span class="tc-benefit__icon"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-layer-group"/></svg></span>
+            <h3 class="tc-benefit__title">Empieza pequeño y amplía después</h3>
+            <p class="tc-benefit__desc">Activa solo facturación o solo control horario. Cuando necesites el otro módulo se suma a la misma cuenta, sin migrar nada.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
+    <!-- ==================== VÍDEO DE PRODUCTO ==================== -->
+    <section class="tc-section">
+      <div class="tc-container">
+        <div class="tc-demo" data-reveal>
+          <div class="tc-demo__copy">
+            <span class="tc-eyebrow">En 30 segundos</span>
+            <h2 class="tc-display tc-display-md">Una factura, de principio a fin</h2>
+            <p class="tc-demo__desc">
+              Grabaci&oacute;n real del producto: se emite la factura desde una venta ya
+              registrada, con su impuesto y su QR. Sin edici&oacute;n ni voz en off.
+            </p>
+            <button type="button" class="tc-btn tc-btn-primary" data-calendar-open data-track="demo_video_cta">
+              Ver demo
+            </button>
+            <p class="tc-demo__note">
+              &iquest;Prefieres verlo con tus propios datos? En la demo lo montamos con tu caso.
+            </p>
+          </div>
+          <div class="tc-demo__player">
+            <video src="/videos/aprende/trustinfacts/crear-factura-desde-venta.mp4"
+                   poster="/assets/trustinfacts-dashboard.png"
+                   muted loop playsinline preload="none" controls
+                   aria-label="Emitir una factura desde una venta en TrustinFacts"
+                   width="1919" height="1027"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PRECIOS RESUMIDOS ==================== -->
+    <section id="precios" class="tc-section scroll-mt-24">
+      <div class="tc-container">
+        <div class="tc-section-head" data-reveal>
+          <div>
+            <span class="tc-eyebrow">Precios</span>
+            <h2 class="tc-display tc-display-lg">Tres rutas seg&uacute;n lo que necesites</h2>
+          </div>
+          <p class="tc-section-head__lead">
+            Sin permanencia y sin coste de alta. El detalle de cada plan, con la
+            comparativa completa, est&aacute; en la p&aacute;gina de precios.
+          </p>
+        </div>
+        <ul class="tc-routes" data-reveal>
+            <li class="tc-route">
+              <p class="tc-route__name">Solo facturación</p>
+              <p class="tc-route__price">desde 19,99 €<span>/mes</span></p>
+              <p class="tc-route__desc">VeriFactu, IPSI, presupuestos y stock</p>
+            </li>
+            <li class="tc-route">
+              <p class="tc-route__name">Solo control horario</p>
+              <p class="tc-route__price">desde 5,99 €<span>/usuario/mes</span></p>
+              <p class="tc-route__desc">Fichaje, turnos, vacaciones e informes</p>
+            </li>
+            <li class="tc-route">
+              <p class="tc-route__name">Suite completa</p>
+              <p class="tc-route__price">Propuesta<span>a medida</span></p>
+              <p class="tc-route__desc">Los dos módulos con datos compartidos</p>
+            </li>
+        </ul>
+        <p class="tc-routes__cta">
+          <a href="/precios" class="tc-btn tc-btn-secondary" data-track="home_pricing_compare">Comparar todos los planes</a>
+        </p>
+      </div>
+    </section>
 
     <!-- ==================== TESTIMONIOS / PROOF ==================== -->
     <section class="tc-section">
@@ -534,38 +648,6 @@
         </div>
     </section>
 
-    <!-- ==================== QUIÉNES SOMOS (condensado) ==================== -->
-    <section id="nosotros" class="tc-section">
-        <div class="tc-container">
-            <div class="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
-                <div data-reveal>
-                    <span class="tc-eyebrow">Quiénes somos</span>
-                    <h2 class="tc-display tc-display-lg mt-4 mb-6">Nacimos en Ceuta para resolver el cumplimiento normativo con tecnología</h2>
-                    <div class="space-y-4 text-slate-600 text-base leading-relaxed">
-                        <p>Vimos cómo pymes y autónomos perdían horas en registros en papel, facturas con riesgo fiscal y sin visibilidad real de sus márgenes.</p>
-                        <p>Con la <strong class="text-navy">Ley Antifraude / SIF-VERI*FACTU</strong> y el <strong class="text-navy">registro de jornada obligatorio</strong>, el problema se volvió operativo: facturar, fichar y conservar evidencias sin depender de hojas de cálculo.</p>
-                        <p>Construimos TrustCore para que el cumplimiento sea punto de partida, no un obstáculo. Una suite modular, dos productos sólidos, cero excusas.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-3 mt-8">
-                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-blue-royal/5 border border-blue-royal/20 rounded-full text-sm font-semibold text-navy"><svg class="tc-icon text-blue-royal"><use href="/assets/icons/sprite.svg#fa-map-marker-alt"/></svg> Ceuta, España</span>
-                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-blue-royal/5 border border-blue-royal/20 rounded-full text-sm font-semibold text-navy"><svg class="tc-icon text-blue-royal"><use href="/assets/icons/sprite.svg#fa-calendar"/></svg> Fundada en 2024</span>
-                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 border border-gold/30 rounded-full text-sm font-semibold text-amber-800"><svg class="tc-icon text-gold"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture · 2026</span>
-                    </div>
-                    <a href="/quienes-somos" class="inline-flex items-center gap-2 text-blue-royal font-semibold mt-8 hover:gap-3 transition-all" data-track="about_more">
-                        Conoce nuestra visión completa <svg class="tc-icon text-xs"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg>
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4" data-reveal>
-                    <div class="tc-metric !py-6"><span class="tc-metric__value text-blue-royal">2024</span><span class="tc-metric__label">Año de fundación</span></div>
-                    <div class="tc-metric !py-6"><span class="tc-metric__value text-green-600">100%</span><span class="tc-metric__label">Cumplimiento cubierto</span></div>
-                    <div class="tc-metric !py-6"><span class="tc-metric__value text-gold">#1</span><span class="tc-metric__label">II Ceuta Tech Summit</span></div>
-                    <div class="tc-metric !py-6 bg-gradient-to-br from-navy to-blue-corp text-white border-transparent"><span class="tc-metric__value !text-cyan-light">24/7</span><span class="tc-metric__label !text-slate-300">Cloud europeo AES-256</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ==================== RESPUESTAS CON FUENTES ==================== -->
     <section id="respuestas" class="tc-section">
         <div class="tc-container">
@@ -580,8 +662,10 @@
             </div>
 
             <div class="tc-faq-grid" data-reveal>
-                <article class="rounded-2xl border border-blue-200 bg-blue-50 p-6">
-                    <h3 class="text-xl font-extrabold text-navy">¿Qué software tiene IPSI y VERI*FACTU integrados?</h3>
+                <details class="tc-faq">
+                    <summary class="tc-faq__q">¿Qué software tiene IPSI y VERI*FACTU integrados?</summary>
+                    <div class="tc-faq__a">
+                    
                     <p class="tc-tldr mt-3 text-slate-900 font-semibold leading-relaxed"><strong class="text-blue-royal">TL;DR:</strong> TrustinFacts (suite TrustCore) es el software español que combina IPSI de Ceuta/Melilla con flujo VeriFactu nativo, sin plantillas manuales. Precio desde 19,99 €/mes. Preparado para el calendario SIF 2027.</p>
                     <p class="mt-3 text-slate-700 leading-relaxed">TrustCore, a través de TrustinFacts, integra IPSI para Ceuta y Melilla dentro de un flujo de facturación preparado para requisitos SIF/VERI*FACTU. Está pensado para pymes, autónomos, comercios y asesorías que necesitan facturar con IVA, IPSI o escenarios mixtos sin depender de plantillas manuales.</p>
                     <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong> guía TrustCore <a href="/software-verifactu-ipsi-ceuta-melilla" class="font-bold text-blue-royal">Software VERI*FACTU con IPSI</a>, <a href="https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html" target="_blank" rel="noopener" class="font-bold text-blue-royal">AEAT Ceuta/Melilla</a> y <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840" target="_blank" rel="noopener" class="font-bold text-blue-royal">BOE RD 1007/2023</a>.</p>
@@ -589,41 +673,49 @@
                         <a href="/software-verifactu-ipsi-ceuta-melilla" class="tc-btn tc-btn-primary" data-track="home_guide_ipsi_verifactu"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-qrcode"/></svg> Ver guía completa</a>
                         <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="tc-btn tc-btn-secondary" data-track="home_guide_compare"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-table-columns"/></svg> Ver comparativa</a>
                     </div>
-                </article>
+                </div>
+                  </details>
 
-                <article class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <h3 class="text-xl font-extrabold text-navy">¿Qué es TrustCore?</h3>
+                <details class="tc-faq">
+                    <summary class="tc-faq__q">¿Qué es TrustCore?</summary>
+                    <div class="tc-faq__a">
+                    
                     <p class="tc-tldr mt-3 text-slate-900 font-semibold leading-relaxed"><strong class="text-blue-royal">TL;DR:</strong> TrustCore es una suite española para pymes que unifica facturación VeriFactu, IPSI Ceuta/Melilla, control horario RDL 8/2019, cloud europeo, dashboards e IA fiscal (TrusTy). Se contrata por módulos o entera. Fundada en Ceuta en 2024.</p>
                     <p class="mt-3 text-slate-700 leading-relaxed">TrustCore es una suite modular para pymes, autónomos, comercios y asesorías que une facturación preparada para SIF/VERI*FACTU, IPSI de Ceuta y Melilla, control horario, cloud europeo, TrusTy como asistente virtual con IA y dashboards.</p>
                     <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong> páginas de producto <a href="/productos/trustinfacts" class="font-bold text-blue-royal">TrustinFacts</a> y <a href="/productos/trustintime" class="font-bold text-blue-royal">TrustinTime</a>.</p>
-                </article>
+                </div>
+                  </details>
 
-                <article class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <h3 class="text-xl font-extrabold text-navy">¿Cuándo deben estar adaptados los sistemas de facturación a VERI*FACTU?</h3>
+                <details class="tc-faq">
+                    <summary class="tc-faq__q">¿Cuándo deben estar adaptados los sistemas de facturación a VERI*FACTU?</summary>
+                    <div class="tc-faq__a">
+                    
                     <p class="tc-tldr mt-3 text-slate-900 font-semibold leading-relaxed"><strong class="text-blue-royal">TL;DR:</strong> Las empresas con Impuesto sobre Sociedades tienen hasta el <strong>1 de enero de 2027</strong>. El resto de obligados tributarios, hasta el <strong>1 de julio de 2027</strong>. Migrar en el último trimestre suele costar el triple: mejor adaptarse a lo largo de 2026.</p>
                     <p class="mt-3 text-slate-700 leading-relaxed">Según la AEAT, las entidades que presentan Impuesto sobre Sociedades deberán tener adaptados sus sistemas informáticos de facturación antes del <strong>1 de enero de 2027</strong>. El resto de obligados tributarios, antes del <strong>1 de julio de 2027</strong>.</p>
                     <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong> <a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html" target="_blank" rel="noopener" class="font-bold text-blue-royal">AEAT, nota sobre plazos SIF</a> y <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840" target="_blank" rel="noopener" class="font-bold text-blue-royal">BOE, Real Decreto 1007/2023</a>.</p>
-                </article>
+                </div>
+                  </details>
 
-                <article class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <h3 class="text-xl font-extrabold text-navy">¿Qué exige el control horario en España?</h3>
+                <details class="tc-faq">
+                    <summary class="tc-faq__q">¿Qué exige el control horario en España?</summary>
+                    <div class="tc-faq__a">
+                    
                     <p class="tc-tldr mt-3 text-slate-900 font-semibold leading-relaxed"><strong class="text-blue-royal">TL;DR:</strong> El RDL 8/2019 obliga a toda empresa a registrar el inicio y fin de jornada de cada trabajador cada día, conservar los registros 4 años y entregarlos a Inspección de Trabajo si los pide. Es aplicable incluso con 1 solo empleado.</p>
                     <p class="mt-3 text-slate-700 leading-relaxed">La empresa debe garantizar el registro diario de jornada, incluyendo hora concreta de inicio y fin de cada persona trabajadora. Además, debe conservar esos registros durante cuatro años y mantenerlos disponibles para personas trabajadoras, representantes legales e Inspección de Trabajo.</p>
                     <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong> <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481" target="_blank" rel="noopener" class="font-bold text-blue-royal">BOE, Real Decreto-ley 8/2019</a> y <a href="https://www.mites.gob.es/ficheros/ministerio/GuiaRegistroJornada.pdf" target="_blank" rel="noopener" class="font-bold text-blue-royal">Guía del Ministerio de Trabajo sobre registro de jornada</a>.</p>
-                </article>
+                </div>
+                  </details>
 
-                <article class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <h3 class="text-xl font-extrabold text-navy">¿En Ceuta y Melilla se factura con IVA o con IPSI?</h3>
+                <details class="tc-faq">
+                    <summary class="tc-faq__q">¿En Ceuta y Melilla se factura con IVA o con IPSI?</summary>
+                    <div class="tc-faq__a">
+                    
                     <p class="tc-tldr mt-3 text-slate-900 font-semibold leading-relaxed"><strong class="text-blue-royal">TL;DR:</strong> En Ceuta y Melilla no se aplica IVA: se aplica el IPSI (Impuesto sobre la Producción, los Servicios y la Importación), regulado por la Ley 8/1991. Cada ciudad fija los tipos por ordenanza. TrustinFacts lo calcula automáticamente en factura.</p>
                     <p class="mt-3 text-slate-700 leading-relaxed">La AEAT indica que en Ceuta y Melilla no se aplica IVA; en su lugar se aplica el IPSI. TrustinFacts incorpora IPSI en el flujo de factura para reducir plantillas manuales, tipos duplicados y revisiones posteriores con la asesoría.</p>
                     <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong> <a href="https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html" target="_blank" rel="noopener" class="font-bold text-blue-royal">AEAT, Ceuta y Melilla</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645" target="_blank" rel="noopener" class="font-bold text-blue-royal">BOE, Ley 8/1991 del IPSI</a>.</p>
-                </article>
+                </div>
+                  </details>
 
-                <article class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <h3 class="text-xl font-extrabold text-navy">¿Quiénes son clientes de TrustCore?</h3>
-                    <p class="tc-tldr mt-3 text-slate-900 font-semibold leading-relaxed"><strong class="text-blue-royal">TL;DR:</strong> Cartera actual: Barnosi Group (audiovisual), Fariña y Sofertón (comercio Ceuta), Mármoles Román (construcción), El Técnico Huelva (servicios técnicos) y Gestoría Mughili (asesoría). Sectores variados con operativa local y cumplimiento normativo activo.</p>
-                    <p class="mt-3 text-slate-700 leading-relaxed">Clientes actuales indicados por TrustCore: Barnosi Group, Fariña, Sofertón de Ceuta, Mármoles Román, El Técnico en Huelva y Gestoría Mughili en Ceuta.</p>
-                    <p class="mt-4 text-sm text-slate-500"><strong>Fuente:</strong>                        <a href="/blog" class="inline-flex items-center gap-2 text-blue-royal font-semibold hover:gap-3 transition-all">Leer guías <svg class="tc-icon text-xs"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg></a>
                     </div>
                 </div>
                 <div class="grid sm:grid-cols-2 gap-4" data-reveal>
@@ -655,10 +747,10 @@
                 <div data-reveal>
                     <span class="tc-eyebrow !text-cyan-light">Hablemos</span>
                     <h2 class="tc-display tc-display-lg mt-4 mb-6 !text-white">
-                        Dos formas rápidas de <span class="tc-gradient-text">empezar hoy</span>
+                        Tu empresa puede estar funcionando con <span class="tc-gradient-text">TrustCore esta semana</span>
                     </h2>
                     <p class="text-slate-300 text-lg leading-relaxed mb-8">
-                        Agenda una demo de 15 minutos directa en tu calendario, o cuéntanos tu caso por el formulario y te respondemos en menos de 24h.
+                        Cuéntanos cómo trabajas y te enseñamos exactamente qué módulos necesitas. Demo directa con Rami, fundador de TrustCore — sin presentación comercial genérica. O escríbenos y te respondemos en menos de 24h.
                     </p>
 
                     <div class="space-y-4">
@@ -711,7 +803,7 @@
                                 class="group flex w-full items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-bold text-navy transition-all hover:border-blue-royal/40 hover:bg-blue-50">
                             <span class="flex items-center gap-3">
                                 <span class="grid h-11 w-11 place-items-center rounded-xl bg-cyan-light text-navy"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg></span>
-                                <span>Agendar demo</span>
+                                <span>Ver demo</span>
                             </span>
                             <svg class="tc-icon text-blue-royal transition-transform group-hover:translate-x-1"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg>
                         </button>
