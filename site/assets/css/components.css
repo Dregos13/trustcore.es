@@ -106,6 +106,72 @@
           color: transparent;
 }
 
+/* ------------------------- Hero: captura real + tarjetas flotantes -------------------------
+   El brief pide que el primer "ah, esto es una aplicación de verdad" ocurra en
+   la primera pantalla. Antes había un mockup dibujado en CSS; ahora es la
+   captura real del panel, inclinada y sangrando por la derecha para que se lea
+   como una ventana de producto y no como una imagen dentro de una caja. */
+/* El H1 del hero vive en su propia columna y admite más medida que un titular
+   de sección: a 20ch partía en 3 líneas. */
+.tc-hero-copy .tc-display-xl { max-width: none; }
+
+.tc-hero-shot {
+  position: relative;
+  perspective: 1600px;
+}
+.tc-hero-shot__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--tc-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.65), 0 12px 30px -12px rgba(0, 0, 0, 0.45);
+  transform: rotateY(-7deg) rotateX(2deg) scale(1.02);
+  transform-origin: left center;
+}
+@media (max-width: 1024px) {
+  .tc-hero-shot__img { transform: none; }
+}
+
+/* Datos reales del propio panel, no adornos. */
+.tc-hero-chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  background-color: var(--tc-surface);
+  border-radius: var(--tc-radius-md);
+  box-shadow: var(--tc-shadow-lg);
+  font-size: 0.8125rem;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.tc-hero-chip strong { display: block; color: var(--tc-navy); font-weight: 700; }
+.tc-hero-chip small { display: block; color: var(--tc-slate); font-size: 0.6875rem; margin-top: 1px; }
+.tc-hero-chip__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+/* Verde = confirmación, nunca decoración (regla del brief). */
+.tc-hero-chip__dot[data-state="ok"]   { background: var(--tc-success); }
+.tc-hero-chip__dot[data-state="live"] { background: var(--tc-blue-royal); animation: tc-pulse 2s ease-in-out infinite; }
+@keyframes tc-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { .tc-hero-chip__dot { animation: none; } }
+
+.tc-hero-chip--a { top: 8%;  left: -6%; }
+.tc-hero-chip--b { top: 45%; right: -4%; }
+.tc-hero-chip--c { bottom: 9%; left: 2%; }
+
+/* En móvil las tarjetas se apilan debajo: flotando taparían la captura. */
+@media (max-width: 767px) {
+  .tc-hero-shot { display: flex; flex-direction: column; gap: 0.5rem; }
+  .tc-hero-chip { position: static; white-space: normal; }
+  .tc-hero-chip--a, .tc-hero-chip--b, .tc-hero-chip--c { inset: auto; }
+}
+
 /* ------------------------- Navegación con submenú -------------------------
    Cuatro entradas en vez de ocho. Las que agrupan (Producto, Soluciones,
    Recursos) despliegan un panel. El chevron se dibuja aquí porque el sprite no
