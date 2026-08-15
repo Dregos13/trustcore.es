@@ -2870,3 +2870,18 @@ nav[aria-label] > a.tc-nav-link,
   text-underline-offset: 3px;
 }
 .tc-deadline__src .tc-icon { width: 0.75rem; height: 0.75rem; }
+
+/* Nota de prueba junto a los botones de pago. Va en tono informativo, no de
+   oferta: no hay trial autoservicio, la prueba se monta en la demo. */
+.tc-trial-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 64rem;
+  margin: 1rem 0 2.25rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--tc-ink-mute);
+}
+.tc-trial-note .tc-icon { color: var(--tc-success); flex: none; margin-top: 0.2em; }
+.tc-trial-note a { color: var(--tc-blue-eyebrow); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
