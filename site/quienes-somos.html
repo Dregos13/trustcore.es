@@ -98,7 +98,7 @@
       overflow: hidden;
     }
     .tc-about-route::before {
-      content: ;
+      content: "";
       position: absolute;
       inset: 0;
       background:
@@ -108,7 +108,11 @@
       mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.25));
       pointer-events: none;
     }
-    .tc-about-route svg {
+    /* Hijo directo a propósito: este es el SVG que dibuja las líneas del
+       diagrama. Sin el `>`, la regla alcanzaba también a los iconos de dentro
+       de cada nodo y los estiraba al 100% de la tarjeta — 188 px de icono
+       tapando el texto. */
+    .tc-about-route > svg {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -155,9 +159,10 @@
       color: #fff;
       backdrop-filter: blur(8px);
     }
-    .tc-about-route__node i {
+    .tc-about-route__node .tc-icon {
+      width: 1.125rem;
+      height: 1.125rem;
       color: var(--tc-cyan-light);
-      font-size: 1rem;
     }
     .tc-about-route__node strong {
       display: block;
@@ -246,7 +251,7 @@
       gap: 1.5rem;
     }
     .tc-storyline::before {
-      content: ;
+      content: "";
       position: absolute;
       top: 0.5rem;
       bottom: 0.5rem;
@@ -299,15 +304,25 @@
       margin: 3rem 0 0;
       padding: 0;
     }
-    .tc-road-track::before {
-      content: ;
+    /* Dos capas: el carril apagado, siempre visible, y encima el progreso que se
+       dibuja al bajar. `--road-progress` lo escribe components.js; si no hay JS
+       la variable vale 1 y la via se ve entera, que es el estado correcto. */
+    .tc-road-track::before,
+    .tc-road-track::after {
+      content: "";
       position: absolute;
       left: 8%;
       right: 8%;
       top: 2rem;
       height: 3px;
-      background: linear-gradient(90deg, var(--tc-blue-royal), var(--tc-gold), var(--tc-cyan-light));
       border-radius: 999px;
+    }
+    .tc-road-track::before { background: var(--tc-line); }
+    .tc-road-track::after {
+      background: linear-gradient(90deg, var(--tc-blue-royal), var(--tc-cyan-light));
+      transform-origin: left center;
+      transform: scaleX(var(--road-progress, 1));
+      transition: transform 700ms var(--tc-ease-out);
     }
     .tc-road-step {
       position: relative;
@@ -322,14 +337,31 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
+      background: var(--tc-surface);
+      border: 2px solid var(--tc-line);
+      color: var(--tc-slate);
+      box-shadow: var(--tc-shadow-sm);
+      z-index: 1;
+      transition: background 420ms var(--tc-ease-out), border-color 420ms var(--tc-ease-out),
+                  color 420ms var(--tc-ease-out), box-shadow 420ms var(--tc-ease-out);
+    }
+    .tc-road-step__pin .tc-icon { width: 1.375rem; height: 1.375rem; }
+    /* Encendido: lo marca components.js cuando la via alcanza el paso. */
+    .tc-road-step.is-reached .tc-road-step__pin {
       background: var(--tc-navy);
+      border-color: var(--tc-navy);
       color: #fff;
       box-shadow: var(--tc-shadow-md);
-      z-index: 1;
     }
-    .tc-road-step__pin--gold {
-      background: var(--tc-gold);
-      color: var(--tc-navy-deep);
+    .tc-road-step__stage {
+      display: block;
+      font-variant-numeric: tabular-nums;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tc-blue-eyebrow);
+      margin-bottom: 0.35rem;
     }
     .tc-road-step h3,
     .tc-storyline__body h3 {
@@ -350,6 +382,12 @@
       gap: clamp(1.5rem, 4vw, 3rem);
       align-items: stretch;
     }
+    /* Las dos tarjetas se estiran a la misma altura, pero la izquierda tiene
+       menos contenido. Sin esto, el enlace quedaba pegado al texto y el hueco
+       colgando debajo: parecia una tarjeta sin terminar. Con `margin-top:auto`
+       el enlace baja al pie y el aire queda repartido. */
+    .tc-proof-panel { display: flex; flex-direction: column; }
+    .tc-proof-panel > a[data-track="about_press_link"] { margin-top: auto; align-self: flex-start; }
     .tc-proof-panel {
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 24px;
@@ -443,13 +481,18 @@
         grid-template-columns: 1fr;
         margin-top: 2rem;
       }
-      .tc-road-track::before {
+      .tc-road-track::before,
+      .tc-road-track::after {
         left: 2rem;
         right: auto;
         top: 0;
         bottom: 0;
         width: 3px;
         height: auto;
+      }
+      .tc-road-track::after {
+        transform-origin: center top;
+        transform: scaleY(var(--road-progress, 1));
       }
       .tc-road-step {
         padding-top: 0;
@@ -707,22 +750,26 @@
       <ol class="tc-road-track">
         <li class="tc-road-step" data-reveal>
           <div class="tc-road-step__pin"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-location-dot"/></svg></div>
-          <h3>Ceuta y Melilla</h3>
+          <span class="tc-road-step__stage">Punto de partida</span>
+            <h3>Ceuta y Melilla</h3>
           <p>Producto adaptado a IPSI, asesor&iacute;as y negocios que operan con particularidades reales.</p>
         </li>
         <li class="tc-road-step" data-reveal>
-          <div class="tc-road-step__pin tc-road-step__pin--gold"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-chalkboard-user"/></svg></div>
-          <h3>Talleres y webinars</h3>
+          <div class="tc-road-step__pin"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-chalkboard-user"/></svg></div>
+          <span class="tc-road-step__stage">En marcha</span>
+            <h3>Talleres y webinars</h3>
           <p>Formaci&oacute;n pr&aacute;ctica para aterrizar facturaci&oacute;n, gastos, inventario y control horario.</p>
         </li>
         <li class="tc-road-step" data-reveal>
           <div class="tc-road-step__pin"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg></div>
-          <h3>VeriFactu 2027</h3>
+          <span class="tc-road-step__stage">Enero y julio de 2027</span>
+            <h3>VeriFactu 2027</h3>
           <p>Sociedades antes del 1 de enero de 2027; resto de obligados, incluidos aut&oacute;nomos, antes del 1 de julio de 2027. <a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html" target="_blank" rel="noopener" class="font-semibold" style="color:var(--tc-blue-royal)">Ver AEAT</a>.</p>
         </li>
         <li class="tc-road-step" data-reveal>
           <div class="tc-road-step__pin"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bridge"/></svg></div>
-          <h3>Pen&iacute;nsula</h3>
+          <span class="tc-road-step__stage">Siguiente</span>
+            <h3>Pen&iacute;nsula</h3>
           <p>Reducir la fricci&oacute;n operativa entre Pen&iacute;nsula y ciudades con r&eacute;gimen fiscal especial.</p>
         </li>
       </ol>

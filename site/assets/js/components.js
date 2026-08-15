@@ -748,4 +748,57 @@
 
   initBillingToggle();
 
+
+  /* ------------------------------------------------------------------ *
+   * Hoja de ruta: la via se dibuja al bajar
+   * ------------------------------------------------------------------
+   * `--road-progress` va de 0 a 1 segun cuanto de la via ha pasado ya por el
+   * centro de la pantalla, y cada paso se enciende al alcanzarlo. Sin JS la
+   * variable no existe, el fallback del CSS vale 1 y la via se ve entera: la
+   * animacion adorna, no informa.
+   * ------------------------------------------------------------------ */
+  function initRoadProgress() {
+    var track = document.querySelector('.tc-road-track');
+    if (!track) return;
+
+    var steps = [].slice.call(track.querySelectorAll('.tc-road-step'));
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      track.style.setProperty('--road-progress', '1');
+      steps.forEach(function (s) { s.classList.add('is-reached'); });
+      return;
+    }
+
+    track.style.setProperty('--road-progress', '0');
+
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var r = track.getBoundingClientRect();
+      var line = window.innerHeight * 0.62;
+      var p = (line - r.top) / Math.max(r.height, 1);
+      p = Math.max(0, Math.min(1, p));
+      track.style.setProperty('--road-progress', p.toFixed(3));
+
+      steps.forEach(function (step) {
+        var pin = step.querySelector('.tc-road-step__pin');
+        if (!pin) return;
+        var pr = pin.getBoundingClientRect();
+        step.classList.toggle('is-reached', pr.top + pr.height / 2 < line);
+      });
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  }
+
+  initRoadProgress();
+
 })();
