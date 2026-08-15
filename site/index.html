@@ -198,6 +198,8 @@
               <a href="/productos/trustinfacts" role="menuitem" class="tc-navmenu__item">Facturación VeriFactu</a>
               <a href="/productos/trustintime" role="menuitem" class="tc-navmenu__item">Control horario</a>
               <a href="/software-verifactu-ipsi-ceuta-melilla" role="menuitem" class="tc-navmenu__item">IPSI Ceuta y Melilla</a>
+              <a href="/funcionalidades" role="menuitem" class="tc-navmenu__item">Funcionalidades</a>
+              <a href="/como-funciona" role="menuitem" class="tc-navmenu__item">Cómo funciona</a>
             </div>
           </div>
           <div class="tc-navmenu">
@@ -205,6 +207,8 @@
               Soluciones
             </button>
             <div class="tc-navmenu__panel" id="nav-soluciones" role="menu" hidden>
+              <a href="/facturacion-para-tiendas" role="menuitem" class="tc-navmenu__item">Para tiendas</a>
+              <a href="/facturacion-para-instaladores" role="menuitem" class="tc-navmenu__item">Para instaladores</a>
               <a href="/gestoria" role="menuitem" class="tc-navmenu__item">Para gestorías</a>
               <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" role="menuitem" class="tc-navmenu__item">Comparativa con un ERP</a>
             </div>
@@ -216,6 +220,7 @@
               Recursos
             </button>
             <div class="tc-navmenu__panel" id="nav-recursos" role="menu" hidden>
+              <a href="/clientes" role="menuitem" class="tc-navmenu__item">Clientes</a>
               <a href="/blog" role="menuitem" class="tc-navmenu__item">Blog</a>
               <a href="/control-horario-obligatorio-guia-2026" role="menuitem" class="tc-navmenu__item">Guía de control horario</a>
               <a href="/ipsi-ceuta-melilla-guia-practica" role="menuitem" class="tc-navmenu__item">Guía de IPSI</a>
@@ -241,12 +246,17 @@
         <a href="/productos/trustinfacts" class="block py-2 pl-3 text-sm text-gray-600">Facturación VeriFactu</a>
         <a href="/productos/trustintime" class="block py-2 pl-3 text-sm text-gray-600">Control horario</a>
         <a href="/software-verifactu-ipsi-ceuta-melilla" class="block py-2 pl-3 text-sm text-gray-600">IPSI Ceuta y Melilla</a>
+        <a href="/funcionalidades" class="block py-2 pl-3 text-sm text-gray-600">Funcionalidades</a>
+        <a href="/como-funciona" class="block py-2 pl-3 text-sm text-gray-600">Cómo funciona</a>
       <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-400">Soluciones</p>
+        <a href="/facturacion-para-tiendas" class="block py-2 pl-3 text-sm text-gray-600">Para tiendas</a>
+        <a href="/facturacion-para-instaladores" class="block py-2 pl-3 text-sm text-gray-600">Para instaladores</a>
         <a href="/gestoria" class="block py-2 pl-3 text-sm text-gray-600">Para gestorías</a>
         <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="block py-2 pl-3 text-sm text-gray-600">Comparativa con un ERP</a>
       <a href="/precios" class="block py-2.5 text-sm font-semibold text-gray-800">Precios</a>
       <a href="/aprende" class="block py-2.5 text-sm font-semibold text-gray-800">Aprende</a>
       <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-400">Recursos</p>
+        <a href="/clientes" class="block py-2 pl-3 text-sm text-gray-600">Clientes</a>
         <a href="/blog" class="block py-2 pl-3 text-sm text-gray-600">Blog</a>
         <a href="/control-horario-obligatorio-guia-2026" class="block py-2 pl-3 text-sm text-gray-600">Guía de control horario</a>
         <a href="/ipsi-ceuta-melilla-guia-practica" class="block py-2 pl-3 text-sm text-gray-600">Guía de IPSI</a>
@@ -259,19 +269,22 @@
 
   <main id="main-content">
     <!-- ==================== HERO ==================== -->
-    <section class="relative overflow-hidden pt-28 md:pt-32 pb-16 md:pb-24 tc-blend" style="--blend-base: linear-gradient(135deg, #040F3F 0%, #0B2572 55%, #1a3a8a 100%); --blend-to: #F8FAFC;">
+    <section class="relative overflow-hidden pt-28 md:pt-32 pb-14 md:pb-36 tc-blend" style="--blend-base: linear-gradient(135deg, #040F3F 0%, #0B2572 55%, #1a3a8a 100%); --blend-to: #F8FAFC;">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full opacity-20" style="background: radial-gradient(circle, #53CDFE, transparent 60%);"></div>
             <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 48px 48px;"></div>
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-14 items-center">
+            <!-- Ojo: solo valen valores arbitrarios de Tailwind que ya existan en
+                 tailwind.min.css. Escribir una proporción nueva sin reconstruir el
+                 CSS deja la clase sin definir y el grid se colapsa a una columna. -->
+            <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-12 lg:gap-14 items-center">
 
                 <!-- Mensaje -->
                 <div class="text-center lg:text-left tc-hero-copy">
                     <h1 class="tc-display tc-display-xl !text-white mb-5 mx-auto lg:mx-0">
-                        Gestiona tu empresa desde un solo lugar.
+                        Gestiona tu empresa desde <span style="color:var(--tc-cyan-light)">un solo lugar</span>.
                     </h1>
 
                     <p class="text-lg text-slate-300 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
@@ -316,6 +329,19 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Avales institucionales dentro de la zona navy del hero.
+                 El arte de COF_Logo.png es blanco sobre transparente: sobre una
+                 franja clara sería invisible y oscurecerlo sería alterar logos
+                 ajenos. Aquí se muestra tal cual, al mismo tamaño que en el pie. -->
+            <div class="tc-avales">
+                <p class="tc-avales__label">Acelerado y respaldado por</p>
+                <div class="tc-avales__row">
+                    <img src="/COF_Logo.png"
+                         alt="Acelerado por Ceuta Open Future, Telef&oacute;nica, Ciudad Aut&oacute;noma de Ceuta y El &Aacute;ngulo Instituto Tecnol&oacute;gico"
+                         loading="lazy" decoding="async">
+                </div>
             </div>
         </div>
     </section>
@@ -410,13 +436,24 @@
         <div class="tc-section-head" data-reveal>
           <div>
             <span class="tc-eyebrow">Una plataforma</span>
-            <h2 class="tc-display tc-display-lg">Activa solo el m&oacute;dulo que necesitas</h2>
+            <h2 class="tc-display tc-display-lg">Activa solo el <span class="tc-underline">m&oacute;dulo</span> que necesitas</h2>
           </div>
           <p class="tc-section-head__lead">
             Facturaci&oacute;n y control horario comparten datos, cuenta y factura.
             Empieza por uno y a&ntilde;ade el otro cuando te haga falta.
           </p>
         </div>
+
+        <!-- Qué datos entran en la cuenta. Da la medida de "plataforma" antes de
+             abrir las pestañas, igual que el bloque de tipos de dato de Proqio. -->
+        <ul class="tc-datachips" data-reveal aria-label="Datos que viven en una misma cuenta">
+          <li><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg> Facturas y cobros</li>
+          <li><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-percent"/></svg> IPSI e IVA</li>
+          <li><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-layer-group"/></svg> Presupuestos y stock</li>
+          <li><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-clock"/></svg> Fichajes y turnos</li>
+          <li><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-users"/></svg> Vacaciones e incidencias</li>
+          <li><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-chart-line"/></svg> Informes y evidencias</li>
+        </ul>
 
         <div class="tc-tabs" data-tabs>
           <div class="tc-tabs__bar" role="tablist" aria-label="M&oacute;dulos de la plataforma">
@@ -533,10 +570,12 @@
     <!-- ==================== VÍDEO DE PRODUCTO ==================== -->
     <section class="tc-section">
       <div class="tc-container">
-        <div class="tc-demo" data-reveal>
+        <!-- Único bloque spotlight de la página: rompe el ritmo una vez, justo
+             en el punto donde el visitante ya entendió qué es y quiere verlo. -->
+        <div class="tc-demo tc-demo--spotlight" data-reveal>
           <div class="tc-demo__copy">
             <span class="tc-eyebrow">En 30 segundos</span>
-            <h2 class="tc-display tc-display-md">Una factura, de principio a fin</h2>
+            <h2 class="tc-display tc-display-md">Una <span class="tc-underline">factura</span>, de principio a fin</h2>
             <p class="tc-demo__desc">
               Grabaci&oacute;n real del producto: se emite la factura desde una venta ya
               registrada, con su impuesto y su QR. Sin edici&oacute;n ni voz en off.
@@ -550,7 +589,7 @@
           </div>
           <div class="tc-demo__player">
             <video src="/videos/aprende/trustinfacts/crear-factura-desde-venta.mp4"
-                   poster="/assets/trustinfacts-dashboard.png"
+                   poster="/assets/posters/crear-factura-desde-venta.jpg"
                    muted loop playsinline preload="none" controls
                    aria-label="Emitir una factura desde una venta en TrustinFacts"
                    width="1919" height="1027"></video>
@@ -565,7 +604,7 @@
         <div class="tc-section-head" data-reveal>
           <div>
             <span class="tc-eyebrow">Precios</span>
-            <h2 class="tc-display tc-display-lg">Tres rutas seg&uacute;n lo que necesites</h2>
+            <h2 class="tc-display tc-display-lg">Tres <span class="tc-underline">rutas</span> seg&uacute;n lo que necesites</h2>
           </div>
           <p class="tc-section-head__lead">
             Sin permanencia y sin coste de alta. El detalle de cada plan, con la
@@ -583,14 +622,36 @@
               <p class="tc-route__price">desde 5,99 €<span>/usuario/mes</span></p>
               <p class="tc-route__desc">Fichaje, turnos, vacaciones e informes</p>
             </li>
-            <li class="tc-route">
+            <li class="tc-route tc-route--featured">
+              <p class="tc-route__flag">La más completa</p>
               <p class="tc-route__name">Suite completa</p>
-              <p class="tc-route__price">Propuesta<span>a medida</span></p>
-              <p class="tc-route__desc">Los dos módulos con datos compartidos</p>
+              <p class="tc-route__price">Propuesta<span>a medida seg&uacute;n empleados y volumen</span></p>
+              <p class="tc-route__desc">Los dos m&oacute;dulos con datos compartidos, TrusTy, app m&oacute;vil y dashboards en tiempo real. Los m&oacute;dulos nuevos se activan en la misma cuenta.</p>
             </li>
         </ul>
         <p class="tc-routes__cta">
           <a href="/precios" class="tc-btn tc-btn-secondary" data-track="home_pricing_compare">Comparar todos los planes</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== CLIENTES (franja, no sección) ====================
+         Nombres, no logotipos: los logos son marca de terceros y solo se
+         publican con permiso expreso. Cada nombre es comprobable en /clientes,
+         donde cada ficha enlaza a la web o perfil público de la empresa. -->
+    <section class="tc-logostrip" aria-label="Empresas que trabajan con TrustCore">
+      <div class="tc-container">
+        <p class="tc-logostrip__label">Empresas que ya trabajan con TrustCore</p>
+        <div class="tc-logostrip__row">
+          <span class="tc-clientname">Barnosi Group</span>
+          <span class="tc-clientname">Almacenes Fari&ntilde;a</span>
+          <span class="tc-clientname">Sofert&oacute;n</span>
+          <span class="tc-clientname">M&aacute;rmoles Rom&aacute;n</span>
+          <span class="tc-clientname">El T&eacute;cnico</span>
+          <span class="tc-clientname">Gestor&iacute;a Mughili</span>
+        </div>
+        <p class="tc-logostrip__foot">
+          <a href="/clientes" data-track="home_clientes">Ver la cartera y sus referencias p&uacute;blicas</a>
         </p>
       </div>
     </section>
@@ -606,7 +667,7 @@
                 <p class="tc-section-head__lead">El 16 de abril de 2026 TrustCore ganó el II Ceuta Tech Summit y el pase dorado a Alhambra Venture (Granada, julio 2026).</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div class="tc-rail tc-rail--fit-3 max-w-6xl mx-auto">
                 <div class="tc-testimonial" data-reveal>
                     <p class="tc-testimonial__quote">"TrustCore convierte la burocracia en datos reales. Es exactamente la tecnología que necesitan las pymes y autónomos para dejar de temer las inspecciones."</p>
                     <div class="tc-testimonial__author">
@@ -823,15 +884,16 @@
     <!-- ==================== FOOTER ==================== -->
       </main>
 
+<!--FOOTER-->
   <footer style="background:var(--tc-navy-deep);color:rgba(255,255,255,0.6)" class="py-16">
     <div class="tc-container">
-      <div class="grid md:grid-cols-4 gap-10">
-        <div class="md:col-span-1">
+      <div class="grid gap-10 md:grid-cols-3 lg:grid-cols-5">
+        <div>
           <a href="/" class="flex items-center gap-2 mb-4">
             <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto" loading="lazy">
             <span class="text-white font-extrabold text-lg">TrustCore</span>
           </a>
-          <p class="text-sm leading-relaxed">Tu empresa, 100% legal y bajo control. Suite de gesti&oacute;n empresarial para pymes y aut&oacute;nomos.</p>
+          <p class="text-sm leading-relaxed">Facturaci&oacute;n preparada para VeriFactu, IPSI y control horario en una sola cuenta. Para pymes y aut&oacute;nomos.</p>
           <div class="flex flex-wrap gap-2 mt-5">
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
               <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
@@ -842,17 +904,30 @@
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold text-sm mb-4">Productos</p>
+          <p class="text-white font-semibold text-sm mb-4">Producto</p>
           <ul class="space-y-2.5 text-sm">
-            <li><a href="/productos/trustintime" class="hover:text-white transition-colors">TrustinTime</a></li>
-            <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">TrustinFacts</a></li>
+            <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">Facturación VeriFactu</a></li>
+            <li><a href="/productos/trustintime" class="hover:text-white transition-colors">Control horario</a></li>
+            <li><a href="/funcionalidades" class="hover:text-white transition-colors">Funcionalidades</a></li>
+            <li><a href="/como-funciona" class="hover:text-white transition-colors">Cómo funciona</a></li>
             <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Soluciones</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/facturacion-para-tiendas" class="hover:text-white transition-colors">Para tiendas</a></li>
+            <li><a href="/facturacion-para-instaladores" class="hover:text-white transition-colors">Para instaladores</a></li>
+            <li><a href="/gestoria" class="hover:text-white transition-colors">Para gestorías</a></li>
+            <li><a href="/software-verifactu-ipsi-ceuta-melilla" class="hover:text-white transition-colors">IPSI Ceuta y Melilla</a></li>
+            <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="hover:text-white transition-colors">Comparativa con un ERP</a></li>
           </ul>
         </div>
         <div>
           <p class="text-white font-semibold text-sm mb-4">Empresa</p>
           <ul class="space-y-2.5 text-sm">
-            <li><a href="/quienes-somos" class="hover:text-white transition-colors">Qui&eacute;nes somos</a></li>
+            <li><a href="/quienes-somos" class="hover:text-white transition-colors">Quiénes somos</a></li>
+            <li><a href="/clientes" class="hover:text-white transition-colors">Clientes</a></li>
             <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
             <li><a href="/aprende" class="hover:text-white transition-colors">Aprende</a></li>
             <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
@@ -876,23 +951,26 @@
           </div>
         </div>
       </div>
-      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <p>&copy; 2026 TrustCore &mdash; Ceuta, Espa&ntilde;a</p>
-        <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
-      </div>
-      <div class="mt-8 pt-8 border-t border-white/10 text-center">
+
+      <div class="mt-12 pt-8 border-t border-white/10 text-center">
         <p class="text-xs uppercase tracking-widest opacity-50 mb-4">Acelerado y respaldado por</p>
         <div class="flex flex-col items-center gap-4">
-          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
+          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El &Aacute;ngulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
           <div class="inline-flex max-w-full flex-col sm:flex-row items-center justify-center gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
             <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" class="h-8 w-auto object-contain" loading="lazy">
             <span class="hidden sm:block h-8 w-px bg-slate-200" aria-hidden="true"></span>
-            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
+            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Uni&oacute;n Europea, Ministerio de Trabajo y Econom&iacute;a Social, Fondos Europeos y C&aacute;mara de Comercio de Espa&ntilde;a" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
           </div>
         </div>
       </div>
+
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <p>&copy; 2026 TrustCore &mdash; Ceuta, Espa&ntilde;a</p>
+        <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
+      </div>
     </div>
   </footer>
+<!--/FOOTER-->
 
     <!-- ==================== SCRIPTS ==================== -->
   <script src="/assets/js/consent.js" defer></script>

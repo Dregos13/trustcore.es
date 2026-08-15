@@ -37,6 +37,8 @@
               <a href="/productos/trustinfacts" role="menuitem" class="tc-navmenu__item">Facturación VeriFactu</a>
               <a href="/productos/trustintime" role="menuitem" class="tc-navmenu__item">Control horario</a>
               <a href="/software-verifactu-ipsi-ceuta-melilla" role="menuitem" class="tc-navmenu__item">IPSI Ceuta y Melilla</a>
+              <a href="/funcionalidades" role="menuitem" class="tc-navmenu__item">Funcionalidades</a>
+              <a href="/como-funciona" role="menuitem" class="tc-navmenu__item">Cómo funciona</a>
             </div>
           </div>
           <div class="tc-navmenu">
@@ -44,6 +46,8 @@
               Soluciones
             </button>
             <div class="tc-navmenu__panel" id="nav-soluciones" role="menu" hidden>
+              <a href="/facturacion-para-tiendas" role="menuitem" class="tc-navmenu__item">Para tiendas</a>
+              <a href="/facturacion-para-instaladores" role="menuitem" class="tc-navmenu__item">Para instaladores</a>
               <a href="/gestoria" role="menuitem" class="tc-navmenu__item">Para gestorías</a>
               <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" role="menuitem" class="tc-navmenu__item">Comparativa con un ERP</a>
             </div>
@@ -55,6 +59,7 @@
               Recursos
             </button>
             <div class="tc-navmenu__panel" id="nav-recursos" role="menu" hidden>
+              <a href="/clientes" role="menuitem" class="tc-navmenu__item">Clientes</a>
               <a href="/blog" role="menuitem" class="tc-navmenu__item">Blog</a>
               <a href="/control-horario-obligatorio-guia-2026" role="menuitem" class="tc-navmenu__item">Guía de control horario</a>
               <a href="/ipsi-ceuta-melilla-guia-practica" role="menuitem" class="tc-navmenu__item">Guía de IPSI</a>
@@ -75,12 +80,17 @@
         <a href="/productos/trustinfacts" class="block py-2 pl-3 text-sm text-gray-600">Facturación VeriFactu</a>
         <a href="/productos/trustintime" class="block py-2 pl-3 text-sm text-gray-600">Control horario</a>
         <a href="/software-verifactu-ipsi-ceuta-melilla" class="block py-2 pl-3 text-sm text-gray-600">IPSI Ceuta y Melilla</a>
+        <a href="/funcionalidades" class="block py-2 pl-3 text-sm text-gray-600">Funcionalidades</a>
+        <a href="/como-funciona" class="block py-2 pl-3 text-sm text-gray-600">Cómo funciona</a>
       <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-400">Soluciones</p>
+        <a href="/facturacion-para-tiendas" class="block py-2 pl-3 text-sm text-gray-600">Para tiendas</a>
+        <a href="/facturacion-para-instaladores" class="block py-2 pl-3 text-sm text-gray-600">Para instaladores</a>
         <a href="/gestoria" class="block py-2 pl-3 text-sm text-gray-600">Para gestorías</a>
         <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="block py-2 pl-3 text-sm text-gray-600">Comparativa con un ERP</a>
       <a href="/precios" class="block py-2.5 text-sm font-semibold text-gray-800">Precios</a>
       <a href="/aprende" class="block py-2.5 text-sm font-semibold text-gray-800">Aprende</a>
       <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-400">Recursos</p>
+        <a href="/clientes" class="block py-2 pl-3 text-sm text-gray-600">Clientes</a>
         <a href="/blog" class="block py-2 pl-3 text-sm text-gray-600">Blog</a>
         <a href="/control-horario-obligatorio-guia-2026" class="block py-2 pl-3 text-sm text-gray-600">Guía de control horario</a>
         <a href="/ipsi-ceuta-melilla-guia-practica" class="block py-2 pl-3 text-sm text-gray-600">Guía de IPSI</a>
@@ -129,17 +139,93 @@
     </section>
   </main>
 
-  <footer class="py-8 border-t border-slate-100 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <p>&copy; 2026 TrustCore</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="/aviso-legal" class="hover:text-[#040F3F]">Aviso legal</a>
-        <a href="/privacidad" class="hover:text-[#040F3F]">Privacidad</a>
-        <a href="/cookies" class="hover:text-[#040F3F]">Cookies</a>
-        <button type="button" data-cookie-settings class="hover:text-[#040F3F]">Configurar cookies</button>
+<!--FOOTER-->
+  <footer style="background:var(--tc-navy-deep);color:rgba(255,255,255,0.6)" class="py-16">
+    <div class="tc-container">
+      <div class="grid gap-10 md:grid-cols-3 lg:grid-cols-5">
+        <div>
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <img src="/assets/trustcore-icon.png" alt="TrustCore" class="h-9 w-auto" loading="lazy">
+            <span class="text-white font-extrabold text-lg">TrustCore</span>
+          </a>
+          <p class="text-sm leading-relaxed">Facturaci&oacute;n preparada para VeriFactu, IPSI y control horario en una sola cuenta. Para pymes y aut&oacute;nomos.</p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
+              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-award"/></svg> #1 CeutaTech 2026
+            </span>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Producto</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">Facturación VeriFactu</a></li>
+            <li><a href="/productos/trustintime" class="hover:text-white transition-colors">Control horario</a></li>
+            <li><a href="/funcionalidades" class="hover:text-white transition-colors">Funcionalidades</a></li>
+            <li><a href="/como-funciona" class="hover:text-white transition-colors">Cómo funciona</a></li>
+            <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Soluciones</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/facturacion-para-tiendas" class="hover:text-white transition-colors">Para tiendas</a></li>
+            <li><a href="/facturacion-para-instaladores" class="hover:text-white transition-colors">Para instaladores</a></li>
+            <li><a href="/gestoria" class="hover:text-white transition-colors">Para gestorías</a></li>
+            <li><a href="/software-verifactu-ipsi-ceuta-melilla" class="hover:text-white transition-colors">IPSI Ceuta y Melilla</a></li>
+            <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="hover:text-white transition-colors">Comparativa con un ERP</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Empresa</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/quienes-somos" class="hover:text-white transition-colors">Quiénes somos</a></li>
+            <li><a href="/clientes" class="hover:text-white transition-colors">Clientes</a></li>
+            <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/aprende" class="hover:text-white transition-colors">Aprende</a></li>
+            <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Legal</p>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/aviso-legal" class="hover:text-white transition-colors">Aviso legal</a></li>
+            <li><a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a></li>
+            <li><a href="/cookies" class="hover:text-white transition-colors">Cookies</a></li>
+            <li><a href="/terminos" class="hover:text-white transition-colors">Términos</a></li>
+            <li><button type="button" data-cookie-settings class="hover:text-white transition-colors text-left">Configurar cookies</button></li>
+          </ul>
+          <div class="mt-5">
+            <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+              <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
+                Rese&ntilde;anos en <svg class="tc-icon" style="color:#00B67A"><use href="/assets/icons/sprite.svg#fa-star"/></svg> <strong class="text-slate-900">Trustpilot</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/10 text-center">
+        <p class="text-xs uppercase tracking-widest opacity-50 mb-4">Acelerado y respaldado por</p>
+        <div class="flex flex-col items-center gap-4">
+          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El &Aacute;ngulo" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
+          <div class="inline-flex max-w-full flex-col sm:flex-row items-center justify-center gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+            <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" class="h-8 w-auto object-contain" loading="lazy">
+            <span class="hidden sm:block h-8 w-px bg-slate-200" aria-hidden="true"></span>
+            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Uni&oacute;n Europea, Ministerio de Trabajo y Econom&iacute;a Social, Fondos Europeos y C&aacute;mara de Comercio de Espa&ntilde;a" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <p>&copy; 2026 TrustCore &mdash; Ceuta, Espa&ntilde;a</p>
+        <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
       </div>
     </div>
   </footer>
+<!--/FOOTER-->
 
   <script src="/assets/js/consent.js" defer></script>
   <script src="/assets/js/components.js" defer></script>

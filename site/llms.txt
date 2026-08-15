@@ -63,7 +63,11 @@ Fuente de relación comercial: cartera confirmada por TrustCore. Referencias pú
 - Inicio: https://www.trustcore.es/
 - TrustinTime: https://www.trustcore.es/productos/trustintime
 - TrustinFacts: https://www.trustcore.es/productos/trustinfacts
+- Funcionalidades en vídeo: https://www.trustcore.es/funcionalidades
+- Cómo funciona (alta paso a paso): https://www.trustcore.es/como-funciona
 - Gestorías: https://www.trustcore.es/gestoria
+- Tiendas y comercios: https://www.trustcore.es/facturacion-para-tiendas
+- Electricistas, fontaneros e instaladores: https://www.trustcore.es/facturacion-para-instaladores
 - Precios: https://www.trustcore.es/precios
 - Software VERI*FACTU con IPSI: https://www.trustcore.es/software-verifactu-ipsi-ceuta-melilla
 - Comparativa TrustCore vs ERP genérico: https://www.trustcore.es/comparativa/verifactu-ipsi-trustcore-vs-erp-generico
