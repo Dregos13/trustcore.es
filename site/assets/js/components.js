@@ -115,6 +115,43 @@
     });
   });
 
+  // ---------- Pestañas de la plataforma (patrón ARIA tabs) ----------
+  document.querySelectorAll('[data-tabs]').forEach(function (root) {
+    var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+    if (!tabs.length) return;
+
+    function select(idx, focus) {
+      tabs.forEach(function (t, i) {
+        var on = i === idx;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (panels[i]) panels[i].hidden = !on;
+      });
+      if (focus) tabs[idx].focus();
+      track('platform_tab', { tab: tabs[idx].id.replace('tab-', '') });
+    }
+
+    // Estado inicial desde el marcado: sin JS se ve el primer panel, así que
+    // aquí solo hay que ocultar los demás.
+    tabs.forEach(function (t, i) {
+      if (panels[i]) panels[i].hidden = t.getAttribute('aria-selected') !== 'true';
+      t.addEventListener('click', function () { select(i, false); });
+    });
+
+    root.querySelector('[role="tablist"]').addEventListener('keydown', function (e) {
+      var i = tabs.indexOf(document.activeElement);
+      if (i === -1) return;
+      var next = e.key === 'ArrowRight' ? i + 1
+               : e.key === 'ArrowLeft'  ? i - 1
+               : e.key === 'Home'       ? 0
+               : e.key === 'End'        ? tabs.length - 1 : null;
+      if (next === null) return;
+      e.preventDefault();
+      select((next + tabs.length) % tabs.length, true);
+    });
+  });
+
   // ---------- Navegación con submenú (accesible) ----------
   (function () {
     var menus = [].slice.call(document.querySelectorAll('.tc-navmenu'));

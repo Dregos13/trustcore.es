@@ -332,317 +332,113 @@
         </div>
     </section>
 
-    <!-- ==================== TRUST / METRICS BAR ==================== -->
-    <section class="py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 mb-6">
-                Validado por inversores, jurados técnicos y clientes reales
-            </p>
-            <div class="tc-metric-row">
-                <div class="tc-metric" data-reveal>
-                    <span class="tc-metric__value">100%</span>
-                    <span class="tc-metric__label">Cumplimiento normativo documentado</span>
-                </div>
-                <div class="tc-metric" data-reveal>
-                    <span class="tc-metric__value">18</span>
-                    <span class="tc-metric__label">Fichas del jurado CeutaTech Summit</span>
-                </div>
-                <div class="tc-metric" data-reveal>
-                    <span class="tc-metric__value">0</span>
-                    <span class="tc-metric__label">Sanciones reportadas por clientes desde 2024</span>
-                </div>
-                <div class="tc-metric" data-reveal>
-                    <span class="tc-metric__value">3</span>
-                    <span class="tc-metric__label">Idiomas y cloud 100% europeo</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== MÓDULOS (BENTO) ==================== -->
-    <section id="modulos" class="tc-section">
+    <!-- ==================== CONFIANZA (franja, no sección) ==================== -->
+    <section class="tc-trust-strip" aria-label="Reconocimientos">
         <div class="tc-container">
-            <div class="tc-section-head" data-reveal>
-                <div>
-                    <span class="tc-eyebrow">Suite modular</span>
-                    <h2 class="tc-display tc-display-lg">Contrata el módulo que necesitas. Crece cuando quieras.</h2>
-                </div>
-                <p class="tc-section-head__lead">Facturación, horario, IPSI, cloud, IA y dashboards. Mismos datos, una sola suite — sin migraciones dolorosas.</p>
-            </div>
-
-            <div class="tc-bento">
-                <article class="tc-bento__card tc-bento--two-thirds bg-gradient-to-br from-white to-blue-50" data-reveal>
-                    <span class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg></span>
-                    <h3 class="tc-bento__title">Facturación VeriFactu</h3>
-                    <p class="tc-bento__desc mb-4">
-                        Prepara facturas con QR, trazabilidad y registros alineados con SIF/VERI*FACTU, con stock, control de márgenes e IPSI para Ceuta/Melilla.
-                    </p>
-                    <a href="/productos/trustinfacts" class="inline-flex items-center gap-2 text-blue-royal font-semibold text-sm hover:gap-3 transition-all" data-track="module_verifactu">
-                        Ver TrustinFacts <svg class="tc-icon text-xs"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg>
-                    </a>
-                </article>
-
-                <article class="tc-bento__card tc-bento--third" data-reveal>
-                    <span class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-clock"/></svg></span>
-                    <h3 class="tc-bento__title">Control horario</h3>
-                    <p class="tc-bento__desc mb-4">Fichaje geoposicionado, vacaciones y portal del empleado. Desde 5,99 €/usuario/mes.</p>
-                    <a href="/productos/trustintime" class="inline-flex items-center gap-2 text-blue-royal font-semibold text-sm hover:gap-3 transition-all" data-track="module_horario">
-                        Ver TrustinTime <svg class="tc-icon text-xs"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg>
-                    </a>
-                </article>
-
-                <article class="tc-bento__card tc-bento--third" data-reveal>
-                    <span class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-cloud"/></svg></span>
-                    <h3 class="tc-bento__title">Cloud europeo</h3>
-                    <p class="tc-bento__desc">Datos cifrados AES-256 en servidores europeos. Seguridad, trazabilidad y enfoque alineado con RGPD.</p>
-                </article>
-
-                <article class="tc-bento__card tc-bento--third" data-reveal>
-                    <span class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-wand-magic-sparkles"/></svg></span>
-                    <h3 class="tc-bento__title">TrusTy, asistente virtual con IA</h3>
-                    <p class="tc-bento__desc">Pregunta en lenguaje natural: "facturas del último trimestre", "horas extra de marzo". TrusTy convierte dudas operativas en respuestas y revisiones útiles.</p>
-                </article>
-
-                <article class="tc-bento__card tc-bento--third" data-reveal>
-                    <span class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-chart-line"/></svg></span>
-                    <h3 class="tc-bento__title">Dashboards en tiempo real</h3>
-                    <p class="tc-bento__desc">Visibilidad completa del negocio: ingresos, márgenes, productividad, absentismo. Todo en un panel.</p>
-                </article>
-
-                <article class="tc-bento__card tc-bento--hero bg-gradient-to-br from-navy to-blue-corp text-white border-navy" data-reveal>
-                    <div class="grid md:grid-cols-[auto_1fr_auto] gap-6 items-center">
-                        <span class="tc-bento__icon !bg-white/10 !text-cyan-light"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-puzzle-piece"/></svg></span>
-                        <div>
-                            <h3 class="tc-bento__title !text-white mb-1">¿Necesitas IPSI para Ceuta o Melilla?</h3>
-                            <p class="tc-bento__desc !text-slate-200">Integramos IPSI en facturas para evitar parches manuales, tipos duplicados y correcciones repetidas por operación.</p>
-                        </div>
-                        <a href="/software-verifactu-ipsi-ceuta-melilla" class="tc-btn tc-btn-secondary whitespace-nowrap" data-track="module_ipsi">
-                            Ver VERI*FACTU + IPSI <svg class="tc-icon text-xs"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg>
-                        </a>
-                    </div>
-                </article>
+            <p class="tc-trust-strip__label">Reconocimiento p&uacute;blico y respaldo institucional</p>
+            <div class="tc-trust-strip__row">
+                <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/"
+                   target="_blank" rel="noopener" class="tc-trust-strip__award" data-track="trust_award">
+                    <span class="tc-award__icon"><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg></span>
+                    <span>Ganador del II Ceuta Tech Summit &middot; Seleccionado para Alhambra Venture 2026</span>
+                </a>
+                <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" class="tc-trust-strip__logo" loading="lazy" width="297" height="128">
+                <img src="/assets/logos-camara-fondos-europeos.png" alt="C&aacute;mara de Comercio y Fondos Europeos" class="tc-trust-strip__logo" loading="lazy" width="1299" height="79">
             </div>
         </div>
     </section>
 
-    <!-- ==================== PRODUCTOS (cards TrustinTime / TrustinFacts) ==================== -->
-    <!-- ==================== PRODUCTOS (THEATER) ==================== -->
-    <section id="productos" class="tc-blend" style="--blend-base: radial-gradient(ellipse at top,#040F3F 0%,#020A2A 70%);--blend-from:#F8FAFC;--blend-to:#F8FAFC;padding:88px 0 96px;position:relative;overflow:hidden;font-family:'Inter',system-ui,sans-serif;color:#fff;">
-      <!-- backdrop orbs -->
-      <div id="tc-prod-orb-top" style="position:absolute;top:-220px;right:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,#2071D522,transparent 65%);pointer-events:none;transition:background 1s ease;"></div>
-      <div id="tc-prod-orb-bot" style="position:absolute;bottom:-180px;left:-140px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,#53CDFE1a,transparent 65%);pointer-events:none;transition:background 1s ease;"></div>
-      <!-- grid -->
-      <div style="position:absolute;inset:0;opacity:.05;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:56px 56px;"></div>
-
-      <div class="tc-container" style="position:relative;">
-        <!-- TOP ROW -->
-        <div id="tc-prod-toprow" style="display:grid;grid-template-columns:1.3fr auto;gap:40px;align-items:end;margin-bottom:54px;">
+    <!-- ==================== PLATAFORMA (pestañas) ==================== -->
+    <section id="plataforma" class="tc-section scroll-mt-24">
+      <div class="tc-container">
+        <div class="tc-section-head" data-reveal>
           <div>
-            <div style="display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;">
-              <span style="width:30px;height:2px;background:linear-gradient(90deg,#2071D5,#53CDFE);border-radius:2px;"></span>
-              Productos
-            </div>
-            <h2 style="font-size:clamp(28px,3.6vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:0;max-width:820px;">
-              Dos productos.
-              <span style="background:linear-gradient(120deg,#53CDFE 0%,#a5e4ff 60%,#2071D5 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">
-                Una obsesión común: Crecer sin temer.
-              </span>
-            </h2>
-            <p style="font-size:16px;color:rgba(226,232,240,.6);line-height:1.55;margin-top:16px;max-width:600px;">
-              Contrátalos por separado o juntos. Comparten datos, cloud, IA y dashboard &mdash; y ahorran la migración dolorosa del día que los necesites juntos.
-            </p>
+            <span class="tc-eyebrow">Una plataforma</span>
+            <h2 class="tc-display tc-display-lg">Activa solo el m&oacute;dulo que necesitas</h2>
           </div>
-          <!-- Segmented tabs -->
-          <div id="tc-prod-tabs" role="tablist" style="position:relative;display:inline-flex;padding:5px;align-self:end;background:rgba(255,255,255,.05);border-radius:16px;border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px);">
-            <div id="tc-tab-indicator" style="position:absolute;top:5px;bottom:5px;left:5px;width:0;background:#fff;border-radius:11px;transition:left .45s cubic-bezier(.4,.1,.2,1),width .45s cubic-bezier(.4,.1,.2,1);box-shadow:0 8px 22px -8px rgba(0,0,0,.3);"></div>
-            <button id="tc-tab-time" role="tab" aria-selected="true" onclick="tcSetTab('time')" style="position:relative;z-index:1;padding:12px 22px;border:none;background:transparent;cursor:pointer;color:#040F3F;font-weight:700;font-size:13.5px;font-family:inherit;display:inline-flex;align-items:center;gap:9px;transition:color .35s;">
-              <span style="width:7px;height:7px;border-radius:50%;background:#2071D5;"></span>TrustinTime
-            </button>
-            <button id="tc-tab-facts" role="tab" aria-selected="false" onclick="tcSetTab('facts')" style="position:relative;z-index:1;padding:12px 22px;border:none;background:transparent;cursor:pointer;color:rgba(255,255,255,.7);font-weight:700;font-size:13.5px;font-family:inherit;display:inline-flex;align-items:center;gap:9px;transition:color .35s;">
-              <span style="width:7px;height:7px;border-radius:50%;background:#53CDFE;"></span>TrustinFacts
-            </button>
-          </div>
+          <p class="tc-section-head__lead">
+            Facturaci&oacute;n y control horario comparten datos, cuenta y factura.
+            Empieza por uno y a&ntilde;ade el otro cuando te haga falta.
+          </p>
         </div>
 
-        <!-- STAGE -->
-        <div id="tc-prod-stage" style="display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center;position:relative;">
-
-          <!-- COPY SIDE -->
-          <div style="position:relative;z-index:2;">
-           <div class="tc-theater-stack">
-
-            <!-- TIME copy -->
-            <div id="tc-copy-time" class="tc-theater-panel is-active">
-              <img src="/assets/trustintime-logo.png" alt="TrustinTime" style="height:38px;width:auto;filter:brightness(0) invert(1);opacity:.95;margin-bottom:22px;display:block;" loading="lazy">
-              <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border-radius:999px;background:#2071D51a;border:1px solid #2071D535;color:#2071D5;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;">
-                <span style="width:6px;height:6px;border-radius:50%;background:#2071D5;"></span>Control horario · RRHH
-              </div>
-              <h3 style="font-size:clamp(26px,2.8vw,44px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0;">Cada fichaje,<br><span style="color:#2071D5;">una prueba legal.</span></h3>
-              <p style="font-size:16px;color:rgba(226,232,240,.72);line-height:1.62;margin:20px 0 28px;max-width:500px;">Geofence de 50m, logs firmados y 4 años de conservación. Documenta el RDL 8/2019 para todo tu equipo antes de que lo necesites.</p>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;margin-bottom:30px;">
-                <div style="display:flex;gap:12px;align-items:flex-start;"><span style="width:34px;height:34px;border-radius:9px;flex-shrink:0;background:#2071D518;border:1px solid #2071D52e;display:grid;place-items:center;color:#2071D5;font-size:13px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-map-marker-alt"/></svg></span><div><div style="font-size:13.5px;font-weight:700;color:#fff;">Fichaje geoposicionado</div><div style="font-size:11.5px;color:rgba(226,232,240,.55);margin-top:2px;">50m geofence + IP</div></div></div>
-                <div style="display:flex;gap:12px;align-items:flex-start;"><span style="width:34px;height:34px;border-radius:9px;flex-shrink:0;background:#2071D518;border:1px solid #2071D52e;display:grid;place-items:center;color:#2071D5;font-size:13px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-umbrella-beach"/></svg></span><div><div style="font-size:13.5px;font-weight:700;color:#fff;">Vacaciones y turnos</div><div style="font-size:11.5px;color:rgba(226,232,240,.55);margin-top:2px;">Festivos por CCAA</div></div></div>
-                <div style="display:flex;gap:12px;align-items:flex-start;"><span style="width:34px;height:34px;border-radius:9px;flex-shrink:0;background:#2071D518;border:1px solid #2071D52e;display:grid;place-items:center;color:#2071D5;font-size:13px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-mobile-screen-button"/></svg></span><div><div style="font-size:13.5px;font-weight:700;color:#fff;">App móvil empleado</div><div style="font-size:11.5px;color:rgba(226,232,240,.55);margin-top:2px;">iOS + Android</div></div></div>
-                <div style="display:flex;gap:12px;align-items:flex-start;"><span style="width:34px;height:34px;border-radius:9px;flex-shrink:0;background:#2071D518;border:1px solid #2071D52e;display:grid;place-items:center;color:#2071D5;font-size:13px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-export"/></svg></span><div><div style="font-size:13.5px;font-weight:700;color:#fff;">Exportación Inspección</div><div style="font-size:11.5px;color:rgba(226,232,240,.55);margin-top:2px;">PDF + CSV firmado</div></div></div>
-              </div>
-              <div style="display:inline-flex;align-items:center;gap:12px;padding:11px 16px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);margin-bottom:28px;">
-                <span style="width:32px;height:32px;border-radius:8px;background:#D4A23D22;display:grid;place-items:center;color:#D4A23D;font-size:14px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-gavel"/></svg></span>
-                <div><div style="font-size:11px;font-weight:700;color:#D4A23D;letter-spacing:.08em;text-transform:uppercase;">RDL 8/2019</div><div style="font-size:12px;color:rgba(226,232,240,.72);">Registro diario · Conservación 4 años</div></div>
-              </div>
-              <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-                <a href="/productos/trustintime" data-track="product_theater_trustintime" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;background:#2071D5;color:#fff;border-radius:14px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 24px 50px -18px #2071D5aa;transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Ver TrustinTime <svg class="tc-icon" style="font-size:12px;"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg></a>
-                <div style="display:flex;gap:22px;">
-                  <div><div style="font-size:10px;color:rgba(226,232,240,.45);font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Conservación</div><div style="font-size:20px;font-weight:800;letter-spacing:-.02em;margin-top:2px;">4 años</div></div>
-                  <div><div style="font-size:10px;color:rgba(226,232,240,.45);font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Desde</div><div style="font-size:20px;font-weight:800;letter-spacing:-.02em;margin-top:2px;">5,99 €<span style="font-size:12px;color:rgba(226,232,240,.55);font-weight:500;"> /usuario/mes</span></div></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- FACTS copy -->
-            <div id="tc-copy-facts" class="tc-theater-panel">
-              <img src="/assets/trustinfacts-logo.png" alt="TrustinFacts" style="height:38px;width:auto;filter:brightness(0) invert(1);opacity:.95;margin-bottom:22px;display:block;" loading="lazy">
-              <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border-radius:999px;background:#53CDFE1a;border:1px solid #53CDFE35;color:#53CDFE;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;">
-                <span style="width:6px;height:6px;border-radius:50%;background:#53CDFE;"></span>VeriFactu · IPSI · Stock
-              </div>
-              <h3 style="font-size:clamp(26px,2.8vw,44px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0;">Factura trazable,<br><span style="color:#53CDFE;">preparada para SIF.</span></h3>
-              <p style="font-size:16px;color:rgba(226,232,240,.72);line-height:1.62;margin:20px 0 28px;max-width:500px;">Facturación preparada para SIF/VERI*FACTU con QR, huella criptográfica e IPSI de Ceuta y Melilla nativo, sin parches manuales.</p>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;margin-bottom:30px;">
-                <div style="display:flex;gap:12px;align-items:flex-start;"><span style="width:34px;height:34px;border-radius:9px;flex-shrink:0;background:#53CDFE18;border:1px solid #53CDFE2e;display:grid;place-items:center;color:#53CDFE;font-size:13px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-shield-halved"/></svg></span><div><div style="font-size:13.5px;font-weight:700;color:#fff;">Preparado SIF</div><div style="font-size:11.5px;color:rgba(226,232,240,.55);margin-top:2px;">RD 1007/2023</div></div></div>
-                <div style="display:flex;gap:12px;align-items:flex-start;"><span style="width:34px;height:34px;border-radius:9px;flex-shrink:0;background:#53CDFE18;border:1px solid #53CDFE2e;display:grid;place-items:center;color:#53CDFE;font-size:13px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-percent"/></svg></span><div><div style="font-size:13.5px;font-weight:700;color:#fff;">IPSI nativo</div><div style="font-size:11.5px;color:rgba(226,232,240,.55);margin-top:2px;">Ceuta · Melilla</div></div></div>
-                <div style="display:flex;gap:12px;align-items:flex-start;"><span style="width:34px;height:34px;border-radius:9px;flex-shrink:0;background:#53CDFE18;border:1px solid #53CDFE2e;display:grid;place-items:center;color:#53CDFE;font-size:13px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-boxes-stacked"/></svg></span><div><div style="font-size:13.5px;font-weight:700;color:#fff;">Control de stock</div><div style="font-size:11.5px;color:rgba(226,232,240,.55);margin-top:2px;">Márgenes en vivo</div></div></div>
-                <div style="display:flex;gap:12px;align-items:flex-start;"><span style="width:34px;height:34px;border-radius:9px;flex-shrink:0;background:#53CDFE18;border:1px solid #53CDFE2e;display:grid;place-items:center;color:#53CDFE;font-size:13px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-chart-line"/></svg></span><div><div style="font-size:13.5px;font-weight:700;color:#fff;">Dashboards reales</div><div style="font-size:11.5px;color:rgba(226,232,240,.55);margin-top:2px;">Sin exportar a Excel</div></div></div>
-              </div>
-              <div style="display:inline-flex;align-items:center;gap:12px;padding:11px 16px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);margin-bottom:28px;">
-                <span style="width:32px;height:32px;border-radius:8px;background:#D4A23D22;display:grid;place-items:center;color:#D4A23D;font-size:14px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-gavel"/></svg></span>
-                <div><div style="font-size:11px;font-weight:700;color:#D4A23D;letter-spacing:.08em;text-transform:uppercase;">RD 1007/2023</div><div style="font-size:12px;color:rgba(226,232,240,.72);">Adaptación SIF según calendario AEAT 2027</div></div>
-              </div>
-              <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-                <a href="/productos/trustinfacts" data-track="product_theater_trustinfacts" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;background:#53CDFE;color:#040F3F;border-radius:14px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 24px 50px -18px #53CDFEaa;transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Ver TrustinFacts <svg class="tc-icon" style="font-size:12px;"><use href="/assets/icons/sprite.svg#fa-arrow-right"/></svg></a>
-                <div style="display:flex;gap:22px;">
-                  <div><div style="font-size:10px;color:rgba(226,232,240,.45);font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Obligatorio</div><div style="font-size:20px;font-weight:800;letter-spacing:-.02em;margin-top:2px;">Ene 2027</div></div>
-                  <div><div style="font-size:10px;color:rgba(226,232,240,.45);font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Desde</div><div style="font-size:20px;font-weight:800;letter-spacing:-.02em;margin-top:2px;">19,99 €<span style="font-size:12px;color:rgba(226,232,240,.55);font-weight:500;"> /mes</span></div></div>
-                </div>
-              </div>
-            </div>
-           </div>
+        <div class="tc-tabs" data-tabs>
+          <div class="tc-tabs__bar" role="tablist" aria-label="M&oacute;dulos de la plataforma">
+        <button type="button" role="tab" id="tab-facturacion" aria-controls="panel-facturacion" aria-selected="true" tabindex="0" class="tc-tabs__tab">Facturación</button>
+        <button type="button" role="tab" id="tab-equipo" aria-controls="panel-equipo" aria-selected="false" tabindex="-1" class="tc-tabs__tab">Equipo</button>
+        <button type="button" role="tab" id="tab-trusty" aria-controls="panel-trusty" aria-selected="false" tabindex="-1" class="tc-tabs__tab">TrusTy</button>
+        <button type="button" role="tab" id="tab-informacion" aria-controls="panel-informacion" aria-selected="false" tabindex="-1" class="tc-tabs__tab">Información</button>
           </div>
-
-          <!-- UI SIDE -->
-          <div style="position:relative;">
-            <div id="tc-prod-halo" style="position:absolute;inset:-60px;border-radius:40px;background:radial-gradient(ellipse at center,#2071D525,transparent 65%);filter:blur(20px);pointer-events:none;transition:background 1s ease;z-index:0;"></div>
-
-            <div class="tc-theater-stack">
-
-            <!-- Screenshot TrustinTime -->
-            <div id="tc-ui-time" class="tc-theater-panel is-active" style="position:relative;z-index:1;">
-              <div style="background:#1e2a3a;border-radius:16px;overflow:hidden;box-shadow:0 32px 80px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06);">
-                <div style="background:#2a3649;padding:12px 16px;display:flex;align-items:center;gap:8px;">
-                  <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
-                  <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
-                  <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span>
-                  <div style="flex:1;background:#1a2538;border-radius:6px;height:26px;margin:0 12px;display:flex;align-items:center;padding:0 10px;"><span style="font-size:11px;color:rgba(255,255,255,.4);">app.trustcore.es/turnos</span></div>
-                </div>
-                <img src="/assets/trustintime-dashboard.png" alt="TrustinTime — Vista de turnos del equipo" style="width:100%;display:block;max-height:420px;object-fit:cover;object-position:top;" loading="lazy">
-              </div>
-            </div>
-
-            <!-- Screenshot TrustinFacts -->
-            <div id="tc-ui-facts" class="tc-theater-panel" style="position:relative;z-index:1;">
-              <div style="background:#1e2a3a;border-radius:16px;overflow:hidden;box-shadow:0 32px 80px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06);">
-                <div style="background:#2a3649;padding:12px 16px;display:flex;align-items:center;gap:8px;">
-                  <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
-                  <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
-                  <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span>
-                  <div style="flex:1;background:#1a2538;border-radius:6px;height:26px;margin:0 12px;display:flex;align-items:center;padding:0 10px;"><span style="font-size:11px;color:rgba(255,255,255,.4);">app.trustcore.es/informes</span></div>
-                </div>
-                <img src="/assets/trustinfacts-dashboard.png" alt="TrustinFacts — Panel de informes y facturación" style="width:100%;display:block;max-height:420px;object-fit:cover;object-position:top;" loading="lazy">
-              </div>
-            </div>
-            </div>
-
-            <!-- Floating chip -->
-            <div id="tc-prod-chip" style="position:absolute;left:-22px;bottom:60px;z-index:2;">
-              <div style="display:inline-flex;align-items:center;gap:12px;background:#fff;color:#040F3F;padding:12px 16px 12px 12px;border-radius:14px;box-shadow:0 20px 50px -20px rgba(2,10,42,.55),0 0 0 1px rgba(15,23,42,.04);">
-                <span id="tc-chip-icon" style="width:36px;height:36px;border-radius:10px;background:#dcfce7;display:grid;place-items:center;color:#166534;font-size:14px;"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-fingerprint"/></svg></span>
-                <div>
-                  <div id="tc-chip-label" style="font-size:11px;color:#64748b;font-weight:600;margin-bottom:1px;">Última jornada</div>
-                  <div id="tc-chip-value" style="font-size:13px;font-weight:800;letter-spacing:-.01em;">12 empleados fichando ahora</div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="tc-tabs__panel" id="panel-facturacion" role="tabpanel" aria-labelledby="tab-facturacion" tabindex="0">
+        <div class="tc-tabs__copy">
+          <h3 class="tc-display tc-display-md">Factura, cobra y aplica el impuesto correcto</h3>
+          <p class="tc-tabs__desc">Presupuesto, venta, factura y cobro en la misma cadena. El IPSI de Ceuta y Melilla o el IVA peninsular se aplican solos, con QR y huella en cada documento.</p>
+          <ul class="tc-tabs__list">
+          <li>Facturas con QR y huella criptográfica</li>
+          <li>IPSI y IVA sin plantillas manuales</li>
+          <li>Presupuestos, albaranes y stock</li>
+          <li>Preparado para los requisitos SIF/VERI*FACTU</li>
+          </ul>
+          <a href="/productos/trustinfacts" class="tc-btn tc-btn-secondary" data-track="tab_facturacion">Ver facturación</a>
+        </div>
+        <div class="tc-tabs__shot">
+          <img src="/assets/trustinfacts-dashboard.png" alt="Panel de facturación de TrustinFacts con el resumen del mes y los impuestos aplicados" width="1919" height="1027" loading="lazy" decoding="async">
         </div>
       </div>
-
-      <style>
-        @keyframes tcFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-        @keyframes tcSlide{from{opacity:0;transform:translateX(24px) scale(.985)}to{opacity:1;transform:none}}
-        .tc-prod-anim-copy{animation:tcFade .65s cubic-bezier(.2,.7,.2,1) both}
-        .tc-prod-anim-ui{animation:tcSlide .7s cubic-bezier(.2,.7,.2,1) both}
-        @media(max-width:900px){
-          #tc-prod-toprow{grid-template-columns:1fr!important;}
-          #tc-prod-stage{grid-template-columns:1fr!important;}
-          #tc-prod-chip{display:none!important;}
-        }
-      </style>
-      <script>
-      (function(){
-        var cur='time',timer=null,paused=false;
-        var cfg={
-          time:{orbTop:'#2071D522',orbBot:'#53CDFE1a',halo:'radial-gradient(ellipse at center,#2071D525,transparent 65%)',chipBg:'#dcfce7',chipColor:'#166534',chipIcon:'fas fa-fingerprint',chipLabel:'Última jornada',chipVal:'12 empleados fichando ahora'},
-          facts:{orbTop:'#53CDFE22',orbBot:'#D4A23D1a',halo:'radial-gradient(ellipse at center,#53CDFE25,transparent 65%)',chipBg:'#fef3c7',chipColor:'#b45309',chipIcon:'fas fa-trophy',chipLabel:'Reconocimiento',chipVal:'#1 CeutaTech Summit 2026'}
-        };
-        function activate(tab){
-          if(tab===cur)return;cur=tab;
-          var c=cfg[tab];
-          document.getElementById('tc-prod-orb-top').style.background='radial-gradient(circle,'+c.orbTop+',transparent 65%)';
-          document.getElementById('tc-prod-orb-bot').style.background='radial-gradient(circle,'+c.orbBot+',transparent 65%)';
-          document.getElementById('tc-prod-halo').style.background=c.halo;
-          ['copy','ui'].forEach(function(side){
-            ['time','facts'].forEach(function(t){
-              var el=document.getElementById('tc-'+side+'-'+t);
-              el.classList.toggle('is-active',t===tab);
-            });
-          });
-          var bt=document.getElementById('tc-tab-time'),bf=document.getElementById('tc-tab-facts');
-          bt.style.color=tab==='time'?'#040F3F':'rgba(255,255,255,.7)';
-          bf.style.color=tab==='facts'?'#040F3F':'rgba(255,255,255,.7)';
-          bt.setAttribute('aria-selected',tab==='time');
-          bf.setAttribute('aria-selected',tab==='facts');
-          var ab=document.getElementById('tc-tab-'+tab),ind=document.getElementById('tc-tab-indicator');
-          ind.style.left=ab.offsetLeft+'px';ind.style.width=ab.offsetWidth+'px';
-          var ci=document.getElementById('tc-chip-icon');
-          ci.className='fas '+c.chipIcon;ci.parentElement.style.background=c.chipBg;ci.parentElement.style.color=c.chipColor;
-          document.getElementById('tc-chip-label').textContent=c.chipLabel;
-          document.getElementById('tc-chip-value').textContent=c.chipVal;
-        }
-        var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
-        var visible=false;
-        function stopTimer(){if(timer){clearInterval(timer);timer=null;}}
-        function startTimer(){
-          if(reduce||!visible||timer)return;
-          timer=setInterval(function(){if(!paused)activate(cur==='time'?'facts':'time');},12000);
-        }
-        window.tcSetTab=function(tab){activate(tab);stopTimer();startTimer();};
-        var sec=document.getElementById('productos');
-        if(sec){
-          sec.addEventListener('mouseenter',function(){paused=true;});
-          sec.addEventListener('mouseleave',function(){paused=false;});
-          sec.addEventListener('focusin',function(){paused=true;});
-          sec.addEventListener('focusout',function(){paused=false;});
-          if('IntersectionObserver' in window){
-            new IntersectionObserver(function(entries){
-              visible=entries[0].isIntersecting;
-              if(visible)startTimer();else stopTimer();
-            },{threshold:0.35}).observe(sec);
-          } else {visible=true;startTimer();}
-        }
-        window.addEventListener('load',function(){
-          var ab=document.getElementById('tc-tab-time'),ind=document.getElementById('tc-tab-indicator');
-          if(ab&&ind){ind.style.left=ab.offsetLeft+'px';ind.style.width=ab.offsetWidth+'px';}
-        });
-      })();
-      </script>
+      <div class="tc-tabs__panel" id="panel-equipo" role="tabpanel" aria-labelledby="tab-equipo" tabindex="0">
+        <div class="tc-tabs__copy">
+          <h3 class="tc-display tc-display-md">Registra la jornada y olvídate del papel</h3>
+          <p class="tc-tabs__desc">Fichaje desde app, QR o PIN, con turnos, vacaciones y ausencias en el mismo sitio. Los registros quedan trazables y se exportan cuando hagan falta.</p>
+          <ul class="tc-tabs__list">
+          <li>Fichaje geoposicionado y app móvil</li>
+          <li>Turnos, vacaciones y festivos por CCAA</li>
+          <li>Registros conservados 4 años</li>
+          <li>Exportación preparada para revisión</li>
+          </ul>
+          <a href="/productos/trustintime" class="tc-btn tc-btn-secondary" data-track="tab_equipo">Ver control horario</a>
+        </div>
+        <div class="tc-tabs__shot">
+          <img src="/assets/trustintime-dashboard.png" alt="Panel de control horario de TrustinTime con los fichajes del día" width="1906" height="915" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="tc-tabs__panel" id="panel-trusty" role="tabpanel" aria-labelledby="tab-trusty" tabindex="0">
+        <div class="tc-tabs__copy">
+          <h3 class="tc-display tc-display-md">Pregunta por tu negocio en lenguaje normal</h3>
+          <p class="tc-tabs__desc">El asistente lee tus datos y responde con contexto: qué facturaste, qué horas extra hay este mes, qué operaciones conviene revisar antes de cerrar.</p>
+          <ul class="tc-tabs__list">
+          <li>"¿Cuánto facturé el último trimestre?"</li>
+          <li>"¿Qué horas extra hubo en marzo?"</li>
+          <li>Detecta operaciones que conviene revisar</li>
+          <li>Acompaña, no sustituye a tu asesoría</li>
+          </ul>
+          <a href="/precios" class="tc-btn tc-btn-secondary" data-track="tab_trusty">Ver planes</a>
+        </div>
+        <div class="tc-tabs__chat">
+          <p class="tc-tabs__chat-q">&iquest;Cu&aacute;nto facturé en Ceuta el último trimestre?</p>
+          <p class="tc-tabs__chat-a">Has facturado <strong>18.782,40 &euro;</strong> en 47 facturas.
+             El <strong>IPSI</strong> aplicado suma 722,40 &euro;. Hay <strong>3 operaciones</strong>
+             con territorio sin confirmar &mdash; conviene revisarlas antes de cerrar el trimestre.</p>
+          <p class="tc-tabs__chat-note">TrusTy trabaja sobre tus datos. No sustituye el criterio de tu asesor&iacute;a.</p>
+        </div>
+      </div>
+      <div class="tc-tabs__panel" id="panel-informacion" role="tabpanel" aria-labelledby="tab-informacion" tabindex="0">
+        <div class="tc-tabs__copy">
+          <h3 class="tc-display tc-display-md">Mira el negocio sin montar un informe</h3>
+          <p class="tc-tabs__desc">Ingresos, márgenes, actividad del equipo e incidencias, actualizados. Lo que antes salía de cruzar hojas de cálculo, ya está calculado.</p>
+          <ul class="tc-tabs__list">
+          <li>Ingresos y márgenes al día</li>
+          <li>Actividad y ausencias del equipo</li>
+          <li>Incidencias que necesitan atención</li>
+          <li>Exportable a CSV y PDF</li>
+          </ul>
+          <a href="/precios" class="tc-btn tc-btn-secondary" data-track="tab_informacion">Ver planes</a>
+        </div>
+        <div class="tc-tabs__shot">
+          <img src="/assets/trustintime-ausencias.png" alt="Panel de ausencias e incidencias del equipo en TrustinTime" width="1905" height="914" loading="lazy" decoding="async">
+        </div>
+      </div>
+        </div>
+      </div>
     </section>
 
     <!-- ==================== PRICING ANCHOR ==================== -->

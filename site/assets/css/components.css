@@ -106,6 +106,154 @@
           color: transparent;
 }
 
+/* ------------------------- Plataforma por pestañas -------------------------
+   El núcleo del rediseño: sustituye al bento de 6 módulos MÁS el teatro de 2
+   productos, que decían lo mismo dos veces en 286 líneas. Cambiar de pestaña
+   cambia copy y captura, así que la suite entera se enseña sin apilar bloques.
+
+   Sin JS se ve el primer panel (el resto lleva `hidden`, que el JS gestiona):
+   nunca hay contenido inalcanzable. */
+.tc-tabs {
+  background-color: var(--tc-surface);
+  border: 1px solid var(--tc-line);
+  border-radius: var(--tc-radius-2xl);
+  box-shadow: var(--tc-shadow-md);
+  overflow: hidden;
+}
+.tc-tabs__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--tc-line);
+  background-color: var(--tc-surface-alt);
+}
+.tc-tabs__tab {
+  padding: 0.625rem 1.125rem;
+  border: 0;
+  border-radius: var(--tc-radius-md);
+  background: none;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--tc-slate);
+  cursor: pointer;
+  transition: background-color var(--tc-duration-fast) var(--tc-ease-out),
+              color var(--tc-duration-fast) var(--tc-ease-out);
+}
+.tc-tabs__tab:hover { color: var(--tc-blue-corp); }
+.tc-tabs__tab[aria-selected="true"] {
+  background-color: var(--tc-surface);
+  color: var(--tc-navy);
+  box-shadow: var(--tc-shadow-xs);
+}
+.tc-tabs__tab:focus-visible { outline: 2px solid var(--tc-blue-royal); outline-offset: 2px; }
+
+.tc-tabs__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+}
+.tc-tabs__panel:focus-visible { outline: 2px solid var(--tc-blue-royal); outline-offset: -4px; }
+@media (max-width: 900px) {
+  .tc-tabs__panel { grid-template-columns: 1fr; }
+}
+.tc-tabs__desc { color: var(--tc-ink-mute); line-height: 1.65; margin: 0.75rem 0 1.25rem; max-width: 46ch; }
+.tc-tabs__list { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 0.5rem; }
+.tc-tabs__list li {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--tc-ink-mute);
+}
+.tc-tabs__list li::before { content: "✓"; color: var(--tc-success); font-weight: 700; flex-shrink: 0; }
+
+/* La captura sangra por la derecha para que se lea como producto, no como
+   una imagen centrada dentro de una caja. */
+.tc-tabs__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--tc-radius-lg);
+  border: 1px solid var(--tc-line);
+  box-shadow: var(--tc-shadow-lg);
+}
+
+.tc-tabs__chat {
+  background: linear-gradient(155deg, var(--tc-navy), var(--tc-blue-corp));
+  border-radius: var(--tc-radius-lg);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  box-shadow: var(--tc-shadow-lg);
+}
+.tc-tabs__chat-q {
+  margin: 0 0 0.875rem;
+  padding: 0.625rem 0.875rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--tc-radius-md);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+.tc-tabs__chat-a {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+.tc-tabs__chat-a strong { color: var(--tc-cyan-light); }
+.tc-tabs__chat-note {
+  margin: 1rem 0 0;
+  padding-top: 0.875rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.75rem;
+}
+
+/* ------------------------- Franja de confianza -------------------------
+   Sustituye a las 4 métricas en caja (100% / 18 / 0 / 3). El brief pide que
+   los premios "respalden la solución, pero no ocupen una sección enorme ni
+   compitan con el producto": una línea, no un bloque.
+
+   Los logos institucionales se muestran a su proporción original y sin
+   recortes ni recolores — son marcas de terceros. */
+.tc-trust-strip {
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 1px solid var(--tc-line-soft);
+}
+.tc-trust-strip__label {
+  text-align: center;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tc-slate-soft);
+  margin: 0 0 1rem;
+}
+.tc-trust-strip__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.25rem, 4vw, 2.75rem);
+}
+.tc-trust-strip__award {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--tc-gold-deep);
+}
+.tc-trust-strip__award:hover { color: var(--tc-navy); }
+/* Sin grayscale ni opacidad: son marcas de terceros y no se recolorean.
+   Solo se escalan proporcionalmente. */
+.tc-trust-strip__logo {
+  height: 30px;
+  width: auto;
+}
+
 /* ------------------------- Hero: captura real + tarjetas flotantes -------------------------
    El brief pide que el primer "ah, esto es una aplicación de verdad" ocurra en
    la primera pantalla. Antes había un mockup dibujado en CSS; ahora es la
