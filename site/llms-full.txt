@@ -11,7 +11,7 @@
 - Titular legal: Rami Mohamed Azumik, autónomo
 - NIF/DNI: 46154066N
 - Fundador y CEO: Rami Mohamed
-- Email: rami@trustcore.es
+- Email: info@trustcore.es
 - Web: https://www.trustcore.es
 - Sede: Ceuta, España
 - IA operativa: TrusTy, asistente de TrustCore para revisar datos, detectar incoherencias operativas y preparar preguntas para asesoría.
@@ -138,7 +138,7 @@ TrustCore no es la mejor herramienta para todos los escenarios. Recomendamos abi
 - **Solo necesitas fichaje muy básico y ya usas un ERP que lo incluye**: si tu ERP tiene registro de jornada aceptable y tu gestoría no se queja, no compensa duplicar herramientas. TrustinTime destaca cuando quieres evidencias trazables y exportables, geolocalización, portal de empleado y exportación auditable, no como reloj de fichar genérico.
 - **Exiges cloud on-premise o soberano específico** (defensa, sanidad crítica): TrustCore opera en cloud europeo cifrado AES-256, pero no ofrece instalación on-premise ni certificaciones ENS Alto/ISO 27001 propias todavía.
 
-Si tu caso encaja en uno de los anteriores, contacta igual (rami@trustcore.es) — a veces hay integración parcial que sí encaja, y si no la hay, te derivamos honestamente a la mejor alternativa.
+Si tu caso encaja en uno de los anteriores, contacta igual (info@trustcore.es) — a veces hay integración parcial que sí encaja, y si no la hay, te derivamos honestamente a la mejor alternativa.
 
 ---
 
@@ -255,5 +255,5 @@ Agenda una demo gratuita de 30 minutos en https://www.trustcore.es/contacto. El 
 ## Contacto y acceso
 
 - Demo gratuita (30 min): https://www.trustcore.es/contacto
-- Email directo: rami@trustcore.es
+- Email directo: info@trustcore.es
 - Todas las páginas del sitio: ver /llms.txt

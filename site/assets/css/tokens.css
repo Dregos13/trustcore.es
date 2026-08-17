@@ -10,17 +10,24 @@
   --tc-navy-deep:     #020A2A;
   --tc-blue-corp:     #0B2572;
   --tc-blue-royal:    #2071D5;
-  /* Azul de eyebrow. #2071D5 sobre #F8FAFC daba 4,58:1 — pasaba AA por los
-     pelos. Al convertir el eyebrow en chip, el propio tinte del chip lo bajaba
-     a 3,87 y dejaba de pasar. Este tono mantiene la lectura de "azul de acento"
-     y sube a 4,75:1 en la peor superficie (chip sobre azul claro). */
-  --tc-blue-eyebrow:  #1A5CB0;
+  /* Azul de acento sobre fondo claro. Ha bajado dos veces por la misma razón:
+     el chip del eyebrow y las píldoras tintadas mezclan el propio color con el
+     fondo, así que el contraste real es siempre peor que el del color sobre
+     blanco. Medido en navegador, #1A5CB0 se quedaba en 4,27:1 sobre el
+     spotlight. #17529C da 6,9:1 en la peor de esas superficies. */
+  --tc-blue-eyebrow:  #17529C;
   --tc-blue-soft:     #E8F0FE;
   --tc-cyan-light:    #53CDFE;
   --tc-cyan-glow:     #B3E8FF;
 
   /* ---- Semantic colors ---- */
   --tc-success:       #0FA06F;
+  /* Verde para TEXTO sobre fondo claro. #0FA06F es el verde de "validado" en
+     puntos, bordes y rellenos, pero como color de letra sobre su propio tinte
+     se queda en 2,9:1. El `-strong` es para tintes más densos (12 %), donde
+     #0B7A55 todavía se quedaba en 4,48:1. */
+  --tc-success-text:        #0B7A55;
+  --tc-success-text-strong: #0A6B4A;
   --tc-warning:       #F59E0B;
   --tc-danger:        #DC2626;
   --tc-info:          var(--tc-blue-royal);
@@ -35,6 +42,11 @@
   --tc-ink-mute:      #334155;
   --tc-slate:         #64748B;
   --tc-slate-soft:    #94A3B8;
+  /* Gris de etiqueta. #94A3B8 daba 2,45:1 sobre la superficie clara y #64748B
+     se quedaba en 4,27:1 sobre la banda: los dos suspendían AA en las
+     etiquetas de 11px de las franjas. Este sube a 6,8:1 en la peor de las dos
+     superficies y sigue leyéndose como gris secundario. */
+  --tc-slate-label:   #475569;
   --tc-line:          #E2E8F0;
   --tc-line-soft:     #F1F5F9;
   --tc-surface:       #FFFFFF;

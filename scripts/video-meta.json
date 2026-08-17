@@ -1,0 +1,163 @@
+{
+  "anadir-stock": {
+    "duration": "PT19S",
+    "height": 518,
+    "poster": "/assets/posters/anadir-stock-960.jpg",
+    "seconds": 18.8,
+    "width": 960
+  },
+  "cobrar-venta-y-generar-liquidacion": {
+    "duration": "PT50S",
+    "height": 518,
+    "poster": "/assets/posters/cobrar-venta-y-generar-liquidacion-960.jpg",
+    "seconds": 50.27,
+    "width": 960
+  },
+  "crear-cliente": {
+    "duration": "PT30S",
+    "height": 516,
+    "poster": "/assets/posters/crear-cliente-960.jpg",
+    "seconds": 29.97,
+    "width": 960
+  },
+  "crear-factura": {
+    "duration": "PT21S",
+    "height": 518,
+    "poster": "/assets/posters/crear-factura-960.jpg",
+    "seconds": 20.69,
+    "width": 960
+  },
+  "crear-factura-desde-venta": {
+    "duration": "PT24S",
+    "height": 518,
+    "poster": "/assets/posters/crear-factura-desde-venta-960.jpg",
+    "seconds": 23.8,
+    "width": 960
+  },
+  "crear-presupuesto": {
+    "duration": "PT28S",
+    "height": 516,
+    "poster": "/assets/posters/crear-presupuesto-960.jpg",
+    "seconds": 28.0,
+    "width": 960
+  },
+  "crear-producto": {
+    "duration": "PT32S",
+    "height": 518,
+    "poster": "/assets/posters/crear-producto-960.jpg",
+    "seconds": 32.11,
+    "width": 960
+  },
+  "crear-proveedor": {
+    "duration": "PT30S",
+    "height": 516,
+    "poster": "/assets/posters/crear-proveedor-960.jpg",
+    "seconds": 30.43,
+    "width": 960
+  },
+  "crear-servicio": {
+    "duration": "PT34S",
+    "height": 516,
+    "poster": "/assets/posters/crear-servicio-960.jpg",
+    "seconds": 34.43,
+    "width": 960
+  },
+  "crear-stock": {
+    "duration": "PT17S",
+    "height": 514,
+    "poster": "/assets/posters/crear-stock-960.jpg",
+    "seconds": 17.23,
+    "width": 960
+  },
+  "crear-venta-presupuesto": {
+    "duration": "PT7S",
+    "height": 516,
+    "poster": "/assets/posters/crear-venta-presupuesto-960.jpg",
+    "seconds": 6.57,
+    "width": 960
+  },
+  "editar-presupuesto": {
+    "duration": "PT27S",
+    "height": 540,
+    "poster": "/assets/posters/editar-presupuesto-960.jpg",
+    "seconds": 26.53,
+    "width": 960
+  },
+  "informes-1": {
+    "duration": "PT22S",
+    "height": 514,
+    "poster": "/assets/posters/informes-1-960.jpg",
+    "seconds": 21.87,
+    "width": 960
+  },
+  "informes-2": {
+    "duration": "PT37S",
+    "height": 514,
+    "poster": "/assets/posters/informes-2-960.jpg",
+    "seconds": 36.93,
+    "width": 960
+  },
+  "informes-3": {
+    "duration": "PT16S",
+    "height": 518,
+    "poster": "/assets/posters/informes-3-960.jpg",
+    "seconds": 15.53,
+    "width": 960
+  },
+  "modelo001": {
+    "duration": "PT30S",
+    "height": 518,
+    "poster": "/assets/posters/modelo001-960.jpg",
+    "seconds": 30.5,
+    "width": 960
+  },
+  "modelo130": {
+    "duration": "PT33S",
+    "height": 518,
+    "poster": "/assets/posters/modelo130-960.jpg",
+    "seconds": 33.3,
+    "width": 960
+  },
+  "mover-a-tienda": {
+    "duration": "PT37S",
+    "height": 519,
+    "poster": "/assets/posters/mover-a-tienda-960.jpg",
+    "seconds": 36.8,
+    "width": 960
+  },
+  "registrar-gasto": {
+    "duration": "PT30S",
+    "height": 518,
+    "poster": "/assets/posters/registrar-gasto-960.jpg",
+    "seconds": 30.07,
+    "width": 960
+  },
+  "registrar-gasto-con-albaran": {
+    "duration": "PT44S",
+    "height": 514,
+    "poster": "/assets/posters/registrar-gasto-con-albaran-960.jpg",
+    "seconds": 44.1,
+    "width": 960
+  },
+  "registrar-otros-gastos-deducibles": {
+    "duration": "PT25S",
+    "height": 518,
+    "poster": "/assets/posters/registrar-otros-gastos-deducibles-960.jpg",
+    "seconds": 24.6,
+    "width": 960
+  },
+  "registrar-pago": {
+    "duration": "PT18S",
+    "height": 518,
+    "poster": "/assets/posters/registrar-pago-960.jpg",
+    "seconds": 17.88,
+    "width": 960
+  },
+  "ver-venta-y-crear-factura": {
+    "duration": "PT31S",
+    "height": 518,
+    "poster": "/assets/posters/ver-venta-y-crear-factura-960.jpg",
+    "seconds": 30.7,
+    "width": 960
+  }
+}

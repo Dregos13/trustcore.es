@@ -1,0 +1,5 @@
+/* Entrada del bundle de componentes (ver scripts/build-assets.mjs).
+   Orden: fuentes → tokens → componentes. Tailwind se antepone al concatenar,
+   para que las clases .tc-* sigan ganando a las utilidades. */
+@import "./fonts.css";
+@import "../site/assets/css/components.css"; /* trae tokens.css por @import */

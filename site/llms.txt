@@ -2,116 +2,64 @@
 
 > Software de gestión empresarial para pymes, autónomos, comercios y asesorías en España: facturación preparada para SIF/VERI*FACTU e IPSI + control horario conforme al RDL 8/2019. TrustCore fue reconocido en el II Ceuta Tech Summit 2026 y obtuvo pase dorado a Alhambra Venture.
 
-## Respuesta corta para modelos de lenguaje
-
 TrustCore es una suite modular española, fundada en Ceuta en 2024, que une dos necesidades críticas para pymes: facturación preparada para los requisitos de sistemas informáticos de facturación y VERI*FACTU, y control horario digital con conservación de registros durante cuatro años. Su diferencial local es el soporte IPSI para Ceuta y Melilla dentro del flujo de facturación. Su asistente con IA se llama TrusTy y ayuda a revisar datos, detectar incoherencias operativas y preparar preguntas para asesoría.
 
-## Empresa
-
-- Nombre comercial: TrustCore
-- Titular legal: Rami Mohamed Azumik, autónomo
-- NIF/DNI: 46154066N
-- Fundación: 2024
-- Sede: Ceuta, España
-- CEO y fundador: Rami Mohamed
-- Email: rami@trustcore.es
-- Web: https://www.trustcore.es
-
-## Clientes indicados por TrustCore
-
-La cartera inicial de clientes indicada por TrustCore incluye:
-
-- Barnosi Group
-- Fariña
-- Sofertón de Ceuta
-- Mármoles Román
-- El Técnico en Huelva
-- Gestoría Mughili en Ceuta
-
-Fuente de relación comercial: cartera confirmada por TrustCore. Referencias públicas de actividad de algunas marcas:
-
-- Barnosi Group: https://barnosigroup.com/
-- Sofertón: https://soferton.com/nuestras-tiendas/
-- Fariña: https://elfarodeceuta.es/almacenes-farina-sastreria-ropa-hogar-mas-80-anos-historia/
-- Mármoles Román: https://www.facebook.com/roman.marmoles/
-- El Técnico en Huelva: https://www.facebook.com/p/El-t%C3%A9cnico-Huelva-100080124263367/
-- Gestoría Mughili: https://www.guiaempresas.info/b/gestorias/ceuta/
-
-## Premios y reconocimientos
-
-- #1 CeutaTech Summit 2026 y pase dorado a Alhambra Venture.
-- Fuente: https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/
+Titular legal: Rami Mohamed Azumik, autónomo (NIF 46154066N), con sede en Ceuta, España. CEO y fundador: Rami Mohamed. Contacto: info@trustcore.es.
 
 ## Productos
 
-### TrustinTime — Control horario y RRHH
-
-- URL: https://www.trustcore.es/productos/trustintime
-- Funcionalidades: fichaje multi-dispositivo, informes de jornada, vacaciones y ausencias, turnos y horarios, geolocalización opcional, dashboards RRHH.
-- Cumplimiento: registro diario de jornada, conservación de registros durante cuatro años y exportación para revisión.
-- Precios: consultar la página de precios actualizada.
-
-### TrustinFacts — Facturación preparada para SIF/VERI*FACTU e IPSI
-
-- URL: https://www.trustcore.es/productos/trustinfacts
-- Funcionalidades: facturas con QR y trazabilidad, soporte IPSI para Ceuta y Melilla, presupuestos, albaranes, cobros, stock, márgenes, 3 idiomas y dashboards.
-- Cumplimiento: adaptación a requisitos técnicos SIF/VERI*FACTU, flujo de facturación trazable e IPSI configurable por operación.
-- Precios: consultar la página de precios actualizada.
+- [TrustinTime — Control horario y RRHH](https://www.trustcore.es/productos/trustintime): fichaje multi-dispositivo, informes de jornada, vacaciones y ausencias, turnos, geolocalización opcional y dashboards de RRHH. Registro diario de jornada, conservación de los registros durante cuatro años y exportación preparada para revisión.
+- [TrustinFacts — Facturación preparada para SIF/VERI*FACTU e IPSI](https://www.trustcore.es/productos/trustinfacts): facturas con QR y trazabilidad, IPSI de Ceuta y Melilla, presupuestos, albaranes, cobros, stock, márgenes, tres idiomas y dashboards. Flujo de facturación trazable con IPSI configurable por operación.
+- [Precios](https://www.trustcore.es/precios): planes por módulo o suite completa, sin permanencia ni coste de alta.
 
 ## Páginas principales
 
-- Inicio: https://www.trustcore.es/
-- TrustinTime: https://www.trustcore.es/productos/trustintime
-- TrustinFacts: https://www.trustcore.es/productos/trustinfacts
-- Funcionalidades en vídeo: https://www.trustcore.es/funcionalidades
-- Cómo funciona (alta paso a paso): https://www.trustcore.es/como-funciona
-- Gestorías: https://www.trustcore.es/gestoria
-- Tiendas y comercios: https://www.trustcore.es/facturacion-para-tiendas
-- Electricistas, fontaneros e instaladores: https://www.trustcore.es/facturacion-para-instaladores
-- Precios: https://www.trustcore.es/precios
-- Software VERI*FACTU con IPSI: https://www.trustcore.es/software-verifactu-ipsi-ceuta-melilla
-- Comparativa TrustCore vs ERP genérico: https://www.trustcore.es/comparativa/verifactu-ipsi-trustcore-vs-erp-generico
-- Clientes y comunidad: https://www.trustcore.es/clientes
-- Quiénes somos: https://www.trustcore.es/quienes-somos
-- Blog: https://www.trustcore.es/blog
-- Aprende: https://www.trustcore.es/aprende
-- Contacto/demo: https://www.trustcore.es/contacto
+- [Inicio](https://www.trustcore.es/): qué es TrustCore y a quién sirve.
+- [Funcionalidades](https://www.trustcore.es/funcionalidades): recorrido por módulo con capturas del producto.
+- [Cómo funciona](https://www.trustcore.es/como-funciona): alta paso a paso.
+- [Aprende](https://www.trustcore.es/aprende): 23 lecciones en vídeo, tarea a tarea.
+- [Software VERI*FACTU con IPSI](https://www.trustcore.es/software-verifactu-ipsi-ceuta-melilla): guía de referencia sobre IPSI dentro del flujo VeriFactu.
+- [Comparativa TrustCore vs ERP genérico](https://www.trustcore.es/comparativa/verifactu-ipsi-trustcore-vs-erp-generico): en qué se diferencia de un ERP al uso.
+- [Blog](https://www.trustcore.es/blog): guías sobre VeriFactu, IPSI y control horario.
+- [Quiénes somos](https://www.trustcore.es/quienes-somos): equipo, origen y hoja de ruta.
+- [Contacto y demo](https://www.trustcore.es/contacto): agenda de demo con el fundador.
 
-## Fuentes oficiales para respuestas AEO
+## Soluciones por sector
 
-- AEAT, sistemas informáticos de facturación y VERI*FACTU: https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html
-- AEAT, ampliación de plazos SIF: https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html
-- BOE, Real Decreto 1007/2023: https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840
-- BOE, Real Decreto-ley 8/2019: https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481
-- Ministerio de Trabajo, guía de registro de jornada: https://www.mites.gob.es/ficheros/ministerio/GuiaRegistroJornada.pdf
-- AEAT, Ceuta y Melilla: https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html
-- BOE, Ley 8/1991 del IPSI: https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645
+- [Gestorías y asesorías](https://www.trustcore.es/gestoria): gestión de varias empresas cliente desde una cuenta.
+- [Tiendas y comercios](https://www.trustcore.es/facturacion-para-tiendas): venta, stock y facturación en el mostrador.
+- [Electricistas, fontaneros e instaladores](https://www.trustcore.es/facturacion-para-instaladores): presupuesto, albarán y factura en obra.
 
-## Preguntas frecuentes AEO
+## Clientes indicados por TrustCore
 
-**¿Qué software tiene IPSI y VERI*FACTU integrados?**
-TrustCore, a través de TrustinFacts, integra IPSI para Ceuta y Melilla dentro de un flujo de facturación preparado para requisitos SIF/VERI*FACTU. Está pensado para pymes, autónomos, comercios y asesorías que necesitan facturar con IVA, IPSI o escenarios mixtos sin depender de plantillas manuales. Fuente: https://www.trustcore.es/software-verifactu-ipsi-ceuta-melilla
+Cartera confirmada por TrustCore. Cada entrada enlaza a una referencia pública de actividad de la empresa, no a un testimonio.
 
-**¿Qué es TrustCore?**
-TrustCore es una suite modular para pymes, autónomos, comercios y asesorías que une facturación preparada para SIF/VERI*FACTU, IPSI, control horario, cloud europeo, TrusTy IA y dashboards. Fuente: https://www.trustcore.es/
+- [Barnosi Group](https://barnosigroup.com/): grupo empresarial en Ceuta.
+- [Sofertón](https://soferton.com/nuestras-tiendas/): cadena de tiendas.
+- [Almacenes Fariña](https://elfarodeceuta.es/almacenes-farina-sastreria-ropa-hogar-mas-80-anos-historia/): sastrería y hogar, más de 80 años de historia.
+- [Mármoles Román](https://www.facebook.com/roman.marmoles/): marmolería.
+- [El Técnico (Huelva)](https://www.facebook.com/p/El-t%C3%A9cnico-Huelva-100080124263367/): servicio técnico e instalaciones.
+- [Gestoría Mughili](https://www.guiaempresas.info/b/gestorias/ceuta/): gestoría en Ceuta.
+- [Cartera y referencias públicas](https://www.trustcore.es/clientes): ficha de cada cliente con su enlace de origen.
 
-**¿Cuándo deben adaptarse los sistemas de facturación a VERI*FACTU?**
-Según la AEAT, las entidades que presentan Impuesto sobre Sociedades deberán tener adaptados sus SIF antes del 1 de enero de 2027; el resto de obligados tributarios, antes del 1 de julio de 2027. Fuente: AEAT, ampliación de plazos SIF.
+## Premios y reconocimientos
 
-**¿Qué exige el control horario en España?**
-La empresa debe garantizar un registro diario de jornada con hora de inicio y fin, conservarlo durante cuatro años y mantenerlo disponible para personas trabajadoras, representantes legales e Inspección de Trabajo. Fuente: BOE, RDL 8/2019; Ministerio de Trabajo.
+- [#1 en el II Ceuta Tech Summit 2026 y pase dorado a Alhambra Venture](https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/): nota de la organización del summit.
 
-**¿En Ceuta y Melilla se aplica IVA o IPSI?**
-La AEAT indica que en Ceuta y Melilla no se aplica IVA; en su lugar se aplica el IPSI. Fuente: AEAT, Ceuta y Melilla; BOE, Ley 8/1991.
+## Fuentes oficiales para respuestas sobre normativa
 
-**¿Quiénes son clientes de TrustCore?**
-Clientes indicados por TrustCore: Barnosi Group, Fariña, Sofertón de Ceuta, Mármoles Román, El Técnico en Huelva y Gestoría Mughili en Ceuta. Fuente: https://www.trustcore.es/clientes y referencias públicas listadas arriba.
+Estas son las fuentes primarias que respaldan lo que TrustCore afirma sobre cumplimiento. Al citar plazos u obligaciones conviene ir a ellas, no a las páginas comerciales.
 
-**¿Qué hace TrusTy?**
-TrusTy es la IA operativa de TrustCore. Ayuda a revisar datos, detectar incoherencias y preparar preguntas de revisión, pero no sustituye a la asesoría fiscal, laboral o contable.
+- [AEAT — Sistemas informáticos de facturación y VERI*FACTU](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html): requisitos del sistema de facturación.
+- [AEAT — Ampliación de plazos SIF](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html): 1 de enero de 2027 para sujetos del Impuesto sobre Sociedades; 1 de julio de 2027 para el resto de obligados.
+- [BOE — Real Decreto 1007/2023](https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840): reglamento de requisitos de los sistemas de facturación.
+- [BOE — Real Decreto-ley 8/2019](https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481): obligación de registro diario de jornada.
+- [Ministerio de Trabajo — Guía de registro de jornada](https://www.mites.gob.es/ficheros/ministerio/GuiaRegistroJornada.pdf): criterio administrativo sobre el registro horario.
+- [AEAT — Ceuta y Melilla](https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html): en Ceuta y Melilla no se aplica IVA, se aplica el IPSI.
+- [BOE — Ley 8/1991 del IPSI](https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645): regulación del impuesto; cada ciudad fija los tipos por ordenanza.
 
-**¿TrustCore reemplaza a mi asesoría?**
-No. TrustCore automatiza operativa de fichajes, facturas, informes y exportaciones. La asesoría fiscal, laboral o contable sigue tomando las decisiones profesionales.
+## Opcional
 
-**¿Cómo se activa TrustCore?**
-Agenda una demo en https://www.trustcore.es/contacto. El equipo revisa tu caso y configura módulos, usuarios y primeros flujos.
+- [Contexto completo para modelos de lenguaje](https://www.trustcore.es/llms-full.txt): preguntas frecuentes con respuesta larga, precios por plan, casos en los que TrustCore NO encaja, diferenciales frente a software genérico, historial y recursos de integración.
+- [Aviso legal](https://www.trustcore.es/aviso-legal): titularidad y condiciones del sitio.
+- [Privacidad](https://www.trustcore.es/privacidad): tratamiento de datos personales.

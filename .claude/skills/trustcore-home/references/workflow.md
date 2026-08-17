@@ -8,13 +8,31 @@ nada. Aprendido a base de romperlo.
 ## Construir
 
 ```bash
-# 1. Tailwind del sitio (purgado contra site/**/*.html)
-node_modules/.bin/tailwindcss -i src/tailwind.css -o site/assets/css/tailwind.min.css --minify
+npm run build      # CSS + JS con hash, sitemap y hreflang
+```
 
-# 2. Sitemap + hreflang (deriva las rutas del disco)
+Equivale a:
+
+```bash
+# 1. Bundle de CSS y JS: Tailwind (purgado contra site/**/*.html) + fuentes +
+#    tokens + componentes, minificado y con el hash del contenido en el nombre.
+#    Reescribe el <link> y los <script> de las 40 páginas.
+node scripts/build-assets.mjs
+
+# 2. Sitemap (incluidas las 23 lecciones en vídeo) + hreflang
 node scripts/seo-i18n.mjs
+```
 
-# 3. Schema de vídeos de /aprende (solo si cambian las lecciones)
+Y, solo cuando cambia el material de origen:
+
+```bash
+# Variantes optimizadas de las imágenes propias (marca, favicons, capturas)
+node scripts/build-images.mjs
+
+# Pósters y duraciones de los vídeos, desde los .mp4 de VideosTF/
+node scripts/build-video-posters.mjs        # requiere pip install imageio-ffmpeg
+
+# Schema VideoObject de /aprende (lee scripts/video-meta.json)
 node scripts/aprende-videos.mjs
 ```
 
@@ -22,10 +40,16 @@ node scripts/aprende-videos.mjs
 en un HTML y no se ejecuta el paso 1, la clase no existe y el layout se rompe en
 silencio.
 
+**Los ficheros con hash son artefactos.** `site/assets/css/site.*.min.css` y
+`site/assets/js/*.*.min.js` los genera el build; las fuentes que se editan a
+mano son `site/assets/css/components.css`, `site/assets/css/tokens.css`,
+`site/assets/js/components.js` y `site/assets/js/consent.js`. El build borra el
+artefacto anterior al escribir el nuevo, así que no se acumulan.
+
 ## Servir en local
 
 ```bash
-cd site && python3 -m http.server 8471 --bind 127.0.0.1
+npm run serve      # http://127.0.0.1:8471
 ```
 
 Los vídeos de `/aprende` dan 404 en local — están solo en S3. Es esperado.
@@ -62,10 +86,15 @@ exactamente lo que hace `.github/workflows/deploy.yml`.
 llevarse ficheros por delante.
 
 ```bash
-# 1. Assets (inmutables)
+# 1. Assets (inmutables). Los fuentes de CSS/JS no se suben: solo se sirve el
+#    bundle con hash, así que components.css, tokens.css, components.js y
+#    consent.js se quedan fuera.
 aws s3 sync site/ s3://trustcore.es/ --delete \
   --cache-control "public, max-age=31536000, immutable" \
-  --exclude "videos/*" --exclude "*.html" --exclude "*.xml" --exclude "*.txt"
+  --exclude "videos/*" --exclude "*.html" --exclude "*.xml" --exclude "*.txt" \
+  --exclude "assets/css/components.css" --exclude "assets/css/tokens.css" \
+  --exclude "assets/js/components.js" --exclude "assets/js/consent.js" \
+  --exclude "assets/js/contact-form.js"
 
 # 2. HTML/XML/TXT (sin caché)
 aws s3 sync site/ s3://trustcore.es/ --delete \
@@ -77,11 +106,23 @@ aws s3 sync site/ s3://trustcore.es/ --delete \
 aws cloudfront create-invalidation --distribution-id E3DUTT7AH6H3WN --paths "/*"
 ```
 
-Comprobar que el CDN sirve lo mismo que hay en local:
+`llms.txt` debería servirse como `text/markdown`; S3 le pone `text/plain` por
+la extensión. No es lo que hacía fallar la auditoría de Lighthouse (era la
+falta de enlaces en formato Markdown), pero sí es lo que pide la especificación:
 
 ```bash
-md5sum site/assets/css/components.css
-curl -sS --compressed https://www.trustcore.es/assets/css/components.css | md5sum
+aws s3 cp site/llms.txt s3://trustcore.es/llms.txt \
+  --content-type "text/markdown; charset=utf-8" \
+  --cache-control "no-cache, no-store, must-revalidate"
+```
+
+Comprobar que el CDN sirve lo mismo que hay en local (el nombre lleva hash, así
+que basta con que exista):
+
+```bash
+CSS=$(basename site/assets/css/site.*.min.css)
+md5sum "site/assets/css/$CSS"
+curl -sS --compressed "https://www.trustcore.es/assets/css/$CSS" | md5sum
 ```
 
 ---
@@ -90,8 +131,10 @@ curl -sS --compressed https://www.trustcore.es/assets/css/components.css | md5su
 
 ### 1. Orden de la cascada
 
-`components.css` carga **después** de Tailwind. Una clase `tc-*` gana a una
-utilidad normal para cualquier propiedad que declare.
+`components.css` va **después** de Tailwind dentro del bundle (lo fija
+`scripts/build-assets.mjs` al concatenar, no el orden de los `<link>` de cada
+página). Una clase `tc-*` gana a una utilidad normal para cualquier propiedad
+que declare.
 
 ```html
 <h2 class="tc-display text-white">    <!-- ✗ invisible: gana el navy -->
@@ -128,14 +171,16 @@ de la ruta de despliegue. **No añadir hreflang en/fr ni URLs traducidas al
 sitemap** sin quitar antes el redirect del CDN — ver la cabecera de
 `scripts/seo-i18n.mjs`.
 
-### 6. Caché del navegador
+### 6. Caché del navegador — resuelto para CSS y JS
 
 Los assets van con `max-age=31536000, immutable`. Invalidar CloudFront **no**
 limpia el navegador del visitante. Al revisar cambios: Ctrl+Shift+R.
 
-> Pendiente y recomendable: cache busting con hash en el nombre del fichero.
-> Sin él, un cliente que ya visitó la web puede seguir viendo el CSS antiguo
-> durante un año.
+Desde agosto de 2026 el CSS y el JS llevan el hash del contenido en el nombre
+(`site.bfdca54e.min.css`), así que cada despliegue cambia la URL y la caché se
+invalida sola. **Las imágenes siguen sin hash**: si hay que cambiar el
+contenido de una, se sube con un nombre nuevo en vez de sobrescribirla — es lo
+que se hizo con `trustcore-mark-120.png` frente a `trustcore-icon.png`.
 
 ### 7. React en `node_modules`
 
@@ -146,7 +191,7 @@ repetir `npm i --no-save react react-dom` si va a regenerar ese bundle.
 
 ## Al terminar
 
-1. Reconstruir Tailwind y el sitemap.
+1. `npm run build` (bundle con hash + sitemap).
 2. Verificar con capturas a 1440/768/375.
 3. Desplegar + invalidar + comprobar MD5.
 4. Commit descriptivo (por qué, no solo qué).

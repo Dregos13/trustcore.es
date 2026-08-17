@@ -1,131 +1,362 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.trustcore.es/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/app-verifactu-ceuta-melilla-trustinfacts</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/aprende</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-cliente-960.jpg</video:thumbnail_loc>
+      <video:title>Crear cliente</video:title>
+      <video:description>Alta de datos comerciales básicos y contacto.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-cliente.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-proveedor-960.jpg</video:thumbnail_loc>
+      <video:title>Crear proveedor</video:title>
+      <video:description>Registro del proveedor para compras y gastos.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-proveedor.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-producto-960.jpg</video:thumbnail_loc>
+      <video:title>Crear producto</video:title>
+      <video:description>Ficha de producto con precio, coste y control.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-producto.mp4</video:content_loc>
+      <video:duration>32</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-servicio-960.jpg</video:thumbnail_loc>
+      <video:title>Crear servicio</video:title>
+      <video:description>Alta de servicios facturables sin stock asociado.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-servicio.mp4</video:content_loc>
+      <video:duration>34</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-stock-960.jpg</video:thumbnail_loc>
+      <video:title>Crear stock</video:title>
+      <video:description>Configuración inicial para controlar existencias.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-stock.mp4</video:content_loc>
+      <video:duration>17</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/anadir-stock-960.jpg</video:thumbnail_loc>
+      <video:title>Añadir stock</video:title>
+      <video:description>Entrada de unidades y actualización de inventario.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/anadir-stock.mp4</video:content_loc>
+      <video:duration>19</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/mover-a-tienda-960.jpg</video:thumbnail_loc>
+      <video:title>Mover a tienda</video:title>
+      <video:description>Traslado de stock entre almacén y punto de venta.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/mover-a-tienda.mp4</video:content_loc>
+      <video:duration>37</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-presupuesto-960.jpg</video:thumbnail_loc>
+      <video:title>Crear presupuesto</video:title>
+      <video:description>Primer documento comercial antes de vender.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-presupuesto.mp4</video:content_loc>
+      <video:duration>28</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/editar-presupuesto-960.jpg</video:thumbnail_loc>
+      <video:title>Editar presupuesto</video:title>
+      <video:description>Ajustes de líneas, importes y condiciones.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/editar-presupuesto.mp4</video:content_loc>
+      <video:duration>27</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-venta-presupuesto-960.jpg</video:thumbnail_loc>
+      <video:title>Crear venta desde presupuesto</video:title>
+      <video:description>Conversión del presupuesto aceptado en venta.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-venta-presupuesto.mp4</video:content_loc>
+      <video:duration>7</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/ver-venta-y-crear-factura-960.jpg</video:thumbnail_loc>
+      <video:title>Ver venta y crear factura</video:title>
+      <video:description>Revisión de la venta antes de facturar.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/ver-venta-y-crear-factura.mp4</video:content_loc>
+      <video:duration>31</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/cobrar-venta-y-generar-liquidacion-960.jpg</video:thumbnail_loc>
+      <video:title>Cobrar venta y generar liquidación</video:title>
+      <video:description>Registro del cobro y cierre de la operación.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/cobrar-venta-y-generar-liquidacion.mp4</video:content_loc>
+      <video:duration>50</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/registrar-pago-960.jpg</video:thumbnail_loc>
+      <video:title>Registrar pago</video:title>
+      <video:description>Control de pagos asociados a una operación.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/registrar-pago.mp4</video:content_loc>
+      <video:duration>18</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-factura-960.jpg</video:thumbnail_loc>
+      <video:title>Crear factura</video:title>
+      <video:description>Emisión directa de una factura desde cero.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-factura.mp4</video:content_loc>
+      <video:duration>21</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/crear-factura-desde-venta-960.jpg</video:thumbnail_loc>
+      <video:title>Crear factura desde venta</video:title>
+      <video:description>Facturación de una venta ya registrada.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/crear-factura-desde-venta.mp4</video:content_loc>
+      <video:duration>24</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/modelo001-960.jpg</video:thumbnail_loc>
+      <video:title>Modelo 001</video:title>
+      <video:description>Consulta y preparación del modelo correspondiente.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/modelo001.mp4</video:content_loc>
+      <video:duration>31</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/modelo130-960.jpg</video:thumbnail_loc>
+      <video:title>Modelo 130</video:title>
+      <video:description>Revisión de datos para pagos fraccionados.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/modelo130.mp4</video:content_loc>
+      <video:duration>33</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/informes-1-960.jpg</video:thumbnail_loc>
+      <video:title>Informes 1</video:title>
+      <video:description>Primer vistazo a métricas y actividad.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/informes-1.mp4</video:content_loc>
+      <video:duration>22</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/informes-2-960.jpg</video:thumbnail_loc>
+      <video:title>Informes 2</video:title>
+      <video:description>Lectura de datos para controlar el negocio.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/informes-2.mp4</video:content_loc>
+      <video:duration>37</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/informes-3-960.jpg</video:thumbnail_loc>
+      <video:title>Informes 3</video:title>
+      <video:description>Revisión avanzada para tomar decisiones.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/informes-3.mp4</video:content_loc>
+      <video:duration>16</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/registrar-gasto-960.jpg</video:thumbnail_loc>
+      <video:title>Registrar gasto</video:title>
+      <video:description>Alta rápida de un gasto del negocio.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/registrar-gasto.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/registrar-gasto-con-albaran-960.jpg</video:thumbnail_loc>
+      <video:title>Registrar gasto con albarán</video:title>
+      <video:description>Gasto vinculado a documento o entrega.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/registrar-gasto-con-albaran.mp4</video:content_loc>
+      <video:duration>44</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.trustcore.es/assets/posters/registrar-otros-gastos-deducibles-960.jpg</video:thumbnail_loc>
+      <video:title>Registrar otros gastos deducibles</video:title>
+      <video:description>Clasificación de deducciones habituales.</video:description>
+      <video:content_loc>https://www.trustcore.es/videos/aprende/trustinfacts/registrar-otros-gastos-deducibles.mp4</video:content_loc>
+      <video:duration>25</video:duration>
+      <video:publication_date>2026-07-05</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
   </url>
   <url>
     <loc>https://www.trustcore.es/auditoria-control-horario-checklist</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/blog</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/clientes</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/como-funciona</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/comparativa/verifactu-ipsi-trustcore-vs-erp-generico</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/contacto</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/control-horario-fichaje-remoto-sin-riesgos</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/control-horario-obligatorio-guia-2026</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/cumplimiento-basico-en-30-dias</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/errores-ipsi-autonomos-y-pymes</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/facturacion-ceuta-melilla-peninsula-ipsi</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/facturacion-para-instaladores</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/facturacion-para-tiendas</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/funcionalidades</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/gestoria</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/ipsi-ceuta-melilla-guia-practica</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/ipsi-en-factura-ejemplo-completo</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/plan-lite-cumplimiento-basico-empresa</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/plan-lite-vs-plan-pro-cumplimiento</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/precios</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/productos/trustinfacts</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/productos/trustintime</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/quienes-somos</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/software-verifactu-ipsi-ceuta-melilla</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/ventajas-verifactu-pymes-autonomos</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/verifactu-2027-calendario-empresas-autonomos</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/verifactu-autonomos-2027-checklist</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://www.trustcore.es/verifactu-ventajas-gestorias-comercios</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
 </urlset>

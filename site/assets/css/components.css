@@ -157,7 +157,7 @@
 }
 @media (max-width: 900px) { .tc-demo { grid-template-columns: 1fr; } }
 .tc-demo__desc { margin: 0.75rem 0 1.5rem; color: var(--tc-ink-mute); line-height: 1.65; max-width: 42ch; }
-.tc-demo__note { margin: 0.875rem 0 0; font-size: 0.8125rem; color: var(--tc-slate); }
+.tc-demo__note { margin: 0.875rem 0 0; font-size: 0.8125rem; color: var(--tc-slate-label); }
 .tc-demo__player video {
   display: block;
   width: 100%;
@@ -187,7 +187,7 @@
 }
 .tc-route__name { margin: 0 0 0.5rem; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--tc-blue-royal); }
 .tc-route__price { margin: 0 0 0.5rem; font-size: 1.5rem; font-weight: 800; color: var(--tc-navy); line-height: 1.15; }
-.tc-route__price span { display: block; font-size: 0.8125rem; font-weight: 500; color: var(--tc-slate); }
+.tc-route__price span { display: block; font-size: 0.8125rem; font-weight: 500; color: var(--tc-slate-label); }
 .tc-route__desc { margin: 0; font-size: 0.875rem; color: var(--tc-ink-mute); }
 .tc-routes__cta { margin-top: 1.75rem; text-align: center; }
 
@@ -250,7 +250,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--tc-slate-soft);
+  color: var(--tc-slate-label);
   margin: 0 0 1rem;
 }
 .tc-shift__caption--on { color: var(--tc-blue-royal); }
@@ -427,7 +427,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--tc-slate-soft);
+  color: var(--tc-slate-label);
   margin: 0 0 0.625rem;
 }
 .tc-trust-strip__row {
@@ -1169,7 +1169,7 @@ nav[aria-label] > a.tc-nav-link,
   padding: 0.375rem 0.75rem;
   border-radius: var(--tc-radius-pill);
   background: rgba(15, 160, 111, 0.1);
-  color: var(--tc-success);
+  color: var(--tc-success-text);
   font-weight: 700;
   font-size: 0.8125rem;
   opacity: 0;
@@ -2158,13 +2158,13 @@ nav[aria-label] > a.tc-nav-link,
   line-height: 1.25;
 }
 .tc-lesson-trigger small {
-  color: #64748b;
+  color: var(--tc-slate-label);
   font-size: 0.72rem;
   font-weight: 650;
   line-height: 1.2;
 }
 .tc-lesson-trigger strong {
-  color: #64748b;
+  color: var(--tc-slate-label);
   font-size: 0.78rem;
   white-space: nowrap;
 }
@@ -2173,7 +2173,7 @@ nav[aria-label] > a.tc-nav-link,
   justify-self: start;
   border-radius: 999px;
   background: #f1f5f9;
-  color: #64748b;
+  color: var(--tc-slate-label);
   font-size: 0.72rem;
   font-style: normal;
   font-weight: 900;
@@ -2193,8 +2193,12 @@ nav[aria-label] > a.tc-nav-link,
   background: #ecfdf5;
   color: #166534;
 }
+/* Atenuar la tarjeta entera con `opacity` bajaba su texto de 4,5:1 a 3,2:1.
+   El estado "Próximamente" se distingue por el icono y el borde, no por
+   apagar la letra. */
 .tc-lesson-trigger.is-pending {
-  opacity: 0.82;
+  border-color: #e2e8f0;
+  background: #f1f5f9;
 }
 .tc-lesson-trigger.is-pending::before {
   background: #fff7ed url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='rgb(154,52,18)'><path d='M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z'/></svg>") center / 0.8rem no-repeat;
@@ -2577,7 +2581,7 @@ nav[aria-label] > a.tc-nav-link,
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--tc-slate);
+  color: var(--tc-slate-label);
   margin-bottom: var(--tc-space-6);
 }
 .tc-logostrip__row {
@@ -2603,7 +2607,8 @@ nav[aria-label] > a.tc-nav-link,
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  /* 0.45 daba 3,89:1 sobre el azul del hero. 0.72 sube a 7,8:1. */
+  color: rgba(255, 255, 255, 0.72);
   margin: 0 0 clamp(1rem, 2vw, 1.5rem);
 }
 .tc-avales__row {

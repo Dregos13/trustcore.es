@@ -250,5 +250,18 @@
     showPanel(false);
   });
 
-  initGoogleAnalytics();
+  // gtag.js son 184 KiB y ~94 ms de hilo principal. Cargarlo durante el render
+  // inicial retrasaba el LCP sin necesidad: el modo de consentimiento ya está
+  // declarado arriba (denied por defecto), así que la etiqueta puede llegar
+  // después sin cambiar nada de lo que se le permite hacer.
+  //
+  // Se espera al evento `load`, no a una interacción: en ese punto la página ya
+  // ha terminado de cargar y prácticamente toda visita real sigue registrando
+  // su page_view. Solo se perdería una salida en el primer segundo.
+  function loadAnalyticsWhenIdle() {
+    if (window.requestIdleCallback) window.requestIdleCallback(initGoogleAnalytics, { timeout: 3000 });
+    else setTimeout(initGoogleAnalytics, 1);
+  }
+  if (document.readyState === 'complete') loadAnalyticsWhenIdle();
+  else window.addEventListener('load', loadAnalyticsWhenIdle, { once: true });
 })();

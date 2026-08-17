@@ -31,3 +31,5 @@ ds-bundle/
 .design-sync/.upload-list.txt
 .design-sync/verify/audit*/
 .design-sync/verify/interact/
+.design-sync/verify/perf*/
+.design-sync/verify/final-perf/

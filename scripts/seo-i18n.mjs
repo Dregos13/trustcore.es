@@ -113,9 +113,54 @@ for (const file of walk('.')) {
 console.log(`hreflang: ${patched} páginas → solo es + x-default`);
 
 // --- 2. sitemap: solo URLs ES que responden 200 ----------------------------
+// /aprende lleva además la extensión de vídeo. Las 23 lecciones vivían solo en
+// un JSON-LD dentro de la página; sin entradas <video:video> en el sitemap,
+// Search Console no tenía por dónde descubrirlas y ninguna llegaba al índice
+// de vídeo. Los metadatos (miniatura, duración) salen de video-meta.json, que
+// genera scripts/build-video-posters.mjs a partir de los .mp4 reales.
+const XML_ESC = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' };
+const esc = (t) => String(t).replace(/[&<>"']/g, (c) => XML_ESC[c]);
+
+function videoEntries() {
+  const metaPath = 'scripts/video-meta.json';
+  if (!existsSync(metaPath)) return '';
+  const meta = JSON.parse(readFileSync(metaPath, 'utf8'));
+  const html = readFileSync(join(SITE, 'aprende.html'), 'utf8');
+  const lessons = [...html.matchAll(
+    /data-video-title="([^"]+)" data-video-src="([^"]+)"[^>]*>\s*<span>[^<]*<small>([^<]*)<\/small>/g,
+  )];
+
+  const out = [];
+  for (const [, title, src, desc] of lessons) {
+    const m = meta[src.split('/').pop().replace(/\.mp4$/, '')];
+    if (!m) continue; // lección sin clip subido todavía
+    out.push([
+      '    <video:video>',
+      `      <video:thumbnail_loc>${ORIGIN}${m.poster}</video:thumbnail_loc>`,
+      `      <video:title>${esc(title)}</video:title>`,
+      `      <video:description>${esc(desc.trim())}</video:description>`,
+      `      <video:content_loc>${ORIGIN}${src}</video:content_loc>`,
+      `      <video:duration>${Math.round(m.seconds)}</video:duration>`,
+      `      <video:publication_date>${VIDEO_UPLOAD_DATE}</video:publication_date>`,
+      '      <video:family_friendly>yes</video:family_friendly>',
+      '      <video:requires_subscription>no</video:requires_subscription>',
+      '    </video:video>',
+    ].join('\n'));
+  }
+  console.log(`sitemap: ${out.length} lecciones en vídeo con miniatura y duración`);
+  return out.join('\n');
+}
+
+const VIDEO_UPLOAD_DATE = '2026-07-05'; // mismo lote que aprende-videos.mjs
+const VIDEOS = videoEntries();
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${ES_URLS.map((u) => `  <url>\n    <loc>${ORIGIN}${u}</loc>\n    <lastmod>${TODAY}</lastmod>\n  </url>`).join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+${ES_URLS.map((u) => {
+  const extra = u === '/aprende' && VIDEOS ? `\n${VIDEOS}` : '';
+  return `  <url>\n    <loc>${ORIGIN}${u}</loc>\n    <lastmod>${TODAY}</lastmod>${extra}\n  </url>`;
+}).join('\n')}
 </urlset>
 `;
 writeFileSync(join(SITE, 'sitemap.xml'), sitemap);

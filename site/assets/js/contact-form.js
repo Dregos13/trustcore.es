@@ -1,5 +1,5 @@
 (function () {
-  var fallbackEmail = 'rami@trustcore.es';
+  var fallbackEmail = 'info@trustcore.es';
   var endpoint = '/api/contacto';
 
   function pushEvent(name, payload) {

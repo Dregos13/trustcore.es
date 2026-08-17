@@ -51,20 +51,30 @@
     '.tc-section h2', '.tc-section .tc-eyebrow'
   ].join(',');
 
+  // Dos pasadas: primero se LEE la geometría de todos los candidatos y solo
+  // después se ESCRIBE. Mezclarlas provocaba una redistribución forzada por
+  // elemento — cada `classList.add` invalidaba el layout y el
+  // `getBoundingClientRect()` siguiente obligaba a recalcularlo. En la portada
+  // eran ~45 ms de bloqueo del hilo principal (lo señalaba PageSpeed).
   var foldLimit = window.innerHeight * 0.9;
+  var candidatos = [];
   document.querySelectorAll(AUTO_REVEAL_SELECTOR).forEach(function (el) {
     if (el.hasAttribute('data-reveal') || el.closest('[data-reveal]')) return;
     if (el.getBoundingClientRect().top < foldLimit) return; // visible al cargar: no animar
-    el.classList.add('tc-auto-reveal');
-    // Stagger: retraso según posición entre hermanos animados (máx 4 pasos).
-    var parent = el.parentElement;
-    if (parent) {
-      var idx = 0, sib = el;
-      while ((sib = sib.previousElementSibling) && idx < 4) {
-        if (sib.classList.contains('tc-auto-reveal') || sib.hasAttribute('data-reveal')) idx++;
-      }
-      if (idx) el.style.setProperty('--tc-reveal-delay', (idx * 90) + 'ms');
+    candidatos.push(el);
+  });
+
+  candidatos.forEach(function (el) { el.classList.add('tc-auto-reveal'); });
+
+  // Stagger: retraso según posición entre hermanos animados (máx 4 pasos).
+  // Solo lee clases y atributos, no geometría, así que no fuerza reflow.
+  candidatos.forEach(function (el) {
+    if (!el.parentElement) return;
+    var idx = 0, sib = el;
+    while ((sib = sib.previousElementSibling) && idx < 4) {
+      if (sib.classList.contains('tc-auto-reveal') || sib.hasAttribute('data-reveal')) idx++;
     }
+    if (idx) el.style.setProperty('--tc-reveal-delay', (idx * 90) + 'ms');
   });
 
   var revealEls = document.querySelectorAll('[data-reveal], .tc-auto-reveal');
@@ -477,6 +487,9 @@
     function openVideo(button) {
       var src = button.dataset.videoSrc;
       var title = button.dataset.videoTitle || (button.textContent || 'Vídeo TrustCore').trim();
+      // Fotograma real de la lección (scripts/build-video-posters.mjs). Sin él
+      // el modal abría en negro hasta que llegaba el primer frame del mp4.
+      var poster = button.dataset.videoPoster;
       if (!src || !button.classList.contains('is-ready')) return;
 
       closeVideo();
@@ -497,7 +510,7 @@
       videoOverlay.innerHTML =
         '<div style="position:relative;width:min(100%,860px);background:#020A2A;border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden;box-shadow:0 34px 90px rgba(2,10,42,.44)">' +
           '<button type="button" aria-label="Cerrar vídeo" data-video-close style="position:absolute;top:.75rem;right:.75rem;z-index:2;width:40px;height:40px;border:0;border-radius:999px;background:rgba(255,255,255,.94);color:#040F3F;font-size:1.35rem;font-weight:800;cursor:pointer">&times;</button>' +
-          '<video src="' + src + '" controls autoplay muted playsinline style="display:block;width:100%;aspect-ratio:16/9;background:#020A2A"></video>' +
+          '<video src="' + src + '"' + (poster ? ' poster="' + poster + '"' : '') + ' controls autoplay muted playsinline style="display:block;width:100%;aspect-ratio:16/9;background:#020A2A"></video>' +
           '<div style="padding:1rem 1.1rem;color:white;font-weight:800">' + title + '</div>' +
         '</div>';
       videoOverlay.addEventListener('click', function (event) {
