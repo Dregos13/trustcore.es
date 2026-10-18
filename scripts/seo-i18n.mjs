@@ -67,6 +67,9 @@ function esRoutes() {
   scan('.', '');                    // raíz
   scan('productos', '/productos');
   scan('comparativa', '/comparativa');
+  // Artículos bajo /blog/<slug> (scripts/new-article.mjs --blog-dir). La
+  // carpeta no existe todavía; cuando exista, entra sola en el sitemap.
+  if (existsSync(join(SITE, 'blog'))) scan('blog', '/blog');
   return routes.sort((a, b) => (a === '/' ? -1 : b === '/' ? 1 : a.localeCompare(b)));
 }
 
@@ -86,7 +89,8 @@ function walk(dir, base = '') {
   for (const entry of readdirSync(join(SITE, dir), { withFileTypes: true })) {
     const rel = base ? `${base}/${entry.name}` : entry.name;
     if (entry.isDirectory()) {
-      if (['assets', 'videos'].includes(entry.name)) continue;
+      // _templates: plantilla de new-article.mjs con huecos {{…}}, no es una página.
+      if (['assets', 'videos', '_templates'].includes(entry.name)) continue;
       out.push(...walk(join(dir, entry.name), rel));
     } else if (entry.name.endsWith('.html')) out.push(rel);
   }

@@ -175,6 +175,7 @@ Centro de aprendizaje con vídeos cortos de producto: https://www.trustcore.es/a
 - https://www.trustcore.es/ipsi-en-factura-ejemplo-completo
 - https://www.trustcore.es/ipsi-quipu-alternativas-para-pymes
 - https://www.trustcore.es/errores-ipsi-autonomos-y-pymes
+- https://www.trustcore.es/ipsi-en-presupuestos-convertir-a-factura
 
 ### Serie Control Horario
 - https://www.trustcore.es/control-horario-obligatorio-guia-2026
