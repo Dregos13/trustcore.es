@@ -32,10 +32,13 @@ jobs:
           # Assets inmutables. El CSS y el JS llevan el hash del contenido en el
           # nombre, así que `immutable` ya no puede servir una versión vieja.
           # Los fuentes sin hash no se suben: solo se pide el bundle.
+          # site/_templates/ es la plantilla de scripts/new-article.mjs, con
+          # huecos {{…}} sin rellenar: no es una página y no se publica.
           aws s3 sync site/ s3://trustcore.es/ \
             --delete \
             --cache-control "public, max-age=31536000, immutable" \
             --exclude "videos/*" \
+            --exclude "_templates/*" \
             --exclude "*.html" \
             --exclude "*.xml" \
             --exclude "*.txt" \
@@ -51,7 +54,8 @@ jobs:
             --include "*.html" \
             --include "*.xml" \
             --include "*.txt" \
-            --exclude "videos/*"
+            --exclude "videos/*" \
+            --exclude "_templates/*"
           # llms.txt: la extensión .txt hace que S3 lo etiquete text/plain; la
           # especificación de llms.txt pide Markdown.
           aws s3 cp site/llms.txt s3://trustcore.es/llms.txt \

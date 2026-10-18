@@ -1,0 +1,55 @@
+{
+  "slug": "ipsi-en-presupuestos-convertir-a-factura",
+  "title": "IPSI en presupuestos: evita diferencias al facturar",
+  "description": "Cómo preparar presupuestos con IPSI en Ceuta y Melilla para que la factura salga con la misma base, tipo y cuota, sin correcciones con la asesoría.",
+  "cluster": "ipsi",
+  "h1": "IPSI en presupuestos: cómo evitar diferencias al convertir a factura",
+  "eyebrow": "IPSI",
+  "lead": "El presupuesto es la primera vez que el cliente ve un importe con IPSI. Si la factura sale distinta, el problema no es el impuesto: es el flujo.",
+  "datePublished": "2026-10-18",
+  "dateModified": "2026-10-18",
+  "author": { "name": "TrustCore", "type": "Organization" },
+  "icon": "fa-file-invoice",
+  "body": { "format": "markdown", "file": "articulo-ejemplo.md" },
+  "faq": [
+    {
+      "question": "¿Puedo convertir un presupuesto con IPSI en factura sin recalcular el impuesto?",
+      "answer": "Sí, si la herramienta guarda base y tipo de IPSI por línea y la factura hereda esas líneas. Si solo guarda el total, tendrás que volver a decidir el tipo a mano, y ahí es donde aparecen las diferencias."
+    },
+    {
+      "question": "¿Qué hago si el tipo de IPSI cambia entre el presupuesto y la factura?",
+      "answer": "Documenta el cambio en la propia factura, conserva el presupuesto aceptado y confirma con tu asesoría qué tipo corresponde según la fecha de la operación. Los tipos los fija la ordenanza fiscal de cada ciudad dentro de los límites de la Ley 8/1991.",
+      "sources": ["https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645"]
+    },
+    {
+      "question": "¿Un presupuesto tiene que desglosar el IPSI por líneas?",
+      "answer": "El presupuesto no está sujeto a los requisitos formales de la factura, pero desglosar base y tipo por línea es la única forma de que la factura salga igual sin trabajo manual. También facilita la revisión con la asesoría."
+    }
+  ],
+  "related": [
+    "ipsi-ceuta-melilla-guia-practica",
+    "ipsi-en-factura-ejemplo-completo",
+    "errores-ipsi-autonomos-y-pymes"
+  ],
+  "sources": [
+    {
+      "label": "AEAT: Ceuta y Melilla (en estas ciudades no se aplica IVA sino IPSI)",
+      "url": "https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html",
+      "accessed": "2026-10-18"
+    },
+    {
+      "label": "BOE: Ley 8/1991, del Impuesto sobre la Producción, los Servicios y la Importación",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645",
+      "accessed": "2026-10-18"
+    }
+  ],
+  "cta": {
+    "title": "Cómo lo enfoca TrustCore",
+    "text": "TrustinFacts conserva el tipo de IPSI por línea desde el presupuesto hasta la factura y la exportación a tu asesoría. Si quieres verlo con tus propios conceptos, agenda una demo.",
+    "primary": { "label": "Agendar demo", "href": "/contacto" },
+    "secondary": { "label": "Ver vídeos cortos", "href": "/aprende" }
+  },
+  "card": {
+    "summary": "Base, tipo y cuota iguales en presupuesto y factura: qué guardar por línea y cómo convertir sin volver a teclear."
+  }
+}

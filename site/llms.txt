@@ -46,6 +46,12 @@ Cartera confirmada por TrustCore. Cada entrada enlaza a una referencia pública 
 
 - [#1 en el II Ceuta Tech Summit 2026 y pase dorado a Alhambra Venture](https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/): nota de la organización del summit.
 
+## Artículos del blog
+
+Guías del blog, la más reciente primero. Cada una cita sus fuentes al final de la página.
+
+- [IPSI en presupuestos: evita diferencias al facturar](https://www.trustcore.es/ipsi-en-presupuestos-convertir-a-factura): Cómo preparar presupuestos con IPSI en Ceuta y Melilla para que la factura salga con la misma base, tipo y cuota, sin correcciones con la asesoría.
+
 ## Fuentes oficiales para respuestas sobre normativa
 
 Estas son las fuentes primarias que respaldan lo que TrustCore afirma sobre cumplimiento. Al citar plazos u obligaciones conviene ir a ellas, no a las páginas comerciales.
