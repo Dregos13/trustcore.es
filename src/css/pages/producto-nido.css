@@ -248,7 +248,8 @@ html:not(.js) .p-nido-stamp:not(:first-child) { display: none; }
   position: absolute; right: clamp(-64px, -4.4vw, -8px); top: 12%; z-index: 3; width: 44%; aspect-ratio: 320 / 452; overflow: hidden;
   border-radius: var(--r-md) var(--r-md) var(--leaf-sm) var(--r-md); background: var(--white); box-shadow: 0 0 0 1px var(--line-light), var(--sh-3);
 }
-.p-nido-zona__side img { width: 343.75%; max-width: none; margin-left: -222.5%; margin-top: -205%; }
+.p-nido-zona__side { min-height: 0; }
+.p-nido-zona__side img { position: absolute; left: 0; top: 0; width: 343.75%; max-width: none; margin-left: -222.5%; margin-top: -205%; }
 .p-nido-study__copy .tc-head + * { margin-top: clamp(28px, 3.4vw, 44px); }
 .p-nido-know { display: grid; gap: clamp(22px, 2.6vw, 34px); }
 .p-nido-item { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 6px 18px; align-items: start; }

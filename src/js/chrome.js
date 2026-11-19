@@ -346,6 +346,7 @@ function initAssistant() {
   const I18N = {
     es: {
       open: '¿Dudas? Pregunta a TrusTy',
+      hint: 'Hola, soy TrusTy. ¿Te resuelvo una duda?',
       title: 'TrusTy · dudas al instante',
       note: 'Respuestas preparadas por el equipo, con fuentes. Para tu caso concreto, agenda una demo.',
       hello: 'Hola, soy TrusTy. Elige una pregunta y te contesto con fuentes oficiales.',
@@ -409,15 +410,41 @@ function initAssistant() {
   };
   const t = I18N[lang];
 
+  /* TrusTy tiene cuerpo: una gota de luz con ojos que parpadean y siguen al puntero,
+     una antena que es el hilo de la página y un halo que respira. Todo SVG + CSS. */
+  const avatar = (id) =>
+    '<span class="tc-trusty" aria-hidden="true">' +
+      '<svg viewBox="0 0 64 64" focusable="false">' +
+        '<defs>' +
+          '<radialGradient id="tcty-b' + id + '" cx="34%" cy="26%" r="85%"><stop offset="0" stop-color="#E3F7FF"/><stop offset=".38" stop-color="#53CDFE"/><stop offset="1" stop-color="#2071D5"/></radialGradient>' +
+          '<radialGradient id="tcty-h' + id + '" cx="50%" cy="50%" r="50%"><stop offset=".55" stop-color="#53CDFE" stop-opacity=".0"/><stop offset=".8" stop-color="#53CDFE" stop-opacity=".35"/><stop offset="1" stop-color="#53CDFE" stop-opacity="0"/></radialGradient>' +
+        '</defs>' +
+        '<circle class="tc-trusty__halo" cx="32" cy="36" r="30" fill="url(#tcty-h' + id + ')"/>' +
+        '<g class="tc-trusty__float">' +
+          '<path class="tc-trusty__antenna" d="M32 15 C32 9 37 9 38 5" fill="none" stroke="#B3E8FF" stroke-width="2" stroke-linecap="round"/>' +
+          '<circle class="tc-trusty__tip" cx="38.4" cy="4.6" r="2.6" fill="#fff"/>' +
+          '<path class="tc-trusty__body" d="M32 14c11.6 0 21 9.4 21 21s-9.4 21-21 21H19a8 8 0 0 1-8-8V35c0-11.6 9.4-21 21-21z" fill="url(#tcty-b' + id + ')"/>' +
+          '<path d="M19 27c3-6 9-9 15-8.6" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.2" stroke-linecap="round"/>' +
+          '<g class="tc-trusty__face">' +
+            '<g class="tc-trusty__eyes">' +
+              '<ellipse cx="25" cy="35" rx="4.6" ry="5.4" fill="#fff"/><ellipse cx="40" cy="35" rx="4.6" ry="5.4" fill="#fff"/>' +
+              '<g class="tc-trusty__pupils"><circle cx="25.6" cy="35.6" r="2.5" fill="#040F3F"/><circle cx="40.6" cy="35.6" r="2.5" fill="#040F3F"/><circle cx="26.5" cy="34.6" r=".8" fill="#fff"/><circle cx="41.5" cy="34.6" r=".8" fill="#fff"/></g>' +
+            '</g>' +
+            '<path class="tc-trusty__mouth" d="M28 45.5c2.6 2.4 6.4 2.4 9 0" fill="none" stroke="#040F3F" stroke-width="2" stroke-linecap="round"/>' +
+          '</g>' +
+        '</g>' +
+      '</svg>' +
+    '</span>';
+
   const box = document.createElement('div');
   box.className = 'tc-bot';
   box.innerHTML =
     '<button type="button" class="tc-bot__fab" aria-expanded="false" aria-controls="tc-bot-panel" aria-label="' + t.open + '">' +
-      ico('bot') + '<span aria-hidden="true">' + t.open + '</span>' +
+      avatar('f') + '<span class="tc-bot__label" aria-hidden="true">' + t.open + '</span>' +
     '</button>' +
     '<section id="tc-bot-panel" class="tc-bot__panel" role="dialog" aria-label="' + t.title + '" hidden>' +
       '<header class="tc-bot__head">' +
-        '<span class="tc-bot__avatar">' + ico('bot') + '</span>' +
+        '<span class="tc-bot__avatar">' + avatar('p') + '</span>' +
         '<div><strong>' + t.title + '</strong><small>' + t.note + '</small></div>' +
         '<button type="button" class="tc-bot__close" aria-label="' + t.close + '">' + ico('close') + '</button>' +
       '</header>' +
@@ -446,23 +473,80 @@ function initAssistant() {
       aEl.className = 'tc-bot__msg tc-bot__msg--bot';
       aEl.innerHTML = item.a;
       body.insertBefore(qEl, chips);
-      body.insertBefore(aEl, chips);
       chip.remove();
-      if (!chips.children.length) {
-        const bye = document.createElement('div');
-        bye.className = 'tc-bot__msg tc-bot__msg--bot';
-        bye.innerHTML = t.more;
-        body.insertBefore(bye, chips);
+      const last = !chips.children.length;
+      const answer = () => {
+        body.insertBefore(aEl, chips);
+        if (last) {
+          const bye = document.createElement('div');
+          bye.className = 'tc-bot__msg tc-bot__msg--bot';
+          bye.innerHTML = t.more;
+          body.insertBefore(bye, chips);
+        }
+        const demoBtn = aEl.querySelector('[data-bot-demo]');
+        if (demoBtn) demoBtn.addEventListener('click', (ev) => { openCalendar(ev, 'trusty'); });
+        box.classList.remove('is-thinking');
+        chips.hidden = false;
+        /* la respuesta empieza a la vista: se lleva la pregunta arriba, no el final abajo */
+        body.scrollTop = Math.max(0, qEl.offsetTop - 12);
+      };
+      if (calm) { answer(); }
+      else {
+        const dots = document.createElement('div');
+        dots.className = 'tc-bot__msg tc-bot__msg--bot tc-bot__typing';
+        dots.innerHTML = '<i></i><i></i><i></i>';
+        body.insertBefore(dots, chips);
+        chips.hidden = true;
+        box.classList.add('is-thinking');
+        body.scrollTop = body.scrollHeight;
+        setTimeout(() => { dots.remove(); answer(); }, 720);
       }
-      const demoBtn = aEl.querySelector('[data-bot-demo]');
-      if (demoBtn) demoBtn.addEventListener('click', (ev) => { openCalendar(ev, 'trusty'); });
-      body.scrollTop = body.scrollHeight;
       track('trusty_question', { q_index: i, lang });
     });
     chips.appendChild(chip);
   });
 
+  const calm = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const fine = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
+  if (!calm && fine) {
+    let raf = 0, px = 0, py = 0;
+    const look = () => {
+      raf = 0;
+      box.querySelectorAll('.tc-trusty').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (!r.width) return;
+        const dx = px - (r.left + r.width / 2), dy = py - (r.top + r.height / 2);
+        const d = Math.hypot(dx, dy) || 1, k = Math.min(1, d / 220);
+        el.style.setProperty('--lx', ((dx / d) * 2.4 * k).toFixed(2) + 'px');
+        el.style.setProperty('--ly', ((dy / d) * 2.2 * k).toFixed(2) + 'px');
+      });
+    };
+    window.addEventListener('pointermove', (e) => { px = e.clientX; py = e.clientY; if (!raf) raf = requestAnimationFrame(look); }, { passive: true });
+  }
+
+  /* Saludo: una sola vez por sesión, solo en pantallas con sitio, y nunca sobre el banner de cookies. */
+  let hint = null;
+  const dropHint = () => { if (hint) { hint.remove(); hint = null; } };
+  try {
+    if (!sessionStorage.getItem('tc_trusty_hi') && window.innerWidth > 720) {
+      setTimeout(() => {
+        if (!panel.hidden || document.getElementById('tc-cookie-consent')) return;
+        sessionStorage.setItem('tc_trusty_hi', '1');
+        hint = document.createElement('button');
+        hint.type = 'button';
+        hint.className = 'tc-bot__hint';
+        hint.textContent = t.hint || t.open;
+        hint.addEventListener('click', () => { dropHint(); toggle(true); });
+        box.insertBefore(hint, fab);
+        box.classList.add('is-waving');
+        setTimeout(() => { box.classList.remove('is-waving'); }, 2400);
+        setTimeout(dropHint, 9000);
+      }, 7000);
+    }
+  } catch (e) { /* sin sessionStorage no hay saludo */ }
+
   function toggle(open) {
+    dropHint();
     panel.hidden = !open;
     fab.setAttribute('aria-expanded', open ? 'true' : 'false');
     box.classList.toggle('is-open', open);
