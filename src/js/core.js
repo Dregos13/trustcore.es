@@ -6,7 +6,11 @@
 
 export const root = document.documentElement;
 export const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-export const motion = !reduce.matches && !window.__tcLate;   /* __tcLate: el arranque ya retiró .motion por tardanza */
+/* Si el motor llega tarde (conexión lenta), el arranque del <head> ya enseñó todo
+   el contenido sin animar para que nada se quedase oculto. Antes eso dejaba la
+   página estática para siempre; ahora el motor, cuando por fin carga, recupera
+   el movimiento: solo se renuncia a él si el usuario pide movimiento reducido. */
+export const motion = !reduce.matches;
 export const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 /* El script de arranque del <head> ya pone estas clases; aquí se garantizan

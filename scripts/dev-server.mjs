@@ -2,15 +2,19 @@
 /**
  * dev-server.mjs — servidor estático local con URLs limpias, como CloudFront.
  * /precios → site/precios.html · /productos/nido → site/productos/nido.html
- * Uso: node scripts/dev-server.mjs [puerto]   (por defecto 8471)
+ * Uso: node scripts/dev-server.mjs [puerto] [interfaz]   (por defecto 8471 y 127.0.0.1)
+ *      node scripts/dev-server.mjs 8473 0.0.0.0   → accesible desde la red local
  */
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { join, resolve, dirname, extname, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { gzipSync } from 'node:zlib';
 
 const SITE = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'site');
 const PORT = Number(process.argv[2] || 8471);
+// Tercer argumento: interfaz. Por defecto solo este equipo; `0.0.0.0` lo abre a la red local.
+const HOST = process.argv[3] || '127.0.0.1';
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png',
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif', '.ico': 'image/x-icon',
@@ -31,8 +35,13 @@ createServer(async (req, res) => {
   let status = 200;
   if (!hit) { hit = join(SITE, '404.html'); status = 404; }
   try {
-    const body = await readFile(hit);
-    res.writeHead(status, { 'content-type': TYPES[extname(hit)] || 'application/octet-stream', 'cache-control': 'no-store' });
+    let body = await readFile(hit);
+    const headers = { 'content-type': TYPES[extname(hit)] || 'application/octet-stream', 'cache-control': 'no-store' };
+    // Como CloudFront: el texto viaja comprimido (el CSS pasa de ~560 KiB a ~100).
+    if (/\.(html|css|js|mjs|json|svg|txt|xml)$/.test(hit) && /\bgzip\b/.test(req.headers['accept-encoding'] || '')) {
+      body = gzipSync(body); headers['content-encoding'] = 'gzip';
+    }
+    res.writeHead(status, headers);
     res.end(body);
   } catch { res.writeHead(500).end('error'); }
-}).listen(PORT, '127.0.0.1', () => console.log(`http://127.0.0.1:${PORT}`));
+}).listen(PORT, HOST, () => console.log(`http://${HOST}:${PORT}`));
