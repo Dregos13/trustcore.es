@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Plantilla de referencia · sistema Flujo | TrustCore</title>
+  <meta name="description" content="Página interna de referencia del sistema de diseño de trustcore.es: todos los componentes en uso. No es contenido público.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#020A2A">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/instrument-sans-latin-wght-normal.woff2">
+  <link rel="stylesheet" href="/assets/css/site.1d174431.min.css">
+  <script>/*tc-boot*/(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');setTimeout(function(){if(!window.TC){c.remove('motion','js','is-arriving');window.__tcLate=1}},4000);try{if(sessionStorage.getItem('tc:arrive')){sessionStorage.removeItem('tc:arrive');c.add('is-arriving')}}catch(e){}addEventListener('pagereveal',function(e){if(!e.viewTransition)return;c.add('vt-arrive');var s={},l=d.querySelectorAll('[data-vt]');l.forEach(function(el){var n=el.getAttribute('data-vt');if(n&&!s[n]){s[n]=1;el.style.viewTransitionName=n;el.style.viewTransitionClass=el.hasAttribute('data-vt-text')?'tc-vt-text':'tc-vt'}});var f=function(){c.remove('vt-arrive');l.forEach(function(el){el.style.viewTransitionName='';el.style.viewTransitionClass=''})};e.viewTransition.finished.then(f,f)})})(document);</script>
+</head>
+<body class="tc-body">
+<!--NAV-->
+<svg class="tc-sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16l-6 7.5V19l-4-2v-3.5z"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.8h-3.8M5.5 20.5v-3.8h3.8"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol><symbol id="i-spinner" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7.5 2.8v5.4c0 4.4-3 7.6-7.5 9-4.5-1.4-7.5-4.6-7.5-9V6.3z"/><path d="M8.8 12.2l2.3 2.3 4.2-4.4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 6.5l2.5 2.5M13.5 9l2 2"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.5"/><path d="M8.5 14l-1.5 7 5-2.6 5 2.6-1.5-7"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5.5H5a3 3 0 0 0 3 4M16 5.5h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol><symbol id="i-invoice" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol><symbol id="i-graph" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M11 7l-5 9M13 7l5 9M7.2 18h9.6"/></symbol><symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 14.5l2.2 2.2L15.5 12"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5L12 4l8 7.5"/><path d="M6.5 10v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9"/><path d="M10 20v-5h4v5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M4 8l8 5.5L20 8"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M20.5 3.5L10 14M20.5 3.5l-6.3 17-4.2-6.5-6.5-4.2z"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.4"/><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0"/><path d="M15.5 5.3a3.4 3.4 0 0 1 0 6.4M18 14.6a6.5 6.5 0 0 1 3.5 4.9"/></symbol><symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 13.5V12a7.5 7.5 0 0 1 15 0v1.5"/><rect x="3.5" y="13" width="4" height="6" rx="1.5"/><rect x="16.5" y="13" width="4" height="6" rx="1.5"/><path d="M19.5 19v.5a2 2 0 0 1-2 2H13"/></symbol><symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3.5"/><path d="M12 8V4.5M9 13v1.5M15 13v1.5"/><circle cx="12" cy="3.6" r="1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 0 0-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.2-3.9-8.5s1.3-6.1 3.9-8.5z"/></symbol><symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.3-5h13.4l1.3 5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5M10 20v-4.5h4V20"/></symbol><symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.2a4 4 0 0 0-5.3 5.2L3.8 16.8a1.9 1.9 0 0 0 2.7 2.7l5.4-5.4a4 4 0 0 0 5.2-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2.5"/><path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5M3.5 13h17"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 8h14"/><path d="M5 8l-2.5 6a2.7 2.7 0 0 0 5 0zM19 8l-2.5 6a2.7 2.7 0 0 0 5 0z"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 6.5a6.5 6.5 0 1 0 0 11M5 10.5h8M5 13.5h8"/></symbol><symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18M7 15h3"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16.5v-5M12 16.5v-9M17 16.5v-12"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3.5l8 4.2v8.6l-8 4.2-8-4.2V7.7z"/><path d="M4 7.7l8 4.3 8-4.3M12 12v8.5"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.3V5A1.5 1.5 0 0 1 5 3.5h7.3l8.2 8.2a1.5 1.5 0 0 1 0 2.1l-6.7 6.7a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.2"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2.5v2.5M20 14v6h-3M14 20v-1"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H18M9 8.5h5"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"/></symbol><symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 7C6.5 8 5 10.2 5 13v4h5v-5H7.5c0-1.6.8-2.6 2.5-3.2zM18.5 7c-3 1-4.5 3.2-4.5 6v4h5v-5h-2.5c0-1.6.8-2.6 2.5-3.2z"/></symbol><symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l4.8-4.5 3.5 3 3-2.6 4.7 4.1"/></symbol><symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4.5v-15L7 9H5a1 1 0 0 0-1 1z"/><path d="M18.5 9.5a3.5 3.5 0 0 1 0 5M8 15l1 4.5h2.5"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17.5" cy="6" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="M8.2 10.8l7-3.6M8.2 13.2l7 3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l8.5 4.5L12 13 3.5 8.5z"/><path d="M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96 6 6 0 0 1 11.5 1.5A3.75 3.75 0 0 1 17 18.5z"/></symbol><symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><path d="M10 10h4v4h-4zM9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7.5L4 12l4.5 4.5M15.5 7.5L20 12l-4.5 4.5M13.5 5l-3 14"/></symbol><symbol id="i-desktop" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16.5V20"/></symbol><symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol><symbol id="i-apple" viewBox="0 0 24 24"><path d="M15.5 3.5c0 1.6-1.3 3-3 3 0-1.7 1.4-3 3-3z"/><path d="M12.4 8.3c.9 0 1.7-.8 3.2-.8 1.4 0 2.6.7 3.3 1.8-2.8 1.6-2.3 5.4.5 6.5-.7 1.9-2.2 4.7-4 4.7-1.1 0-1.5-.7-2.9-.7s-1.9.7-3 .7c-2 0-4.5-4.2-4.5-7.6 0-3.2 2.1-5 4.1-5 1.4 0 2.4.4 3.3.4z"/></symbol><symbol id="i-windows" viewBox="0 0 24 24"><path d="M4 6.2l7-1v6.3H4zM12.5 5L20 3.9v7.6h-7.5zM4 13h7v6.3l-7-1zM12.5 13H20v7.6l-7.5-1.1z"/></symbol></defs></svg>
+<a class="tc-skip" href="#main-content">Saltar al contenido</a>
+<header class="tc-nav" data-nav>
+  <div class="tc-nav__pill">
+    <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+      <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120">
+      <span class="tc-brand__word">TrustCore</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="tc-nav__links">
+        <li class="tc-nav__item tc-nav__item--mega">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-productos" data-menu-toggle>Productos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--mega" id="tc-menu-productos">
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Para tu empresa</p>
+            <a class="tc-menu__item" style="--i:0" href="/productos/trustinfacts"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-invoice"/></svg></span><span><span class="tc-menu__name">TrustInFacts</span><span class="tc-menu__desc">Facturación VeriFactu, IVA e IPSI</span></span></a>
+            <a class="tc-menu__item" style="--i:1" href="/productos/trustintime"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span><span class="tc-menu__name">TrustInTime</span><span class="tc-menu__desc">Control horario, fichaje y ausencias</span></span></a>
+            <a class="tc-menu__item" style="--i:2" href="/productos/genai"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg></span><span><span class="tc-menu__name">GenAI</span><span class="tc-menu__desc">Contenido para redes, con tu aprobación</span></span></a>
+          </div>
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Apps del estudio</p>
+            <a class="tc-menu__item" style="--i:3" href="/productos/orquesta"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-graph"/></svg></span><span><span class="tc-menu__name">Orquesta</span><span class="tc-menu__desc">Dirige un equipo de IAs</span></span></a>
+            <a class="tc-menu__item" style="--i:4" href="/productos/corrector-fiscal"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-filecheck"/></svg></span><span><span class="tc-menu__name">Corrector Fiscal</span><span class="tc-menu__desc">Revisa modelos de la AEAT</span></span></a>
+            <a class="tc-menu__item" style="--i:5" href="/productos/nido"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-home"/></svg></span><span><span class="tc-menu__name">Nido</span><span class="tc-menu__desc">Buscador privado de vivienda</span></span></a>
+          </div>
+            <a class="tc-menu__all" style="--i:6" href="/productos">Ver todos los productos <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-soluciones" data-menu-toggle>Soluciones <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu" id="tc-menu-soluciones">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/facturacion-para-tiendas">Para tiendas</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/facturacion-para-instaladores">Para instaladores</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/gestoria">Para gestorías</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+          </div>
+        </li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/precios">Precios</a></li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/aprende">Aprende</a></li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-recursos" data-menu-toggle>Recursos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--end" id="tc-menu-recursos">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/clientes">Clientes</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/blog">Blog</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/funcionalidades">Funcionalidades</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/como-funciona">Cómo funciona</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/quienes-somos">Sobre nosotros</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:5" href="/contacto">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="tc-btn tc-btn--primary tc-btn--sm tc-nav__cta" type="button" data-calendar-open data-magnet data-track="header_demo">
+      <span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-cal"/></svg> <span>Agendar<span class="tc-nav__cta-more"> demo</span></span></span>
+    </button>
+    <button class="tc-nav__burger" type="button" aria-expanded="false" aria-controls="tc-sheet" aria-label="Abrir menú" data-sheet-toggle>
+      <span></span><span></span>
+    </button>
+    <span class="tc-nav__progress" aria-hidden="true"></span>
+  </div>
+</header>
+<div class="tc-sheet" id="tc-sheet" data-sheet role="dialog" aria-modal="true" aria-label="Menú">
+  <p class="tc-sheet__label">Para tu empresa</p>
+  <a class="tc-sheet__link" href="/productos/trustinfacts">TrustInFacts <small>Facturación</small></a>
+  <a class="tc-sheet__link" href="/productos/trustintime">TrustInTime <small>Control horario</small></a>
+  <a class="tc-sheet__link" href="/productos/genai">GenAI <small>Redes sociales</small></a>
+  <p class="tc-sheet__label">Apps del estudio</p>
+  <a class="tc-sheet__link" href="/productos/orquesta">Orquesta <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/corrector-fiscal">Corrector Fiscal <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/nido">Nido <small>Escritorio</small></a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/productos">Ver todos los productos</a>
+  <p class="tc-sheet__label">Soluciones</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-tiendas">Para tiendas</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-instaladores">Para instaladores</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/gestoria">Para gestorías</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+  <p class="tc-sheet__label">TrustCore</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/precios">Precios</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/aprende">Aprende</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/clientes">Clientes</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/blog">Blog</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/funcionalidades">Funcionalidades</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/como-funciona">Cómo funciona</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/quienes-somos">Sobre nosotros</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/contacto">Contacto</a>
+  <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-track="mobile_menu_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+</div>
+<!--/NAV-->
+
+<main id="main-content">
+
+  <!-- ============ Hero interior: oscuro y corto ============ -->
+  <section class="tc-sec tc-sec--night tc-phero tone-dark" aria-labelledby="hero-t">
+    <div class="tc-sec__in tc-phero__in" data-intro>
+      <div class="tc-glow tc-glow--a" aria-hidden="true"></div>
+      <div class="tc-glow tc-glow--b" aria-hidden="true"></div>
+
+      <div class="tc-wrap tc-phero__top">
+        <div class="tc-phero__copy">
+          <nav class="tc-mono tc-crumbs" aria-label="Migas de pan" data-reveal="rise" style="--delay:80ms">
+            <ol><li><a href="/">Inicio</a></li><li><a href="/productos">Sección</a></li><li><span aria-current="page">Plantilla</span></li></ol>
+          </nav>
+          <h1 class="tc-display tc-phero__title" id="hero-t" data-reveal="words" style="--delay:140ms">Todo el sistema, <span class="tc-hl">en una página.</span></h1>
+          <p class="tc-display tc-phero__claim" data-reveal="words" style="--delay:420ms">Hero interior: titular, frase y una maqueta.</p>
+        </div>
+        <div class="tc-phero__side">
+          <p class="tc-lead" data-reveal="focus" style="--delay:620ms">Esta página no es pública. Reúne cada componente del sistema «Flujo» con su marcado real, para copiar y adaptar al rehacer una página.</p>
+          <div class="tc-cta-row" data-stagger style="--base:820ms;--step:110ms">
+            <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-magnet data-track="plantilla_hero_demo" data-reveal="pop"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            <a class="tc-btn tc-btn--ghost" href="#botones" data-magnet data-reveal="pop"><span class="tc-btn__label">Ver componentes <svg class="tc-ico tc-ico--down" aria-hidden="true"><use href="#i-down"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc-wrap tc-phero__stage">
+        <div class="tc-phero__shot" data-rise>
+          <figure class="tc-win" data-vt="plantilla-shot">
+            <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">TrustInFacts · Informes</span></div>
+            <img src="/assets/trustinfacts-dashboard-960.webp" srcset="/assets/trustinfacts-dashboard-640.webp 640w, /assets/trustinfacts-dashboard-960.webp 960w, /assets/trustinfacts-dashboard-1280.webp 1280w" sizes="(min-width: 1368px) 1240px, calc(100vw - 40px)" width="1280" height="685" alt="Panel de informes de TrustInFacts con total facturado, beneficio e impuestos del periodo">
+          </figure>
+          <div class="tc-float tc-float--a" data-reveal="pop" style="--delay:1300ms" aria-hidden="true"><span class="tc-float__check"><svg class="tc-ico"><use href="#i-check"/></svg></span><span><b>Insignia flotante</b><small>.tc-float--a</small></span></div>
+          <div class="tc-float tc-float--b" data-reveal="pop" style="--delay:1450ms" aria-hidden="true"><span class="tc-num">IPSI</span><span><b>Con cifra</b><small>.tc-float--b</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Puente de olas: de oscuro a claro ============ -->
+  <div class="tc-sec tc-wave" aria-hidden="true"><i data-plx></i><i data-plx></i><i data-plx></i></div>
+
+  <!-- ============ Tipografía, botones, chips ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="botones" aria-labelledby="s-tipo">
+    <div class="tc-sec__in tc-pad tc-pad--top-0">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Etiqueta mono · .tc-mono--hi</p>
+          <h2 class="tc-display tc-h2" id="s-tipo" data-reveal="words">Titular de sección con <span class="tc-hl">énfasis.</span></h2>
+          <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Entradilla (.tc-lead): una o dos frases que explican la sección. Los titulares entran por palabras; los párrafos, desde el desenfoque.</p>
+        </header>
+
+        <div class="tc-split tc-split--top tc-split--7-5">
+          <div class="tc-stack" style="--gap:28px">
+            <div class="tc-stack" data-stagger>
+              <p class="tc-mono tc-eyebrow" data-reveal="rise">Etiqueta con regla · .tc-eyebrow</p>
+              <p class="tc-display tc-h3" data-reveal="rise">Titular h3 en display</p>
+              <p class="tc-h4" data-reveal="rise">Titular h4, para tarjetas y bloques cortos</p>
+              <p data-reveal="rise">Texto de cuerpo. <span class="tc-muted">Texto secundario con .tc-muted.</span> Cifras en mono: <span class="tc-num">19,99 €</span>. <a class="tc-link" href="#botones">Enlace de texto <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+            </div>
+            <div>
+              <p class="tc-mono tc-mt-2" data-reveal="rise">Botones</p>
+              <div class="tc-cluster tc-mt-2" data-stagger style="--step:70ms">
+                <button class="tc-btn tc-btn--primary" type="button" data-magnet data-reveal="pop"><span class="tc-btn__label">Primario <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+                <button class="tc-btn tc-btn--secondary" type="button" data-reveal="pop"><span class="tc-btn__label">Secundario</span></button>
+                <button class="tc-btn tc-btn--ghost" type="button" data-reveal="pop"><span class="tc-btn__label">Fantasma</span></button>
+                <button class="tc-btn tc-btn--primary tc-btn--sm" type="button" data-reveal="pop"><span class="tc-btn__label">Pequeño</span></button>
+                <button class="tc-btn tc-btn--primary" type="button" disabled data-reveal="pop"><span class="tc-btn__label">Desactivado</span></button>
+              </div>
+            </div>
+            <div>
+              <p class="tc-mono tc-mt-2" data-reveal="rise">Descarga con detección de sistema</p>
+              <div class="tc-dl tc-mt-2" data-reveal="rise">
+                <a class="tc-btn tc-btn--primary" href="mailto:info@trustcore.es?subject=Instalador%20de%20Nido" data-download="nido" data-track="plantilla_dl_nido"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Nido</span></span></a>
+                <a class="tc-btn tc-btn--ghost" href="mailto:info@trustcore.es?subject=Instalador%20de%20Corrector%20Fiscal" data-download="corrector-mac"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> Corrector Fiscal para macOS</span></a>
+                <p class="tc-dl__note" data-download-note="nido">macOS y Windows</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc-stack" style="--gap:22px">
+            <div data-reveal="rise">
+              <p class="tc-mono">Chips</p>
+              <div class="tc-chips tc-mt-2">
+                <span class="tc-chip">Neutro</span>
+                <span class="tc-chip tc-chip--hi">Acento</span>
+                <span class="tc-chip tc-chip--ok"><span class="tc-chip__dot"></span> Aprobada</span>
+                <span class="tc-chip tc-chip--gold"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg> Premio</span>
+                <span class="tc-chip tc-chip--solid">Sólido</span>
+              </div>
+            </div>
+            <div data-reveal="rise">
+              <p class="tc-mono">Lista con check</p>
+              <ul class="tc-ticks tc-mt-2">
+                <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Elemento incluido</li>
+                <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Otro elemento incluido, con una línea algo más larga para ver el salto</li>
+                <li class="is-off"><svg class="tc-ico" aria-hidden="true"><use href="#i-minus"/></svg> Elemento no incluido</li>
+              </ul>
+            </div>
+            <div data-reveal="rise">
+              <p class="tc-mono">Hechos con icono</p>
+              <ul class="tc-facts tc-mt-2">
+                <li><svg class="tc-ico" aria-hidden="true"><use href="#i-desktop"/></svg> Dato con icono libre</li>
+                <li><svg class="tc-ico" aria-hidden="true"><use href="#i-lock"/></svg> Otro dato, igual de corto</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Tarjetas hoja y de producto ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" aria-labelledby="s-hojas">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Tarjetas «hoja»</p>
+          <h2 class="tc-display tc-h2" id="s-hojas" data-reveal="words">Una esquina grande, nunca una caja.</h2>
+        </header>
+
+        <ul class="tc-flowgrid tc-stair" data-stagger style="--step:90ms">
+          <li class="tc-leaf tc-leaf--lift tc-spot" data-reveal="rise">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-layers"/></svg>
+            <h3 class="tc-h4">Hoja clara</h3>
+            <p class="tc-muted">.tc-leaf con foco de luz (.tc-spot) y elevación al pasar (.tc-leaf--lift).</p>
+          </li>
+          <li class="tc-leaf tc-leaf--br tc-leaf--tint tc-spot" data-reveal="rise">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-shield"/></svg>
+            <h3 class="tc-h4">Hoja con tinte</h3>
+            <p class="tc-muted">.tc-leaf--tint y la esquina abajo a la derecha (.tc-leaf--br).</p>
+          </li>
+          <li class="tc-leaf tc-leaf--tr tc-leaf--line" data-reveal="rise">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-scale"/></svg>
+            <h3 class="tc-h4">Hoja de línea</h3>
+            <p class="tc-muted">.tc-leaf--line: sin relleno, para piezas secundarias.</p>
+          </li>
+        </ul>
+
+        <div class="tc-leaf tc-leaf--lg tc-leaf--tr tc-leaf--night tone-dark tc-spot tc-mt-6" data-tilt="1.6" data-reveal="tilt">
+          <div class="tc-split">
+            <div class="tc-stack" style="--gap:18px">
+              <p class="tc-mono tc-mono--hi">Isla oscura · .tc-leaf--night + .tone-dark</p>
+              <h2 class="tc-display tc-h3">Dentro, todo lee el tono oscuro.</h2>
+              <p class="tc-lead">Una tarjeta oscura dentro de una sección clara funciona sin reglas extra: manda el ancestro de tono más cercano.</p>
+              <div class="tc-cluster">
+                <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-track="plantilla_isla_demo"><span class="tc-btn__label">Agendar demo</span></button>
+                <button class="tc-btn tc-btn--ghost" type="button"><span class="tc-btn__label">Fantasma</span></button>
+              </div>
+            </div>
+            <dl class="tc-stats">
+              <div class="tc-stat"><dt class="tc-mono">Cifra con contador</dt><dd class="tc-stat__n"><span data-count="6">6</span></dd><dd class="tc-stat__d">Texto corto que explica la cifra.</dd></div>
+              <div class="tc-stat"><dt class="tc-mono">Con decimales</dt><dd class="tc-stat__n"><span data-count="19.99" data-decimals="2">19,99</span><small>€</small></dd><dd class="tc-stat__d">data-decimals="2".</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <header class="tc-head tc-mt-6">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Tarjetas de producto</p>
+          <h2 class="tc-display tc-h3" data-reveal="words">Compactas, para índices y relacionados.</h2>
+        </header>
+        <ul class="tc-flowgrid tc-zig" data-stagger style="--min:300px">
+          <li class="tc-leaf tc-leaf--lift tc-spot" data-reveal="rise">
+            <div class="tc-pcard">
+              <div class="tc-pcard__top"><img src="/assets/trustinfacts-logo.png" alt="" width="247" height="257" loading="lazy"><h3 class="tc-pcard__name">TrustInFacts</h3></div>
+              <p class="tc-pcard__claim">Factura, cobra y aplica el impuesto correcto.</p>
+              <div class="tc-chips"><span class="tc-chip">VeriFactu</span><span class="tc-chip">IPSI</span></div>
+              <a class="tc-pcard__go tc-leaf__link" href="/productos/trustinfacts">Conocer TrustInFacts <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="tc-leaf tc-leaf--br tc-leaf--lift tc-spot" data-reveal="rise">
+            <div class="tc-pcard">
+              <div class="tc-pcard__top"><span class="tc-glyph"><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg></span><h3 class="tc-pcard__name">GenAI</h3></div>
+              <p class="tc-pcard__claim">De tu marca a tus redes, con tu visto bueno.</p>
+              <div class="tc-chips"><span class="tc-chip">Redes sociales</span><span class="tc-chip tc-chip--ok">Revisión humana</span></div>
+              <a class="tc-pcard__go tc-leaf__link" href="/productos/genai">Conocer GenAI <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="tc-leaf tc-leaf--tl tc-leaf--night tone-dark tc-leaf--lift tc-spot" data-reveal="rise">
+            <div class="tc-pcard">
+              <div class="tc-pcard__top"><span class="tc-glyph"><svg class="tc-ico" aria-hidden="true"><use href="#i-home"/></svg></span><h3 class="tc-pcard__name">Nido</h3></div>
+              <p class="tc-pcard__claim">Buscador y cuaderno privado de vivienda.</p>
+              <div class="tc-chips"><span class="tc-chip">Escritorio</span><span class="tc-chip">macOS · Windows</span></div>
+              <a class="tc-pcard__go tc-leaf__link" href="/productos/nido">Conocer Nido <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Producto en bloque + ventanas ============ -->
+  <section class="tc-sec tc-sec--white tone-light" aria-labelledby="s-win">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <article class="tc-prod tc-prod--row">
+          <div class="tc-prod__copy">
+            <p class="tc-mono tc-prod__kicker" data-reveal="rise">Bloque de producto · .tc-prod</p>
+            <h2 class="tc-display tc-h3 tc-prod__name" id="s-win" data-reveal="rise"><img class="tc-prod__logo--round" src="/assets/optimized-trustintime-logo.webp" alt="" width="698" height="720" loading="lazy"> TrustInTime</h2>
+            <p class="tc-prod__claim" data-reveal="rise">Registra la jornada y olvídate del papel.</p>
+            <p class="tc-lead tc-prod__text" data-reveal="focus">Texto + maqueta en dos columnas desiguales. La captura se descubre con el revelado «curtain».</p>
+            <ul class="tc-ticks" data-reveal="rise">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Fichaje desde app, QR o PIN</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Turnos, vacaciones y ausencias</li>
+            </ul>
+            <div class="tc-prod__foot" data-reveal="rise">
+              <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-magnet data-track="plantilla_prod_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+              <p class="tc-mono tc-prod__price">Desde <b class="tc-num">5,99 €</b>/usuario/mes</p>
+            </div>
+          </div>
+          <div class="tc-prod__shot">
+            <figure class="tc-win" data-reveal="curtain"><div>
+              <div>
+                <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">TrustInTime · Mis turnos</span></div>
+                <img src="/assets/trustintime-dashboard-960.webp" srcset="/assets/trustintime-dashboard-640.webp 640w, /assets/trustintime-dashboard-960.webp 960w, /assets/trustintime-dashboard-1280.webp 1280w" sizes="(min-width: 1000px) 56vw, calc(100vw - 40px)" width="1280" height="614" alt="Pantalla Mis turnos de TrustInTime con el reloj de fichaje y las horas de la semana" loading="lazy">
+              </div>
+            </div></figure>
+            <div class="tc-float tc-float--a" aria-hidden="true"><span class="tc-float__pulse"></span><span><b>Registrar entrada</b><small>app, QR o PIN</small></span></div>
+          </div>
+        </article>
+
+        <header class="tc-head tc-mt-6">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Ventanas de maqueta</p>
+          <h2 class="tc-display tc-h3" data-reveal="words">Marcos para capturas y maquetas HTML.</h2>
+        </header>
+        <div class="tc-flowgrid" style="--min:320px" data-stagger>
+          <figure class="tc-win tc-win--flat" data-reveal="tilt">
+            <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__url">app.trustcore.es/informes</span></div>
+            <div class="tc-win__body tc-win__body--pad">
+              <p class="tc-mono">Navegador · .tc-win__url</p>
+              <ul class="tc-mini">
+                <li><span>Fila de interfaz</span><em class="tc-chip tc-chip--ok">Hecho</em></li>
+                <li><span>Otra fila</span><em class="tc-mini__bar"></em></li>
+                <li><span>Con acción</span><svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></li>
+              </ul>
+            </div>
+          </figure>
+          <figure class="tc-win tc-win--dark tone-dark" data-reveal="tilt">
+            <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">App de escritorio · .tc-win--dark</span></div>
+            <div class="tc-win__body tc-win__body--pad">
+              <p class="tc-mono">Maqueta HTML sobre oscuro</p>
+              <ul class="tc-mini">
+                <li><span>Orquestador</span><em class="tc-chip tc-chip--hi">En curso</em></li>
+                <li><span>Revisión</span><em class="tc-chip">En cola</em></li>
+              </ul>
+            </div>
+          </figure>
+          <div class="tc-stack" style="justify-items:center" data-reveal="tilt">
+            <div class="tc-phone"><img src="/assets/products/nido-home-light-390.webp" alt="Pantalla de inicio de Nido en móvil" loading="lazy" width="390" height="844"></div>
+            <p class="tc-mono">Marco de móvil · .tc-phone</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Pasos ============ -->
+  <section class="tc-sec tc-sec--day tone-light" aria-labelledby="s-pasos">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-rel">
+        <div class="tc-brick">
+          <header class="tc-brick__head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Pasos en ladrillo · .tc-brick</p>
+            <h2 class="tc-display tc-h2" id="s-pasos" data-reveal="words">El hilo zigzaguea de un nodo a otro.</h2>
+            <p class="tc-lead" data-reveal="focus">Con <code>data-flow-steps</code> el motor añade a cada paso un nodo del hilo de luz.</p>
+          </header>
+          <ol class="tc-steps tc-steps--brick" role="list" data-flow-steps>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Primer paso</h3><p class="tc-muted">Texto del paso: qué ocurre y qué decide la persona.</p></li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:-60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Segundo paso</h3><p class="tc-muted">Los pares van a la izquierda y entran desde ese lado.</p>
+              <ul class="tc-mini" aria-hidden="true"><li><span>Estado</span><em class="tc-chip tc-chip--ok"><span class="tc-chip__dot"></span> Aprobada</em></li></ul></li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Tercer paso</h3><p class="tc-muted">La numeración sale sola del contador CSS.</p></li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:-60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Cuarto paso</h3><p class="tc-muted">En móvil se apilan y el hilo baja por el margen.</p></li>
+          </ol>
+        </div>
+
+        <div class="tc-split tc-split--top tc-mt-6">
+          <div>
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Línea de tiempo · .tc-timeline</p>
+            <ol class="tc-timeline tc-mt-2" data-stagger>
+              <li data-reveal="rise"><p class="tc-timeline__when">1 ene 2027</p><div class="tc-timeline__what"><b>Hito con fecha</b><p class="tc-muted">Para calendarios legales y hojas de ruta.</p></div></li>
+              <li data-reveal="rise"><p class="tc-timeline__when">1 jul 2027</p><div class="tc-timeline__what"><b>Otro hito</b><p class="tc-muted">Cada fila se separa con una regla que se desvanece.</p></div></li>
+            </ol>
+          </div>
+          <div>
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Filas de definición · .tc-rows</p>
+            <ul class="tc-rows tc-mt-2" data-stagger>
+              <li data-reveal="slide" style="--from:40px"><b>Administración</b><span class="tc-muted">Prepara, publica y conecta las cuentas.</span></li>
+              <li data-reveal="slide" style="--from:40px"><b>Revisión</b><span class="tc-muted">Aprueba y pone en cola.</span></li>
+              <li data-reveal="slide" style="--from:40px"><b>Lectura</b><span class="tc-muted">Consulta sin modificar.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Pestañas y acordeón ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" aria-labelledby="s-tabs">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Pestañas ARIA</p>
+          <h2 class="tc-display tc-h2" id="s-tabs" data-reveal="words">La tinta se desliza y el panel cambia.</h2>
+        </header>
+
+        <div class="tc-tabs" data-tabs>
+          <div class="tc-tabs__list" role="tablist" aria-label="Ejemplo de pestañas" data-reveal="rise">
+            <button class="tc-tabs__tab" role="tab" type="button" id="tab-uno" aria-controls="panel-uno" aria-selected="true">Primera</button>
+            <button class="tc-tabs__tab" role="tab" type="button" id="tab-dos" aria-controls="panel-dos" aria-selected="false" tabindex="-1">Segunda</button>
+            <button class="tc-tabs__tab" role="tab" type="button" id="tab-tres" aria-controls="panel-tres" aria-selected="false" tabindex="-1">Tercera</button>
+          </div>
+          <div class="tc-tabs__panels" data-reveal="focus" style="--delay:120ms">
+            <div class="tc-tabs__panel" role="tabpanel" id="panel-uno" aria-labelledby="tab-uno">
+              <div class="tc-split">
+                <div style="--i:0"><h3 class="tc-display tc-h3">Primer panel.</h3><p class="tc-lead tc-mt-2">Cada hijo directo del panel entra escalonado (<code>--i</code>). Con las flechas del teclado se cambia de pestaña.</p></div>
+                <div class="tc-leaf tc-leaf--br tc-leaf--tint" style="--i:1"><p class="tc-mono">Pieza del panel</p><p class="tc-h4 tc-mt-1">Cualquier contenido</p></div>
+              </div>
+            </div>
+            <div class="tc-tabs__panel" role="tabpanel" id="panel-dos" aria-labelledby="tab-dos" hidden>
+              <div class="tc-split">
+                <div style="--i:0"><h3 class="tc-display tc-h3">Segundo panel.</h3><p class="tc-lead tc-mt-2">Los paneles comparten celda: la altura es la del más alto y nada salta al cambiar.</p></div>
+                <div class="tc-leaf tc-leaf--tr tc-leaf--tint" style="--i:1"><p class="tc-mono">Pieza del panel</p><p class="tc-h4 tc-mt-1">Otra pieza</p></div>
+              </div>
+            </div>
+            <div class="tc-tabs__panel" role="tabpanel" id="panel-tres" aria-labelledby="tab-tres" hidden>
+              <div class="tc-split">
+                <div style="--i:0"><h3 class="tc-display tc-h3">Tercer panel.</h3><p class="tc-lead tc-mt-2">Sin JavaScript se ven los tres, uno debajo de otro.</p></div>
+                <div class="tc-leaf tc-leaf--tint" style="--i:1"><p class="tc-mono">Pieza del panel</p><p class="tc-h4 tc-mt-1">Y otra más</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <header class="tc-head tc-mt-6">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Acordeón sobre &lt;details&gt;</p>
+          <h2 class="tc-display tc-h3" data-reveal="words">Preguntas frecuentes: el texto siempre está en el DOM.</h2>
+        </header>
+        <div class="tc-acc" data-stagger>
+          <details class="tc-acc__item" name="faq-demo" data-reveal="rise" open>
+            <summary class="tc-acc__q"><h3>¿Primera pregunta de ejemplo?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+            <div class="tc-acc__a"><p>Respuesta visible al cargar (<code>open</code>). El contenido es HTML normal: lo leen los buscadores y los asistentes.</p></div>
+          </details>
+          <details class="tc-acc__item" name="faq-demo" data-reveal="rise">
+            <summary class="tc-acc__q"><h3>¿Segunda pregunta, algo más larga para comprobar cómo salta de línea en pantallas estrechas?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+            <div class="tc-acc__a"><p>Con el mismo <code>name</code>, abrir una cierra la otra.</p><p>Puede llevar varios párrafos y <a href="#botones">enlaces</a>.</p></div>
+          </details>
+          <details class="tc-acc__item" name="faq-demo" data-reveal="rise">
+            <summary class="tc-acc__q"><h3>¿Tercera pregunta?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+            <div class="tc-acc__a"><p>Respuesta breve.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Precios y tablas ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" aria-labelledby="s-precios">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <header class="tc-head tc-head--center">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Planes de precios</p>
+          <h2 class="tc-display tc-h2" id="s-precios" data-reveal="words">Mensual o anual, con un gesto.</h2>
+          <div class="tc-billing" data-reveal="pop">
+            <span id="lbl-monthly" class="tc-billing__label tc-billing__label--monthly">Mensual</span>
+            <button id="billing-toggle" class="tc-switch" type="button" role="switch" aria-checked="false" aria-labelledby="billing-toggle-label"><span class="tc-switch__thumb" aria-hidden="true"></span></button>
+            <span id="lbl-annual" class="tc-billing__label tc-billing__label--annual">Anual <span class="tc-chip tc-chip--ok">2 meses gratis</span></span>
+            <span id="billing-toggle-label" class="sr-only">Cambiar entre facturación mensual y anual</span>
+          </div>
+        </header>
+
+        <div class="tc-plans" data-stagger style="--step:90ms">
+          <article class="tc-plan tc-leaf" data-reveal="rise">
+            <h3 class="tc-plan__name">Básico</h3>
+            <p class="tc-plan__desc">Descripción corta del plan.</p>
+            <p class="tc-plan__price"><span class="tc-plan__amount price-monthly">5,99 €</span><span class="tc-plan__amount price-annual" hidden>4,99 €</span><span class="tc-plan__period">/usuario/mes</span></p>
+            <p class="tc-plan__note"><span class="savings-note" hidden>Facturado 59,90 €/año · 2 meses gratis</span></p>
+            <ul class="tc-ticks"><li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Incluido en el plan</li><li class="is-off"><svg class="tc-ico" aria-hidden="true"><use href="#i-minus"/></svg> No incluido</li></ul>
+            <div class="tc-plan__cta">
+              <a class="tc-btn tc-btn--secondary tc-btn--block cta-monthly" href="/contacto?plan=trustintime-basico-mensual" data-track="plantilla_plan_basico_m"><span class="tc-btn__label">Empezar</span></a>
+              <a class="tc-btn tc-btn--secondary tc-btn--block cta-annual" href="/contacto?plan=trustintime-basico-anual" data-track="plantilla_plan_basico_a" hidden><span class="tc-btn__label">Empezar (anual)</span></a>
+            </div>
+          </article>
+          <article class="tc-plan tc-plan--featured tc-leaf tc-leaf--night tone-dark" data-reveal="rise">
+            <span class="tc-chip tc-chip--solid tc-plan__flag">Recomendado</span>
+            <h3 class="tc-plan__name">Estándar</h3>
+            <p class="tc-plan__desc">El plan destacado va en oscuro (.tc-plan--featured).</p>
+            <p class="tc-plan__price"><span class="tc-plan__amount price-monthly">6,99 €</span><span class="tc-plan__amount price-annual" hidden>5,83 €</span><span class="tc-plan__period">/usuario/mes</span></p>
+            <p class="tc-plan__note"><span class="savings-note" hidden>Facturado 69,90 €/año · 2 meses gratis</span></p>
+            <ul class="tc-ticks"><li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Todo lo del Básico</li><li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Otra ventaja</li></ul>
+            <div class="tc-plan__cta">
+              <a class="tc-btn tc-btn--primary tc-btn--block cta-monthly" href="/contacto?plan=trustintime-estandar-mensual" data-track="plantilla_plan_std_m"><span class="tc-btn__label">Empezar</span></a>
+              <a class="tc-btn tc-btn--primary tc-btn--block cta-annual" href="/contacto?plan=trustintime-estandar-anual" data-track="plantilla_plan_std_a" hidden><span class="tc-btn__label">Empezar (anual)</span></a>
+            </div>
+          </article>
+          <article class="tc-plan tc-leaf tc-leaf--br" data-reveal="rise">
+            <h3 class="tc-plan__name">Avanzado</h3>
+            <p class="tc-plan__desc">Descripción corta del plan.</p>
+            <p class="tc-plan__price"><span class="tc-plan__amount price-monthly">7,99 €</span><span class="tc-plan__amount price-annual" hidden>6,66 €</span><span class="tc-plan__period">/usuario/mes</span></p>
+            <p class="tc-plan__note"><span class="savings-note" hidden>Facturado 79,90 €/año · 2 meses gratis</span></p>
+            <ul class="tc-ticks"><li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Todo lo del Estándar</li><li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Y esto otro</li></ul>
+            <div class="tc-plan__cta">
+              <button class="tc-btn tc-btn--secondary tc-btn--block" type="button" data-calendar-open data-track="plantilla_plan_adv"><span class="tc-btn__label">Agendar demo</span></button>
+            </div>
+          </article>
+        </div>
+
+        <header class="tc-head tc-mt-6">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Tablas</p>
+          <h2 class="tc-display tc-h3" data-reveal="words">Comparativa: nuestra columna, destacada.</h2>
+        </header>
+        <div class="tc-table-wrap" data-reveal="rise">
+          <table class="tc-table tc-table--compare">
+            <caption>Comparativa de ejemplo</caption>
+            <thead><tr><th scope="col">Función</th><th scope="col" class="is-us">TrustCore</th><th scope="col">Alternativa A</th><th scope="col">Alternativa B</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Fila con sí / no</th><td class="is-us"><span class="tc-yes"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg></span><span class="sr-only">Sí</span></td><td><span class="tc-no"><svg class="tc-ico" aria-hidden="true"><use href="#i-close"/></svg></span><span class="sr-only">No</span></td><td><span class="tc-part"><svg class="tc-ico" aria-hidden="true"><use href="#i-minus"/></svg></span><span class="sr-only">Parcial</span></td></tr>
+              <tr><th scope="row">Fila con texto</th><td class="is-us">Incluido</td><td>De pago</td><td>No disponible</td></tr>
+              <tr><th scope="row">Fila con cifra</th><td class="is-us tc-num">19,99 €</td><td class="tc-num">—</td><td class="tc-num">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="tc-mono tc-mt-5" data-reveal="rise">Tabla apilable en móvil · .tc-table--stack + data-label</p>
+        <div class="tc-table-wrap tc-mt-2" data-reveal="rise">
+          <table class="tc-table tc-table--stack">
+            <thead><tr><th scope="col">Tipo</th><th scope="col">Aplica a</th><th scope="col">Porcentaje</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">IPSI servicios</th><td data-label="Aplica a">Servicios en Ceuta y Melilla</td><td data-label="Porcentaje" class="tc-num">4 %</td></tr>
+              <tr><th scope="row">IPSI comercio</th><td data-label="Aplica a">Venta de bienes</td><td data-label="Porcentaje" class="tc-num">0,5 %</td></tr>
+              <tr><th scope="row">IVA general</th><td data-label="Aplica a">Península y Baleares</td><td data-label="Porcentaje" class="tc-num">21 %</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Simuladores ============ -->
+  <section class="tc-sec tc-sec--white tone-light" aria-labelledby="s-sim">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Simuladores «Pruébalo»</p>
+          <h2 class="tc-display tc-h2" id="s-sim" data-reveal="words">Factura con IPSI o IVA.</h2>
+        </header>
+        <div class="tc-sim" data-sim="factura" data-reveal="rise">
+          <div class="tc-sim__controls">
+            <div>
+              <p class="tc-sim__label">1 · ¿Qué vendes?</p>
+              <div class="tc-sim__options" role="group" aria-label="Tipo de operación">
+                <button type="button" class="tc-sim__opt is-active" data-sim-producto="1200" data-sim-concepto="Servicios de consultoría">Consultoría · 1.200 €</button>
+                <button type="button" class="tc-sim__opt" data-sim-producto="8500" data-sim-concepto="Reforma de local">Reforma · 8.500 €</button>
+                <button type="button" class="tc-sim__opt" data-sim-producto="950" data-sim-concepto="Venta de equipo informático">Comercio · 950 €</button>
+              </div>
+            </div>
+            <div>
+              <p class="tc-sim__label">2 · ¿Dónde facturas?</p>
+              <div class="tc-sim__options" role="group" aria-label="Régimen fiscal">
+                <button type="button" class="tc-sim__opt is-active" data-sim-tax="ipsi-servicios">Ceuta/Melilla · servicios</button>
+                <button type="button" class="tc-sim__opt" data-sim-tax="ipsi-comercio">Ceuta/Melilla · comercio</button>
+                <button type="button" class="tc-sim__opt" data-sim-tax="ipsi-obras">Ceuta/Melilla · obras</button>
+                <button type="button" class="tc-sim__opt" data-sim-tax="iva">Península · IVA</button>
+              </div>
+            </div>
+            <div>
+              <button type="button" class="tc-btn tc-btn--primary" data-sim-emitir><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-send"/></svg> Emitir factura de prueba</span></button>
+              <p class="tc-sim__hint">Cálculo real de este simulador.</p>
+            </div>
+          </div>
+          <div class="tc-sim__stage">
+            <div class="tc-sim__doc" aria-live="polite">
+              <div class="tc-sim__doc-head"><strong>Factura <span data-sim-serie>#2026-0001</span></strong><span class="tc-sim__stamp" data-sim-stamp><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> VeriFactu · registrada</span></div>
+              <div class="tc-sim__row"><span data-sim-doc-concepto>Servicios de consultoría</span><span data-sim-base>1.200,00 €</span></div>
+              <div class="tc-sim__row"><span data-sim-taxlabel>IPSI servicios 4%</span><span data-sim-cuota>48,00 €</span></div>
+              <div class="tc-sim__row tc-sim__row--total"><span>Total</span><span data-sim-total>1.248,00 €</span></div>
+            </div>
+          </div>
+        </div>
+
+        <header class="tc-head tc-mt-6">
+          <h2 class="tc-display tc-h3" data-reveal="words">Fichaje con firma.</h2>
+        </header>
+        <div class="tc-sim" data-sim="fichaje" data-reveal="rise">
+          <div class="tc-sim__controls">
+            <p class="tc-lead">Pulsa para fichar entrada y salida: cada registro queda firmado.</p>
+            <div class="tc-cluster">
+              <button type="button" class="tc-btn tc-btn--primary" data-sim-fichar><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg> <span data-sim-fichar-label>Fichar entrada</span></span></button>
+              <button type="button" class="tc-btn tc-btn--ghost" data-sim-export hidden><span class="tc-btn__label">Exportar informe</span></button>
+            </div>
+          </div>
+          <div class="tc-sim__stage">
+            <div class="tc-sim__doc">
+              <div class="tc-sim__doc-head"><strong>Registro de hoy</strong></div>
+              <p class="tc-sim__empty" data-sim-empty>Todavía no hay fichajes.</p>
+              <ul class="tc-sim__log" data-sim-log aria-live="polite"></ul>
+              <p class="tc-sim__summary" data-sim-summary hidden><span>Jornada registrada</span><span data-sim-jornada></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Formulario ============ -->
+  <section class="tc-sec tc-sec--day tone-light" aria-labelledby="s-form">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <div class="tc-split tc-split--top tc-split--5-7">
+          <header class="tc-head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Formulario</p>
+            <h2 class="tc-display tc-h2" id="s-form" data-reveal="words">Campos amplios y foco visible.</h2>
+            <p class="tc-lead" data-reveal="focus">En /contacto el formulario lleva <code>data-contact-form</code> y lo envía contact-form.js. Aquí es solo una muestra: no envía nada.</p>
+            <div class="tc-note" data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-info"/></svg><div><p><b>Nota.</b> .tc-note sirve para avisos dentro y fuera de la prosa.</p></div></div>
+          </header>
+          <div class="tc-leaf tc-leaf--lg tc-leaf--tl tc-leaf--raised" data-reveal="tilt">
+            <form class="tc-form" onsubmit="event.preventDefault(); window.TC && TC.toast('Formulario de muestra: no se envía nada', { icon: 'info' });" novalidate>
+              <div class="tc-form__grid">
+                <div class="tc-field"><label for="f-name">Nombre <b aria-hidden="true">*</b></label><input class="tc-input" id="f-name" name="firstname" type="text" autocomplete="name" required></div>
+                <div class="tc-field"><label for="f-tel">Teléfono</label><input class="tc-input" id="f-tel" name="phone" type="tel" autocomplete="tel"></div>
+                <div class="tc-field"><label for="f-mail">Email <b aria-hidden="true">*</b></label><input class="tc-input" id="f-mail" name="email" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="f-mail-err" value="correo-sin-arroba"><p class="tc-field__err" id="f-mail-err">Así se ve un campo con error.</p></div>
+                <div class="tc-field"><label for="f-prod">Producto</label><select class="tc-select" id="f-prod" name="product"><option>TrustInFacts</option><option>TrustInTime</option><option>GenAI</option></select></div>
+                <div class="tc-field tc-field--full"><label for="f-msg">Qué necesitas</label><textarea class="tc-textarea" id="f-msg" name="message" placeholder="Cuéntanos tu caso."></textarea><p class="tc-field__hint">Texto de ayuda bajo el campo.</p></div>
+                <label class="tc-check"><input type="checkbox" name="consent" required><span>Acepto que TrustCore trate mis datos para responder a esta solicitud. Más información en <a href="/privacidad">Privacidad</a>.</span></label>
+                <div class="tc-form__actions"><button class="tc-btn tc-btn--primary" type="submit"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-send"/></svg> Enviar consulta</span></button><span class="tc-mono">Respuesta en menos de 1 h en horario laboral</span></div>
+                <p class="tc-form__status" data-state="success">Estado de éxito (.tc-form__status[data-state="success"]).</p>
+                <p class="tc-form__status" data-state="error">Estado de error (.tc-form__status[data-state="error"]).</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Prosa de artículo ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" aria-labelledby="s-prosa">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Prosa de artículo · blog, guías y legales</p>
+          <h2 class="tc-display tc-h2" id="s-prosa" data-reveal="words">Texto largo con índice lateral.</h2>
+          <p class="tc-mono tc-meta" data-reveal="rise"><span><svg class="tc-ico" aria-hidden="true"><use href="#i-cal"/></svg> 18 nov 2026</span><span><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg> 6 min de lectura</span><span><svg class="tc-ico" aria-hidden="true"><use href="#i-user"/></svg> Equipo TrustCore</span></p>
+        </header>
+
+        <div class="tc-article tc-article--toc">
+          <nav class="tc-toc" aria-label="En este artículo" data-toc="#articulo-demo"><p class="tc-mono">En este artículo</p></nav>
+          <article class="tc-prose" id="articulo-demo">
+            <div class="tc-answer" data-reveal="rise">
+              <p class="tc-mono">Respuesta rápida</p>
+              <p>Bloque .tc-answer: la contestación corta, antes del desarrollo. Es lo que citan los asistentes.</p>
+            </div>
+            <h2 id="primer-apartado">Primer apartado</h2>
+            <p>Párrafo de prosa con <strong>negrita</strong>, un <a href="#primer-apartado">enlace</a> y <code>código en línea</code>. La medida máxima es de unas 74 letras por línea para que se lea sin esfuerzo.</p>
+            <ul>
+              <li>Lista sin orden, con punto de color.</li>
+              <li>Segundo elemento, algo más largo para comprobar el salto de línea y la sangría.</li>
+            </ul>
+            <h3>Subapartado</h3>
+            <ol>
+              <li>Lista ordenada con número en mono.</li>
+              <li>Segundo paso.</li>
+            </ol>
+            <blockquote><p>Cita destacada dentro del texto, en display.</p><cite>Fuente de la cita</cite></blockquote>
+            <h2 id="segundo-apartado">Segundo apartado</h2>
+            <p>Una tabla dentro de la prosa va envuelta igual que fuera de ella.</p>
+            <div class="tc-table-wrap">
+              <table class="tc-table">
+                <thead><tr><th scope="col">Concepto</th><th scope="col">Detalle</th><th scope="col">Importe</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Base</th><td>Servicios</td><td class="tc-num">1.200,00 €</td></tr>
+                  <tr><th scope="row">IPSI 4 %</th><td>Ceuta</td><td class="tc-num">48,00 €</td></tr>
+                </tbody>
+                <tfoot><tr><th scope="row">Total</th><td></td><td class="tc-num">1.248,00 €</td></tr></tfoot>
+              </table>
+            </div>
+            <div class="tc-note tc-note--warn"><svg class="tc-ico" aria-hidden="true"><use href="#i-alert"/></svg><div><p><b>Aviso.</b> .tc-note--warn para plazos y advertencias.</p></div></div>
+            <div class="tc-note tc-note--ok"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg><div><p><b>Confirmado.</b> .tc-note--ok solo confirma; nunca es fondo de sección.</p></div></div>
+            <h2 id="fuentes">Fuentes</h2>
+            <ol class="tc-sources">
+              <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840" target="_blank" rel="noopener">BOE · Real Decreto 1007/2023</a></li>
+              <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645" target="_blank" rel="noopener">BOE · Ley 8/1991 (IPSI)</a></li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Artículos y vídeos ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" aria-labelledby="s-posts">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Tarjetas de artículo y filtros</p>
+          <h2 class="tc-display tc-h2" id="s-posts" data-reveal="words">El blog, sin rejilla rígida.</h2>
+          <div class="tc-chips" data-filter-group="#posts-demo" data-reveal="rise" role="group" aria-label="Filtrar artículos">
+            <button class="tc-chip" type="button" data-filter="all" aria-pressed="true">Todo</button>
+            <button class="tc-chip" type="button" data-filter="verifactu" aria-pressed="false">VeriFactu</button>
+            <button class="tc-chip" type="button" data-filter="ipsi" aria-pressed="false">IPSI</button>
+            <button class="tc-chip" type="button" data-filter="horario" aria-pressed="false">Control horario</button>
+          </div>
+        </header>
+        <div class="tc-posts" id="posts-demo">
+          <article class="tc-post tc-post--feature tc-leaf tc-leaf--lg tc-leaf--tr tc-leaf--tint tc-spot" data-category="verifactu" data-reveal="rise">
+            <div class="tc-stack" style="--gap:14px">
+              <span class="tc-chip tc-chip--hi">VeriFactu</span>
+              <h3 class="tc-post__title"><a href="/verifactu-2027-calendario-empresas-autonomos">Artículo destacado: ocupa todo el ancho</a></h3>
+              <p class="tc-post__excerpt">Extracto del artículo en dos o tres líneas, sin promesas absolutas.</p>
+            </div>
+            <div class="tc-stack" style="--gap:10px">
+              <p class="tc-mono tc-post__meta"><span>18 nov 2026</span><span>6 min</span></p>
+              <span class="tc-post__go">Leer la guía <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </article>
+          <article class="tc-post tc-leaf tc-leaf--lift" data-category="ipsi" data-reveal="rise">
+            <span class="tc-chip">IPSI</span>
+            <h3 class="tc-post__title"><a href="/ipsi-ceuta-melilla-guia-practica">Tarjeta de artículo normal</a></h3>
+            <p class="tc-post__excerpt">Extracto breve.</p>
+            <p class="tc-mono tc-post__meta"><span>2 nov 2026</span><span>4 min</span></p>
+          </article>
+          <article class="tc-post tc-leaf tc-leaf--br tc-leaf--lift" data-category="horario" data-reveal="rise">
+            <span class="tc-chip">Control horario</span>
+            <h3 class="tc-post__title"><a href="/control-horario-obligatorio-guia-2026">Otra tarjeta, con la hoja en otra esquina</a></h3>
+            <p class="tc-post__excerpt">Extracto breve.</p>
+            <p class="tc-mono tc-post__meta"><span>20 oct 2026</span><span>8 min</span></p>
+          </article>
+          <article class="tc-post tc-leaf tc-leaf--lift" data-category="verifactu ipsi" data-reveal="rise">
+            <span class="tc-chip">VeriFactu · IPSI</span>
+            <h3 class="tc-post__title"><a href="/software-verifactu-ipsi-ceuta-melilla">Tarjeta con dos categorías</a></h3>
+            <p class="tc-post__excerpt">data-category admite varias, separadas por espacio.</p>
+            <p class="tc-mono tc-post__meta"><span>5 oct 2026</span><span>5 min</span></p>
+          </article>
+        </div>
+
+        <header class="tc-head tc-mt-6">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Vídeos de Aprende</p>
+          <h2 class="tc-display tc-h3" data-reveal="words">Rejilla fluida: se activan solos cuando el MP4 existe.</h2>
+        </header>
+        <div class="tc-videos" data-stagger style="--step:60ms">
+          <button type="button" class="tc-video" id="crear-cliente" data-video-title="Crear cliente" data-video-src="/videos/aprende/trustinfacts/crear-cliente.mp4" data-video-poster="/assets/posters/crear-cliente-960.jpg" data-reveal="rise">
+            <span class="tc-video__poster"><img src="/assets/posters/crear-cliente-960.jpg" alt="" width="960" height="516" loading="lazy"><span class="tc-video__play"><svg class="tc-ico" aria-hidden="true"><use href="#i-play"/></svg></span></span>
+            <span class="tc-video__body"><span class="tc-video__title">Crear cliente</span><span class="tc-video__desc">Alta de datos comerciales básicos y contacto.</span><em class="tc-video__state" data-video-state>Comprobando vídeo</em></span>
+          </button>
+          <button type="button" class="tc-video" id="crear-proveedor" data-video-title="Crear proveedor" data-video-src="/videos/aprende/trustinfacts/crear-proveedor.mp4" data-video-poster="/assets/posters/crear-proveedor-960.jpg" data-reveal="rise">
+            <span class="tc-video__poster"><img src="/assets/posters/crear-proveedor-960.jpg" alt="" width="960" height="516" loading="lazy"><span class="tc-video__play"><svg class="tc-ico" aria-hidden="true"><use href="#i-play"/></svg></span></span>
+            <span class="tc-video__body"><span class="tc-video__title">Crear proveedor</span><span class="tc-video__desc">Registro del proveedor para compras y gastos.</span><em class="tc-video__state" data-video-state>Comprobando vídeo</em></span>
+          </button>
+          <button type="button" class="tc-video" id="crear-producto" data-video-title="Crear producto" data-video-src="/videos/aprende/trustinfacts/crear-producto.mp4" data-video-poster="/assets/posters/crear-producto-960.jpg" data-reveal="rise">
+            <span class="tc-video__poster"><img src="/assets/posters/crear-producto-960.jpg" alt="" width="960" height="516" loading="lazy"><span class="tc-video__play"><svg class="tc-ico" aria-hidden="true"><use href="#i-play"/></svg></span></span>
+            <span class="tc-video__body"><span class="tc-video__title">Crear producto</span><span class="tc-video__desc">Ficha de producto con precio, coste y control.</span><em class="tc-video__state" data-video-state>Comprobando vídeo</em></span>
+          </button>
+          <button type="button" class="tc-video" id="video-pendiente" data-video-title="Vídeo aún sin publicar" data-video-src="/videos/aprende/_no-existe.mp4" data-reveal="rise">
+            <span class="tc-video__poster"><span class="tc-video__play"><svg class="tc-ico" aria-hidden="true"><use href="#i-play"/></svg></span></span>
+            <span class="tc-video__body"><span class="tc-video__title">Vídeo aún sin publicar</span><span class="tc-video__desc">Así queda mientras el MP4 no existe.</span><em class="tc-video__state" data-video-state>Comprobando vídeo</em></span>
+          </button>
+        </div>
+        <p class="tc-mono tc-mt-5" data-reveal="rise">Lista compacta de lecciones · .tc-lessons</p>
+        <ul class="tc-lessons tc-mt-2" style="max-width:640px" data-stagger>
+          <li data-reveal="rise"><button type="button" class="tc-lesson" data-video-title="Crear servicio" data-video-src="/videos/aprende/trustinfacts/crear-servicio.mp4" data-video-poster="/assets/posters/crear-servicio-960.jpg"><span class="tc-lesson__play"><svg class="tc-ico" aria-hidden="true"><use href="#i-play"/></svg></span><span><b>Crear servicio</b><small>Alta de servicios facturables sin stock asociado.</small></span><em class="tc-video__state" data-video-state>Comprobando vídeo</em></button></li>
+          <li data-reveal="rise"><button type="button" class="tc-lesson" data-video-title="Lección aún sin publicar" data-video-src="/videos/aprende/_no-existe-2.mp4"><span class="tc-lesson__play"><svg class="tc-ico" aria-hidden="true"><use href="#i-play"/></svg></span><span><b>Lección aún sin publicar</b><small>Queda desactivada hasta que exista el vídeo.</small></span><em class="tc-video__state" data-video-state>Comprobando vídeo</em></button></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Confianza: cita, premio, cinta, logos, diálogo, toast, 404 ============ -->
+  <section class="tc-sec tc-sec--day tone-light" aria-labelledby="s-conf">
+    <div class="tc-sec__in tc-pad tc-pad--bottom-0">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--7-5">
+          <figure class="tc-quote" data-reveal="rise">
+            <p class="tc-mono tc-quote__award"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg> Bloque de premio y cita</p>
+            <blockquote class="tc-quote__text" id="s-conf">«Texto de la cita, en display. Solo citas que ya publica la web; nunca inventadas.»</blockquote>
+            <figcaption><b>Nombre de quien lo dice</b><span>Cargo · Empresa</span></figcaption>
+          </figure>
+          <div class="tc-stack" style="--gap:14px" data-stagger>
+            <p class="tc-award" data-reveal="pop"><span class="tc-award__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-trophy"/></svg></span><span>Ganador del II Ceuta Tech Summit<small>.tc-award</small></span></p>
+            <p class="tc-award" data-reveal="pop"><span class="tc-award__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg></span><span>Pase dorado a Alhambra Venture 2026<small>.tc-award</small></span></p>
+            <div class="tc-logos" data-reveal="rise">
+              <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" loading="lazy">
+              <img class="tc-logos__band" src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" width="1299" height="79" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc-mt-6">
+        <p class="tc-wrap tc-wrap--spine tc-mono" data-reveal="rise">Cinta · .tc-belt--words (se detiene al pasar el puntero)</p>
+        <div class="tc-belt tc-belt--words tc-mt-2" data-belt data-live>
+          <ul class="tc-belt__track">
+            <li>TrustInFacts</li><li>TrustInTime</li><li>GenAI</li><li>Orquesta</li><li>Corrector Fiscal</li><li>Nido</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tc-wrap tc-wrap--spine tc-mt-6">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Diálogo y toast</p>
+          <h2 class="tc-display tc-h3" data-reveal="words">Capas que aparecen con muelle.</h2>
+        </header>
+        <div class="tc-cluster" data-stagger>
+          <button class="tc-btn tc-btn--secondary" type="button" data-dialog-open="dialogo-demo" data-reveal="pop"><span class="tc-btn__label">Abrir diálogo</span></button>
+          <button class="tc-btn tc-btn--secondary" type="button" onclick="TC.toast('Enlace copiado')" data-reveal="pop"><span class="tc-btn__label">Lanzar toast</span></button>
+          <button class="tc-btn tc-btn--ghost" type="button" onclick="TC.toast('No se ha podido guardar', { tone: 'err' })" data-reveal="pop"><span class="tc-btn__label">Toast de error</span></button>
+          <button class="tc-btn tc-btn--ghost" type="button" data-cookie-settings data-reveal="pop"><span class="tc-btn__label">Configurar cookies</span></button>
+        </div>
+
+        <div class="tc-leaf tc-leaf--lg tc-leaf--night tone-dark tc-mt-6" data-reveal="tilt" style="overflow:hidden">
+          <div class="tc-404" style="padding-block:clamp(32px,5vw,64px)">
+            <p class="tc-404__code" aria-hidden="true">404</p>
+            <h2 class="tc-display tc-404__title">Bloque 404 (aquí, dentro de una isla).</h2>
+            <p class="tc-lead">En /404 ocupa la pantalla completa sobre una sección oscura.</p>
+            <div class="tc-404__links"><a class="tc-btn tc-btn--primary" href="/"><span class="tc-btn__label">Volver al inicio</span></a><a class="tc-btn tc-btn--ghost" href="/productos"><span class="tc-btn__label">Ver los productos</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA final: la cúpula donde desemboca el hilo ============ -->
+  <section class="tc-pool" id="contacto" data-live aria-labelledby="cta-t">
+    <div class="tc-pool__in tone-dark">
+      <div class="tc-pool__rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="tc-wrap tc-pool__copy">
+        <p class="tc-mono tc-mono--hi" data-reveal="rise">CTA final · .tc-pool</p>
+        <h2 class="tc-display tc-pool__title" id="cta-t" data-reveal="words">Aquí desemboca la página.</h2>
+        <p class="tc-lead" data-reveal="focus" style="--delay:200ms">Una frase que diga qué pasa en la demo. El botón principal siempre es «Agendar demo».</p>
+        <button class="tc-btn tc-btn--primary tc-btn--xl" type="button" data-calendar-open data-magnet data-track="plantilla_cta_demo" data-reveal="pop" style="--delay:320ms">
+          <span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </button>
+        <div class="tc-pool__contact" data-reveal="rise" style="--delay:420ms">
+          <a href="tel:+34666609299" data-track="plantilla_cta_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> <span class="tc-num">666 60 92 99</span></a>
+          <a href="mailto:info@trustcore.es" data-track="plantilla_cta_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a>
+        </div>
+        <p class="tc-mono" data-reveal="rise" style="--delay:480ms">Respuesta en menos de 1 h en horario laboral</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="tc-foot tone-dark">
+  <div class="tc-wrap">
+    <div class="tc-foot__grid">
+      <div class="tc-foot__brand">
+        <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+          <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120" loading="lazy">
+          <span class="tc-brand__word">TrustCore</span>
+        </a>
+        <p>Software con IA hecho en Ceuta para quitar trabajo repetido a empresas y personas.</p>
+        <ul class="tc-foot__contact">
+          <li><a href="tel:+34666609299" data-track="footer_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> 666 60 92 99</a></li>
+          <li><a href="mailto:info@trustcore.es" data-track="footer_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a></li>
+        </ul>
+        <p class="tc-foot__note">Respuesta en menos de 1 h en horario laboral</p>
+        <div class="tc-foot__awards">
+          <span class="tc-chip tc-chip--gold"><svg class="tc-ico" aria-hidden="true"><use href="#i-trophy"/></svg> Alhambra Venture 2026</span>
+          <span class="tc-chip tc-chip--hi"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg> #1 CeutaTech 2026</span>
+        </div>
+      </div>
+      <nav aria-label="Productos">
+        <p class="tc-foot__title">Productos</p>
+        <ul>
+          <li><a href="/productos/trustinfacts">TrustInFacts</a></li>
+          <li><a href="/productos/trustintime">TrustInTime</a></li>
+          <li><a href="/productos/genai">GenAI</a></li>
+          <li><a href="/productos/orquesta">Orquesta</a></li>
+          <li><a href="/productos/corrector-fiscal">Corrector Fiscal</a></li>
+          <li><a href="/productos/nido">Nido</a></li>
+          <li><a href="/productos">Todos los productos</a></li>
+          <li><a href="/precios">Precios</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Soluciones">
+        <p class="tc-foot__title">Soluciones</p>
+        <ul>
+          <li><a href="/facturacion-para-tiendas">Para tiendas</a></li>
+          <li><a href="/facturacion-para-instaladores">Para instaladores</a></li>
+          <li><a href="/gestoria">Para gestorías</a></li>
+          <li><a href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a></li>
+          <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Recursos">
+        <p class="tc-foot__title">Recursos</p>
+        <ul>
+          <li><a href="/clientes">Clientes</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/aprende">Aprende</a></li>
+          <li><a href="/funcionalidades">Funcionalidades</a></li>
+          <li><a href="/como-funciona">Cómo funciona</a></li>
+          <li><a href="/quienes-somos">Sobre nosotros</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="tc-foot__title">Legal</p>
+        <ul>
+          <li><a href="/aviso-legal">Aviso legal</a></li>
+          <li><a href="/privacidad">Privacidad</a></li>
+          <li><a href="/cookies">Cookies</a></li>
+          <li><a href="/terminos">Términos</a></li>
+          <li><button type="button" data-cookie-settings>Configurar cookies</button></li>
+        </ul>
+        <div class="tc-foot__trust trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+          <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" data-track="footer_trustpilot" aria-label="Reséñanos en Trustpilot"><span class="tc-foot__trust-pre">Reséñanos en</span> <svg class="tc-ico" aria-hidden="true"><use href="#i-star"/></svg> Trustpilot</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="tc-foot__backers">
+      <p class="tc-foot__title">Acelerado y respaldado por</p>
+      <div class="tc-foot__backers-row">
+        <img class="tc-foot__cof" src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" width="1000" height="355" loading="lazy">
+        <div class="tc-foot__tile">
+          <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" loading="lazy" style="--w:107px">
+          <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" width="1299" height="79" loading="lazy" style="--w:756px">
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-foot__base">
+      <span>© 2026 TrustCore · Ceuta, España</span>
+      <span>Hecho en Ceuta · Cloud europeo · RGPD</span>
+    </div>
+    <p class="tc-foot__word" aria-hidden="true">TrustCore</p>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<!-- Diálogo propio de la página (los de agenda, descargas y vídeo los crea el motor) -->
+<dialog class="tc-dialog" id="dialogo-demo" aria-labelledby="dialogo-demo-t">
+  <div class="tc-dialog__panel tone-light">
+    <button class="tc-dialog__close" type="button" data-dialog-close aria-label="Cerrar"><svg class="tc-ico" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <p class="tc-mono tc-mono--hi">Diálogo · .tc-dialog</p>
+    <h2 class="tc-dialog__title" id="dialogo-demo-t">Título del diálogo</h2>
+    <p>Se abre con <code>data-dialog-open="id"</code> y se cierra con el botón, Esc o un clic fuera.</p>
+    <div class="tc-dialog__actions"><button class="tc-btn tc-btn--primary" type="button" data-dialog-close><span class="tc-btn__label">Entendido</span></button></div>
+  </div>
+</dialog>
+
+<script src="/assets/js/consent.bdd1909c.min.js" defer></script>
+<script src="/assets/js/components.f3ffc571.min.js" defer></script>
+</body>
+</html>

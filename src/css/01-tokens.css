@@ -1,0 +1,162 @@
+/* ==========================================================================
+   TrustCore · sistema "Flujo" · 01 · tokens
+   Lo único heredado de la marca son los colores. Todo lo demás sale de aquí.
+   ========================================================================== */
+:root {
+  /* ---- Marca ---- */
+  --navy-deep: #020A2A;
+  --navy: #040F3F;
+  --corp: #0B2572;
+  --royal: #2071D5;
+  --cyan: #53CDFE;
+  --cyan-soft: #B3E8FF;
+  --gold: #D4A23D;
+  --ok: #0FA06F;
+
+  /* ---- Derivados ---- */
+  --dusk: #08195B;           /* entre navy y corp */
+  --stage-end: #1450AA;      /* final del tramo oscuro: blanco 7.6:1 */
+  --sky: #3187E2;            /* cielo del puente de olas */
+  --wave-1: #62AEEF;
+  --mist: #EAF5FF;
+  --paper: #F5FAFF;
+  --white: #FFFFFF;
+  --ink: #061238;            /* texto sobre claro */
+  --ink-2: #3D4C78;          /* secundario sobre claro (8:1 sobre --paper) */
+  --ink-3: #5A6A96;          /* terciario / mono sobre claro (4.9:1) */
+  --on-dark: #F3F8FF;
+  --on-dark-2: #BFD0F2;      /* secundario sobre navy (9:1) */
+  --on-dark-3: #8FA6D6;      /* mono / etiquetas sobre navy (5.6:1) */
+  --on-mid-3: #C2D2F4;       /* mono sobre el azul medio (--corp … --stage-end) */
+  --gold-ink: #8A6412;       /* oro legible sobre claro (5.2:1) */
+  --ok-ink: #0A7A55;         /* verde legible sobre claro (5.3:1) */
+  --ok-on-dark: #5FE0B4;
+  --err: #C0342B;            /* error sobre claro (5.6:1) */
+  --err-on-dark: #FFA39B;
+  --line-dark: rgba(179, 232, 255, .16);
+  --line-light: rgba(11, 37, 114, .12);
+
+  /* ---- Tipografía ---- */
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI Variable Display", system-ui, sans-serif;
+  --f-text: "Instrument Sans", "Avenir Next", "Segoe UI Variable Text", system-ui, sans-serif;
+  --f-mono: "Martian Mono", ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+
+  --t-hero: clamp(2.5rem, 1.1rem + 6.2vw, 6.25rem);
+  --t-h1: clamp(2.4rem, 1.3rem + 4.6vw, 5.25rem);     /* titular de hero interior */
+  --t-h2: clamp(2.1rem, 1.2rem + 3.6vw, 4.5rem);
+  --t-h3: clamp(1.7rem, 1.2rem + 1.9vw, 3rem);
+  --t-h4: clamp(1.25rem, 1.1rem + .6vw, 1.6rem);
+  --t-lead: clamp(1.06rem, 1rem + .35vw, 1.3rem);
+  --t-body: 1rem;
+  --t-small: .875rem;
+  --t-mono: .72rem;
+
+  /* ---- Radios: nada cuadrado ---- */
+  --r-xs: 10px;
+  --r-sm: 16px;
+  --r-md: 24px;
+  --r-lg: 36px;
+  --r-xl: 56px;
+  --r-pill: 999px;
+  --leaf: 84px;              /* esquina "hoja" estándar */
+  --leaf-lg: 132px;
+  --leaf-sm: 52px;
+
+  /* ---- Sombras ---- */
+  --sh-1: 0 1px 2px rgba(4, 15, 63, .06), 0 6px 18px -8px rgba(4, 15, 63, .18);
+  --sh-2: 0 2px 4px rgba(4, 15, 63, .05), 0 24px 48px -20px rgba(4, 15, 63, .28);
+  --sh-3: 0 4px 10px rgba(2, 10, 42, .12), 0 50px 100px -30px rgba(2, 10, 42, .55);
+  --sh-glow: 0 0 0 1px rgba(83, 205, 254, .25), 0 0 40px -6px rgba(83, 205, 254, .55);
+
+  /* ---- Movimiento ---- */
+  --e-out: cubic-bezier(.16, 1, .3, 1);        /* salida larga, "agua" */
+  --e-in: cubic-bezier(.7, 0, .84, 0);
+  --e-inout: cubic-bezier(.65, 0, .35, 1);
+  --e-soft: cubic-bezier(.33, 1, .68, 1);
+  --e-spring: linear(0, .009, .035 2.1%, .141 4.4%, .723 12.9%, .938 16.7%, 1.017 19.4%, 1.067 22.4%, 1.089 25.1%, 1.092 28%, 1.077 31.4%, 1.012 41.8%, .994 47.3%, .99 53.5%, 1.001 71.4%, 1);
+  --d-1: 160ms;              /* hover */
+  --d-2: 320ms;              /* cambio de estado */
+  --d-3: 640ms;              /* entrada */
+  --d-4: 1100ms;             /* titulares, maquetas */
+
+  /* ---- Retícula ---- */
+  --wrap: 1240px;
+  --pad: clamp(20px, 5vw, 64px);
+  --spine: 72px;             /* sangría editorial opcional (.tc-wrap--spine) */
+  --flow-x: calc(var(--pad) / 2);                                  /* x del hilo: centro del margen */
+  --flow-left: max(var(--flow-x), calc((100% - var(--wrap)) / 2 - var(--pad) / 2));
+  --nav-h: 64px;
+  --sec-pt: clamp(72px, 9vw, 140px);           /* aire vertical estándar de sección */
+  --sec-pb: clamp(72px, 9vw, 140px);
+
+  /* ---- Capas ---- */
+  --z-thread: 1;
+  --z-content: 2;
+  --z-grain: 3;
+  --z-bot: 50;
+  --z-sheet: 55;
+  --z-nav: 60;
+  --z-cookie: 70;
+  --z-toast: 80;
+  --z-veil: 150;
+
+  /* Reserva para páginas aún no migradas (se borra al terminar la migración) */
+  --tc-header-height: 104px;
+}
+@media (max-width: 920px) {
+  :root { --spine: 0px; }
+}
+@media (max-width: 520px) {
+  :root { --nav-h: 56px; --leaf: 56px; --leaf-lg: 84px; --leaf-sm: 40px; }
+}
+
+/* ---- Tono: cada bloque declara si vive sobre oscuro o sobre claro y los
+   componentes leen variables. Manda el ancestro más cercano: una tarjeta
+   oscura dentro de una sección clara funciona sin reglas extra. ---- */
+:root, .tone-dark {
+  --fg: var(--on-dark); --fg-2: var(--on-dark-2); --fg-3: var(--on-dark-3);
+  --accent: var(--cyan); --accent-text: var(--cyan); --line: var(--line-dark);
+  --surface: rgba(179, 232, 255, .07); --surface-2: rgba(179, 232, 255, .12); --surface-solid: #0A1B5E;
+  --hl: linear-gradient(100deg, var(--cyan-soft), var(--cyan) 45%, #7FB4FF);
+  --btn-bg: var(--cyan); --btn-fg: var(--navy-deep);
+  --btn-sh: 0 14px 34px -14px rgba(83, 205, 254, .8);
+  --btn-sh-h: 0 0 0 6px rgba(83, 205, 254, .16), 0 18px 44px -12px rgba(83, 205, 254, .9);
+  --btn-sweep: rgba(255, 255, 255, .55);
+  --btn2-bg: rgba(179, 232, 255, .14); --btn2-bg-h: rgba(179, 232, 255, .22); --btn2-fg: var(--on-dark);
+  --ghost-bg: rgba(179, 232, 255, .05); --ghost-bg-h: rgba(179, 232, 255, .1); --ghost-line-h: rgba(179, 232, 255, .5);
+  --chip-bg: rgba(179, 232, 255, .06);
+  --ok-fg: var(--ok-on-dark); --gold-fg: #F0C56A; --err-fg: var(--err-on-dark);
+  --tick-bg: var(--cyan); --tick-fg: var(--navy-deep);
+  --node-bg: var(--navy-deep); --node-on: var(--cyan);
+  --node-glow: 0 0 0 1.5px var(--cyan), 0 0 22px 4px rgba(83, 205, 254, .65);
+  --tabs-bg: rgba(179, 232, 255, .08); --tabs-on: var(--navy-deep); --tabs-ink: var(--cyan); --tabs-ink-sh: none;
+  --field-bg: rgba(2, 10, 42, .45); --field-line: rgba(179, 232, 255, .28);
+  --spot-c: rgba(83, 205, 254, .2);
+  --focus: var(--cyan);
+}
+.tone-light {
+  --fg: var(--ink); --fg-2: var(--ink-2); --fg-3: var(--ink-3);
+  --accent: var(--royal); --accent-text: #1A5FBC; --line: var(--line-light);
+  --surface: rgba(255, 255, 255, .72); --surface-2: var(--white); --surface-solid: var(--white);
+  --hl: linear-gradient(100deg, var(--royal), #1B56B0 60%, var(--corp));
+  --btn-bg: var(--navy); --btn-fg: var(--white);
+  --btn-sh: 0 14px 34px -16px rgba(4, 15, 63, .8);
+  --btn-sh-h: 0 0 0 6px rgba(32, 113, 213, .14), 0 18px 44px -14px rgba(4, 15, 63, .8);
+  --btn-sweep: rgba(83, 205, 254, .45);
+  --btn2-bg: rgba(32, 113, 213, .1); --btn2-bg-h: rgba(32, 113, 213, .18); --btn2-fg: var(--corp);
+  --ghost-bg: rgba(255, 255, 255, .6); --ghost-bg-h: var(--white); --ghost-line-h: rgba(11, 37, 114, .4);
+  --chip-bg: rgba(255, 255, 255, .7);
+  --ok-fg: var(--ok-ink); --gold-fg: var(--gold-ink); --err-fg: var(--err);
+  --tick-bg: var(--royal); --tick-fg: var(--white);
+  --node-bg: var(--white); --node-on: var(--royal);
+  --node-glow: 0 0 0 4px rgba(32, 113, 213, .18), 0 0 18px 2px rgba(32, 113, 213, .45);
+  --tabs-bg: rgba(11, 37, 114, .06); --tabs-on: var(--white); --tabs-ink: var(--navy); --tabs-ink-sh: 0 10px 24px -12px rgba(4, 15, 63, .8);
+  --field-bg: var(--white); --field-line: rgba(11, 37, 114, .22);
+  --spot-c: rgba(83, 205, 254, .22);
+  --focus: var(--royal);
+}
+/* Tramo medio (--corp … --stage-end): las etiquetas necesitan más luz */
+.tone-mid {
+  --fg-3: var(--on-mid-3); --accent-text: var(--cyan-soft);
+}
+.tone-dark, .tone-light { color: var(--fg); }

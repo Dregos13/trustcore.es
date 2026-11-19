@@ -57,7 +57,7 @@
     if (!button) return;
     button.disabled = isLoading;
     button.dataset.originalText = button.dataset.originalText || button.innerHTML;
-    button.innerHTML = isLoading ? '<svg class="tc-icon tc-spin" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-circle-notch"/></svg> Enviando...' : button.dataset.originalText;
+    button.innerHTML = isLoading ? '<span class="tc-btn__label"><svg class="tc-ico tc-spin" aria-hidden="true"><use href="#i-spinner"/></svg> Enviando…</span>' : button.dataset.originalText;
   }
 
   function openMailFallback(data) {

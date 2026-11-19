@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Cómo funciona · /como-funciona  (<body class="tc-body p-como">)
+   El proceso como recorrido: el hilo baja por un carril central y cada paso
+   se enciende cuando el hilo llega a su nodo (.tc-flow-node.is-lit, que pone
+   el motor). El nodo es el primer hijo de cada paso: el resto se enciende con
+   el selector de hermanos (~), sin JS propio.
+   Lo que el sistema no trae: la línea de ruta del hero, la composición en
+   zigzag con carril, y las cuatro maquetas pequeñas (agenda, configuración,
+   documento, módulos). Son ilustraciones con términos reales, no capturas.
+   Prefijo p-como- y tokens del sistema.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.p-como-hero .tc-phero__title { max-width: 11em; }
+.p-como-facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; font-size: .95rem; }
+
+/* línea de ruta: las cuatro estaciones y un pulso que las recorre */
+.p-como-route { position: relative; padding-top: 34px; }
+.p-como-route ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2.4vw, 40px); }
+.p-como-route__line { position: absolute; left: 0; right: 0; top: 5px; height: 2px; border-radius: 2px; overflow: hidden; background: linear-gradient(90deg, var(--line) 78%, transparent); }
+.p-como-route__line i { position: absolute; inset: 0 auto 0 0; width: 22%; background: linear-gradient(90deg, transparent, var(--cyan)); transform: translate3d(-100%, 0, 0); }
+.motion .p-como-route.is-live .p-como-route__line i { animation: p-como-run 6.4s linear infinite; }
+@keyframes p-como-run { 0% { transform: translate3d(-100%, 0, 0); } 80%, 100% { transform: translate3d(460%, 0, 0); } }
+.p-como-route li { position: relative; }
+.p-como-route li::before, .p-como-route li::after { content: ""; position: absolute; left: 0; top: -34px; width: 12px; height: 12px; border-radius: 50%; }
+.p-como-route li::before { background: var(--cyan); box-shadow: 0 0 0 4px var(--navy-deep), 0 0 18px 2px color-mix(in srgb, var(--cyan) 70%, transparent); }
+.p-como-route li::after { border: 1px solid var(--cyan); opacity: 0; }
+.motion .p-como-route li::before { opacity: .45; }
+.motion .p-como-route.is-live li::before { animation: p-como-dot 6.4s var(--e-soft) infinite; animation-delay: calc(var(--i) * 1.05s + .1s); }
+.motion .p-como-route.is-live li::after { animation: p-como-ping 6.4s var(--e-out) infinite; animation-delay: calc(var(--i) * 1.05s + .1s); }
+@keyframes p-como-dot { 0% { opacity: .45; transform: scale(1); } 4% { opacity: 1; transform: scale(1.35); } 30% { opacity: 1; transform: scale(1); } 60%, 100% { opacity: .45; transform: scale(1); } }
+@keyframes p-como-ping { 0% { opacity: .9; transform: scale(.6); } 16%, 100% { opacity: 0; transform: scale(3); } }
+.p-como-route a { display: grid; gap: 4px; min-height: 44px; padding: 4px 0 6px; color: var(--fg); transition: transform var(--d-3) var(--e-out); }
+.p-como-route a:hover { transform: translate3d(0, -3px, 0); }
+.p-como-route b { font-size: .72rem; font-weight: 500; letter-spacing: .06em; color: var(--accent-text); }
+.p-como-route span { font-family: var(--f-display); font-size: clamp(1.1rem, .95rem + .7vw, 1.5rem); font-weight: 600; line-height: 1.08; letter-spacing: -.025em; transition: color var(--d-2); }
+.p-como-route a:hover span { color: var(--cyan); }
+.p-como-route small { font-family: var(--f-mono); font-size: .62rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-3); }
+
+/* ---------- Cabecera del recorrido ---------- */
+.p-como-top { display: grid; gap: 20px; }
+.p-como-top__h { display: grid; gap: 20px; justify-items: start; }
+
+/* ---------- Los pasos ---------- */
+.p-como-steps { gap: clamp(64px, 9vw, 150px); margin-top: clamp(48px, 6vw, 96px); }
+.p-como-step { display: grid; gap: 28px; scroll-margin-top: calc(var(--nav-h) + 40px); }
+.p-como .p-como-node { top: 28px; }
+.p-como-step__copy { display: grid; gap: 14px; justify-items: start; align-content: center; min-width: 0; }
+.p-como-step__n { margin: 0 0 6px; font-family: var(--f-display); font-weight: 600; font-size: clamp(3.6rem, 2.2rem + 5.4vw, 7.4rem); line-height: .8; letter-spacing: -.06em; background: var(--hl); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; transition: opacity var(--d-3) var(--e-soft), transform var(--d-4) var(--e-out); transform-origin: 0 100%; }
+.p-como-step .tc-step__t { margin: 0; max-width: 15em; text-wrap: balance; }
+.p-como-step__d { font-size: 1.06rem; max-width: 34rem; }
+.p-como-step__note { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: start; max-width: 32rem; padding: 12px 16px; border-radius: var(--r-sm); background: color-mix(in srgb, var(--accent) 7%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent); font-size: .95rem; color: var(--fg-2); }
+.p-como-step__note .tc-ico { margin-top: 3px; color: var(--accent-text); }
+.p-como-step__mock { position: relative; min-width: 0; }
+.p-como-mock { position: relative; margin: 0; transition: opacity var(--d-3) var(--e-soft), filter var(--d-3) var(--e-soft), transform var(--d-4) var(--e-out); }
+
+/* apagado → encendido: solo con movimiento; sin él todo está ya encendido */
+.motion .p-como-node:not(.is-lit) ~ .p-como-step__copy .p-como-step__n { opacity: .22; transform: scale(.94); }
+.motion .p-como-node:not(.is-lit) ~ .p-como-step__mock .p-como-mock { opacity: .5; filter: saturate(.1); transform: scale(.965); }
+.p-como-k { transition: opacity var(--d-2) var(--e-soft), transform var(--d-3) var(--e-spring); }
+.motion .p-como-node:not(.is-lit) ~ .p-como-step__mock .p-como-k { opacity: 0; transform: translate3d(0, 10px, 0) scale(.94); }
+.p-como-node.is-lit ~ .p-como-step__mock .p-como-k { transition-delay: calc(var(--k, 0) * 150ms + 260ms); }
+
+/* ---- 01 · agenda ---- */
+.p-como-m1 { max-width: 580px; }
+.p-como-m1__body { display: grid; gap: 14px; padding: clamp(16px, 2vw, 24px); }
+.p-como-m1__week { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.p-como-m1__week > span { display: grid; gap: 8px; }
+.p-como-m1__week small { font-family: var(--f-mono); font-size: .62rem; letter-spacing: .06em; text-align: center; color: var(--ink-3); }
+.p-como-m1__week i { position: relative; display: block; height: 34px; border-radius: var(--r-xs); background: color-mix(in srgb, var(--corp) 7%, transparent); }
+.p-como-m1__week i.is-off { background: color-mix(in srgb, var(--corp) 3%, transparent); }
+.p-como-m1__pick::before, .p-como-m1__pick::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.p-como-m1__pick::before { background: var(--royal); box-shadow: 0 10px 22px -10px var(--royal); transition: opacity var(--d-2) var(--e-soft) 260ms, transform var(--d-3) var(--e-spring) 260ms; }
+.p-como-m1__pick::after { border: 1.5px solid var(--royal); opacity: 0; }
+.motion .p-como-node:not(.is-lit) ~ .p-como-step__mock .p-como-m1__pick::before { opacity: 0; transform: scale(.5); transition-delay: 0ms; }
+.motion .p-como-mock.is-live .p-como-m1__pick::after { animation: p-como-halo 2.6s var(--e-out) infinite; }
+@keyframes p-como-halo { 0% { transform: scale(1); opacity: .8; } 70%, 100% { transform: scale(1.5, 1.9); opacity: 0; } }
+.p-como-m1__call { display: flex; align-items: center; gap: 12px; padding: 10px 12px 10px 10px; border-radius: var(--r-sm); background: var(--mist); }
+.p-como-m1__av { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; flex: none; background: var(--navy); color: var(--cyan); font-family: var(--f-display); font-weight: 600; }
+.p-como-m1__who { flex: 1; min-width: 0; }
+.p-como-m1__who b { display: block; font-size: .95rem; line-height: 1.2; color: var(--ink); }
+.p-como-m1__who small { display: block; font-family: var(--f-mono); font-size: .6rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); margin-top: 2px; }
+.p-como-m1__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ---- 02 · configuración guiada ---- */
+.p-como-m2__prog { display: grid; gap: 10px; }
+.p-como-m2__bar { display: block; height: 6px; border-radius: var(--r-pill); background: var(--surface-2); overflow: hidden; }
+.p-como-m2__bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--royal), var(--cyan)); transform-origin: 0 50%; transition: transform 1500ms var(--e-inout) 300ms; }
+.motion .p-como-node:not(.is-lit) ~ .p-como-step__mock .p-como-m2__bar i { transform: scaleX(.06); transition-duration: var(--d-2); transition-delay: 0ms; }
+.p-como-m2 .tc-mini { margin-top: 16px; }
+.p-como-m2 .tc-mini li > span:first-child { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; min-width: 0; }
+.p-como-m2__ok { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; flex: none; background: var(--ok); color: var(--white); }
+.p-como-m2 .tc-mini .p-como-m2__ok .tc-ico { margin: 0; color: inherit; stroke-width: 2.4; }
+
+/* ---- 03 · primer documento ---- */
+.p-como-m3 { max-width: 470px; }
+.p-como-m3__sheet { display: grid; gap: 18px; padding: clamp(20px, 2.6vw, 32px); border-radius: var(--r-md) var(--r-md) var(--leaf) var(--r-md); background: var(--white); color: var(--ink); box-shadow: 0 0 0 1px var(--line-light), var(--sh-3); }
+.p-como-m3__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.p-como-m3__top b { display: block; font-family: var(--f-display); font-size: 1.5rem; font-weight: 600; letter-spacing: -.03em; line-height: 1.05; }
+.p-como-m3__lines { display: grid; gap: 4px; }
+.p-como-m3__lines li { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 36px; padding: 0 2px; background: linear-gradient(90deg, var(--line-light), transparent) 0 100% / 100% 1px no-repeat; font-size: .92rem; font-weight: 600; }
+.p-como-m3__lines i { display: block; height: 8px; border-radius: 6px; background: color-mix(in srgb, var(--corp) 12%, transparent); width: 46%; }
+.p-como-m3__lines i + i { width: 16%; }
+.p-como-m3__lines li:nth-child(2) i:first-child { width: 34%; }
+.p-como-m3__lines .p-como-m3__total { background: none; font-family: var(--f-display); font-size: 1.1rem; }
+.p-como-m3__total i { width: 24%; height: 12px; background: var(--navy); }
+.p-como-m3__foot { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: center; padding: 14px; border-radius: var(--r-sm); background: var(--mist); }
+.p-como-m3__qr { width: 76px; height: 76px; padding: 6px; border-radius: var(--r-xs); background: var(--white); fill: var(--navy); }
+.p-como-m3__hash { display: grid; gap: 6px; min-width: 0; }
+.p-como-m3__hash code { font-family: var(--f-mono); font-size: .68rem; letter-spacing: .04em; color: var(--ink-2); overflow-wrap: anywhere; }
+.p-como-m3 .tc-float--b { right: 0; top: auto; bottom: -18px; }
+
+/* ---- 04 · el otro módulo ---- */
+.p-como-m4 { display: grid; gap: 18px; padding: clamp(24px, 3vw, 40px); }
+.p-como-m4__mods { display: grid; gap: 8px; }
+.p-como-m4__mods li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 14px; border-radius: var(--r-sm); background: color-mix(in srgb, var(--navy-deep) 40%, transparent); box-shadow: inset 0 0 0 1px var(--line); }
+.p-como-m4__mods img { width: 42px; height: 42px; border-radius: 12px; object-fit: contain; background: var(--white); }
+.p-como-m4__mods b { display: block; font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.1; }
+.p-como-m4__mods small { display: block; font-family: var(--f-mono); font-size: .6rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-3); margin-top: 3px; }
+.p-como-m4__sw { position: relative; width: 46px; height: 26px; border-radius: var(--r-pill); background: var(--surface-2); flex: none; }
+.p-como-m4__sw::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--cyan); transition: opacity var(--d-2) var(--e-soft) 700ms; }
+.p-como-m4__sw i { position: absolute; left: 3px; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--navy-deep); transform: translate3d(20px, 0, 0); transition: transform var(--d-3) var(--e-spring) 700ms; }
+.motion .p-como-node:not(.is-lit) ~ .p-como-step__mock .p-como-m4__new .p-como-m4__sw::before { opacity: 0; transition-delay: 0ms; }
+.motion .p-como-node:not(.is-lit) ~ .p-como-step__mock .p-como-m4__new .p-como-m4__sw i { transform: none; background: var(--on-dark-3); transition-delay: 0ms; }
+.p-como-m4__mods li.p-como-m4__new { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cyan) 60%, transparent), 0 0 30px -10px var(--cyan); }
+
+/* ---------- Respuestas ---------- */
+.p-como-faq__head { display: grid; gap: 20px; justify-items: start; }
+
+/* ---------- Cierre ---------- */
+.p-como-more { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: var(--on-dark-2); transition: color var(--d-2); }
+.p-como-more:hover { color: var(--cyan); }
+.p-como-more .tc-ico { transition: transform var(--d-2) var(--e-out); }
+.p-como-more:hover .tc-ico { transform: translateX(4px); }
+
+/* ---------- Escritorio: zigzag con carril central para el hilo ---------- */
+@media (min-width: 1000px) {
+  .p-como-top { grid-template-columns: minmax(0, 5fr) var(--lane) minmax(0, 6fr); gap: 0; align-items: end; }
+  .p-como-top, .p-como .p-como-steps { --lane: clamp(84px, 10vw, 150px); }
+  .p-como-top__h { grid-column: 1; }
+  .p-como-top > .tc-lead { grid-column: 3; max-width: 30rem; padding-bottom: .5em; }
+  .p-como .p-como-steps { padding-left: 0; }
+  .p-como-step { grid-template-columns: minmax(0, 5fr) var(--lane) minmax(0, 6fr); gap: 0; align-items: center; }
+  .p-como-step__copy { grid-column: 1; grid-row: 1; }
+  .p-como-step__mock { grid-column: 3; grid-row: 1; }
+  .p-como-step:nth-child(even) { grid-template-columns: minmax(0, 6fr) var(--lane) minmax(0, 5fr); }
+  .p-como-step:nth-child(even) .p-como-step__copy { grid-column: 3; }
+  .p-como-step:nth-child(even) .p-como-step__mock { grid-column: 1; }
+  .p-como .p-como-node { top: 50%; left: calc((100% - var(--lane)) * 5 / 11 + var(--lane) / 2); }
+  .p-como .p-como-step:nth-child(even) .p-como-node { left: calc((100% - var(--lane)) * 6 / 11 + var(--lane) / 2); }
+  /* brazo de luz: del nodo a la maqueta */
+  .p-como-step__mock { --mp: clamp(0px, 2vw, 28px); padding-left: var(--mp); }
+  .p-como-step:nth-child(even) .p-como-step__mock { padding-left: 0; padding-right: var(--mp); }
+  .p-como-step__mock::before { content: ""; position: absolute; top: 50%; left: calc(var(--lane) / -2 + 12px); width: calc(var(--lane) / 2 - 12px + var(--mp)); height: 1.5px; margin-top: -1px; border-radius: 2px; background: linear-gradient(90deg, var(--royal), color-mix(in srgb, var(--royal) 12%, transparent)); transform-origin: 0 50%; transition: transform var(--d-3) var(--e-out) 120ms; }
+  .p-como-step:nth-child(even) .p-como-step__mock::before { left: auto; right: calc(var(--lane) / -2 + 12px); background: linear-gradient(270deg, var(--royal), color-mix(in srgb, var(--royal) 12%, transparent)); transform-origin: 100% 50%; }
+  .motion .p-como-node:not(.is-lit) ~ .p-como-step__mock::before { transform: scaleX(0); transition-delay: 0ms; }
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 760px) {
+  /* la ruta se pone de pie: línea a la izquierda, estaciones en filas */
+  .p-como-route { padding-top: 0; padding-left: 30px; }
+  .p-como-route ol { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .p-como-route__line { left: 5px; right: auto; top: 14px; bottom: 26px; width: 2px; height: auto; background: linear-gradient(180deg, var(--line) 78%, transparent); }
+  .p-como-route__line i { inset: 0 0 auto 0; width: auto; height: 22%; background: linear-gradient(180deg, transparent, var(--cyan)); transform: translate3d(0, -100%, 0); }
+  .motion .p-como-route.is-live .p-como-route__line i { animation-name: p-como-run-y; }
+  .p-como-route li::before, .p-como-route li::after { left: -30px; top: 8px; }
+  .p-como-route a { grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; align-items: baseline; }
+  .p-como-route a small { grid-column: 2; }
+}
+@keyframes p-como-run-y { 0% { transform: translate3d(0, -100%, 0); } 80%, 100% { transform: translate3d(0, 460%, 0); } }
+@media (max-width: 520px) {
+  .p-como-step__copy .tc-btn { width: 100%; }
+  .p-como-m1__week { gap: 6px; }
+  .p-como-m3__qr { width: 64px; height: 64px; }
+}

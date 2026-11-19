@@ -1,0 +1,261 @@
+/* ==========================================================================
+   IPSI en Ceuta y Melilla · /software-verifactu-ipsi-ceuta-melilla
+   (<body class="tc-body p-ipsi">)
+   Lo que el sistema no trae: la factura viva del hero (misma factura, impuesto
+   del territorio: IPSI en Ceuta y Melilla, IVA en península), su conmutador de
+   territorio, la revisión que se vuelve a marcar, la isla de TrusTy y las
+   miniaturas de «qué hay dentro». Todo con prefijo p-ipsi- y tokens.
+   La factura es una ilustración con los importes del simulador de TrustInFacts
+   (1.200 € de base, IPSI servicios 4 %, IVA 21 %), no una captura.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.p-ipsi-tags { gap: 8px; }
+.p-ipsi-lead { margin-top: 20px; }
+.p-ipsi-stage { margin-top: clamp(56px, 5.5vw, 88px); }
+
+.p-ipsi-live {
+  position: relative; display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-areas: "pick doc" "review doc";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(32px, 6vw, 96px); row-gap: clamp(24px, 2.6vw, 36px);
+  align-items: start;
+}
+
+/* --- conmutador de territorio: dos destinos y una pastilla de luz que viaja --- */
+.p-ipsi-pick { grid-area: pick; display: grid; gap: 16px; justify-items: start; min-width: 0; }
+.p-ipsi-switch {
+  position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%; max-width: 460px; padding: 6px; border-radius: var(--r-md) var(--r-md) var(--r-md) var(--r-lg);
+  background: color-mix(in srgb, var(--cyan-soft) 8%, transparent);
+  box-shadow: inset 0 0 0 1px var(--line-dark), 0 30px 60px -40px var(--navy-deep);
+}
+.p-ipsi-switch__thumb {
+  position: absolute; left: 6px; top: 6px; bottom: 6px; width: calc(50% - 6px);
+  border-radius: var(--r-sm) var(--r-sm) var(--r-sm) var(--r-md);
+  background: linear-gradient(140deg, var(--cyan-soft), var(--cyan));
+  box-shadow: var(--sh-glow);
+}
+.p-ipsi-live[data-dest="iva"] .p-ipsi-switch__thumb { transform: translate3d(100%, 0, 0); border-radius: var(--r-sm); }
+.motion .p-ipsi-switch__thumb { transition: transform var(--d-3) var(--e-spring); }
+.p-ipsi-opt {
+  position: relative; z-index: 1; display: flex; align-items: center; gap: 12px;
+  min-width: 0; min-height: 68px; padding: 10px 16px 12px; border-radius: var(--r-sm);
+  text-align: left; color: var(--on-dark-2); transition: color var(--d-2);
+}
+.p-ipsi-opt:hover { color: var(--on-dark); }
+.p-ipsi-opt[aria-checked="true"] { color: var(--navy-deep); }
+.p-ipsi-opt > .tc-ico { flex: none; }
+.p-ipsi-opt__t { display: grid; gap: 2px; min-width: 0; }
+.p-ipsi-opt__t b { font-family: var(--f-display); font-size: 1.1rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.12; white-space: nowrap; }
+.p-ipsi-opt__t small { font-family: var(--f-mono); font-size: .56rem; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
+/* la barra de la opción activa es el reloj del cambio automático */
+.p-ipsi-opt__bar { position: absolute; left: 16px; right: 16px; bottom: 6px; height: 2px; border-radius: 2px; background: currentColor; transform: scaleX(0); transform-origin: 0 50%; opacity: 0; }
+.motion .p-ipsi-live.is-live:not(.is-held) .p-ipsi-opt[aria-checked="true"] .p-ipsi-opt__bar { opacity: .5; animation: p-ipsi-clock 5200ms linear both; }
+.motion .p-ipsi-live.is-live:not(.is-held) .p-ipsi-switch:hover .p-ipsi-opt__bar { animation-play-state: paused; }
+@keyframes p-ipsi-clock { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.p-ipsi-pick__hint { display: flex; align-items: center; gap: 8px; }
+/* sin JS el conmutador no hace nada: se queda como etiqueta del caso que se ve */
+.p-ipsi-live:not(.is-ready) .p-ipsi-pick__hint { visibility: hidden; }
+.p-ipsi-live:not(.is-ready) .p-ipsi-opt { pointer-events: none; }
+
+/* --- piezas que se intercambian: las dos variantes comparten celda --- */
+.p-ipsi-sw { display: inline-grid; vertical-align: bottom; perspective: 520px; }
+.p-ipsi-sw > * { grid-area: 1 / 1; font-style: normal; font-weight: inherit; white-space: nowrap; }
+.p-ipsi-sw--r { justify-items: end; }
+.p-ipsi-sw--block { display: grid; justify-items: start; }
+.p-ipsi-live[data-dest="ipsi"] [data-t="iva"], .p-ipsi-live[data-dest="iva"] [data-t="ipsi"] { visibility: hidden; }
+.motion .p-ipsi-sw > * { transition: opacity var(--d-2) var(--e-soft), transform var(--d-3) var(--e-out), visibility 0s; transition-delay: calc(var(--k, 0) * 70ms + 60ms); }
+.motion .p-ipsi-live[data-dest="ipsi"] .p-ipsi-sw > [data-t="iva"],
+.motion .p-ipsi-live[data-dest="iva"] .p-ipsi-sw > [data-t="ipsi"] { opacity: 0; transition: opacity var(--d-1) var(--e-soft), transform var(--d-2) var(--e-in), visibility 0s linear var(--d-2); transition-delay: calc(var(--k, 0) * 70ms), calc(var(--k, 0) * 70ms), calc(var(--k, 0) * 70ms + var(--d-2)); }
+.motion .p-ipsi-live[data-dest="ipsi"] .p-ipsi-sw > [data-t="iva"] { transform: translate3d(0, 85%, 0) rotateX(-75deg); }
+.motion .p-ipsi-live[data-dest="iva"] .p-ipsi-sw > [data-t="ipsi"] { transform: translate3d(0, -85%, 0) rotateX(75deg); }
+
+/* --- la factura --- */
+.p-ipsi-doc { grid-area: doc; position: relative; isolation: isolate; justify-self: end; width: min(100%, 540px); margin-right: clamp(0px, 3vw, 44px); }
+.p-ipsi-doc__tilt { rotate: -1.4deg; }
+.p-ipsi-ghost {
+  position: absolute; z-index: -1; right: -.16em; top: -.56em; display: grid; justify-items: end;
+  font-size: clamp(8.5rem, 22vw, 20rem); line-height: .8; letter-spacing: -.06em;
+  color: transparent; -webkit-text-stroke: 1.5px color-mix(in srgb, var(--cyan) 34%, transparent);
+  pointer-events: none; -webkit-user-select: none; user-select: none;
+}
+.p-ipsi-ghost > span { grid-area: 1 / 1; }
+.motion .p-ipsi-ghost > span { transition: opacity var(--d-3) var(--e-soft), transform var(--d-4) var(--e-out), filter var(--d-3) var(--e-soft), visibility 0s; }
+.motion .p-ipsi-live[data-dest="ipsi"] .p-ipsi-ghost > [data-t="iva"],
+.motion .p-ipsi-live[data-dest="iva"] .p-ipsi-ghost > [data-t="ipsi"] { opacity: 0; filter: blur(14px); transform: translate3d(6%, 0, 0); transition-delay: 0ms, 0ms, 0ms, var(--d-3); }
+
+.p-ipsi-sheet {
+  position: relative; overflow: clip; text-align: left;
+  padding: clamp(22px, 2.6vw, 36px);
+  border-radius: var(--r-md) var(--r-md) var(--leaf) var(--r-md);
+  background: linear-gradient(170deg, var(--white), var(--paper)); color: var(--ink);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--cyan-soft) 30%, transparent), var(--sh-3), 0 0 120px -30px color-mix(in srgb, var(--cyan) 55%, transparent);
+}
+.p-ipsi-sheet__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.p-ipsi-sheet__id { font-family: var(--f-display); font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); font-weight: 600; letter-spacing: -.03em; line-height: 1.1; margin-top: 2px; }
+.p-ipsi-meta { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 16px; margin-top: 18px; padding-block: 16px; background: linear-gradient(90deg, var(--line), transparent) 0 0 / 100% 1px no-repeat, linear-gradient(90deg, var(--line), transparent) 0 100% / 100% 1px no-repeat; }
+.p-ipsi-meta dt { margin-bottom: 4px; }
+.p-ipsi-meta dd { font-weight: 600; font-size: .95rem; line-height: 1.35; }
+.p-ipsi-meta .p-ipsi-sw--block { font-weight: 400; font-size: .86rem; color: var(--fg-2); }
+.p-ipsi-sw--chip > * { display: inline-flex; align-items: center; justify-content: center; height: 28px; padding: 0 12px; border-radius: var(--r-pill); font-family: var(--f-mono); font-size: .6rem; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: var(--corp); background: color-mix(in srgb, var(--royal) 11%, transparent); }
+
+.p-ipsi-lines { margin-top: 8px; }
+.p-ipsi-line { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 9px 0; font-size: .95rem; }
+.p-ipsi-line--head { padding-top: 12px; color: var(--fg-3); }
+.p-ipsi-line--sub { color: var(--fg-2); background: linear-gradient(90deg, var(--line), transparent) 0 0 / 100% 1px no-repeat; }
+.p-ipsi-line--tax { position: relative; margin: 6px -12px 0; padding: 13px 12px; border-radius: var(--r-xs); font-weight: 600; color: var(--corp); background: color-mix(in srgb, var(--royal) 9%, transparent); }
+.p-ipsi-line--tax::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: color-mix(in srgb, var(--cyan) 46%, transparent); opacity: 0; pointer-events: none; }
+.motion .p-ipsi-live.is-swapping .p-ipsi-line--tax::after { animation: p-ipsi-flash 900ms var(--e-out) 160ms both; }
+@keyframes p-ipsi-flash { 0% { opacity: 0; } 22% { opacity: 1; } 100% { opacity: 0; } }
+.p-ipsi-line--total { align-items: center; padding-top: 16px; font-family: var(--f-display); font-size: 1.1rem; font-weight: 600; letter-spacing: -.02em; }
+.p-ipsi-line--total .tc-num { font-family: var(--f-display); font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.5rem); line-height: 1; letter-spacing: -.04em; }
+.p-ipsi-sheet__foot { display: flex; align-items: center; gap: 14px; margin-top: 14px; padding-top: 16px; padding-right: clamp(20px, 5vw, 60px); background: linear-gradient(90deg, var(--line), transparent) 0 0 / 100% 1px no-repeat; }
+.p-ipsi-sheet__foot b { display: block; font-weight: 600; line-height: 1.3; }
+.p-ipsi-sheet__foot .tc-mono { display: block; font-size: .56rem; margin-top: 2px; }
+.p-ipsi-qr { flex: none; width: 50px; height: 50px; display: grid; place-items: center; border-radius: var(--r-xs); background: var(--navy); color: var(--cyan); }
+.p-ipsi-qr .tc-ico { width: 30px; height: 30px; }
+
+/* haz de luz que recorre la factura en cada cambio */
+.p-ipsi-scan { position: absolute; z-index: 2; left: 0; right: 0; top: 0; height: 34%; pointer-events: none; opacity: 0; background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--cyan) 22%, transparent) 72%, color-mix(in srgb, var(--royal) 60%, transparent) 98%, transparent); }
+.motion .p-ipsi-live.is-swapping .p-ipsi-scan { animation: p-ipsi-scan 950ms var(--e-inout) both; }
+@keyframes p-ipsi-scan { 0% { opacity: 0; transform: translate3d(0, -100%, 0); } 14%, 84% { opacity: 1; } 100% { opacity: 0; transform: translate3d(0, 300%, 0); } }
+
+/* insignias */
+/* A cuelga de la esquina hoja (abajo a la derecha, junto al total); B, de la esquina superior */
+.p-ipsi-float-a { left: auto; right: -22px; bottom: -32px; }
+.p-ipsi-float-a .tc-num { display: grid; place-items: center; perspective: 300px; }
+.p-ipsi-float-b { right: -26px; top: -36px; }
+.p-ipsi-doc__cap { margin-top: clamp(30px, 3.4vw, 46px); max-width: 52ch; color: var(--on-dark-3); text-align: left; }
+.p-ipsi-doc__cap .tc-num { color: var(--on-dark-2); }
+
+/* --- revisión de factura: se vuelve a marcar con cada cambio --- */
+.p-ipsi-review { grid-area: review; text-align: left; max-width: 460px; }
+.p-ipsi-review__t { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.p-ipsi-review__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok-on-dark); box-shadow: 0 0 12px var(--ok-on-dark); }
+.motion .p-ipsi-live.is-live .p-ipsi-review__dot { animation: p-ipsi-blink 1.6s var(--e-inout) infinite alternate; }
+@keyframes p-ipsi-blink { from { opacity: 1; transform: scale(1); } to { opacity: .35; transform: scale(.7); } }
+.p-ipsi-checks li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 4px 12px; padding: 13px 0; background: linear-gradient(90deg, var(--line), transparent) 0 0 / 100% 1px no-repeat; }
+.p-ipsi-checks li:first-child { background: none; }
+.p-ipsi-checks li:last-child { padding-bottom: 2px; }
+.p-ipsi-checks__ok { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--ok); color: var(--white); }
+.p-ipsi-checks__ok .tc-ico { width: 14px; height: 14px; stroke-width: 2.4; }
+.p-ipsi-checks b { display: block; font-size: .95rem; font-weight: 600; line-height: 1.25; }
+.p-ipsi-checks small { display: block; font-size: .8rem; line-height: 1.35; color: var(--fg-2); margin-top: 2px; }
+.p-ipsi-checks code { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: var(--r-pill); font-family: var(--f-mono); font-size: .56rem; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; color: var(--ok-fg); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ok) 55%, transparent); }
+.motion .p-ipsi-live.is-swapping .p-ipsi-checks__ok { animation: p-ipsi-tick var(--d-3) var(--e-spring) both; animation-delay: calc(var(--n) * 170ms + 280ms); }
+.motion .p-ipsi-live.is-swapping .p-ipsi-checks code { animation: p-ipsi-code var(--d-3) var(--e-out) both; animation-delay: calc(var(--n) * 170ms + 380ms); }
+@keyframes p-ipsi-tick { from { opacity: 0; transform: scale(0) rotate(-50deg); } to { opacity: 1; transform: none; } }
+@keyframes p-ipsi-code { from { opacity: 0; transform: translate3d(12px, 0, 0); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 1179px) {
+  .p-ipsi-doc { margin-right: 0; }
+}
+@media (max-width: 920px) {
+  .p-ipsi-live { grid-template-columns: minmax(0, 1fr); grid-template-areas: "pick" "doc" "review"; grid-template-rows: none; row-gap: 0; }
+  .p-ipsi-pick { justify-items: stretch; }
+  .p-ipsi-switch { max-width: none; }
+  .p-ipsi-doc { justify-self: center; width: min(100%, 560px); margin-top: clamp(84px, 16vw, 130px); }
+  .p-ipsi-doc__tilt { rotate: none; }
+  .p-ipsi-review { max-width: none; margin-top: 28px; }
+  .p-ipsi-float-a { right: -6px; }
+  .p-ipsi-float-b { right: -6px; }
+}
+@media (max-width: 520px) {
+  .p-ipsi-opt { gap: 8px; padding-inline: 12px; min-height: 62px; }
+  .p-ipsi-opt > .tc-ico { display: none; }
+  .p-ipsi-opt__t b { font-size: 1rem; }
+  .p-ipsi-opt__bar { left: 12px; right: 12px; }
+  .p-ipsi-meta { grid-template-columns: minmax(0, 1fr) auto; }
+  .p-ipsi-line { font-size: .9rem; gap: 10px; }
+  .p-ipsi-checks li { grid-template-columns: auto minmax(0, 1fr); }
+  .p-ipsi-checks code { grid-column: 2; justify-self: start; }
+  .p-ipsi-float-a { bottom: -26px; }
+  .p-ipsi-float-b { top: -28px; }
+}
+
+/* ---------- Decisión rápida + TrusTy ---------- */
+.p-ipsi-dec__main { display: grid; gap: clamp(28px, 3.4vw, 48px); }
+.p-ipsi-dec__main .tc-head + * { margin-top: 0; }
+.p-ipsi-answer { max-width: 46rem; }
+.p-ipsi-src { display: grid; gap: 14px; }
+/* tc-sources numera con el contador list-item, que no avanza en <li> flex: contador propio */
+.p-ipsi-src__list { gap: 0; font-size: .95rem; counter-reset: p-ipsi-src; }
+.p-ipsi-src__list li { counter-increment: p-ipsi-src; }
+.p-ipsi-src__list li::before { content: counter(p-ipsi-src, decimal-leading-zero); }
+.p-ipsi-src__list li { padding: 12px 0; background: linear-gradient(90deg, var(--line), transparent) 0 100% / 100% 1px no-repeat; }
+.p-ipsi-src__list li:last-child { background: none; }
+
+.p-ipsi-trusty { display: grid; gap: 20px; align-content: start; margin-top: clamp(0px, 7vw, 120px); }
+.p-ipsi-trusty__head { display: flex; align-items: center; gap: 14px; }
+.p-ipsi-trusty__head .tc-h4 { margin-top: 2px; }
+.p-ipsi-trusty__av { position: relative; flex: none; }
+.p-ipsi-trusty__av::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 1px var(--cyan); opacity: 0; }
+.motion .p-ipsi-trusty.is-live .p-ipsi-trusty__av::after { animation: p-ipsi-ring 2.6s var(--e-out) infinite; }
+@keyframes p-ipsi-ring { 0% { opacity: .9; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.7); } }
+.p-ipsi-bubble { position: relative; padding: 20px 22px 24px; border-radius: var(--r-xs) var(--r-md) var(--r-md) var(--r-md); background: color-mix(in srgb, var(--cyan-soft) 10%, transparent); box-shadow: inset 0 0 0 1px var(--line-dark); }
+.p-ipsi-bubble p { font-family: var(--f-display); font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); font-weight: 500; line-height: 1.25; letter-spacing: -.02em; text-wrap: pretty; }
+.p-ipsi-bubble__dots { position: absolute; right: 18px; bottom: -11px; display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 10px; border-radius: var(--r-pill); background: var(--cyan); }
+.p-ipsi-bubble__dots i { width: 5px; height: 5px; border-radius: 50%; background: var(--navy-deep); }
+.motion .p-ipsi-trusty.is-live .p-ipsi-bubble__dots i { animation: p-ipsi-dot 1.2s var(--e-inout) infinite; }
+.motion .p-ipsi-trusty.is-live .p-ipsi-bubble__dots i:nth-child(2) { animation-delay: .15s; }
+.motion .p-ipsi-trusty.is-live .p-ipsi-bubble__dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes p-ipsi-dot { 0%, 60%, 100% { transform: none; opacity: .5; } 30% { transform: translate3d(0, -4px, 0); opacity: 1; } }
+.p-ipsi-trusty__note { color: var(--cyan-soft); }
+.p-ipsi-trusty__list { font-size: .95rem; }
+.p-ipsi-trusty__legal { padding-top: 16px; background: linear-gradient(90deg, var(--line), transparent) 0 0 / 100% 1px no-repeat; }
+@media (max-width: 920px) { .p-ipsi-trusty { margin-top: 0; } }
+
+/* ---------- Flujo real ---------- */
+.p-ipsi-step .tc-step__t { padding-right: 44px; }
+.p-ipsi-step__ico { position: absolute; right: clamp(18px, 2.2vw, 30px); top: clamp(18px, 2.2vw, 30px); }
+.p-ipsi-step--key { background: linear-gradient(135deg, var(--white) 30%, var(--mist)); box-shadow: var(--sh-2); }
+
+/* ---------- Qué hay dentro ---------- */
+.p-ipsi-tres { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); align-items: start; }
+.p-ipsi-tres__main { grid-column: 1 / span 7; grid-row: 1 / span 2; display: grid; gap: 14px; justify-items: start; align-content: start; }
+.p-ipsi-tres__main .tc-leaf__ico { margin-bottom: 4px; }
+.p-ipsi-tres__main .tc-lead { max-width: 30rem; }
+.p-ipsi-tres__a { grid-column: 8 / span 5; margin-top: clamp(28px, 5vw, 84px); }
+.p-ipsi-tres__b { grid-column: 8 / span 5; margin-left: clamp(-56px, -3vw, 0px); margin-right: clamp(0px, 3vw, 56px); }
+.p-ipsi-tres__link { margin-top: 16px; }
+@media (max-width: 920px) {
+  .p-ipsi-tres__main, .p-ipsi-tres__a, .p-ipsi-tres__b { grid-column: 1 / -1; grid-row: auto; margin: 0; }
+}
+
+.p-ipsi-mini { pointer-events: none; }
+/* miniatura: las líneas de una factura; el impuesto es una línea más */
+.p-ipsi-mini--doc { display: grid; gap: 8px; width: 100%; max-width: 420px; margin-top: clamp(14px, 2vw, 28px); padding: 18px; border-radius: var(--r-sm) var(--r-sm) var(--r-md) var(--r-sm); background: var(--white); box-shadow: var(--sh-1); }
+.p-ipsi-mini--doc > span { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 34px; padding: 0 12px; border-radius: var(--r-xs); }
+.p-ipsi-mini--doc i { height: 8px; border-radius: var(--r-pill); background: color-mix(in srgb, var(--corp) 12%, transparent); }
+.p-ipsi-mini--doc i:first-child { width: 52%; }
+.p-ipsi-mini--doc i:last-child { width: 18%; }
+.p-ipsi-mini--doc > span:nth-child(2) i:first-child { width: 38%; }
+.p-ipsi-mini--doc > span:nth-child(4) i:first-child { width: 26%; }
+.p-ipsi-mini--doc > span:nth-child(4) i:last-child { width: 24%; background: color-mix(in srgb, var(--corp) 30%, transparent); }
+.p-ipsi-mini--doc .is-tax { justify-content: flex-start; background: var(--navy); color: var(--on-dark); box-shadow: 0 14px 30px -18px var(--navy); }
+.p-ipsi-mini--doc .is-tax b { font-family: var(--f-mono); font-size: .7rem; font-weight: 600; letter-spacing: .04em; color: var(--cyan); }
+.p-ipsi-mini--doc .is-tax i { flex: 1; width: auto; background: color-mix(in srgb, var(--cyan-soft) 22%, transparent); }
+.p-ipsi-mini--doc .is-tax em { font-style: normal; font-family: var(--f-mono); font-size: .56rem; letter-spacing: .05em; text-transform: uppercase; color: var(--on-dark-2); white-space: nowrap; }
+.motion .p-ipsi-mini--doc > span { opacity: 0; transform: translate3d(-18px, 0, 0); transition: opacity var(--d-3) var(--e-soft), transform var(--d-3) var(--e-out); }
+.motion .p-ipsi-mini--doc.is-live > span { opacity: 1; transform: none; transition-delay: calc(var(--n) * 130ms + 240ms); }
+.motion .p-ipsi-mini--doc.is-live .is-tax { animation: p-ipsi-nudge 4.6s var(--e-inout) 1.4s infinite; }
+@keyframes p-ipsi-nudge { 0%, 70%, 100% { transform: none; } 82% { transform: translate3d(8px, 0, 0) scale(1.02); } }
+
+/* miniatura: los cuatro requisitos se encienden en orden */
+.p-ipsi-mini--req { margin-top: 20px; }
+.motion .p-ipsi-mini--req > .tc-chip { opacity: 0; transform: translate3d(0, 8px, 0) scale(.92); transition: opacity var(--d-3) var(--e-out), transform var(--d-3) var(--e-spring); }
+.motion .p-ipsi-mini--req.is-live > .tc-chip { opacity: 1; transform: none; transition-delay: calc(var(--n) * 140ms + 200ms); }
+
+/* puente a la comparativa */
+.p-ipsi-vs { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 28px; margin-top: clamp(40px, 5vw, 72px); padding: clamp(20px, 2.4vw, 30px) clamp(22px, 3vw, 40px); }
+.p-ipsi-vs__t { display: grid; gap: 6px; min-width: 0; }
+.p-ipsi-vs__w { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem); }
+.p-ipsi-vs__w i { font-style: normal; font-family: var(--f-mono); font-size: .42em; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text); vertical-align: middle; padding-inline: .3em; }
+@media (max-width: 520px) { .p-ipsi-vs .tc-btn { flex: 1 1 100%; } }
+
+/* ---------- Preguntas y cierre ---------- */
+.p-ipsi-faq__head { position: sticky; top: calc(var(--nav-h) + 48px); }
+@media (max-width: 920px) { .p-ipsi-faq__head { position: static; } }
+.p-ipsi-pool__title { max-width: 17ch; font-size: clamp(2.2rem, 1rem + 5.2vw, 5.4rem); }

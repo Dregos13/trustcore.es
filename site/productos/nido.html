@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nido — Buscador privado de vivienda | TrustCore</title>
+  <meta name="description" content="Nido busca a la vez en siete portales, une los pisos repetidos y señala chollos, bajadas y trampas. Todo en tu equipo. App para macOS y Windows.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#020A2A">
+  <link rel="canonical" href="https://www.trustcore.es/productos/nido">
+  <link rel="alternate" hreflang="es" href="https://www.trustcore.es/productos/nido">
+  <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/productos/nido">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.trustcore.es/productos/nido">
+  <meta property="og:title" content="Nido — Buscador y cuaderno privado de vivienda | TrustCore">
+  <meta property="og:description" content="Dices una vez lo que buscas y Nido lo busca en siete portales a la vez: une repetidos, señala chollos, bajadas y trampas. Todo vive en tu equipo.">
+  <meta property="og:image" content="https://www.trustcore.es/assets/og-image-1200x630.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="TrustCore">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nido — Buscador y cuaderno privado de vivienda | TrustCore">
+  <meta name="twitter:description" content="Busca en siete portales a la vez, une los pisos repetidos y señala chollos, bajadas y trampas. Para macOS y Windows.">
+  <meta name="twitter:image" content="https://www.trustcore.es/assets/og-image-1200x630.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Nido",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "macOS, Windows",
+    "description": "Buscador y cuaderno privado de vivienda. Busca a la vez en Idealista, Fotocasa, Habitaclia, pisos.com, Milanuncios, yaencontre y Green-Acres, une el mismo piso anunciado en varios portales, señala chollos, bajadas de precio y trampas, y acompaña en las visitas, las finanzas y la comparación. Los datos se guardan en el dispositivo del usuario.",
+    "url": "https://www.trustcore.es/productos/nido",
+    "image": "https://www.trustcore.es/assets/products/nido-icon.webp",
+    "inLanguage": "es",
+    "featureList": [
+      "Búsqueda simultánea en siete portales inmobiliarios",
+      "Unión de anuncios repetidos entre portales",
+      "Detección de chollos, bajadas de precio y trampas",
+      "Tablero de pisos por estados",
+      "Modo visita con checklist, fotos, notas de voz y cinta métrica",
+      "Finanzas: ahorro necesario, cuota e impuestos por comunidad",
+      "Comparador de 2 a 4 viviendas",
+      "Estudio de zona y precio justo con fuentes públicas",
+      "Datos guardados en local, sin cuentas ni servidor"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "TrustCore",
+      "url": "https://www.trustcore.es/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.trustcore.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://www.trustcore.es/productos" },
+      { "@type": "ListItem", "position": 3, "name": "Nido", "item": "https://www.trustcore.es/productos/nido" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es Nido?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nido es un buscador y cuaderno privado de vivienda para macOS y Windows. Defines una vez lo que buscas y Nido lo busca a la vez en siete portales, junta en uno el mismo piso anunciado en varios, señala chollos, bajadas de precio y trampas, y te acompaña en las visitas, las finanzas y la comparación." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué portales busca Nido?",
+        "acceptedAnswer": { "@type": "Answer", "text": "En Idealista, Fotocasa, Habitaclia, pisos.com, Milanuncios, yaencontre y Green-Acres. Además puedes añadir las webs de las inmobiliarias de tu zona. Nido es una herramienta independiente de esos portales: carga sus páginas de resultados como lo harías tú al navegar." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde se guardan mis datos?",
+        "acceptedAnswer": { "@type": "Answer", "text": "En tu dispositivo. La app de escritorio guarda los pisos, las visitas, las fotos y tu perfil financiero en un archivo SQLite dentro de su carpeta de datos. No hay cuentas, ni servidor propio, ni analítica. La única copia que sale es el archivo .nido que tú exportas, cifrado con tu contraseña." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Nido rastrea los portales en segundo plano?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. La búsqueda solo se lanza cuando pulsas «Buscar ahora». Nido carga unas pocas páginas de resultados por portal, con pausas, en tu propia sesión y desde tu ordenador. Si un portal pide comprobar que eres una persona, Nido te muestra su ventana para que lo resuelvas tú. Es una herramienta para tu búsqueda personal." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué considera Nido un chollo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Un piso que está un 18 % o más por debajo del precio por metro cuadrado de su zona, con al menos seis anuncios comparables. A partir de un 12 % lo marca como posible chollo. Si algo explica el precio, como que esté ocupado, sea nuda propiedad, se venda con inquilino, sea un proindiviso o una VPO, lo marca como barato con trampa y no como chollo." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El precio justo de Nido es una tasación?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Es una estimación hecha con precios pedidos en anuncios comparables, no con compraventas cerradas. Sirve para negociar y no sustituye a una tasación." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito una IA para usar Nido?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. La búsqueda, el tablero, las visitas, las finanzas y el comparador funcionan sin IA. La auditoría de fotos y la maqueta 3D son opcionales y usan tu propia clave de API o tu suscripción de Claude Code o Codex. Antes de enviar nada, Nido te enseña qué se envía y a quién." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay versión de Nido para móvil?",
+        "acceptedAnswer": { "@type": "Answer", "text": "De momento se publican las apps de escritorio para macOS y Windows. Las apps de iOS y Android están aparcadas por ahora." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/instrument-sans-latin-wght-normal.woff2">
+  <link rel="stylesheet" href="/assets/css/site.1d174431.min.css">
+  <script>/*tc-boot*/(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');setTimeout(function(){if(!window.TC){c.remove('motion','js','is-arriving');window.__tcLate=1}},4000);try{if(sessionStorage.getItem('tc:arrive')){sessionStorage.removeItem('tc:arrive');c.add('is-arriving')}}catch(e){}addEventListener('pagereveal',function(e){if(!e.viewTransition)return;c.add('vt-arrive');var s={},l=d.querySelectorAll('[data-vt]');l.forEach(function(el){var n=el.getAttribute('data-vt');if(n&&!s[n]){s[n]=1;el.style.viewTransitionName=n;el.style.viewTransitionClass=el.hasAttribute('data-vt-text')?'tc-vt-text':'tc-vt'}});var f=function(){c.remove('vt-arrive');l.forEach(function(el){el.style.viewTransitionName='';el.style.viewTransitionClass=''})};e.viewTransition.finished.then(f,f)})})(document);</script>
+</head>
+<body class="tc-body p-nido">
+<!--NAV-->
+<svg class="tc-sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16l-6 7.5V19l-4-2v-3.5z"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.8h-3.8M5.5 20.5v-3.8h3.8"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol><symbol id="i-spinner" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7.5 2.8v5.4c0 4.4-3 7.6-7.5 9-4.5-1.4-7.5-4.6-7.5-9V6.3z"/><path d="M8.8 12.2l2.3 2.3 4.2-4.4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 6.5l2.5 2.5M13.5 9l2 2"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.5"/><path d="M8.5 14l-1.5 7 5-2.6 5 2.6-1.5-7"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5.5H5a3 3 0 0 0 3 4M16 5.5h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol><symbol id="i-invoice" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol><symbol id="i-graph" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M11 7l-5 9M13 7l5 9M7.2 18h9.6"/></symbol><symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 14.5l2.2 2.2L15.5 12"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5L12 4l8 7.5"/><path d="M6.5 10v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9"/><path d="M10 20v-5h4v5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M4 8l8 5.5L20 8"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M20.5 3.5L10 14M20.5 3.5l-6.3 17-4.2-6.5-6.5-4.2z"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.4"/><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0"/><path d="M15.5 5.3a3.4 3.4 0 0 1 0 6.4M18 14.6a6.5 6.5 0 0 1 3.5 4.9"/></symbol><symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 13.5V12a7.5 7.5 0 0 1 15 0v1.5"/><rect x="3.5" y="13" width="4" height="6" rx="1.5"/><rect x="16.5" y="13" width="4" height="6" rx="1.5"/><path d="M19.5 19v.5a2 2 0 0 1-2 2H13"/></symbol><symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3.5"/><path d="M12 8V4.5M9 13v1.5M15 13v1.5"/><circle cx="12" cy="3.6" r="1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 0 0-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.2-3.9-8.5s1.3-6.1 3.9-8.5z"/></symbol><symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.3-5h13.4l1.3 5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5M10 20v-4.5h4V20"/></symbol><symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.2a4 4 0 0 0-5.3 5.2L3.8 16.8a1.9 1.9 0 0 0 2.7 2.7l5.4-5.4a4 4 0 0 0 5.2-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2.5"/><path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5M3.5 13h17"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 8h14"/><path d="M5 8l-2.5 6a2.7 2.7 0 0 0 5 0zM19 8l-2.5 6a2.7 2.7 0 0 0 5 0z"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 6.5a6.5 6.5 0 1 0 0 11M5 10.5h8M5 13.5h8"/></symbol><symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18M7 15h3"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16.5v-5M12 16.5v-9M17 16.5v-12"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3.5l8 4.2v8.6l-8 4.2-8-4.2V7.7z"/><path d="M4 7.7l8 4.3 8-4.3M12 12v8.5"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.3V5A1.5 1.5 0 0 1 5 3.5h7.3l8.2 8.2a1.5 1.5 0 0 1 0 2.1l-6.7 6.7a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.2"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2.5v2.5M20 14v6h-3M14 20v-1"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H18M9 8.5h5"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"/></symbol><symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 7C6.5 8 5 10.2 5 13v4h5v-5H7.5c0-1.6.8-2.6 2.5-3.2zM18.5 7c-3 1-4.5 3.2-4.5 6v4h5v-5h-2.5c0-1.6.8-2.6 2.5-3.2z"/></symbol><symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l4.8-4.5 3.5 3 3-2.6 4.7 4.1"/></symbol><symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4.5v-15L7 9H5a1 1 0 0 0-1 1z"/><path d="M18.5 9.5a3.5 3.5 0 0 1 0 5M8 15l1 4.5h2.5"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17.5" cy="6" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="M8.2 10.8l7-3.6M8.2 13.2l7 3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l8.5 4.5L12 13 3.5 8.5z"/><path d="M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96 6 6 0 0 1 11.5 1.5A3.75 3.75 0 0 1 17 18.5z"/></symbol><symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><path d="M10 10h4v4h-4zM9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7.5L4 12l4.5 4.5M15.5 7.5L20 12l-4.5 4.5M13.5 5l-3 14"/></symbol><symbol id="i-desktop" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16.5V20"/></symbol><symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol><symbol id="i-apple" viewBox="0 0 24 24"><path d="M15.5 3.5c0 1.6-1.3 3-3 3 0-1.7 1.4-3 3-3z"/><path d="M12.4 8.3c.9 0 1.7-.8 3.2-.8 1.4 0 2.6.7 3.3 1.8-2.8 1.6-2.3 5.4.5 6.5-.7 1.9-2.2 4.7-4 4.7-1.1 0-1.5-.7-2.9-.7s-1.9.7-3 .7c-2 0-4.5-4.2-4.5-7.6 0-3.2 2.1-5 4.1-5 1.4 0 2.4.4 3.3.4z"/></symbol><symbol id="i-windows" viewBox="0 0 24 24"><path d="M4 6.2l7-1v6.3H4zM12.5 5L20 3.9v7.6h-7.5zM4 13h7v6.3l-7-1zM12.5 13H20v7.6l-7.5-1.1z"/></symbol></defs></svg>
+<a class="tc-skip" href="#main-content">Saltar al contenido</a>
+<header class="tc-nav" data-nav>
+  <div class="tc-nav__pill">
+    <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+      <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120">
+      <span class="tc-brand__word">TrustCore</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="tc-nav__links">
+        <li class="tc-nav__item tc-nav__item--mega">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-productos" data-menu-toggle>Productos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--mega" id="tc-menu-productos">
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Para tu empresa</p>
+            <a class="tc-menu__item" style="--i:0" href="/productos/trustinfacts"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-invoice"/></svg></span><span><span class="tc-menu__name">TrustInFacts</span><span class="tc-menu__desc">Facturación VeriFactu, IVA e IPSI</span></span></a>
+            <a class="tc-menu__item" style="--i:1" href="/productos/trustintime"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span><span class="tc-menu__name">TrustInTime</span><span class="tc-menu__desc">Control horario, fichaje y ausencias</span></span></a>
+            <a class="tc-menu__item" style="--i:2" href="/productos/genai"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg></span><span><span class="tc-menu__name">GenAI</span><span class="tc-menu__desc">Contenido para redes, con tu aprobación</span></span></a>
+          </div>
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Apps del estudio</p>
+            <a class="tc-menu__item" style="--i:3" href="/productos/orquesta"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-graph"/></svg></span><span><span class="tc-menu__name">Orquesta</span><span class="tc-menu__desc">Dirige un equipo de IAs</span></span></a>
+            <a class="tc-menu__item" style="--i:4" href="/productos/corrector-fiscal"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-filecheck"/></svg></span><span><span class="tc-menu__name">Corrector Fiscal</span><span class="tc-menu__desc">Revisa modelos de la AEAT</span></span></a>
+            <a class="tc-menu__item" style="--i:5" href="/productos/nido"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-home"/></svg></span><span><span class="tc-menu__name">Nido</span><span class="tc-menu__desc">Buscador privado de vivienda</span></span></a>
+          </div>
+            <a class="tc-menu__all" style="--i:6" href="/productos">Ver todos los productos <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-soluciones" data-menu-toggle>Soluciones <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu" id="tc-menu-soluciones">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/facturacion-para-tiendas">Para tiendas</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/facturacion-para-instaladores">Para instaladores</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/gestoria">Para gestorías</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+          </div>
+        </li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/precios">Precios</a></li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/aprende">Aprende</a></li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-recursos" data-menu-toggle>Recursos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--end" id="tc-menu-recursos">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/clientes">Clientes</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/blog">Blog</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/funcionalidades">Funcionalidades</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/como-funciona">Cómo funciona</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/quienes-somos">Sobre nosotros</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:5" href="/contacto">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="tc-btn tc-btn--primary tc-btn--sm tc-nav__cta" type="button" data-calendar-open data-magnet data-track="header_demo">
+      <span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-cal"/></svg> <span>Agendar<span class="tc-nav__cta-more"> demo</span></span></span>
+    </button>
+    <button class="tc-nav__burger" type="button" aria-expanded="false" aria-controls="tc-sheet" aria-label="Abrir menú" data-sheet-toggle>
+      <span></span><span></span>
+    </button>
+    <span class="tc-nav__progress" aria-hidden="true"></span>
+  </div>
+</header>
+<div class="tc-sheet" id="tc-sheet" data-sheet role="dialog" aria-modal="true" aria-label="Menú">
+  <p class="tc-sheet__label">Para tu empresa</p>
+  <a class="tc-sheet__link" href="/productos/trustinfacts">TrustInFacts <small>Facturación</small></a>
+  <a class="tc-sheet__link" href="/productos/trustintime">TrustInTime <small>Control horario</small></a>
+  <a class="tc-sheet__link" href="/productos/genai">GenAI <small>Redes sociales</small></a>
+  <p class="tc-sheet__label">Apps del estudio</p>
+  <a class="tc-sheet__link" href="/productos/orquesta">Orquesta <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/corrector-fiscal">Corrector Fiscal <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/nido">Nido <small>Escritorio</small></a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/productos">Ver todos los productos</a>
+  <p class="tc-sheet__label">Soluciones</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-tiendas">Para tiendas</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-instaladores">Para instaladores</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/gestoria">Para gestorías</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+  <p class="tc-sheet__label">TrustCore</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/precios">Precios</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/aprende">Aprende</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/clientes">Clientes</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/blog">Blog</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/funcionalidades">Funcionalidades</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/como-funciona">Cómo funciona</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/quienes-somos">Sobre nosotros</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/contacto">Contacto</a>
+  <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-track="mobile_menu_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+</div>
+<!--/NAV-->
+
+<main id="main-content">
+
+  <!-- ============ 1 · Hero: nombre, descarga y la búsqueda que converge ============ -->
+  <section class="tc-sec tc-sec--night tc-phero tone-dark" aria-labelledby="hero-t">
+    <div class="tc-sec__in tc-phero__in" data-intro>
+      <div class="tc-glow tc-glow--a" aria-hidden="true"></div>
+      <div class="tc-glow tc-glow--b" aria-hidden="true"></div>
+
+      <div class="tc-wrap tc-phero__top">
+        <div class="tc-phero__copy">
+          <nav class="tc-mono tc-crumbs" aria-label="Migas de pan" data-reveal="rise" style="--delay:80ms">
+            <ol><li><a href="/">Inicio</a></li><li><a href="/productos">Productos</a></li><li><span aria-current="page">Nido</span></li></ol>
+          </nav>
+          <h1 class="tc-display p-nido-title" id="hero-t">
+            <span class="p-nido-brand" data-reveal="rise" style="--delay:140ms"><img src="/assets/products/nido-icon.webp" alt="" width="256" height="256"> <span data-vt="vt-nido-title" data-vt-text>Nido</span></span>
+            <span class="p-nido-claim" data-reveal="words" style="--delay:380ms">Tu buscador y cuaderno <span class="tc-hl">privado de vivienda.</span></span>
+          </h1>
+        </div>
+        <div class="tc-phero__side">
+          <p class="tc-lead" data-reveal="focus" style="--delay:620ms">Dices una vez lo que buscas y Nido lo busca a la vez en siete portales. Une el mismo piso anunciado en varios, señala chollos, bajadas de precio y trampas, y te acompaña en la visita, la hipoteca y la comparación.</p>
+          <div class="tc-leaf tc-leaf--glass tc-leaf--sm tc-leaf--br tc-spot p-nido-get" data-reveal="rise" style="--delay:820ms">
+            <p class="tc-mono tc-mono--hi p-nido-get__k"><span class="p-nido-get__pulse" aria-hidden="true"></span> App de escritorio · macOS y Windows</p>
+            <div class="tc-dl">
+              <a class="tc-btn tc-btn--primary" href="mailto:info@trustcore.es?subject=Instalador%20de%20Nido" data-download="nido" data-magnet data-track="nido_hero_dl">
+                <span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Nido</span></span></a>
+              <p class="tc-dl__note" data-download-note="nido">macOS (Apple Silicon e Intel) y Windows</p>
+            </div>
+            <ul class="p-nido-get__facts">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-lock"/></svg> Sin cuentas ni servidor</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-desktop"/></svg> Tus datos, en tu equipo</li>
+            </ul>
+          </div>
+          <p class="p-nido-skip" data-reveal="rise" style="--delay:940ms"><a class="tc-link" href="#recorrido" data-track="nido_hero_tour">Ver el recorrido por la app <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+        </div>
+      </div>
+
+      <div class="tc-wrap tc-phero__stage p-nido-stage">
+        <!-- siete portales que desembocan en una sola ventana -->
+        <div class="p-nido-funnel" data-live>
+          <p class="tc-mono p-nido-funnel__label" data-reveal="rise" style="--delay:1000ms">Una búsqueda · siete portales a la vez</p>
+          <ul class="p-nido-funnel__src" aria-label="Portales en los que busca Nido" data-stagger style="--base:1050ms;--step:70ms">
+            <li style="--i:0" data-reveal="pop"><span>Idealista</span></li>
+            <li style="--i:1" data-reveal="pop"><span>Fotocasa</span></li>
+            <li style="--i:2" data-reveal="pop"><span>Habitaclia</span></li>
+            <li style="--i:3" data-reveal="pop"><span>pisos.com</span></li>
+            <li style="--i:4" data-reveal="pop"><span>Milanuncios</span></li>
+            <li style="--i:5" data-reveal="pop"><span>yaencontre</span></li>
+            <li style="--i:6" data-reveal="pop"><span>Green-Acres</span></li>
+          </ul>
+          <div class="p-nido-funnel__wires" aria-hidden="true">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+              <path d="M7.14 0C7.14 58 50 40 50 100"/><path d="M21.43 0C21.43 58 50 40 50 100"/><path d="M35.71 0C35.71 58 50 40 50 100"/><path d="M50 0C50 58 50 40 50 100"/><path d="M64.29 0C64.29 58 50 40 50 100"/><path d="M78.57 0C78.57 58 50 40 50 100"/><path d="M92.86 0C92.86 58 50 40 50 100"/>
+            </svg>
+            <i class="p-nido-funnel__dot" style="--x0:7.14;--i:0"></i><i class="p-nido-funnel__dot" style="--x0:21.43;--i:1"></i><i class="p-nido-funnel__dot" style="--x0:35.71;--i:2"></i><i class="p-nido-funnel__dot" style="--x0:50;--i:3"></i><i class="p-nido-funnel__dot" style="--x0:64.29;--i:4"></i><i class="p-nido-funnel__dot" style="--x0:78.57;--i:5"></i><i class="p-nido-funnel__dot" style="--x0:92.86;--i:6"></i>
+            <span class="p-nido-funnel__hub"><img src="/assets/products/nido-icon.webp" alt="" width="256" height="256"></span>
+          </div>
+        </div>
+
+        <div class="tc-phero__shot p-nido-heroshot" data-rise>
+          <figure class="tc-win" data-vt="vt-nido-shot">
+            <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Comparador</span></div>
+            <div class="p-nido-pan" data-live>
+              <img src="/assets/products/nido-zona-comparador.webp" width="1100" height="2310" alt="Comparador de Nido con tres viviendas lado a lado: precio, precio por metro cuadrado frente a su zona, superficie, puntuación de la zona, precio justo e índice Nido de cada una">
+            </div>
+          </figure>
+          <div class="tc-float tc-float--a" data-reveal="pop" style="--delay:1700ms" aria-hidden="true"><span class="tc-float__check"><svg class="tc-ico"><use href="#i-check"/></svg></span><span><b>Lo mejor de cada fila, resaltado</b><small>De 2 a 4 viviendas</small></span></div>
+          <div class="tc-float tc-float--b" data-reveal="pop" style="--delay:1850ms" aria-hidden="true"><span class="tc-float__pulse"></span><span><b>Buscando en 7 portales</b><small>Resultados en vivo</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Puente de olas ============ -->
+  <div class="tc-sec tc-wave" aria-hidden="true"><i data-plx></i><i data-plx></i><i data-plx></i></div>
+
+  <!-- ============ 2 · La búsqueda: siete portales, un resultado ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="buscar" aria-labelledby="buscar-t">
+    <div class="tc-sec__in tc-pad tc-pad--top-0">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Búsqueda multiportal</p>
+          <h2 class="tc-display tc-h2" id="buscar-t" data-reveal="words">Siete portales, <span class="tc-hl">un solo resultado</span> por piso.</h2>
+          <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Defines zonas, precio, superficie, habitaciones e imprescindibles. Al pulsar «Buscar ahora», Nido recorre Idealista, Fotocasa, Habitaclia, pisos.com, Milanuncios, yaencontre y Green-Acres y los resultados aparecen en vivo, ordenados por encaje.</p>
+        </header>
+      </div>
+
+      <div class="tc-wrap">
+        <div class="tc-split tc-split--5-7 p-nido-find">
+          <div class="p-nido-find__read">
+            <h3 class="tc-display tc-h3" data-reveal="rise">Cada anuncio, leído con lupa</h3>
+            <div class="tc-tabs p-nido-verdicts" data-tabs data-nido-verdicts>
+              <div class="tc-tabs__list" role="tablist" aria-label="Cómo clasifica Nido un anuncio" data-reveal="rise">
+                <button class="tc-tabs__tab" role="tab" type="button" id="tab-v-chollo" aria-controls="panel-v-chollo" aria-selected="true">Chollo</button>
+                <button class="tc-tabs__tab" role="tab" type="button" id="tab-v-posible" aria-controls="panel-v-posible" aria-selected="false" tabindex="-1">Posible</button>
+                <button class="tc-tabs__tab" role="tab" type="button" id="tab-v-trampa" aria-controls="panel-v-trampa" aria-selected="false" tabindex="-1">Con trampa</button>
+                <button class="tc-tabs__tab" role="tab" type="button" id="tab-v-bajada" aria-controls="panel-v-bajada" aria-selected="false" tabindex="-1">Bajada</button>
+                <button class="tc-tabs__tab" role="tab" type="button" id="tab-v-subasta" aria-controls="panel-v-subasta" aria-selected="false" tabindex="-1">Subasta</button>
+              </div>
+              <div class="tc-tabs__panels">
+                <div class="tc-tabs__panel" role="tabpanel" id="panel-v-chollo" aria-labelledby="tab-v-chollo">
+                  <p class="tc-lead" style="--i:0">Un 18 % o más por debajo del precio por metro cuadrado de su zona, con al menos seis anuncios comparables.</p>
+                  <p class="tc-muted" style="--i:1">La confianza sube si vende un particular, si ha bajado de precio o si el texto dice «urge», «herencia» o «negociable». Baja si lleva más de 60 días anunciado.</p>
+                </div>
+                <div class="tc-tabs__panel" role="tabpanel" id="panel-v-posible" aria-labelledby="tab-v-posible" hidden>
+                  <p class="tc-lead" style="--i:0">Un 12 % o más por debajo de su zona. Merece mirarlo antes de que desaparezca.</p>
+                  <p class="tc-muted" style="--i:1">La pestaña Chollos enseña chollos y posibles aunque no cumplan alguno de tus criterios, y la notificación al terminar cuenta los nuevos.</p>
+                </div>
+                <div class="tc-tabs__panel" role="tabpanel" id="panel-v-trampa" aria-labelledby="tab-v-trampa" hidden>
+                  <p class="tc-lead" style="--i:0">Está por debajo de mercado, pero algo lo explica y la tarjeta lo dice.</p>
+                  <p class="tc-muted" style="--i:1">Ocupado, nuda propiedad, se vende con inquilino, proindiviso, VPO o una superficie dudosa para sus habitaciones. Nido nunca lo presenta como chollo.</p>
+                </div>
+                <div class="tc-tabs__panel" role="tabpanel" id="panel-v-bajada" aria-labelledby="tab-v-bajada" hidden>
+                  <p class="tc-lead" style="--i:0">Cada pasada compara el precio con el anterior y guarda el historial.</p>
+                  <p class="tc-muted" style="--i:1">«Comprobar mis pisos guardados» abre la ficha de cada piso en su portal, con pausas, y anota si bajó, subió o se retiró. La tarjeta y la ficha lo avisan.</p>
+                </div>
+                <div class="tc-tabs__panel" role="tabpanel" id="panel-v-subasta" aria-labelledby="tab-v-subasta" hidden>
+                  <p class="tc-lead" style="--i:0">Las subastas del BOE tienen su propia lectura y nunca salen como chollo.</p>
+                  <p class="tc-muted" style="--i:1">Nido te abre la búsqueda de tu zona ya filtrada y la lees tú. Cada ficha trae valor de subasta, tasación, puja mínima, depósito, situación posesoria y cargas, con el aviso de lo que implica pujar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ilustración del funcionamiento (no es una captura) -->
+          <div class="tc-leaf tc-leaf--lg tc-leaf--tr tc-leaf--raised tc-spot p-nido-merge" data-nido-merge data-verdict="0" data-live data-reveal="tilt" aria-hidden="true">
+            <p class="tc-mono p-nido-merge__cap">Ilustración · el mismo piso en tres portales</p>
+            <ul class="p-nido-merge__ads">
+              <li class="p-nido-slot"><div class="p-nido-ad" style="--k:-1"><span class="p-nido-ad__src">Idealista</span><span class="p-nido-ad__ph"><svg class="tc-ico"><use href="#i-home"/></svg></span><b>3 hab · 74 m²</b><i></i><i></i></div></li>
+              <li class="p-nido-slot"><div class="p-nido-ad" style="--k:0"><span class="p-nido-ad__src">Fotocasa</span><span class="p-nido-ad__ph"><svg class="tc-ico"><use href="#i-home"/></svg></span><b>3 hab · 74 m²</b><i></i><i></i></div></li>
+              <li class="p-nido-slot"><div class="p-nido-ad" style="--k:1"><span class="p-nido-ad__src">pisos.com</span><span class="p-nido-ad__ph"><svg class="tc-ico"><use href="#i-home"/></svg></span><b>3 hab · 75 m²</b><i></i><i></i></div></li>
+            </ul>
+            <svg class="p-nido-merge__join" viewBox="0 0 300 40" preserveAspectRatio="none" focusable="false"><path d="M50 0C50 24 150 14 150 40"/><path d="M150 0V40"/><path d="M250 0C250 24 150 14 150 40"/></svg>
+            <div class="p-nido-one">
+              <div class="p-nido-stamps">
+                <span class="p-nido-stamp p-nido-stamp--ok">Chollo<small>18 % o más bajo su zona</small></span>
+                <span class="p-nido-stamp">Posible chollo<small>12 % o más bajo su zona</small></span>
+                <span class="p-nido-stamp p-nido-stamp--warn">Barato con trampa<small>La tarjeta dice por qué</small></span>
+                <span class="p-nido-stamp">Bajada<small>Con su historial de precio</small></span>
+                <span class="p-nido-stamp">Subasta<small>Su propia lectura</small></span>
+              </div>
+              <span class="p-nido-one__ph"><svg class="tc-ico"><use href="#i-home"/></svg></span>
+              <div class="p-nido-one__body">
+                <span class="tc-mono">1 piso · 3 anuncios</span>
+                <b>Una sola ficha, con todas sus fuentes</b>
+                <span class="tc-chips"><span class="tc-chip tc-chip--hi">El precio más bajo</span><span class="tc-chip">Ordenado por encaje</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Una búsqueda real, con su fecha -->
+        <div class="p-nido-proof">
+          <dl class="tc-stats" data-stagger>
+            <div class="tc-stat" data-reveal="rise"><dt class="tc-mono">Portales a la vez</dt><dd class="tc-stat__n"><span data-count="7">7</span></dd><dd class="tc-stat__d">Una fuente por portal y zona.</dd></div>
+            <div class="tc-stat" data-reveal="rise"><dt class="tc-mono">Anuncios leídos</dt><dd class="tc-stat__n"><span data-count="178">178</span></dd><dd class="tc-stat__d">En una sola búsqueda.</dd></div>
+            <div class="tc-stat" data-reveal="rise"><dt class="tc-mono">Repetidos unidos</dt><dd class="tc-stat__n"><span data-count="45">45</span></dd><dd class="tc-stat__d">El mismo piso en varios portales.</dd></div>
+            <div class="tc-stat" data-reveal="rise"><dt class="tc-mono">Tiempo</dt><dd class="tc-stat__n">~<span data-count="1">1</span><small>min</small></dd><dd class="tc-stat__d">De pulsar el botón a tenerlo ordenado.</dd></div>
+          </dl>
+          <p class="p-nido-proof__note" data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-info"/></svg> <span>Búsqueda real desde la app de escritorio en Getafe, en octubre de 2026. Cada zona y cada día dan cifras distintas.</span></p>
+        </div>
+
+        <!-- Fuera de los portales -->
+        <div class="p-nido-beyond">
+          <h3 class="tc-display tc-h3 p-nido-beyond__t" data-reveal="rise">Y lo que no está en los portales</h3>
+          <ul class="tc-flowgrid tc-stair p-nido-beyond__grid" style="--min:260px" data-stagger>
+            <li class="tc-leaf tc-leaf--lift tc-spot" data-reveal="rise">
+              <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-store"/></svg>
+              <h4 class="tc-h4">Mis inmobiliarias</h4>
+              <p class="tc-muted">Añades las webs de las inmobiliarias de tu zona y entran en la búsqueda. Nido detecta cómo leerlas.</p>
+            </li>
+            <li class="tc-leaf tc-leaf--br tc-leaf--lift tc-spot" data-reveal="rise">
+              <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-link"/></svg>
+              <h4 class="tc-h4">Traer anuncios a Nido</h4>
+              <p class="tc-muted">Lo que tengas abierto en otra web, como un anuncio de Facebook o de Wallapop, entra con un botón. Nido lee solo esa página.</p>
+            </li>
+            <li class="tc-leaf tc-leaf--tr tc-leaf--lift tc-spot" data-reveal="rise">
+              <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-bolt"/></svg>
+              <h4 class="tc-h4">Aviso al terminar</h4>
+              <p class="tc-muted">Si Nido no está en primer plano, una notificación del sistema te dice cuántos pisos nuevos encajan, cuántas bajadas hay y si ha salido algún chollo.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 · Recorrido por la app, en claro y en oscuro ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" id="recorrido" aria-labelledby="tour-t">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="p-nido-tourtop">
+          <header class="tc-head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Recorrido</p>
+            <h2 class="tc-display tc-h2" id="tour-t" data-reveal="words">Del anuncio a la decisión, <span class="tc-hl">en seis pantallas.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Lo que guardas pasa por el tablero, la ficha, la visita y las cuentas hasta que eliges. Estos son recortes de sus pantallas, en claro y en oscuro.</p>
+          </header>
+          <div class="p-nido-theme" data-reveal="pop">
+            <span aria-hidden="true">Claro</span>
+            <button class="tc-switch" type="button" role="switch" aria-checked="false" aria-label="Ver las capturas en modo oscuro" data-nido-theme><span class="tc-switch__thumb" aria-hidden="true"></span></button>
+            <span aria-hidden="true">Oscuro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc-wrap">
+        <div class="p-nido-tour" data-nido-tour data-live>
+          <div class="p-nido-tour__rail" role="tablist" aria-label="Pantallas de Nido" aria-orientation="vertical">
+            <button class="p-nido-step" role="tab" type="button" id="nido-t-inicio" aria-controls="nido-p-inicio" aria-selected="true" data-title="Nido · Inicio">
+              <span class="p-nido-step__n">01</span><span class="p-nido-step__t">Buscar</span>
+              <span class="p-nido-step__d">Abres Buscar o pegas el enlace de un piso. Inicio resume tus pisos por estado y enseña tus favoritas.</span>
+              <i class="p-nido-step__bar" aria-hidden="true"></i></button>
+            <button class="p-nido-step" role="tab" type="button" id="nido-t-tablero" aria-controls="nido-p-tablero" aria-selected="false" tabindex="-1" data-title="Nido · Tablero">
+              <span class="p-nido-step__n">02</span><span class="p-nido-step__t">Tablero</span>
+              <span class="p-nido-step__d">Cada piso avanza por sus estados, de guardada a oferta. Arrastras la tarjeta de una columna a otra.</span>
+              <i class="p-nido-step__bar" aria-hidden="true"></i></button>
+            <button class="p-nido-step" role="tab" type="button" id="nido-t-ficha" aria-controls="nido-p-ficha" aria-selected="false" tabindex="-1" data-title="Nido · Ficha">
+              <span class="p-nido-step__n">03</span><span class="p-nido-step__t">Ficha</span>
+              <span class="p-nido-step__d">Los datos del anuncio junto a los que mides tú. El índice Nido explica qué suma y qué resta.</span>
+              <i class="p-nido-step__bar" aria-hidden="true"></i></button>
+            <button class="p-nido-step" role="tab" type="button" id="nido-t-visita" aria-controls="nido-p-visita" aria-selected="false" tabindex="-1" data-title="Nido · Modo visita">
+              <span class="p-nido-step__n">04</span><span class="p-nido-step__t">Visita</span>
+              <span class="p-nido-step__d">Checklist por estancias, fotos, notas de voz y cinta métrica. Lo que ves pesa más que el anuncio.</span>
+              <i class="p-nido-step__bar" aria-hidden="true"></i></button>
+            <button class="p-nido-step" role="tab" type="button" id="nido-t-finanzas" aria-controls="nido-p-finanzas" aria-selected="false" tabindex="-1" data-title="Nido · Finanzas">
+              <span class="p-nido-step__n">05</span><span class="p-nido-step__t">Finanzas</span>
+              <span class="p-nido-step__d">Ahorro necesario, cuota, endeudamiento frente al 35 % e impuestos de tu comunidad.</span>
+              <i class="p-nido-step__bar" aria-hidden="true"></i></button>
+            <button class="p-nido-step" role="tab" type="button" id="nido-t-comparar" aria-controls="nido-p-comparar" aria-selected="false" tabindex="-1" data-title="Nido · Comparar">
+              <span class="p-nido-step__n">06</span><span class="p-nido-step__t">Comparar</span>
+              <span class="p-nido-step__d">De 2 a 4 viviendas lado a lado, con un índice que ponderas tú según tus prioridades.</span>
+              <i class="p-nido-step__bar" aria-hidden="true"></i></button>
+          </div>
+
+          <div class="p-nido-tour__stage">
+            <div class="p-nido-deck" data-reveal="tilt">
+
+              <!-- 01 · Inicio -->
+              <div class="p-nido-scene is-on" role="tabpanel" id="nido-p-inicio" aria-labelledby="nido-t-inicio">
+                <span class="p-nido-scene__n" style="--l:2%;--t:60%" aria-hidden="true">01</span>
+                <figure class="p-nido-crop" style="--x:0;--y:0;--w:680;--h:292;--wm:470;--l:0%;--t:5%;--s:90%;--lm:0%;--tm:0%;--sm:100%;--k:0">
+                  <div class="tc-win p-nido-crop__f">
+                    <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Inicio</span></div>
+                    <div class="p-nido-crop__view"><img src="/assets/products/nido-home-light-1280.webp" width="1280" height="800" loading="lazy" alt="Inicio de Nido: el campo para pegar el enlace de un piso y el resumen de mis pisos por estado"></div>
+                  </div>
+                </figure>
+                <figure class="p-nido-crop p-nido-crop--clip" style="--x:18;--y:527;--w:296;--h:200;--l:64%;--t:62%;--s:33%;--lm:38%;--tm:50%;--sm:62%;--k:1">
+                  <div class="p-nido-crop__f"><div class="p-nido-crop__view"><img src="/assets/products/nido-home-light-1280.webp" width="1280" height="800" loading="lazy" alt="Tarjeta de la vivienda favorita con su precio, su precio por metro cuadrado útil y sus datos básicos"></div></div>
+                </figure>
+              </div>
+
+              <!-- 02 · Tablero -->
+              <div class="p-nido-scene" role="tabpanel" id="nido-p-tablero" aria-labelledby="nido-t-tablero">
+                <span class="p-nido-scene__n" style="--l:69%;--t:56%" aria-hidden="true">02</span>
+                <figure class="p-nido-crop" style="--x:20;--y:96;--w:700;--h:258;--wm:470;--l:14%;--t:0%;--s:86%;--lm:0%;--tm:0%;--sm:100%;--k:0">
+                  <div class="tc-win p-nido-crop__f">
+                    <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Tablero</span></div>
+                    <div class="p-nido-crop__view"><img src="/assets/products/nido-tablero-light-1280.webp" width="1280" height="800" loading="lazy" alt="Tablero de Nido: buscador, filtros por municipio, precio y superficie, y las columnas guardada, contactada y visita agendada"></div>
+                  </div>
+                </figure>
+                <figure class="p-nido-crop p-nido-crop--clip" style="--x:47;--y:515;--w:270;--h:262;--l:2%;--t:48%;--s:30%;--lm:0%;--tm:46%;--sm:47%;--k:1">
+                  <div class="p-nido-crop__f"><div class="p-nido-crop__view"><img src="/assets/products/nido-tablero-light-1280.webp" width="1280" height="800" loading="lazy" alt="Tarjeta de un piso guardado con su precio, su índice provisional y los botones Comparar y Mover a"></div></div>
+                </figure>
+                <figure class="p-nido-crop p-nido-crop--clip p-nido-crop--br" style="--x:671;--y:515;--w:270;--h:284;--l:36%;--t:54%;--s:30%;--lm:53%;--tm:52%;--sm:47%;--k:2">
+                  <div class="p-nido-crop__f"><div class="p-nido-crop__view"><img src="/assets/products/nido-tablero-light-1280.webp" width="1280" height="800" loading="lazy" alt="Tarjeta de un piso con visita agendada y el veredicto Merece la pena"></div></div>
+                </figure>
+              </div>
+
+              <!-- 03 · Ficha -->
+              <div class="p-nido-scene" role="tabpanel" id="nido-p-ficha" aria-labelledby="nido-t-ficha">
+                <span class="p-nido-scene__n" style="--l:4%;--t:50%" aria-hidden="true">03</span>
+                <figure class="p-nido-crop" style="--x:828;--y:138;--w:376;--h:520;--l:57%;--t:4%;--s:43%;--lm:29%;--tm:20%;--sm:71%;--k:0">
+                  <div class="tc-win p-nido-crop__f">
+                    <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Ficha</span></div>
+                    <div class="p-nido-crop__view"><img src="/assets/products/nido-ficha-light-1280.webp" width="1280" height="800" loading="lazy" alt="Ficha de un piso en Nido: precio, precio por metro cuadrado útil, índice, estado, botón Empezar visita y el desglose de qué suma y qué resta"></div>
+                  </div>
+                </figure>
+                <figure class="p-nido-crop p-nido-crop--clip p-nido-crop--tl" style="--x:46;--y:78;--w:576;--h:134;--wm:446;--l:0%;--t:16%;--s:56%;--lm:0%;--tm:0%;--sm:84%;--k:1">
+                  <div class="p-nido-crop__f"><div class="p-nido-crop__view"><img src="/assets/products/nido-ficha-light-1280.webp" width="1280" height="800" loading="lazy" alt="Cabecera de la ficha: piso de ejemplo en el centro histórico de Madrid"></div></div>
+                </figure>
+              </div>
+
+              <!-- 04 · Visita -->
+              <div class="p-nido-scene" role="tabpanel" id="nido-p-visita" aria-labelledby="nido-t-visita">
+                <span class="p-nido-scene__n" style="--l:72%;--t:4%" aria-hidden="true">04</span>
+                <figure class="p-nido-crop" style="--x:320;--y:0;--w:640;--h:640;--l:4%;--t:1%;--s:62%;--lm:0%;--tm:0%;--sm:100%;--k:0">
+                  <div class="tc-win p-nido-crop__f">
+                    <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Modo visita</span></div>
+                    <div class="p-nido-crop__view"><img src="/assets/products/nido-visita-light-1280.webp" width="1280" height="800" loading="lazy" alt="Modo visita de Nido: checklist por estancias con humedades, luz natural y ruido exterior, cada punto con Bien, Aviso o Mal"></div>
+                  </div>
+                </figure>
+                <figure class="p-nido-crop p-nido-crop--clip p-nido-crop--br" style="--x:320;--y:722;--w:640;--h:76;--l:44%;--t:84%;--s:56%;--lm:6%;--tm:78%;--sm:94%;--k:1">
+                  <div class="p-nido-crop__f"><div class="p-nido-crop__view"><img src="/assets/products/nido-visita-light-1280.webp" width="1280" height="800" loading="lazy" alt="Barra del modo visita con los botones Foto, Voz y Terminar visita"></div></div>
+                </figure>
+              </div>
+
+              <!-- 05 · Finanzas -->
+              <div class="p-nido-scene" role="tabpanel" id="nido-p-finanzas" aria-labelledby="nido-t-finanzas">
+                <span class="p-nido-scene__n" style="--l:4%;--t:64%" aria-hidden="true">05</span>
+                <figure class="p-nido-crop" style="--x:40;--y:95;--w:636;--h:335;--wm:486;--l:0%;--t:2%;--s:76%;--lm:0%;--tm:0%;--sm:100%;--k:0">
+                  <div class="tc-win p-nido-crop__f">
+                    <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Finanzas</span></div>
+                    <div class="p-nido-crop__view"><img src="/assets/products/nido-finanzas-light-1280.webp" width="1280" height="800" loading="lazy" alt="Finanzas de un piso en Nido: ingresos netos al mes y ahorro disponible para medir el endeudamiento frente al 35 %"></div>
+                  </div>
+                </figure>
+                <figure class="p-nido-crop p-nido-crop--clip p-nido-crop--br" style="--x:58;--y:447;--w:336;--h:340;--l:62%;--t:42%;--s:38%;--lm:36%;--tm:50%;--sm:64%;--k:1">
+                  <div class="p-nido-crop__f"><div class="p-nido-crop__view"><img src="/assets/products/nido-finanzas-light-1280.webp" width="1280" height="800" loading="lazy" alt="Panel El piso: precio negociado, valor de referencia catastral y obra nueva"></div></div>
+                </figure>
+              </div>
+
+              <!-- 06 · Comparar -->
+              <div class="p-nido-scene" role="tabpanel" id="nido-p-comparar" aria-labelledby="nido-t-comparar">
+                <span class="p-nido-scene__n" style="--l:3%;--t:-2%" aria-hidden="true">06</span>
+                <figure class="p-nido-crop" style="--x:48;--y:84;--w:704;--h:636;--hm:500;--l:40%;--t:6%;--s:60%;--lm:0%;--tm:0%;--sm:100%;--k:0">
+                  <div class="tc-win p-nido-crop__f">
+                    <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Comparar</span></div>
+                    <div class="p-nido-crop__view"><img src="/assets/products/nido-comparar-light-1280.webp" width="1280" height="800" loading="lazy" alt="Comparar en Nido: la lista de viviendas guardadas con su estado para marcar de dos a cuatro"></div>
+                  </div>
+                </figure>
+                <figure class="p-nido-crop p-nido-crop--clip" style="--x:990;--y:520;--w:258;--h:276;--l:12%;--t:40%;--s:30%;--lm:52%;--tm:55%;--sm:48%;--k:1">
+                  <div class="p-nido-crop__f"><div class="p-nido-crop__view"><img src="/assets/products/nido-tablero-light-1280.webp" width="1280" height="800" loading="lazy" alt="Tarjeta de un piso visitado con índice Nido 75 y la casilla Comparar"></div></div>
+                </figure>
+              </div>
+
+            </div>
+            <p class="p-nido-tour__cap" data-nido-cap aria-hidden="true"></p>
+            <p class="tc-mono p-nido-tour__note">Recortes de capturas reales de Nido con sus seis pisos de ejemplo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4 · Antes de visitar: zona, precio justo, fotos, catastro ============ -->
+  <section class="tc-sec tc-sec--white tone-light" id="zona" aria-labelledby="zona-t">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <div class="tc-split tc-split--5-7 tc-split--top">
+          <div class="p-nido-zona" data-reveal="tilt">
+            <figure class="tc-win">
+              <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Estudio de zona</span></div>
+              <div class="p-nido-zona__view" data-live>
+                <img src="/assets/products/nido-zona-madrid.webp" width="1100" height="4124" loading="lazy" alt="Estudio de zona de Nido para un piso de Madrid: puntuación 80 sobre 100 y siete dimensiones con su dato y su fuente, de seguridad a mercado, y el precio justo con su horquilla">
+              </div>
+            </figure>
+            <div class="p-nido-zona__side" data-plx style="--plx:34px" aria-hidden="true">
+              <img src="/assets/products/nido-zona-madrid.webp" width="1100" height="4124" loading="lazy" alt="">
+            </div>
+          </div>
+
+          <div class="p-nido-study__copy">
+            <header class="tc-head">
+              <p class="tc-mono tc-mono--hi" data-reveal="rise">Antes de visitar</p>
+              <h2 class="tc-display tc-h2" id="zona-t" data-reveal="words">Lo que el anuncio <span class="tc-hl">no cuenta.</span></h2>
+              <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Un piso no se compra solo: se compra su calle. Antes de pedir cita, Nido mide la zona con fuentes públicas y propone un precio para negociar.</p>
+            </header>
+            <ul class="p-nido-know" data-stagger>
+              <li class="p-nido-item" data-reveal="rise">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <h3 class="tc-h4">Estudio de zona</h3>
+                <p class="tc-muted">Siete dimensiones, cada una con su dato, su fuente y su fecha. Lo que no se pudo medir se dice, no se rellena.</p>
+                <div class="tc-chips"><span class="tc-chip">Seguridad</span><span class="tc-chip">Servicios</span><span class="tc-chip">Transporte</span><span class="tc-chip">Ruido</span><span class="tc-chip">Zonas verdes</span><span class="tc-chip">Renta</span><span class="tc-chip">Mercado</span></div>
+              </li>
+              <li class="p-nido-item" data-reveal="rise">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-scale"/></svg></span>
+                <h3 class="tc-h4">Precio justo</h3>
+                <p class="tc-muted">Horquilla bajo, justo y alto, una oferta inicial sugerida y el cálculo paso a paso. Es una estimación con precios pedidos en anuncios comparables: sirve para negociar, no es una tasación.</p>
+              </li>
+              <li class="p-nido-item" data-reveal="rise">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-globe"/></svg></span>
+                <h3 class="tc-h4">Mapa y lugares cercanos</h3>
+                <p class="tc-muted">La casa en el mapa del IGN con supermercados, transporte, colegios, salud y parques, con distancia y tiempo andando o en coche.</p>
+              </li>
+            </ul>
+            <p class="tc-mono p-nido-study__src" data-reveal="rise">Fuentes: OpenStreetMap · INE · Ministerio del Interior · Ministerio de Transportes · Catastro · IGN</p>
+          </div>
+        </div>
+
+        <div class="tc-split tc-split--7-5 p-nido-plan">
+          <div class="p-nido-plan__copy">
+            <h3 class="tc-display tc-h3" data-reveal="words">Las fotos engañan. <span class="tc-hl">Los metros, no.</span></h3>
+            <ul class="p-nido-know" data-stagger>
+              <li class="p-nido-item" data-reveal="rise">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-image"/></svg></span>
+                <h4 class="tc-h4">Fotos con IA</h4>
+                <p class="tc-muted">Una IA audita las fotos del anuncio: gran angular, retoques o muebles generados, estancias que faltan y medidas como rango. Te deja preguntas para la visita. Usa tu propia clave de API o tu suscripción de Claude Code o Codex, y las medidas son orientativas.</p>
+              </li>
+              <li class="p-nido-item" data-reveal="rise">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-filecheck"/></svg></span>
+                <h4 class="tc-h4">Catastro</h4>
+                <p class="tc-muted">Con la referencia catastral, Nido consulta los datos públicos: superficie de la vivienda y de zonas comunes frente a la del anuncio, año, planta y puerta. Nunca titular ni valor catastral.</p>
+              </li>
+              <li class="p-nido-item" data-reveal="rise">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-layers"/></svg></span>
+                <h4 class="tc-h4">Maqueta 3D</h4>
+                <p class="tc-muted">La IA dibuja la distribución, calcando el plano del anuncio si lo hay o aproximada si no. La giras, la recorres por dentro y tocas una estancia para ver sus fotos.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="p-nido-plan__shot">
+            <figure class="tc-win" data-tilt="1.6" data-reveal="curtain"><div><div>
+              <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Nido · Maqueta 3D</span></div>
+              <img src="/assets/products/nido-catastro-desktop-3d.webp" width="720" height="497" loading="lazy" alt="Maqueta 3D de un piso en Nido con salón, cocina, tres dormitorios, baño y pasillo, cada estancia con sus metros cuadrados y la flecha del norte">
+            </div></div></figure>
+            <div class="tc-float tc-float--a" aria-hidden="true"><span class="tc-num">3D</span><span><b>Girar, recorrer o ver en plano</b><small>Con el contorno del Catastro</small></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5 · Privacidad: qué se queda y qué sale ============ -->
+  <section class="tc-sec tc-sec--day tone-light" id="privacidad" aria-labelledby="priv-t">
+    <div class="tc-sec__in tc-pad tc-pad--top-0">
+      <div class="tc-wrap">
+        <div class="tc-leaf tc-leaf--lg tc-leaf--tl tc-leaf--night tone-dark p-nido-priv" data-reveal="tilt">
+          <div class="p-nido-priv__copy">
+            <p class="tc-mono tc-mono--hi">Privacidad</p>
+            <h2 class="tc-display tc-h2" id="priv-t">Todo vive <span class="tc-hl">en tu equipo.</span></h2>
+            <p class="tc-lead">No hay cuentas, ni servidor propio, ni analítica. Tus pisos, tus visitas, tus fotos y tu perfil financiero se guardan en un archivo en tu ordenador.</p>
+          </div>
+          <div class="p-nido-vault" data-live aria-hidden="true">
+            <i class="p-nido-vault__ring p-nido-vault__ring--out"></i>
+            <i class="p-nido-vault__ring p-nido-vault__ring--in"></i>
+            <span class="p-nido-vault__core"><span class="tc-glyph tc-glyph--lg"><svg class="tc-ico"><use href="#i-lock"/></svg></span><b>Tu equipo</b><small>SQLite local</small></span>
+            <span class="tc-chip p-nido-vault__in" style="--x:27%;--y:25%">Pisos</span>
+            <span class="tc-chip p-nido-vault__in" style="--x:73%;--y:25%">Visitas</span>
+            <span class="tc-chip p-nido-vault__in" style="--x:27%;--y:75%">Fotos</span>
+            <span class="tc-chip p-nido-vault__in" style="--x:73%;--y:75%">Finanzas</span>
+            <span class="tc-chip tc-chip--hi p-nido-vault__out" style="--x:50%;--y:0%;--i:0">Portales</span>
+            <span class="tc-chip tc-chip--hi p-nido-vault__out" style="--x:17%;--y:88%;--i:1">IA opcional</span>
+            <span class="tc-chip tc-chip--hi p-nido-vault__out" style="--x:83%;--y:88%;--i:2">Copia .nido</span>
+          </div>
+          <div class="p-nido-priv__out">
+            <h3 class="tc-h4">Lo único que sale, y cuándo</h3>
+            <ul class="p-nido-out">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-search"/></svg><div><h4>Búsqueda en portales</h4><p>Solo cuando pulsas «Buscar ahora»: unas pocas páginas de resultados por portal, con pausas, en tu propia sesión y desde tu ordenador. Sin rastreo en segundo plano.</p></div></li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-globe"/></svg><div><h4>Fuentes públicas</h4><p>El estudio de zona, el mapa y el Catastro se consultan con las coordenadas o la dirección del anuncio. Tus lugares se calculan en tu equipo.</p></div></li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg><div><h4>IA, si la conectas</h4><p>Solo cuando lo pides en un piso, y antes ves qué se envía: las fotos y los datos del anuncio. Nunca tus fotos, notas, visitas ni tu perfil financiero.</p></div></li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-key"/></svg><div><h4>Tu copia de seguridad</h4><p>El archivo .nido que tú exportas, cifrado con AES-GCM y una clave derivada de tu contraseña. Sirve también para pasar tus pisos a otro equipo.</p></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6 · Instalación, requisitos y preguntas ============ -->
+  <section class="tc-sec tc-sec--mist-flat tone-light" id="instalar" aria-labelledby="inst-t">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <div class="tc-split tc-split--5-7 tc-split--top">
+          <div class="p-nido-setup__get">
+            <header class="tc-head">
+              <p class="tc-mono tc-mono--hi" data-reveal="rise">Instalación</p>
+              <h2 class="tc-display tc-h3" id="inst-t" data-reveal="words">Elige tu instalador</h2>
+            </header>
+            <ul class="p-nido-variants" data-stagger>
+              <li class="p-nido-variant" data-reveal="slide" style="--from:-40px">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg></span>
+                <span class="p-nido-variant__name"><b>macOS · Apple Silicon</b><small>Instalador .dmg</small></span>
+                <a class="tc-btn tc-btn--secondary tc-btn--sm" href="mailto:info@trustcore.es?subject=Instalador%20de%20Nido%20%C2%B7%20macOS%20(Apple%20Silicon)" data-download="nido-mac-arm64" data-track="nido_dl_mac_arm64" aria-label="Descargar Nido para macOS con Apple Silicon"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> Descargar</span></a>
+              </li>
+              <li class="p-nido-variant" data-reveal="slide" style="--from:-40px">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg></span>
+                <span class="p-nido-variant__name"><b>macOS · Intel</b><small>Instalador .dmg</small></span>
+                <a class="tc-btn tc-btn--secondary tc-btn--sm" href="mailto:info@trustcore.es?subject=Instalador%20de%20Nido%20%C2%B7%20macOS%20(Intel)" data-download="nido-mac-x64" data-track="nido_dl_mac_x64" aria-label="Descargar Nido para macOS con Intel"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> Descargar</span></a>
+              </li>
+              <li class="p-nido-variant" data-reveal="slide" style="--from:-40px">
+                <span class="tc-glyph tc-glyph--soft"><svg class="tc-ico" aria-hidden="true"><use href="#i-windows"/></svg></span>
+                <span class="p-nido-variant__name"><b>Windows</b><small>Instalador .exe</small></span>
+                <a class="tc-btn tc-btn--secondary tc-btn--sm" href="mailto:info@trustcore.es?subject=Instalador%20de%20Nido%20%C2%B7%20Windows" data-download="nido-win" data-track="nido_dl_win" aria-label="Descargar Nido para Windows"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> Descargar</span></a>
+              </li>
+            </ul>
+            <h3 class="tc-h4 p-nido-setup__req" data-reveal="rise">Requisitos</h3>
+            <ul class="tc-facts" data-reveal="rise">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-desktop"/></svg> Un ordenador con macOS (Apple Silicon o Intel) o con Windows.</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-globe"/></svg> Conexión a internet para buscar en los portales y consultar las fuentes públicas.</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-user"/></svg> Sin registro: no hay ninguna cuenta que crear.</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg> Opcional: tu clave de API o tu suscripción de Claude Code o Codex, solo para la auditoría de fotos y la maqueta 3D.</li>
+            </ul>
+            <div class="tc-note p-nido-setup__note" data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-lock"/></svg><div><p><b>Tus datos, en la carpeta de la app.</b> En macOS, ~/Library/Application Support/Nido. En Windows, %APPDATA%\Nido. Ajustes te la enseña.</p></div></div>
+          </div>
+
+          <div class="p-nido-setup__faq">
+            <h2 class="tc-display tc-h3" id="faq-t" data-reveal="words">Preguntas frecuentes</h2>
+            <div class="tc-acc" data-reveal="rise">
+              <details class="tc-acc__item" name="faq-nido" open>
+                <summary class="tc-acc__q"><h3>¿Qué es Nido?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+                <div class="tc-acc__a"><p>Nido es un buscador y cuaderno privado de vivienda para macOS y Windows. Defines una vez lo que buscas y Nido lo busca a la vez en siete portales, junta en uno el mismo piso anunciado en varios, señala chollos, bajadas de precio y trampas, y te acompaña en las visitas, las finanzas y la comparación.</p></div>
+              </details>
+              <details class="tc-acc__item" name="faq-nido">
+                <summary class="tc-acc__q"><h3>¿En qué portales busca Nido?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+                <div class="tc-acc__a"><p>En Idealista, Fotocasa, Habitaclia, pisos.com, Milanuncios, yaencontre y Green-Acres. Además puedes añadir las webs de las inmobiliarias de tu zona. Nido es una herramienta independiente de esos portales: carga sus páginas de resultados como lo harías tú al navegar.</p></div>
+              </details>
+              <details class="tc-acc__item" name="faq-nido">
+                <summary class="tc-acc__q"><h3>¿Dónde se guardan mis datos?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+                <div class="tc-acc__a"><p>En tu dispositivo. La app de escritorio guarda los pisos, las visitas, las fotos y tu perfil financiero en un archivo SQLite dentro de su carpeta de datos. No hay cuentas, ni servidor propio, ni analítica. La única copia que sale es el archivo .nido que tú exportas, cifrado con tu contraseña.</p></div>
+              </details>
+              <details class="tc-acc__item" name="faq-nido">
+                <summary class="tc-acc__q"><h3>¿Nido rastrea los portales en segundo plano?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+                <div class="tc-acc__a"><p>No. La búsqueda solo se lanza cuando pulsas «Buscar ahora». Nido carga unas pocas páginas de resultados por portal, con pausas, en tu propia sesión y desde tu ordenador. Si un portal pide comprobar que eres una persona, Nido te muestra su ventana para que lo resuelvas tú. Es una herramienta para tu búsqueda personal.</p></div>
+              </details>
+              <details class="tc-acc__item" name="faq-nido">
+                <summary class="tc-acc__q"><h3>¿Qué considera Nido un chollo?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+                <div class="tc-acc__a"><p>Un piso que está un 18 % o más por debajo del precio por metro cuadrado de su zona, con al menos seis anuncios comparables. A partir de un 12 % lo marca como posible chollo. Si algo explica el precio, como que esté ocupado, sea nuda propiedad, se venda con inquilino, sea un proindiviso o una VPO, lo marca como barato con trampa y no como chollo.</p></div>
+              </details>
+              <details class="tc-acc__item" name="faq-nido">
+                <summary class="tc-acc__q"><h3>¿El precio justo de Nido es una tasación?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+                <div class="tc-acc__a"><p>No. Es una estimación hecha con precios pedidos en anuncios comparables, no con compraventas cerradas. Sirve para negociar y no sustituye a una tasación.</p></div>
+              </details>
+              <details class="tc-acc__item" name="faq-nido">
+                <summary class="tc-acc__q"><h3>¿Necesito una IA para usar Nido?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+                <div class="tc-acc__a"><p>No. La búsqueda, el tablero, las visitas, las finanzas y el comparador funcionan sin IA. La auditoría de fotos y la maqueta 3D son opcionales y usan tu propia clave de API o tu suscripción de Claude Code o Codex. Antes de enviar nada, Nido te enseña qué se envía y a quién.</p></div>
+              </details>
+              <details class="tc-acc__item" name="faq-nido">
+                <summary class="tc-acc__q"><h3>¿Hay versión de Nido para móvil?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+                <div class="tc-acc__a"><p>De momento se publican las apps de escritorio para macOS y Windows. Las apps de iOS y Android están aparcadas por ahora.</p></div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7 · Descarga: donde desemboca el hilo ============ -->
+  <section class="tc-pool" id="descargar" data-live aria-labelledby="cta-t">
+    <div class="tc-pool__in tone-dark">
+      <div class="tc-pool__rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="tc-wrap tc-pool__copy">
+        <img class="p-nido-pool-ico" src="/assets/products/nido-icon.webp" alt="" width="256" height="256" loading="lazy" data-reveal="pop">
+        <p class="tc-mono tc-mono--hi" data-reveal="rise">Nido · app de escritorio</p>
+        <h2 class="tc-display tc-pool__title" id="cta-t" data-reveal="words">Busca casa <span class="tc-hl">con calma.</span></h2>
+        <p class="tc-lead" data-reveal="focus" style="--delay:200ms">Descarga Nido, define tu búsqueda una vez y deja que recorra los portales por ti. Lo que guardes se queda en tu ordenador.</p>
+        <div class="tc-dl p-nido-pool-dl">
+          <a class="tc-btn tc-btn--primary tc-btn--xl" href="mailto:info@trustcore.es?subject=Instalador%20de%20Nido" data-download="nido" data-magnet data-track="nido_cta_dl" data-reveal="pop" style="--delay:320ms">
+            <span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Nido</span></span></a>
+          <p class="tc-dl__note" data-download-note="nido">macOS (Apple Silicon e Intel) y Windows</p>
+        </div>
+        <ul class="p-nido-pool-facts" data-reveal="rise" style="--delay:400ms">
+          <li><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg> macOS</li>
+          <li><svg class="tc-ico" aria-hidden="true"><use href="#i-windows"/></svg> Windows</li>
+          <li><svg class="tc-ico" aria-hidden="true"><use href="#i-lock"/></svg> Sin cuentas, sin servidor, sin analítica</li>
+        </ul>
+        <div class="tc-pool__contact" data-reveal="rise" style="--delay:460ms">
+          <a href="tel:+34666609299" data-track="nido_cta_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> <span class="tc-num">666 60 92 99</span></a>
+          <a href="mailto:info@trustcore.es" data-track="nido_cta_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a>
+        </div>
+        <p class="tc-mono" data-reveal="rise" style="--delay:520ms">¿Dudas con la instalación? Respuesta en menos de 1 h en horario laboral</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="tc-foot tone-dark">
+  <div class="tc-wrap">
+    <div class="tc-foot__grid">
+      <div class="tc-foot__brand">
+        <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+          <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120" loading="lazy">
+          <span class="tc-brand__word">TrustCore</span>
+        </a>
+        <p>Software con IA hecho en Ceuta para quitar trabajo repetido a empresas y personas.</p>
+        <ul class="tc-foot__contact">
+          <li><a href="tel:+34666609299" data-track="footer_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> 666 60 92 99</a></li>
+          <li><a href="mailto:info@trustcore.es" data-track="footer_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a></li>
+        </ul>
+        <p class="tc-foot__note">Respuesta en menos de 1 h en horario laboral</p>
+        <div class="tc-foot__awards">
+          <span class="tc-chip tc-chip--gold"><svg class="tc-ico" aria-hidden="true"><use href="#i-trophy"/></svg> Alhambra Venture 2026</span>
+          <span class="tc-chip tc-chip--hi"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg> #1 CeutaTech 2026</span>
+        </div>
+      </div>
+      <nav aria-label="Productos">
+        <p class="tc-foot__title">Productos</p>
+        <ul>
+          <li><a href="/productos/trustinfacts">TrustInFacts</a></li>
+          <li><a href="/productos/trustintime">TrustInTime</a></li>
+          <li><a href="/productos/genai">GenAI</a></li>
+          <li><a href="/productos/orquesta">Orquesta</a></li>
+          <li><a href="/productos/corrector-fiscal">Corrector Fiscal</a></li>
+          <li><a href="/productos/nido">Nido</a></li>
+          <li><a href="/productos">Todos los productos</a></li>
+          <li><a href="/precios">Precios</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Soluciones">
+        <p class="tc-foot__title">Soluciones</p>
+        <ul>
+          <li><a href="/facturacion-para-tiendas">Para tiendas</a></li>
+          <li><a href="/facturacion-para-instaladores">Para instaladores</a></li>
+          <li><a href="/gestoria">Para gestorías</a></li>
+          <li><a href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a></li>
+          <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Recursos">
+        <p class="tc-foot__title">Recursos</p>
+        <ul>
+          <li><a href="/clientes">Clientes</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/aprende">Aprende</a></li>
+          <li><a href="/funcionalidades">Funcionalidades</a></li>
+          <li><a href="/como-funciona">Cómo funciona</a></li>
+          <li><a href="/quienes-somos">Sobre nosotros</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="tc-foot__title">Legal</p>
+        <ul>
+          <li><a href="/aviso-legal">Aviso legal</a></li>
+          <li><a href="/privacidad">Privacidad</a></li>
+          <li><a href="/cookies">Cookies</a></li>
+          <li><a href="/terminos">Términos</a></li>
+          <li><button type="button" data-cookie-settings>Configurar cookies</button></li>
+        </ul>
+        <div class="tc-foot__trust trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+          <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" data-track="footer_trustpilot" aria-label="Reséñanos en Trustpilot"><span class="tc-foot__trust-pre">Reséñanos en</span> <svg class="tc-ico" aria-hidden="true"><use href="#i-star"/></svg> Trustpilot</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="tc-foot__backers">
+      <p class="tc-foot__title">Acelerado y respaldado por</p>
+      <div class="tc-foot__backers-row">
+        <img class="tc-foot__cof" src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" width="1000" height="355" loading="lazy">
+        <div class="tc-foot__tile">
+          <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" loading="lazy" style="--w:107px">
+          <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" width="1299" height="79" loading="lazy" style="--w:756px">
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-foot__base">
+      <span>© 2026 TrustCore · Ceuta, España</span>
+      <span>Hecho en Ceuta · Cloud europeo · RGPD</span>
+    </div>
+    <p class="tc-foot__word" aria-hidden="true">TrustCore</p>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script src="/assets/js/consent.bdd1909c.min.js" defer></script>
+<script src="/assets/js/components.f3ffc571.min.js" defer></script>
+<script>
+/* Nido · recorrido por la app (pestañas propias con avance automático) y sello de la ilustración */
+(function () {
+  var d = document;
+  function ready(fn) { if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', fn); else fn(); }
+  ready(function () {
+    try {
+      var motion = d.documentElement.classList.contains('motion');
+
+      /* la ilustración sigue a las pestañas de veredicto */
+      var verdicts = d.querySelector('[data-nido-verdicts]'), merge = d.querySelector('[data-nido-merge]');
+      if (verdicts && merge) verdicts.addEventListener('tabs:change', function (e) { merge.setAttribute('data-verdict', String(e.detail || 0)); });
+
+      var tour = d.querySelector('[data-nido-tour]');
+      if (!tour) return;
+      var tabs = [].slice.call(tour.querySelectorAll('[role="tab"]'));
+      var scenes = tabs.map(function (t) { return d.getElementById(t.getAttribute('aria-controls')); });
+      var cap = tour.querySelector('[data-nido-cap]');
+      var cur = 0;
+      function show(i, user) {
+        cur = (i + tabs.length) % tabs.length;
+        tabs.forEach(function (t, j) {
+          var on = j === cur;
+          t.setAttribute('aria-selected', String(on));
+          t.tabIndex = on ? 0 : -1;
+          if (scenes[j]) scenes[j].classList.toggle('is-on', on);
+        });
+        var t = tabs[cur], desc = t.querySelector('.p-nido-step__d');
+        if (cap && desc) cap.textContent = desc.textContent;
+        if (user) {
+          tour.classList.remove('is-auto');
+          if (window.TC && TC.track) TC.track('nido_tour_step', { step: (t.id || '').replace('nido-t-', '') });
+        }
+      }
+      tabs.forEach(function (t, i) {
+        t.addEventListener('click', function () { show(i, true); });
+        t.addEventListener('keydown', function (e) {
+          var k = e.key, n = k === 'ArrowDown' || k === 'ArrowRight' ? 1 : k === 'ArrowUp' || k === 'ArrowLeft' ? -1 : 0;
+          if (k === 'Home') { e.preventDefault(); show(0, true); tabs[cur].focus(); }
+          else if (k === 'End') { e.preventDefault(); show(tabs.length - 1, true); tabs[cur].focus(); }
+          else if (n) { e.preventDefault(); show(i + n, true); tabs[cur].focus(); }
+        });
+      });
+      /* avance automático: lo marca la barra de progreso (CSS); se para en cuanto la persona toca algo */
+      tour.addEventListener('animationend', function (e) {
+        if (/^p-nido-fill/.test(e.animationName) && tour.classList.contains('is-auto')) show(cur + 1, false);
+      });
+      tour.addEventListener('focusin', function () { tour.classList.remove('is-auto'); });
+      show(0, false);
+      if (motion) tour.classList.add('is-auto');
+
+      /* claro / oscuro: las capturas oscuras se piden la primera vez que se usan y se apilan sobre las claras */
+      var sw = d.querySelector('[data-nido-theme]');
+      if (sw) sw.addEventListener('click', function () {
+        var dark = sw.getAttribute('aria-checked') !== 'true';
+        sw.setAttribute('aria-checked', String(dark));
+        if (dark && !tour.hasAttribute('data-dark-ready')) {
+          tour.setAttribute('data-dark-ready', '');
+          [].forEach.call(tour.querySelectorAll('.p-nido-crop__view'), function (v) {
+            var light = v.querySelector('img'); if (!light) return;
+            var img = new Image();
+            img.className = 'p-nido-crop__dark'; img.alt = ''; img.width = 1280; img.height = 800; img.decoding = 'async';
+            img.src = light.getAttribute('src').replace('-light-', '-dark-');
+            v.appendChild(img);
+          });
+        }
+        /* un par de cuadros de margen para que la imagen nueva entre con transición */
+        requestAnimationFrame(function () { requestAnimationFrame(function () {
+          tour.classList.toggle('is-dark', dark);
+          [].forEach.call(tour.querySelectorAll('.tc-win'), function (w) { w.classList.toggle('tc-win--dark', dark); w.classList.toggle('tone-dark', dark); });
+        }); });
+        if (window.TC && TC.track) TC.track('nido_tour_theme', { theme: dark ? 'oscuro' : 'claro' });
+      });
+    } catch (err) { /* la página funciona sin este guion */ }
+  });
+})();
+</script>
+</body>
+</html>

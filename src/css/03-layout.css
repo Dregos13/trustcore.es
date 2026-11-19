@@ -1,0 +1,330 @@
+/* ==========================================================================
+   TrustCore · sistema "Flujo" · 03 · estructura
+   Secciones sin costuras, contenedores, composiciones, héroes, olas, hilo,
+   escenario fijado y CTA final.
+   ========================================================================== */
+
+/* ---------- Secciones ----------
+   .tc-sec es estático y solo pinta el degradado (--bg-a → --bg-b). Cada tramo
+   empieza en el color exacto en que acaba el anterior: no hay costuras.
+   .tc-sec__in se posiciona por encima del lienzo fijo del hilo, así el hilo
+   pasa por detrás de tarjetas y texto. */
+main { position: relative; display: block; }
+.tc-sec { position: static; --bg-mid: var(--bg-m, color-mix(in srgb, var(--bg-a, transparent), var(--bg-b, var(--bg-a, transparent)))); background: linear-gradient(180deg, var(--bg-a, transparent), var(--bg-mid) 50%, var(--bg-b, var(--bg-a, transparent))); }
+/* 1 px de solape: con zoom o escalas fraccionarias no asoma el fondo entre dos tramos */
+main > .tc-sec + .tc-sec, main > .tc-sec + .tc-pool { margin-top: -1px; }
+.tc-sec__in { position: relative; z-index: var(--z-content); overflow-x: clip; }
+.tc-sec__in--pad, .tc-pad { padding-block: var(--sec-pt) var(--sec-pb); }
+.tc-pad--sm { --sec-pt: clamp(48px, 6vw, 88px); --sec-pb: clamp(48px, 6vw, 88px); }
+.tc-pad--lg { --sec-pt: clamp(96px, 13vw, 190px); --sec-pb: clamp(88px, 11vw, 160px); }
+.tc-pad--top-0 { --sec-pt: 0px; }
+.tc-pad--bottom-0 { --sec-pb: 0px; }
+
+/* Tramos del degradado (de la noche al día). Encadénalos en este orden o usa
+   style="--bg-a:#…;--bg-b:#…" si necesitas otro. */
+.tc-sec--night { --bg-a: var(--navy-deep); --bg-m: #030C35; --bg-b: var(--navy); }
+.tc-sec--deep  { --bg-a: var(--navy); --bg-b: var(--dusk); }
+.tc-sec--dusk  { --bg-a: var(--dusk); --bg-m: var(--corp); --bg-b: var(--stage-end); }
+.tc-sec--navy-dusk { --bg-a: var(--navy); --bg-m: var(--corp); --bg-b: var(--stage-end); }
+.tc-sec--mist  { --bg-a: var(--mist); --bg-b: var(--paper); }
+.tc-sec--paper { --bg-a: var(--paper); --bg-b: var(--white); }
+.tc-sec--white { --bg-a: var(--white); --bg-b: var(--white); }
+.tc-sec--day   { --bg-a: var(--white); --bg-b: var(--mist); }
+.tc-sec--mist-flat { --bg-a: var(--mist); --bg-b: var(--mist); }
+.tc-sec--paper-mist { --bg-a: var(--paper); --bg-m: var(--white); --bg-b: var(--mist); }
+.tc-sec--mist-mist { --bg-a: var(--mist); --bg-m: var(--white); --bg-b: var(--mist); }
+
+/* ---------- Contenedores ---------- */
+.tc-wrap { width: 100%; max-width: calc(var(--wrap) + var(--pad) * 2); margin-inline: auto; padding-inline: var(--pad); }
+.tc-wrap--spine { padding-left: calc(var(--pad) + var(--spine)); }
+.tc-wrap--narrow { max-width: calc(820px + var(--pad) * 2); }
+.tc-wrap--mid { max-width: calc(1040px + var(--pad) * 2); }
+.tc-rel { position: relative; }
+
+/* Cabecera de sección: etiqueta + titular + entradilla */
+.tc-head { display: grid; gap: 20px; justify-items: start; max-width: 58rem; }
+.tc-head .tc-lead { max-width: 40rem; }
+.tc-head--center { justify-items: center; text-align: center; margin-inline: auto; }
+.tc-head + * { margin-top: clamp(40px, 5vw, 72px); }
+
+/* ---------- Composiciones (asimétricas por defecto) ---------- */
+.tc-stack { display: grid; gap: var(--gap, 20px); align-content: start; }
+.tc-stack > * { min-width: 0; }
+.tc-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap, 12px); }
+
+/* Dos columnas desiguales: texto + pieza */
+.tc-split { display: grid; grid-template-columns: minmax(0, var(--a, 1fr)) minmax(0, var(--b, 1fr)); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.tc-split--top { align-items: start; }
+.tc-split--end { align-items: end; }
+.tc-split--5-7 { --a: 5fr; --b: 7fr; }
+.tc-split--7-5 { --a: 7fr; --b: 5fr; }
+.tc-split--4-8 { --a: 4fr; --b: 8fr; }
+.tc-split--8-4 { --a: 8fr; --b: 4fr; }
+.tc-split > * { min-width: 0; }
+.tc-split--flip > :first-child { order: 2; }
+
+/* Rejilla fluida: las piezas se reparten solas, sin número fijo de columnas */
+.tc-flowgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min, 280px)), 1fr)); gap: clamp(16px, 2vw, 28px); align-items: start; }
+.tc-flowgrid > * { min-width: 0; }
+.tc-flowgrid--fill { grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--min, 280px)), 1fr)); }
+.tc-flowgrid--stretch { align-items: stretch; }
+/* Escalera: cada pieza baja un peldaño respecto a la anterior (rompe la rejilla) */
+@media (min-width: 921px) {
+  .tc-stair > :nth-child(3n+2) { margin-top: 28px; }
+  .tc-stair > :nth-child(3n+3) { margin-top: 56px; }
+  .tc-zig > :nth-child(even) { margin-top: 36px; }
+}
+
+@media (max-width: 920px) {
+  .tc-split { grid-template-columns: 1fr; }
+  .tc-split--flip > :first-child { order: 0; }
+  .tc-split--keep { grid-template-columns: minmax(0, var(--a, 1fr)) minmax(0, var(--b, 1fr)); }
+}
+
+/* ---------- Hilo de luz ---------- */
+.tc-thread { position: fixed; inset: 0; z-index: var(--z-thread); width: 100%; height: 100%; pointer-events: none; }
+/* Puntos por los que pasa el hilo. Los coloca el CSS (así cambian solos en cada
+   punto de corte) y los lee el motor. El contenedor de referencia es
+   .tc-sec__in (o cualquier ancestro posicionado). */
+.tc-flow-pt { position: absolute; width: 0; height: 0; pointer-events: none; }
+.tc-flow-pt--spine { left: var(--flow-left); }
+.tc-flow-pt--right { left: auto; right: var(--flow-left); }
+.tc-flow-pt--center { left: 50%; }
+.tc-flow-pt--head { top: calc(var(--sec-pt) + 8px); }
+.tc-flow-pt--foot { top: auto; bottom: 0; }
+.tc-flow-pt--origin { left: 50%; top: auto; bottom: 44px; }
+.tc-flow-pt--wave { left: 50%; top: 52%; }
+.tc-flow-pt--end { left: 50%; top: 0; }
+.tc-flow-pt--card { left: 44px; top: 1px; }
+.tc-flow-node::before, .tc-flow-node::after {
+  content: ""; position: absolute; left: 0; top: 0; border-radius: 50%;
+  translate: -50% -50%;
+}
+.tc-flow-node::before {
+  width: 13px; height: 13px;
+  background: var(--node-bg);
+  box-shadow: 0 0 0 1.5px var(--fg-3);
+  transition: background var(--d-2) var(--e-soft), box-shadow var(--d-3) var(--e-soft), scale var(--d-3) var(--e-spring);
+}
+.tc-flow-node::after { width: 44px; height: 44px; border: 1px solid var(--node-on); opacity: 0; scale: .3; }
+.tc-flow-node.is-lit::before { background: var(--node-on); box-shadow: var(--node-glow); scale: 1.15; }
+@media (max-width: 760px) { .tc-flow-node::before { width: 9px; height: 9px; } .tc-flow-node::after { width: 30px; height: 30px; } }
+.motion .tc-flow-node.is-lit::after { animation: tc-node-ring 1.1s var(--e-out) both; }
+/* sin JS no hay hilo: los nodos sueltos no significan nada */
+html:not(.js) .tc-flow-node { display: none; }
+@keyframes tc-node-ring { 0% { opacity: .9; scale: .3; } 100% { opacity: 0; scale: 1.25; } }
+
+/* ---------- Resplandores de fondo (hero, tarjetas oscuras) ---------- */
+.tc-glow { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+.tc-glow--a { width: 70vmax; height: 70vmax; right: -24vmax; top: -30vmax; background: radial-gradient(circle, rgba(32, 113, 213, .5), rgba(32, 113, 213, 0) 62%); }
+.tc-glow--b { width: 46vmax; height: 46vmax; left: 50%; bottom: -30vmax; margin-left: -23vmax; background: radial-gradient(circle, rgba(83, 205, 254, .3), rgba(83, 205, 254, 0) 62%); }
+.motion .tc-glow--a { animation: tc-drift 16s var(--e-inout) infinite alternate; }
+.motion .tc-glow--b { animation: tc-drift 12s var(--e-inout) infinite alternate-reverse; }
+@keyframes tc-drift { from { transform: translate3d(-3%, -2%, 0) scale(1); } to { transform: translate3d(4%, 5%, 0) scale(1.12); } }
+
+/* ---------- Hero de portada ---------- */
+.tc-hero__in {
+  min-height: max(100svh, 720px);
+  display: grid; grid-template-rows: 1fr auto;
+  padding-top: calc(var(--nav-h) + 48px);
+  overflow: clip;
+}
+.tc-hero__canvas { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; z-index: 0; }
+.tc-hero__grid { position: relative; z-index: 1; align-self: center; padding-block: 12px 28px; }
+.tc-hero__copy { position: relative; max-width: 60rem; }
+.tc-hero__title { font-size: var(--t-hero); margin: 20px 0 24px; max-width: 9.6em; }
+.tc-hero__lead { max-width: 37rem; }
+.tc-hero__cta, .tc-cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.tc-hero__award { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; font-size: .9rem; color: var(--on-dark-2); }
+.tc-hero__award .tc-ico { color: var(--gold); width: 20px; height: 20px; }
+/* tareas flotando en la corriente */
+.tc-hero__chips { position: absolute; right: var(--pad); top: 0; bottom: 0; width: 400px; --px: 0; --py: 0; }
+.tc-task { position: absolute; translate: calc(var(--px) * var(--d, 1) * -22px) calc(var(--py) * var(--d, 1) * -16px); transition: translate 500ms var(--e-out); }
+.tc-task__in {
+  display: grid; grid-template-columns: 36px auto 22px; align-items: center; gap: 12px;
+  padding: 10px 14px 10px 10px; border-radius: 20px;
+  background: rgba(8, 25, 91, .55);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: inset 0 0 0 1px rgba(179, 232, 255, .2), 0 22px 44px -22px rgba(2, 10, 42, .9);
+  white-space: nowrap;
+}
+.motion .tc-task__in { animation: tc-bob 7s ease-in-out infinite alternate; animation-delay: calc(var(--d, 1) * -3s); }
+@keyframes tc-bob { from { transform: translate3d(0, -7px, 0); } to { transform: translate3d(0, 7px, 0); } }
+.tc-task b { display: block; font-size: .92rem; font-weight: 600; line-height: 1.2; }
+.tc-task small { display: block; font-family: var(--f-mono); font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; color: var(--on-dark-3); margin-top: 3px; }
+.tc-task__ico { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; background: rgba(83, 205, 254, .14); color: var(--cyan); }
+.tc-task__ok { width: 22px; height: 22px; padding: 4px; border-radius: 50%; background: var(--ok); color: #fff; stroke-width: 2.4; }
+.tc-task:nth-child(1) { right: 0; top: 4%; }
+.tc-task:nth-child(2) { right: 34%; top: 29%; }
+.tc-task:nth-child(3) { right: 2%; top: 55%; }
+.tc-task:nth-child(4) { right: 30%; top: 79%; }
+.tc-hero__foot { position: relative; z-index: 1; padding-bottom: 30px; min-height: 112px; display: flex; align-items: flex-end; }
+.tc-hero__index { display: flex; gap: 22px; width: 100%; white-space: nowrap; }
+.tc-hero__index li { display: inline-flex; gap: 8px; color: var(--on-dark-2); }
+.tc-hero__index span { color: var(--on-dark-3); }
+.tc-hero__index li:nth-child(3) { margin-right: auto; }
+.tc-hero .tc-flow-pt--origin { bottom: 84px; }
+.tc-flow-pt--drop { left: 50%; top: auto; bottom: 0; }
+.tc-hero__cue { position: absolute; z-index: 1; left: calc(50% + 22px); bottom: 66px; padding: 8px 12px; color: var(--on-dark-2); white-space: nowrap; }
+.tc-hero__cue:hover { color: var(--cyan); }
+
+/* ---------- Hero interior: oscuro y corto; desemboca en claro con .tc-wave ---------- */
+.tc-phero__in { padding-top: calc(var(--nav-h) + 64px); padding-bottom: clamp(72px, 8vw, 130px); overflow: clip; }
+.tc-phero__top { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(28px, 5vw, 80px); align-items: end; }
+.tc-phero__top--single { grid-template-columns: minmax(0, 1fr); max-width: calc(60rem + var(--pad) * 2); margin-inline: auto 0; }
+.tc-phero__copy { min-width: 0; }
+.tc-phero__title { font-size: var(--t-h1); line-height: .96; letter-spacing: -.04em; max-width: 14em; }
+.tc-phero__title--brand { display: flex; align-items: center; gap: clamp(14px, 2vw, 26px); font-size: clamp(3.4rem, 1.6rem + 8.4vw, 9rem); line-height: .86; letter-spacing: -.05em; }
+.tc-phero__title--brand .tc-glyph { width: .62em; height: .62em; border-radius: .2em; font-size: inherit; }
+.tc-phero__title--brand .tc-glyph .tc-ico { width: .34em; height: .34em; stroke-width: 1.8; }
+.tc-phero__claim { font-size: clamp(1.6rem, 1rem + 2.4vw, 3.1rem); font-weight: 500; line-height: 1.04; letter-spacing: -.03em; margin-top: clamp(18px, 2.4vw, 34px); max-width: 15em; }
+.tc-phero__side { padding-bottom: 8px; min-width: 0; }
+.tc-phero__side .tc-cta-row { margin-top: 28px; }
+.tc-phero__copy > .tc-lead { margin-top: clamp(18px, 2vw, 28px); max-width: 40rem; }
+.tc-phero__copy > .tc-cta-row { margin-top: 30px; }
+.tc-phero__meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 24px; }
+.tc-phero__stage { position: relative; z-index: 1; margin-top: clamp(48px, 6vw, 96px); perspective: 2000px; }
+.tc-phero__shot { position: relative; transform-origin: 50% 0; }
+.tc-phero__shot .tc-win { box-shadow: 0 0 0 1px rgba(179, 232, 255, .22), 0 60px 140px -40px rgba(2, 10, 42, .9), 0 0 120px -30px rgba(83, 205, 254, .35); }
+.tc-phero--short .tc-phero__in { padding-bottom: clamp(56px, 6vw, 96px); }
+@media (max-width: 999px) { .tc-phero__top { grid-template-columns: 1fr; align-items: start; } }
+@media (max-width: 520px) { .tc-phero__in { padding-top: calc(var(--nav-h) + 44px); } }
+
+/* ---------- Puente de olas: de oscuro a claro ----------
+   <div class="tc-wave" aria-hidden="true"><i></i><i></i><i></i></div>
+   Va como sección propia (.tc-sec.tc-wave) entre el último tramo oscuro y el
+   primero claro. --wave-from / --wave-to ajustan los extremos. */
+.tc-wave {
+  position: relative; overflow: clip;
+  height: clamp(220px, 30vw, 440px);
+  background: linear-gradient(180deg, var(--wave-from, var(--navy)) 0%, var(--corp) 26%, var(--stage-end) 52%, var(--sky) 100%);
+}
+.tc-wave--tall { height: clamp(340px, 58vw, 760px); }
+/* la ola alta acompaña la salida del escenario fijado; sin fijar (sin JS, movimiento reducido, ventana
+   baja) dejaba medio millar de píxeles de azul vacío en escritorio */
+html:not(.stage-pinned) .tc-wave--tall { height: clamp(340px, 44vw, 540px); }
+.tc-wave--from-dusk { background: linear-gradient(180deg, var(--stage-end) 0%, #1E6DD0 50%, var(--sky) 100%); }
+.tc-wave > i {
+  position: absolute; left: -3%; width: 106%; bottom: -120px; display: block;
+  -webkit-mask: var(--m) center / 100% 100% no-repeat; mask: var(--m) center / 100% 100% no-repeat;
+}
+.tc-wave > i:nth-child(1) { height: calc(74% + 120px); background: var(--wave-1); --plx: 70px;
+  --m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath d='M0 120C240 30 420 20 700 110s520 120 740 10V320H0z'/%3E%3C/svg%3E"); }
+.tc-wave > i:nth-child(2) { height: calc(52% + 120px); background: var(--cyan-soft); --plx: 40px;
+  --m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath d='M0 70C200 150 460 190 760 110S1240 10 1440 90V320H0z'/%3E%3C/svg%3E"); }
+.tc-wave > i:nth-child(3) { height: calc(30% + 120px); background: var(--wave-to, var(--mist)); --plx: 14px;
+  --m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath d='M0 150C260 60 520 70 760 140s460 90 680 10V320H0z'/%3E%3C/svg%3E"); }
+
+/* ---------- Manifiesto y cifras ---------- */
+.tc-manifesto { font-size: clamp(1.75rem, .9rem + 3.3vw, 3.9rem); font-weight: 500; line-height: 1.08; letter-spacing: -.03em; max-width: 19.5em; text-wrap: pretty; }
+.tc-sw { transition: opacity 500ms var(--e-soft), filter 500ms var(--e-soft); }
+.motion .is-scrub .tc-sw { opacity: .22; filter: blur(1.5px); }
+.motion .is-scrub .tc-sw.is-on { opacity: 1; filter: none; }
+
+/* ---------- Escenario fijado (portada): varios productos en la misma pantalla ---------- */
+.tc-stage__pin { position: relative; z-index: var(--z-content); overflow-x: clip; padding-block: clamp(40px, 6vw, 80px) clamp(60px, 8vw, 110px); }
+.tc-stage__wrap { position: relative; }
+.tc-stage__head { display: flex; align-items: baseline; gap: 20px; margin-bottom: 8px; }
+.tc-stage__count { color: var(--on-dark-2); }
+.tc-stage__count b { color: var(--on-dark); font-weight: 600; }
+.tc-stage__rail, .tc-stage__aura { display: none; }
+html:not(.stage-pinned) .tc-stage__count { display: none; }
+.tc-stage__node { position: absolute; left: 0; width: 0; height: 0; }
+.tc-stage__node span { position: absolute; left: 18px; top: -.75em; color: var(--on-mid-3); transition: color var(--d-2); }
+.tc-stage__node.is-lit span { color: var(--cyan-soft); }
+.tc-stage__aura i { position: absolute; width: 80vmax; height: 80vmax; right: -26vmax; top: 50%; margin-top: -40vmax; border-radius: 50%; opacity: var(--o, 0); will-change: opacity; }
+.tc-stage__aura i:nth-child(3n+1) { background: radial-gradient(circle, rgba(32, 113, 213, .55), transparent 60%); }
+.tc-stage__aura i:nth-child(3n+2) { background: radial-gradient(circle, rgba(83, 205, 254, .34), transparent 60%); }
+.tc-stage__aura i:nth-child(3n+3) { background: radial-gradient(circle, rgba(179, 232, 255, .36), transparent 62%); }
+
+/* sin fijar (móvil, tablet, sin JS): cada producto se revela al entrar */
+.motion:not(.stage-pinned) .tc-stage .tc-prod__copy > *, .motion:not(.stage-pinned) .tc-stage .tc-prod__shot {
+  opacity: 0; transform: translate3d(0, 34px, 0);
+  transition: opacity var(--d-3) var(--e-soft) calc(var(--j, 0) * 70ms), transform var(--d-4) var(--e-out) calc(var(--j, 0) * 70ms);
+}
+.motion:not(.stage-pinned) .tc-stage .tc-prod__shot { transform: perspective(1400px) translate3d(0, 60px, 0) rotateX(14deg) scale(.96); transform-origin: 50% 100%; transition-duration: var(--d-3), 1300ms; }
+.motion:not(.stage-pinned) .tc-stage .tc-prod.is-in .tc-prod__copy > *, .motion:not(.stage-pinned) .tc-stage .tc-prod.is-in .tc-prod__shot { opacity: 1; transform: none; }
+
+/* fijado (escritorio): el motor escribe --e (entrada 0→1) y --x (salida 0→1) en cada .tc-prod */
+.stage-pinned .tc-stage { height: calc((var(--stage-n, 3) + .6) * 100vh); }
+.stage-pinned .tc-stage__pin { position: sticky; top: 0; height: 100vh; padding: 0; overflow: clip; }
+.stage-pinned .tc-stage__wrap { height: 100%; }
+.stage-pinned .tc-stage__head { position: absolute; z-index: 5; left: calc(var(--pad) + var(--spine)); top: calc(var(--nav-h) + 40px); margin: 0; }
+.stage-pinned .tc-stage__rail { display: block; position: absolute; z-index: 5; left: calc(var(--pad) / 2); top: 0; bottom: 0; width: 0; }
+.stage-pinned .tc-stage__aura { display: block; position: absolute; inset: 0; pointer-events: none; }
+.stage-pinned .tc-stage .tc-prod {
+  position: absolute; inset: 0 var(--pad); z-index: calc(var(--i) + 1);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: clamp(28px, 4vw, 72px);
+  padding: calc(var(--nav-h) + 84px) 0 36px var(--spine);
+  pointer-events: none; --e: 0;
+}
+.stage-pinned .tc-stage .tc-prod:first-of-type { --e: 1; }
+.stage-pinned .tc-stage .tc-prod.is-active { pointer-events: auto; }
+.stage-pinned .tc-stage .tc-prod__copy > * {
+  opacity: clamp(0, calc(var(--e) * 2.4 - 1.4 - var(--x) * 2.6), 1);
+  transform: translate3d(0, calc((1 - var(--e)) * (36px + var(--j, 0) * 16px) - var(--x) * (26px + var(--j, 0) * 9px)), 0);
+  will-change: transform, opacity;
+}
+.stage-pinned .tc-stage .tc-prod__shot {
+  width: 112%;
+  transform-origin: 50% 60%;
+  transform:
+    perspective(1800px)
+    translate3d(calc((1 - var(--e)) * 9%), calc((1 - var(--e)) * 82vh - var(--x) * 24vh), 0)
+    rotateX(calc((1 - var(--e)) * -24deg + var(--x) * 18deg))
+    rotateY(calc(-7deg + var(--x) * 5deg))
+    rotateZ(calc((1 - var(--e)) * 5deg))
+    scale(calc(1 - var(--x) * .16));
+  opacity: clamp(0, calc(1 - var(--x) * 1.5), 1);
+  will-change: transform, opacity;
+}
+.stage-pinned .tc-stage .tc-float { transform: translate3d(0, calc((1 - var(--e)) * 150px * var(--f, 1) - var(--x) * 90px * var(--f, 1)), 0); will-change: transform; }
+@media (max-height: 760px) {
+  .stage-pinned .tc-stage .tc-prod { padding-top: calc(var(--nav-h) + 64px); }
+  .stage-pinned .tc-stage .tc-prod__text { font-size: .98rem; }
+  .stage-pinned .tc-stage .tc-ticks { margin-top: 14px; gap: 8px; font-size: .92rem; }
+  .stage-pinned .tc-stage .tc-prod__foot { margin-top: 18px; }
+  .stage-pinned .tc-stage .tc-prod__claim { margin: 10px 0; }
+}
+
+/* ---------- CTA final: la cúpula navy donde desemboca el hilo ---------- */
+.tc-pool { position: relative; padding-top: clamp(96px, 12vw, 190px); background: var(--pool-from, var(--mist)); }
+.tc-pool__in {
+  position: relative; z-index: var(--z-content); overflow: hidden;
+  padding: clamp(110px, 14vw, 200px) 0 clamp(72px, 9vw, 130px);
+  color: var(--on-dark);
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(32, 113, 213, .55), transparent 70%),
+    linear-gradient(180deg, var(--corp) 0%, var(--navy) 38%, var(--navy-deep) 100%);
+  border-radius: 50% 50% 0 0 / clamp(70px, 10vw, 160px) clamp(70px, 10vw, 160px) 0 0;
+}
+.tc-pool__rings { position: absolute; left: 50%; top: 0; width: min(1100px, 150vw); aspect-ratio: 1; translate: -50% -38%; pointer-events: none; }
+.tc-pool__rings i { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(83, 205, 254, .22); opacity: 0; }
+.motion .tc-pool.is-live .tc-pool__rings i { animation: tc-ripple 6s var(--e-soft) infinite; }
+.tc-pool__rings i:nth-child(2) { animation-delay: 1.5s !important; }
+.tc-pool__rings i:nth-child(3) { animation-delay: 3s !important; }
+.tc-pool__rings i:nth-child(4) { animation-delay: 4.5s !important; }
+@keyframes tc-ripple { 0% { transform: scale(.12); opacity: 0; } 12% { opacity: .9; } 100% { transform: scale(1); opacity: 0; } }
+.tc-pool__copy { position: relative; text-align: center; display: grid; justify-items: center; gap: 22px; }
+.tc-pool__title { font-size: clamp(2.4rem, 1rem + 6.4vw, 6.4rem); max-width: 14ch; }
+.tc-pool__copy .tc-lead { max-width: 54ch; }
+.tc-pool__contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; margin-top: 6px; }
+.tc-pool__contact a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: var(--on-dark); }
+.tc-pool__contact a:hover { color: var(--cyan); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1199px) {
+  .tc-hero__chips, .tc-hero__index { display: none; }
+  .tc-hero__foot { min-height: 120px; }
+}
+@media (max-width: 520px) {
+  .tc-hero__in { padding-top: calc(var(--nav-h) + 36px); min-height: max(100svh, 640px); }
+  .tc-hero__cta .tc-btn, .tc-cta-row .tc-btn { flex: 1 1 100%; }
+  .tc-hero__award { align-items: flex-start; }
+  .tc-hero__foot { min-height: 104px; }
+  .tc-hero .tc-flow-pt--origin { bottom: 70px; }
+  .tc-hero__cue { bottom: 52px; left: calc(50% + 10px); padding-inline: 8px; letter-spacing: .02em; font-size: .66rem; }   /* a 375 px se salía 16 px */
+  .tc-br-d { display: none; }
+}
+/* a 320 px la pista «Sigue la corriente» no cabe a la derecha del nodo */
+@media (max-width: 359px) { .tc-hero__cue { display: none; } }

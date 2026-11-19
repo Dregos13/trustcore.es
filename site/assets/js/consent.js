@@ -129,36 +129,8 @@
     showPanel(true);
   };
 
-  function styles() {
-    if (document.getElementById('tc-cookie-styles')) return;
-    var style = document.createElement('style');
-    style.id = 'tc-cookie-styles';
-    style.textContent = [
-      /* Tarjeta discreta anclada abajo a la izquierda: no debe tapar el contenido
-         ni competir con la burbuja de Trusty, que vive abajo a la derecha. */
-      '#tc-cookie-consent{position:fixed;inset:auto auto 16px 16px;z-index:10000;pointer-events:none}',
-      '#tc-cookie-consent *{box-sizing:border-box}',
-      '.tc-cookie-card{pointer-events:auto;width:min(calc(100vw - 32px),380px);background:#fff;border:1px solid rgba(15,23,42,.14);border-radius:14px;box-shadow:0 18px 48px -12px rgba(4,15,63,.32),0 2px 6px rgba(4,15,63,.06);color:#0f172a;overflow:hidden}',
-      '.tc-cookie-body{padding:16px;display:grid;gap:12px}',
-      '.tc-cookie-title{margin:0;color:#040F3F;font-size:15px;line-height:1.3;font-weight:800}',
-      '.tc-cookie-text{margin:0;color:#475569;font-size:13px;line-height:1.5}',
-      '.tc-cookie-text a{color:#2071D5;font-weight:700;text-decoration:underline;text-underline-offset:2px}',
-      '.tc-cookie-actions{display:flex;flex-wrap:wrap;gap:8px}',
-      '.tc-cookie-btn{appearance:none;border:1px solid rgba(32,113,213,.24);border-radius:8px;padding:9px 12px;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:#040F3F;min-height:40px;flex:1 1 auto}',
-      '.tc-cookie-btn:hover{border-color:#2071D5}',
-      '.tc-cookie-btn:focus-visible{outline:2px solid #2071D5;outline-offset:2px}',
-      '.tc-cookie-btn-primary{background:#2071D5;border-color:#2071D5;color:#fff}',
-      '.tc-cookie-btn-danger{background:#0f172a;border-color:#0f172a;color:#fff}',
-      '.tc-cookie-panel{border-top:1px solid rgba(15,23,42,.12);background:#f8fafc;padding:0 16px 16px;display:none;max-height:52vh;overflow-y:auto}',
-      '.tc-cookie-panel.is-open{display:block}',
-      '.tc-cookie-option{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:12px;padding:12px;border:1px solid rgba(15,23,42,.12);border-radius:10px;background:#fff}',
-      '.tc-cookie-option strong{display:block;color:#040F3F;font-size:13px}',
-      '.tc-cookie-option span{display:block;margin-top:3px;color:#64748b;font-size:12px;line-height:1.45}',
-      '.tc-cookie-toggle{width:44px;height:26px;accent-color:#2071D5;flex:none}',
-      '@media (max-width:640px){#tc-cookie-consent{inset:auto 10px 10px 10px}.tc-cookie-card{width:100%}}'
-    ].join('');
-    document.head.appendChild(style);
-  }
+  // Los estilos del banner viven en el bundle (src/css/06-chrome.css, bloque
+  // "Banner de cookies"): aquí solo se genera el marcado.
 
   function closePanel() {
     if (root) {
@@ -168,7 +140,6 @@
   }
 
   function showPanel(openSettings) {
-    styles();
     closePanel();
 
     var current = readConsent() || { necessary: true, analytics: false, marketing: false };

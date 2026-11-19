@@ -1,0 +1,226 @@
+/* ==========================================================================
+   Aprende · /aprende  (<body class="tc-body p-aprende">)
+   Lo que el sistema no trae: el reproductor del hero (fotograma real de una
+   lección en una ventana, capítulos que avanzan y la cola "A continuación";
+   si el vídeo existe se reproduce ahí mismo), la biblioteca a oscuras con su
+   carril fijo (progreso + filtros por producto y por ruta), la composición de
+   cada ruta (una lección grande que abre y, si queda una suelta, otra
+   apaisada que cierra) y las tarjetas de webinar con su anillo de duración.
+   El script va en línea al final de la página. Todo con prefijo p-aprende-.
+   ========================================================================== */
+
+/* ---------- Barra de avance (progreso, rutas y capítulos) ---------- */
+.p-aprende-bar { display: block; height: 4px; border-radius: var(--r-pill); background: color-mix(in srgb, var(--cyan-soft) 18%, transparent); overflow: hidden; }
+.p-aprende-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--royal), var(--cyan)); transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--d-4) var(--e-out); }
+
+/* ---------- Hero: el reproductor ---------- */
+.p-aprende-stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.p-aprende-player { position: relative; min-width: 0; }
+.p-aprende-player__screen { position: relative; overflow: hidden; background: var(--navy-deep); }
+.p-aprende-player__screen img, .p-aprende-player__screen video { display: block; width: 100%; height: auto; aspect-ratio: 960 / 518; object-fit: cover; }
+.p-aprende-player__screen video { position: absolute; inset: 0; height: 100%; background: var(--navy-deep); }
+/* velo: el fotograma queda en segundo plano y el botón manda */
+.p-aprende-player__screen::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(60% 70% at 50% 50%, color-mix(in srgb, var(--navy-deep) 46%, transparent), color-mix(in srgb, var(--navy-deep) 12%, transparent) 70%), linear-gradient(180deg, transparent 60%, color-mix(in srgb, var(--navy-deep) 60%, transparent));
+  transition: opacity var(--d-3) var(--e-soft);
+}
+.p-aprende-player__play {
+  --s: clamp(60px, 8vw, 108px);
+  position: absolute; z-index: 2; left: 50%; top: 50%; width: var(--s); height: var(--s); margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+  display: grid; place-items: center; border-radius: 50%;
+  background: var(--cyan); color: var(--navy-deep); box-shadow: var(--sh-glow);
+  transition: transform var(--d-3) var(--e-spring);
+}
+.p-aprende-player__play .tc-ico { position: relative; z-index: 1; width: 36%; height: 36%; fill: currentColor; stroke: none; margin-left: 5%; }
+.p-aprende-player__play::before, .p-aprende-player__play::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--cyan); opacity: 0; pointer-events: none; }
+.p-aprende-player__play:hover { transform: scale(1.08); }
+.motion .p-aprende-stage.is-live .p-aprende-player__play::before { animation: p-aprende-ping 2.8s var(--e-out) infinite; }
+.motion .p-aprende-stage.is-live .p-aprende-player__play::after { animation: p-aprende-ping 2.8s var(--e-out) 1.4s infinite; }
+@keyframes p-aprende-ping { from { transform: scale(1); opacity: .7; } to { transform: scale(2.1); opacity: 0; } }
+
+.p-aprende-player__ctl { display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr); gap: 10px clamp(18px, 3vw, 44px); align-items: center; padding: 16px clamp(16px, 2vw, 24px) 18px; }
+.p-aprende-player__now { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.p-aprende-player__now b { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.05rem, .95rem + .5vw, 1.35rem); letter-spacing: -.02em; line-height: 1.15; }
+.p-aprende-player__now small { font-size: .72rem; color: var(--fg-3); }
+/* capítulos: tres tramos que se llenan uno tras otro, como el vídeo que avanza */
+.p-aprende-chapters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; font-family: var(--f-mono); font-size: .6rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-3); }
+.p-aprende-chapters li { display: grid; gap: 8px; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.p-aprende-chapters li:nth-child(1) i { transform: scaleX(1); }
+.p-aprende-chapters li:nth-child(2) i { transform: scaleX(.42); }
+.p-aprende-chapters i { transition: none; }
+.motion .p-aprende-stage.is-live .p-aprende-chapters li:nth-child(1) i { animation: p-aprende-ch1 9s linear infinite; }
+.motion .p-aprende-stage.is-live .p-aprende-chapters li:nth-child(2) i { animation: p-aprende-ch2 9s linear infinite; }
+.motion .p-aprende-stage.is-live .p-aprende-chapters li:nth-child(3) i { animation: p-aprende-ch3 9s linear infinite; }
+@keyframes p-aprende-ch1 { 0% { transform: scaleX(0); } 32%, 96% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+@keyframes p-aprende-ch2 { 0%, 32% { transform: scaleX(0); } 64%, 96% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+@keyframes p-aprende-ch3 { 0%, 64% { transform: scaleX(0); } 96% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+/* reproduciendo en el propio hero: fuera velo, botón y capítulos de mentira */
+.p-aprende-player.is-playing .p-aprende-player__screen::after { opacity: 0; }
+.p-aprende-player.is-playing .p-aprende-player__play, .p-aprende-player.is-playing .p-aprende-chapters { display: none; }
+
+/* la cola */
+.p-aprende-queue { display: grid; gap: 12px; align-content: start; background: linear-gradient(160deg, color-mix(in srgb, var(--corp) 82%, transparent), color-mix(in srgb, var(--navy) 88%, transparent)); }
+.p-aprende-queue__list { display: grid; gap: 2px; }
+.p-aprende-queue__list a { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; min-height: 44px; padding: 6px; border-radius: var(--r-sm); color: var(--fg); transition: background-color var(--d-2), transform var(--d-2) var(--e-out); }
+.p-aprende-queue__list a:hover, .p-aprende-queue__list a.is-current { background: var(--surface-2); }
+.p-aprende-queue__list a:hover { transform: translateX(4px); }
+.p-aprende-queue__list img { display: block; width: 96px; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 0 0; border-radius: var(--r-xs); }
+.p-aprende-queue__list b { display: block; font-weight: 600; font-size: .95rem; line-height: 1.2; }
+.p-aprende-queue__list small { display: block; margin-top: 3px; font-size: .68rem; color: var(--fg-3); }
+@media (min-width: 1000px) {
+  .p-aprende-stage { grid-template-columns: minmax(0, 1fr) clamp(300px, 27vw, 360px); gap: 0; align-items: end; }
+  .p-aprende-queue { position: relative; z-index: 2; margin: 0 0 -44px -48px; }
+  .p-aprende-player__ctl { padding-right: 72px; }
+}
+@media (min-width: 600px) and (max-width: 999px) {
+  .p-aprende-queue__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 14px; }
+}
+
+/* ---------- Biblioteca ---------- */
+.p-aprende-lib { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 3.4vw, 52px); }
+.p-aprende-rail { display: grid; gap: 14px; min-width: 0; }
+.p-aprende-panel { display: grid; gap: 10px; min-width: 0; padding: 18px; border-radius: var(--r-md); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.p-aprende-prog { border-radius: var(--r-md) var(--leaf-sm) var(--r-md) var(--r-md); }
+.p-aprende-prog__n { display: flex; align-items: baseline; gap: 10px; color: var(--fg-2); line-height: 1.2; }
+.p-aprende-prog__n b { font-size: clamp(2.4rem, 2rem + 1.4vw, 3rem); font-weight: 500; line-height: .9; color: var(--fg); }
+.p-aprende-prog .p-aprende-bar { height: 6px; }
+.p-aprende-prog__next { margin-top: 4px; }
+.p-aprende-prog__next .tc-btn__label { min-width: 0; }
+.p-aprende-prog__next .tc-ico { width: 14px; height: 14px; fill: currentColor; stroke: none; }
+.p-aprende-prog__note { font-size: .8rem; line-height: 1.4; }
+.p-aprende-prog__reset { position: relative; color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+.p-aprende-prog__reset::after { content: ""; position: absolute; inset: -12px -8px; }
+/* sin JavaScript no hay progreso que llevar */
+html:not(.js) .p-aprende-prog { display: none; }
+.p-aprende-filters__sep { margin-top: 6px; }
+.p-aprende-filters .tc-chip { min-height: 36px; padding: 0 12px; font-size: .62rem; gap: 6px; }
+.p-aprende-filters .tc-chip .tc-num { opacity: .7; }
+.p-aprende-rts { display: grid; gap: 2px; }
+.p-aprende-rt {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px 10px; align-items: baseline;
+  width: 100%; min-height: 44px; padding: 9px 10px 8px; border-radius: var(--r-sm); text-align: left;
+  color: var(--fg-2); transition: background-color var(--d-2), color var(--d-2), box-shadow var(--d-2);
+}
+.p-aprende-rt:hover { background: var(--surface); color: var(--fg); }
+.p-aprende-rt[aria-pressed="true"] { background: var(--surface-2); color: var(--fg); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cyan) 46%, transparent); }
+.p-aprende-rt__n, .p-aprende-rt__c { font-size: .68rem; color: var(--fg-3); }
+.p-aprende-rt[aria-pressed="true"] .p-aprende-rt__n { color: var(--accent-text); }
+.p-aprende-rt__t { font-weight: 600; font-size: .88rem; line-height: 1.2; }
+.p-aprende-rt__bar { grid-column: 1 / -1; height: 2px; }
+
+.p-aprende-routes { display: grid; gap: clamp(56px, 6.4vw, 104px); min-width: 0; }
+.p-aprende-route { min-width: 0; scroll-margin-top: calc(var(--nav-h) + 40px); }
+.p-aprende-route__head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 18px; align-items: start; margin-bottom: clamp(20px, 2.4vw, 32px); }
+.p-aprende-route__txt { display: grid; gap: 8px; min-width: 0; }
+.p-aprende-route__t { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.6rem, 1.25rem + 1.5vw, 2.6rem); line-height: 1.02; letter-spacing: -.035em; text-wrap: balance; }
+.p-aprende-route__txt .tc-muted { max-width: 44rem; }
+
+/* tarjeta de lección: la del sistema, a oscuras */
+.p-aprende-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.5vw, 20px); align-items: stretch; }
+.p-aprende-card {
+  grid-template-rows: auto 1fr; gap: 14px; padding: 8px 8px 18px;
+  border-radius: var(--r-md) var(--r-md) var(--r-md) var(--leaf-sm);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--cyan-soft) 11%, transparent), color-mix(in srgb, var(--cyan-soft) 4%, transparent));
+  box-shadow: inset 0 0 0 1px var(--line);
+  scroll-margin-top: calc(var(--nav-h) + 60px);
+}
+.p-aprende-card .tc-video__poster { aspect-ratio: 960 / 518; border-radius: var(--r-sm); }
+.p-aprende-card .tc-video__poster img { object-position: 0 0; }
+.p-aprende-card .tc-video__body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.p-aprende-card .tc-video__state { margin-top: auto; padding-top: 4px; }
+.p-aprende-card.is-ready:hover { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cyan) 55%, transparent), 0 30px 60px -34px var(--navy-deep); }
+.p-aprende-card:target { box-shadow: var(--sh-glow); }
+.motion .p-aprende-card.is-set { transition: transform var(--d-3) var(--e-out), box-shadow var(--d-2), opacity var(--d-2); }
+.p-aprende-card__blank { position: absolute; inset: 0; display: grid; place-items: center; color: var(--cyan-soft); }
+.p-aprende-card__blank .tc-ico { width: 30%; height: 30%; max-width: 72px; stroke-width: 1; opacity: .5; }
+.p-aprende-card__tag { display: block; margin-bottom: 2px; }
+.p-aprende-card__seen { display: none; position: absolute; left: 10px; top: 10px; align-items: center; gap: 6px; padding: 5px 11px 5px 7px; border-radius: var(--r-pill); background: var(--ok); color: var(--white); font-family: var(--f-mono); font-size: .6rem; letter-spacing: .05em; text-transform: uppercase; }
+.p-aprende-card__seen .tc-ico { width: 13px; height: 13px; stroke-width: 2.4; }
+.p-aprende-card.is-seen .p-aprende-card__seen { display: inline-flex; }
+.motion .p-aprende-card.is-seen .p-aprende-card__seen { animation: p-aprende-pop var(--d-3) var(--e-spring) both; }
+@keyframes p-aprende-pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+/* al filtrar, las que quedan vuelven a entrar */
+.motion .p-aprende-routes.is-filtering .p-aprende-card.is-in { animation: p-aprende-in var(--d-3) var(--e-out) calc(var(--k, 0) * 45ms) both; }
+@keyframes p-aprende-in { from { transform: translate3d(0, 26px, 0) scale(.96); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* la lección que abre cada ruta: póster a todo el ancho y texto grande */
+.p-aprende-card--lead { grid-column: 1 / -1; }
+.p-aprende-card--lead .tc-video__title { font-size: clamp(1.45rem, 1.2rem + 1vw, 2.1rem); line-height: 1.05; letter-spacing: -.03em; }
+.p-aprende-card--lead .tc-video__desc { font-size: 1rem; }
+.p-aprende-card--lead .tc-video__play { width: 60px; height: 60px; left: 16px; bottom: 16px; }
+.p-aprende-card--lead .tc-video__play .tc-ico { width: 22px; height: 22px; }
+.p-aprende-card--lead .tc-video__len { right: 14px; bottom: 14px; font-size: .7rem; padding: 5px 11px; }
+.p-aprende-card--lead .tc-video__body { padding: 4px 14px 6px; }
+
+/* dos columnas: una ruta de seis deja la última suelta → apaisada, a todo el ancho */
+@media (min-width: 600px) and (max-width: 1099px) {
+  .p-aprende-card--tail2 { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: none; align-items: center; gap: clamp(16px, 2.4vw, 32px); padding: 8px; }
+  .p-aprende-card--tail2 .tc-video__title { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.7rem); }
+}
+/* tres columnas: la que abre ocupa 2 × 2; una ruta de siete cierra con la apaisada */
+@media (min-width: 1100px) {
+  .p-aprende-videos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .p-aprende-card--lead { grid-column: span 2; grid-row: span 2; grid-template-rows: minmax(0, 1fr) auto; }
+  .p-aprende-card--lead .tc-video__poster { aspect-ratio: auto; height: 100%; min-height: 260px; }
+  .p-aprende-card--tail3 { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: none; align-items: center; gap: clamp(20px, 3vw, 44px); padding: 8px; }
+  .p-aprende-card--tail3 .tc-video__title { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); line-height: 1.08; letter-spacing: -.03em; }
+  .p-aprende-card--tail3 .tc-video__desc { font-size: 1rem; }
+}
+@media (min-width: 1000px) {
+  .p-aprende-lib { grid-template-columns: clamp(248px, 22vw, 280px) minmax(0, 1fr); align-items: start; }
+}
+@media (min-width: 1000px) and (min-height: 800px) {
+  .p-aprende-rail { position: sticky; top: calc(var(--nav-h) + 34px); }
+}
+/* por debajo de 1000: el carril va arriba; las rutas, en una fila que se desplaza */
+@media (max-width: 999px) {
+  .p-aprende-rts { display: flex; gap: 8px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; margin-inline: -20px; padding: 2px 20px; }
+  .p-aprende-rts::-webkit-scrollbar { display: none; }
+  .p-aprende-rt { flex: none; width: auto; max-width: 250px; scroll-snap-align: start; box-shadow: inset 0 0 0 1px var(--line); }
+  .p-aprende-rt__t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+@media (min-width: 600px) and (max-width: 999px) {
+  .p-aprende-rail { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+}
+/* móvil: la que abre, con su póster; el resto, en filas compactas */
+@media (max-width: 599px) {
+  .p-aprende-videos { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .p-aprende-card:not(.p-aprende-card--lead) { grid-template-columns: 118px minmax(0, 1fr); grid-template-rows: none; align-items: center; gap: 14px; padding: 8px 14px 8px 8px; border-radius: var(--r-sm) var(--r-sm) var(--r-sm) var(--r-md); }
+  .p-aprende-card:not(.p-aprende-card--lead) .tc-video__poster { border-radius: var(--r-xs); }
+  .p-aprende-card:not(.p-aprende-card--lead) .tc-video__play { width: 30px; height: 30px; left: 6px; bottom: 6px; }
+  .p-aprende-card:not(.p-aprende-card--lead) .tc-video__play .tc-ico { width: 12px; height: 12px; }
+  .p-aprende-card:not(.p-aprende-card--lead) .tc-video__len { right: 5px; bottom: 5px; padding: 2px 6px; font-size: .54rem; }
+  .p-aprende-card:not(.p-aprende-card--lead) .tc-video__body { padding-inline: 0; gap: 3px; }
+  .p-aprende-card:not(.p-aprende-card--lead) .tc-video__title { font-size: 1rem; }
+  .p-aprende-card:not(.p-aprende-card--lead) .tc-video__desc { font-size: .82rem; line-height: 1.3; }
+  .p-aprende-card:not(.p-aprende-card--lead) .tc-video__state { margin-top: 2px; }
+  .p-aprende-card:not(.p-aprende-card--lead) .p-aprende-card__seen { left: 5px; top: 5px; padding: 3px; font-size: 0; gap: 0; }
+  .p-aprende-route__head { grid-template-columns: minmax(0, 1fr); }
+  .p-aprende-panel { padding: 16px; }
+  .p-aprende-player__ctl { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* "Siguiente" dentro del diálogo de vídeo (lo añade el script al terminar una lección) */
+.p-aprende-up { display: flex; margin-top: 14px; font-family: var(--f-text); letter-spacing: 0; }
+
+/* ---------- Webinars ---------- */
+.p-aprende-web { display: grid; gap: 12px; align-content: start; }
+.p-aprende-web__len { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 6px; font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text); }
+.p-aprende-web__len svg { width: 44px; height: 44px; flex: none; transform: rotate(-90deg); fill: none; stroke-width: 3; stroke-linecap: round; }
+.p-aprende-web__len circle:first-child { stroke: var(--line); }
+.p-aprende-web__len circle:last-child { stroke: var(--accent); }
+@media (min-width: 921px) {
+  .p-aprende-webhead { position: sticky; top: calc(var(--nav-h) + 40px); }
+}
+
+/* ---------- Sin JavaScript: enlaces directos a cada MP4 (los genera scripts/aprende-videos.mjs) ---------- */
+.p-aprende-nojs { display: grid; gap: 12px; margin-top: clamp(40px, 5vw, 72px); padding: clamp(20px, 2.6vw, 36px); border-radius: var(--r-md) var(--r-md) var(--r-md) var(--leaf-sm); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.p-aprende-nojs__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 4px 24px; margin-top: 6px; }
+.p-aprende-nojs__list a { display: block; padding: 10px 0; color: var(--fg); font-weight: 600; line-height: 1.3; background: linear-gradient(90deg, var(--line), transparent) 0 100% / 100% 1px no-repeat; }
+.p-aprende-nojs__list a:hover { color: var(--accent-text); }
+.p-aprende-nojs__list small { display: block; margin-top: 2px; font-size: .84rem; font-weight: 400; color: var(--fg-2); }
+/* sin JS el estado "Comprobando vídeo" no llega a resolverse: fuera */
+html:not(.js) .p-aprende-card .tc-video__state { display: none; }
+/* el pie del diálogo de vídeo hereda el gris de los diálogos claros: aquí va sobre navy */
+.p-aprende .tc-dialog--media .tc-dialog__caption { color: var(--on-dark); }

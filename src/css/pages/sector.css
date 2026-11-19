@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Páginas de sector · /facturacion-para-tiendas y /facturacion-para-instaladores
+   (<body class="tc-body p-sector p-sector--tienda | p-sector--obra">)
+   Lo que el sistema no trae: la escena del hero de cada oficio
+   (tienda: venta → factura → stock en un mostrador; instalador: presupuesto →
+   albarán → factura en cascada de documentos), el raíl de tres tiempos, las
+   piezas pequeñas del «punto de partida», los bloques de grabación y la isla.
+   Todo con prefijo p-sector- y tokens del sistema. Las escenas son
+   ilustraciones con datos de ejemplo (aria-hidden); vídeos y capturas, reales.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.p-sector .tc-phero__in { padding-bottom: clamp(64px, 7vw, 112px); }
+.p-sector-kicker { margin-bottom: 18px; }
+.p-sector-stage { margin-top: clamp(44px, 5.4vw, 88px); }
+.p-sector-stage__cap { max-width: 56ch; margin: 18px auto 0; text-align: center; color: var(--fg-3); }
+
+/* ---------- Escena: tarjetas de documento ---------- */
+.p-sector-scene { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); font-size: clamp(10.5px, 2.9vw, 12.5px); }
+.p-sector-slot { position: relative; min-width: 0; }
+.p-sector-card {
+  position: relative; display: flex; flex-direction: column; gap: .5em; min-width: 0;
+  padding: 1.25em 1.4em 1.3em; line-height: 1.25; text-align: left;
+  border-radius: var(--r-md) var(--r-md) var(--r-md) var(--leaf-sm);
+  translate: calc(var(--px, 0) * var(--d, 1) * -20px) calc(var(--py, 0) * var(--d, 1) * -14px);
+  transition: translate 600ms var(--e-out);
+}
+.p-sector-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: var(--sh-glow); opacity: 0; pointer-events: none; }
+.p-sector-card--night {
+  background: color-mix(in srgb, var(--navy) 90%, transparent); color: var(--on-dark);
+  box-shadow: inset 0 0 0 1px var(--line-dark), var(--sh-2);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.p-sector-card--doc { background: var(--white); color: var(--ink); box-shadow: var(--sh-3); }
+.p-sector-card--tint { background: linear-gradient(150deg, var(--white) 35%, var(--cyan-soft)); color: var(--ink); box-shadow: var(--sh-3); }
+.p-sector-card__k { display: flex; align-items: center; gap: .7em; font-family: var(--f-mono); font-size: .7em; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-3); white-space: nowrap; }
+.p-sector-card__n { display: inline-grid; place-items: center; min-width: 2.4em; height: 2.4em; border-radius: var(--r-pill); background: var(--navy); color: var(--cyan); font-weight: 600; letter-spacing: 0; }
+.p-sector-card--night .p-sector-card__n { background: color-mix(in srgb, var(--cyan) 16%, transparent); }
+.p-sector-card__t { display: flex; align-items: center; justify-content: space-between; gap: .8em; margin-top: .25em; font-family: var(--f-display); font-weight: 600; font-size: 1.5em; letter-spacing: -.025em; white-space: nowrap; }
+.p-sector-card__t small { padding: .55em 1em; border-radius: var(--r-pill); background: var(--mist); color: var(--corp); font-family: var(--f-mono); font-size: .44em; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
+.p-sector-card--night .p-sector-card__t small { background: color-mix(in srgb, var(--cyan) 14%, transparent); color: var(--cyan-soft); }
+.p-sector-card__t .tc-ico { width: .8em; height: .8em; color: var(--royal); }
+.p-sector-okchip { margin-left: auto; display: inline-flex; align-items: center; gap: .35em; padding: .4em .8em; border-radius: var(--r-pill); font-style: normal; background: color-mix(in srgb, var(--ok) 10%, transparent); color: var(--ok-ink); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ok) 36%, transparent); }
+.p-sector-okchip .tc-ico { width: 1.1em; height: 1.1em; stroke-width: 2.4; }
+
+.p-sector-rows { display: grid; }
+.p-sector-rows p { display: flex; align-items: baseline; justify-content: space-between; gap: 1.2em; padding: .56em 0; border-bottom: 1px solid var(--line); font-size: .95em; color: var(--fg-2); white-space: nowrap; }
+.p-sector-rows p > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.p-sector-rows b { flex: none; font-family: var(--f-mono); font-weight: 500; font-variant-numeric: tabular-nums; color: var(--fg); }
+.p-sector-rows .is-tax, .p-sector-rows .is-tax b { color: var(--accent-text); font-weight: 600; }
+.p-sector-rows .is-edit { margin-inline: -.6em; padding-inline: .6em; border-radius: .6em; border-bottom-color: transparent; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--fg); }
+.p-sector-rows .is-total { border-bottom: 0; padding-bottom: .2em; font-weight: 700; color: var(--fg); }
+.p-sector-rows .is-total b { font-size: 1.2em; font-weight: 600; }
+.p-sector-pill { display: inline-flex; align-items: center; padding: .4em .8em; border-radius: var(--r-pill); background: var(--mist); color: var(--corp); font-family: var(--f-mono); font-size: .8em; font-weight: 500; letter-spacing: .03em; text-transform: uppercase; }
+.p-sector-card--night .p-sector-pill { background: color-mix(in srgb, var(--cyan) 14%, transparent); color: var(--cyan-soft); }
+.p-sector-pill--on { background: var(--navy); color: var(--cyan); }
+.p-sector-card__foot { display: flex; align-items: center; gap: .6em; margin-top: auto; padding-top: .6em; font-family: var(--f-mono); font-size: .68em; letter-spacing: .04em; text-transform: uppercase; color: var(--fg-3); white-space: nowrap; }
+.p-sector-card__foot > .tc-ico { flex: none; width: 1.7em; height: 1.7em; color: var(--navy); }
+.p-sector-card--night .p-sector-card__foot > .tc-ico { color: var(--cyan); }
+.p-sector-card__foot .p-sector-pill { font-size: 1em; }
+.p-sector-card__foot .p-sector-arrow { width: 1.2em; height: 1.2em; color: var(--royal); }
+.p-sector-ok { flex: none; display: grid; place-items: center; width: 2.2em; height: 2.2em; margin-left: auto; border-radius: 50%; background: var(--ok); color: var(--white); }
+.p-sector-ok .tc-ico { width: 1.2em; height: 1.2em; stroke-width: 2.6; }
+
+/* dos ubicaciones y una unidad que cambia de sitio (lee el tono del ancestro) */
+.p-sector-locs { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1em; margin-top: .3em; }
+.p-sector-locs p { display: grid; gap: .35em; padding: .8em .8em .85em; border-radius: var(--r-xs); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.p-sector-locs span { font-family: var(--f-mono); font-size: .68em; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-3); }
+.p-sector-locs b { font-family: var(--f-display); font-weight: 600; font-size: 2.3em; line-height: 1; letter-spacing: -.03em; color: var(--fg); }
+.p-sector-locs em { display: flex; gap: .3em; height: 1.2em; }
+.p-sector-locs em i { width: 1.2em; height: 1.2em; border-radius: .35em; background: var(--accent); }
+.p-sector-lane { position: absolute; left: .8em; right: 0; bottom: .85em; height: 1.2em; pointer-events: none; }
+.p-sector-lane i { position: absolute; left: 4.5em; top: 0; width: 1.2em; height: 1.2em; border-radius: .35em; background: var(--cyan-soft); box-shadow: 0 0 0 1.5px var(--accent); }
+.p-sector-swap { display: inline-grid; }
+.p-sector-swap > i { grid-area: 1 / 1; font-style: normal; }
+.p-sector-swap > i + i { display: none; }
+.motion .p-sector-swap > i + i { display: block; opacity: 0; }
+
+/* conectores (tienda): una línea y una chispa que la recorre */
+.p-sector-link { position: relative; display: block; width: 2px; height: 30px; margin: 4px auto; border-radius: var(--r-pill); background: linear-gradient(180deg, var(--cyan-soft), var(--cyan)); opacity: .9; }
+.p-sector-link i { position: absolute; inset: 0 -4px; }
+.p-sector-link i::before { content: ""; position: absolute; left: 0; top: -5px; width: 10px; height: 10px; border-radius: 50%; background: var(--cyan); box-shadow: var(--node-glow); opacity: 0; }
+.motion .p-sector-stage.is-live .p-sector-link i { animation: p-sector-run-y 12s var(--e-inout) calc(var(--n) * 4s + 4.6s) infinite; }
+.motion .p-sector-stage.is-live .p-sector-link i::before { animation: p-sector-spark 12s linear calc(var(--n) * 4s + 4.6s) infinite; }
+@keyframes p-sector-run-y { 0% { transform: none; } 9%, 100% { transform: translate3d(0, 100%, 0); } }
+@keyframes p-sector-run-x { 0% { transform: none; } 9%, 100% { transform: translate3d(100%, 0, 0); } }
+@keyframes p-sector-spark { 0% { opacity: 0; } 1.5%, 8% { opacity: 1; } 10%, 100% { opacity: 0; } }
+
+/* saltos (instalador): un nodo con flecha entre documento y documento */
+.p-sector-hop { display: none; }
+
+/* el bucle: cada tarjeta se enciende cuatro segundos */
+.motion .p-sector-stage.is-live .p-sector-card { animation: p-sector-turn 12s var(--e-inout) calc(var(--n) * 4s + 1.8s) infinite; }
+.motion .p-sector-stage.is-live .p-sector-card::after { animation: p-sector-glow 12s var(--e-inout) calc(var(--n) * 4s + 1.8s) infinite; }
+.motion .p-sector-stage.is-live .p-sector-card .p-sector-ok { animation: p-sector-stamp 12s var(--e-out) calc(var(--n) * 4s + 2.6s) infinite backwards; }
+.motion .is-live .p-sector-lane { animation: p-sector-move var(--loop, 12s) var(--e-inout) calc(var(--n, 0) * 4s + 2.4s) infinite; }
+.motion .is-live .p-sector-swap > i:first-child { animation: p-sector-swap-a var(--loop, 12s) var(--e-inout) calc(var(--n, 0) * 4s + 2.4s) infinite; }
+.motion .is-live .p-sector-swap > i + i { animation: p-sector-swap-b var(--loop, 12s) var(--e-inout) calc(var(--n, 0) * 4s + 2.4s) infinite; }
+@keyframes p-sector-turn { 0%, 34%, 100% { transform: none; } 5%, 28% { transform: translate3d(0, -8px, 0) scale(1.03); } }
+@keyframes p-sector-glow { 0%, 34%, 100% { opacity: 0; } 5%, 28% { opacity: 1; } }
+@keyframes p-sector-stamp { 0% { opacity: 0; transform: scale(.3) rotate(-30deg); } 5%, 94% { opacity: 1; transform: none; } 100% { opacity: 0; transform: none; } }
+@keyframes p-sector-move { 0%, 4% { transform: none; } 14%, 92% { transform: translate3d(calc(50% - 2.1em), 0, 0); } 100% { transform: none; } }
+@keyframes p-sector-swap-a { 0%, 8% { opacity: 1; } 13%, 92% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes p-sector-swap-b { 0%, 8% { opacity: 0; } 13%, 92% { opacity: 1; } 100% { opacity: 0; } }
+
+/* instalador en una columna: los documentos se pisan en escalera */
+.p-sector-scene--obra { gap: 0; }
+.p-sector-scene--obra .p-sector-slot--a { margin-right: 9%; z-index: 1; }
+.p-sector-scene--obra .p-sector-slot--b { margin: -14px 0 0 9%; z-index: 2; }
+.p-sector-scene--obra .p-sector-slot--c { margin: -14px 4.5% 0; z-index: 3; }
+
+@media (min-width: 600px) and (max-width: 999px) {
+  .p-sector-scene--tienda .p-sector-slot { width: min(100%, 470px); }
+  .p-sector-scene--tienda .p-sector-slot--b { justify-self: center; }
+  .p-sector-scene--tienda .p-sector-slot--c { justify-self: end; }
+  .p-sector-scene--tienda .p-sector-link { margin-inline: 0; }
+  .p-sector-scene--tienda .p-sector-link:nth-of-type(1) { justify-self: center; translate: -110px 0; rotate: -24deg; }
+  .p-sector-scene--tienda .p-sector-link:nth-of-type(2) { justify-self: center; translate: 110px 0; rotate: -24deg; }
+  .p-sector-scene--obra { width: min(100%, 600px); margin-inline: auto; }
+}
+@media (min-width: 1000px) {
+  /* tienda: tres piezas sobre el mostrador, unidas por el hilo */
+  .p-sector-scene--tienda { grid-template-columns: minmax(0, 1fr) clamp(36px, 5vw, 80px) minmax(0, 1.1fr) clamp(36px, 5vw, 80px) minmax(0, 1fr); align-items: start; }
+  .p-sector-scene--tienda .p-sector-slot--a { margin-top: 38px; rotate: -1.6deg; }
+  .p-sector-scene--tienda .p-sector-slot--c { margin-top: 70px; rotate: 1.6deg; }
+  .p-sector-scene--tienda .p-sector-link { width: auto; height: 2px; margin: 118px -6px 0; background: linear-gradient(90deg, var(--cyan-soft), var(--cyan)); }
+  .p-sector-scene--tienda .p-sector-link i { inset: -4px 0; }
+  .p-sector-scene--tienda .p-sector-link i::before { left: -5px; top: 0; }
+  .motion .p-sector-stage.is-live .p-sector-scene--tienda .p-sector-link i { animation-name: p-sector-run-x; }
+
+  /* instalador: cascada diagonal de tres documentos */
+  .p-sector-scene--obra { grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: start; padding-bottom: 12px; }
+  .p-sector-scene--obra .p-sector-slot { grid-row: 1; margin: 0; }
+  .p-sector-scene--obra .p-sector-slot--a { grid-column: 1 / 5; rotate: -2.4deg; }
+  .p-sector-scene--obra .p-sector-slot--b { grid-column: 5 / 9; margin: 86px 0 0 12px; rotate: 1.6deg; }
+  .p-sector-scene--obra .p-sector-slot--c { grid-column: 9 / 13; margin: 172px 0 0 12px; rotate: -1deg; }
+  .p-sector-hop {
+    position: absolute; z-index: 4; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy-deep); color: var(--cyan); box-shadow: inset 0 0 0 1.5px var(--cyan);
+    left: calc(33.333% - 14px); top: 26px; rotate: 32deg;
+  }
+  .p-sector-hop--2 { left: calc(66.666% - 14px); top: 112px; }
+  .p-sector-hop::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: var(--node-glow); opacity: 0; }
+  .motion .p-sector-stage.is-live .p-sector-hop::after { animation: p-sector-spark 12s linear calc(var(--n) * 4s + 4.6s) infinite; }
+  .motion .p-sector-stage.is-live .p-sector-hop .tc-ico { animation: p-sector-nudge 12s var(--e-out) calc(var(--n) * 4s + 4.6s) infinite; }
+}
+@keyframes p-sector-nudge { 0%, 12%, 100% { transform: none; } 5% { transform: translate3d(6px, 0, 0); } }
+
+/* raíl de tres tiempos */
+.p-sector-rail {
+  position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(100%, 520px); margin: clamp(34px, 4.4vw, 60px) auto 0; padding-top: 24px;
+  text-align: center; color: var(--fg-2);
+}
+.p-sector-rail::before, .p-sector-rail::after { content: ""; position: absolute; left: 16.666%; right: 16.666%; top: 5px; height: 2px; border-radius: var(--r-pill); background: var(--line-dark); }
+.p-sector-rail::after { background: linear-gradient(90deg, var(--cyan-soft), var(--cyan)); transform-origin: 0 50%; }
+.p-sector-rail li { position: relative; }
+.p-sector-rail li::before, .p-sector-rail li::after { content: ""; position: absolute; left: 50%; top: -25px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; z-index: 1; }
+.p-sector-rail li::before { background: var(--navy-deep); box-shadow: inset 0 0 0 2px var(--cyan); }
+.p-sector-rail li::after { background: var(--cyan); box-shadow: var(--node-glow); opacity: 0; }
+.motion .p-sector-rail::after { transform: scaleX(0); }
+.motion .p-sector-stage.is-live .p-sector-rail::after { animation: p-sector-rail 12s linear 1.8s infinite; }
+.motion .p-sector-stage.is-live .p-sector-rail li::after { animation: p-sector-glow 12s var(--e-inout) calc(var(--n) * 4s + 1.8s) infinite; }
+@keyframes p-sector-rail { 0% { transform: scaleX(0); opacity: 1; } 66.6%, 94% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+@media (max-width: 520px) { .p-sector-rail { font-size: .6rem; letter-spacing: .03em; } }
+
+/* ---------- El punto de partida: una pieza grande y dos pequeñas ---------- */
+.p-sector-start { display: grid; gap: clamp(16px, 2vw, 28px); }
+.p-sector-start__main { display: grid; gap: 14px; align-content: start; justify-items: start; }
+.p-sector-start__main .tc-h3 { font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.8rem); }
+.p-sector-start__main .tc-lead { max-width: 30rem; }
+.p-sector-piece { --loop: 7s; width: 100%; margin-top: clamp(14px, 1.8vw, 24px); font-size: clamp(10.5px, 2.9vw, 12.5px); }
+@media (min-width: 921px) {
+  .p-sector-start { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); align-items: start; }
+  .p-sector-start__main { grid-row: span 2; }
+  .p-sector-start > :nth-child(2) { margin-top: 64px; }
+}
+
+/* secuencia de fichas que se encienden por turno */
+.p-sector-seq { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.p-sector-seq span {
+  position: relative; isolation: isolate; display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px; border-radius: var(--r-pill);
+  font-family: var(--f-mono); font-size: .66rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.p-sector-seq span::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: color-mix(in srgb, var(--accent) 22%, transparent); box-shadow: inset 0 0 0 1px var(--accent); opacity: 0; }
+.p-sector-seq .tc-ico { width: 14px; height: 14px; color: var(--accent-text); flex: none; }
+.motion .is-live .p-sector-seq span::after { animation: p-sector-beat 6s var(--e-inout) calc(var(--k) * 2s) infinite; }
+@keyframes p-sector-beat { 0%, 36%, 100% { opacity: 0; } 6%, 28% { opacity: 1; } }
+
+/* IPSI / IVA: el impuesto lo pone la operación */
+.p-sector-duo { display: flex; gap: 10px; }
+.p-sector-duo span {
+  position: relative; isolation: isolate; flex: 1; display: grid; place-items: center; min-height: 64px; border-radius: var(--r-sm);
+  font-family: var(--f-display); font-weight: 600; font-size: 1.7rem; letter-spacing: -.03em; color: var(--fg-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.p-sector-duo span::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--navy); opacity: 0; }
+.p-sector-duo span::before { content: attr(data-t); position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: var(--cyan); opacity: 0; }
+.motion .is-live .p-sector-duo span::after, .motion .is-live .p-sector-duo span::before { animation: p-sector-duo 6s var(--e-inout) calc(var(--k) * 3s) infinite; }
+html:not(.motion) .p-sector-duo span:first-child::after, html:not(.motion) .p-sector-duo span:first-child::before { opacity: 1; }
+@keyframes p-sector-duo { 0%, 50%, 100% { opacity: 0; } 6%, 44% { opacity: 1; } }
+
+/* ---------- Cómo funciona: bloques de grabación ---------- */
+.p-sector-films { display: grid; gap: clamp(64px, 8vw, 128px); }
+.p-sector-film__shot { position: relative; perspective: 1600px; }
+.p-sector-film__shot video { display: block; width: 100%; height: auto; aspect-ratio: 960 / 518; background: var(--navy-deep); }
+.p-sector-film__shot .tc-win__title { max-width: 58%; }
+.p-sector-film__shot .tc-float { left: auto; right: 5%; top: -22px; bottom: auto; }
+.p-sector-film--flip .p-sector-film__shot .tc-float { right: auto; left: 5%; }
+.p-sector-film__copy { display: grid; gap: 14px; justify-items: start; align-content: start; }
+.p-sector-film__copy .tc-h3 { font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.6rem); }
+.p-sector-film__copy .tc-ticks { margin-top: 8px; }
+@media (min-width: 921px) {
+  .p-sector-film--flip .p-sector-film__shot { order: 2; }
+}
+
+/* ---------- Isla: lo que se suma a la misma cuenta ---------- */
+.p-sector-isle { display: grid; gap: clamp(28px, 4vw, 56px); overflow: hidden; }
+.p-sector-isle__copy { display: grid; gap: 18px; justify-items: start; align-content: start; }
+.p-sector-isle__copy .tc-h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.6rem); }
+.p-sector-isle__list { display: grid; gap: 12px; align-content: start; }
+.p-sector-isle__item { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 16px; align-items: start; }
+.p-sector-isle__item .tc-glyph { grid-row: span 2; }
+.p-sector-isle__item .tc-h4 { align-self: center; }
+.p-sector-isle__item p { grid-column: 2; font-size: .96rem; }
+.p-sector-isle__shot { position: relative; perspective: 1600px; }
+.p-sector-isle__shot img { display: block; width: 100%; height: auto; }
+@media (min-width: 1000px) {
+  .p-sector-isle { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); column-gap: clamp(36px, 5vw, 80px); }
+  .p-sector-isle__list { grid-column: 2; grid-row: 1 / span 2; padding-top: 8px; }
+  .p-sector-isle__item:nth-child(2) { margin-left: 34px; }
+  .p-sector-isle__item:nth-child(3) { margin-left: 68px; }
+  .p-sector-isle__shot { grid-column: 1; margin: 0 0 clamp(-150px, -9vw, -80px) clamp(-90px, -5vw, -40px); }
+  .p-sector-isle__shot .tc-win { rotate: -2deg; }
+}
+
+/* ---------- Respuestas ---------- */
+.p-sector-faq { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.p-sector-faq .tc-head + * { margin-top: 0; }
+.p-sector-faq__head .tc-h2 { font-size: clamp(2.1rem, 1.4rem + 2.4vw, 3.4rem); }
+.p-sector-faq__links { display: grid; gap: 10px; justify-items: start; margin-top: 4px; }
+@media (min-width: 1001px) { .p-sector-faq__head { position: sticky; top: calc(var(--nav-h) + 48px); } }
+@media (max-width: 1000px) { .p-sector-faq { grid-template-columns: minmax(0, 1fr); } }
+
+.p-sector-pool__alt { color: var(--on-dark-2); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.p-sector-pool__alt:hover { color: var(--cyan); }

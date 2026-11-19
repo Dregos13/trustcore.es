@@ -9,6 +9,11 @@ Titular legal: Rami Mohamed Azumik, autónomo (NIF 46154066N), con sede en Ceuta
 ## Productos
 
 - [TrustinTime — Control horario y RRHH](https://www.trustcore.es/productos/trustintime): fichaje multi-dispositivo, informes de jornada, vacaciones y ausencias, turnos, geolocalización opcional y dashboards de RRHH. Registro diario de jornada, conservación de los registros durante cuatro años y exportación preparada para revisión.
+- [GenAI — Contenido para redes sociales](https://www.trustcore.es/productos/genai): genera y publica contenido para redes a partir del material de una marca: guía visual, campañas, textos, imágenes y vídeo, con revisión y aprobación de una persona antes de publicar en Instagram, Facebook, TikTok, LinkedIn y X.
+- [Orquesta — Equipo de IAs en el escritorio](https://www.trustcore.es/productos/orquesta): app de escritorio para macOS y Windows que dirige un equipo de agentes de IA por roles (orquestar, diseñar, programar, probar, revisar) y muestra el avance en un grafo en vivo.
+- [Corrector Fiscal — Revisión de modelos de la AEAT](https://www.trustcore.es/productos/corrector-fiscal): app de escritorio para revisar y corregir modelos tributarios con IA. Herramienta de apoyo, no oficial ni afiliada a la AEAT.
+- [Nido — Buscador y cuaderno privado de vivienda](https://www.trustcore.es/productos/nido): busca a la vez en varios portales inmobiliarios, une anuncios duplicados y acompaña visitas, finanzas y comparación. Los datos se guardan en el dispositivo.
+- [Todos los productos](https://www.trustcore.es/productos)
 - [TrustinFacts — Facturación preparada para SIF/VERI*FACTU e IPSI](https://www.trustcore.es/productos/trustinfacts): facturas con QR y trazabilidad, IPSI de Ceuta y Melilla, presupuestos, albaranes, cobros, stock, márgenes, tres idiomas y dashboards. Flujo de facturación trazable con IPSI configurable por operación.
 - [Precios](https://www.trustcore.es/precios): planes por módulo o suite completa, sin permanencia ni coste de alta.
 

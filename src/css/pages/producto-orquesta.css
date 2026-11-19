@@ -1,0 +1,316 @@
+/* ==========================================================================
+   Producto · Orquesta · /productos/orquesta  (<body class="tc-body p-orquesta">)
+   Pieza protagonista: el grafo de una misión que avanza solo (script en línea
+   al final de la página). Todo lo que se ve aquí son maquetas HTML con términos
+   reales de la app; no son capturas. Prefijo p-orquesta- y tokens del sistema.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.p-orquesta-hero__brand { grid-column: 1 / -1; min-width: 0; }
+.p-orquesta-hero__brand .tc-phero__title { max-width: none; }
+.p-orquesta-hero__brand .tc-phero__title > span { display: inline-block; }
+.p-orquesta-ico { width: .74em; height: .74em; flex: none; border-radius: .2em; box-shadow: 0 0 0 1px color-mix(in srgb, var(--cyan-soft) 22%, transparent), 0 .12em .5em -.1em color-mix(in srgb, var(--cyan) 60%, transparent); }
+.motion .p-orquesta-ico { animation: p-orquesta-ico-in var(--d-4) var(--e-spring) 120ms both; }
+@keyframes p-orquesta-ico-in { from { transform: scale(.4) rotate(-40deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.p-orquesta .tc-phero__claim { margin-top: 0; }
+.p-orquesta .tc-phero__meta { margin-top: 22px; }
+.p-orquesta .tc-phero__top { row-gap: clamp(18px, 1.8vw, 26px); }
+.p-orquesta .tc-phero__stage { margin-top: clamp(36px, 3vw, 46px); }
+@media (min-width: 1000px) {
+  .p-orquesta .tc-phero__in { padding-top: calc(var(--nav-h) + 44px); }
+  .p-orquesta-hero__brand .tc-phero__title { font-size: clamp(3.4rem, 1.6rem + 7vw, 7.6rem); }
+  .p-orquesta-hero__brand .tc-crumbs { margin-bottom: 8px; }
+}
+.p-orquesta-cta { margin-top: 28px; gap: 12px 14px; }
+
+/* órbitas: el motivo del icono de la app, girando despacio tras el titular */
+.p-orquesta-orbit { position: absolute; z-index: 0; right: max(var(--pad), calc((100% - var(--wrap)) / 2 + var(--pad))); top: calc(var(--nav-h) + 14px); width: clamp(180px, 19vw, 270px); aspect-ratio: 1; pointer-events: none; }
+.p-orquesta-orbit i { position: absolute; inset: calc(var(--k, 0) * 17%); border-radius: 50%; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cyan-soft) 24%, transparent); }
+.p-orquesta-orbit i::before { content: ""; position: absolute; left: 50%; top: 0; width: 12px; height: 12px; margin: -6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 5px color-mix(in srgb, var(--cyan) 14%, transparent), 0 0 20px color-mix(in srgb, var(--cyan) 80%, transparent); }
+.p-orquesta-orbit i:nth-child(2) { transform: rotate(140deg); }
+.p-orquesta-orbit i:nth-child(2)::before { background: var(--cyan-soft); }
+.p-orquesta-orbit i:nth-child(3) { transform: rotate(250deg); }
+.p-orquesta-orbit i:nth-child(3)::before { width: 9px; height: 9px; margin: -4.5px; background: var(--royal); }
+.p-orquesta-orbit b { position: absolute; inset: 44%; border-radius: 50%; background: radial-gradient(circle, var(--cyan-soft), var(--cyan) 60%, var(--royal)); box-shadow: 0 0 44px color-mix(in srgb, var(--cyan) 70%, transparent); }
+.motion .p-orquesta-orbit.is-live i { animation: p-orquesta-spin 26s linear infinite; }
+.motion .p-orquesta-orbit.is-live i:nth-child(2) { animation: p-orquesta-spin-b 38s linear infinite; }
+.motion .p-orquesta-orbit.is-live i:nth-child(3) { animation: p-orquesta-spin-c 19s linear infinite; }
+.motion .p-orquesta-orbit.is-live b { animation: p-orquesta-breathe 4.6s var(--e-inout) infinite alternate; }
+@keyframes p-orquesta-spin { to { transform: rotate(360deg); } }
+@keyframes p-orquesta-spin-b { from { transform: rotate(140deg); } to { transform: rotate(-220deg); } }
+@keyframes p-orquesta-spin-c { from { transform: rotate(250deg); } to { transform: rotate(610deg); } }
+@keyframes p-orquesta-breathe { from { transform: scale(.86); } to { transform: scale(1.12); } }
+
+/* ---------- Ventana de la misión (maqueta) ---------- */
+.p-orquesta-win { container-type: inline-size; margin: 0; position: relative; }
+.p-orquesta-win__glow { position: absolute; inset: 0; z-index: 3; border-radius: inherit; pointer-events: none; opacity: 0; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--cyan) 80%, transparent), inset 0 0 110px -30px color-mix(in srgb, var(--cyan) 70%, transparent); transition: opacity var(--d-2) linear; }
+.p-orquesta-win__body { display: grid; }
+.p-orquesta-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 24px; align-items: center; padding: clamp(14px, 1.6cqw, 20px) clamp(16px, 2.6cqw, 34px) 0; }
+.p-orquesta-top__t { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; min-width: 0; }
+.p-orquesta-top__t b { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.1rem, .8rem + 1.1cqw, 1.5rem); letter-spacing: -.025em; line-height: 1.1; }
+.p-orquesta-top__stats { display: flex; flex-wrap: wrap; gap: 8px; }
+.p-orquesta-stat { display: inline-flex; align-items: center; gap: 7px; height: 30px; padding: 0 12px; border-radius: var(--r-pill); background: var(--chip-bg); box-shadow: inset 0 0 0 1px var(--line); font-family: var(--f-mono); font-size: .64rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-2); white-space: nowrap; }
+.p-orquesta-stat b { color: var(--fg); font-weight: 600; }
+.p-orquesta-stat i { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); }
+.motion .p-orquesta-win.is-live .p-orquesta-stat i { animation: p-orquesta-blink 1.4s var(--e-inout) infinite alternate; }
+@keyframes p-orquesta-blink { from { opacity: .3; transform: scale(.8); } to { opacity: 1; transform: scale(1.15); } }
+.p-orquesta-bar { grid-column: 1 / -1; height: 3px; border-radius: var(--r-pill); background: var(--line); overflow: hidden; }
+.p-orquesta-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--royal), var(--cyan)); transform-origin: 0 50%; transform: scaleX(var(--p, .5)); transition: transform var(--d-4) var(--e-out); }
+
+/* el grafo: nodos HTML sobre aristas SVG. Dos trazados de aristas (apaisado y
+   vertical); los nodos leen --x/--y o --mx/--my según el ancho. */
+.p-orquesta-g { position: relative; aspect-ratio: 100 / 39; margin: clamp(6px, .8cqw, 10px) clamp(12px, 1.8cqw, 24px) clamp(10px, 1.4cqw, 18px); }
+.p-orquesta-g__grid { position: absolute; inset: -3% -1%; background-image: radial-gradient(circle, color-mix(in srgb, var(--cyan-soft) 26%, transparent) 1px, transparent 1.6px); background-size: 26px 26px; -webkit-mask-image: radial-gradient(ellipse 60% 62% at 50% 50%, #000 30%, transparent 100%); mask-image: radial-gradient(ellipse 60% 62% at 50% 50%, #000 30%, transparent 100%); --plx: 14px; }
+.p-orquesta-g__edges { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.p-orquesta-g__edges--v { display: none; }
+.p-orquesta-e { fill: none; stroke: color-mix(in srgb, var(--cyan-soft) 36%, transparent); stroke-width: 1.2; stroke-dasharray: 2 6; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.p-orquesta-e--lit { stroke: var(--cyan); stroke-width: 1.6; stroke-dasharray: none; opacity: 0; transition: opacity var(--d-3) var(--e-soft); }
+.p-orquesta-g [data-e] { transition: opacity var(--d-3) var(--e-soft); }
+.p-orquesta-g [data-e].is-lit .p-orquesta-e--lit { opacity: .85; }
+.p-orquesta-g [data-e].is-off { opacity: 0; }
+.p-orquesta-g__fx { position: absolute; inset: 0; pointer-events: none; }
+.p-orquesta-pulse { position: absolute; left: 0; top: 0; width: 10px; height: 10px; margin: -5px; border-radius: 50%; background: var(--white); box-shadow: 0 0 0 4px color-mix(in srgb, var(--cyan) 30%, transparent), 0 0 18px 4px color-mix(in srgb, var(--cyan) 85%, transparent); opacity: 0; will-change: transform, opacity; }
+.p-orquesta-pulse--soft { width: 6px; height: 6px; margin: -3px; background: var(--cyan-soft); box-shadow: 0 0 10px 2px color-mix(in srgb, var(--cyan) 60%, transparent); }
+
+.p-orquesta-n {
+  --ring: var(--cyan);
+  position: absolute; left: var(--x); top: var(--y); translate: -50% -50%; z-index: 1;
+  width: 13.4%; display: grid; gap: .24em; padding: .74em .95em .72em;
+  font-size: clamp(9px, 1.1cqw, 14.5px); line-height: 1.2; color: var(--on-dark);
+  border-radius: var(--r-sm) var(--r-sm) var(--r-sm) var(--r-md);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--corp) 70%, var(--navy)), var(--navy));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cyan-soft) 20%, transparent), 0 16px 28px -18px var(--navy-deep);
+  transition: opacity var(--d-3) var(--e-soft), transform var(--d-4) var(--e-spring);
+  transition-delay: calc(var(--k, 0) * 70ms);
+}
+.p-orquesta-n::before, .p-orquesta-n::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; }
+.p-orquesta-n::before { box-shadow: inset 0 0 0 1.5px var(--ring), 0 0 26px -4px color-mix(in srgb, var(--ring) 70%, transparent); transition: opacity var(--d-2) var(--e-soft); }
+.p-orquesta-n::after { inset: -5px; box-shadow: inset 0 0 0 1px var(--ring); }
+.p-orquesta-n > * { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: opacity var(--d-2) var(--e-soft); }
+.p-orquesta-n__role { font-family: var(--f-mono); font-size: .7em; letter-spacing: .06em; text-transform: uppercase; color: var(--on-dark-3); }
+.p-orquesta-n__task { font-weight: 600; font-size: 1.08em; letter-spacing: -.01em; }
+.p-orquesta-n__meta { display: flex; align-items: center; gap: .55em; font-family: var(--f-mono); font-size: .66em; letter-spacing: .04em; text-transform: uppercase; color: var(--on-dark-3); }
+.p-orquesta-n__meta i { width: .8em; height: .8em; border-radius: 50%; background: currentColor; flex: none; }
+.p-orquesta-n__meta em { font-style: normal; }
+.p-orquesta-n__who { margin-left: auto; padding-left: .4em; overflow: hidden; text-overflow: ellipsis; color: var(--on-dark-3); }
+/* estados (los mismos nombres que la app: en cola, en curso, verificando, hecha) */
+.p-orquesta-n[data-s="queued"] > * { opacity: .58; }
+.p-orquesta-n[data-s="running"]::before, .p-orquesta-n[data-s="verifying"]::before, .p-orquesta-n[data-s="bug"]::before { opacity: 1; }
+.p-orquesta-n[data-s="running"] .p-orquesta-n__meta em, .p-orquesta-n[data-s="running"] .p-orquesta-n__meta i { color: var(--cyan); }
+.p-orquesta-n[data-s="verifying"] { --ring: var(--cyan-soft); }
+.p-orquesta-n[data-s="verifying"] .p-orquesta-n__meta em, .p-orquesta-n[data-s="verifying"] .p-orquesta-n__meta i { color: var(--cyan-soft); }
+.p-orquesta-n[data-s="done"] .p-orquesta-n__meta em, .p-orquesta-n[data-s="done"] .p-orquesta-n__meta i { color: var(--ok-on-dark); }
+.p-orquesta-n[data-s="bug"] { --ring: var(--gold); }
+.p-orquesta-n[data-s="bug"] .p-orquesta-n__meta em, .p-orquesta-n[data-s="bug"] .p-orquesta-n__meta i { color: var(--gold-fg); }
+.motion .p-orquesta-win.is-live .p-orquesta-n[data-s="running"]::after { animation: p-orquesta-halo 2.2s var(--e-out) infinite; }
+.motion .p-orquesta-win.is-live .p-orquesta-n[data-s="running"] .p-orquesta-n__meta i,
+.motion .p-orquesta-win.is-live .p-orquesta-n[data-s="verifying"] .p-orquesta-n__meta i { animation: p-orquesta-blink .9s var(--e-inout) infinite alternate; }
+@keyframes p-orquesta-halo { from { transform: scale(.94); opacity: .9; } to { transform: scale(1.16, 1.3); opacity: 0; } }
+/* el cambio de estado se nota: la tarea hecha da un latido, el fallo se sacude */
+.motion .p-orquesta-win.is-on .p-orquesta-n[data-s="done"] { animation: p-orquesta-done var(--d-4) var(--e-spring); }
+.motion .p-orquesta-win.is-on .p-orquesta-n[data-s="bug"] { animation: p-orquesta-bug var(--d-4) var(--e-out); }
+@keyframes p-orquesta-done { 0% { transform: scale(1); } 34% { transform: scale(1.09); } 100% { transform: scale(1); } }
+@keyframes p-orquesta-bug { 0%, 100% { transform: none; } 18% { transform: translate3d(-5px, 0, 0) rotate(-1.2deg); } 40% { transform: translate3d(5px, 0, 0) rotate(1.2deg); } 62% { transform: translate3d(-3px, 0, 0); } 82% { transform: translate3d(2px, 0, 0); } }
+/* tareas que aún no existen en el plan, y la entrada del grafo: solo con movimiento */
+.motion .p-orquesta-n[data-s="none"] { opacity: 0; transform: scale(.6); }
+.motion .p-orquesta-win[data-orq]:not(.is-on) .p-orquesta-n { opacity: 0; transform: scale(.7); }
+.motion .p-orquesta-win[data-orq] .p-orquesta-g__edges { transition: opacity var(--d-4) var(--e-soft) 500ms; }
+.motion .p-orquesta-win[data-orq]:not(.is-on) .p-orquesta-g__edges { opacity: 0; }
+/* el orquestador y el hito de entrega se distinguen del resto */
+.p-orquesta-n--main { width: 14.2%; background: linear-gradient(150deg, color-mix(in srgb, var(--royal) 62%, var(--navy)), var(--corp) 70%); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cyan) 46%, transparent), 0 16px 34px -16px color-mix(in srgb, var(--royal) 80%, transparent); }
+.p-orquesta-n--main .p-orquesta-n__role { color: var(--cyan-soft); }
+.p-orquesta-n--goal { width: 12.2%; border-radius: var(--r-md); text-align: center; justify-items: center; }
+.p-orquesta-n--goal .p-orquesta-n__meta { justify-content: center; }
+
+.p-orquesta-canal { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 16px; align-items: baseline; padding: 14px clamp(16px, 2.6cqw, 34px) 18px; background: color-mix(in srgb, var(--navy-deep) 46%, transparent); box-shadow: inset 0 1px 0 var(--line); }
+.p-orquesta-canal p { min-height: 2.9em; font-size: .94rem; line-height: 1.45; color: var(--fg-2); }
+.p-orquesta-canal p b { display: inline-block; margin-right: .6em; font-family: var(--f-mono); font-size: .74em; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--cyan); }
+.p-orquesta .tc-phero__shot .tc-float--b { right: 4%; top: -22px; }
+.p-orquesta .tc-phero__shot .tc-float--a { left: auto; right: 6%; bottom: -28px; }
+
+/* ---------- 01 · Equipo ---------- */
+.p-orquesta-cast { display: grid; gap: 18px; }
+.p-orquesta-cast__list { display: grid; gap: 8px; }
+.p-orquesta-cast__list li:nth-child(even) { margin-left: clamp(0px, 3vw, 40px); }
+.p-orquesta-cast__list li:nth-child(odd) { margin-right: clamp(0px, 3vw, 40px); }
+.p-orquesta-rol { width: 100%; display: grid; grid-template-columns: 46px minmax(0, 1fr) auto; align-items: center; gap: 14px; min-height: 66px; padding: 8px 10px 8px 8px; border-radius: var(--r-pill); background: color-mix(in srgb, var(--royal) 7%, transparent); color: var(--fg); text-align: left; cursor: pointer; transition: background-color var(--d-2), transform var(--d-3) var(--e-out); }
+.p-orquesta-rol:hover { background: color-mix(in srgb, var(--royal) 13%, transparent); transform: translate3d(4px, 0, 0); }
+.p-orquesta-rol:active { transform: scale(.985); }
+.p-orquesta-rol__ico { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--white); color: var(--royal); box-shadow: var(--sh-1); }
+.p-orquesta-rol__n { display: grid; gap: 1px; font-weight: 600; line-height: 1.2; min-width: 0; }
+.p-orquesta-rol__n small { font-weight: 400; font-size: .86rem; color: var(--fg-2); }
+.p-orquesta-rol__who { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px 0 16px; border-radius: var(--r-pill); background: var(--navy); color: var(--white); font-family: var(--f-mono); font-size: .68rem; letter-spacing: .05em; text-transform: uppercase; overflow: hidden; white-space: nowrap; }
+.p-orquesta-rol__who b { display: inline-block; font-weight: 500; }
+.p-orquesta-rol__who .tc-ico { width: 14px; height: 14px; color: var(--cyan); transition: transform var(--d-3) var(--e-spring); }
+.p-orquesta-rol:hover .p-orquesta-rol__who .tc-ico { transform: rotate(180deg); }
+.p-orquesta-belt { margin-top: clamp(56px, 7vw, 110px); }
+.p-orquesta-belt__cap { margin-bottom: 10px; text-align: center; }
+
+/* ---------- 02 · La misión, paso a paso ---------- */
+.p-orquesta .tc-step .tc-mini { margin-top: 16px; }
+.p-orquesta .tc-step .tc-chips { margin-top: 16px; }
+
+/* ---------- 03 · «Tengo una idea» ---------- */
+.p-orquesta-idea { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.p-orquesta-idea__copy { display: grid; gap: 20px; justify-items: start; position: relative; z-index: 2; }
+.p-orquesta-idea__copy .tc-h2 { font-size: clamp(2.2rem, 1.3rem + 3.4vw, 4.4rem); }
+.p-orquesta-idea__demo { position: relative; z-index: 2; display: grid; gap: 14px; }
+.p-orquesta-idea__q { padding: 18px 22px 20px; border-radius: var(--r-md) var(--r-md) var(--r-xs) var(--r-md); background: color-mix(in srgb, var(--cyan-soft) 12%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cyan-soft) 26%, transparent); margin-left: clamp(0px, 5vw, 70px); }
+.p-orquesta-idea__q p { margin-top: 8px; font-family: var(--f-display); font-weight: 500; font-size: clamp(1.15rem, 1rem + .7vw, 1.5rem); line-height: 1.25; letter-spacing: -.02em; }
+.p-orquesta-idea__q p::after { content: ""; display: inline-block; width: 2px; height: 1em; margin-left: 4px; vertical-align: -.14em; background: var(--cyan); }
+.motion .p-orquesta-idea.is-live .p-orquesta-idea__q p::after { animation: p-orquesta-caret 1s steps(1) infinite; }
+@keyframes p-orquesta-caret { 50% { opacity: 0; } }
+.motion .p-orquesta-idea__q [data-w] { opacity: 0; transition: opacity 140ms linear calc(260ms + var(--i, 0) * 60ms); }
+.motion .p-orquesta-idea__q.is-in [data-w] { opacity: 1; }
+/* la propuesta espera a que la idea termine de escribirse; en una columna ya llega más tarde por sí sola */
+.p-orquesta-idea__a { --base: 1150ms; --step: 130ms; display: grid; gap: 8px; margin-right: clamp(0px, 4vw, 56px); }
+.p-orquesta-idea__go { --delay: 1750ms; }
+.p-orquesta-idea__a li { display: grid; grid-template-columns: minmax(0, .42fr) minmax(0, 1fr); gap: 14px; align-items: baseline; padding: 14px 18px; border-radius: var(--r-sm); background: color-mix(in srgb, var(--navy-deep) 44%, transparent); box-shadow: inset 0 0 0 1px var(--line); }
+.p-orquesta-idea__a b { font-weight: 600; line-height: 1.3; }
+.p-orquesta-idea__go { justify-self: start; display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: var(--r-pill); background: var(--cyan); color: var(--navy-deep); font-weight: 600; box-shadow: var(--btn-sh); }
+.p-orquesta-idea__tag { justify-self: end; margin-bottom: -2px; }
+
+/* ---------- 04 · A la vista ---------- */
+.p-orquesta-vista { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+.p-orquesta-vista__copy { padding-top: clamp(0px, 2vw, 28px); }
+.p-orquesta-vista > * { transition: opacity var(--d-2) var(--e-soft), transform var(--d-3) var(--e-out), filter var(--d-3) var(--e-out); transition-delay: calc(var(--i, 0) * 90ms); }
+.motion .tc-tabs__panel[hidden] .p-orquesta-vista > * { opacity: 0; transform: translate3d(0, 18px, 0); filter: blur(6px); transition-delay: 0ms; transition-duration: var(--d-1); }
+.motion .tc-tabs__panel[hidden] .p-orquesta-vista > .tc-win { transform: translate3d(28px, 0, 0) scale(.98); }
+.p-orquesta-vista__copy { display: grid; gap: 16px; justify-items: start; }
+.p-orquesta-vista__copy .tc-ticks { margin-top: 6px; }
+.p-orquesta-vista .tc-win { margin: 0; }
+.p-orquesta-chat { display: grid; gap: 10px; }
+.p-orquesta-chat li { display: grid; gap: 4px; padding: 12px 16px; border-radius: var(--r-sm) var(--r-sm) var(--r-sm) var(--r-xs); background: color-mix(in srgb, var(--corp) 5%, transparent); max-width: 92%; }
+.p-orquesta-chat li:nth-child(even) { justify-self: end; border-radius: var(--r-sm) var(--r-sm) var(--r-xs) var(--r-sm); }
+.p-orquesta-chat p { font-size: .94rem; line-height: 1.4; color: var(--fg); }
+.p-orquesta-chat .p-orquesta-ask { max-width: none; background: var(--white); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--royal) 46%, transparent), var(--sh-1); }
+.p-orquesta-ask .tc-chips { margin-top: 6px; }
+.p-orquesta-files { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.p-orquesta-files li { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 10px; border-radius: var(--r-xs); background: color-mix(in srgb, var(--corp) 5%, transparent); font-family: var(--f-mono); font-size: .72rem; color: var(--fg-2); }
+.p-orquesta-files .tc-ico { width: 15px; height: 15px; color: var(--accent-text); }
+.p-orquesta-files li.is-hi { background: var(--navy); color: var(--white); }
+.p-orquesta-files li.is-hi .tc-ico { color: var(--cyan); }
+.p-orquesta-kg { display: block; width: 100%; height: auto; aspect-ratio: 320 / 170; border-radius: var(--r-sm); background: var(--mist); }
+.p-orquesta-kg line { stroke: color-mix(in srgb, var(--corp) 22%, transparent); stroke-width: 1; }
+.p-orquesta-kg circle { fill: var(--royal); }
+.p-orquesta-kg .is-b { fill: var(--cyan); }
+.p-orquesta-kg .is-c { fill: var(--corp); }
+.p-orquesta-kg .is-hot { fill: var(--gold); }
+.motion .tc-win.is-live .p-orquesta-kg g { animation: p-orquesta-drift 7s var(--e-inout) infinite alternate; transform-origin: 50% 50%; }
+.motion .tc-win.is-live .p-orquesta-kg g:nth-of-type(2) { animation-duration: 9s; animation-direction: alternate-reverse; }
+.motion .tc-win.is-live .p-orquesta-kg g:nth-of-type(3) { animation-duration: 11s; }
+@keyframes p-orquesta-drift { from { transform: translate3d(-3px, 2px, 0) rotate(-1.5deg); } to { transform: translate3d(3px, -2px, 0) rotate(1.5deg); } }
+.p-orquesta-ds { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.p-orquesta-ds i { aspect-ratio: 1; border-radius: var(--r-xs); background: var(--navy); display: grid; place-items: end start; padding: 6px 8px; font-style: normal; font-family: var(--f-mono); font-size: .56rem; color: var(--white); }
+.p-orquesta-ds i:nth-child(2) { background: var(--royal); }
+.p-orquesta-ds i:nth-child(3) { background: var(--cyan); color: var(--navy-deep); }
+.p-orquesta-ds i:nth-child(4) { background: var(--cyan-soft); color: var(--navy-deep); }
+.p-orquesta-ds i:nth-child(5) { background: var(--paper); color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line-light); }
+.p-orquesta-more { margin-top: clamp(56px, 7vw, 110px); display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
+.p-orquesta-more .tc-ticks { font-size: .98rem; }
+
+/* ---------- 05 · Herramientas y llaves ---------- */
+.p-orquesta-bay { display: grid; gap: 16px; }
+.p-orquesta-bay__cap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+.p-orquesta-mcp { display: grid; gap: 8px; container-type: inline-size; }
+.p-orquesta-mcp li { display: grid; grid-template-columns: 162px 36px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 64px; padding: 8px 14px 8px 8px; border-radius: var(--r-pill); background: color-mix(in srgb, var(--royal) 6%, transparent); transition: background-color var(--d-2); }
+.p-orquesta-mcp__tool { display: inline-flex; align-items: center; gap: 9px; height: 48px; padding: 0 14px 0 13px; border-radius: var(--r-pill); background: var(--navy); color: var(--white); font-family: var(--f-mono); font-size: .64rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; min-width: 0; transition: opacity var(--d-2), filter var(--d-2); }
+.p-orquesta-mcp__tool .tc-ico { width: 16px; height: 16px; flex: none; color: var(--cyan); }
+.p-orquesta-mcp__add { background: transparent; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--corp) 16%, transparent); }
+.p-orquesta-mcp__add .p-orquesta-mcp__tool { background: transparent; color: var(--corp); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--corp) 40%, transparent); }
+.p-orquesta-mcp__add .p-orquesta-mcp__tool .tc-ico { color: var(--royal); }
+.p-orquesta-mcp__txt { color: var(--fg-2); font-size: .95rem; line-height: 1.32; transition: opacity var(--d-2); }
+.p-orquesta-mcp__txt b { color: var(--fg); font-weight: 600; }
+.p-orquesta-wire { position: relative; height: 12px; background: linear-gradient(90deg, color-mix(in srgb, var(--royal) 60%, transparent), color-mix(in srgb, var(--royal) 18%, transparent)) 0 50% / 100% 1.5px no-repeat; overflow: hidden; transition: opacity var(--d-2); }
+.p-orquesta-wire i { position: absolute; inset: 0; transform: translate3d(-12px, 0, 0); }
+.p-orquesta-wire i::before { content: ""; position: absolute; left: 0; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: var(--royal); box-shadow: 0 0 0 4px color-mix(in srgb, var(--royal) 16%, transparent); }
+.motion .p-orquesta-bay.is-live .p-orquesta-wire i { animation: p-orquesta-wire 2.6s var(--e-inout) infinite; animation-delay: calc(var(--i, 0) * 420ms); }
+@keyframes p-orquesta-wire { 0% { transform: translate3d(-12px, 0, 0); } 70%, 100% { transform: translate3d(100%, 0, 0); } }
+/* cuando el panel es estrecho (móvil, o la columna del 5/7 por debajo de ~1300 px), el texto baja a su línea */
+@container (max-width: 480px) {
+  .p-orquesta-mcp li { grid-template-columns: auto minmax(20px, 1fr) auto; gap: 8px 12px; padding: 10px 12px 12px 10px; border-radius: var(--r-md); }
+  .p-orquesta-mcp__tool { height: 40px; padding: 0 14px 0 12px; }
+  .p-orquesta-mcp__txt { grid-column: 1 / -1; grid-row: 2; padding-left: 4px; }
+  .p-orquesta-mcp__add .p-orquesta-wire { grid-column: 2 / -1; }
+}
+/* interruptor del sistema, a escala de fila. Sin JS no hace nada: no se enseña */
+.p-orquesta-sw { width: 52px; height: 30px; cursor: pointer; }
+.p-orquesta-sw .tc-switch__thumb { left: 3px; top: 3px; width: 24px; height: 24px; }
+.p-orquesta-sw[aria-checked="true"] { background: var(--royal); }
+.p-orquesta-sw[aria-checked="true"] .tc-switch__thumb { transform: translateX(22px); background: var(--white); }
+html:not(.js) .p-orquesta-sw, html:not(.js) .p-orquesta-bay__hint { display: none; }
+.p-orquesta-bay__hint { margin-top: -4px; }
+.p-orquesta-mcp li.is-off { background: transparent; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--corp) 10%, transparent); }
+.p-orquesta-mcp li.is-off .p-orquesta-mcp__tool { opacity: .5; filter: grayscale(1); }
+.p-orquesta-mcp li.is-off .p-orquesta-mcp__txt { opacity: .5; }
+.p-orquesta-mcp li.is-off .p-orquesta-wire { opacity: .25; }
+.motion .p-orquesta-bay.is-live li.is-off .p-orquesta-wire i { animation: none; }
+.p-orquesta-keys { margin-top: clamp(48px, 6vw, 90px); }
+.p-orquesta-keys .tc-leaf { display: grid; gap: 12px; align-content: start; }
+.p-orquesta-keys .tc-leaf > .tc-small { color: var(--fg-3); }
+
+/* ---------- 06 · Entrega y versiones ---------- */
+.p-orquesta-duo { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 40px); align-items: start; }
+.p-orquesta-duo__a { grid-column: 1 / span 7; display: grid; gap: 14px; }
+.p-orquesta-duo__b { grid-column: 8 / span 5; margin-top: clamp(40px, 7vw, 110px); display: grid; gap: 14px; }
+.p-orquesta-duo .tc-mini { margin-top: 8px; }
+.p-orquesta-duo .tc-mini li > span { min-width: 0; }
+.p-orquesta-ver { display: flex; align-items: center; gap: 10px; }
+.p-orquesta-ver b { font-family: var(--f-mono); font-weight: 500; font-size: .86rem; }
+
+/* ---------- 07 · Descarga ---------- */
+.p-orquesta-get { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+.p-orquesta-get__main { display: grid; gap: 20px; justify-items: start; }
+.p-orquesta-get__ico { width: clamp(84px, 9vw, 128px); height: auto; aspect-ratio: 1; border-radius: var(--r-md); box-shadow: var(--sh-2); }
+.motion .p-orquesta-get.is-live .p-orquesta-get__ico { animation: p-orquesta-float 5s var(--e-inout) infinite alternate; }
+@keyframes p-orquesta-float { from { transform: translate3d(0, -5px, 0) rotate(-2deg); } to { transform: translate3d(0, 5px, 0) rotate(2deg); } }
+.p-orquesta-get .tc-rows > li { grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr); align-items: start; }
+.p-orquesta-get .tc-rows .tc-muted { padding-top: .2em; }
+.p-orquesta-get .tc-rows b { display: inline-flex; align-items: center; gap: 10px; font-size: clamp(1.15rem, 1rem + .6vw, 1.5rem); }
+.p-orquesta-get .tc-note { margin-top: 26px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 999px) {
+  .p-orquesta-orbit { display: none; }
+  .p-orquesta-idea, .p-orquesta-vista, .p-orquesta-get, .p-orquesta-more { grid-template-columns: minmax(0, 1fr); }
+  .p-orquesta-duo__a, .p-orquesta-duo__b { grid-column: 1 / -1; margin-top: 0; }
+  .p-orquesta-idea__q { margin-left: 0; }
+  .p-orquesta-idea__a { margin-right: 0; --base: 220ms; --step: 90ms; }
+  .p-orquesta-idea__go { --delay: 320ms; }
+}
+@media (max-width: 860px) {
+  .p-orquesta-g { aspect-ratio: 100 / 132; width: min(100% - 24px, 520px); margin-inline: auto; }
+  .p-orquesta-g__edges--h { display: none; }
+  .p-orquesta-g__edges--v { display: block; }
+  .p-orquesta-n { left: var(--mx); top: var(--my); width: 30%; font-size: clamp(10.5px, 2.4cqw, 13.5px); }
+  .p-orquesta-top__t { display: grid; gap: 6px; }
+  .p-orquesta-n--main { width: 33%; }
+  .p-orquesta-n--goal { width: 30%; }
+  .p-orquesta-n__role { font-size: .76em; }
+  .p-orquesta-n__meta { font-size: .72em; }
+  .p-orquesta-top { grid-template-columns: minmax(0, 1fr); }
+  .p-orquesta .tc-phero__shot .tc-float--a { display: none; }
+}
+@media (max-width: 760px) {
+  .p-orquesta-rol:hover { transform: none; }
+  .p-orquesta-get .tc-rows > li { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .p-orquesta-g { aspect-ratio: 100 / 176; width: calc(100% - 16px); }
+  .p-orquesta-n { width: 31.5%; padding: .62em .7em .6em; }
+  .p-orquesta-n--main { width: 36%; }
+  .p-orquesta-n--goal { width: 33%; }
+  .p-orquesta-n__who { display: none; }
+  .p-orquesta-canal { grid-template-columns: minmax(0, 1fr); }
+  .p-orquesta .tc-phero__shot .tc-float--b { top: -34px; right: 3%; }
+  .p-orquesta .tc-phero__stage { margin-top: 52px; }
+  .p-orquesta-canal p { min-height: 5.8em; font-size: .9rem; }
+  .p-orquesta-cta .tc-btn { flex: 1 1 100%; }
+  .p-orquesta-cast__list li:nth-child(n) { margin-inline: 0; }
+  .p-orquesta-rol { grid-template-columns: 38px minmax(0, 1fr) auto; gap: 10px; border-radius: var(--r-md); }
+  .p-orquesta-rol__ico { width: 38px; height: 38px; }
+  .p-orquesta-rol__who { height: 34px; padding: 0 12px; }
+  .p-orquesta-rol__who .tc-ico { display: none; }
+  .p-orquesta-idea__a li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .p-orquesta-idea__tag { justify-self: start; }
+}

@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Precios · /precios  (<body class="tc-body p-precios">)
+   Lo que el sistema no trae: la consola del ciclo de facturación (el año en
+   doce meses que reacciona al conmutador), el espejo del conmutador junto a
+   cada grupo de planes, el rodillo de cifras, la composición de los planes con
+   jerarquía, la matriz comparativa que en móvil se vuelve fichas, el bloque
+   de fechas de la AEAT, la suite y la franja del resto de productos.
+   El estado anual cuelga de html.is-billing-annual (lo pone el motor).
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.p-precios-hero__facts { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 22px; font-size: .95rem; color: var(--fg-2); }
+.p-precios-hero__facts li { display: inline-flex; align-items: center; gap: 8px; }
+.p-precios-hero__facts .tc-ico { color: var(--cyan); }
+
+/* Consola: conmutador + el año dibujado */
+.p-precios-console { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4.4vw, 72px); align-items: center; padding: clamp(26px, 3.6vw, 52px); }
+.p-precios-console__ctl { display: grid; gap: 20px; justify-items: start; }
+.p-precios-console .tc-billing { justify-content: flex-start; font-size: 1.12rem; gap: 14px 16px; }
+.p-precios-console .tc-switch { width: 76px; height: 42px; }
+.p-precios-console .tc-switch__thumb { width: 34px; height: 34px; }
+.p-precios-console .tc-switch[aria-checked="true"] .tc-switch__thumb { transform: translateX(34px); }
+.p-precios-console__say { min-height: 3.1em; max-width: 31ch; font-family: var(--f-display); font-size: clamp(1.15rem, 1rem + .7vw, 1.5rem); font-weight: 500; line-height: 1.25; letter-spacing: -.02em; color: var(--fg); }
+
+/* frases que dependen del ciclo: sin JS se ven las dos */
+.p-precios-when-m, .p-precios-when-a { display: block; }
+.js .p-precios-when-a { display: none; }
+.is-billing-annual .p-precios-when-a { display: block; }
+.is-billing-annual .p-precios-when-m { display: none; }
+.motion.is-billing-annual .p-precios-when-a, .motion .p-precios.is-rolled .p-precios-when-m { animation: p-precios-say var(--d-3) var(--e-out) both; }
+@keyframes p-precios-say { from { opacity: 0; transform: translate3d(0, 10px, 0); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+
+/* El año: doce meses. Mensual = doce cuotas (puntos). Anual = diez meses
+   pagados (cian) y dos que no se pagan (verde). Decorativo. */
+.p-precios-yearbox { display: grid; gap: 14px; min-width: 0; }
+.p-precios-year { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(3px, .7vw, 10px); padding-top: 30px; }
+.p-precios-year li { position: relative; display: grid; gap: 10px; justify-items: center; transition: transform var(--d-3) var(--e-spring) calc(var(--k) * 36ms); }
+.p-precios-year i { position: relative; display: block; width: 100%; height: clamp(68px, 8.4vw, 112px); border-radius: var(--r-pill); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.p-precios-year i::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, var(--cyan), var(--royal)); transform: translate3d(0, 101%, 0); transition: transform var(--d-3) var(--e-out) calc(var(--k) * 36ms); }
+.p-precios-year i::after { content: ""; position: absolute; left: 50%; bottom: 12px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: var(--cyan); transition: transform var(--d-2) var(--e-out) calc(var(--k) * 30ms), opacity var(--d-2) var(--e-soft) calc(var(--k) * 30ms); }
+.p-precios-year span { font-family: var(--f-mono); font-size: .62rem; letter-spacing: .04em; color: var(--fg-3); font-variant-numeric: tabular-nums; }
+.p-precios-year em { position: absolute; left: 0; top: -28px; width: calc(200% + clamp(3px, .7vw, 10px)); text-align: center; font-style: normal; font-family: var(--f-mono); font-size: .62rem; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; color: var(--ok-on-dark); opacity: 0; transform: translate3d(0, 10px, 0) scale(.8); transition: opacity var(--d-2) var(--e-soft) 520ms, transform var(--d-3) var(--e-spring) 520ms; }
+.p-precios-year .is-free i::before { background: linear-gradient(180deg, var(--ok-on-dark), var(--ok)); }
+.is-billing-annual .p-precios-year i::before { transform: none; }
+.is-billing-annual .p-precios-year i::after { opacity: 0; transform: scale(0); }
+.is-billing-annual .p-precios-year .is-free { transform: translate3d(0, -8px, 0); }
+.is-billing-annual .p-precios-year .is-free em { opacity: 1; transform: none; }
+.motion:not(.is-billing-annual) .p-precios-console.is-live .p-precios-year i::after { animation: p-precios-beat 4.8s var(--e-inout) infinite; animation-delay: calc(var(--k) * 400ms); }
+@keyframes p-precios-beat { 0%, 12%, 100% { transform: none; opacity: 1; } 6% { transform: scale(1.9); opacity: .6; } }
+.p-precios-year__cap { display: flex; justify-content: space-between; gap: 12px; }
+
+.p-precios-hero__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 28px; margin-top: clamp(26px, 3vw, 44px); }
+.p-precios-award { transition: background-color var(--d-2), box-shadow var(--d-2); }
+.p-precios-award:hover { background: rgba(212, 162, 61, .16); }
+.p-precios-index { display: flex; flex-wrap: wrap; gap: 8px; }
+.p-precios-index b { font-weight: 400; color: var(--accent-text); }
+
+/* ---------- Cabecera de cada producto + espejo del conmutador ---------- */
+.p-precios-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px clamp(28px, 5vw, 80px); align-items: end; }
+.p-precios-head__side { display: grid; gap: 18px; justify-items: end; padding-bottom: 6px; }
+.p-precios-brand { display: inline-flex; align-items: center; gap: 12px; }
+.p-precios-brand img { width: 34px; height: 34px; object-fit: contain; flex: none; }
+.p-precios-brand .p-precios-round, .p-precios-join .p-precios-round { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.p-precios-brand .p-precios-round { width: 36px; height: 36px; }
+/* menos aire al pie de las secciones largas: la siguiente ya trae el suyo */
+.p-precios-sec { --sec-pb: clamp(56px, 6vw, 96px); }
+
+.p-precios-seg { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: var(--r-pill); background: var(--tabs-bg); box-shadow: inset 0 0 0 1px var(--line); isolation: isolate; }
+html:not(.js) .p-precios-seg { display: none; }
+.p-precios-seg__opt { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: var(--r-pill); font-size: .93rem; font-weight: 600; white-space: nowrap; color: var(--fg-2); cursor: pointer; transition: color var(--d-2) var(--e-soft); }
+.p-precios-seg__opt small { font-family: var(--f-mono); font-size: .6rem; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: var(--ok-fg); transition: color var(--d-2); }
+.p-precios-seg__opt[aria-pressed="true"] { color: var(--tabs-on); }
+.p-precios-seg__opt[aria-pressed="true"] small { color: var(--ok-on-dark); }
+.p-precios-seg__ink { position: absolute; z-index: 0; left: 4px; top: 4px; bottom: 4px; width: calc(50% - 4px); border-radius: var(--r-pill); background: var(--tabs-ink); box-shadow: var(--tabs-ink-sh); transition: transform var(--d-3) var(--e-spring); }
+.is-billing-annual .p-precios-seg__ink { transform: translateX(100%); }
+
+/* ---------- Planes: tres hojas, una manda ---------- */
+.p-precios-plans { display: grid; gap: clamp(16px, 2vw, 28px); align-items: start; margin-top: clamp(40px, 5vw, 72px); }
+.p-precios .tc-plan--featured { margin-top: 0; }
+.p-precios-plan { align-content: start; }
+.p-precios-plan--a, .p-precios-plan--c { --spot-c: color-mix(in srgb, var(--royal) 12%, transparent); }
+.p-precios-plan--b { border-radius: var(--leaf) var(--r-lg) var(--leaf) var(--r-lg); }
+.p-precios-plan__top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.p-precios-plan--b .tc-plan__name { font-size: 1.9rem; }
+.p-precios-plan .tc-plan__desc { min-height: 0; }
+.p-precios-plan--b .tc-plan__amount { font-size: clamp(3.2rem, 2.3rem + 2.8vw, 4.7rem); }
+.p-precios-plan__fine { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 30px; font-size: .84rem; color: var(--fg-3); }
+.p-precios-plan .tc-plan__cta { position: relative; z-index: 2; }
+.is-billing-annual .p-precios-alt { display: none; }
+
+/* nivel del plan: tres barras */
+.p-precios-tier { display: inline-flex; align-items: flex-end; gap: 3px; height: 18px; flex: none; }
+.p-precios-tier i { width: 5px; height: 7px; border-radius: var(--r-pill); background: var(--line); }
+.p-precios-tier i:nth-child(2) { height: 12px; }
+.p-precios-tier i:nth-child(3) { height: 18px; }
+.p-precios-tier i.is-on { background: var(--accent); }
+
+@media (min-width: 1000px) {
+  .p-precios-plans { grid-template-columns: minmax(0, 1fr) minmax(0, 1.14fr) minmax(0, 1fr); padding-top: 20px; }
+  .p-precios-plans--time > :first-child { margin-top: 44px; }
+  .p-precios-plans--time > :last-child { margin-top: 96px; }
+  .p-precios-plans--facts > :first-child { margin-top: 96px; }
+  .p-precios-plans--facts > :last-child { margin-top: 44px; }
+  .p-precios .tc-plan--featured { padding: clamp(36px, 3.6vw, 56px) clamp(28px, 3vw, 44px); }
+  .p-precios-suite__mods { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 640px) and (max-width: 999px) {
+  .p-precios-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-top: 14px; }
+  .p-precios-plan--b { grid-column: 1 / -1; order: -1; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 4vw, 48px); padding: clamp(30px, 4.6vw, 48px); }
+  .p-precios-plan--b > * { grid-column: 1; }
+  .p-precios-plan--b > .tc-ticks { grid-column: 2; grid-row: 1 / span 5; align-self: center; border-top: 0; padding-top: 0; }
+}
+
+/* Rodillo de cifras: solo giran los dígitos que cambian.
+   El motor alterna el atributo hidden; la cifra que aparece entra animada. */
+.p-precios-amt { display: inline-grid; }
+.p-precios-amt > * { grid-area: 1 / 1; }
+.p-precios-roll { display: inline-flex; }
+.p-precios-d { position: relative; display: inline-block; overflow-y: clip; padding-block: .12em; margin-block: -.12em; white-space: pre; }
+.p-precios-d > span { display: inline-block; }
+.p-precios { --p-precios-roll: 108%; }
+.is-billing-annual .p-precios { --p-precios-roll: -108%; }
+.motion .p-precios.is-rolled .p-precios-d:not(.is-same) > span { animation: p-precios-roll-in var(--d-3) var(--e-out) both; animation-delay: calc(var(--k) * 46ms); }
+.motion .p-precios.is-rolled .p-precios-d:not(.is-same)::before { content: attr(data-prev); position: absolute; left: 0; top: .12em; animation: p-precios-roll-out var(--d-3) var(--e-out) both; animation-delay: calc(var(--k) * 46ms); }
+@keyframes p-precios-roll-in { from { transform: translate3d(0, calc(var(--p-precios-roll) * -1), 0); } to { transform: none; } }
+@keyframes p-precios-roll-out { from { transform: none; opacity: 1; } to { transform: translate3d(0, var(--p-precios-roll), 0); opacity: 0; } }
+.motion .p-precios.is-rolled .savings-note { display: inline-block; animation: p-precios-say var(--d-3) var(--e-out) 180ms both; }
+
+/* tira de garantías bajo los planes */
+.p-precios-strip { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: clamp(28px, 3.4vw, 48px); font-size: .9rem; color: var(--fg-2); }
+.p-precios-strip li { display: inline-flex; align-items: center; gap: 8px; }
+.p-precios-strip .tc-ico { color: var(--accent-text); }
+
+/* ---------- Comparativa ---------- */
+.p-precios-cmp { margin-top: clamp(64px, 8vw, 120px); }
+.p-precios-cmp__head { display: grid; gap: 10px; margin-bottom: clamp(22px, 2.6vw, 36px); }
+.p-precios-matrix th:first-child { width: 46%; }
+.p-precios-matrix th, .p-precios-matrix td { padding-block: 13px; }
+.p-precios-matrix thead th { padding-block: 20px 14px; vertical-align: middle; }
+.p-precios-matrix thead th:not(:first-child) { font-family: var(--f-display); font-size: 1.1rem; font-weight: 600; letter-spacing: -.02em; text-transform: none; color: var(--fg); }
+.p-precios-matrix tbody th { font-weight: 500; }
+.p-precios-matrix__price th { font-weight: 600; }
+.p-precios-matrix__price .tc-num { font-size: 1.02rem; font-weight: 600; }
+.p-precios-matrix__price small { display: block; margin-top: 2px; font-family: var(--f-mono); font-size: .62rem; letter-spacing: .03em; color: var(--fg-3); white-space: nowrap; }
+.p-precios-matrix tbody tr { transition: background-color var(--d-2); }
+.p-precios-matrix tbody tr:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+/* los checks saltan en cascada cuando la tabla entra */
+.motion .p-precios-matrix .tc-yes, .motion .p-precios-matrix .tc-no { transform: scale(0); transition: transform var(--d-3) var(--e-spring) calc(var(--r, 0) * 45ms + 260ms); }
+.motion .is-in .p-precios-matrix .tc-yes, .motion .is-in .p-precios-matrix .tc-no { transform: none; }
+.motion .p-precios-matrix td:nth-child(3) > span:first-child { transition-delay: calc(var(--r, 0) * 45ms + 330ms); }
+.motion .p-precios-matrix td:nth-child(4) > span:first-child { transition-delay: calc(var(--r, 0) * 45ms + 400ms); }
+
+/* móvil: sin desplazamiento lateral. Los precios, en tres fichas con su plan;
+   debajo, la cabecera de planes y una línea por función. */
+@media (max-width: 640px) {
+  .p-precios-matrix { display: flex; flex-direction: column; min-width: 0; }
+  .p-precios-matrix thead, .p-precios-matrix tbody { display: contents; }
+  .p-precios-matrix tr { display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, 58px); align-items: stretch; padding-inline: 12px 6px; border-bottom: 1px solid var(--line); }
+  .p-precios-matrix th, .p-precios-matrix td, .p-precios-matrix thead th { display: grid; align-items: center; padding: 11px 2px; border: 0; }
+  .p-precios-matrix th:first-child { width: auto; min-width: 0; padding-right: 8px; }
+  .p-precios-matrix td { justify-items: center; }
+  .p-precios-matrix thead tr { order: 1; align-items: end; }
+  .p-precios-matrix thead th:not(:first-child) { justify-items: center; font-family: var(--f-mono); font-size: .5rem; font-weight: 500; letter-spacing: 0; text-transform: uppercase; color: var(--fg-2); padding-block: 12px 10px; }
+  .p-precios-matrix thead th:first-child { font-size: .6rem; padding-block: 12px 10px; }
+  .p-precios-matrix tbody tr { order: 2; font-size: .92rem; }
+  .p-precios-matrix tbody tr:last-child { border-bottom: 0; }
+  .p-precios-matrix tbody tr.p-precios-matrix__price { order: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 6px; padding: 14px 12px 16px; }
+  .p-precios-matrix__price th { grid-column: 1 / -1; padding: 0 2px 10px; }
+  .p-precios-matrix__price td { align-content: start; gap: 4px; padding: 10px 2px 12px; border-radius: var(--r-xs); background: color-mix(in srgb, var(--accent) 4%, transparent); text-align: center; }
+  .p-precios-matrix__price td.is-us { background: color-mix(in srgb, var(--accent) 11%, transparent); }
+  .p-precios-matrix__price td::before { content: attr(data-label); font-family: var(--f-mono); font-size: .56rem; letter-spacing: .04em; text-transform: uppercase; color: var(--fg-3); }
+  .p-precios-matrix__price .tc-num { font-size: .92rem; }
+  .p-precios-matrix__price small { font-size: .54rem; letter-spacing: 0; }
+}
+
+/* ---------- Fechas de la AEAT + nota de prueba ---------- */
+.p-precios-pre { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: clamp(16px, 2vw, 28px); align-items: end; margin-top: clamp(40px, 5vw, 72px); }
+.p-precios-aeat { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+.p-precios-aeat__copy { display: grid; gap: 12px; justify-items: start; }
+.p-precios-aeat__copy > p:not(.tc-mono) { font-size: .98rem; color: var(--fg-2); }
+.p-precios-aeat__copy > .tc-mono { display: inline-flex; align-items: center; gap: 8px; }
+.p-precios-aeat__copy strong { font-weight: 600; color: var(--fg); }
+.p-precios-dates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(14px, 2vw, 28px); }
+.p-precios-dates .tc-rule { grid-column: 1 / -1; height: 2px; margin: 6px 0 0 6px; }
+.p-precios-dates__pt { position: relative; display: grid; gap: 4px; padding-top: 22px; }
+.p-precios-dates__pt::before { content: ""; position: absolute; left: 0; top: -8px; width: 14px; height: 14px; border-radius: 50%; background: var(--node-bg); box-shadow: 0 0 0 2px var(--accent), var(--node-glow); }
+.p-precios-dates__pt b { font-family: var(--f-display); font-size: clamp(1.5rem, 1.1rem + 1.3vw, 2.2rem); font-weight: 600; letter-spacing: -.035em; line-height: 1; white-space: nowrap; }
+.p-precios-dates__pt small { font-family: var(--f-mono); font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; line-height: 1.5; color: var(--fg-3); }
+.p-precios-dates__pt em { font-style: normal; font-family: var(--f-mono); font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text); }
+.p-precios-trial { margin-bottom: clamp(0px, 2vw, 28px); }
+.p-precios-trial a { color: var(--accent-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+
+/* ---------- Suite + gestorías ---------- */
+.p-precios-suite { display: grid; grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr); align-items: center; }
+.p-precios-suite__main { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(24px, 3vw, 44px) clamp(24px, 4vw, 64px); align-items: start; padding-right: clamp(28px, 7vw, 110px); }
+.p-precios-suite__copy { display: grid; gap: 18px; justify-items: start; }
+.p-precios-suite__price { display: grid; gap: 14px; justify-items: end; text-align: right; padding-top: 6px; }
+.p-precios-suite__word { font-family: var(--f-display); font-size: clamp(2.4rem, 1.8rem + 2.4vw, 4rem); font-weight: 600; letter-spacing: -.04em; line-height: 1; }
+.p-precios-suite__mods { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 168px), 1fr)); gap: 12px; }
+.p-precios-suite__mods li { display: grid; gap: 4px; align-content: start; padding: 18px 18px 20px; border-radius: var(--r-md) var(--r-md) var(--r-md) var(--leaf-sm); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.p-precios-suite__mods .tc-ico { color: var(--cyan); margin-bottom: 10px; }
+.p-precios-suite__mods b { font-weight: 600; }
+.p-precios-suite__mods small { font-size: .84rem; color: var(--fg-2); }
+.p-precios-suite__main .tc-cta-row { grid-column: 1 / -1; margin-top: 4px; position: relative; z-index: 2; }
+/* los dos productos, unidos */
+.p-precios-join { display: inline-flex; align-items: center; }
+.p-precios-join span { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: var(--white); box-shadow: 0 0 0 1px var(--line), var(--sh-glow); flex: none; }
+.p-precios-join img { width: 34px; height: 34px; object-fit: contain; }
+.p-precios-join i { position: relative; width: clamp(40px, 5vw, 72px); height: 2px; background: linear-gradient(90deg, var(--cyan), var(--cyan-soft), var(--cyan)); opacity: .55; }
+.p-precios-join i::after { content: ""; position: absolute; left: 0; top: 50%; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--cyan-soft); box-shadow: var(--node-glow); }
+.motion .p-precios-join.is-live i::after { animation: p-precios-travel 2.6s var(--e-inout) infinite alternate; }
+@keyframes p-precios-travel { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(clamp(40px, 5vw, 72px), 0, 0); } }
+
+.p-precios-gest { z-index: 2; display: grid; gap: 12px; justify-items: start; margin: clamp(40px, 6vw, 96px) 0 0 clamp(-76px, -5vw, -28px); }
+.p-precios-gest .tc-glyph { margin-bottom: 6px; }
+
+/* ---------- FAQ ---------- */
+.p-precios-faq__head { gap: 18px; }
+.p-precios-faq .tc-acc { max-width: none; }
+@media (min-width: 921px) {
+  .p-precios-faq__head { position: sticky; top: calc(var(--nav-h) + 48px); }
+  .p-precios-faq .tc-acc { margin-top: 0; }
+}
+
+/* ---------- Franja: el resto de productos ---------- */
+.p-precios-more { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.p-precios-more__head { display: grid; gap: 14px; justify-items: start; }
+.p-precios-more__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.p-precios-more__list a { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 12px 20px 12px 12px; border-radius: var(--r-pill); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); color: var(--fg); transition: transform var(--d-3) var(--e-out), background-color var(--d-2), box-shadow var(--d-2); }
+.p-precios-more__list a:hover { background: var(--white); box-shadow: var(--sh-1); transform: translate3d(4px, 0, 0); }
+.p-precios-more__list img, .p-precios-more__list .tc-glyph { width: 44px; height: 44px; border-radius: 50%; }
+.p-precios-more__list b { display: block; font-family: var(--f-display); font-size: 1.1rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.15; }
+.p-precios-more__list small { display: block; font-size: .82rem; line-height: 1.3; color: var(--fg-2); }
+.p-precios-more__list a > .tc-ico { color: var(--accent-text); transition: transform var(--d-2) var(--e-out); }
+.p-precios-more__list a:hover > .tc-ico { transform: translateX(4px); }
+
+/* ---------- CTA final ---------- */
+.p-precios-pool-alt { justify-self: center; color: var(--on-dark); }
+
+/* ---------- Puntos de corte ---------- */
+@media (max-width: 999px) {
+  .p-precios-console { grid-template-columns: 1fr; }
+  .p-precios-console__say { min-height: 0; max-width: none; }
+  .p-precios-pre { grid-template-columns: 1fr; }
+  .p-precios-trial { margin-bottom: 0; }
+  .p-precios-suite { grid-template-columns: 1fr; gap: 18px; }
+  .p-precios-suite__main { padding-right: clamp(28px, 4.4vw, 68px); }
+  .p-precios-gest { margin: 0; }
+}
+@media (max-width: 920px) {
+  .p-precios-head { grid-template-columns: 1fr; }
+  .p-precios-head__side { justify-items: start; padding-bottom: 0; }
+  .p-precios-more { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .p-precios-aeat { grid-template-columns: 1fr; }
+  .p-precios-suite__main { grid-template-columns: 1fr; }
+  .p-precios-suite__price { justify-items: start; text-align: left; }
+}
+@media (max-width: 560px) {
+  .p-precios-console { padding: 24px 22px 26px; }
+  .p-precios-console .tc-billing { font-size: 1rem; gap: 12px; flex-wrap: nowrap; }
+  .p-precios-console .tc-billing__label--annual { flex-direction: column; align-items: flex-start; gap: 5px; }
+  .p-precios-console .tc-switch { width: 64px; height: 36px; }
+  .p-precios-console .tc-switch__thumb { width: 28px; height: 28px; }
+  .p-precios-console .tc-switch[aria-checked="true"] .tc-switch__thumb { transform: translateX(28px); }
+  .p-precios-console__say { min-height: 3.8em; }
+  .p-precios-year i { height: 56px; }
+  .p-precios-year i::after { width: 6px; height: 6px; margin-left: -3px; bottom: 9px; }
+  .p-precios-year span { font-size: .5rem; letter-spacing: 0; }
+  .p-precios-year em { left: auto; right: calc(-100% - 3px); width: auto; text-align: right; }
+  .p-precios-year__cap { flex-direction: column; gap: 2px; }
+  .p-precios-hero__foot { justify-content: flex-start; }
+  .p-precios-index a { flex: 1 1 auto; justify-content: center; }
+  .p-precios-seg { display: grid; width: 100%; }
+  .p-precios-seg__opt { padding: 0 10px; }
+  .p-precios-plan--b .tc-plan__amount { font-size: 3.3rem; }
+  .p-precios-strip { gap: 10px 20px; }
+  .p-precios-dates__pt b { font-size: 1.4rem; }
+  .p-precios-more__list { grid-template-columns: 1fr; }
+  .p-precios-suite__mods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .p-precios-suite__mods li { padding: 14px 14px 16px; }
+}
+@media (max-width: 359px) {
+  .p-precios-console { padding-inline: 16px; }
+  .p-precios-console .tc-billing { gap: 9px; }
+  .p-precios-console .tc-billing .tc-chip { padding: 0 9px; font-size: .6rem; letter-spacing: .02em; }
+}

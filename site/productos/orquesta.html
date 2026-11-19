@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Orquesta — Dirige un equipo de IAs | TrustCore</title>
+  <meta name="description" content="App de escritorio para macOS y Windows: eliges qué IA orquesta, diseña, programa, prueba y revisa, lanzas una misión y la sigues en un grafo en vivo.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#020A2A">
+  <link rel="canonical" href="https://www.trustcore.es/productos/orquesta">
+  <link rel="alternate" hreflang="es" href="https://www.trustcore.es/productos/orquesta">
+  <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/productos/orquesta">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.trustcore.es/productos/orquesta">
+  <meta property="og:title" content="Orquesta — Dirige un equipo de IAs desde un solo lugar | TrustCore">
+  <meta property="og:description" content="Eliges qué IA orquesta, diseña, programa, prueba y revisa, lanzas una misión y un grafo te enseña en vivo quién hace qué. App de escritorio para macOS y Windows.">
+  <meta property="og:image" content="https://www.trustcore.es/assets/og-image-1200x630.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="TrustCore">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orquesta — Dirige un equipo de IAs desde un solo lugar | TrustCore">
+  <meta name="twitter:description" content="Eliges qué IA orquesta, diseña, programa, prueba y revisa, lanzas una misión y un grafo te enseña en vivo quién hace qué.">
+  <meta name="twitter:image" content="https://www.trustcore.es/assets/og-image-1200x630.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Orquesta",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "macOS, Windows",
+    "description": "App de escritorio para dirigir un equipo de IAs (Claude, Codex, Antigravity, Copilot, Devin, Meta y las que añadas) desde un solo lugar: eliges quién orquesta, diseña, programa, prueba y revisa, lanzas una misión y un grafo muestra en vivo quién hace qué.",
+    "url": "https://www.trustcore.es/productos/orquesta",
+    "image": "https://www.trustcore.es/assets/products/orquesta-icon.webp",
+    "inLanguage": "es",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TrustCore",
+      "url": "https://www.trustcore.es/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "TrustCore", "item": "https://www.trustcore.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://www.trustcore.es/productos" },
+      { "@type": "ListItem", "position": 3, "name": "Orquesta", "item": "https://www.trustcore.es/productos/orquesta" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es Orquesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Orquesta es una app de escritorio para macOS y Windows con la que diriges un equipo de IAs desde un solo lugar. Creas un proyecto, eliges quién orquesta, quién diseña, quién programa, quién prueba y quién revisa, y lanzas una misión. El orquestador reparte el trabajo y un grafo muestra en vivo quién hace qué, qué falla y qué falta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué IAs puedo usar con Orquesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "De serie, Claude, Codex, Antigravity (Google), Copilot, Devin y Meta (Muse). Desde la pantalla Conectores puedes añadir cualquier otro agente que funcione por línea de órdenes: hay plantillas comprobadas para Gemini CLI, Qwen Code, OpenCode, Cursor Agent y Aider."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Orquesta incluye las IAs o uso mis cuentas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usas tus cuentas. Orquesta trabaja con las CLI oficiales de cada proveedor: las instalas, inicias sesión y la pantalla Conectores muestra cuáles detecta. Cada tarea consume el uso de tu plan en ese proveedor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito saber programar para usar Orquesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Con «Tengo una idea» la cuentas con tus palabras y la IA te propone qué construir, por qué, lo que hará la primera versión y lo que tendrás que poner tú. También te dice si no hace falta programar nada. Cuando pulsas «Empezar a construir», el equipo trabaja fase a fase."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pueden hacer los agentes en mi ordenador?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trabajan dentro de la carpeta del proyecto con el nivel de permisos que elijas al crearlo: solo lectura, editar el proyecto o acceso completo. Con «editar el proyecto», Claude Code y Copilot reciben una lista de órdenes permitidas, sin las que borran, escalan, salen a la red o publican; Codex y Antigravity trabajan dentro de su propio sandbox, que no deja escribir fuera del proyecto. Los commits, las ramas y las pull requests los hace Orquesta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde se guardan los datos de Orquesta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En tu equipo. Los datos de la app están en una base SQLite en tu carpeta de usuario, y la memoria compartida del equipo vive en la carpeta .orquesta/ del repositorio de cada proyecto. Los secretos se cifran con el llavero del sistema. Los agentes son las CLI oficiales de cada proveedor: lo que leen del proyecto lo procesa ese proveedor, con tu cuenta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Orquesta funciona en Windows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, hay instalador para Windows de 64 bits. Todavía no lleva certificado de firma, así que SmartScreen muestra «editor desconocido»: se instala con «Más información» y «Ejecutar de todas formas». En macOS la app va firmada con Developer ID y notarizada por Apple."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/instrument-sans-latin-wght-normal.woff2">
+  <link rel="stylesheet" href="/assets/css/site.1d174431.min.css">
+  <script>/*tc-boot*/(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');setTimeout(function(){if(!window.TC){c.remove('motion','js','is-arriving');window.__tcLate=1}},4000);try{if(sessionStorage.getItem('tc:arrive')){sessionStorage.removeItem('tc:arrive');c.add('is-arriving')}}catch(e){}addEventListener('pagereveal',function(e){if(!e.viewTransition)return;c.add('vt-arrive');var s={},l=d.querySelectorAll('[data-vt]');l.forEach(function(el){var n=el.getAttribute('data-vt');if(n&&!s[n]){s[n]=1;el.style.viewTransitionName=n;el.style.viewTransitionClass=el.hasAttribute('data-vt-text')?'tc-vt-text':'tc-vt'}});var f=function(){c.remove('vt-arrive');l.forEach(function(el){el.style.viewTransitionName='';el.style.viewTransitionClass=''})};e.viewTransition.finished.then(f,f)})})(document);</script>
+</head>
+<body class="tc-body p-orquesta">
+<!--NAV-->
+<svg class="tc-sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16l-6 7.5V19l-4-2v-3.5z"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.8h-3.8M5.5 20.5v-3.8h3.8"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol><symbol id="i-spinner" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7.5 2.8v5.4c0 4.4-3 7.6-7.5 9-4.5-1.4-7.5-4.6-7.5-9V6.3z"/><path d="M8.8 12.2l2.3 2.3 4.2-4.4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 6.5l2.5 2.5M13.5 9l2 2"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.5"/><path d="M8.5 14l-1.5 7 5-2.6 5 2.6-1.5-7"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5.5H5a3 3 0 0 0 3 4M16 5.5h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol><symbol id="i-invoice" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol><symbol id="i-graph" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M11 7l-5 9M13 7l5 9M7.2 18h9.6"/></symbol><symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 14.5l2.2 2.2L15.5 12"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5L12 4l8 7.5"/><path d="M6.5 10v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9"/><path d="M10 20v-5h4v5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M4 8l8 5.5L20 8"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M20.5 3.5L10 14M20.5 3.5l-6.3 17-4.2-6.5-6.5-4.2z"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.4"/><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0"/><path d="M15.5 5.3a3.4 3.4 0 0 1 0 6.4M18 14.6a6.5 6.5 0 0 1 3.5 4.9"/></symbol><symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 13.5V12a7.5 7.5 0 0 1 15 0v1.5"/><rect x="3.5" y="13" width="4" height="6" rx="1.5"/><rect x="16.5" y="13" width="4" height="6" rx="1.5"/><path d="M19.5 19v.5a2 2 0 0 1-2 2H13"/></symbol><symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3.5"/><path d="M12 8V4.5M9 13v1.5M15 13v1.5"/><circle cx="12" cy="3.6" r="1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 0 0-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.2-3.9-8.5s1.3-6.1 3.9-8.5z"/></symbol><symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.3-5h13.4l1.3 5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5M10 20v-4.5h4V20"/></symbol><symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.2a4 4 0 0 0-5.3 5.2L3.8 16.8a1.9 1.9 0 0 0 2.7 2.7l5.4-5.4a4 4 0 0 0 5.2-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2.5"/><path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5M3.5 13h17"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 8h14"/><path d="M5 8l-2.5 6a2.7 2.7 0 0 0 5 0zM19 8l-2.5 6a2.7 2.7 0 0 0 5 0z"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 6.5a6.5 6.5 0 1 0 0 11M5 10.5h8M5 13.5h8"/></symbol><symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18M7 15h3"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16.5v-5M12 16.5v-9M17 16.5v-12"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3.5l8 4.2v8.6l-8 4.2-8-4.2V7.7z"/><path d="M4 7.7l8 4.3 8-4.3M12 12v8.5"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.3V5A1.5 1.5 0 0 1 5 3.5h7.3l8.2 8.2a1.5 1.5 0 0 1 0 2.1l-6.7 6.7a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.2"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2.5v2.5M20 14v6h-3M14 20v-1"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H18M9 8.5h5"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"/></symbol><symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 7C6.5 8 5 10.2 5 13v4h5v-5H7.5c0-1.6.8-2.6 2.5-3.2zM18.5 7c-3 1-4.5 3.2-4.5 6v4h5v-5h-2.5c0-1.6.8-2.6 2.5-3.2z"/></symbol><symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l4.8-4.5 3.5 3 3-2.6 4.7 4.1"/></symbol><symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4.5v-15L7 9H5a1 1 0 0 0-1 1z"/><path d="M18.5 9.5a3.5 3.5 0 0 1 0 5M8 15l1 4.5h2.5"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17.5" cy="6" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="M8.2 10.8l7-3.6M8.2 13.2l7 3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l8.5 4.5L12 13 3.5 8.5z"/><path d="M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96 6 6 0 0 1 11.5 1.5A3.75 3.75 0 0 1 17 18.5z"/></symbol><symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><path d="M10 10h4v4h-4zM9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7.5L4 12l4.5 4.5M15.5 7.5L20 12l-4.5 4.5M13.5 5l-3 14"/></symbol><symbol id="i-desktop" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16.5V20"/></symbol><symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol><symbol id="i-apple" viewBox="0 0 24 24"><path d="M15.5 3.5c0 1.6-1.3 3-3 3 0-1.7 1.4-3 3-3z"/><path d="M12.4 8.3c.9 0 1.7-.8 3.2-.8 1.4 0 2.6.7 3.3 1.8-2.8 1.6-2.3 5.4.5 6.5-.7 1.9-2.2 4.7-4 4.7-1.1 0-1.5-.7-2.9-.7s-1.9.7-3 .7c-2 0-4.5-4.2-4.5-7.6 0-3.2 2.1-5 4.1-5 1.4 0 2.4.4 3.3.4z"/></symbol><symbol id="i-windows" viewBox="0 0 24 24"><path d="M4 6.2l7-1v6.3H4zM12.5 5L20 3.9v7.6h-7.5zM4 13h7v6.3l-7-1zM12.5 13H20v7.6l-7.5-1.1z"/></symbol></defs></svg>
+<a class="tc-skip" href="#main-content">Saltar al contenido</a>
+<header class="tc-nav" data-nav>
+  <div class="tc-nav__pill">
+    <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+      <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120">
+      <span class="tc-brand__word">TrustCore</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="tc-nav__links">
+        <li class="tc-nav__item tc-nav__item--mega">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-productos" data-menu-toggle>Productos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--mega" id="tc-menu-productos">
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Para tu empresa</p>
+            <a class="tc-menu__item" style="--i:0" href="/productos/trustinfacts"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-invoice"/></svg></span><span><span class="tc-menu__name">TrustInFacts</span><span class="tc-menu__desc">Facturación VeriFactu, IVA e IPSI</span></span></a>
+            <a class="tc-menu__item" style="--i:1" href="/productos/trustintime"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span><span class="tc-menu__name">TrustInTime</span><span class="tc-menu__desc">Control horario, fichaje y ausencias</span></span></a>
+            <a class="tc-menu__item" style="--i:2" href="/productos/genai"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg></span><span><span class="tc-menu__name">GenAI</span><span class="tc-menu__desc">Contenido para redes, con tu aprobación</span></span></a>
+          </div>
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Apps del estudio</p>
+            <a class="tc-menu__item" style="--i:3" href="/productos/orquesta"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-graph"/></svg></span><span><span class="tc-menu__name">Orquesta</span><span class="tc-menu__desc">Dirige un equipo de IAs</span></span></a>
+            <a class="tc-menu__item" style="--i:4" href="/productos/corrector-fiscal"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-filecheck"/></svg></span><span><span class="tc-menu__name">Corrector Fiscal</span><span class="tc-menu__desc">Revisa modelos de la AEAT</span></span></a>
+            <a class="tc-menu__item" style="--i:5" href="/productos/nido"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-home"/></svg></span><span><span class="tc-menu__name">Nido</span><span class="tc-menu__desc">Buscador privado de vivienda</span></span></a>
+          </div>
+            <a class="tc-menu__all" style="--i:6" href="/productos">Ver todos los productos <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-soluciones" data-menu-toggle>Soluciones <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu" id="tc-menu-soluciones">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/facturacion-para-tiendas">Para tiendas</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/facturacion-para-instaladores">Para instaladores</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/gestoria">Para gestorías</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+          </div>
+        </li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/precios">Precios</a></li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/aprende">Aprende</a></li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-recursos" data-menu-toggle>Recursos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--end" id="tc-menu-recursos">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/clientes">Clientes</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/blog">Blog</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/funcionalidades">Funcionalidades</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/como-funciona">Cómo funciona</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/quienes-somos">Sobre nosotros</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:5" href="/contacto">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="tc-btn tc-btn--primary tc-btn--sm tc-nav__cta" type="button" data-calendar-open data-magnet data-track="header_demo">
+      <span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-cal"/></svg> <span>Agendar<span class="tc-nav__cta-more"> demo</span></span></span>
+    </button>
+    <button class="tc-nav__burger" type="button" aria-expanded="false" aria-controls="tc-sheet" aria-label="Abrir menú" data-sheet-toggle>
+      <span></span><span></span>
+    </button>
+    <span class="tc-nav__progress" aria-hidden="true"></span>
+  </div>
+</header>
+<div class="tc-sheet" id="tc-sheet" data-sheet role="dialog" aria-modal="true" aria-label="Menú">
+  <p class="tc-sheet__label">Para tu empresa</p>
+  <a class="tc-sheet__link" href="/productos/trustinfacts">TrustInFacts <small>Facturación</small></a>
+  <a class="tc-sheet__link" href="/productos/trustintime">TrustInTime <small>Control horario</small></a>
+  <a class="tc-sheet__link" href="/productos/genai">GenAI <small>Redes sociales</small></a>
+  <p class="tc-sheet__label">Apps del estudio</p>
+  <a class="tc-sheet__link" href="/productos/orquesta">Orquesta <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/corrector-fiscal">Corrector Fiscal <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/nido">Nido <small>Escritorio</small></a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/productos">Ver todos los productos</a>
+  <p class="tc-sheet__label">Soluciones</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-tiendas">Para tiendas</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-instaladores">Para instaladores</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/gestoria">Para gestorías</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+  <p class="tc-sheet__label">TrustCore</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/precios">Precios</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/aprende">Aprende</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/clientes">Clientes</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/blog">Blog</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/funcionalidades">Funcionalidades</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/como-funciona">Cómo funciona</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/quienes-somos">Sobre nosotros</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/contacto">Contacto</a>
+  <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-track="mobile_menu_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+</div>
+<!--/NAV-->
+
+<main id="main-content">
+
+  <!-- ============ Hero: el nombre, la frase y el grafo de una misión en marcha ============ -->
+  <section class="tc-sec tc-sec--night tc-phero tone-dark" aria-labelledby="hero-t">
+    <div class="tc-sec__in tc-phero__in" data-intro>
+      <div class="tc-glow tc-glow--a" aria-hidden="true"></div>
+      <div class="tc-glow tc-glow--b" aria-hidden="true"></div>
+      <div class="p-orquesta-orbit" data-live aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><b></b></div>
+
+      <div class="tc-wrap tc-phero__top">
+        <div class="p-orquesta-hero__brand">
+          <nav class="tc-mono tc-crumbs" aria-label="Migas de pan" data-reveal="rise" style="--delay:80ms">
+            <ol><li><a href="/">Inicio</a></li><li><a href="/productos">Productos</a></li><li><span aria-current="page">Orquesta</span></li></ol>
+          </nav>
+          <h1 class="tc-display tc-phero__title tc-phero__title--brand" id="hero-t"><img class="p-orquesta-ico" src="/assets/products/orquesta-icon.webp" alt="" width="256" height="256"> <span data-vt="vt-orquesta-title" data-vt-text>Orquesta</span></h1>
+        </div>
+        <div class="tc-phero__copy">
+          <p class="tc-display tc-phero__claim" data-reveal="words" style="--delay:320ms">Dirige un equipo de IAs <span class="tc-hl">desde un solo lugar.</span></p>
+          <div class="tc-dl p-orquesta-cta" data-stagger style="--base:820ms;--step:110ms">
+            <a class="tc-btn tc-btn--primary" href="mailto:info@trustcore.es?subject=Instalador%20de%20Orquesta" data-download="orquesta" data-magnet data-track="orquesta_hero_dl" data-reveal="pop"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Orquesta</span></span></a>
+            <button class="tc-btn tc-btn--ghost" type="button" data-calendar-open data-track="orquesta_hero_demo" data-reveal="pop"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            <p class="tc-dl__note" data-download-note="orquesta" data-reveal="rise">macOS y Windows</p>
+          </div>
+        </div>
+        <div class="tc-phero__side">
+          <p class="tc-lead" data-reveal="focus" style="--delay:620ms">Eliges quién orquesta, quién diseña, quién programa, quién prueba y quién revisa. Lanzas una misión y el grafo te enseña en vivo quién hace qué, qué falla y qué falta.</p>
+          <ul class="tc-phero__meta" data-stagger style="--base:900ms;--step:80ms" aria-label="Disponibilidad">
+            <li class="tc-chip" data-reveal="pop"><svg class="tc-ico" aria-hidden="true"><use href="#i-desktop"/></svg> App de escritorio</li>
+            <li class="tc-chip" data-reveal="pop"><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg> macOS</li>
+            <li class="tc-chip" data-reveal="pop"><svg class="tc-ico" aria-hidden="true"><use href="#i-windows"/></svg> Windows</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Maqueta HTML: el grafo de una misión de ejemplo. No es una captura. Sin JS se ve a media misión. -->
+      <div class="tc-wrap tc-phero__stage">
+        <div class="tc-phero__shot" data-rise>
+          <figure class="tc-win tc-win--dark tone-dark p-orquesta-win" data-vt="vt-orquesta-shot" data-orq data-live role="img" aria-label="Ilustración del grafo de una misión en Orquesta: el orquestador reparte tareas entre diseño, backend, frontend, testing y revisión; cada tarea pasa de en cola a en curso y a hecha, y un fallo que encuentra el tester crea un arreglo y una regresión antes de la entrega.">
+            <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Orquesta · Grafo de la misión</span></div>
+            <i class="p-orquesta-win__glow" data-orq-glow aria-hidden="true"></i>
+            <div class="tc-win__body p-orquesta-win__body">
+              <div class="p-orquesta-top">
+                <div class="p-orquesta-top__t"><span class="tc-mono">Misión de ejemplo</span><b>Reservas en línea para la web</b></div>
+                <div class="p-orquesta-top__stats">
+                  <span class="p-orquesta-stat"><b data-orq-done>5</b>/<span data-orq-total>9</span> hechas</span>
+                  <span class="p-orquesta-stat"><i></i><b data-orq-run>1</b> en curso</span>
+                </div>
+                <div class="p-orquesta-bar"><i data-orq-bar style="--p:.56"></i></div>
+              </div>
+              <div class="p-orquesta-g" data-orq-g>
+                <div class="p-orquesta-g__grid" data-plx></div>
+                <svg class="p-orquesta-g__edges p-orquesta-g__edges--h" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <g data-e="plan-design" class="is-lit"><path class="p-orquesta-e" d="M8 50C16.2 50 16.2 21 24.5 21"/><path class="p-orquesta-e p-orquesta-e--lit" d="M8 50C16.2 50 16.2 21 24.5 21"/></g>
+                  <g data-e="plan-back" class="is-lit"><path class="p-orquesta-e" d="M8 50C16.2 50 16.2 79 24.5 79"/><path class="p-orquesta-e p-orquesta-e--lit" d="M8 50C16.2 50 16.2 79 24.5 79"/></g>
+                  <g data-e="design-front" class="is-lit"><path class="p-orquesta-e" d="M24.5 21L41.5 21"/><path class="p-orquesta-e p-orquesta-e--lit" d="M24.5 21L41.5 21"/></g>
+                  <g data-e="front-test" class="is-lit"><path class="p-orquesta-e" d="M41.5 21C49.5 21 49.5 50 57.5 50"/><path class="p-orquesta-e p-orquesta-e--lit" d="M41.5 21C49.5 21 49.5 50 57.5 50"/></g>
+                  <g data-e="back-test" class="is-lit"><path class="p-orquesta-e" d="M24.5 79C41 79 41 50 57.5 50"/><path class="p-orquesta-e p-orquesta-e--lit" d="M24.5 79C41 79 41 50 57.5 50"/></g>
+                  <g data-e="test-review" class="is-off"><path class="p-orquesta-e" d="M57.5 50C74.5 50 74.5 20 91.5 20"/><path class="p-orquesta-e p-orquesta-e--lit" d="M57.5 50C74.5 50 74.5 20 91.5 20"/></g>
+                  <g data-e="test-fix" class="is-lit"><path class="p-orquesta-e" d="M57.5 50C63 50 63 85 68.5 85"/><path class="p-orquesta-e p-orquesta-e--lit" d="M57.5 50C63 50 63 85 68.5 85"/></g>
+                  <g data-e="fix-retest"><path class="p-orquesta-e" d="M68.5 85C73.2 85 73.2 50 78 50"/><path class="p-orquesta-e p-orquesta-e--lit" d="M68.5 85C73.2 85 73.2 50 78 50"/></g>
+                  <g data-e="retest-review"><path class="p-orquesta-e" d="M78 50C84.8 50 84.8 20 91.5 20"/><path class="p-orquesta-e p-orquesta-e--lit" d="M78 50C84.8 50 84.8 20 91.5 20"/></g>
+                  <g data-e="review-delivery"><path class="p-orquesta-e" d="M91.5 20L91.5 80"/><path class="p-orquesta-e p-orquesta-e--lit" d="M91.5 20L91.5 80"/></g>
+                </svg>
+                <svg class="p-orquesta-g__edges p-orquesta-g__edges--v" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <g data-e="plan-design" class="is-lit"><path class="p-orquesta-e" d="M50 6.5C50 13.8 21 13.8 21 21"/><path class="p-orquesta-e p-orquesta-e--lit" d="M50 6.5C50 13.8 21 13.8 21 21"/></g>
+                  <g data-e="plan-back" class="is-lit"><path class="p-orquesta-e" d="M50 6.5C50 13.8 79 13.8 79 21"/><path class="p-orquesta-e p-orquesta-e--lit" d="M50 6.5C50 13.8 79 13.8 79 21"/></g>
+                  <g data-e="design-front" class="is-lit"><path class="p-orquesta-e" d="M21 21L21 36"/><path class="p-orquesta-e p-orquesta-e--lit" d="M21 21L21 36"/></g>
+                  <g data-e="front-test" class="is-lit"><path class="p-orquesta-e" d="M21 36C21 43 50 43 50 50"/><path class="p-orquesta-e p-orquesta-e--lit" d="M21 36C21 43 50 43 50 50"/></g>
+                  <g data-e="back-test" class="is-lit"><path class="p-orquesta-e" d="M79 21C79 35.5 50 35.5 50 50"/><path class="p-orquesta-e p-orquesta-e--lit" d="M79 21C79 35.5 50 35.5 50 50"/></g>
+                  <g data-e="test-review" class="is-off"><path class="p-orquesta-e" d="M50 50C50 70 21 70 21 90"/><path class="p-orquesta-e p-orquesta-e--lit" d="M50 50C50 70 21 70 21 90"/></g>
+                  <g data-e="test-fix" class="is-lit"><path class="p-orquesta-e" d="M50 50C50 56.5 79 56.5 79 63"/><path class="p-orquesta-e p-orquesta-e--lit" d="M50 50C50 56.5 79 56.5 79 63"/></g>
+                  <g data-e="fix-retest"><path class="p-orquesta-e" d="M79 63C79 69.5 50 69.5 50 76"/><path class="p-orquesta-e p-orquesta-e--lit" d="M79 63C79 69.5 50 69.5 50 76"/></g>
+                  <g data-e="retest-review"><path class="p-orquesta-e" d="M50 76C50 83 21 83 21 90"/><path class="p-orquesta-e p-orquesta-e--lit" d="M50 76C50 83 21 83 21 90"/></g>
+                  <g data-e="review-delivery"><path class="p-orquesta-e" d="M21 90L76 90"/><path class="p-orquesta-e p-orquesta-e--lit" d="M21 90L76 90"/></g>
+                </svg>
+                <div class="p-orquesta-n p-orquesta-n--main" data-n="plan" data-s="done" style="--x:8%;--y:50%;--mx:50%;--my:6.5%;--k:0"><span class="p-orquesta-n__role">Orquestación</span><b class="p-orquesta-n__task">Plan</b><span class="p-orquesta-n__meta"><i></i><em data-st>Hecha</em><span class="p-orquesta-n__who">Claude</span></span></div>
+                <div class="p-orquesta-n" data-n="design" data-s="done" style="--x:24.5%;--y:21%;--mx:21%;--my:21%;--k:1"><span class="p-orquesta-n__role">Diseño</span><b class="p-orquesta-n__task">Pantallas</b><span class="p-orquesta-n__meta"><i></i><em data-st>Hecha</em><span class="p-orquesta-n__who">Antigravity</span></span></div>
+                <div class="p-orquesta-n" data-n="back" data-s="done" style="--x:24.5%;--y:79%;--mx:79%;--my:21%;--k:2"><span class="p-orquesta-n__role">Backend</span><b class="p-orquesta-n__task">API</b><span class="p-orquesta-n__meta"><i></i><em data-st>Hecha</em><span class="p-orquesta-n__who">Codex</span></span></div>
+                <div class="p-orquesta-n" data-n="front" data-s="done" style="--x:41.5%;--y:21%;--mx:21%;--my:36%;--k:3"><span class="p-orquesta-n__role">Frontend</span><b class="p-orquesta-n__task">Formulario</b><span class="p-orquesta-n__meta"><i></i><em data-st>Hecha</em><span class="p-orquesta-n__who">Claude</span></span></div>
+                <div class="p-orquesta-n" data-n="test" data-s="bug" style="--x:57.5%;--y:50%;--mx:50%;--my:50%;--k:4"><span class="p-orquesta-n__role">Testing</span><b class="p-orquesta-n__task">Recorrido</b><span class="p-orquesta-n__meta"><i></i><em data-st>1 bug</em><span class="p-orquesta-n__who">Copilot</span></span></div>
+                <div class="p-orquesta-n" data-n="fix" data-s="running" style="--x:68.5%;--y:85%;--mx:79%;--my:63%;--k:5"><span class="p-orquesta-n__role">Frontend</span><b class="p-orquesta-n__task">Arreglo</b><span class="p-orquesta-n__meta"><i></i><em data-st>En curso</em><span class="p-orquesta-n__who">Claude</span></span></div>
+                <div class="p-orquesta-n" data-n="retest" data-s="queued" style="--x:78%;--y:50%;--mx:50%;--my:76%;--k:6"><span class="p-orquesta-n__role">Testing</span><b class="p-orquesta-n__task">Regresión</b><span class="p-orquesta-n__meta"><i></i><em data-st>En cola</em><span class="p-orquesta-n__who">Copilot</span></span></div>
+                <div class="p-orquesta-n" data-n="review" data-s="queued" style="--x:91.5%;--y:20%;--mx:21%;--my:90%;--k:7"><span class="p-orquesta-n__role">Revisión</span><b class="p-orquesta-n__task">Entregas</b><span class="p-orquesta-n__meta"><i></i><em data-st>En cola</em><span class="p-orquesta-n__who">Devin</span></span></div>
+                <div class="p-orquesta-n p-orquesta-n--goal" data-n="delivery" data-s="queued" style="--x:91.5%;--y:80%;--mx:76%;--my:90%;--k:8"><span class="p-orquesta-n__role">Hito</span><b class="p-orquesta-n__task">Entrega</b><span class="p-orquesta-n__meta"><i></i><em data-st>En cola</em><span class="p-orquesta-n__who">PR</span></span></div>
+                <div class="p-orquesta-g__fx" data-orq-fx></div>
+              </div>
+              <div class="p-orquesta-canal"><span class="tc-mono">Canal</span><p data-orq-msg><b>Orquestación → Frontend</b>Lo corriges tú. Después, otra regresión.</p></div>
+            </div>
+          </figure>
+          <div class="tc-float tc-float--b" data-reveal="pop" style="--delay:1500ms" aria-hidden="true"><span class="tc-num">MCP</span><span><b>Playwright</b><small>para quien prueba</small></span></div>
+          <div class="tc-float tc-float--a" data-reveal="pop" style="--delay:1650ms" aria-hidden="true"><span class="tc-float__pulse"></span><span><b>En vivo</b><small>quién hace qué</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Puente de olas ============ -->
+  <div class="tc-sec tc-wave" aria-hidden="true"><i data-plx></i><i data-plx></i><i data-plx></i></div>
+
+  <!-- ============ 01 · El equipo ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="equipo" aria-labelledby="s-equipo">
+    <div class="tc-sec__in tc-pad tc-pad--top-0">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--5-7 tc-split--top">
+          <header class="tc-head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">01 · El equipo</p>
+            <h2 class="tc-display tc-h2" id="s-equipo" data-reveal="words">Tú repartes <span class="tc-hl">los papeles.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Orquesta no trae una IA propia: usa las CLI oficiales de cada proveedor, con tus cuentas. Decides qué IA va en cada rol y puedes cambiarlo con la misión en marcha.</p>
+            <ul class="tc-facts tc-mt-2" data-stagger style="--base:240ms">
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-bot"/></svg> <span>De serie: Claude, Codex, Antigravity (Google), Copilot, Devin y Meta (Muse).</span></li>
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-plus"/></svg> <span>«Añadir agente» suma cualquier otra CLI. Hay plantillas comprobadas para Gemini CLI, Qwen Code, OpenCode, Cursor Agent y Aider.</span></li>
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-cpu"/></svg> <span>De serie, el orquestador elige el modelo y el esfuerzo de cada tarea. Si lo prefieres, cada rol con su modelo.</span></li>
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-chart"/></svg> <span>Orquesta te dice quién te ha funcionado mejor en cada rol, contado de tus propias misiones.</span></li>
+            </ul>
+          </header>
+
+          <!-- Maqueta interactiva: el reparto del equipo -->
+          <div class="tc-leaf tc-leaf--lg tc-leaf--tr tc-leaf--raised tc-spot p-orquesta-cast" data-orq-cast data-live data-reveal="tilt">
+            <p class="tc-mono">Equipo · reparto de ejemplo</p>
+            <ul class="p-orquesta-cast__list">
+              <li><button class="p-orquesta-rol" type="button" data-rol="0"><span class="p-orquesta-rol__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-graph"/></svg></span><span class="p-orquesta-rol__n">Orquestación<small>Reparte el trabajo y decide</small></span><span class="p-orquesta-rol__who"><b data-who>Claude</b><svg class="tc-ico" aria-hidden="true"><use href="#i-swap"/></svg></span></button></li>
+              <li><button class="p-orquesta-rol" type="button" data-rol="2"><span class="p-orquesta-rol__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-layers"/></svg></span><span class="p-orquesta-rol__n">Diseño<small>Tokens, guía y pantallas</small></span><span class="p-orquesta-rol__who"><b data-who>Antigravity</b><svg class="tc-ico" aria-hidden="true"><use href="#i-swap"/></svg></span></button></li>
+              <li><button class="p-orquesta-rol" type="button" data-rol="1"><span class="p-orquesta-rol__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-desktop"/></svg></span><span class="p-orquesta-rol__n">Frontend<small>Programa la interfaz</small></span><span class="p-orquesta-rol__who"><b data-who>Codex</b><svg class="tc-ico" aria-hidden="true"><use href="#i-swap"/></svg></span></button></li>
+              <li><button class="p-orquesta-rol" type="button" data-rol="0"><span class="p-orquesta-rol__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-code"/></svg></span><span class="p-orquesta-rol__n">Backend<small>Programa datos y lógica</small></span><span class="p-orquesta-rol__who"><b data-who>Claude</b><svg class="tc-ico" aria-hidden="true"><use href="#i-swap"/></svg></span></button></li>
+              <li><button class="p-orquesta-rol" type="button" data-rol="3"><span class="p-orquesta-rol__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-target"/></svg></span><span class="p-orquesta-rol__n">Testing<small>Usa la app y busca fallos</small></span><span class="p-orquesta-rol__who"><b data-who>Copilot</b><svg class="tc-ico" aria-hidden="true"><use href="#i-swap"/></svg></span></button></li>
+              <li><button class="p-orquesta-rol" type="button" data-rol="4"><span class="p-orquesta-rol__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-eye"/></svg></span><span class="p-orquesta-rol__n">Revisión<small>Contrasta cada entrega con su encargo</small></span><span class="p-orquesta-rol__who"><b data-who>Devin</b><svg class="tc-ico" aria-hidden="true"><use href="#i-swap"/></svg></span></button></li>
+            </ul>
+            <p class="tc-small tc-muted">Pulsa un rol para cambiar quién lo hace. Es una ilustración: en la app eliges también el modelo.</p>
+          </div>
+        </div>
+
+        <div class="p-orquesta-belt">
+          <p class="tc-mono p-orquesta-belt__cap" data-reveal="rise">De serie o con plantilla</p>
+          <div class="tc-belt tc-belt--words" data-belt data-live style="--belt-speed:52s"><ul class="tc-belt__track"><li>Claude</li><li>Codex</li><li>Antigravity</li><li>Copilot</li><li>Devin</li><li>Meta</li><li>Gemini CLI</li><li>Qwen Code</li><li>OpenCode</li><li>Cursor Agent</li><li>Aider</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · La misión, paso a paso ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" id="mision" aria-labelledby="s-mision">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-rel">
+        <div class="tc-brick">
+          <header class="tc-brick__head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">02 · La misión</p>
+            <h2 class="tc-display tc-h2" id="s-mision" data-reveal="words">De la idea <span class="tc-hl">a la entrega.</span></h2>
+            <p class="tc-lead" data-reveal="focus">Un objetivo por misión, con un resultado que se pueda comprobar. Esto es lo que pasa desde que la lanzas.</p>
+          </header>
+          <ol class="tc-steps tc-steps--brick" role="list" data-flow-steps>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Cuentas el proyecto</h3><p class="tc-muted">De qué trata y dónde se usa: web, escritorio, móvil… Si ya existe, entra con un zip o eligiendo su carpeta: Orquesta lee el README, los manifiestos y la documentación, y rellena la ficha.</p></li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:-60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Repartes los papeles</h3><p class="tc-muted">Quién orquesta, quién diseña, quién programa, quién prueba y quién revisa. Y hasta dónde llegan los agentes dentro de la carpeta del proyecto.</p>
+              <ul class="tc-chips" aria-label="Niveles de permisos"><li class="tc-chip">Solo lectura</li><li class="tc-chip tc-chip--hi">Editar el proyecto</li><li class="tc-chip">Acceso completo</li></ul></li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Lanzas la misión</h3><p class="tc-muted">El orquestador escribe el plan. Cada tarea es un encargo completo: objetivo, qué leer antes, entregable, cuándo está hecha y cómo comprobarlo. El plan trae su estimación antes de que lo apruebes.</p>
+              <ul class="tc-mini" aria-hidden="true"><li><span>Plan de la misión</span><em class="tc-chip tc-chip--hi">Plan por revisar</em></li></ul></li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:-60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">El orquestador dirige</h3><p class="tc-muted">Tras cada prueba y cada revisión decide quién corrige qué, con qué modelo y con cuánto esfuerzo. Lo que solo puedes decidir tú te llega como pregunta con opciones, y Orquesta te avisa aunque no la tengas delante.</p></li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Recibes la entrega</h3><p class="tc-muted">Criterios de aceptación con un veredicto por cada uno. En un repositorio git, la misión trabaja en su propia rama y termina en una pull request en borrador: tú revisas y fusionas.</p>
+              <ul class="tc-mini" aria-hidden="true"><li><span>Entrega</span><em class="tc-chip tc-chip--ok"><span class="tc-chip__dot"></span> Por aceptar</em></li></ul></li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:-60px"><p class="tc-step__n" aria-hidden="true"></p><h3 class="tc-step__t">Y sigues con la siguiente</h3><p class="tc-muted">Si pides cambios, la misión continúa con ellos. Una misión que te funcionó se repite desde Sesiones con su mismo plan. Y en modo continuo, al fusionar, encadena la siguiente fase de la hoja de ruta.</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · «Tengo una idea» ============ -->
+  <section class="tc-sec tc-sec--white tone-light" id="idea" aria-labelledby="s-idea">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <article class="tc-leaf tc-leaf--lg tc-leaf--tl tc-leaf--night tone-dark tc-spot p-orquesta-idea" data-live data-reveal="tilt">
+          <i class="tc-flow-pt tc-flow-node tc-flow-pt--card" data-flow data-flow-node></i>
+          <div class="p-orquesta-idea__copy">
+            <p class="tc-mono tc-mono--hi">03 · Si no programas</p>
+            <h2 class="tc-display tc-h2" id="s-idea">«Tengo <span class="tc-hl">una idea»</span></h2>
+            <p class="tc-lead">Cuéntala con tus palabras. La IA te propone qué construir, por qué, lo que hará la primera versión y lo que tendrás que poner tú.</p>
+            <ul class="tc-ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Te dice si no hace falta programar nada</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Solo pregunta lo imprescindible</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Con «Empezar a construir», el equipo trabaja solo, fase a fase</li>
+            </ul>
+          </div>
+          <!-- Maqueta: una idea de ejemplo y la propuesta que devuelve. Ilustración. -->
+          <div class="p-orquesta-idea__demo" aria-hidden="true">
+            <span class="tc-chip p-orquesta-idea__tag">Ejemplo</span>
+            <div class="p-orquesta-idea__q" data-reveal="rise"><span class="tc-mono">Tu idea</span><p data-orq-type>Quiero que mis clientes reserven cita desde el móvil sin tener que llamarme.</p></div>
+            <ul class="p-orquesta-idea__a" data-stagger>
+              <li data-reveal="slide" style="--from:40px"><span class="tc-mono">Qué construir</span><b>Una web de reservas con tu calendario</b></li>
+              <li data-reveal="slide" style="--from:40px"><span class="tc-mono">Por qué</span><b>Se abre desde cualquier móvil, sin instalar nada</b></li>
+              <li data-reveal="slide" style="--from:40px"><span class="tc-mono">La primera versión</span><b>Elegir día y hora, y avisarte de cada reserva</b></li>
+              <li data-reveal="slide" style="--from:40px"><span class="tc-mono">Lo que pones tú</span><b>Tus horarios y un correo para los avisos</b></li>
+            </ul>
+            <span class="p-orquesta-idea__go" data-reveal="pop">Empezar a construir <svg class="tc-ico"><use href="#i-arrow"/></svg></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · A la vista ============ -->
+  <section class="tc-sec tc-sec--day tone-light" id="a-la-vista" aria-labelledby="s-vista">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">04 · Mientras trabaja</p>
+          <h2 class="tc-display tc-h2" id="s-vista" data-reveal="words">Nada pasa <span class="tc-hl">a escondidas.</span></h2>
+          <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Cada decisión del orquestador queda con su motivo en el canal, en el detalle del nodo y en PLAN.md. Y lo que sabe el equipo lo puedes leer tú.</p>
+        </header>
+
+        <div class="tc-tabs" data-tabs>
+          <div class="tc-tabs__list" role="tablist" aria-label="Lo que ves mientras el equipo trabaja" data-reveal="rise">
+            <button class="tc-tabs__tab" role="tab" type="button" id="tab-canal" aria-controls="panel-canal" aria-selected="true">Canal</button>
+            <button class="tc-tabs__tab" role="tab" type="button" id="tab-memoria" aria-controls="panel-memoria" aria-selected="false" tabindex="-1">Memoria</button>
+            <button class="tc-tabs__tab" role="tab" type="button" id="tab-grafo" aria-controls="panel-grafo" aria-selected="false" tabindex="-1">Grafo del proyecto</button>
+            <button class="tc-tabs__tab" role="tab" type="button" id="tab-diseno" aria-controls="panel-diseno" aria-selected="false" tabindex="-1">Diseño</button>
+          </div>
+          <div class="tc-tabs__panels" data-reveal="focus" style="--delay:120ms">
+
+            <div class="tc-tabs__panel" role="tabpanel" id="panel-canal" aria-labelledby="tab-canal"><div class="p-orquesta-vista">
+              <div class="p-orquesta-vista__copy" style="--i:0">
+                <h3 class="tc-display tc-h3">Los agentes se hablan</h3>
+                <p class="tc-muted">Cualquier tarea puede escribir a otra, y cada una deja un traspaso: qué hizo, qué queda a medias y qué debe saber quien siga. El canal separa lo que te necesita de lo informativo.</p>
+                <ul class="tc-ticks">
+                  <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Preguntas con opciones cuando la decisión es tuya</li>
+                  <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Tu respuesta queda en la ficha del proyecto</li>
+                </ul>
+              </div>
+              <figure class="tc-win tc-win--flat" style="--i:1" aria-hidden="true">
+                <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Orquesta · Canal</span></div>
+                <div class="tc-win__body tc-win__body--pad">
+                  <ul class="p-orquesta-chat">
+                    <li><span class="tc-mono">Testing → Frontend</span><p>El botón de reservar no responde al teclado.</p></li>
+                    <li><span class="tc-mono">Frontend → Testing</span><p>Corregido. Queda a medias: probarlo en móvil.</p></li>
+                    <li class="p-orquesta-ask"><span class="tc-mono tc-mono--hi">Orquestación → tú · Te necesita</span><p>¿Los avisos de cada reserva salen por correo o por SMS?</p><div class="tc-chips"><span class="tc-chip tc-chip--solid">Correo</span><span class="tc-chip">SMS</span></div></li>
+                  </ul>
+                </div>
+              </figure>
+            </div></div>
+
+            <div class="tc-tabs__panel" role="tabpanel" id="panel-memoria" aria-labelledby="tab-memoria" hidden><div class="p-orquesta-vista">
+              <div class="p-orquesta-vista__copy" style="--i:0">
+                <h3 class="tc-display tc-h3">Una memoria que leen todos</h3>
+                <p class="tc-muted">La memoria compartida vive en la carpeta .orquesta/ del repositorio del proyecto. Cualquier agente, de cualquier proveedor, lee los mismos archivos. Tú la lees como documentos: por secciones y con buscador.</p>
+                <ul class="tc-ticks">
+                  <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Cada misión hace su retrospectiva: lecciones con evidencia para la siguiente</li>
+                  <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Tus documentos entran como en un chat: adjuntar, arrastrar o pegar</li>
+                </ul>
+              </div>
+              <figure class="tc-win tc-win--flat" style="--i:1" aria-hidden="true">
+                <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">tu-proyecto / .orquesta</span></div>
+                <div class="tc-win__body tc-win__body--pad">
+                  <p class="tc-mono">Los mismos archivos para todos</p>
+                  <ul class="p-orquesta-files">
+                    <li class="is-hi"><svg class="tc-ico"><use href="#i-doc"/></svg> MEMORY.md</li>
+                    <li><svg class="tc-ico"><use href="#i-doc"/></svg> PROJECT.md</li>
+                    <li><svg class="tc-ico"><use href="#i-doc"/></svg> ROLES.md</li>
+                    <li><svg class="tc-ico"><use href="#i-doc"/></svg> POLICY.md</li>
+                    <li><svg class="tc-ico"><use href="#i-doc"/></svg> BRIEF.md</li>
+                    <li class="is-hi"><svg class="tc-ico"><use href="#i-doc"/></svg> PLAN.md</li>
+                    <li><svg class="tc-ico"><use href="#i-doc"/></svg> CHANNEL.md</li>
+                    <li><svg class="tc-ico"><use href="#i-doc"/></svg> STATUS.md</li>
+                    <li><svg class="tc-ico"><use href="#i-doc"/></svg> CHECKPOINT.md</li>
+                    <li><svg class="tc-ico"><use href="#i-doc"/></svg> GRAPH.md</li>
+                  </ul>
+                </div>
+              </figure>
+            </div></div>
+
+            <div class="tc-tabs__panel" role="tabpanel" id="panel-grafo" aria-labelledby="tab-grafo" hidden><div class="p-orquesta-vista">
+              <div class="p-orquesta-vista__copy" style="--i:0">
+                <h3 class="tc-display tc-h3">El mapa de tu código, sin gastar un modelo</h3>
+                <p class="tc-muted">Orquesta construye el grafo de conocimiento de cada proyecto sin ningún modelo: módulos, funciones y tipos exportados, importaciones, llamadas y pruebas. Y lo une con lo que sabe la memoria: decisiones, hallazgos y entregas.</p>
+                <ul class="tc-ticks">
+                  <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Por comunidades, con buscador y la ficha de cada nodo</li>
+                  <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Puedes preguntarle: sus propuestas pasan a Trabajo con un clic</li>
+                </ul>
+              </div>
+              <figure class="tc-win tc-win--flat" data-live style="--i:1" aria-hidden="true">
+                <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Orquesta · Grafo del proyecto</span></div>
+                <div class="tc-win__body tc-win__body--pad">
+                  <svg class="p-orquesta-kg" viewBox="0 0 320 170">
+                    <g><line x1="62" y1="58" x2="96" y2="36"/><line x1="62" y1="58" x2="92" y2="88"/><line x1="62" y1="58" x2="34" y2="86"/><line x1="96" y1="36" x2="92" y2="88"/><line x1="34" y1="86" x2="58" y2="118"/><line x1="92" y1="88" x2="58" y2="118"/><line x1="62" y1="58" x2="30" y2="40"/>
+                      <circle cx="62" cy="58" r="9"/><circle cx="96" cy="36" r="5"/><circle cx="92" cy="88" r="6"/><circle cx="34" cy="86" r="5"/><circle cx="58" cy="118" r="4"/><circle cx="30" cy="40" r="4"/></g>
+                    <g><line x1="168" y1="96" x2="204" y2="76"/><line x1="168" y1="96" x2="150" y2="132"/><line x1="168" y1="96" x2="198" y2="128"/><line x1="204" y1="76" x2="198" y2="128"/><line x1="168" y1="96" x2="140" y2="70"/><line x1="92" y1="88" x2="140" y2="70"/>
+                      <circle class="is-b" cx="168" cy="96" r="10"/><circle class="is-b" cx="204" cy="76" r="5"/><circle class="is-b" cx="150" cy="132" r="5"/><circle class="is-b" cx="198" cy="128" r="6"/><circle class="is-b" cx="140" cy="70" r="4"/></g>
+                    <g><line x1="262" y1="54" x2="290" y2="84"/><line x1="262" y1="54" x2="236" y2="34"/><line x1="262" y1="54" x2="286" y2="28"/><line x1="290" y1="84" x2="258" y2="108"/><line x1="204" y1="76" x2="262" y2="54"/><line x1="258" y1="108" x2="198" y2="128"/>
+                      <circle class="is-c" cx="262" cy="54" r="8"/><circle class="is-hot" cx="290" cy="84" r="6"/><circle class="is-c" cx="236" cy="34" r="4"/><circle class="is-c" cx="286" cy="28" r="5"/><circle class="is-c" cx="258" cy="108" r="5"/></g>
+                  </svg>
+                  <div class="tc-chips tc-mt-2"><span class="tc-chip tc-chip--hi">Partes muy conectadas sin prueba</span><span class="tc-chip">Hallazgos abiertos por comunidad</span></div>
+                </div>
+              </figure>
+            </div></div>
+
+            <div class="tc-tabs__panel" role="tabpanel" id="panel-diseno" aria-labelledby="tab-diseno" hidden><div class="p-orquesta-vista">
+              <div class="p-orquesta-vista__copy" style="--i:0">
+                <h3 class="tc-display tc-h3">El diseño de tu app, tal como está en su código</h3>
+                <p class="tc-muted">La pestaña Diseño lee el sistema de diseño sin IA: qué color hace cada trabajo y su contraste, las fuentes, los tamaños de letra, los radios y el icono. En «Tus cambios» pruebas otro color, otra fuente u otro radio, y se lo pides al equipo.</p>
+                <ul class="tc-ticks">
+                  <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> El equipo recibe cada cambio con el token, el archivo y la línea</li>
+                  <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Lo que ves mal se cuenta con capturas: marcas la zona y pasa a Trabajo</li>
+                </ul>
+              </div>
+              <figure class="tc-win tc-win--flat" style="--i:1" aria-hidden="true">
+                <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Orquesta · Diseño</span></div>
+                <div class="tc-win__body tc-win__body--pad">
+                  <p class="tc-mono">Qué color hace cada trabajo</p>
+                  <div class="p-orquesta-ds tc-mt-2"><i>Fondo</i><i>Acción</i><i>Acento</i><i>Suave</i><i>Papel</i></div>
+                  <ul class="tc-mini">
+                    <li><span>Fuentes y tamaños de letra</span><em class="tc-chip">Leído del código</em></li>
+                    <li><span>Tus cambios</span><em class="tc-chip tc-chip--hi">Probar otro color</em></li>
+                  </ul>
+                </div>
+              </figure>
+            </div></div>
+
+          </div>
+        </div>
+
+        <div class="p-orquesta-more">
+          <div class="tc-stack" style="--gap:12px">
+            <p class="tc-mono tc-eyebrow" data-reveal="rise">También</p>
+            <h3 class="tc-display tc-h3" data-reveal="rise">Para misiones largas</h3>
+          </div>
+          <ul class="tc-ticks tc-ticks--2col" data-stagger style="--step:60ms">
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Hoja de ruta por fases a partir de tus documentos</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Con GitHub CLI, cada proyecto se enlaza a su repositorio y sus issues pasan a Trabajo</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Modo continuo: llega sola hasta la pull request</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Esfuerzo por misión: automático, bajo, medio, alto o máximo</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Mientras trabaja, ves lo que lleva gastado la misión</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Si un modelo se queda sin créditos, sus tareas pasan a otro</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Biblioteca de especialistas: accesibilidad, seguridad, datos, pruebas de extremo a extremo</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Skills y plugins por rol, sea del proveedor que sea</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · Herramientas y llaves ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="herramientas" aria-labelledby="s-mcp">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--5-7">
+          <header class="tc-head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">05 · Herramientas MCP por rol</p>
+            <h2 class="tc-display tc-h2" id="s-mcp" data-reveal="words">Cada rol, con <span class="tc-hl">sus herramientas.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">En Conectores, «Añadir herramienta» da a los agentes servidores MCP por rol. Cada proyecto puede apagar en Equipo las que no le sirven.</p>
+          </header>
+          <div class="tc-leaf tc-leaf--lg tc-leaf--tr tc-leaf--raised tc-spot p-orquesta-bay" data-orq-bay data-live data-reveal="tilt">
+            <p class="tc-mono p-orquesta-bay__cap"><span>Equipo · herramientas del proyecto</span><span class="tc-chip">Ejemplo</span></p>
+            <ul class="p-orquesta-mcp" data-stagger style="--base:260ms;--step:110ms">
+              <li data-reveal="slide" style="--from:50px;--i:0"><b class="p-orquesta-mcp__tool"><svg class="tc-ico" aria-hidden="true"><use href="#i-target"/></svg> Playwright</b><i class="p-orquesta-wire" aria-hidden="true"><i></i></i><span class="p-orquesta-mcp__txt"><b>El tester usa la app web</b> en un navegador de verdad</span><button class="tc-switch p-orquesta-sw" type="button" role="switch" aria-checked="true" aria-label="Playwright, encendida en este proyecto"><span class="tc-switch__thumb" aria-hidden="true"></span></button></li>
+              <li data-reveal="slide" style="--from:50px;--i:1"><b class="p-orquesta-mcp__tool"><svg class="tc-ico" aria-hidden="true"><use href="#i-book"/></svg> Context7</b><i class="p-orquesta-wire" aria-hidden="true"><i></i></i><span class="p-orquesta-mcp__txt"><b>La documentación</b> de las librerías</span><button class="tc-switch p-orquesta-sw" type="button" role="switch" aria-checked="true" aria-label="Context7, encendida en este proyecto"><span class="tc-switch__thumb" aria-hidden="true"></span></button></li>
+              <li data-reveal="slide" style="--from:50px;--i:2"><b class="p-orquesta-mcp__tool"><svg class="tc-ico" aria-hidden="true"><use href="#i-layers"/></svg> Figma</b><i class="p-orquesta-wire" aria-hidden="true"><i></i></i><span class="p-orquesta-mcp__txt"><b>Los diseños</b>, para quien los necesite</span><button class="tc-switch p-orquesta-sw" type="button" role="switch" aria-checked="true" aria-label="Figma, encendida en este proyecto"><span class="tc-switch__thumb" aria-hidden="true"></span></button></li>
+              <li class="p-orquesta-mcp__add" data-reveal="slide" style="--from:50px;--i:3"><b class="p-orquesta-mcp__tool"><svg class="tc-ico" aria-hidden="true"><use href="#i-plus"/></svg> Cualquier otro</b><i class="p-orquesta-wire" aria-hidden="true"><i></i></i><span class="p-orquesta-mcp__txt"><b>Local o remoto</b>, al rol que elijas</span></li>
+            </ul>
+            <p class="tc-small tc-muted p-orquesta-bay__hint">Apaga una y los agentes de este proyecto dejan de recibirla. Es una ilustración.</p>
+            <p class="tc-small tc-muted">Claude, Codex, Copilot y Meta reciben las herramientas en cada tarea de sus roles. Antigravity, Devin y los agentes añadidos usan las que configures en su propia CLI.</p>
+          </div>
+        </div>
+
+        <div class="tc-flowgrid tc-stair p-orquesta-keys" style="--min:300px;--step:120ms" data-stagger>
+          <article class="tc-leaf tc-leaf--lift tc-spot" data-reveal="rise">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-key"/></svg>
+            <h3 class="tc-h4">Variables y secretos</h3>
+            <p class="tc-muted">Conectas los servicios que usa tu app (AWS, OpenAI, Anthropic, Gemini, Stripe, GitHub o tu base de datos PostgreSQL) y Orquesta comprueba al momento que la clave funciona, con una llamada que no gasta.</p>
+            <ul class="tc-ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Secretos cifrados con el llavero del sistema</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Ningún valor queda en el registro, las entregas, el canal, la memoria ni git</li>
+            </ul>
+            <p class="tc-small">Un agente que recibe un secreto puede leerlo: conviene usar claves de prueba y con los permisos justos.</p>
+          </article>
+          <article class="tc-leaf tc-leaf--br tc-leaf--night tone-dark tc-spot" data-reveal="rise">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-bot"/></svg>
+            <h3 class="tc-h4">Dirigir Orquesta desde Claude</h3>
+            <p class="tc-muted">Claude Code o Claude Desktop pueden dirigir la app por ti: crear un proyecto, pedir la hoja de ruta, lanzar una misión, aprobar el plan, aceptar la entrega o pedir cambios.</p>
+            <ul class="tc-ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Nada irreversible: no borra, no publica, no instala</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Cada cosa que hace queda en el canal como «Claude (control)»</li>
+            </ul>
+            <p class="tc-small">Va por un socket local con un token de tu usuario. «Revocar acceso» corta las conexiones.</p>
+          </article>
+          <article class="tc-leaf tc-leaf--tr tc-leaf--lift tc-spot" data-reveal="rise">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-shield"/></svg>
+            <h3 class="tc-h4">Hasta dónde llegan los agentes</h3>
+            <p class="tc-muted">Trabajan dentro de la carpeta del proyecto con el nivel que elijas al crearlo: solo lectura, editar el proyecto o acceso completo.</p>
+            <ul class="tc-ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Con «editar el proyecto», Claude Code y Copilot reciben una lista de órdenes permitidas: sin las que borran, escalan, salen a la red o publican</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Codex y Antigravity trabajan dentro de su sandbox, que no deja escribir fuera del proyecto</li>
+            </ul>
+            <p class="tc-small">Commits, ramas y pull requests son de Orquesta.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · La entrega y las versiones ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" id="entrega" aria-labelledby="s-entrega">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">06 · La entrega</p>
+          <h2 class="tc-display tc-h2" id="s-entrega" data-reveal="words">Un veredicto <span class="tc-hl">por cada criterio.</span></h2>
+          <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Cada misión termina con criterios de aceptación que el equipo puede comprobar en tu ordenador, y una lista aparte de lo que solo puedes comprobar tú.</p>
+        </header>
+        <div class="p-orquesta-duo">
+          <article class="tc-leaf tc-leaf--lg tc-leaf--tr tc-leaf--tint p-orquesta-duo__a" data-reveal="tilt">
+            <p class="tc-mono">Al terminar la misión</p>
+            <h3 class="tc-display tc-h3">Entregas honestas</h3>
+            <p class="tc-muted tc-measure">Si a una entrega le faltan criterios o tiene bugs abiertos, se presenta incompleta, y aceptarla pide un motivo.</p>
+            <ul class="tc-mini" aria-hidden="true">
+              <li><span>Solo se pueden reservar fechas futuras</span><em class="tc-chip tc-chip--ok"><span class="tc-chip__dot"></span> Cumplido</em></li>
+              <li><span>El aviso de cada reserva llega por correo</span><em class="tc-chip tc-chip--gold">Parcial</em></li>
+              <li><span>Se puede reservar sin conexión</span><em class="tc-chip">No cumplido</em></li>
+              <li><span>La CI pasa en la pull request</span><em class="tc-chip tc-chip--hi">Lo compruebas tú</em></li>
+            </ul>
+            <p class="tc-small tc-muted">Criterios de ejemplo.</p>
+          </article>
+          <article class="tc-leaf tc-leaf--br tc-leaf--night tone-dark tc-spot p-orquesta-duo__b" data-reveal="tilt" style="--delay:140ms">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-box"/></svg>
+            <h3 class="tc-display tc-h3">Versiones</h3>
+            <p class="tc-muted">Desde la pestaña Versiones de cada proyecto generas el instalador de la versión actual, lo instalas en tu equipo y guardas cada versión para volver a una anterior o borrarla.</p>
+            <ul class="tc-mini" aria-hidden="true">
+              <li><span class="p-orquesta-ver"><svg class="tc-ico"><use href="#i-dl"/></svg><b>1.2.0</b></span><em class="tc-chip tc-chip--ok"><span class="tc-chip__dot"></span> Instalada</em></li>
+              <li><span class="p-orquesta-ver"><svg class="tc-ico"><use href="#i-refresh"/></svg><b>1.1.0</b></span><em class="tc-chip">Guardada</em></li>
+              <li><span class="p-orquesta-ver"><svg class="tc-ico"><use href="#i-refresh"/></svg><b>1.0.0</b></span><em class="tc-chip">Guardada</em></li>
+            </ul>
+            <p class="tc-small tc-muted">Orquesta se actualiza así a sí misma: espera a que acaben sus agentes y se reinicia sola.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 · Descarga ============ -->
+  <section class="tc-sec tc-sec--white tone-light" id="descarga" aria-labelledby="s-descarga">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="p-orquesta-get" data-live>
+          <div class="p-orquesta-get__main">
+            <img class="p-orquesta-get__ico" src="/assets/products/orquesta-icon.webp" alt="Icono de Orquesta" width="256" height="256" loading="lazy" data-reveal="pop">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">07 · Descarga</p>
+            <h2 class="tc-display tc-h2" id="s-descarga" data-reveal="words">Para macOS <span class="tc-hl">y Windows.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Elige tu sistema. Si el instalador de tu variante todavía no está publicado aquí, te lo enviamos por correo.</p>
+            <div class="tc-dl" data-reveal="rise" style="--delay:240ms">
+              <a class="tc-btn tc-btn--primary" href="mailto:info@trustcore.es?subject=Instalador%20de%20Orquesta" data-download="orquesta" data-magnet data-track="orquesta_descarga_dl"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Orquesta</span></span></a>
+              <p class="tc-dl__note" data-download-note="orquesta">macOS (Apple Silicon e Intel) y Windows</p>
+            </div>
+          </div>
+          <div>
+            <ul class="tc-rows" data-stagger>
+              <li data-reveal="slide" style="--from:40px"><b><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg> macOS</b><span class="tc-muted">DMG para Apple Silicon y para Intel. Firmada con Developer ID y notarizada por Apple: se abre con doble clic.</span></li>
+              <li data-reveal="slide" style="--from:40px"><b><svg class="tc-ico" aria-hidden="true"><use href="#i-windows"/></svg> Windows</b><span class="tc-muted">Instalador para 64 bits. Todavía sin certificado de firma: SmartScreen muestra «editor desconocido» y se instala con «Más información» y «Ejecutar de todas formas».</span></li>
+              <li data-reveal="slide" style="--from:40px"><b><svg class="tc-ico" aria-hidden="true"><use href="#i-tool"/></svg> Antes de empezar</b><span class="tc-muted">Instala e inicia sesión en las CLI que quieras usar. La pantalla Conectores muestra cuáles detecta y los comandos para copiar.</span></li>
+              <li data-reveal="slide" style="--from:40px"><b><svg class="tc-ico" aria-hidden="true"><use href="#i-chart"/></svg> Consumo</b><span class="tc-muted">Cada tarea consume el uso de tu plan en ese proveedor. El plan trae su estimación antes de aprobarlo.</span></li>
+            </ul>
+            <div class="tc-note tc-note--warn" data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-alert"/></svg><div><p><b>Estado actual.</b> Orquesta está en desarrollo activo y cambia a menudo. La distribución firmada en Windows sigue pendiente.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Preguntas ============ -->
+  <section class="tc-sec tc-sec--day tone-light" id="preguntas" aria-labelledby="s-faq">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--4-8 tc-split--top">
+          <header class="tc-head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Preguntas frecuentes</p>
+            <h2 class="tc-display tc-h2" id="s-faq" data-reveal="words">Antes de <span class="tc-hl">instalarla.</span></h2>
+          </header>
+          <div class="tc-acc" data-reveal="rise">
+            <details class="tc-acc__item" name="faq-orquesta" open>
+              <summary class="tc-acc__q"><h3>¿Qué es Orquesta?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Orquesta es una app de escritorio para macOS y Windows con la que diriges un equipo de IAs desde un solo lugar. Creas un proyecto, eliges quién orquesta, quién diseña, quién programa, quién prueba y quién revisa, y lanzas una misión. El orquestador reparte el trabajo y un grafo muestra en vivo quién hace qué, qué falla y qué falta.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-orquesta">
+              <summary class="tc-acc__q"><h3>¿Qué IAs puedo usar con Orquesta?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>De serie, Claude, Codex, Antigravity (Google), Copilot, Devin y Meta (Muse). Desde la pantalla Conectores puedes añadir cualquier otro agente que funcione por línea de órdenes: hay plantillas comprobadas para Gemini CLI, Qwen Code, OpenCode, Cursor Agent y Aider.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-orquesta">
+              <summary class="tc-acc__q"><h3>¿Orquesta incluye las IAs o uso mis cuentas?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Usas tus cuentas. Orquesta trabaja con las CLI oficiales de cada proveedor: las instalas, inicias sesión y la pantalla Conectores muestra cuáles detecta. Cada tarea consume el uso de tu plan en ese proveedor.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-orquesta">
+              <summary class="tc-acc__q"><h3>¿Necesito saber programar para usar Orquesta?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>No. Con «Tengo una idea» la cuentas con tus palabras y la IA te propone qué construir, por qué, lo que hará la primera versión y lo que tendrás que poner tú. También te dice si no hace falta programar nada. Cuando pulsas «Empezar a construir», el equipo trabaja fase a fase.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-orquesta">
+              <summary class="tc-acc__q"><h3>¿Qué pueden hacer los agentes en mi ordenador?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Trabajan dentro de la carpeta del proyecto con el nivel de permisos que elijas al crearlo: solo lectura, editar el proyecto o acceso completo. Con «editar el proyecto», Claude Code y Copilot reciben una lista de órdenes permitidas, sin las que borran, escalan, salen a la red o publican; Codex y Antigravity trabajan dentro de su propio sandbox, que no deja escribir fuera del proyecto. Los commits, las ramas y las pull requests los hace Orquesta.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-orquesta">
+              <summary class="tc-acc__q"><h3>¿Dónde se guardan los datos de Orquesta?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>En tu equipo. Los datos de la app están en una base SQLite en tu carpeta de usuario, y la memoria compartida del equipo vive en la carpeta .orquesta/ del repositorio de cada proyecto. Los secretos se cifran con el llavero del sistema. Los agentes son las CLI oficiales de cada proveedor: lo que leen del proyecto lo procesa ese proveedor, con tu cuenta.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-orquesta">
+              <summary class="tc-acc__q"><h3>¿Orquesta funciona en Windows?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Sí, hay instalador para Windows de 64 bits. Todavía no lleva certificado de firma, así que SmartScreen muestra «editor desconocido»: se instala con «Más información» y «Ejecutar de todas formas». En macOS la app va firmada con Developer ID y notarizada por Apple.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA final ============ -->
+  <section class="tc-pool" id="contacto" data-live aria-labelledby="cta-t">
+    <div class="tc-pool__in tone-dark">
+      <div class="tc-pool__rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="tc-wrap tc-pool__copy">
+        <p class="tc-mono tc-mono--hi" data-reveal="rise">Orquesta, en directo</p>
+        <h2 class="tc-display tc-pool__title" id="cta-t" data-reveal="words">¿La vemos trabajar?</h2>
+        <p class="tc-lead" data-reveal="focus" style="--delay:200ms">Reserva una demo y te enseñamos una misión de principio a fin: el plan, el grafo en vivo y la entrega.</p>
+        <button class="tc-btn tc-btn--primary tc-btn--xl" type="button" data-calendar-open data-magnet data-track="orquesta_cta_demo" data-reveal="pop" style="--delay:320ms">
+          <span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        <div class="tc-pool__contact" data-reveal="rise" style="--delay:420ms">
+          <a href="tel:+34666609299" data-track="orquesta_cta_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> <span class="tc-num">666 60 92 99</span></a>
+          <a href="mailto:info@trustcore.es" data-track="orquesta_cta_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a>
+          <a href="#descarga" data-track="orquesta_cta_dl"><svg class="tc-ico" aria-hidden="true"><use href="#i-dl"/></svg> Descargar Orquesta</a>
+        </div>
+        <p class="tc-mono" data-reveal="rise" style="--delay:480ms">Respuesta en menos de 1 h en horario laboral</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="tc-foot tone-dark">
+  <div class="tc-wrap">
+    <div class="tc-foot__grid">
+      <div class="tc-foot__brand">
+        <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+          <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120" loading="lazy">
+          <span class="tc-brand__word">TrustCore</span>
+        </a>
+        <p>Software con IA hecho en Ceuta para quitar trabajo repetido a empresas y personas.</p>
+        <ul class="tc-foot__contact">
+          <li><a href="tel:+34666609299" data-track="footer_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> 666 60 92 99</a></li>
+          <li><a href="mailto:info@trustcore.es" data-track="footer_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a></li>
+        </ul>
+        <p class="tc-foot__note">Respuesta en menos de 1 h en horario laboral</p>
+        <div class="tc-foot__awards">
+          <span class="tc-chip tc-chip--gold"><svg class="tc-ico" aria-hidden="true"><use href="#i-trophy"/></svg> Alhambra Venture 2026</span>
+          <span class="tc-chip tc-chip--hi"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg> #1 CeutaTech 2026</span>
+        </div>
+      </div>
+      <nav aria-label="Productos">
+        <p class="tc-foot__title">Productos</p>
+        <ul>
+          <li><a href="/productos/trustinfacts">TrustInFacts</a></li>
+          <li><a href="/productos/trustintime">TrustInTime</a></li>
+          <li><a href="/productos/genai">GenAI</a></li>
+          <li><a href="/productos/orquesta">Orquesta</a></li>
+          <li><a href="/productos/corrector-fiscal">Corrector Fiscal</a></li>
+          <li><a href="/productos/nido">Nido</a></li>
+          <li><a href="/productos">Todos los productos</a></li>
+          <li><a href="/precios">Precios</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Soluciones">
+        <p class="tc-foot__title">Soluciones</p>
+        <ul>
+          <li><a href="/facturacion-para-tiendas">Para tiendas</a></li>
+          <li><a href="/facturacion-para-instaladores">Para instaladores</a></li>
+          <li><a href="/gestoria">Para gestorías</a></li>
+          <li><a href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a></li>
+          <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Recursos">
+        <p class="tc-foot__title">Recursos</p>
+        <ul>
+          <li><a href="/clientes">Clientes</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/aprende">Aprende</a></li>
+          <li><a href="/funcionalidades">Funcionalidades</a></li>
+          <li><a href="/como-funciona">Cómo funciona</a></li>
+          <li><a href="/quienes-somos">Sobre nosotros</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="tc-foot__title">Legal</p>
+        <ul>
+          <li><a href="/aviso-legal">Aviso legal</a></li>
+          <li><a href="/privacidad">Privacidad</a></li>
+          <li><a href="/cookies">Cookies</a></li>
+          <li><a href="/terminos">Términos</a></li>
+          <li><button type="button" data-cookie-settings>Configurar cookies</button></li>
+        </ul>
+        <div class="tc-foot__trust trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+          <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" data-track="footer_trustpilot" aria-label="Reséñanos en Trustpilot"><span class="tc-foot__trust-pre">Reséñanos en</span> <svg class="tc-ico" aria-hidden="true"><use href="#i-star"/></svg> Trustpilot</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="tc-foot__backers">
+      <p class="tc-foot__title">Acelerado y respaldado por</p>
+      <div class="tc-foot__backers-row">
+        <img class="tc-foot__cof" src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" width="1000" height="355" loading="lazy">
+        <div class="tc-foot__tile">
+          <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" loading="lazy" style="--w:107px">
+          <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" width="1299" height="79" loading="lazy" style="--w:756px">
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-foot__base">
+      <span>© 2026 TrustCore · Ceuta, España</span>
+      <span>Hecho en Ceuta · Cloud europeo · RGPD</span>
+    </div>
+    <p class="tc-foot__word" aria-hidden="true">TrustCore</p>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script>
+/* Orquesta: el grafo de la misión avanza solo y se acelera con el scroll; el reparto
+   del equipo cambia al pulsar. Sin JS o con movimiento reducido, todo queda a la vista
+   en el estado que trae el HTML. */
+document.addEventListener('DOMContentLoaded', function () {
+  var TC = window.TC;
+  if (!TC) return;
+  var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+
+  /* ---------- Reparto del equipo ---------- */
+  var cast = document.querySelector('[data-orq-cast]');
+  if (cast) {
+    var WHO = ['Claude', 'Codex', 'Antigravity', 'Copilot', 'Devin', 'Meta'];
+    var rows = cast.querySelectorAll('[data-rol]'), touched = false;
+    var swap = function (btn) {
+      var i = (parseInt(btn.getAttribute('data-rol'), 10) + 1) % WHO.length, b = btn.querySelector('[data-who]');
+      btn.setAttribute('data-rol', i);
+      b.textContent = WHO[i];
+      if (TC.motion && b.animate) b.animate([{ transform: 'translate3d(0, 110%, 0)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 420, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+    };
+    each(rows, function (btn) { btn.addEventListener('click', function () { touched = true; swap(btn); }); });
+    if (TC.motion) {
+      var cAcc = 0, cNext = 0;
+      var cTask = TC.task(function (t, dt) {
+        if (touched || !cast.classList.contains('is-live')) return false;
+        cAcc += dt;
+        if (cAcc > 2600) { cAcc = 0; swap(rows[cNext]); cNext = (cNext + 2) % rows.length; }
+      });
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { if (es[0].isIntersecting && !touched) cTask.start(); }, { threshold: .4 }).observe(cast);
+    }
+  }
+
+  /* ---------- Herramientas MCP: cada proyecto apaga las que no le sirven ---------- */
+  each(document.querySelectorAll('[data-orq-bay] [role="switch"]'), function (sw) {
+    var name = (sw.getAttribute('aria-label') || '').split(',')[0];
+    sw.addEventListener('click', function () {
+      var on = sw.getAttribute('aria-checked') !== 'true';
+      sw.setAttribute('aria-checked', on ? 'true' : 'false');
+      sw.setAttribute('aria-label', name + (on ? ', encendida en este proyecto' : ', apagada en este proyecto'));
+      sw.parentNode.classList.toggle('is-off', !on);
+    });
+  });
+
+  /* ---------- «Tengo una idea»: la frase se escribe palabra a palabra ---------- */
+  var typed = document.querySelector('[data-orq-type]');
+  if (typed && TC.motion) {
+    var words = typed.textContent.split(' ');
+    typed.textContent = '';
+    words.forEach(function (w, i) {
+      var s = document.createElement('span');
+      s.setAttribute('data-w', '');
+      s.style.setProperty('--i', i);
+      s.textContent = w;
+      typed.appendChild(s);
+      if (i < words.length - 1) typed.appendChild(document.createTextNode(' '));
+    });
+  }
+
+  /* ---------- Grafo de la misión ---------- */
+  var box = document.querySelector('[data-orq]');
+  if (!box || !TC.motion || !box.animate || !('IntersectionObserver' in window)) return;
+  var g = box.querySelector('[data-orq-g]'), fx = box.querySelector('[data-orq-fx]'), glow = box.querySelector('[data-orq-glow]');
+  var elDone = box.querySelector('[data-orq-done]'), elTotal = box.querySelector('[data-orq-total]'), elRun = box.querySelector('[data-orq-run]');
+  var elBar = box.querySelector('[data-orq-bar]'), elMsg = box.querySelector('[data-orq-msg]');
+  var N = {}, E = {}, S = {};
+  each(box.querySelectorAll('[data-n]'), function (n) { N[n.getAttribute('data-n')] = n; });
+  each(box.querySelectorAll('[data-e]'), function (e) { var k = e.getAttribute('data-e'); (E[k] = E[k] || []).push(e); });
+  var LABEL = { queued: 'En cola', running: 'En curso', verifying: 'Verificando', done: 'Hecha', bug: '1 bug', none: '' };
+
+  function setNode(id, s) {
+    S[id] = s;
+    N[id].setAttribute('data-s', s);
+    N[id].querySelector('[data-st]').textContent = LABEL[s];
+  }
+  function setEdge(k, lit, off) {
+    (E[k] || []).forEach(function (e) { e.classList.toggle('is-lit', !!lit); e.classList.toggle('is-off', !!off); });
+  }
+  function count() {
+    var done = 0, run = 0, total = 0;
+    for (var k in S) {
+      if (S[k] === 'none') continue;
+      total++;
+      if (S[k] === 'done' || S[k] === 'bug') done++;
+      if (S[k] === 'running' || S[k] === 'verifying') run++;
+    }
+    elDone.textContent = done; elTotal.textContent = total; elRun.textContent = run;
+    elBar.style.setProperty('--p', (done / total).toFixed(3));
+  }
+  function say(m) {
+    elMsg.textContent = '';
+    var b = document.createElement('b');
+    b.textContent = m[0];
+    elMsg.appendChild(b);
+    elMsg.appendChild(document.createTextNode(m[1]));
+    elMsg.animate([{ opacity: 0, transform: 'translate3d(0, 10px, 0)' }, { opacity: 1, transform: 'none' }], { duration: 480, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+  }
+  /* un pulso recorre la arista visible (apaisada o vertical) de origen a destino */
+  function pulse(k, soft) {
+    var grp = (E[k] || []).filter(function (e) { return e.ownerSVGElement.getBoundingClientRect().width > 0; })[0];
+    if (!grp) return;
+    var p = grp.querySelector('path'), len = p.getTotalLength(), w = g.clientWidth / 100, h = g.clientHeight / 100, kf = [], steps = 18;
+    for (var i = 0; i <= steps; i++) {
+      var pt = p.getPointAtLength(len * i / steps);
+      kf.push({ transform: 'translate3d(' + (pt.x * w).toFixed(1) + 'px,' + (pt.y * h).toFixed(1) + 'px,0)', opacity: i === 0 || i === steps ? 0 : (soft ? .7 : 1) });
+    }
+    var dot = document.createElement('i');
+    dot.className = 'p-orquesta-pulse' + (soft ? ' p-orquesta-pulse--soft' : '');
+    fx.appendChild(dot);
+    var a = dot.animate(kf, { duration: soft ? 700 : 950, easing: 'cubic-bezier(.65, 0, .35, 1)' });
+    a.onfinish = a.oncancel = function () { if (dot.parentNode) dot.parentNode.removeChild(dot); };
+  }
+
+  var ALL_EDGES = ['plan-design', 'plan-back', 'design-front', 'front-test', 'back-test', 'test-review', 'test-fix', 'fix-retest', 'retest-review', 'review-delivery'];
+  var STEPS = [
+    { d: 2100, msg: ['Tú → Orquestación', 'Misión lanzada: reservas en línea para la web.'], reset: true,
+      s: { plan: 'running', design: 'queued', back: 'queued', front: 'queued', test: 'queued', fix: 'none', retest: 'none', review: 'queued', delivery: 'queued' } },
+    { d: 2400, msg: ['Orquestación → equipo', 'Plan aprobado. Cada tarea lleva su encargo: objetivo, entregable y cómo se comprueba.'],
+      s: { plan: 'done', design: 'running', back: 'running' }, p: ['plan-design', 'plan-back'] },
+    { d: 2300, msg: ['Diseño → Frontend', 'Tokens y pantallas entregados. Ya puedes construir el formulario.'],
+      s: { design: 'done', front: 'running' }, p: ['design-front'] },
+    { d: 2000, msg: ['Backend', 'Tarea terminada. Orquesta la comprueba con el comando de verificación del proyecto.'],
+      s: { back: 'verifying' } },
+    { d: 2400, msg: ['Frontend → Testing', 'Formulario listo. Toca usarlo en un navegador de verdad.'],
+      s: { back: 'done', front: 'done', test: 'running' }, p: ['front-test', 'back-test'] },
+    { d: 2600, msg: ['Testing → Orquestación', 'Un fallo: el formulario acepta fechas pasadas.'],
+      s: { test: 'bug', fix: 'queued', retest: 'queued' }, show: ['test-fix', 'fix-retest', 'retest-review'], hide: ['test-review'], back: ['front-test'] },
+    { d: 2300, msg: ['Orquestación → Frontend', 'Lo corriges tú. Después, otra regresión.'],
+      s: { fix: 'running' }, p: ['test-fix'] },
+    { d: 2200, msg: ['Frontend → Testing', 'Corregido: la fecha se valida antes de guardar.'],
+      s: { fix: 'done', retest: 'running' }, p: ['fix-retest'] },
+    { d: 2200, msg: ['Testing → Revisión', 'Regresión hecha: el fallo ya no aparece.'],
+      s: { retest: 'done', test: 'done', review: 'running' }, p: ['retest-review'] },
+    { d: 2200, msg: ['Revisión → Orquestación', 'Cada entrega coincide con su encargo.'],
+      s: { review: 'done', delivery: 'running' }, p: ['review-delivery'] },
+    { d: 5600, msg: ['Orquestación → tú', 'Entrega lista, con un veredicto por criterio. La pull request queda en borrador: tú revisas y fusionas.'],
+      s: { delivery: 'done' } }
+  ];
+  function apply(st) {
+    var k;
+    if (st.reset) {
+      ALL_EDGES.forEach(function (e) { setEdge(e, false, e === 'test-fix' || e === 'fix-retest' || e === 'retest-review'); });
+    }
+    (st.show || []).forEach(function (e) { setEdge(e, false, false); });
+    (st.hide || []).forEach(function (e) { setEdge(e, false, true); });
+    (st.p || []).forEach(function (e) { setEdge(e, true, false); pulse(e); });
+    (st.back || []).forEach(function (e) { pulse(e, true); });
+    for (k in st.s) setNode(k, st.s[k]);
+    count();
+    say(st.msg);
+  }
+
+  var i = -1, acc = 0, wait = 900, boost = 0, lastY = window.scrollY, seen = false, lastSpark = 0, lastGlow = 0;
+  var task = TC.task(function (t, dt) {
+    if (!seen) return false;
+    boost *= Math.pow(.9, dt / 16);
+    /* la ventana se enciende con el empuje del scroll y se apaga sola */
+    var gl = Math.min(1, boost / 2.4);
+    if (glow && Math.abs(gl - lastGlow) > .02) { lastGlow = gl < .03 ? 0 : gl; glow.style.opacity = lastGlow.toFixed(2); }
+    acc += dt * (1 + boost);
+    if (acc >= wait) {
+      acc = 0;
+      i = (i + 1) % STEPS.length;
+      apply(STEPS[i]);
+      box.classList.add('is-on');
+      wait = STEPS[i].d;
+    }
+  });
+  new IntersectionObserver(function (es) { seen = es[0].isIntersecting; if (seen) task.start(); }, { rootMargin: '60px 0px' }).observe(box);
+  /* el scroll empuja la misión: acelera el reloj y suelta chispas por las aristas encendidas */
+  TC.onScroll(function (y) {
+    var d = Math.abs(y - lastY), now = Date.now();
+    lastY = y;
+    if (!seen || d < 2) return;
+    boost = Math.min(3.5, boost + d / 70);
+    if (now - lastSpark > 170) {
+      lastSpark = now;
+      var lit = ALL_EDGES.filter(function (e) { return E[e] && E[e][0].classList.contains('is-lit'); });
+      if (lit.length) pulse(lit[Math.floor(Math.random() * lit.length)], true);
+    }
+  });
+});
+</script>
+<script src="/assets/js/consent.bdd1909c.min.js" defer></script>
+<script src="/assets/js/components.f3ffc571.min.js" defer></script>
+</body>
+</html>

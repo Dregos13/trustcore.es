@@ -33,3 +33,6 @@ ds-bundle/
 .design-sync/verify/interact/
 .design-sync/verify/perf*/
 .design-sync/verify/final-perf/
+
+# prototipos de dirección de arte (rediseño 2026)
+proto/

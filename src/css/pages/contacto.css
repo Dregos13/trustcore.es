@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Contacto · /contacto  (<body class="tc-body p-contacto">)
+   Composición a dos alturas: el titular arriba a la izquierda y el formulario,
+   más alto que el hero, que nace en la noche y acaba sobre las olas.
+   Lo que el sistema no trae: el riel de progreso del formulario, el aviso de
+   campo correcto, la agenda ilustrada de la isla de demo, las líneas directas
+   y el teléfono gigante del cierre. Prefijo p-contacto- y tokens del sistema.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+/* los halos se recortan aquí dentro: el hero deja salir al formulario por abajo */
+.p-contacto-sky { position: absolute; inset: 0; overflow: clip; pointer-events: none; z-index: 0; }
+.p-contacto-hero .tc-phero__top { align-items: start; }
+.p-contacto-hero .tc-phero__title { max-width: 8.5em; }
+.p-contacto-hero .tc-phero__copy > .tc-lead { max-width: 31rem; }
+
+.p-contacto-direct { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; margin-top: 32px; }
+.p-contacto-phone { display: inline-flex; align-items: center; gap: 14px; min-height: 52px; color: var(--fg); }
+.p-contacto-phone__ico { position: relative; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; flex: none; color: var(--accent-text); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); transition: background-color var(--d-2), color var(--d-2); }
+.p-contacto-phone__ico::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--accent); opacity: 0; }
+.motion .p-contacto-phone__ico::after { animation: p-contacto-ring 3.2s var(--e-out) infinite; }
+@keyframes p-contacto-ring { 0% { transform: scale(.9); opacity: .8; } 55%, 100% { transform: scale(1.55); opacity: 0; } }
+.p-contacto-phone:hover .p-contacto-phone__ico { background: var(--accent); color: var(--tick-fg); }
+.p-contacto-phone__t { display: grid; gap: 2px; }
+.p-contacto-phone__t b { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.75rem); font-weight: 500; line-height: 1.1; white-space: nowrap; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size var(--d-3) var(--e-out); padding-bottom: 2px; }
+.p-contacto-phone:hover .p-contacto-phone__t b { background-size: 100% 1px; }
+
+.p-contacto-award { margin-top: 32px; transition: box-shadow var(--d-2), background-color var(--d-2); }
+.p-contacto-award:hover { background: color-mix(in srgb, var(--gold) 16%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 70%, transparent); }
+
+/* ---------- El formulario: la pieza ---------- */
+.p-contacto-card {
+  --r: var(--r-lg); --c: var(--leaf-lg);
+  z-index: 2; margin-top: 40px;
+  padding: clamp(34px, 4vw, 58px) clamp(22px, 3.2vw, 46px) clamp(24px, 3.2vw, 44px);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--cyan-soft) 34%, transparent), var(--sh-3);
+}
+.p-contacto-card__head { display: grid; gap: 10px; margin-bottom: 24px; padding-left: clamp(8px, 2vw, 30px); }
+.p-contacto-card__head .tc-muted { max-width: 46ch; font-size: .98rem; }
+
+/* riel: el hilo dentro del formulario. Cada nodo se enciende cuando su dato vale */
+.p-contacto-rail { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; margin-bottom: 26px; }
+.p-contacto-rail[hidden] { display: none; }
+.p-contacto-rail::before { content: ""; position: absolute; left: 6px; right: 46px; top: 5px; height: 1.5px; border-radius: 2px; background: var(--line); }
+.p-contacto-rail li { position: relative; padding-top: 22px; font-family: var(--f-mono); font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-3); transition: color var(--d-2); }
+.p-contacto-rail li::before { content: ""; position: absolute; left: 0; top: 0; z-index: 1; width: 11px; height: 11px; border-radius: 50%; background: var(--node-bg); box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--accent) 34%, transparent); transition: background-color var(--d-2), box-shadow var(--d-2), scale var(--d-3) var(--e-spring); }
+.p-contacto-rail li::after { content: ""; position: absolute; left: 6px; right: -6px; top: 5px; height: 1.5px; border-radius: 2px; background: linear-gradient(90deg, var(--royal), var(--cyan)); transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--d-3) var(--e-out); }
+.p-contacto-rail li:last-child::after { display: none; }
+.p-contacto-rail li.is-on { color: var(--fg); }
+.p-contacto-rail li.is-on::before { background: var(--node-on); box-shadow: var(--node-glow); scale: 1.15; }
+.p-contacto-rail li.is-on::after { transform: scaleX(1); }
+.p-contacto-rail li:last-child { width: 52px; }
+
+/* campo con aviso de «correcto» */
+.p-contacto-in { position: relative; }
+.p-contacto-in__ok { position: absolute; right: 16px; top: 50%; width: 22px; height: 22px; padding: 4px; border-radius: 50%; stroke-width: 2.4; background: var(--ok); color: var(--white); pointer-events: none; opacity: 0; transform: translateY(-50%) scale(.4); transition: opacity var(--d-2), transform var(--d-3) var(--e-spring); }
+.p-contacto-card .tc-field.is-ok .p-contacto-in__ok { opacity: 1; transform: translateY(-50%) scale(1); }
+.p-contacto-card .tc-field.is-ok .tc-input { padding-right: 50px; }
+.p-contacto-card .tc-field__err[hidden] { display: none; }
+.p-contacto-err { grid-column: 1 / -1; margin-top: -8px; padding-left: 36px; }
+.p-contacto-req { grid-column: 1 / -1; font-size: .84rem; color: var(--fg-3); margin-top: -6px; }
+.p-contacto-req b { color: var(--err-fg); font-weight: 400; }
+.p-contacto-card .tc-form__actions { justify-content: space-between; margin-top: 4px; }
+.p-contacto-promise { display: inline-flex; align-items: center; gap: 8px; }
+.p-contacto-promise .tc-ico { color: var(--accent-text); flex: none; }
+/* con todo lo imprescindible relleno, el botón se enciende */
+.p-contacto-card.is-ready .tc-btn--primary { box-shadow: var(--btn-sh-h); }
+
+/* ---------- Segunda altura: demo y líneas directas ---------- */
+.p-contacto-ways { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 84px); align-items: start; }
+.p-contacto-demo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .92fr); gap: clamp(24px, 3.4vw, 52px); align-items: center; padding: clamp(28px, 3.6vw, 56px); }
+.p-contacto-demo__copy { display: grid; gap: 16px; justify-items: start; position: relative; z-index: 2; }
+.p-contacto-demo__copy .tc-btn { margin-top: 8px; }
+
+/* agenda ilustrada: no es el calendario real, solo enseña el gesto */
+.p-contacto-cal { position: relative; z-index: 2; padding: 18px; border-radius: var(--r-md); background: color-mix(in srgb, var(--navy-deep) 55%, transparent); box-shadow: inset 0 0 0 1px var(--line); }
+.p-contacto-cal__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.p-contacto-cal__head b { font-family: var(--f-display); font-size: 1.05rem; font-weight: 600; letter-spacing: -.02em; }
+.p-contacto-cal__week { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.p-contacto-cal__day { display: grid; }
+.p-contacto-cal__day small { height: 26px; font-family: var(--f-mono); font-size: .62rem; letter-spacing: .06em; text-align: center; color: var(--fg-3); }
+.p-contacto-cal__day i { position: relative; display: block; height: 38px; }
+.p-contacto-cal__day i::before { content: ""; position: absolute; inset: 3px; border-radius: var(--r-xs); background: var(--surface-2); }
+.p-contacto-cal__day i.is-off::before { background: var(--surface); opacity: .5; }
+.p-contacto-cal__day i.is-pick::after { content: ""; position: absolute; inset: 3px; border-radius: var(--r-xs); background: var(--cyan); box-shadow: 0 0 22px -2px color-mix(in srgb, var(--cyan) 80%, transparent); }
+.p-contacto-cal__cur { position: absolute; left: 0; top: 26px; width: 20%; height: 38px; opacity: 0; pointer-events: none; }
+.p-contacto-cal__cur::before { content: ""; position: absolute; inset: -1px; border-radius: 12px; border: 1.5px solid var(--cyan-soft); }
+.p-contacto-cal__done { display: flex; align-items: center; gap: 12px; margin-top: 14px; padding: 10px 14px 10px 10px; border-radius: var(--r-sm); background: var(--surface); }
+.p-contacto-cal__check { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ok); color: var(--white); flex: none; }
+.p-contacto-cal__check .tc-ico { stroke-width: 2.4; }
+.p-contacto-cal__done b { display: block; font-size: .95rem; line-height: 1.2; }
+.p-contacto-cal__done small { display: block; font-family: var(--f-mono); font-size: .6rem; letter-spacing: .05em; text-transform: uppercase; color: var(--fg-3); margin-top: 2px; }
+/* bucle: el cursor recorre huecos, elige uno y la reserva se confirma */
+.motion .p-contacto-cal.is-live .p-contacto-cal__cur { animation: p-contacto-cur 8s var(--e-inout) infinite; }
+.motion .p-contacto-cal.is-live .p-contacto-cal__day i.is-pick::after { animation: p-contacto-pick 8s var(--e-out) infinite; }
+.motion .p-contacto-cal.is-live .p-contacto-cal__done { animation: p-contacto-done 8s var(--e-out) infinite; }
+@keyframes p-contacto-cur {
+  0% { transform: translate3d(300%, 0, 0); opacity: 0; }
+  8% { transform: translate3d(300%, 0, 0); opacity: 1; }
+  22% { transform: translate3d(300%, 200%, 0); opacity: 1; }
+  36%, 40% { transform: translate3d(100%, 100%, 0) scale(1); opacity: 1; }
+  44% { transform: translate3d(100%, 100%, 0) scale(.9); opacity: 1; }
+  50% { transform: translate3d(100%, 100%, 0) scale(1); opacity: 1; }
+  58%, 100% { transform: translate3d(100%, 100%, 0) scale(1); opacity: 0; }
+}
+@keyframes p-contacto-pick { 0%, 43% { opacity: 0; transform: scale(.7); } 50%, 92% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1); } }
+@keyframes p-contacto-done { 0%, 52% { opacity: 0; transform: translate3d(0, 10px, 0); } 62%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; transform: none; } }
+
+.p-contacto-lines { display: grid; gap: 10px; padding-top: clamp(8px, 7vw, 110px); }
+.p-contacto-linelist li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: center; padding: 18px 0; background: linear-gradient(90deg, var(--line), transparent) 0 100% / 100% 1px no-repeat; }
+.p-contacto-linelist li:last-child { background: none; }
+.p-contacto-linelist__v { display: block; font-family: var(--f-display); font-size: clamp(1.15rem, 1.05rem + .4vw, 1.4rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.2; color: var(--fg); overflow-wrap: anywhere; }
+a.p-contacto-linelist__v { transition: color var(--d-2); }
+a.p-contacto-linelist__v:hover { color: var(--accent-text); }
+
+/* ---------- Antes de hablar ---------- */
+.p-contacto-know { display: grid; gap: clamp(48px, 6vw, 88px); }
+.p-contacto-know .tc-stats { max-width: 980px; }
+.p-contacto-prods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.2vw, 32px); align-items: start; width: min(100%, 880px); margin-left: auto; }
+.p-contacto-prods > :nth-child(2) { margin-top: clamp(0px, 4vw, 56px); }
+.p-contacto-prods .tc-pcard__name > span { display: inline-block; }
+
+/* ---------- Cierre: el teléfono ---------- */
+.p-contacto-bigtel { display: inline-block; font-family: var(--f-display); font-weight: 500; font-size: clamp(2.1rem, .6rem + 7.4vw, 7rem); line-height: 1; letter-spacing: -.045em; font-variant-numeric: tabular-nums; white-space: nowrap; padding: .08em 0 .12em; transition: transform var(--d-3) var(--e-out); }
+.p-contacto-bigtel:hover { transform: scale(1.03); }
+.p-contacto-pool-h { font-size: var(--t-h3); }
+
+/* punto del hilo dentro de la ola (hereda .tc-wave > i: se le quita todo lo de capa de ola) */
+.p-contacto .p-contacto-wavept { left: 50%; top: 52%; bottom: auto; width: 0; height: 0; -webkit-mask: none; mask: none; }
+/* ---------- Escritorio: el formulario sale del hero y cae sobre las olas ---------- */
+@media (min-width: 1000px) {
+  .p-contacto-hero .tc-phero__in { overflow: clip visible; padding-bottom: 64px; }
+  .p-contacto-hero .tc-phero__top { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 5vw, 88px); }
+  .p-contacto-card { margin-top: 0; margin-bottom: calc(clamp(150px, 15vw, 230px) * -1); }
+  /* el hilo nace bajo el texto y baja por la izquierda: el centro lo ocupa el formulario */
+  .p-contacto .p-contacto-origin { left: 22%; }
+  .p-contacto .p-contacto-wavept { left: 22%; }
+  .p-contacto-demo { margin-top: clamp(-80px, -4vw, -24px); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 999px) {
+  .p-contacto-ways { grid-template-columns: minmax(0, 1fr); }
+  .p-contacto-lines { padding-top: 0; }
+}
+@media (max-width: 760px) {
+  .p-contacto-demo { grid-template-columns: minmax(0, 1fr); }
+  .p-contacto-prods { grid-template-columns: minmax(0, 1fr); }
+  .p-contacto-prods > :nth-child(2) { margin-top: 0; }
+}
+@media (max-width: 520px) {
+  .p-contacto-direct .tc-btn { flex: 1 1 100%; }
+  .p-contacto-demo__copy .tc-btn { width: 100%; }
+  .p-contacto-card__head { padding-left: 4px; }
+  .p-contacto-rail li { font-size: .56rem; letter-spacing: .03em; }
+  .p-contacto-card .tc-form__actions { justify-content: flex-start; }
+}

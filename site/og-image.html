@@ -27,270 +27,77 @@
     <meta name="twitter:description" content="Recurso visual oficial de TrustCore para compartición social.">
     <meta name="twitter:image" content="https://www.trustcore.es/assets/og-image-1200x630.jpg">
     <meta name="twitter:image:alt" content="TrustCore — VeriFactu + Control Horario">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-v20-latin.woff2">
-    <link rel="stylesheet" href="/assets/css/site.bfdca54e.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/instrument-sans-latin-wght-normal.woff2">
+    <link rel="stylesheet" href="/assets/css/site.1d174431.min.css">
+    <script>/*tc-boot*/(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');setTimeout(function(){if(!window.TC){c.remove('motion','js','is-arriving');window.__tcLate=1}},4000);try{if(sessionStorage.getItem('tc:arrive')){sessionStorage.removeItem('tc:arrive');c.add('is-arriving')}}catch(e){}addEventListener('pagereveal',function(e){if(!e.viewTransition)return;c.add('vt-arrive');var s={},l=d.querySelectorAll('[data-vt]');l.forEach(function(el){var n=el.getAttribute('data-vt');if(n&&!s[n]){s[n]=1;el.style.viewTransitionName=n;el.style.viewTransitionClass=el.hasAttribute('data-vt-text')?'tc-vt-text':'tc-vt'}});var f=function(){c.remove('vt-arrive');l.forEach(function(el){el.style.viewTransitionName='';el.style.viewTransitionClass=''})};e.viewTransition.finished.then(f,f)})})(document);</script>
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            width: 1200px;
-            height: 630px;
-            overflow: hidden;
-            font-family: 'Inter', sans-serif;
+        /* Plantilla de la imagen Open Graph (1200 × 630). No es una página del sitio:
+           se abre en un navegador y se captura. Sin navegación, sin TrusTy, sin cookies.
+           Tipos y colores salen del bundle del sistema «Flujo». */
+        html, body { margin: 0; }
+        body.p-og { width: 1200px; height: 630px; overflow: hidden; background: var(--navy-deep); }
+        .p-og-card {
+            position: relative; width: 1200px; height: 630px; overflow: hidden; color: var(--on-dark);
+            background:
+                radial-gradient(760px 520px at 104% -12%, rgba(32, 113, 213, .62), transparent 64%),
+                radial-gradient(560px 420px at 62% 118%, rgba(83, 205, 254, .26), transparent 66%),
+                linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 52%, var(--dusk) 100%);
         }
-        .card {
-            width: 1200px;
-            height: 630px;
-            background: linear-gradient(135deg, #040F3F 0%, #0B2572 60%, #1a3a8a 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding: 0 80px;
+        .p-og-thread { position: absolute; inset: 0; width: 1200px; height: 630px; }
+        .p-og-copy { position: absolute; left: 76px; top: 64px; width: 620px; }
+        .p-og-logo { display: flex; align-items: center; gap: 16px; margin: 0; font-family: var(--f-display); font-weight: 600; font-size: 40px; letter-spacing: -.03em; line-height: 1; color: var(--on-dark); }
+        .p-og-logo img { display: block; width: auto; height: 58px; }
+        .p-og-tag {
+            display: inline-flex; align-items: center; gap: 10px; margin-top: 48px; padding: 0 16px; height: 34px; border-radius: var(--r-pill);
+            font-family: var(--f-mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--cyan);
+            box-shadow: inset 0 0 0 1px rgba(83, 205, 254, .4); background: rgba(83, 205, 254, .08);
         }
-        /* Decorative elements */
-        .glow-1 {
-            position: absolute;
-            top: -80px;
-            right: -60px;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(83, 205, 254, 0.15), transparent);
+        .p-og-tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 14px 2px rgba(83, 205, 254, .7); }
+        .p-og-title {
+            margin: 26px 0 0; font-family: var(--f-display); font-weight: 600; font-size: 84px; line-height: .96; letter-spacing: -.04em;
+            font-variation-settings: "opsz" 96; color: var(--on-dark);
         }
-        .glow-2 {
-            position: absolute;
-            bottom: -40px;
-            left: -40px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(32, 113, 213, 0.15), transparent);
-        }
-        .grid-pattern {
-            position: absolute;
-            inset: 0;
-            opacity: 0.03;
-            background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><rect width=%2260%22 height=%2260%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.5%22/></svg>');
-        }
-        .content {
-            position: relative;
-            z-index: 10;
-            flex: 1;
-        }
-        .logo-row {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-        .logo-row img {
-            height: 56px;
-            width: auto;
-        }
-        .logo-row span {
-            font-size: 32px;
-            font-weight: 800;
-            color: white;
-            letter-spacing: -0.02em;
-        }
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            background: rgba(32, 113, 213, 0.25);
-            border: 1px solid rgba(83, 205, 254, 0.3);
-            border-radius: 50px;
-            margin-bottom: 24px;
-        }
-        .badge .dot {
-            width: 10px;
-            height: 10px;
-            background: #53CDFE;
-            border-radius: 50%;
-        }
-        .badge span {
-            color: #53CDFE;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        h1 {
-            font-size: 48px;
-            font-weight: 800;
-            color: white;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 20px;
-            max-width: 580px;
-        }
-        h1 .gradient {
-            background: linear-gradient(90deg, #53CDFE, #2071D5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .subtitle {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
-            max-width: 500px;
-        }
-        .subtitle strong {
-            color: rgba(255, 255, 255, 0.85);
-        }
-        /* Right side - mini panels */
-        .panels {
-            position: relative;
-            z-index: 10;
-            width: 380px;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .panel {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            padding: 20px 24px;
-        }
-        .panel-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .panel-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .panel-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-        }
-        .panel-icon.green {
-            background: rgba(34, 197, 94, 0.2);
-            color: #4ade80;
-        }
-        .panel-icon.blue {
-            background: rgba(32, 113, 213, 0.3);
-            color: #53CDFE;
-        }
-        .panel-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: white;
-        }
-        .panel-sub {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.4);
-        }
-        .status {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 700;
-        }
-        .status.green {
-            background: rgba(34, 197, 94, 0.2);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            color: #4ade80;
-        }
-        .status.cyan {
-            background: rgba(83, 205, 254, 0.2);
-            border: 1px solid rgba(83, 205, 254, 0.3);
-            color: #53CDFE;
-        }
-        .status .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-        }
-        .status.green .dot { background: #4ade80; }
-        .status.cyan .dot { background: #53CDFE; }
-        .url-bar {
-            position: absolute;
-            bottom: 28px;
-            right: 80px;
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 15px;
-            font-weight: 600;
-            z-index: 10;
-        }
+        .p-og-title span { background: var(--hl); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+        .p-og-url { position: absolute; left: 76px; bottom: 54px; font-family: var(--f-mono); font-size: 15px; letter-spacing: .06em; color: var(--on-dark-3); }
+        .p-og-list { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; }
+        .p-og-list li { position: absolute; left: 872px; display: grid; gap: 4px; transform: translateY(-50%); white-space: nowrap; }
+        .p-og-list b { font-family: var(--f-display); font-weight: 600; font-size: 31px; line-height: 1; letter-spacing: -.03em; color: var(--on-dark); }
+        .p-og-list span { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--on-dark-3); }
     </style>
 </head>
-<body>
-    <div class="card">
-        <div class="glow-1"></div>
-        <div class="glow-2"></div>
-        <div class="grid-pattern"></div>
-
-        <div class="content">
-            <div class="logo-row">
-                <img src="assets/trustcore-icon.png" alt="TrustCore">
-                <span>TrustCore</span>
-            </div>
-
-            <div class="badge">
-                <div class="dot"></div>
-                <span>VeriFactu + Control Horario</span>
-            </div>
-
-            <h1>Tu empresa, <span class="gradient">100% legal y bajo control.</span></h1>
-
-            <p class="subtitle">
-                La suite que unifica <strong>Facturación VeriFactu</strong> y <strong>Control Horario</strong>. Cumplimiento normativo integral.
-            </p>
-        </div>
-
-        <div class="panels">
-            <div class="panel">
-                <div class="panel-header">
-                    <div class="panel-left">
-                        <div class="panel-icon green"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg></div>
-                        <div>
-                            <div class="panel-title">VeriFactu</div>
-                            <div class="panel-sub">Conexión con Hacienda</div>
-                        </div>
-                    </div>
-                    <div class="status green">
-                        <div class="dot"></div>
-                        Conectado
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel">
-                <div class="panel-header">
-                    <div class="panel-left">
-                        <div class="panel-icon blue"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-users-cog"/></svg></div>
-                        <div>
-                            <div class="panel-title">Control Horario</div>
-                            <div class="panel-sub">Registro de jornada</div>
-                        </div>
-                    </div>
-                    <div class="status cyan">
-                        <div class="dot"></div>
-                        12 activos
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="url-bar">www.trustcore.es</div>
+<body class="tc-body p-og" data-no-assistant>
+    <div class="p-og-card">
+      <svg class="p-og-thread" viewBox="0 0 1200 630" aria-hidden="true">
+        <defs>
+          <linearGradient id="og-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B3E8FF"/><stop offset=".5" stop-color="#53CDFE"/><stop offset="1" stop-color="#2071D5"/></linearGradient>
+          <filter id="og-b" x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur stdDeviation="7"/></filter>
+        </defs>
+        <path d="M790 -20C790 40 830 50 830 95S790 150 790 180S830 235 830 265S790 320 790 350S830 405 830 435S790 490 790 520S830 590 830 660" fill="none" stroke="#53CDFE" stroke-width="10" stroke-linecap="round" opacity=".4" filter="url(#og-b)"/>
+        <path d="M790 -20C790 40 830 50 830 95S790 150 790 180S830 235 830 265S790 320 790 350S830 405 830 435S790 490 790 520S830 590 830 660" fill="none" stroke="url(#og-g)" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="830" cy="95" r="15" fill="#53CDFE" opacity=".16"/><circle cx="830" cy="95" r="6.5" fill="#F3F8FF"/>
+        <circle cx="790" cy="180" r="15" fill="#53CDFE" opacity=".16"/><circle cx="790" cy="180" r="6.5" fill="#F3F8FF"/>
+        <circle cx="830" cy="265" r="15" fill="#53CDFE" opacity=".16"/><circle cx="830" cy="265" r="6.5" fill="#F3F8FF"/>
+        <circle cx="790" cy="350" r="15" fill="#53CDFE" opacity=".16"/><circle cx="790" cy="350" r="6.5" fill="#F3F8FF"/>
+        <circle cx="830" cy="435" r="15" fill="#53CDFE" opacity=".16"/><circle cx="830" cy="435" r="6.5" fill="#F3F8FF"/>
+        <circle cx="790" cy="520" r="15" fill="#53CDFE" opacity=".16"/><circle cx="790" cy="520" r="6.5" fill="#F3F8FF"/>
+      </svg>
+      <div class="p-og-copy">
+        <p class="p-og-logo"><img src="/assets/trustcore-mark-512.png" alt="" width="469" height="512"> TrustCore</p>
+        <p class="p-og-tag"><i></i>VeriFactu + Control horario</p>
+        <h1 class="p-og-title">Software con IA que te quita <span>trabajo de encima.</span></h1>
+      </div>
+      <ul class="p-og-list">
+      <li style="top:95px"><b>TrustInFacts</b><span>Facturación VeriFactu e IPSI</span></li>
+      <li style="top:180px"><b>TrustInTime</b><span>Control horario</span></li>
+      <li style="top:265px"><b>GenAI</b><span>Contenido para redes</span></li>
+      <li style="top:350px"><b>Orquesta</b><span>Equipo de IAs</span></li>
+      <li style="top:435px"><b>Corrector Fiscal</b><span>Modelos de la AEAT</span></li>
+      <li style="top:520px"><b>Nido</b><span>Buscador de vivienda</span></li>
+      </ul>
+      <p class="p-og-url">www.trustcore.es</p>
     </div>
-  <script src="/assets/js/consent.930ff818.min.js" defer></script>
-  <script src="/assets/js/components.1f2f84d8.min.js" defer></script>
 </body>
 </html>

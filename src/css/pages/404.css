@@ -1,0 +1,106 @@
+/* ==========================================================================
+   404 · <body class="tc-body p-404">
+   El hilo se desvía: entra por arriba, se enreda en el cero (donde un punto
+   de luz da vueltas sin encontrar salida) y baja por el margen contrario al
+   de siempre. A la derecha, un buscador de destinos para retomar el camino.
+   ========================================================================== */
+
+.p-404-in {
+  display: grid; align-items: center; min-height: 100vh; min-height: 100svh;
+  padding-top: calc(var(--nav-h) + clamp(44px, 6vw, 88px)); padding-bottom: clamp(64px, 8vw, 120px);
+  overflow: clip;
+}
+.p-404-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+
+/* Recorrido del hilo en esta página (main[data-thread="manual"]) */
+.p-404-pt--in { left: 50%; top: 0; }
+.p-404-pt--zero { left: 50%; top: 52%; }
+.p-404-pt--out { left: 50%; top: 72%; }
+.p-404-pt--end { left: 50%; top: auto; bottom: 0; }
+.p-404-pt--side { display: none; }
+
+/* ---------- El código: 4 · 0 · 4 ---------- */
+.p-404-code {
+  position: relative; display: flex; align-items: center; margin: clamp(14px, 2vw, 26px) 0 clamp(18px, 2.4vw, 34px) -.045em;
+  font-family: var(--f-display); font-weight: 700; font-size: clamp(7rem, 1.5rem + 26vw, 17rem); line-height: .8; letter-spacing: -.06em;
+  user-select: none;
+}
+.p-404-code > span { position: relative; display: block; }
+.p-404-digit { display: block; background: linear-gradient(180deg, var(--cyan-soft), color-mix(in srgb, var(--cyan) 14%, transparent) 92%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.p-404-zero .p-404-digit { background: linear-gradient(180deg, color-mix(in srgb, var(--cyan-soft) 55%, transparent), color-mix(in srgb, var(--cyan) 10%, transparent) 92%); -webkit-background-clip: text; background-clip: text; }
+/* El punto perdido: gira dentro del cero. Una órbita circular aplastada en X
+   dibuja el óvalo; el punto se contragira para seguir siendo redondo. */
+.p-404-orbit { position: absolute; left: 50%; top: 52%; width: .56em; height: .56em; margin: -.28em 0 0 -.28em; transform: scaleX(.7); pointer-events: none; }
+.p-404-orbit__arm { position: absolute; inset: 0; }
+.p-404-orbit__dot { position: absolute; left: 50%; top: 0; width: 0; height: 0; }
+.p-404-orbit__dot::before {
+  content: ""; position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--white); box-shadow: 0 0 0 5px color-mix(in srgb, var(--cyan) 26%, transparent), 0 0 26px 6px color-mix(in srgb, var(--cyan) 70%, transparent);
+  transform: scaleX(1.4286);
+}
+.motion .p-404-code.is-live .p-404-orbit__arm { animation: p-404-spin 7s linear infinite; }
+.motion .p-404-code.is-live .p-404-orbit__dot { animation: p-404-spin 7s linear infinite reverse; }
+@keyframes p-404-spin { to { transform: rotate(360deg); } }
+.motion .p-404-orbit { opacity: 0; transition: opacity var(--d-4) var(--e-soft) 900ms; }
+.motion .p-404-code.is-live .p-404-orbit { opacity: 1; }
+
+/* ---------- Texto ---------- */
+.p-404-title { font-size: clamp(2.2rem, 1.3rem + 3.2vw, 4.2rem); max-width: 12ch; }
+.p-404-copy .tc-lead { margin-top: clamp(16px, 1.8vw, 24px); max-width: 44ch; color: var(--fg-2); }
+.p-404-trace { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 22px; color: var(--fg-2); }
+.p-404-trace code { max-width: 100%; padding: 6px 12px; border-radius: var(--r-pill); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); font-family: var(--f-mono); font-size: .7rem; letter-spacing: .02em; text-transform: none; color: var(--fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.p-404-trace .tc-ico { color: var(--fg-3); }
+.p-404-hint { margin-top: 14px; font-weight: 600; color: var(--fg); }
+.p-404-hint a { color: var(--accent-text); background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; padding-bottom: 2px; }
+.p-404-hint a:hover { background-size: 100% 2px; }
+.p-404-actions { justify-content: flex-start; margin-top: clamp(24px, 3vw, 36px); gap: 12px; }
+
+/* ---------- Buscador de destinos ---------- */
+.p-404-finder { --r: var(--r-lg); display: grid; gap: 16px; padding: clamp(20px, 2.4vw, 32px); }
+.p-404-finder__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.p-404-search { position: relative; }
+.p-404-search .tc-ico { position: absolute; left: 18px; top: 50%; margin-top: -.625em; color: var(--fg-3); pointer-events: none; transition: color var(--d-2); }
+.p-404-search:focus-within .tc-ico { color: var(--accent-text); }
+.p-404-search .tc-input { padding-left: 50px; border-radius: var(--r-pill); }
+.p-404-search .tc-input:focus-visible { border-radius: var(--r-pill); }
+.p-404-search .tc-input::-webkit-search-cancel-button { -webkit-appearance: none; }
+html:not(.js) .p-404-search, html:not(.js) .p-404-count, html:not(.js) .p-404-finder__foot { display: none; }
+.p-404-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; }
+.p-404-list a {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 60px; padding: 8px 12px 8px 8px;
+  border-radius: var(--r-sm); transition: background-color var(--d-2), transform var(--d-3) var(--e-out);
+}
+.p-404-list a:hover, .p-404-list a:focus-visible { background: var(--surface-2); }
+.p-404-list a:active { transform: scale(.98); }
+.p-404-list b { display: block; font-weight: 600; line-height: 1.2; color: var(--fg); }
+.p-404-list small { display: block; margin-top: 2px; font-size: .82rem; line-height: 1.25; color: var(--fg-3); text-wrap: balance; }
+.p-404-list .tc-glyph { transition: transform var(--d-3) var(--e-spring); }
+.p-404-list a:hover .tc-glyph { transform: scale(1.08) rotate(-4deg); }
+.p-404-list .tc-ico--go { color: var(--fg-3); opacity: 0; transform: translateX(-6px); transition: opacity var(--d-2), transform var(--d-3) var(--e-out); }
+.p-404-list a:hover .tc-ico--go, .p-404-list a:focus-visible .tc-ico--go { opacity: 1; transform: none; color: var(--accent-text); }
+.p-404-list li.is-first a { background: var(--surface); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cyan) 40%, transparent); }
+.p-404-list li.is-first .tc-ico--go { opacity: 1; transform: none; color: var(--accent-text); }
+.motion .p-404-list li.is-match { animation: p-404-in var(--d-3) var(--e-out) both; }
+@keyframes p-404-in { from { opacity: 0; transform: translate3d(0, 8px, 0); } }
+.p-404-empty { padding: 14px 4px 6px; color: var(--fg-2); }
+.p-404-empty a { color: var(--accent-text); font-weight: 600; }
+.p-404-finder__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding-top: 14px; background: linear-gradient(90deg, var(--line), transparent) 0 0 / 100% 1px no-repeat; }
+.p-404-finder__foot kbd { display: inline-block; padding: 2px 7px; border-radius: 7px; box-shadow: inset 0 0 0 1px var(--line); font-family: var(--f-mono); font-size: .62rem; color: var(--fg-2); }
+
+@media (max-width: 999px) {
+  /* una columna: el hilo sale del cero hacia el margen derecho por el hueco entre el código y el titular */
+  .p-404-pt--out { display: none; }
+  .p-404-pt--side { display: block; left: calc(100% + var(--pad) / 2); top: calc(100% + 12px); }
+  .p-404-pt--end { left: auto; right: var(--flow-left); }
+  .p-404-in { align-items: start; }
+  .p-404-grid { grid-template-columns: minmax(0, 1fr); }
+  .p-404-title { max-width: 14ch; }
+}
+@media (max-width: 760px) {
+  .p-404-finder__foot { display: none; }
+}
+@media (max-width: 520px) {
+  .p-404-list { grid-template-columns: 1fr; }
+  .p-404-actions .tc-btn { flex: 1 1 100%; }
+  .p-404-orbit__dot::before { left: -5px; top: -5px; width: 10px; height: 10px; }
+}

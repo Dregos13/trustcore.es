@@ -99,174 +99,432 @@
   }
   </script>
 
-  <!-- Tailwind (build local, tailwind.config.js) -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-v20-latin.woff2">
-    <link rel="stylesheet" href="/assets/css/site.bfdca54e.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/instrument-sans-latin-wght-normal.woff2">
+  <link rel="stylesheet" href="/assets/css/site.1d174431.min.css">
+  <script>/*tc-boot*/(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');setTimeout(function(){if(!window.TC){c.remove('motion','js','is-arriving');window.__tcLate=1}},4000);try{if(sessionStorage.getItem('tc:arrive')){sessionStorage.removeItem('tc:arrive');c.add('is-arriving')}}catch(e){}addEventListener('pagereveal',function(e){if(!e.viewTransition)return;c.add('vt-arrive');var s={},l=d.querySelectorAll('[data-vt]');l.forEach(function(el){var n=el.getAttribute('data-vt');if(n&&!s[n]){s[n]=1;el.style.viewTransitionName=n;el.style.viewTransitionClass=el.hasAttribute('data-vt-text')?'tc-vt-text':'tc-vt'}});var f=function(){c.remove('vt-arrive');l.forEach(function(el){el.style.viewTransitionName='';el.style.viewTransitionClass=''})};e.viewTransition.finished.then(f,f)})})(document);</script>
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
 </head>
-<body class="font-sans text-gray-800 antialiased">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
+<body class="tc-body p-tif">
 
-    <!-- HEADER -->
-  <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 md:h-20">
-        <a href="/" class="flex items-center gap-3 shrink-0" aria-label="TrustCore inicio">
-          <img src="/assets/trustcore-mark-120.png" alt="TrustCore" width="110" height="120" class="h-10 w-auto">
-          <span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span>
-        </a>
 <!--NAV-->
-        <nav class="hidden md:flex items-center gap-1" aria-label="Navegación principal">
-          <div class="tc-navmenu">
-            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-producto" aria-haspopup="true">
-              Producto
-            </button>
-            <div class="tc-navmenu__panel" id="nav-producto" role="menu" hidden>
-              <a href="/productos/trustinfacts" role="menuitem" class="tc-navmenu__item">Facturación VeriFactu</a>
-              <a href="/productos/trustintime" role="menuitem" class="tc-navmenu__item">Control horario</a>
-              <a href="/software-verifactu-ipsi-ceuta-melilla" role="menuitem" class="tc-navmenu__item">IPSI Ceuta y Melilla</a>
-              <a href="/funcionalidades" role="menuitem" class="tc-navmenu__item">Funcionalidades</a>
-              <a href="/como-funciona" role="menuitem" class="tc-navmenu__item">Cómo funciona</a>
-            </div>
+<svg class="tc-sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16l-6 7.5V19l-4-2v-3.5z"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.8h-3.8M5.5 20.5v-3.8h3.8"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol><symbol id="i-spinner" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7.5 2.8v5.4c0 4.4-3 7.6-7.5 9-4.5-1.4-7.5-4.6-7.5-9V6.3z"/><path d="M8.8 12.2l2.3 2.3 4.2-4.4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 6.5l2.5 2.5M13.5 9l2 2"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.5"/><path d="M8.5 14l-1.5 7 5-2.6 5 2.6-1.5-7"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5.5H5a3 3 0 0 0 3 4M16 5.5h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol><symbol id="i-invoice" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol><symbol id="i-graph" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M11 7l-5 9M13 7l5 9M7.2 18h9.6"/></symbol><symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 14.5l2.2 2.2L15.5 12"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5L12 4l8 7.5"/><path d="M6.5 10v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9"/><path d="M10 20v-5h4v5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M4 8l8 5.5L20 8"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M20.5 3.5L10 14M20.5 3.5l-6.3 17-4.2-6.5-6.5-4.2z"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.4"/><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0"/><path d="M15.5 5.3a3.4 3.4 0 0 1 0 6.4M18 14.6a6.5 6.5 0 0 1 3.5 4.9"/></symbol><symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 13.5V12a7.5 7.5 0 0 1 15 0v1.5"/><rect x="3.5" y="13" width="4" height="6" rx="1.5"/><rect x="16.5" y="13" width="4" height="6" rx="1.5"/><path d="M19.5 19v.5a2 2 0 0 1-2 2H13"/></symbol><symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3.5"/><path d="M12 8V4.5M9 13v1.5M15 13v1.5"/><circle cx="12" cy="3.6" r="1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 0 0-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.2-3.9-8.5s1.3-6.1 3.9-8.5z"/></symbol><symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.3-5h13.4l1.3 5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5M10 20v-4.5h4V20"/></symbol><symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.2a4 4 0 0 0-5.3 5.2L3.8 16.8a1.9 1.9 0 0 0 2.7 2.7l5.4-5.4a4 4 0 0 0 5.2-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2.5"/><path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5M3.5 13h17"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 8h14"/><path d="M5 8l-2.5 6a2.7 2.7 0 0 0 5 0zM19 8l-2.5 6a2.7 2.7 0 0 0 5 0z"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 6.5a6.5 6.5 0 1 0 0 11M5 10.5h8M5 13.5h8"/></symbol><symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18M7 15h3"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16.5v-5M12 16.5v-9M17 16.5v-12"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3.5l8 4.2v8.6l-8 4.2-8-4.2V7.7z"/><path d="M4 7.7l8 4.3 8-4.3M12 12v8.5"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.3V5A1.5 1.5 0 0 1 5 3.5h7.3l8.2 8.2a1.5 1.5 0 0 1 0 2.1l-6.7 6.7a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.2"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2.5v2.5M20 14v6h-3M14 20v-1"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H18M9 8.5h5"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"/></symbol><symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 7C6.5 8 5 10.2 5 13v4h5v-5H7.5c0-1.6.8-2.6 2.5-3.2zM18.5 7c-3 1-4.5 3.2-4.5 6v4h5v-5h-2.5c0-1.6.8-2.6 2.5-3.2z"/></symbol><symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l4.8-4.5 3.5 3 3-2.6 4.7 4.1"/></symbol><symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4.5v-15L7 9H5a1 1 0 0 0-1 1z"/><path d="M18.5 9.5a3.5 3.5 0 0 1 0 5M8 15l1 4.5h2.5"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17.5" cy="6" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="M8.2 10.8l7-3.6M8.2 13.2l7 3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l8.5 4.5L12 13 3.5 8.5z"/><path d="M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96 6 6 0 0 1 11.5 1.5A3.75 3.75 0 0 1 17 18.5z"/></symbol><symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><path d="M10 10h4v4h-4zM9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7.5L4 12l4.5 4.5M15.5 7.5L20 12l-4.5 4.5M13.5 5l-3 14"/></symbol><symbol id="i-desktop" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16.5V20"/></symbol><symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol><symbol id="i-apple" viewBox="0 0 24 24"><path d="M15.5 3.5c0 1.6-1.3 3-3 3 0-1.7 1.4-3 3-3z"/><path d="M12.4 8.3c.9 0 1.7-.8 3.2-.8 1.4 0 2.6.7 3.3 1.8-2.8 1.6-2.3 5.4.5 6.5-.7 1.9-2.2 4.7-4 4.7-1.1 0-1.5-.7-2.9-.7s-1.9.7-3 .7c-2 0-4.5-4.2-4.5-7.6 0-3.2 2.1-5 4.1-5 1.4 0 2.4.4 3.3.4z"/></symbol><symbol id="i-windows" viewBox="0 0 24 24"><path d="M4 6.2l7-1v6.3H4zM12.5 5L20 3.9v7.6h-7.5zM4 13h7v6.3l-7-1zM12.5 13H20v7.6l-7.5-1.1z"/></symbol></defs></svg>
+<a class="tc-skip" href="#main-content">Saltar al contenido</a>
+<header class="tc-nav" data-nav>
+  <div class="tc-nav__pill">
+    <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+      <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120">
+      <span class="tc-brand__word">TrustCore</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="tc-nav__links">
+        <li class="tc-nav__item tc-nav__item--mega">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-productos" data-menu-toggle>Productos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--mega" id="tc-menu-productos">
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Para tu empresa</p>
+            <a class="tc-menu__item" style="--i:0" href="/productos/trustinfacts"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-invoice"/></svg></span><span><span class="tc-menu__name">TrustInFacts</span><span class="tc-menu__desc">Facturación VeriFactu, IVA e IPSI</span></span></a>
+            <a class="tc-menu__item" style="--i:1" href="/productos/trustintime"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span><span class="tc-menu__name">TrustInTime</span><span class="tc-menu__desc">Control horario, fichaje y ausencias</span></span></a>
+            <a class="tc-menu__item" style="--i:2" href="/productos/genai"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg></span><span><span class="tc-menu__name">GenAI</span><span class="tc-menu__desc">Contenido para redes, con tu aprobación</span></span></a>
           </div>
-          <div class="tc-navmenu">
-            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-soluciones" aria-haspopup="true">
-              Soluciones
-            </button>
-            <div class="tc-navmenu__panel" id="nav-soluciones" role="menu" hidden>
-              <a href="/facturacion-para-tiendas" role="menuitem" class="tc-navmenu__item">Para tiendas</a>
-              <a href="/facturacion-para-instaladores" role="menuitem" class="tc-navmenu__item">Para instaladores</a>
-              <a href="/gestoria" role="menuitem" class="tc-navmenu__item">Para gestorías</a>
-              <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" role="menuitem" class="tc-navmenu__item">Comparativa con un ERP</a>
-            </div>
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Apps del estudio</p>
+            <a class="tc-menu__item" style="--i:3" href="/productos/orquesta"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-graph"/></svg></span><span><span class="tc-menu__name">Orquesta</span><span class="tc-menu__desc">Dirige un equipo de IAs</span></span></a>
+            <a class="tc-menu__item" style="--i:4" href="/productos/corrector-fiscal"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-filecheck"/></svg></span><span><span class="tc-menu__name">Corrector Fiscal</span><span class="tc-menu__desc">Revisa modelos de la AEAT</span></span></a>
+            <a class="tc-menu__item" style="--i:5" href="/productos/nido"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-home"/></svg></span><span><span class="tc-menu__name">Nido</span><span class="tc-menu__desc">Buscador privado de vivienda</span></span></a>
           </div>
-          <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
-          <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
-          <div class="tc-navmenu">
-            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-recursos" aria-haspopup="true">
-              Recursos
-            </button>
-            <div class="tc-navmenu__panel" id="nav-recursos" role="menu" hidden>
-              <a href="/clientes" role="menuitem" class="tc-navmenu__item">Clientes</a>
-              <a href="/blog" role="menuitem" class="tc-navmenu__item">Blog</a>
-              <a href="/control-horario-obligatorio-guia-2026" role="menuitem" class="tc-navmenu__item">Guía de control horario</a>
-              <a href="/ipsi-ceuta-melilla-guia-practica" role="menuitem" class="tc-navmenu__item">Guía de IPSI</a>
-              <a href="/quienes-somos" role="menuitem" class="tc-navmenu__item">Sobre nosotros</a>
-              <a href="/contacto" role="menuitem" class="tc-navmenu__item">Contacto</a>
-            </div>
+            <a class="tc-menu__all" style="--i:6" href="/productos">Ver todos los productos <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
-        </nav>
+        </li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-soluciones" data-menu-toggle>Soluciones <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu" id="tc-menu-soluciones">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/facturacion-para-tiendas">Para tiendas</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/facturacion-para-instaladores">Para instaladores</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/gestoria">Para gestorías</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+          </div>
+        </li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/precios">Precios</a></li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/aprende">Aprende</a></li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-recursos" data-menu-toggle>Recursos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--end" id="tc-menu-recursos">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/clientes">Clientes</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/blog">Blog</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/funcionalidades">Funcionalidades</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/como-funciona">Cómo funciona</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/quienes-somos">Sobre nosotros</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:5" href="/contacto">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="tc-btn tc-btn--primary tc-btn--sm tc-nav__cta" type="button" data-calendar-open data-magnet data-track="header_demo">
+      <span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-cal"/></svg> <span>Agendar<span class="tc-nav__cta-more"> demo</span></span></span>
+    </button>
+    <button class="tc-nav__burger" type="button" aria-expanded="false" aria-controls="tc-sheet" aria-label="Abrir menú" data-sheet-toggle>
+      <span></span><span></span>
+    </button>
+    <span class="tc-nav__progress" aria-hidden="true"></span>
+  </div>
+</header>
+<div class="tc-sheet" id="tc-sheet" data-sheet role="dialog" aria-modal="true" aria-label="Menú">
+  <p class="tc-sheet__label">Para tu empresa</p>
+  <a class="tc-sheet__link" href="/productos/trustinfacts">TrustInFacts <small>Facturación</small></a>
+  <a class="tc-sheet__link" href="/productos/trustintime">TrustInTime <small>Control horario</small></a>
+  <a class="tc-sheet__link" href="/productos/genai">GenAI <small>Redes sociales</small></a>
+  <p class="tc-sheet__label">Apps del estudio</p>
+  <a class="tc-sheet__link" href="/productos/orquesta">Orquesta <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/corrector-fiscal">Corrector Fiscal <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/nido">Nido <small>Escritorio</small></a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/productos">Ver todos los productos</a>
+  <p class="tc-sheet__label">Soluciones</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-tiendas">Para tiendas</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-instaladores">Para instaladores</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/gestoria">Para gestorías</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+  <p class="tc-sheet__label">TrustCore</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/precios">Precios</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/aprende">Aprende</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/clientes">Clientes</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/blog">Blog</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/funcionalidades">Funcionalidades</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/como-funciona">Cómo funciona</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/quienes-somos">Sobre nosotros</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/contacto">Contacto</a>
+  <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-track="mobile_menu_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+</div>
 <!--/NAV-->
-        <div class="flex items-center gap-2">
-          <button type="button" data-calendar-open data-track="header_demo"
-                  class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#040F3F] text-white text-sm font-bold shadow-sm hover:bg-[#0B2572] transition-colors">
-            <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo</button>
-          <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menú" aria-expanded="false">
-            <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-<!--MNAV-->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
-      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-600">Producto</p>
-        <a href="/productos/trustinfacts" class="block py-2 pl-3 text-sm text-gray-600">Facturación VeriFactu</a>
-        <a href="/productos/trustintime" class="block py-2 pl-3 text-sm text-gray-600">Control horario</a>
-        <a href="/software-verifactu-ipsi-ceuta-melilla" class="block py-2 pl-3 text-sm text-gray-600">IPSI Ceuta y Melilla</a>
-        <a href="/funcionalidades" class="block py-2 pl-3 text-sm text-gray-600">Funcionalidades</a>
-        <a href="/como-funciona" class="block py-2 pl-3 text-sm text-gray-600">Cómo funciona</a>
-      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-600">Soluciones</p>
-        <a href="/facturacion-para-tiendas" class="block py-2 pl-3 text-sm text-gray-600">Para tiendas</a>
-        <a href="/facturacion-para-instaladores" class="block py-2 pl-3 text-sm text-gray-600">Para instaladores</a>
-        <a href="/gestoria" class="block py-2 pl-3 text-sm text-gray-600">Para gestorías</a>
-        <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="block py-2 pl-3 text-sm text-gray-600">Comparativa con un ERP</a>
-      <a href="/precios" class="block py-2.5 text-sm font-semibold text-gray-800">Precios</a>
-      <a href="/aprende" class="block py-2.5 text-sm font-semibold text-gray-800">Aprende</a>
-      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-600">Recursos</p>
-        <a href="/clientes" class="block py-2 pl-3 text-sm text-gray-600">Clientes</a>
-        <a href="/blog" class="block py-2 pl-3 text-sm text-gray-600">Blog</a>
-        <a href="/control-horario-obligatorio-guia-2026" class="block py-2 pl-3 text-sm text-gray-600">Guía de control horario</a>
-        <a href="/ipsi-ceuta-melilla-guia-practica" class="block py-2 pl-3 text-sm text-gray-600">Guía de IPSI</a>
-        <a href="/quienes-somos" class="block py-2 pl-3 text-sm text-gray-600">Sobre nosotros</a>
-        <a href="/contacto" class="block py-2 pl-3 text-sm text-gray-600">Contacto</a>
-    </div>
-<!--/MNAV-->
-  </header>
 
 
-  <main id="main-content">
-  <!-- HERO -->
-  <section class="relative flex items-center overflow-hidden" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 60%,#1a3a8a 100%);padding-top:calc(var(--tc-header-height) + 3rem);padding-bottom:5rem;">
-    <div class="tc-bg-orbs" aria-hidden="true"></div>
-    <div class="tc-container grid lg:grid-cols-2 gap-14 items-center">
-      <div data-reveal>
-        <a href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" class="tc-award mb-6 inline-flex" data-track="tf_award_link">
-          <span class="tc-award__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg></span>
-          #1 CeutaTech Summit 2026 &middot; Pase de Oro Alhambra Venture
-        </a>
-        <h1 class="font-extrabold text-white leading-tight tracking-tight" style="font-size:var(--tc-text-5xl)">
-          Facturas preparadas<br><span class="tc-gradient-text">para los requisitos VeriFactu</span>
-        </h1>
-        <p class="mt-6 text-blue-100/80 max-w-lg leading-relaxed" style="font-size:var(--tc-text-lg)">
-          TrustinFacts genera facturas preparadas para requisitos <strong class="text-white">SIF/VERI*FACTU</strong>, gestiona tu stock y te da dashboards en tiempo real. Con soporte nativo para <strong class="text-white">IPSI de Ceuta y Melilla</strong>, pensado desde la operativa local.
-        </p>
-        <div class="flex flex-wrap gap-3 mt-8">
-          <button class="tc-btn tc-btn-primary" data-calendar-open data-track="tf_hero_demo">
-            <svg class="tc-icon mr-2"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>Agendar demo
-          </button>
-          <a class="tc-btn tc-btn-ghost" href="#precios" data-track="tf_hero_precios">Ver precios</a>
+<main id="main-content">
+
+  <!-- ============ 1 · Hero: la captura real y el recorrido de un documento ============ -->
+  <section class="tc-sec tc-sec--night tc-phero tone-dark" aria-labelledby="hero-t">
+    <div class="tc-sec__in tc-phero__in" data-intro>
+      <div class="tc-glow tc-glow--a" aria-hidden="true"></div>
+      <div class="tc-glow tc-glow--b" aria-hidden="true"></div>
+
+      <div class="tc-wrap p-tif-hero__head">
+        <div class="p-tif-hero__bar">
+          <nav class="tc-mono tc-crumbs" aria-label="Migas de pan" data-reveal="rise" style="--delay:80ms">
+            <ol><li><a href="/">TrustCore</a></li><li><span aria-current="page">TrustinFacts</span></li></ol>
+          </nav>
+          <a class="tc-award p-tif-award" href="https://ceutatechsummit.es/2026/04/trustcore-y-eonsea-triunfan-en-el-ii-ceuta-tech-summit-y-comparten-pase-dorado-a-alhambra-venture/" target="_blank" rel="noopener" data-track="tf_award_link" data-reveal="pop" style="--delay:260ms">
+            <span class="tc-award__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+            <span>#1 CeutaTech Summit 2026<small>Pase de Oro Alhambra Venture</small></span>
+          </a>
         </div>
-        <ul class="mt-8 space-y-2">
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>Preparado para VeriFactu desde hoy</li>
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>IPSI Ceuta/Melilla nativo (IVA tambi&eacute;n)</li>
-          <li class="flex items-center gap-2 text-blue-100/70" style="font-size:var(--tc-text-sm)"><svg class="tc-icon shrink-0" style="color:var(--tc-cyan-light)"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>Migraci&oacute;n desde otro software en 48 h</li>
-        </ul>
+        <h1 class="tc-display p-tif-title" id="hero-t" data-reveal="words" style="--delay:140ms"><img class="p-tif-title__logo" src="/assets/trustinfacts-logo.png" alt="" width="247" height="257"> <span data-vt="vt-trustinfacts-title" data-vt-text>TrustInFacts</span></h1>
       </div>
 
-      <div class="flex justify-center lg:justify-end" data-reveal>
-        <div class="w-full max-w-sm rounded-3xl p-5 border border-white/10" style="background:linear-gradient(180deg,rgba(5,19,70,0.92),rgba(8,18,54,0.82));box-shadow:0 35px 80px rgba(2,10,42,0.45);backdrop-filter:blur(16px)">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-white font-semibold text-sm">Factura emitida</span>
-            <span class="text-xs px-2.5 py-1 rounded-full font-semibold" style="background:rgba(15,160,111,0.2);color:#34d399">VeriFactu &check;</span>
+      <div class="tc-wrap tc-phero__top p-tif-hero__top">
+        <div class="tc-phero__copy">
+          <p class="tc-display tc-phero__claim" data-reveal="words" style="--delay:420ms">Facturas preparadas para <span class="tc-hl">los requisitos VeriFactu.</span></p>
+          <p class="tc-lead" data-reveal="focus" style="--delay:640ms">TrustInFacts genera facturas preparadas para requisitos <strong class="tc-strong">SIF/VERI*FACTU</strong>, gestiona tu stock y te da dashboards en tiempo real. Con soporte nativo para <strong class="tc-strong">IPSI de Ceuta y Melilla</strong>, pensado desde la operativa local.</p>
+        </div>
+        <div class="tc-phero__side">
+          <ul class="tc-ticks" data-stagger style="--base:760ms;--step:90ms">
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Preparado para los requisitos de VeriFactu desde hoy</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> IPSI Ceuta/Melilla nativo (IVA también)</li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Migración desde otro software en 48 h</li>
+          </ul>
+          <div class="tc-cta-row" data-stagger style="--base:980ms;--step:110ms">
+            <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-magnet data-track="tf_hero_demo" data-reveal="pop"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            <a class="tc-btn tc-btn--ghost" href="#precios" data-magnet data-track="tf_hero_precios" data-reveal="pop"><span class="tc-btn__label">Ver precios <svg class="tc-ico tc-ico--down" aria-hidden="true"><use href="#i-down"/></svg></span></a>
           </div>
-          <!-- Fake invoice preview -->
-          <div class="rounded-2xl p-4 mb-4" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)">
-            <div class="flex justify-between items-start mb-3">
+        </div>
+      </div>
+
+      <!-- Pieza protagonista: la captura real en su ventana y, encima, las cuatro capas
+           del recorrido de una venta. Las capas son una ilustración (aria-hidden): los
+           importes son los del simulador de más abajo (1.200 € de base, IPSI 4 % o IVA 21 %). -->
+      <div class="tc-wrap tc-phero__stage p-tif-stage" data-live>
+        <div class="tc-phero__shot p-tif-shot" data-rise data-pointer-parallax>
+          <figure class="tc-win" data-vt="vt-trustinfacts-shot">
+            <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">TrustInFacts · Informes</span></div>
+            <img src="/assets/trustinfacts-dashboard-960.webp" srcset="/assets/trustinfacts-dashboard-640.webp 640w, /assets/trustinfacts-dashboard-960.webp 960w, /assets/trustinfacts-dashboard-1280.webp 1280w" sizes="(min-width: 1368px) 1020px, (min-width: 1000px) 76vw, calc(100vw - 40px)" width="1280" height="685" alt="TrustinFacts — Panel de informes: facturación, márgenes y métricas en tiempo real" fetchpriority="high">
+            <!-- quinto tiempo del recorrido: el panel real se actualiza (marca sobre la captura, decorativa) -->
+            <i class="p-tif-ping" aria-hidden="true"><b>Dashboard actualizado</b></i>
+          </figure>
+
+          <!-- el hilo que une las cuatro capas: tres tramos y una chispa por tramo (solo escritorio) -->
+          <div class="p-tif-route" aria-hidden="true">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+              <defs>
+                <linearGradient id="p-tif-route-g" gradientUnits="userSpaceOnUse" x1="-10" y1="0" x2="110" y2="0">
+                  <stop offset="0" class="p-tif-route__a"/><stop offset=".075" class="p-tif-route__a"/><stop offset=".1" class="p-tif-route__b"/><stop offset="1" class="p-tif-route__b"/>
+                </linearGradient>
+              </defs>
+              <path d="M-7 23C-7 50.3 -3.5 37.7 -3.5 65"/>
+              <path d="M-3.5 65C63.1 65 32.4 35 99 35"/>
+              <path d="M99 35C99 77.9 95.5 58.1 95.5 101"/>
+            </svg>
+            <span class="p-tif-spark p-tif-spark--v" style="--n:0;--ax:-7%;--ay:23%;--bx:-3.5%;--by:65%"><i></i></span>
+            <span class="p-tif-spark p-tif-spark--h" style="--n:1;--ax:-3.5%;--ay:65%;--bx:99%;--by:35%"><i></i></span>
+            <span class="p-tif-spark p-tif-spark--v" style="--n:2;--ax:99%;--ay:35%;--bx:95.5%;--by:101%"><i></i></span>
+          </div>
+
+          <div class="p-tif-layers" aria-hidden="true">
+            <div class="p-tif-layer p-tif-layer--1" data-reveal="pop" style="--delay:1350ms">
+              <div class="p-tif-card p-tif-card--night" style="--n:0;--d:1.5">
+                <p class="p-tif-card__k"><span class="p-tif-card__n">01</span> Presupuesto</p>
+                <p class="p-tif-card__t">Enviado por email</p>
+                <p class="p-tif-card__v"><span>Base</span><b>1.200,00 €</b></p>
+              </div>
+            </div>
+            <div class="p-tif-layer p-tif-layer--2" data-reveal="pop" style="--delay:1500ms">
+              <div class="p-tif-card p-tif-card--night" style="--n:1;--d:.8">
+                <p class="p-tif-card__k"><span class="p-tif-card__n">02</span> Venta</p>
+                <p class="p-tif-card__t">Pedido <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg> albarán</p>
+                <p class="p-tif-card__v"><span>Convertido con un clic</span></p>
+              </div>
+            </div>
+            <div class="p-tif-layer p-tif-layer--3" data-reveal="pop" style="--delay:1650ms">
+              <div class="p-tif-card p-tif-card--doc" style="--n:2;--d:1.2">
+                <p class="p-tif-card__k"><span class="p-tif-card__n">03</span> Factura <em class="p-tif-ok"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> VeriFactu</em></p>
+                <p class="p-tif-card__id">#2026-0142 <span class="p-tif-alt p-tif-alt--pill"><b>Ceuta · Melilla</b><b>Península</b></span></p>
+                <div class="p-tif-doc">
+                  <p><span>Servicios de consultoría</span><b>1.200,00 €</b></p>
+                  <p class="p-tif-doc__tax"><span class="p-tif-alt"><b>IPSI servicios 4 %</b><b>IVA 21 %</b></span><span class="p-tif-alt p-tif-alt--r"><b>48,00 €</b><b>252,00 €</b></span></p>
+                  <p class="p-tif-doc__total"><span>Total</span><span class="p-tif-alt p-tif-alt--r"><b>1.248,00 €</b><b>1.452,00 €</b></span></p>
+                </div>
+                <p class="p-tif-card__foot"><svg class="tc-ico" aria-hidden="true"><use href="#i-qr"/></svg> QR y huella en el documento</p>
+              </div>
+            </div>
+            <div class="p-tif-layer p-tif-layer--4" data-reveal="pop" style="--delay:1800ms">
+              <div class="p-tif-card p-tif-card--paid" style="--n:3;--d:1.9">
+                <span class="p-tif-card__check"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+                <div>
+                  <p class="p-tif-card__k"><span class="p-tif-card__n">04</span> Cobro registrado</p>
+                  <p class="p-tif-card__t"><span class="p-tif-alt"><b>1.248,00 €</b><b>1.452,00 €</b></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ol class="p-tif-rail tc-mono" aria-hidden="true" data-reveal="rise" style="--delay:1900ms">
+          <li style="--n:0">Presupuesto</li>
+          <li style="--n:1">Venta</li>
+          <li style="--n:2">Factura</li>
+          <li style="--n:3">Cobro</li>
+        </ol>
+        <p class="p-tif-stage__cap tc-small" data-reveal="rise" style="--delay:2000ms">Captura real del panel de informes. Encima, el recorrido de una venta: el impuesto lo pone el territorio, no una plantilla.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Puente de olas ============ -->
+  <div class="tc-sec tc-wave" aria-hidden="true"><i data-plx></i><i data-plx></i><i data-plx></i></div>
+
+  <!-- ============ 2 · La app por dentro ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="app" aria-labelledby="s-app">
+    <div class="tc-sec__in tc-pad tc-pad--top-0">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--5-7 p-tif-inside">
+          <div class="p-tif-inside__copy">
+            <header class="tc-head">
+              <p class="tc-mono tc-mono--hi" data-reveal="rise">La app por dentro</p>
+              <h2 class="tc-display tc-h2" id="s-app" data-reveal="words">Datos reales, <span class="tc-hl">no exportaciones.</span></h2>
+              <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Panel de facturación, análisis de márgenes y control de stock — todo en un solo lugar, sin exportar a Excel.</p>
+            </header>
+            <ul class="tc-rows p-tif-facts" data-stagger style="--step:90ms">
+              <li data-reveal="rise"><b>VeriFactu</b><span class="tc-muted">Preparado para los requisitos de VeriFactu desde ya</span></li>
+              <li data-reveal="rise"><b>IPSI</b><span class="tc-muted">Nativo para Ceuta y Melilla</span></li>
+              <li data-reveal="rise"><b><span class="tc-num">48</span> h</b><span class="tc-muted">Migración desde otro software</span></li>
+              <li data-reveal="rise"><b><span class="tc-num">3</span> idiomas</b><span class="tc-muted">Facturas en ES, EN y FR</span></li>
+            </ul>
+          </div>
+
+          <figure class="p-tif-lens">
+            <div class="p-tif-lens__glow" aria-hidden="true"></div>
+            <div class="p-tif-crop p-tif-crop--a" data-plx style="--plx:18px">
+              <div class="p-tif-crop__card" data-reveal="tilt">
+                <p class="tc-mono p-tif-crop__tag">Informes · Resumen</p>
+                <div class="p-tif-crop__img" style="--x:.018;--y:.338;--w:.329;--h:.232">
+                  <img src="/assets/trustinfacts-dashboard-1280.webp" width="1280" height="685" loading="lazy" alt="Detalle del panel de informes de TrustinFacts: total facturado del periodo">
+                </div>
+              </div>
+            </div>
+            <div class="p-tif-crop p-tif-crop--b" data-plx style="--plx:-10px">
+              <div class="p-tif-crop__card" data-reveal="tilt" style="--delay:140ms">
+                <p class="tc-mono p-tif-crop__tag">Métricas detalladas</p>
+                <div class="p-tif-crop__img" style="--x:.012;--y:.74;--w:.49;--h:.23">
+                  <img src="/assets/trustinfacts-dashboard-1280.webp" width="1280" height="685" loading="lazy" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="p-tif-crop p-tif-crop--c" data-plx style="--plx:22px">
+              <div class="p-tif-crop__card" data-reveal="tilt" style="--delay:280ms">
+                <p class="tc-mono p-tif-crop__tag">Gastos, IVA y costes</p>
+                <div class="p-tif-crop__img" style="--x:.494;--y:.63;--w:.49;--h:.224">
+                  <img src="/assets/trustinfacts-dashboard-1280.webp" width="1280" height="685" loading="lazy" alt="">
+                </div>
+              </div>
+            </div>
+            <figcaption class="tc-mono p-tif-lens__cap" data-reveal="rise" style="--delay:360ms">Panel web · Informes de facturación, márgenes y métricas financieras en tiempo real</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 · Por qué TrustInFacts ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" id="diferencia" aria-labelledby="s-why">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Por qué TrustInFacts</p>
+          <h2 class="tc-display tc-h2" id="s-why" data-reveal="words">No es solo facturar. <span class="tc-hl">Es dormir tranquilo.</span></h2>
+          <p class="tc-lead" data-reveal="focus" style="--delay:160ms">La diferencia entre un software genérico y uno pensado para negocios reales está en los detalles que únicamente notarás cuando los necesites.</p>
+        </header>
+
+        <div class="p-tif-why">
+          <article class="tc-leaf tc-leaf--night tc-leaf--lg tc-leaf--tr tone-dark tc-spot p-tif-why__main" data-reveal="tilt">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-invoice"/></svg>
+            <h3 class="tc-display tc-h3">Facturación preparada para SIF/VERI*FACTU</h3>
+            <p class="tc-lead">Genera facturas con código QR, trazabilidad de registros y huella criptográfica. El modo VERI*FACTU permite remisión a la AEAT cuando corresponda.</p>
+            <p class="tc-chip tc-chip--hi p-tif-why__chip"><svg class="tc-ico" aria-hidden="true"><use href="#i-shield"/></svg> Compatible VeriFactu · Ley 11/2021</p>
+            <div class="p-tif-chain" aria-hidden="true" data-live>
+              <span class="p-tif-chain__rec" style="--n:0"><b>#0140</b><i>huella</i></span>
+              <span class="p-tif-chain__link" style="--n:0"></span>
+              <span class="p-tif-chain__rec" style="--n:1"><b>#0141</b><i>huella</i></span>
+              <span class="p-tif-chain__link" style="--n:1"></span>
+              <span class="p-tif-chain__rec p-tif-chain__rec--qr" style="--n:2"><svg class="tc-ico"><use href="#i-qr"/></svg><b>#0142</b><i>huella + QR</i></span>
+            </div>
+          </article>
+
+          <article class="tc-leaf tc-leaf--tint tc-leaf--br tc-leaf--lift tc-spot p-tif-why__side" data-reveal="rise" style="--delay:140ms">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-pin"/></svg>
+            <h3 class="tc-h4">IPSI para Ceuta y Melilla</h3>
+            <p class="tc-muted">IPSI nativo para Ceuta y Melilla. Sin plugins ni parches manuales: configura el tipo aplicable por operación y reduce correcciones con la asesoría.</p>
+            <p class="p-tif-rates tc-num" aria-hidden="true"><span>IPSI</span><span>IVA</span></p>
+          </article>
+
+          <div class="tc-flowgrid tc-stair p-tif-why__rest" style="--min:230px;--step:90ms" data-stagger>
+            <article class="tc-leaf tc-leaf--lift tc-spot" data-reveal="rise">
+              <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-box"/></svg>
+              <h3 class="tc-h4">Control de stock en tiempo real</h3>
+              <p class="tc-muted">Almacén actualizado automáticamente con cada venta o compra. Alertas de mínimos, movimientos y valoración instantánea.</p>
+              <div class="p-tif-mini p-tif-mini--stock" aria-hidden="true" data-live>
+                <span style="--v:.84;--n:0"><i></i></span>
+                <span style="--v:.58;--n:1"><i></i></span>
+                <span class="is-low" style="--v:.17;--n:2"><i></i><b>Mínimo</b></span>
+              </div>
+            </article>
+            <article class="tc-leaf tc-leaf--tr tc-leaf--lift tc-spot" data-reveal="rise">
+              <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-bot"/></svg>
+              <h3 class="tc-h4">TrusTy te avisa antes de emitir</h3>
+              <p class="tc-muted">Cuando una venta mezcla territorio, impuesto o datos sensibles, TrusTy la convierte en una revisión concreta para tu equipo o tu asesoría.</p>
+              <div class="p-tif-mini p-tif-mini--trusty" aria-hidden="true" data-live>
+                <span class="tc-chip" style="--n:0">Territorio</span><span class="tc-chip" style="--n:1">Impuesto</span><span class="tc-chip" style="--n:2">Datos</span><i class="p-tif-mini__br"></i>
+                <span class="tc-chip tc-chip--solid p-tif-mini__out" style="--n:3"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Revisión</span>
+              </div>
+            </article>
+            <article class="tc-leaf tc-leaf--br tc-leaf--lift tc-spot" data-reveal="rise">
+              <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-globe"/></svg>
+              <h3 class="tc-h4">Facturas en 3 idiomas</h3>
+              <p class="tc-muted">Emite en español, inglés y francés. Ideal para empresas con clientes internacionales o distribuidores en el norte de África.</p>
+              <p class="tc-chips p-tif-langs" aria-hidden="true"><span class="tc-chip">Factura</span><span class="tc-chip">Invoice</span><span class="tc-chip">Facture</span></p>
+            </article>
+            <article class="tc-leaf tc-leaf--tl tc-leaf--lift tc-spot" data-reveal="rise">
+              <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-chart"/></svg>
+              <h3 class="tc-h4">Dashboards financieros</h3>
+              <p class="tc-muted">Cobros pendientes, flujo de caja, comparativa mensual y alertas de deuda. Todo visible en tiempo real sin exportar a Excel.</p>
+              <div class="p-tif-mini p-tif-mini--bars" aria-hidden="true" data-live>
+                <i style="--v:.34;--n:0"></i><i style="--v:.52;--n:1"></i><i style="--v:.44;--n:2"></i><i style="--v:.68;--n:3"></i><i style="--v:.6;--n:4"></i><i style="--v:.82;--n:5"></i><i style="--v:1;--n:6"></i>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4 · Flujo de trabajo ============ -->
+  <section class="tc-sec tc-sec--white tone-light" id="flujo" aria-labelledby="s-flujo">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-rel">
+        <div class="tc-brick">
+          <header class="tc-brick__head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Flujo de trabajo</p>
+            <h2 class="tc-display tc-h2" id="s-flujo" data-reveal="words">De presupuesto a cobro <span class="tc-hl">en un solo flujo.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Sin duplicar datos, sin copiar y pegar, sin pasos manuales innecesarios.</p>
+            <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-magnet data-track="tf_flujo_demo" data-reveal="pop" style="--delay:260ms"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+          </header>
+          <ol class="tc-steps tc-steps--brick" role="list" data-flow-steps>
+            <li class="tc-step tc-leaf p-tif-step" data-reveal="slide" style="--from:60px">
+              <span class="tc-glyph tc-glyph--soft tc-glyph--sm p-tif-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-doc"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Presupuesto</h3><p class="tc-muted">Crea y envía por email</p></li>
+            <li class="tc-step tc-leaf p-tif-step" data-reveal="slide" style="--from:-60px">
+              <span class="tc-glyph tc-glyph--soft tc-glyph--sm p-tif-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-swap"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Pedido / albarán</h3><p class="tc-muted">Convierte con un clic</p></li>
+            <li class="tc-step tc-leaf p-tif-step p-tif-step--key" data-reveal="slide" style="--from:60px">
+              <span class="tc-glyph tc-glyph--sm p-tif-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-filecheck"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Factura VeriFactu</h3><p class="tc-muted">Preparada para registro SIF</p></li>
+            <li class="tc-step tc-leaf p-tif-step" data-reveal="slide" style="--from:-60px">
+              <span class="tc-glyph tc-glyph--soft tc-glyph--sm p-tif-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-euro"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Cobro registrado</h3><p class="tc-muted">Conciliación automática</p></li>
+            <li class="tc-step tc-leaf p-tif-step" data-reveal="slide" style="--from:60px">
+              <span class="tc-glyph tc-glyph--soft tc-glyph--sm p-tif-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-chart"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Dashboard actualizado</h3><p class="tc-muted">Datos en tiempo real</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5 · IPSI y VeriFactu: isla oscura ============ -->
+  <section class="tc-sec tc-sec--day tone-light" id="ipsi" aria-labelledby="s-ipsi">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <div class="tc-leaf tc-leaf--night tc-leaf--lg tc-leaf--tl tone-dark tc-spot p-tif-tax">
+          <div class="p-tif-tax__copy">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Fiscalidad avanzada</p>
+            <h2 class="tc-display tc-h2 p-tif-tax__title" id="s-ipsi" data-reveal="words">Expertos en IPSI y la fiscalidad de <span class="tc-hl">Ceuta y Melilla.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">El IPSI no es IVA y muchos softwares genéricos lo tratan como una excepción manual. TrustInFacts fue diseñado desde Ceuta para Ceuta — y para cualquier empresa española que necesite facturar correctamente.</p>
+            <div class="p-tif-duo" data-stagger style="--step:120ms;--base:120ms">
+              <div class="p-tif-duo__c p-tif-duo__c--ipsi" data-reveal="rise">
+                <p class="tc-display p-tif-duo__w">IPSI</p>
+                <p class="tc-strong">Ceuta y Melilla</p>
+                <p class="tc-muted tc-small">Tipos 0,5% — 10%. Cálculo automático por actividad.</p>
+              </div>
+              <div class="p-tif-duo__c" data-reveal="rise">
+                <p class="tc-display p-tif-duo__w">IVA</p>
+                <p class="tc-strong">Resto de España y UE</p>
+                <p class="tc-muted tc-small">4%, 10%, 21%. OSS para ventas intracomunitarias.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc-leaf tc-leaf--glass tc-leaf--br p-tif-tax__panel" data-reveal="tilt" style="--delay:160ms">
+            <div class="p-tif-tax__head">
+              <span class="tc-glyph" aria-hidden="true"><svg class="tc-ico"><use href="#i-shield"/></svg></span>
               <div>
-                <p class="text-white font-bold text-sm">Factura #2026-0142</p>
-                <p class="text-blue-300 text-xs mt-0.5">Electr&oacute;nica &middot; 19 abr 2026</p>
-              </div>
-              <span class="text-xs px-2 py-0.5 rounded font-semibold" style="background:rgba(212,162,61,0.2);color:var(--tc-gold)">IPSI 0.5%</span>
-            </div>
-            <div class="space-y-1.5">
-              <div class="flex justify-between text-xs">
-                <span class="text-blue-200">Servicios de consultor&iacute;a</span>
-                <span class="text-white">2.400,00 &euro;</span>
-              </div>
-              <div class="flex justify-between text-xs">
-                <span class="text-blue-200">IPSI 0,5%</span>
-                <span class="text-white">12,00 &euro;</span>
-              </div>
-              <div class="flex justify-between text-sm font-bold border-t border-white/10 pt-2 mt-2">
-                <span class="text-white">Total</span>
-                <span style="color:var(--tc-cyan-light)">2.412,00 &euro;</span>
+                <h3 class="tc-h4">VeriFactu — Ley Antifraude</h3>
+                <p class="tc-mono">Calendario de adaptación 2027 para empresas y autónomos</p>
               </div>
             </div>
-          </div>
-          <!-- Stats -->
-          <div class="grid grid-cols-3 gap-2">
-            <div class="rounded-xl p-2.5 text-center" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)">
-              <p class="text-white font-bold text-lg">142</p>
-              <p class="text-blue-300 text-xs">Facturas</p>
-            </div>
-            <div class="rounded-xl p-2.5 text-center" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)">
-              <p class="text-white font-bold text-lg">0</p>
-              <p class="text-blue-300 text-xs">Errores</p>
-            </div>
-            <div class="rounded-xl p-2.5 text-center" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)">
-              <p class="text-white font-bold text-lg">SIF</p>
-              <p class="text-blue-300 text-xs">Trazable</p>
+            <ul class="tc-ticks tc-ticks--ok p-tif-tax__list" data-stagger style="--step:80ms;--base:260ms">
+              <li data-reveal="slide" style="--from:36px"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Huella criptográfica por factura</li>
+              <li data-reveal="slide" style="--from:36px"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> QR verificable por el cliente</li>
+              <li data-reveal="slide" style="--from:36px"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Remisión a AEAT en modalidad VERI*FACTU</li>
+              <li data-reveal="slide" style="--from:36px"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Inalterabilidad de registros</li>
+              <li data-reveal="slide" style="--from:36px"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Compatible con TicketBAI</li>
+            </ul>
+            <div class="p-tif-tax__cta">
+              <button class="tc-btn tc-btn--primary tc-btn--block" type="button" data-calendar-open data-track="tf_ipsi_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+              <a class="tc-btn tc-btn--secondary tc-btn--block" href="/software-verifactu-ipsi-ceuta-melilla" data-track="tf_ipsi_guide"><span class="tc-btn__label">Ver guía con fuentes</span></a>
             </div>
           </div>
         </div>
@@ -274,585 +532,365 @@
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <section class="bg-white border-b border-gray-100 py-10">
-    <div class="tc-container">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="tc-metric" data-reveal>
-          <span class="tc-metric__value">VeriFactu</span>
-          <span class="tc-metric__label">Preparado para VeriFactu desde ya</span>
-        </div>
-        <div class="tc-metric" data-reveal>
-          <span class="tc-metric__value">IPSI</span>
-          <span class="tc-metric__label">Nativo para Ceuta y Melilla</span>
-        </div>
-        <div class="tc-metric" data-reveal>
-          <span class="tc-metric__value">48 h</span>
-          <span class="tc-metric__label">Migraci&oacute;n desde otro software</span>
-        </div>
-        <div class="tc-metric" data-reveal>
-          <span class="tc-metric__value">3 idiomas</span>
-          <span class="tc-metric__label">Facturas en ES, EN y FR</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ============ 6 · Simulador «Pruébalo» ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="pruebalo" aria-labelledby="s-sim">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Pruébalo ahora</p>
+          <h2 class="tc-display tc-h2" id="s-sim" data-reveal="words">Calcula una factura IPSI <span class="tc-hl">en 20 segundos.</span></h2>
+          <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Sin registro. Elige qué vendes y dónde facturas: el impuesto correcto se aplica solo, igual que en TrustInFacts.</p>
+        </header>
 
-  <!-- APP SCREENSHOTS -->
-  <section class="tc-section bg-white">
-    <div class="tc-container">
-      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
-        <span class="tc-eyebrow">La app por dentro</span>
-        <h2 class="tc-display mt-4 mb-3" style="font-size:clamp(24px,2.8vw,38px);">Datos reales, no exportaciones</h2>
-        <p class="text-slate-500 text-base leading-relaxed">Panel de facturación, análisis de márgenes y control de stock — todo en un solo lugar, sin exportar a Excel.</p>
-      </div>
-      <div data-reveal>
-        <div style="background:#1e2a3a;border-radius:16px;overflow:hidden;box-shadow:0 24px 70px -18px rgba(2,10,42,.28),0 0 0 1px rgba(0,0,0,.06);">
-          <div style="background:#2a3649;padding:12px 16px;display:flex;align-items:center;gap:8px;">
-            <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
-            <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
-            <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span>
-            <div style="flex:1;background:#1a2538;border-radius:6px;height:26px;margin:0 12px;display:flex;align-items:center;padding:0 10px;"><span style="font-size:11px;color:rgba(255,255,255,.62);">app.trustcore.es — Análisis · Informes</span></div>
-          </div>
-          <img src="/assets/trustinfacts-dashboard-960.webp"
-                   srcset="/assets/trustinfacts-dashboard-640.webp 640w, /assets/trustinfacts-dashboard-960.webp 960w, /assets/trustinfacts-dashboard-1280.webp 1280w"
-                   sizes="(min-width: 1024px) 620px, calc(100vw - 2rem)" width="1280" height="685" alt="TrustinFacts — Panel de informes: facturación, márgenes y métricas en tiempo real" style="width:100%;display:block;" loading="lazy">
-        </div>
-        <p class="text-xs text-slate-600 mt-3 text-center font-medium">Panel web · Informes de facturación, márgenes y métricas financieras en tiempo real</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIFERENCIA -->
-  <section id="diferencia" class="tc-section tc-bg-grid scroll-mt-28" style="background:var(--tc-surface-alt)">
-    <div class="tc-container">
-      <div class="text-center max-w-2xl mx-auto mb-16" data-reveal>
-        <span class="tc-eyebrow">Por qu&eacute; TrustinFacts</span>
-        <h2 class="tc-display tc-display-lg mt-4" style="color:var(--tc-navy)">No es solo facturar. Es dormir tranquilo.</h2>
-        <p class="mt-4 text-gray-500">La diferencia entre un software gen&eacute;rico y uno pensado para negocios reales est&aacute; en los detalles que &uacute;nicamente notar&aacute;s cuando los necesites.</p>
-      </div>
-      <div class="tc-bento">
-        <article class="tc-bento__card tc-bento--two-thirds" data-reveal>
-          <div class="tc-bento__icon" style="color:var(--tc-gold)"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg></div>
-          <h3 class="tc-bento__title">Facturaci&oacute;n preparada para SIF/VERI*FACTU</h3>
-          <p class="tc-bento__body">Genera facturas con c&oacute;digo QR, trazabilidad de registros y huella criptogr&aacute;fica. El modo VERI*FACTU permite remisi&oacute;n a la AEAT cuando corresponda.</p>
-          <div class="mt-4 flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full w-fit" style="background:rgba(212,162,61,0.12);color:var(--tc-gold-deep);border:1px solid rgba(212,162,61,0.25)">
-            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg> Compatible VeriFactu &middot; Ley 11/2021
-          </div>
-        </article>
-        <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-map-marked-alt"/></svg></div>
-          <h3 class="tc-bento__title">IPSI para Ceuta y Melilla</h3>
-          <p class="tc-bento__body">IPSI nativo para Ceuta y Melilla. Sin plugins ni parches manuales: configura el tipo aplicable por operación y reduce correcciones con la asesoría.</p>
-        </article>
-        <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-boxes"/></svg></div>
-          <h3 class="tc-bento__title">Control de stock en tiempo real</h3>
-          <p class="tc-bento__body">Almac&eacute;n actualizado autom&aacute;ticamente con cada venta o compra. Alertas de m&iacute;nimos, movimientos y valoraci&oacute;n instant&aacute;nea.</p>
-        </article>
-        <article class="tc-bento__card tc-bento--third" data-reveal>
-          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-robot"/></svg></div>
-          <h3 class="tc-bento__title">TrusTy te avisa antes de emitir</h3>
-          <p class="tc-bento__body">Cuando una venta mezcla territorio, impuesto o datos sensibles, TrusTy la convierte en una revisión concreta para tu equipo o tu asesoría.</p>
-        </article>
-        <article class="tc-bento__card tc-bento--half" data-reveal>
-          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-globe"/></svg></div>
-          <h3 class="tc-bento__title">Facturas en 3 idiomas</h3>
-          <p class="tc-bento__body">Emite en espa&ntilde;ol, ingl&eacute;s y franc&eacute;s. Ideal para empresas con clientes internacionales o distribuidores en el norte de &Aacute;frica.</p>
-        </article>
-        <article class="tc-bento__card tc-bento--half" data-reveal>
-          <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-chart-line"/></svg></div>
-          <h3 class="tc-bento__title">Dashboards financieros</h3>
-          <p class="tc-bento__body">Cobros pendientes, flujo de caja, comparativa mensual y alertas de deuda. Todo visible en tiempo real sin exportar a Excel.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLUJO REAL -->
-  <section id="flujo" class="tc-section bg-white scroll-mt-28">
-    <div class="tc-container">
-      <div class="text-center max-w-xl mx-auto mb-16" data-reveal>
-        <span class="tc-eyebrow">Flujo de trabajo</span>
-        <h2 class="tc-display tc-display-lg mt-4" style="color:var(--tc-navy)">De presupuesto a cobro en un solo flujo</h2>
-        <p class="mt-4 text-gray-500">Sin duplicar datos, sin copiar y pegar, sin pasos manuales innecesarios.</p>
-      </div>
-      <div class="grid md:grid-cols-5 gap-4 items-center">
-        <div class="text-center" data-reveal>
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-eyebrow)">
-            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-alt"/></svg>
-          </div>
-          <p class="font-semibold text-sm" style="color:var(--tc-navy)">Presupuesto</p>
-          <p class="text-xs text-gray-600 mt-1">Crea y env&iacute;a por email</p>
-        </div>
-        <div class="text-center text-slate-500 text-2xl hidden md:block">&rarr;</div>
-        <div class="text-center" data-reveal>
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-eyebrow)">
-            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-check-square"/></svg>
-          </div>
-          <p class="font-semibold text-sm" style="color:var(--tc-navy)">Pedido / albar&aacute;n</p>
-          <p class="text-xs text-gray-600 mt-1">Convierte con un clic</p>
-        </div>
-        <div class="text-center text-slate-500 text-2xl hidden md:block">&rarr;</div>
-        <div class="text-center" data-reveal>
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(212,162,61,0.15);color:var(--tc-gold)">
-            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-invoice-dollar"/></svg>
-          </div>
-          <p class="font-semibold text-sm" style="color:var(--tc-navy)">Factura VeriFactu</p>
-              <p class="text-xs text-gray-600 mt-1">Preparada para registro SIF</p>
-        </div>
-      </div>
-      <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mt-6 items-center justify-center">
-        <div class="text-center md:text-right text-slate-500 text-2xl hidden md:block">&darr;</div>
-        <div class="text-center text-slate-500 text-2xl hidden md:block">&darr;</div>
-        <div class="text-center" data-reveal>
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(15,160,111,0.1);color:var(--tc-success)">
-            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-coins"/></svg>
-          </div>
-          <p class="font-semibold text-sm" style="color:var(--tc-navy)">Cobro registrado</p>
-          <p class="text-xs text-gray-600 mt-1">Conciliaci&oacute;n autom&aacute;tica</p>
-        </div>
-        <div class="text-center" data-reveal>
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-xl mx-auto mb-4" style="background:rgba(32,113,213,0.1);color:var(--tc-blue-eyebrow)">
-            <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-chart-pie"/></svg>
-          </div>
-          <p class="font-semibold text-sm" style="color:var(--tc-navy)">Dashboard actualizado</p>
-          <p class="text-xs text-gray-600 mt-1">Datos en tiempo real</p>
-        </div>
-      </div>
-      <div class="text-center mt-10" data-reveal>
-        <button class="tc-btn tc-btn-primary" data-calendar-open data-track="tf_flujo_demo">Agendar demo</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- IPSI / VERIFACTU DARK -->
-  <section id="ipsi" class="tc-section scroll-mt-28" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%)">
-    <div class="tc-container">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div data-reveal>
-          <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Fiscalidad avanzada</span>
-          <h2 class="tc-display tc-display-lg mt-4 text-white">Expertos en IPSI y la fiscalidad de Ceuta y Melilla</h2>
-          <p class="mt-5 text-blue-100/80 leading-relaxed">El IPSI no es IVA y muchos softwares gen&eacute;ricos lo tratan como una excepci&oacute;n manual. TrustinFacts fue dise&ntilde;ado desde Ceuta para Ceuta &mdash; y para cualquier empresa espa&ntilde;ola que necesite facturar correctamente.</p>
-          <div class="grid grid-cols-2 gap-4 mt-8">
-            <div class="rounded-2xl p-5 border border-white/10" style="background:rgba(255,255,255,0.05)">
-              <p class="text-2xl font-black" style="color:var(--tc-cyan-light)">IPSI</p>
-              <p class="text-white font-semibold text-sm mt-1">Ceuta y Melilla</p>
-              <p class="text-blue-200/70 text-xs mt-2">Tipos 0,5% &mdash; 10%. C&aacute;lculo autom&aacute;tico por actividad.</p>
-            </div>
-            <div class="rounded-2xl p-5 border border-white/10" style="background:rgba(255,255,255,0.05)">
-              <p class="text-2xl font-black" style="color:var(--tc-gold)">IVA</p>
-              <p class="text-white font-semibold text-sm mt-1">Resto de Espa&ntilde;a y UE</p>
-              <p class="text-blue-200/70 text-xs mt-2">4%, 10%, 21%. OSS para ventas intracomunitarias.</p>
-            </div>
-          </div>
-        </div>
-        <div data-reveal>
-          <div class="rounded-3xl p-8 border border-white/10" style="background:rgba(255,255,255,0.05)">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(212,162,61,0.2)">
-                <svg class="tc-icon" style="color:var(--tc-gold)"><use href="/assets/icons/sprite.svg#fa-shield-alt"/></svg>
+        <div class="tc-leaf tc-leaf--lg tc-leaf--tint tc-leaf--tr p-tif-simbox" data-reveal="rise">
+          <div class="tc-sim" data-sim="factura">
+            <div class="tc-sim__controls">
+              <div>
+                <p class="tc-sim__label">1 · ¿Qué vendes?</p>
+                <div class="tc-sim__options" role="group" aria-label="Tipo de operación">
+                  <button type="button" class="tc-sim__opt is-active" data-sim-producto="1200" data-sim-concepto="Servicios de consultoría">Consultoría · 1.200 €</button>
+                  <button type="button" class="tc-sim__opt" data-sim-producto="8500" data-sim-concepto="Reforma de local">Reforma · 8.500 €</button>
+                  <button type="button" class="tc-sim__opt" data-sim-producto="950" data-sim-concepto="Venta de equipo informático">Comercio · 950 €</button>
+                </div>
               </div>
               <div>
-                <p class="text-white font-bold">VeriFactu &mdash; Ley Antifraude</p>
-                <p class="text-blue-300 text-xs">Calendario de adaptación 2027 para empresas y autónomos</p>
+                <p class="tc-sim__label">2 · ¿Dónde facturas?</p>
+                <div class="tc-sim__options" role="group" aria-label="Régimen fiscal">
+                  <button type="button" class="tc-sim__opt is-active" data-sim-tax="ipsi-servicios">Ceuta/Melilla · servicios</button>
+                  <button type="button" class="tc-sim__opt" data-sim-tax="ipsi-comercio">Ceuta/Melilla · comercio</button>
+                  <button type="button" class="tc-sim__opt" data-sim-tax="ipsi-obras">Ceuta/Melilla · obras</button>
+                  <button type="button" class="tc-sim__opt" data-sim-tax="iva">Península · IVA</button>
+                </div>
+              </div>
+              <div>
+                <button type="button" class="tc-btn tc-btn--primary" data-sim-emitir><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-send"/></svg> Emitir factura de prueba</span></button>
+                <p class="tc-sim__hint">Cálculo real de este simulador. En TrustInFacts ocurre automáticamente en cada factura, con QR y registro VeriFactu.</p>
               </div>
             </div>
-            <div class="space-y-3">
-              <div class="flex items-center justify-between py-3 border-b border-white/10">
-                <span class="text-blue-100 text-sm">Huella criptogr&aacute;fica por factura</span>
-                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
+            <div class="tc-sim__stage p-tif-simbox__stage">
+              <div class="p-tif-simbox__halo" aria-hidden="true"></div>
+              <div class="tc-sim__doc" aria-live="polite" data-tilt="2.4">
+                <div class="tc-sim__doc-head"><strong>Factura <span data-sim-serie>#2026-0001</span></strong><span class="tc-sim__stamp" data-sim-stamp><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> VeriFactu · registrada</span></div>
+                <div class="tc-sim__row"><span data-sim-doc-concepto>Servicios de consultoría</span><span data-sim-base>1.200,00 €</span></div>
+                <div class="tc-sim__row"><span data-sim-taxlabel>IPSI servicios 4%</span><span data-sim-cuota>48,00 €</span></div>
+                <div class="tc-sim__row tc-sim__row--total"><span>Total</span><span data-sim-total>1.248,00 €</span></div>
               </div>
-              <div class="flex items-center justify-between py-3 border-b border-white/10">
-                <span class="text-blue-100 text-sm">QR verificable por el cliente</span>
-                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
-              </div>
-              <div class="flex items-center justify-between py-3 border-b border-white/10">
-                <span class="text-blue-100 text-sm">Remisi&oacute;n a AEAT en modalidad VERI*FACTU</span>
-                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
-              </div>
-              <div class="flex items-center justify-between py-3 border-b border-white/10">
-                <span class="text-blue-100 text-sm">Inalterabilidad de registros</span>
-                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
-              </div>
-              <div class="flex items-center justify-between py-3">
-                <span class="text-blue-100 text-sm">Compatible con TicketBAI</span>
-                <svg class="tc-icon text-green-400"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg>
-              </div>
+              <p class="p-tif-simbox__next">
+                <button type="button" class="tc-btn tc-btn--secondary" data-calendar-open data-track="tf_sim_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+              </p>
             </div>
-            <button class="tc-btn tc-btn-primary w-full mt-6" data-calendar-open data-track="tf_ipsi_demo">Agendar demo</button>
-            <a href="/software-verifactu-ipsi-ceuta-melilla" class="tc-btn tc-btn-secondary w-full mt-3" data-track="tf_ipsi_guide">Ver guía con fuentes</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SIMULADOR: pru&eacute;balo ahora -->
-  <section id="pruebalo" class="tc-section bg-white scroll-mt-28">
-    <div class="tc-container">
-      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
-        <span class="tc-eyebrow justify-center">Pru&eacute;balo ahora</span>
-        <h2 class="tc-display tc-display-lg mt-4 mb-4">Calcula una factura IPSI en 20 segundos</h2>
-        <p class="text-lg text-slate-600">Sin registro. Elige qu&eacute; vendes y d&oacute;nde facturas: el impuesto correcto se aplica solo, igual que en TrustinFacts.</p>
-      </div>
+  <!-- ============ 7 · Para quién es ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" id="para-quien" aria-labelledby="s-who">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Para quién es</p>
+          <h2 class="tc-display tc-h2" id="s-who" data-reveal="words">TrustInFacts está pensado para <span class="tc-hl">negocios reales.</span></h2>
+        </header>
 
-      <div class="tc-sim max-w-5xl mx-auto" data-sim="factura" data-reveal>
-        <div class="tc-sim__controls">
+        <ol class="p-tif-who" role="list">
+          <li class="p-tif-who__row" data-reveal="slide" style="--from:-56px">
+            <div class="p-tif-who__name">
+              <span class="tc-glyph tc-glyph--soft" aria-hidden="true"><svg class="tc-ico"><use href="#i-user"/></svg></span>
+              <h3 class="tc-display tc-h3">Autónomos</h3>
+            </div>
+            <p class="tc-muted p-tif-who__text">Factura en minutos, controla lo que te deben y deja el tema fiscal en manos del software. Sin saber de contabilidad.</p>
+            <ul class="tc-ticks p-tif-who__ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Desde 19,99&nbsp;€/mes</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Serie de facturas propia</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Envío directo por email</li>
+            </ul>
+          </li>
+          <li class="p-tif-who__row p-tif-who__row--key" data-reveal="slide" style="--from:56px">
+            <div class="p-tif-who__name">
+              <span class="tc-glyph" aria-hidden="true"><svg class="tc-ico"><use href="#i-store"/></svg></span>
+              <h3 class="tc-display tc-h3">Pymes</h3>
+            </div>
+            <p class="tc-muted p-tif-who__text">Multi-usuario, stock, presupuestos, albaranes y dashboards financieros. Todo integrado con TrustinTime si tienes empleados.</p>
+            <ul class="tc-ticks p-tif-who__ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Desde 19,99&nbsp;€/mes</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Hasta 5 usuarios</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> IPSI + IVA nativo</li>
+            </ul>
+          </li>
+          <li class="p-tif-who__row" data-reveal="slide" style="--from:-56px">
+            <div class="p-tif-who__name">
+              <span class="tc-glyph tc-glyph--soft" aria-hidden="true"><svg class="tc-ico"><use href="#i-briefcase"/></svg></span>
+              <h3 class="tc-display tc-h3">Asesorías</h3>
+            </div>
+            <p class="tc-muted p-tif-who__text">Gestiona la facturación de todos tus clientes desde un único panel. Acceso multi-empresa, informes consolidados y soporte prioritario.</p>
+            <ul class="tc-ticks p-tif-who__ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Multi-empresa</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Panel de asesoría dedicado</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Precio a medida</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8 · Precios ============ -->
+  <section class="tc-sec tc-sec--white tone-light" id="precios" aria-labelledby="s-precios">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <header class="tc-head tc-head--center">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Precios</p>
+          <h2 class="tc-display tc-h2" id="s-precios" data-reveal="words">Tres planes para <span class="tc-hl">facturar bien.</span></h2>
+          <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Sin permanencia. Sin sorpresas. Sin letra pequeña.</p>
+          <div class="tc-billing" role="group" aria-label="Ciclo de facturación" data-reveal="pop" style="--delay:240ms">
+            <span id="lbl-monthly" class="tc-billing__label tc-billing__label--monthly">Mensual</span>
+            <button id="billing-toggle" class="tc-switch" type="button" role="switch" aria-checked="false" aria-labelledby="billing-toggle-label" data-track="billing_toggle"><span class="tc-switch__thumb" aria-hidden="true"></span></button>
+            <span id="lbl-annual" class="tc-billing__label tc-billing__label--annual">Anual <span class="tc-chip tc-chip--ok">2 meses gratis</span></span>
+            <span id="billing-toggle-label" class="sr-only">Cambiar entre facturación mensual y anual</span>
+          </div>
+        </header>
+
+        <div class="tc-plans p-tif-plans" data-stagger style="--step:110ms">
+          <article class="tc-plan tc-leaf" data-reveal="rise">
+            <p class="tc-mono">Autónomo</p>
+            <h3 class="tc-plan__name">Starter</h3>
+            <p class="tc-plan__desc">Para autónomos y microempresas</p>
+            <p class="tc-plan__price"><span class="tc-plan__amount price-monthly">19,99&nbsp;€</span><span class="tc-plan__amount price-annual" hidden>16,66&nbsp;€</span><span class="tc-plan__period">/mes</span></p>
+            <p class="tc-plan__note"><span class="savings-note" hidden>Facturado 199,90 €/año · 2 meses gratis</span></p>
+            <ul class="tc-ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Facturas VeriFactu ilimitadas</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> IPSI Ceuta/Melilla nativo</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Presupuestos y albaranes</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> QR + huella criptográfica</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> 1 usuario incluido</li>
+              <li class="is-off"><svg class="tc-ico" aria-hidden="true"><use href="#i-minus"/></svg> Gestión de stock</li>
+              <li class="is-off"><svg class="tc-ico" aria-hidden="true"><use href="#i-minus"/></svg> Multi-usuario</li>
+            </ul>
+            <div class="tc-plan__cta">
+              <a class="tc-btn tc-btn--secondary tc-btn--block cta-monthly" href="https://buy.stripe.com/8x2dR9frg6qg2I15KOcs803" target="_blank" rel="noopener" data-track="tf_price_starter_monthly"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-card"/></svg> Contratar Starter</span></a>
+              <a class="tc-btn tc-btn--secondary tc-btn--block cta-annual" href="https://buy.stripe.com/aFa3cvdj8dSI4Q97SWcs806" target="_blank" rel="noopener" data-track="tf_price_starter_annual" hidden><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-card"/></svg> Contratar Starter anual</span></a>
+            </div>
+          </article>
+
+          <article class="tc-plan tc-plan--featured tc-leaf tc-leaf--night tone-dark" data-reveal="rise">
+            <p class="tc-mono">Pyme</p>
+            <h3 class="tc-plan__name">Pro</h3>
+            <p class="tc-plan__desc">El más elegido por pymes con facturación activa</p>
+            <p class="tc-plan__price"><span class="tc-plan__amount price-monthly">39,99&nbsp;€</span><span class="tc-plan__amount price-annual" hidden>33,33&nbsp;€</span><span class="tc-plan__period">/mes</span></p>
+            <p class="tc-plan__note"><span class="savings-note" hidden>Facturado 399,90 €/año · 2 meses gratis</span></p>
+            <ul class="tc-ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Todo lo del plan Starter</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Hasta 5 usuarios</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Gestión de stock y márgenes</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Dashboards contables IA</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Multilingüe ES / EN / FR</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Análisis de impagados</li>
+            </ul>
+            <div class="tc-plan__cta">
+              <a class="tc-btn tc-btn--primary tc-btn--block cta-monthly" href="https://buy.stripe.com/aFa28r1AqcOEeqJ1uycs804" target="_blank" rel="noopener" data-track="tf_price_pro_monthly"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-card"/></svg> Contratar Pro</span></a>
+              <a class="tc-btn tc-btn--primary tc-btn--block cta-annual" href="https://buy.stripe.com/28E3cv7YOcOEaatgpscs809" target="_blank" rel="noopener" data-track="tf_price_pro_annual" hidden><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-card"/></svg> Contratar Pro anual</span></a>
+            </div>
+          </article>
+
+          <article class="tc-plan tc-leaf tc-leaf--br" data-reveal="rise">
+            <p class="tc-mono">Asesorías y grupos</p>
+            <h3 class="tc-plan__name">Business</h3>
+            <p class="tc-plan__desc">Volumen alto y varias empresas</p>
+            <p class="tc-plan__price"><span class="tc-plan__amount price-monthly">49,99&nbsp;€</span><span class="tc-plan__amount price-annual" hidden>41,66&nbsp;€</span><span class="tc-plan__period">/mes</span></p>
+            <p class="tc-plan__note"><span class="savings-note" hidden>Facturado 499,90 €/año · 2 meses gratis</span></p>
+            <ul class="tc-ticks">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Todo lo del plan Pro</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Usuarios ilimitados</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Integraciones API / ERP</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Onboarding dedicado incluido</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Notas de crédito y rectificativas</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> SLA y soporte prioritario</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> Exportación SII automática</li>
+            </ul>
+            <div class="tc-plan__cta">
+              <a class="tc-btn tc-btn--secondary tc-btn--block cta-monthly" href="https://buy.stripe.com/aFa4gzenc9CsfuNgpscs805" target="_blank" rel="noopener" data-track="tf_price_business_monthly"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-card"/></svg> Contratar Business</span></a>
+              <a class="tc-btn tc-btn--secondary tc-btn--block cta-annual" href="https://buy.stripe.com/7sYeVd2Eu9Csbex8X0cs807" target="_blank" rel="noopener" data-track="tf_price_business_annual" hidden><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-card"/></svg> Contratar Business anual</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="tc-leaf tc-leaf--tint tc-leaf--tl p-tif-suite" data-reveal="rise">
           <div>
-            <p class="tc-sim__label mb-2">1 &middot; &iquest;Qu&eacute; vendes?</p>
-            <div class="tc-sim__options" role="group" aria-label="Tipo de operaci&oacute;n">
-              <button type="button" class="tc-sim__opt is-active" data-sim-producto="1200" data-sim-concepto="Servicios de consultor&iacute;a">Consultor&iacute;a &middot; 1.200 &euro;</button>
-              <button type="button" class="tc-sim__opt" data-sim-producto="8500" data-sim-concepto="Reforma de local">Reforma &middot; 8.500 &euro;</button>
-              <button type="button" class="tc-sim__opt" data-sim-producto="950" data-sim-concepto="Venta de equipo inform&aacute;tico">Comercio &middot; 950 &euro;</button>
-            </div>
+            <p class="tc-mono tc-mono--hi">Suite TrustCore</p>
+            <p class="tc-display tc-h3 p-tif-suite__title">¿Necesitas control horario también?</p>
+            <p class="tc-muted">Contrata los dos productos juntos con datos compartidos y una sola factura. Presupuesto a medida según empleados y volumen.</p>
           </div>
-          <div>
-            <p class="tc-sim__label mb-2">2 &middot; &iquest;D&oacute;nde facturas?</p>
-            <div class="tc-sim__options" role="group" aria-label="R&eacute;gimen fiscal">
-              <button type="button" class="tc-sim__opt is-active" data-sim-tax="ipsi-servicios">Ceuta/Melilla &middot; servicios</button>
-              <button type="button" class="tc-sim__opt" data-sim-tax="ipsi-comercio">Ceuta/Melilla &middot; comercio</button>
-              <button type="button" class="tc-sim__opt" data-sim-tax="ipsi-obras">Ceuta/Melilla &middot; obras</button>
-              <button type="button" class="tc-sim__opt" data-sim-tax="iva">Pen&iacute;nsula &middot; IVA</button>
-            </div>
-          </div>
-          <div class="mt-2">
-            <button type="button" class="tc-btn tc-btn-primary w-full" data-sim-emitir>
-              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-export"/></svg> Emitir factura de prueba
-            </button>
-            <p class="text-xs text-slate-600 mt-3">C&aacute;lculo real de este simulador. En TrustinFacts ocurre autom&aacute;ticamente en cada factura, con QR y registro VeriFactu.</p>
-          </div>
+          <a class="tc-btn tc-btn--secondary" href="/precios" data-track="tf_price_suite"><span class="tc-btn__label">Ver la suite completa <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
         </div>
-        <div class="tc-sim__stage">
-          <div class="tc-sim__doc" aria-live="polite">
-            <div class="flex items-center justify-between mb-3">
-              <strong>Factura <span data-sim-serie>#2026-0001</span></strong>
-              <span class="tc-sim__stamp" data-sim-stamp><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg> VeriFactu &middot; registrada</span>
-            </div>
-            <div class="tc-sim__doc-row"><span data-sim-doc-concepto>Servicios de consultor&iacute;a</span><span data-sim-base>1.200,00 &euro;</span></div>
-            <div class="tc-sim__doc-row"><span data-sim-taxlabel>IPSI servicios 4%</span><span data-sim-cuota>48,00 &euro;</span></div>
-            <div class="tc-sim__doc-row tc-sim__doc-row--total"><span>Total</span><span data-sim-total>1.248,00 &euro;</span></div>
+
+        <div class="tc-note tc-note--ok p-tif-trial" data-reveal="rise">
+          <svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg>
+          <div><p>¿Prefieres probarlo antes de pagar? Lo montamos con tus datos en la demo, sin tarjeta. <a href="tel:+34666609299" data-track="trial_tel">O llámanos al 666 60 92 99</a>.</p></div>
+        </div>
+        <p class="tc-small tc-muted tc-center p-tif-legal">Todos los precios sin IVA/IPSI. Sin permanencia ni coste de alta. El plan anual se paga por adelantado y equivale a pagar diez meses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9 · Preguntas frecuentes ============ -->
+  <section class="tc-sec tc-sec--day tone-light" id="faq" aria-labelledby="s-faq">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--4-8 tc-split--top">
+          <header class="tc-head p-tif-faq__head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">FAQ</p>
+            <h2 class="tc-display tc-h2" id="s-faq" data-reveal="words">Preguntas frecuentes</h2>
+            <a class="tc-link" href="/software-verifactu-ipsi-ceuta-melilla" data-track="tf_faq_guide" data-reveal="rise" style="--delay:200ms">Guía de VeriFactu e IPSI con fuentes <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </header>
+          <div class="tc-acc" data-stagger style="--step:70ms">
+            <details class="tc-acc__item" name="faq-tif" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Qué es VERI*FACTU y cuándo deben adaptarse los SIF?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a">
+                <p>VERI*FACTU es una modalidad de remisión de registros dentro del Reglamento de sistemas informáticos de facturación. La AEAT sitúa la adaptación antes del 1 de enero de 2027 para entidades sujetas al Impuesto sobre Sociedades y antes del 1 de julio de 2027 para el resto de obligados.</p>
+                <p class="tc-small"><strong>Fuente:</strong> <a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html" target="_blank" rel="noopener">AEAT, plazos SIF</a> y <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840" target="_blank" rel="noopener">BOE, RD 1007/2023</a>.</p>
+              </div>
+            </details>
+            <details class="tc-acc__item" name="faq-tif" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿TrustinFacts soporta el IPSI de Ceuta y Melilla?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a">
+                <p>Sí. TrustinFacts incorpora IPSI para Ceuta y Melilla. La AEAT recuerda que en estas ciudades no se aplica IVA y que, en su lugar, se aplica IPSI.</p>
+                <p class="tc-small"><strong>Fuente:</strong> <a href="/software-verifactu-ipsi-ceuta-melilla">guía TrustCore</a>, <a href="https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html" target="_blank" rel="noopener">AEAT, Ceuta y Melilla</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645" target="_blank" rel="noopener">BOE, Ley 8/1991</a>.</p>
+              </div>
+            </details>
+            <details class="tc-acc__item" name="faq-tif" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Puedo gestionar stock, presupuestos y cobros también?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Sí. TrustinFacts trabaja el flujo presupuesto, pedido o albarán, factura, cobro, stock y dashboard sin duplicar datos entre hojas de cálculo.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-tif" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Es difícil migrar desde otro software?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>No tiene por qué serlo. Revisamos clientes, proveedores, catálogo de productos y facturas historizadas antes de migrar, y acordamos contigo qué datos merece la pena importar para empezar limpio.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-tif" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Cuánto cuesta TrustinFacts?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>TrustinFacts tiene planes para autónomos, pymes y necesidades avanzadas. La referencia actualizada está en la página de precios de TrustCore, con contratación mensual o anual según el plan.</p>
+                <p class="tc-small"><a href="/precios" data-track="tf_faq_precios">Ver la página de precios</a></p></div>
+            </details>
           </div>
-          <p class="text-center mt-6">
-            <button type="button" class="tc-btn tc-btn-secondary" data-calendar-open data-track="tf_sim_demo">Agendar demo</button>
-          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PARA QUI&Eacute;N -->
-  <section class="tc-section bg-white">
-    <div class="tc-container">
-      <div class="text-center max-w-xl mx-auto mb-14" data-reveal>
-        <span class="tc-eyebrow">Para qui&eacute;n es</span>
-        <h2 class="tc-display tc-display-lg mt-4" style="color:var(--tc-navy)">TrustinFacts est&aacute; pensado para negocios reales</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="rounded-3xl p-7 border border-gray-200" data-reveal>
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(32,113,213,0.1)">
-            <svg class="tc-icon text-blue-600 text-xl"><use href="/assets/icons/sprite.svg#fa-user-tie"/></svg>
-          </div>
-          <h3 class="font-bold text-lg mb-3" style="color:var(--tc-navy)">Aut&oacute;nomos</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Factura en minutos, controla lo que te deben y deja el tema fiscal en manos del software. Sin saber de contabilidad.</p>
-          <ul class="mt-4 space-y-2 text-sm text-gray-500">
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Desde 19,99&euro;/mes</li>
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Serie de facturas propia</li>
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Env&iacute;o directo por email</li>
-          </ul>
+  <!-- ============ 10 · CTA final ============ -->
+  <section class="tc-pool" id="contacto" data-live aria-labelledby="cta-t">
+    <div class="tc-pool__in tone-dark">
+      <div class="tc-pool__rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="tc-wrap tc-pool__copy">
+        <p class="tc-mono tc-mono--hi" data-reveal="rise">Empieza hoy</p>
+        <h2 class="tc-display tc-pool__title" id="cta-t" data-reveal="words">¿Listo para facturar sin sustos con Hacienda?</h2>
+        <p class="tc-lead" data-reveal="focus" style="--delay:200ms">Demo gratuita de 15 min. Te mostramos VeriFactu, IPSI y el flujo completo en vivo.</p>
+        <button class="tc-btn tc-btn--primary tc-btn--xl" type="button" data-calendar-open data-magnet data-track="tf_cta_demo" data-reveal="pop" style="--delay:320ms">
+          <span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        <div class="tc-pool__contact" data-reveal="rise" style="--delay:420ms">
+          <a href="tel:+34666609299" data-track="tf_cta_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> <span class="tc-num">666 60 92 99</span></a>
+          <a href="mailto:info@trustcore.es" data-track="tf_cta_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a>
+          <a href="/contacto" data-track="tf_cta_contacto"><svg class="tc-ico" aria-hidden="true"><use href="#i-send"/></svg> Enviar consulta</a>
         </div>
-        <div class="rounded-3xl p-7 border-2" style="border-color:var(--tc-blue-royal)" data-reveal>
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(32,113,213,0.1)">
-            <svg class="tc-icon text-blue-600 text-xl"><use href="/assets/icons/sprite.svg#fa-building"/></svg>
-          </div>
-          <h3 class="font-bold text-lg mb-3" style="color:var(--tc-navy)">Pymes</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Multi-usuario, stock, presupuestos, albaranes y dashboards financieros. Todo integrado con TrustinTime si tienes empleados.</p>
-          <ul class="mt-4 space-y-2 text-sm text-gray-500">
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Desde 19,99&euro;/mes</li>
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Hasta 5 usuarios</li>
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>IPSI + IVA nativo</li>
-          </ul>
-        </div>
-        <div class="rounded-3xl p-7 border border-gray-200" data-reveal>
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(32,113,213,0.1)">
-            <svg class="tc-icon text-blue-600 text-xl"><use href="/assets/icons/sprite.svg#fa-calculator"/></svg>
-          </div>
-          <h3 class="font-bold text-lg mb-3" style="color:var(--tc-navy)">Asesor&iacute;as</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Gestiona la facturaci&oacute;n de todos tus clientes desde un &uacute;nico panel. Acceso multi-empresa, informes consolidados y soporte prioritario.</p>
-          <ul class="mt-4 space-y-2 text-sm text-gray-500">
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Multi-empresa</li>
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Panel de asesor&iacute;a dedicado</li>
-            <li class="flex items-center gap-2"><svg class="tc-icon text-green-500 text-xs"><use href="/assets/icons/sprite.svg#fa-check"/></svg>Precio a medida</li>
-          </ul>
-        </div>
+        <p class="tc-mono" data-reveal="rise" style="--delay:480ms">Respuesta en menos de 1 h en horario laboral</p>
       </div>
     </div>
   </section>
-
-  <!-- PRICING -->
-  <section id="precios" class="tc-section scroll-mt-28" style="background:var(--tc-surface-alt)">
-    <div class="tc-container">
-      <div class="text-center max-w-xl mx-auto mb-16" data-reveal>
-        <span class="tc-eyebrow">Precios</span>
-        <h2 class="tc-display tc-display-lg mt-4" style="color:var(--tc-navy)">Tres planes para facturar bien</h2>
-        <p class="mt-4 text-gray-500">Sin permanencia. Sin sorpresas. Sin letra peque&ntilde;a.</p>
-
-        <!-- Mismo interruptor que /precios: el componente vive en components.css
-             y components.js, así que aquí solo va el marcado. -->
-        <div class="mt-7 flex items-center justify-center gap-4" role="group" aria-label="Ciclo de facturaci&oacute;n">
-          <span id="lbl-monthly" class="text-base font-bold transition-all duration-200" style="color:var(--tc-navy)">Mensual</span>
-          <button id="billing-toggle" class="billing-toggle-track billing-toggle-track--on-light" role="switch" aria-checked="false" aria-labelledby="billing-toggle-label" data-track="billing_toggle">
-            <span class="billing-toggle-thumb" aria-hidden="true"></span>
-          </button>
-          <span id="lbl-annual" class="text-base font-semibold transition-all duration-200 flex items-center gap-2" style="color:var(--tc-slate)">
-            Anual
-            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold" style="background:rgba(15,160,111,.12);color:var(--tc-success-text-strong);border:1px solid rgba(15,160,111,.25)">
-              <svg class="tc-icon text-[9px]"><use href="/assets/icons/sprite.svg#fa-tag"/></svg> 2 meses gratis
-            </span>
-          </span>
-        </div>
-        <p id="billing-toggle-label" class="sr-only">Cambiar entre facturaci&oacute;n mensual y anual</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="tc-pricing" data-reveal>
-          <p class="font-semibold text-sm mb-1" style="color:var(--tc-slate)">Aut&oacute;nomo</p>
-          <p class="tc-pricing__name">Starter</p>
-          <div class="tc-pricing__price">
-            <span class="tc-pricing__amount price-monthly">19,99&euro;</span>
-            <span class="tc-pricing__amount price-annual hidden">16,66&euro;</span>
-            <span class="tc-pricing__period">/mes</span>
-          </div>
-          <p class="text-sm text-gray-500 mt-1 mb-6">Para aut&oacute;nomos y microempresas</p>
-          <ul class="tc-pricing__features">
-            <li>Facturas VeriFactu ilimitadas</li>
-            <li>IPSI Ceuta/Melilla nativo</li>
-            <li>Presupuestos y albaranes</li>
-            <li>QR + huella criptogr&aacute;fica</li>
-            <li>1 usuario incluido</li>
-            <li class="tc-pricing__missing"><svg class="tc-icon text-gray-300 shrink-0"><use href="/assets/icons/sprite.svg#fa-times"/></svg>Gesti&oacute;n de stock</li>
-            <li class="tc-pricing__missing"><svg class="tc-icon text-gray-300 shrink-0"><use href="/assets/icons/sprite.svg#fa-times"/></svg>Multi-usuario</li>
-          </ul>
-          <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="https://buy.stripe.com/8x2dR9frg6qg2I15KOcs803" target="_blank" rel="noopener" data-track="tf_price_starter_monthly"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Starter</a>
-          <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="https://buy.stripe.com/aFa3cvdj8dSI4Q97SWcs806" target="_blank" rel="noopener" data-track="tf_price_starter_annual"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Starter anual</a>
-        </div>
-        <div class="tc-pricing tc-pricing--featured" data-reveal>
-          <p class="font-semibold text-sm mb-1 opacity-80">Pyme</p>
-          <p class="tc-pricing__name">Pro</p>
-          <div class="tc-pricing__price">
-            <span class="tc-pricing__amount price-monthly">39,99&euro;</span>
-            <span class="tc-pricing__amount price-annual hidden">33,33&euro;</span>
-            <span class="tc-pricing__period">/mes</span>
-          </div>
-          <p class="text-sm opacity-70 mt-1 mb-6">El m&aacute;s elegido por pymes con facturaci&oacute;n activa</p>
-          <ul class="tc-pricing__features">
-            <li>Todo lo del plan Starter</li>
-            <li>Hasta 5 usuarios</li>
-            <li>Gesti&oacute;n de stock y m&aacute;rgenes</li>
-            <li>Dashboards contables IA</li>
-            <li>Multiling&uuml;e ES / EN / FR</li>
-            <li>An&aacute;lisis de impagados</li>
-          </ul>
-          <a class="cta-monthly tc-btn w-full font-semibold" style="background:white;color:var(--tc-blue-corp)" href="https://buy.stripe.com/aFa28r1AqcOEeqJ1uycs804" target="_blank" rel="noopener" data-track="tf_price_pro_monthly"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Pro</a>
-          <a class="cta-annual hidden tc-btn w-full font-semibold" style="background:white;color:var(--tc-blue-corp)" href="https://buy.stripe.com/28E3cv7YOcOEaatgpscs809" target="_blank" rel="noopener" data-track="tf_price_pro_annual"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Pro anual</a>
-        </div>
-        <div class="tc-pricing" data-reveal>
-          <p class="font-semibold text-sm mb-1" style="color:var(--tc-slate)">Asesor&iacute;as y grupos</p>
-          <p class="tc-pricing__name">Business</p>
-          <div class="tc-pricing__price">
-            <span class="tc-pricing__amount price-monthly">49,99&euro;</span>
-            <span class="tc-pricing__amount price-annual hidden">41,66&euro;</span>
-            <span class="tc-pricing__period">/mes</span>
-          </div>
-          <p class="text-sm text-gray-500 mt-1 mb-6">Volumen alto y varias empresas</p>
-          <ul class="tc-pricing__features">
-            <li>Todo lo del plan Pro</li>
-            <li>Usuarios ilimitados</li>
-            <li>Integraciones API / ERP</li>
-            <li>Onboarding dedicado incluido</li>
-            <li>Notas de cr&eacute;dito y rectificativas</li>
-            <li>SLA y soporte prioritario</li>
-            <li>Exportaci&oacute;n SII autom&aacute;tica</li>
-          </ul>
-          <a class="cta-monthly tc-btn tc-btn-secondary w-full" href="https://buy.stripe.com/aFa4gzenc9CsfuNgpscs805" target="_blank" rel="noopener" data-track="tf_price_business_monthly"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Business</a>
-          <a class="cta-annual hidden tc-btn tc-btn-secondary w-full" href="https://buy.stripe.com/7sYeVd2Eu9Csbex8X0cs807" target="_blank" rel="noopener" data-track="tf_price_business_annual"><svg class="tc-icon text-sm"><use href="/assets/icons/sprite.svg#fa-credit-card"/></svg> Contratar Business anual</a>
-        </div>
-      </div>
-      <div class="tc-suite-strip" data-reveal>
-        <div>
-          <p class="tc-eyebrow">Suite TrustCore</p>
-          <p class="tc-suite-strip__title">&iquest;Necesitas control horario tambi&eacute;n?</p>
-          <p class="tc-suite-strip__desc">Contrata los dos productos juntos con datos compartidos y una sola factura. Presupuesto a medida seg&uacute;n empleados y volumen.</p>
-        </div>
-        <a href="/precios" class="tc-btn tc-btn-secondary whitespace-nowrap" data-track="tf_price_suite">Ver la suite completa</a>
-      </div>
-      <p class="tc-trial-note" data-reveal><svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-check-circle"/></svg> &iquest;Prefieres probarlo antes de pagar? Lo montamos con tus datos en la demo, sin tarjeta. <a href="tel:+34666609299" data-track="trial_tel">O ll&aacute;manos al 666 60 92 99</a>.</p>
-      <p class="text-center text-sm text-gray-600 mt-8">Todos los precios sin IVA/IPSI. Sin permanencia ni coste de alta. El plan anual se paga por adelantado y equivale a pagar diez meses.</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="tc-section bg-white">
-    <div class="tc-container max-w-3xl mx-auto">
-      <div class="text-center mb-14" data-reveal>
-        <span class="tc-eyebrow">FAQ</span>
-        <h2 class="tc-display tc-display-md mt-4" style="color:var(--tc-navy)">Preguntas frecuentes</h2>
-      </div>
-      <div class="space-y-3" data-reveal>
-        <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
-          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
-            &iquest;Qu&eacute; es VERI*FACTU y cu&aacute;ndo deben adaptarse los SIF?
-            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">
-            VERI*FACTU es una modalidad de remisi&oacute;n de registros dentro del Reglamento de sistemas inform&aacute;ticos de facturaci&oacute;n. La AEAT sit&uacute;a la adaptaci&oacute;n antes del 1 de enero de 2027 para entidades sujetas al Impuesto sobre Sociedades y antes del 1 de julio de 2027 para el resto de obligados.
-            <p class="mt-3 text-xs text-slate-600"><strong>Fuente:</strong> <a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html" target="_blank" rel="noopener" class="font-bold text-blue-600">AEAT, plazos SIF</a> y <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840" target="_blank" rel="noopener" class="font-bold text-blue-600">BOE, RD 1007/2023</a>.</p>
-          </div>
-        </details>
-        <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
-          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
-            &iquest;TrustinFacts soporta el IPSI de Ceuta y Melilla?
-            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">
-            S&iacute;. TrustinFacts incorpora IPSI para Ceuta y Melilla. La AEAT recuerda que en estas ciudades no se aplica IVA y que, en su lugar, se aplica IPSI.
-            <p class="mt-3 text-xs text-slate-600"><strong>Fuente:</strong> <a href="/software-verifactu-ipsi-ceuta-melilla" class="font-bold text-blue-600">guía TrustCore</a>, <a href="https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html" target="_blank" rel="noopener" class="font-bold text-blue-600">AEAT, Ceuta y Melilla</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645" target="_blank" rel="noopener" class="font-bold text-blue-600">BOE, Ley 8/1991</a>.</p>
-          </div>
-        </details>
-        <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
-          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
-            &iquest;Puedo gestionar stock, presupuestos y cobros tambi&eacute;n?
-            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">S&iacute;. TrustinFacts trabaja el flujo presupuesto, pedido o albar&aacute;n, factura, cobro, stock y dashboard sin duplicar datos entre hojas de c&aacute;lculo.</div>
-        </details>
-        <details class="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
-          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-gray-800 list-none hover:bg-gray-50 transition-colors">
-            &iquest;Es dif&iacute;cil migrar desde otro software?
-            <svg class="tc-icon text-blue-500 transition-transform group-open:rotate-45 shrink-0 ml-3"><use href="/assets/icons/sprite.svg#fa-plus"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">No tiene por qu&eacute; serlo. Revisamos clientes, proveedores, cat&aacute;logo de productos y facturas historizadas antes de migrar, y acordamos contigo qu&eacute datos merece la pena importar para empezar limpio.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="tc-section text-center" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%)">
-    <div class="tc-container max-w-2xl mx-auto" data-reveal>
-      <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Empieza hoy</span>
-      <h2 class="tc-display tc-display-lg mt-4 text-white">&iquest;Listo para facturar sin sustos con Hacienda?</h2>
-      <p class="mt-5 text-blue-100/80" style="font-size:var(--tc-text-lg)">Demo gratuita de 15 min. Te mostramos VeriFactu, IPSI y el flujo completo en vivo.</p>
-      <div class="flex flex-wrap justify-center gap-4 mt-8">
-        <button class="tc-btn tc-btn-primary" data-calendar-open data-track="tf_cta_demo">
-          <svg class="tc-icon mr-2"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg>Agendar demo
-        </button>
-        <a href="/contacto" class="tc-btn tc-btn-ghost" data-track="tf_cta_contacto">Enviar consulta</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-    </main>
+</main>
 
 <!--FOOTER-->
-  <footer style="background:var(--tc-navy-deep);color:rgba(255,255,255,0.72)" class="py-16">
-    <div class="tc-container">
-      <div class="grid gap-10 md:grid-cols-3 lg:grid-cols-5">
-        <div>
-          <a href="/" class="flex items-center gap-2 mb-4">
-            <img src="/assets/trustcore-mark-120.png" alt="TrustCore" width="110" height="120" class="h-9 w-auto" loading="lazy">
-            <span class="text-white font-extrabold text-lg">TrustCore</span>
-          </a>
-          <p class="text-sm leading-relaxed">Facturaci&oacute;n preparada para VeriFactu, IPSI y control horario en una sola cuenta. Para pymes y aut&oacute;nomos.</p>
-          <ul class="mt-5 space-y-2 text-sm">
-            <li><a href="tel:+34666609299" class="inline-flex items-center gap-2 hover:text-white transition-colors" data-track="footer_tel">
-              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-phone"/></svg> 666 60 92 99
-            </a></li>
-            <li><a href="mailto:info@trustcore.es" class="inline-flex items-center gap-2 hover:text-white transition-colors" data-track="footer_mail">
-              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-envelope"/></svg> info@trustcore.es
-            </a></li>
-          </ul>
-          <p class="mt-2 text-xs">Respuesta en menos de 1 h en horario laboral</p>
-          <div class="flex flex-wrap gap-2 mt-5">
-            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
-              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
-            </span>
-            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
-              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-award"/></svg> #1 CeutaTech 2026
-            </span>
-          </div>
-        </div>
-        <div>
-          <p class="text-white font-semibold text-sm mb-4">Producto</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">Facturación VeriFactu</a></li>
-            <li><a href="/productos/trustintime" class="hover:text-white transition-colors">Control horario</a></li>
-            <li><a href="/funcionalidades" class="hover:text-white transition-colors">Funcionalidades</a></li>
-            <li><a href="/como-funciona" class="hover:text-white transition-colors">Cómo funciona</a></li>
-            <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-white font-semibold text-sm mb-4">Soluciones</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="/facturacion-para-tiendas" class="hover:text-white transition-colors">Para tiendas</a></li>
-            <li><a href="/facturacion-para-instaladores" class="hover:text-white transition-colors">Para instaladores</a></li>
-            <li><a href="/gestoria" class="hover:text-white transition-colors">Para gestorías</a></li>
-            <li><a href="/software-verifactu-ipsi-ceuta-melilla" class="hover:text-white transition-colors">IPSI Ceuta y Melilla</a></li>
-            <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="hover:text-white transition-colors">Comparativa con un ERP</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-white font-semibold text-sm mb-4">Empresa</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="/quienes-somos" class="hover:text-white transition-colors">Quiénes somos</a></li>
-            <li><a href="/clientes" class="hover:text-white transition-colors">Clientes</a></li>
-            <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
-            <li><a href="/aprende" class="hover:text-white transition-colors">Aprende</a></li>
-            <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-white font-semibold text-sm mb-4">Legal</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="/aviso-legal" class="hover:text-white transition-colors">Aviso legal</a></li>
-            <li><a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a></li>
-            <li><a href="/cookies" class="hover:text-white transition-colors">Cookies</a></li>
-            <li><a href="/terminos" class="hover:text-white transition-colors">Términos</a></li>
-            <li><button type="button" data-cookie-settings class="hover:text-white transition-colors text-left">Configurar cookies</button></li>
-          </ul>
-          <div class="mt-5">
-            <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
-              <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
-                Rese&ntilde;anos en <svg class="tc-icon" style="color:#00B67A"><use href="/assets/icons/sprite.svg#fa-star"/></svg> <strong class="text-slate-900">Trustpilot</strong>
-              </a>
-            </div>
-          </div>
+<footer class="tc-foot tone-dark">
+  <div class="tc-wrap">
+    <div class="tc-foot__grid">
+      <div class="tc-foot__brand">
+        <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+          <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120" loading="lazy">
+          <span class="tc-brand__word">TrustCore</span>
+        </a>
+        <p>Software con IA hecho en Ceuta para quitar trabajo repetido a empresas y personas.</p>
+        <ul class="tc-foot__contact">
+          <li><a href="tel:+34666609299" data-track="footer_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> 666 60 92 99</a></li>
+          <li><a href="mailto:info@trustcore.es" data-track="footer_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a></li>
+        </ul>
+        <p class="tc-foot__note">Respuesta en menos de 1 h en horario laboral</p>
+        <div class="tc-foot__awards">
+          <span class="tc-chip tc-chip--gold"><svg class="tc-ico" aria-hidden="true"><use href="#i-trophy"/></svg> Alhambra Venture 2026</span>
+          <span class="tc-chip tc-chip--hi"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg> #1 CeutaTech 2026</span>
         </div>
       </div>
-
-      <div class="mt-12 pt-8 border-t border-white/10 text-center">
-        <p class="text-xs uppercase tracking-widest mb-4">Acelerado y respaldado por</p>
-        <div class="flex flex-col items-center gap-4">
-          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El &Aacute;ngulo" width="1000" height="355" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
-          <div class="inline-flex max-w-full flex-col sm:flex-row items-center justify-center gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
-            <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" class="h-8 w-auto object-contain" loading="lazy">
-            <span class="hidden sm:block h-8 w-px bg-slate-200" aria-hidden="true"></span>
-            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Uni&oacute;n Europea, Ministerio de Trabajo y Econom&iacute;a Social, Fondos Europeos y C&aacute;mara de Comercio de Espa&ntilde;a" width="1299" height="79" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
-          </div>
+      <nav aria-label="Productos">
+        <p class="tc-foot__title">Productos</p>
+        <ul>
+          <li><a href="/productos/trustinfacts">TrustInFacts</a></li>
+          <li><a href="/productos/trustintime">TrustInTime</a></li>
+          <li><a href="/productos/genai">GenAI</a></li>
+          <li><a href="/productos/orquesta">Orquesta</a></li>
+          <li><a href="/productos/corrector-fiscal">Corrector Fiscal</a></li>
+          <li><a href="/productos/nido">Nido</a></li>
+          <li><a href="/productos">Todos los productos</a></li>
+          <li><a href="/precios">Precios</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Soluciones">
+        <p class="tc-foot__title">Soluciones</p>
+        <ul>
+          <li><a href="/facturacion-para-tiendas">Para tiendas</a></li>
+          <li><a href="/facturacion-para-instaladores">Para instaladores</a></li>
+          <li><a href="/gestoria">Para gestorías</a></li>
+          <li><a href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a></li>
+          <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Recursos">
+        <p class="tc-foot__title">Recursos</p>
+        <ul>
+          <li><a href="/clientes">Clientes</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/aprende">Aprende</a></li>
+          <li><a href="/funcionalidades">Funcionalidades</a></li>
+          <li><a href="/como-funciona">Cómo funciona</a></li>
+          <li><a href="/quienes-somos">Sobre nosotros</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="tc-foot__title">Legal</p>
+        <ul>
+          <li><a href="/aviso-legal">Aviso legal</a></li>
+          <li><a href="/privacidad">Privacidad</a></li>
+          <li><a href="/cookies">Cookies</a></li>
+          <li><a href="/terminos">Términos</a></li>
+          <li><button type="button" data-cookie-settings>Configurar cookies</button></li>
+        </ul>
+        <div class="tc-foot__trust trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+          <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" data-track="footer_trustpilot" aria-label="Reséñanos en Trustpilot"><span class="tc-foot__trust-pre">Reséñanos en</span> <svg class="tc-ico" aria-hidden="true"><use href="#i-star"/></svg> Trustpilot</a>
         </div>
-      </div>
+      </nav>
+    </div>
 
-      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <p>&copy; 2026 TrustCore &mdash; Ceuta, Espa&ntilde;a</p>
-        <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
+    <div class="tc-foot__backers">
+      <p class="tc-foot__title">Acelerado y respaldado por</p>
+      <div class="tc-foot__backers-row">
+        <img class="tc-foot__cof" src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" width="1000" height="355" loading="lazy">
+        <div class="tc-foot__tile">
+          <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" loading="lazy" style="--w:107px">
+          <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" width="1299" height="79" loading="lazy" style="--w:756px">
+        </div>
       </div>
     </div>
-  </footer>
+
+    <div class="tc-foot__base">
+      <span>© 2026 TrustCore · Ceuta, España</span>
+      <span>Hecho en Ceuta · Cloud europeo · RGPD</span>
+    </div>
+    <p class="tc-foot__word" aria-hidden="true">TrustCore</p>
+  </div>
+</footer>
 <!--/FOOTER-->
 
 
-  <script src="/assets/js/consent.930ff818.min.js" defer></script>
-  <script src="/assets/js/components.1f2f84d8.min.js" defer></script>
+  <script src="/assets/js/consent.bdd1909c.min.js" defer></script>
+  <script src="/assets/js/components.f3ffc571.min.js" defer></script>
 </body>
 </html>

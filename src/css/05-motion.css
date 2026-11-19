@@ -1,0 +1,139 @@
+/* ==========================================================================
+   TrustCore · sistema "Flujo" · 05 · movimiento
+   Regla: se anima transform / opacity / filter. Todo estado oculto cuelga de
+   html.motion (lo pone el script de arranque del <head> solo si hay JS y el
+   usuario no pide movimiento reducido): sin JS o con prefers-reduced-motion
+   nada parte oculto.
+   ========================================================================== */
+
+/* ---------- Revelados ---------- */
+.motion [data-reveal]:not(.is-in) { will-change: transform, opacity; }
+
+/* rise: bloques de texto corto */
+.motion [data-reveal="rise"] { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity var(--d-3) var(--e-soft) var(--delay, 0ms), transform var(--d-4) var(--e-out) var(--delay, 0ms); }
+.motion [data-reveal="rise"].is-in { opacity: 1; transform: none; }
+
+/* focus: párrafos, llegan desde el desenfoque */
+.motion [data-reveal="focus"] { opacity: 0; filter: blur(10px); transform: translate3d(0, 14px, 0); transition: opacity var(--d-3) var(--e-soft) var(--delay, 0ms), filter var(--d-4) var(--e-out) var(--delay, 0ms), transform var(--d-4) var(--e-out) var(--delay, 0ms); }
+.motion [data-reveal="focus"].is-in { opacity: 1; filter: none; transform: none; }
+
+/* words: titulares, palabra a palabra tras una máscara */
+.tc-w { display: inline-block; overflow: hidden; vertical-align: top; padding: .08em .04em .16em; margin: -.08em -.04em -.16em; }
+.tc-w__i { display: inline-block; }
+.motion [data-reveal="words"] .tc-w__i { transform: translate3d(0, 115%, 0) rotate(5deg); transform-origin: 0 100%; transition: transform var(--d-4) var(--e-out) calc(var(--delay, 0ms) + var(--i, 0) * 55ms); }
+.motion [data-reveal="words"].is-in .tc-w__i { transform: none; }
+/* hasta que el motor parte el titular en palabras, se oculta entero (evita el parpadeo) */
+.motion [data-reveal="words"]:not(.is-split) { opacity: 0; }
+
+/* pop: chips y botones, con muelle */
+.motion [data-reveal="pop"] { opacity: 0; transform: scale(.7); transition: opacity var(--d-2) var(--e-soft) var(--delay, 0ms), transform var(--d-4) var(--e-spring) var(--delay, 0ms); }
+.motion [data-reveal="pop"].is-in { opacity: 1; transform: none; }
+.motion .tc-btn[data-reveal="pop"].is-in { transform: translate3d(var(--mx), var(--my), 0); }
+
+/* tilt: maquetas y tarjetas, se levantan en perspectiva */
+.motion [data-reveal="tilt"] { opacity: 0; transform: perspective(1400px) translate3d(0, 70px, 0) rotateX(16deg) scale(.96); transform-origin: 50% 100%; transition: opacity var(--d-3) var(--e-soft) var(--delay, 0ms), transform 1300ms var(--e-out) var(--delay, 0ms); }
+.motion [data-reveal="tilt"].is-in { opacity: 1; transform: none; }
+/* un elemento revelado que además lleva data-tilt recupera su inclinación al terminar */
+.motion [data-reveal][data-tilt].is-in { transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+
+/* curtain: capturas, se descubren con dos traslaciones opuestas (sin clip-path).
+   Estructura: <figure data-reveal="curtain"><div><img></div></figure> */
+[data-reveal="curtain"] { overflow: hidden; }
+.motion [data-reveal="curtain"] > * { transform: translate3d(0, 101%, 0); transition: transform 1200ms var(--e-inout) var(--delay, 0ms); }
+.motion [data-reveal="curtain"] > * > * { transform: translate3d(0, -101%, 0) scale(1.12); transition: transform 1200ms var(--e-inout) var(--delay, 0ms); }
+.motion [data-reveal="curtain"].is-in > *, .motion [data-reveal="curtain"].is-in > * > * { transform: none; }
+
+/* slide: entra desde un lado (--from: 60px por defecto; negativo = desde la izquierda) */
+.motion [data-reveal="slide"] { opacity: 0; transform: translate3d(var(--from, 60px), 0, 0); transition: opacity var(--d-3) var(--e-soft) var(--delay, 0ms), transform var(--d-4) var(--e-out) var(--delay, 0ms); }
+.motion [data-reveal="slide"].is-in { opacity: 1; transform: none; }
+
+/* line: una regla que se dibuja */
+.motion [data-reveal="line"] { transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--d-4) var(--e-inout) var(--delay, 0ms); }
+.motion [data-reveal="line"].is-in { transform: none; }
+.tc-rule { display: block; height: 1px; border: 0; background: linear-gradient(90deg, var(--accent), transparent); }
+
+/* stagger: los hijos heredan retardo por índice (--step, --base) */
+.motion [data-stagger] > * { --delay: calc(var(--i, 0) * var(--step, 80ms) + var(--base, 0ms)); }
+
+/* al llegar con transición de página, la entrada del hero espera a la marea */
+.vt-arrive [data-intro] [data-reveal], .vt-arrive [data-intro][data-reveal] { transition-delay: calc(var(--delay, 0ms) + 420ms) !important; }
+.vt-arrive [data-intro] [data-reveal="words"] .tc-w__i { transition-delay: calc(var(--delay, 0ms) + var(--i, 0) * 55ms + 420ms) !important; }
+
+/* ---------- Ligado al scroll (CSS; el motor solo actúa si no hay soporte) ---------- */
+@supports (animation-timeline: view()) {
+  .motion [data-plx] {
+    animation: tc-plx linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  .motion .tc-nav__progress {
+    animation: tc-grow-x linear both;
+    animation-timeline: scroll(root block);
+  }
+  /* la maqueta del hero interior se endereza conforme entra */
+  .motion .tc-phero__shot[data-rise] {
+    animation: tc-shot-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 46%;
+  }
+}
+@keyframes tc-plx {
+  from { transform: translate3d(0, var(--plx, 60px), 0) rotate(var(--plx-r, 0deg)); }
+  to { transform: translate3d(0, calc(var(--plx, 60px) * -1), 0) rotate(calc(var(--plx-r, 0deg) * -1)); }
+}
+@keyframes tc-grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes tc-shot-rise { from { transform: rotateX(18deg) scale(.94); } to { transform: rotateX(0deg) scale(1); } }
+
+/* ---------- Foco de luz e inclinación ---------- */
+.tc-spot { --sx: 50%; --sy: 0%; position: relative; }
+.tc-spot::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  background: radial-gradient(420px circle at var(--sx) var(--sy), var(--spot-c, rgba(83, 205, 254, .2)), transparent 62%);
+  opacity: 0; transition: opacity var(--d-3) var(--e-soft);
+}
+.tc-spot:hover::before { opacity: 1; }
+[data-tilt] { --rx: 0deg; --ry: 0deg; transform: perspective(1200px) rotateX(var(--rx)) rotateY(var(--ry)); transition: transform var(--d-3) var(--e-out); transform-style: preserve-3d; }
+[data-tilt].is-tilting { transition: transform 90ms linear; }
+
+/* ---------- Transición entre páginas ----------
+   1) View Transitions entre documentos (Chrome/Edge 126+, Safari 18.2+).
+   2) Sin soporte: telón curvo (body::after) que mueve el motor. */
+@view-transition { navigation: auto; }
+
+::view-transition-group(root) { animation-duration: 900ms; }
+::view-transition-old(root), ::view-transition-new(root) { mix-blend-mode: normal; }
+::view-transition-old(root) { animation: tc-vt-sink 900ms var(--e-inout) both; }
+::view-transition-new(root) { animation: tc-vt-tide 900ms var(--e-inout) both; }
+@keyframes tc-vt-sink { to { transform: scale(.94) translateY(-4vh); filter: brightness(.45) blur(8px); } }
+/* la página nueva sube como una marea de frente curvo */
+@keyframes tc-vt-tide { from { clip-path: ellipse(90% 0% at 50% 100%); } to { clip-path: ellipse(170% 170% at 50% 100%); } }
+.tc-nav__pill { view-transition-name: tc-nav; }
+::view-transition-group(tc-nav) { z-index: 20; animation-duration: 600ms; animation-timing-function: var(--e-inout); }
+/* elementos compartidos declarados con data-vt="nombre" (el motor les pone nombre y clase) */
+::view-transition-group(.tc-vt) { z-index: 10; animation-duration: 900ms; animation-timing-function: var(--e-inout); }
+::view-transition-old(.tc-vt), ::view-transition-new(.tc-vt) { height: 100%; width: 100%; object-fit: cover; object-position: 0 0; border-radius: var(--r-md); overflow: clip; }
+::view-transition-group(.tc-vt-text) { z-index: 11; animation-duration: 900ms; animation-timing-function: var(--e-inout); }
+::view-transition-old(.tc-vt-text), ::view-transition-new(.tc-vt-text) { height: 100%; width: auto; object-fit: contain; object-position: 0 50%; }
+
+/* Telón de reserva */
+body.tc-body::after {
+  content: ""; position: fixed; inset: -2px 0; z-index: var(--z-veil); pointer-events: none;
+  background: linear-gradient(180deg, var(--corp), var(--navy) 40%, var(--navy-deep));
+  transform: translate3d(0, 112%, 0);
+  border-radius: 50% 50% 0 0 / 12vh 12vh 0 0;
+  visibility: hidden;
+}
+html.is-leaving body.tc-body::after { visibility: visible; transform: translate3d(0, 0, 0); border-radius: 0; transition: transform 620ms var(--e-inout), border-radius 620ms var(--e-inout); }
+html.is-arriving body.tc-body::after { visibility: visible; transform: translate3d(0, 0, 0); border-radius: 0; }
+html.is-arriving.is-arrived body.tc-body::after { transform: translate3d(0, -112%, 0); border-radius: 0 0 50% 50% / 0 0 12vh 12vh; transition: transform 820ms var(--e-inout), border-radius 820ms var(--e-inout); }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ---------- Movimiento reducido: todo visible y quieto ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0ms !important; scroll-behavior: auto !important; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+  body.tc-body::after { display: none; }
+}

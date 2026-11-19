@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+import { readdirSync, readFileSync } from 'node:fs';
+const [,, prefix, out, cols='4', cw='480'] = process.argv;
+const files = readdirSync('shots').filter(f=>f.startsWith(prefix+'-')&&f.endsWith('.jpg')).sort();
+const b = await chromium.launch({ executablePath: process.env.EXE });
+const p = await b.newPage({ viewport: { width: cols*cw+ (cols*1+1)*6, height: 800 } });
+await p.setContent(`<body style="margin:6px;background:#888;display:grid;grid-template-columns:repeat(${cols},${cw}px);gap:6px">${files.map(f=>`<img src="data:image/jpeg;base64,${readFileSync('shots/'+f).toString('base64')}" style="width:${cw}px;display:block">`).join('')}</body>`);
+await p.waitForTimeout(800);
+await p.screenshot({ path: out, fullPage: true, type:'jpeg', quality: 72 });
+await b.close();

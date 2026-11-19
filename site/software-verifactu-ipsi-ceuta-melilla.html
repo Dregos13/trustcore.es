@@ -113,323 +113,548 @@
   }
   </script>
 
-  <!-- Tailwind (build local, tailwind.config.js) -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-v20-latin.woff2">
-    <link rel="stylesheet" href="/assets/css/site.bfdca54e.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/instrument-sans-latin-wght-normal.woff2">
+  <link rel="stylesheet" href="/assets/css/site.1d174431.min.css">
+  <script>/*tc-boot*/(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');setTimeout(function(){if(!window.TC){c.remove('motion','js','is-arriving');window.__tcLate=1}},4000);try{if(sessionStorage.getItem('tc:arrive')){sessionStorage.removeItem('tc:arrive');c.add('is-arriving')}}catch(e){}addEventListener('pagereveal',function(e){if(!e.viewTransition)return;c.add('vt-arrive');var s={},l=d.querySelectorAll('[data-vt]');l.forEach(function(el){var n=el.getAttribute('data-vt');if(n&&!s[n]){s[n]=1;el.style.viewTransitionName=n;el.style.viewTransitionClass=el.hasAttribute('data-vt-text')?'tc-vt-text':'tc-vt'}});var f=function(){c.remove('vt-arrive');l.forEach(function(el){el.style.viewTransitionName='';el.style.viewTransitionClass=''})};e.viewTransition.finished.then(f,f)})})(document);</script>
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
 </head>
-<body class="font-sans text-slate-800 antialiased" style="background:var(--tc-surface-alt)">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:font-semibold focus:rounded-lg focus:shadow-lg" style="color:#040F3F">Saltar al contenido</a>
+<body class="tc-body p-ipsi">
 
-  <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 md:h-20">
-        <a href="/" class="flex items-center gap-3 shrink-0" aria-label="TrustCore inicio">
-          <img src="/assets/trustcore-mark-120.png" alt="TrustCore" width="110" height="120" class="h-10 w-auto">
-          <span class="font-extrabold text-xl md:text-2xl tracking-tight" style="color:#040F3F">TrustCore</span>
-        </a>
 <!--NAV-->
-        <nav class="hidden md:flex items-center gap-1" aria-label="Navegación principal">
-          <div class="tc-navmenu">
-            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-producto" aria-haspopup="true">
-              Producto
-            </button>
-            <div class="tc-navmenu__panel" id="nav-producto" role="menu" hidden>
-              <a href="/productos/trustinfacts" role="menuitem" class="tc-navmenu__item">Facturación VeriFactu</a>
-              <a href="/productos/trustintime" role="menuitem" class="tc-navmenu__item">Control horario</a>
-              <a href="/software-verifactu-ipsi-ceuta-melilla" role="menuitem" class="tc-navmenu__item">IPSI Ceuta y Melilla</a>
-              <a href="/funcionalidades" role="menuitem" class="tc-navmenu__item">Funcionalidades</a>
-              <a href="/como-funciona" role="menuitem" class="tc-navmenu__item">Cómo funciona</a>
-            </div>
+<svg class="tc-sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16l-6 7.5V19l-4-2v-3.5z"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.8h-3.8M5.5 20.5v-3.8h3.8"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol><symbol id="i-spinner" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7.5 2.8v5.4c0 4.4-3 7.6-7.5 9-4.5-1.4-7.5-4.6-7.5-9V6.3z"/><path d="M8.8 12.2l2.3 2.3 4.2-4.4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 6.5l2.5 2.5M13.5 9l2 2"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.5"/><path d="M8.5 14l-1.5 7 5-2.6 5 2.6-1.5-7"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5.5H5a3 3 0 0 0 3 4M16 5.5h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol><symbol id="i-invoice" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol><symbol id="i-graph" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M11 7l-5 9M13 7l5 9M7.2 18h9.6"/></symbol><symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 14.5l2.2 2.2L15.5 12"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5L12 4l8 7.5"/><path d="M6.5 10v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9"/><path d="M10 20v-5h4v5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M4 8l8 5.5L20 8"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M20.5 3.5L10 14M20.5 3.5l-6.3 17-4.2-6.5-6.5-4.2z"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.4"/><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0"/><path d="M15.5 5.3a3.4 3.4 0 0 1 0 6.4M18 14.6a6.5 6.5 0 0 1 3.5 4.9"/></symbol><symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 13.5V12a7.5 7.5 0 0 1 15 0v1.5"/><rect x="3.5" y="13" width="4" height="6" rx="1.5"/><rect x="16.5" y="13" width="4" height="6" rx="1.5"/><path d="M19.5 19v.5a2 2 0 0 1-2 2H13"/></symbol><symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3.5"/><path d="M12 8V4.5M9 13v1.5M15 13v1.5"/><circle cx="12" cy="3.6" r="1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 0 0-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.2-3.9-8.5s1.3-6.1 3.9-8.5z"/></symbol><symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.3-5h13.4l1.3 5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5M10 20v-4.5h4V20"/></symbol><symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.2a4 4 0 0 0-5.3 5.2L3.8 16.8a1.9 1.9 0 0 0 2.7 2.7l5.4-5.4a4 4 0 0 0 5.2-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2.5"/><path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5M3.5 13h17"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 8h14"/><path d="M5 8l-2.5 6a2.7 2.7 0 0 0 5 0zM19 8l-2.5 6a2.7 2.7 0 0 0 5 0z"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 6.5a6.5 6.5 0 1 0 0 11M5 10.5h8M5 13.5h8"/></symbol><symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18M7 15h3"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16.5v-5M12 16.5v-9M17 16.5v-12"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3.5l8 4.2v8.6l-8 4.2-8-4.2V7.7z"/><path d="M4 7.7l8 4.3 8-4.3M12 12v8.5"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.3V5A1.5 1.5 0 0 1 5 3.5h7.3l8.2 8.2a1.5 1.5 0 0 1 0 2.1l-6.7 6.7a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.2"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2.5v2.5M20 14v6h-3M14 20v-1"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H18M9 8.5h5"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"/></symbol><symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 7C6.5 8 5 10.2 5 13v4h5v-5H7.5c0-1.6.8-2.6 2.5-3.2zM18.5 7c-3 1-4.5 3.2-4.5 6v4h5v-5h-2.5c0-1.6.8-2.6 2.5-3.2z"/></symbol><symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l4.8-4.5 3.5 3 3-2.6 4.7 4.1"/></symbol><symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4.5v-15L7 9H5a1 1 0 0 0-1 1z"/><path d="M18.5 9.5a3.5 3.5 0 0 1 0 5M8 15l1 4.5h2.5"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17.5" cy="6" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="M8.2 10.8l7-3.6M8.2 13.2l7 3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l8.5 4.5L12 13 3.5 8.5z"/><path d="M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96 6 6 0 0 1 11.5 1.5A3.75 3.75 0 0 1 17 18.5z"/></symbol><symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><path d="M10 10h4v4h-4zM9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7.5L4 12l4.5 4.5M15.5 7.5L20 12l-4.5 4.5M13.5 5l-3 14"/></symbol><symbol id="i-desktop" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16.5V20"/></symbol><symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol><symbol id="i-apple" viewBox="0 0 24 24"><path d="M15.5 3.5c0 1.6-1.3 3-3 3 0-1.7 1.4-3 3-3z"/><path d="M12.4 8.3c.9 0 1.7-.8 3.2-.8 1.4 0 2.6.7 3.3 1.8-2.8 1.6-2.3 5.4.5 6.5-.7 1.9-2.2 4.7-4 4.7-1.1 0-1.5-.7-2.9-.7s-1.9.7-3 .7c-2 0-4.5-4.2-4.5-7.6 0-3.2 2.1-5 4.1-5 1.4 0 2.4.4 3.3.4z"/></symbol><symbol id="i-windows" viewBox="0 0 24 24"><path d="M4 6.2l7-1v6.3H4zM12.5 5L20 3.9v7.6h-7.5zM4 13h7v6.3l-7-1zM12.5 13H20v7.6l-7.5-1.1z"/></symbol></defs></svg>
+<a class="tc-skip" href="#main-content">Saltar al contenido</a>
+<header class="tc-nav" data-nav>
+  <div class="tc-nav__pill">
+    <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+      <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120">
+      <span class="tc-brand__word">TrustCore</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="tc-nav__links">
+        <li class="tc-nav__item tc-nav__item--mega">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-productos" data-menu-toggle>Productos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--mega" id="tc-menu-productos">
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Para tu empresa</p>
+            <a class="tc-menu__item" style="--i:0" href="/productos/trustinfacts"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-invoice"/></svg></span><span><span class="tc-menu__name">TrustInFacts</span><span class="tc-menu__desc">Facturación VeriFactu, IVA e IPSI</span></span></a>
+            <a class="tc-menu__item" style="--i:1" href="/productos/trustintime"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span><span class="tc-menu__name">TrustInTime</span><span class="tc-menu__desc">Control horario, fichaje y ausencias</span></span></a>
+            <a class="tc-menu__item" style="--i:2" href="/productos/genai"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg></span><span><span class="tc-menu__name">GenAI</span><span class="tc-menu__desc">Contenido para redes, con tu aprobación</span></span></a>
           </div>
-          <div class="tc-navmenu">
-            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-soluciones" aria-haspopup="true">
-              Soluciones
-            </button>
-            <div class="tc-navmenu__panel" id="nav-soluciones" role="menu" hidden>
-              <a href="/facturacion-para-tiendas" role="menuitem" class="tc-navmenu__item">Para tiendas</a>
-              <a href="/facturacion-para-instaladores" role="menuitem" class="tc-navmenu__item">Para instaladores</a>
-              <a href="/gestoria" role="menuitem" class="tc-navmenu__item">Para gestorías</a>
-              <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" role="menuitem" class="tc-navmenu__item">Comparativa con un ERP</a>
-            </div>
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Apps del estudio</p>
+            <a class="tc-menu__item" style="--i:3" href="/productos/orquesta"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-graph"/></svg></span><span><span class="tc-menu__name">Orquesta</span><span class="tc-menu__desc">Dirige un equipo de IAs</span></span></a>
+            <a class="tc-menu__item" style="--i:4" href="/productos/corrector-fiscal"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-filecheck"/></svg></span><span><span class="tc-menu__name">Corrector Fiscal</span><span class="tc-menu__desc">Revisa modelos de la AEAT</span></span></a>
+            <a class="tc-menu__item" style="--i:5" href="/productos/nido"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-home"/></svg></span><span><span class="tc-menu__name">Nido</span><span class="tc-menu__desc">Buscador privado de vivienda</span></span></a>
           </div>
-          <a href="/precios" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Precios</a>
-          <a href="/aprende" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors">Aprende</a>
-          <div class="tc-navmenu">
-            <button type="button" class="tc-nav-link text-sm font-medium text-gray-600 hover:text-[#040F3F] transition-colors tc-navmenu__trigger" aria-expanded="false" aria-controls="nav-recursos" aria-haspopup="true">
-              Recursos
-            </button>
-            <div class="tc-navmenu__panel" id="nav-recursos" role="menu" hidden>
-              <a href="/clientes" role="menuitem" class="tc-navmenu__item">Clientes</a>
-              <a href="/blog" role="menuitem" class="tc-navmenu__item">Blog</a>
-              <a href="/control-horario-obligatorio-guia-2026" role="menuitem" class="tc-navmenu__item">Guía de control horario</a>
-              <a href="/ipsi-ceuta-melilla-guia-practica" role="menuitem" class="tc-navmenu__item">Guía de IPSI</a>
-              <a href="/quienes-somos" role="menuitem" class="tc-navmenu__item">Sobre nosotros</a>
-              <a href="/contacto" role="menuitem" class="tc-navmenu__item">Contacto</a>
-            </div>
+            <a class="tc-menu__all" style="--i:6" href="/productos">Ver todos los productos <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
-        </nav>
+        </li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-soluciones" data-menu-toggle>Soluciones <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu" id="tc-menu-soluciones">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/facturacion-para-tiendas">Para tiendas</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/facturacion-para-instaladores">Para instaladores</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/gestoria">Para gestorías</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+          </div>
+        </li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/precios">Precios</a></li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/aprende">Aprende</a></li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-recursos" data-menu-toggle>Recursos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--end" id="tc-menu-recursos">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/clientes">Clientes</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/blog">Blog</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/funcionalidades">Funcionalidades</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/como-funciona">Cómo funciona</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/quienes-somos">Sobre nosotros</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:5" href="/contacto">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="tc-btn tc-btn--primary tc-btn--sm tc-nav__cta" type="button" data-calendar-open data-magnet data-track="header_demo">
+      <span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-cal"/></svg> <span>Agendar<span class="tc-nav__cta-more"> demo</span></span></span>
+    </button>
+    <button class="tc-nav__burger" type="button" aria-expanded="false" aria-controls="tc-sheet" aria-label="Abrir menú" data-sheet-toggle>
+      <span></span><span></span>
+    </button>
+    <span class="tc-nav__progress" aria-hidden="true"></span>
+  </div>
+</header>
+<div class="tc-sheet" id="tc-sheet" data-sheet role="dialog" aria-modal="true" aria-label="Menú">
+  <p class="tc-sheet__label">Para tu empresa</p>
+  <a class="tc-sheet__link" href="/productos/trustinfacts">TrustInFacts <small>Facturación</small></a>
+  <a class="tc-sheet__link" href="/productos/trustintime">TrustInTime <small>Control horario</small></a>
+  <a class="tc-sheet__link" href="/productos/genai">GenAI <small>Redes sociales</small></a>
+  <p class="tc-sheet__label">Apps del estudio</p>
+  <a class="tc-sheet__link" href="/productos/orquesta">Orquesta <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/corrector-fiscal">Corrector Fiscal <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/nido">Nido <small>Escritorio</small></a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/productos">Ver todos los productos</a>
+  <p class="tc-sheet__label">Soluciones</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-tiendas">Para tiendas</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-instaladores">Para instaladores</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/gestoria">Para gestorías</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+  <p class="tc-sheet__label">TrustCore</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/precios">Precios</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/aprende">Aprende</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/clientes">Clientes</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/blog">Blog</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/funcionalidades">Funcionalidades</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/como-funciona">Cómo funciona</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/quienes-somos">Sobre nosotros</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/contacto">Contacto</a>
+  <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-track="mobile_menu_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+</div>
 <!--/NAV-->
-        <button id="mobile-menu-btn" class="md:hidden min-h-11 min-w-11 p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" aria-label="Abrir menu" aria-expanded="false">
-          <svg class="tc-icon text-lg" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-bars"/></svg>
-        </button>
-      </div>
-    </div>
-<!--MNAV-->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-4 pt-2">
-      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-600">Producto</p>
-        <a href="/productos/trustinfacts" class="block py-2 pl-3 text-sm text-gray-600">Facturación VeriFactu</a>
-        <a href="/productos/trustintime" class="block py-2 pl-3 text-sm text-gray-600">Control horario</a>
-        <a href="/software-verifactu-ipsi-ceuta-melilla" class="block py-2 pl-3 text-sm text-gray-600">IPSI Ceuta y Melilla</a>
-        <a href="/funcionalidades" class="block py-2 pl-3 text-sm text-gray-600">Funcionalidades</a>
-        <a href="/como-funciona" class="block py-2 pl-3 text-sm text-gray-600">Cómo funciona</a>
-      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-600">Soluciones</p>
-        <a href="/facturacion-para-tiendas" class="block py-2 pl-3 text-sm text-gray-600">Para tiendas</a>
-        <a href="/facturacion-para-instaladores" class="block py-2 pl-3 text-sm text-gray-600">Para instaladores</a>
-        <a href="/gestoria" class="block py-2 pl-3 text-sm text-gray-600">Para gestorías</a>
-        <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="block py-2 pl-3 text-sm text-gray-600">Comparativa con un ERP</a>
-      <a href="/precios" class="block py-2.5 text-sm font-semibold text-gray-800">Precios</a>
-      <a href="/aprende" class="block py-2.5 text-sm font-semibold text-gray-800">Aprende</a>
-      <p class="pt-3 pb-1 text-xs font-bold uppercase tracking-wider text-slate-600">Recursos</p>
-        <a href="/clientes" class="block py-2 pl-3 text-sm text-gray-600">Clientes</a>
-        <a href="/blog" class="block py-2 pl-3 text-sm text-gray-600">Blog</a>
-        <a href="/control-horario-obligatorio-guia-2026" class="block py-2 pl-3 text-sm text-gray-600">Guía de control horario</a>
-        <a href="/ipsi-ceuta-melilla-guia-practica" class="block py-2 pl-3 text-sm text-gray-600">Guía de IPSI</a>
-        <a href="/quienes-somos" class="block py-2 pl-3 text-sm text-gray-600">Sobre nosotros</a>
-        <a href="/contacto" class="block py-2 pl-3 text-sm text-gray-600">Contacto</a>
-    </div>
-<!--/MNAV-->
-  </header>
 
-  <main id="main-content">
-    <section class="tc-aeo-hero text-white" style="padding-top:calc(var(--tc-header-height) + 3rem);padding-bottom:4rem">
-      <div class="tc-container">
-        <div class="max-w-5xl" data-reveal>
-          <div class="flex flex-wrap gap-2">
-            <span class="tc-aeo-chip"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-qrcode"/></svg> SIF/VERI*FACTU</span>
-            <span class="tc-aeo-chip"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-percent"/></svg> IPSI Ceuta y Melilla</span>
-            <span class="tc-aeo-chip"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-wand-magic-sparkles"/></svg> TrusTy copiloto</span>
-          </div>
-          <h1 class="mt-6 max-w-4xl font-extrabold leading-tight" style="font-size:var(--tc-text-5xl)">
-            ¿Qué software tiene IPSI y VERI*FACTU integrados?
-          </h1>
-          <p class="mt-6 max-w-3xl text-blue-100/85 leading-relaxed" style="font-size:var(--tc-text-lg)">
-            TrustCore integra IPSI para Ceuta y Melilla dentro de TrustinFacts, su módulo de facturación preparado para los requisitos SIF/VERI*FACTU. Está pensado para una conversación real con tu asesoría: qué vendes, dónde facturas y qué evidencia necesitas conservar.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/productos/trustinfacts" class="tc-btn tc-btn-primary" data-track="guide_ipsi_verifactu_product"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-file-invoice"/></svg> Ver TrustinFacts</a>
-            <a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="tc-btn tc-btn-secondary" data-track="guide_ipsi_verifactu_compare"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-table-columns"/></svg> Ver comparativa</a>
-          </div>
+<main id="main-content">
+
+  <!-- ============ 1 · Hero: la pregunta y la factura que cambia con el territorio ============ -->
+  <section class="tc-sec tc-sec--night tc-phero tone-dark" aria-labelledby="hero-t">
+    <div class="tc-sec__in tc-phero__in" data-intro>
+      <div class="tc-glow tc-glow--a" aria-hidden="true"></div>
+      <div class="tc-glow tc-glow--b" aria-hidden="true"></div>
+
+      <div class="tc-wrap tc-phero__top">
+        <div class="tc-phero__copy">
+          <nav class="tc-mono tc-crumbs" aria-label="Migas de pan" data-reveal="rise" style="--delay:80ms">
+            <ol><li><a href="/">TrustCore</a></li><li><span aria-current="page">Software VERI*FACTU con IPSI</span></li></ol>
+          </nav>
+          <h1 class="tc-display tc-phero__title" id="hero-t" data-reveal="words" style="--delay:140ms">¿Qué software tiene <span class="tc-hl">IPSI y VERI*FACTU</span> integrados?</h1>
         </div>
-
-        <div class="tc-tech-panel mt-10 max-w-5xl" data-reveal>
-          <div class="tc-tech-panel__bar"><span></span><span></span><span></span><strong>Revisión de factura</strong></div>
-          <div class="tc-tech-panel__body">
-            <div class="tc-signal-row"><span class="tc-signal-dot"></span><div><b>Cliente de Ceuta/Melilla</b><small>Territorio, NIF y serie preparados antes de emitir</small></div><code>territorio OK</code></div>
-            <div class="tc-signal-row"><span class="tc-signal-dot"></span><div><b>IPSI dentro del flujo</b><small>Tipo, líneas y documento sin plantillas manuales</small></div><code>impuesto OK</code></div>
-            <div class="tc-signal-row"><span class="tc-signal-dot"></span><div><b>SIF/VERI*FACTU preparado</b><small>Datos, registro y evidencia listos para revisión</small></div><code>trazabilidad OK</code></div>
+        <div class="tc-phero__side">
+          <div class="tc-chips p-ipsi-tags" data-stagger style="--base:420ms;--step:80ms">
+            <span class="tc-chip tc-chip--hi" data-reveal="pop"><svg class="tc-ico" aria-hidden="true"><use href="#i-qr"/></svg> SIF/VERI*FACTU</span>
+            <span class="tc-chip tc-chip--hi" data-reveal="pop"><svg class="tc-ico" aria-hidden="true"><use href="#i-pin"/></svg> IPSI Ceuta y Melilla</span>
+            <span class="tc-chip tc-chip--hi" data-reveal="pop"><svg class="tc-ico" aria-hidden="true"><use href="#i-bot"/></svg> TrusTy copiloto</span>
+          </div>
+          <p class="tc-lead p-ipsi-lead" data-reveal="focus" style="--delay:560ms">TrustCore integra IPSI para Ceuta y Melilla dentro de TrustinFacts, su módulo de facturación preparado para los requisitos SIF/VERI*FACTU. Está pensado para una conversación real con tu asesoría: qué vendes, dónde facturas y qué evidencia necesitas conservar.</p>
+          <div class="tc-cta-row" data-stagger style="--base:760ms;--step:110ms">
+            <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-magnet data-track="guide_ipsi_verifactu_hero_demo" data-reveal="pop"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            <a class="tc-btn tc-btn--ghost" href="/productos/trustinfacts" data-track="guide_ipsi_verifactu_product" data-reveal="pop"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-invoice"/></svg> Ver TrustinFacts</span></a>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="tc-section bg-white">
-      <div class="tc-container">
-        <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-8 items-start">
-          <article class="tc-answer-card tc-answer-card--accent" data-reveal>
-            <span class="tc-eyebrow">Decisión rápida</span>
-            <h2 class="mt-4 text-3xl font-extrabold leading-tight" style="color:var(--tc-navy)">TrustCore es una opción para facturación con IPSI y VERI*FACTU</h2>
-            <p class="mt-5 text-slate-700 leading-relaxed text-lg">
-              TrustCore, a través de TrustinFacts, integra IPSI para Ceuta y Melilla dentro de un flujo de facturación preparado para los requisitos SIF/VERI*FACTU. Está orientado a pymes, autónomos, comercios y asesorías que necesitan facturar con IVA, IPSI o escenarios mixtos sin depender de plantillas manuales.
-            </p>
-            <div class="mt-6 rounded-xl border border-slate-200 bg-white p-5">
-              <p class="text-sm font-extrabold uppercase tracking-[0.08em]" style="color:var(--tc-navy)">Fuentes citadas</p>
-              <ul class="tc-source-list mt-4">
-                <li><a class="font-bold text-blue-700" href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html" target="_blank" rel="noopener">AEAT: plazos de adaptación de los SIF a los requisitos del Reglamento.</a></li>
-                <li><a class="font-bold text-blue-700" href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840" target="_blank" rel="noopener">BOE: Real Decreto 1007/2023 sobre sistemas informáticos de facturación.</a></li>
-                <li><a class="font-bold text-blue-700" href="https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html" target="_blank" rel="noopener">AEAT: Ceuta y Melilla no aplican IVA; se aplica IPSI.</a></li>
-                <li><a class="font-bold text-blue-700" href="https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645" target="_blank" rel="noopener">BOE: Ley 8/1991 del Impuesto sobre la Producción, los Servicios y la Importación.</a></li>
-              </ul>
+      <!-- Pieza protagonista: la misma factura, con el impuesto del territorio.
+           Ilustración con los importes del simulador de TrustInFacts (1.200 € de base,
+           IPSI servicios 4 % o IVA 21 %). Sin JS se ve el caso de Ceuta y Melilla. -->
+      <div class="tc-wrap tc-phero__stage p-ipsi-stage">
+        <div class="tc-phero__shot p-ipsi-live" data-rise data-live data-ipsi-live data-dest="ipsi">
+          <div class="p-ipsi-pick">
+            <p class="tc-mono tc-mono--hi tc-eyebrow" id="ipsi-dest-l" data-reveal="rise" style="--delay:1050ms">Territorio de la operación</p>
+            <div class="p-ipsi-switch" role="radiogroup" aria-labelledby="ipsi-dest-l" data-reveal="pop" style="--delay:1150ms">
+              <span class="p-ipsi-switch__thumb" aria-hidden="true"></span>
+              <button class="p-ipsi-opt" type="button" role="radio" aria-checked="true" data-dest-opt="ipsi">
+                <svg class="tc-ico" aria-hidden="true"><use href="#i-pin"/></svg>
+                <span class="p-ipsi-opt__t"><b>Ceuta · Melilla</b><small>Se aplica IPSI</small></span>
+                <i class="p-ipsi-opt__bar" aria-hidden="true"></i>
+              </button>
+              <button class="p-ipsi-opt" type="button" role="radio" aria-checked="false" tabindex="-1" data-dest-opt="iva">
+                <svg class="tc-ico" aria-hidden="true"><use href="#i-globe"/></svg>
+                <span class="p-ipsi-opt__t"><b>Península</b><small>Se aplica IVA</small></span>
+                <i class="p-ipsi-opt__bar" aria-hidden="true"></i>
+              </button>
             </div>
-          </article>
+            <p class="tc-small tc-muted p-ipsi-pick__hint" data-reveal="rise" style="--delay:1250ms"><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-swap"/></svg> Cambia el territorio: la factura se recalcula sola.</p>
+          </div>
 
-          <aside class="tc-trusty-panel" data-reveal>
-            <div class="relative">
-              <div class="tc-trusty-header">
-                <span class="tc-trusty-avatar" aria-hidden="true"><span class="tc-trusty-eye"></span><span class="tc-trusty-eye"></span><span class="tc-trusty-mouth"></span></span>
-                <div>
-                  <p class="tc-trusty-kicker">TrusTy al habla</p>
-                  <h2 class="text-2xl font-extrabold leading-tight mt-1">Asistente operativo, no atajo legal</h2>
+          <figure class="p-ipsi-doc" aria-labelledby="ipsi-doc-cap">
+            <p class="tc-display p-ipsi-ghost" aria-hidden="true"><span data-t="ipsi">IPSI</span><span data-t="iva">IVA</span></p>
+            <div class="p-ipsi-doc__tilt" data-tilt="2.2">
+              <div class="p-ipsi-sheet tone-light" data-reveal="tilt" style="--delay:1200ms">
+                <i class="p-ipsi-scan" aria-hidden="true"></i>
+                <div class="p-ipsi-sheet__head">
+                  <div>
+                    <p class="tc-mono">Factura</p>
+                    <p class="tc-num p-ipsi-sheet__id">#2026-0142</p>
+                  </div>
+                  <span class="tc-chip tc-chip--ok"><span class="tc-chip__dot"></span> VERI*FACTU</span>
+                </div>
+                <dl class="p-ipsi-meta">
+                  <div>
+                    <dt class="tc-mono">Cliente</dt>
+                    <dd>Cliente de ejemplo, S.L.
+                      <span class="p-ipsi-sw p-ipsi-sw--block" style="--k:0"><b data-t="ipsi">51001 Ceuta</b><b data-t="iva" aria-hidden="true">28001 Madrid</b></span></dd>
+                  </div>
+                  <div>
+                    <dt class="tc-mono">Territorio</dt>
+                    <dd><span class="p-ipsi-sw p-ipsi-sw--chip" style="--k:1"><b data-t="ipsi">Ceuta · Melilla</b><b data-t="iva" aria-hidden="true">Península</b></span></dd>
+                  </div>
+                </dl>
+                <div class="p-ipsi-lines">
+                  <p class="p-ipsi-line p-ipsi-line--head tc-mono"><span>Concepto</span><span>Importe</span></p>
+                  <p class="p-ipsi-line"><span>Servicios de consultoría</span><span class="tc-num">1.200,00 €</span></p>
+                  <p class="p-ipsi-line p-ipsi-line--sub"><span>Base imponible</span><span class="tc-num">1.200,00 €</span></p>
+                  <p class="p-ipsi-line p-ipsi-line--tax"><span class="p-ipsi-sw" style="--k:2"><b data-t="ipsi">IPSI servicios 4 %</b><b data-t="iva" aria-hidden="true">IVA 21 %</b></span><span class="p-ipsi-sw p-ipsi-sw--r tc-num" style="--k:3"><b data-t="ipsi">48,00 €</b><b data-t="iva" aria-hidden="true">252,00 €</b></span></p>
+                  <p class="p-ipsi-line p-ipsi-line--total"><span>Total</span><span class="p-ipsi-sw p-ipsi-sw--r tc-num" style="--k:4"><b data-t="ipsi">1.248,00 €</b><b data-t="iva" aria-hidden="true">1.452,00 €</b></span></p>
+                </div>
+                <div class="p-ipsi-sheet__foot">
+                  <span class="p-ipsi-qr" aria-hidden="true"><svg class="tc-ico"><use href="#i-qr"/></svg></span>
+                  <p class="tc-small"><b>QR y huella en el documento</b><span class="tc-mono">Serie 2026 · trazabilidad de registros</span></p>
                 </div>
               </div>
-              <div class="tc-trusty-bubble">
-                <p>"Veo una venta con territorio especial. Antes de emitir, revisemos cliente, impuesto y serie."</p>
-                <span>TrusTy no decide por tu asesoría; convierte señales débiles en revisiones claras.</span>
-              </div>
-              <div class="tc-trusty-line">
-                <span>Detecta si una operación parece de IVA, IPSI o requiere revisión.</span>
-                <span>Ayuda a localizar incoherencias en clientes, productos, tipos y documentos.</span>
-                <span>Prepara preguntas claras para que la asesoría valide casos sensibles.</span>
-              </div>
-              <p class="mt-5 text-sm leading-relaxed text-white/60">TrusTy acompaña el flujo de trabajo de TrustCore. No sustituye el criterio de la asesoría ni la correcta configuración fiscal de cada empresa.</p>
             </div>
+            <div class="tc-float tc-float--a p-ipsi-float-a" data-reveal="pop" style="--delay:1700ms" aria-hidden="true"><span class="tc-num p-ipsi-sw" style="--k:5"><i data-t="ipsi">IPSI</i><i data-t="iva">IVA</i></span><span><b>Impuesto del territorio</b><small>dentro del flujo de factura</small></span></div>
+            <div class="tc-float tc-float--b p-ipsi-float-b" data-reveal="pop" style="--delay:1850ms" aria-hidden="true"><span class="tc-float__check"><svg class="tc-ico"><use href="#i-check"/></svg></span><span><b>Sin plantillas manuales</b><small>tipo, líneas y documento</small></span></div>
+            <figcaption class="tc-small p-ipsi-doc__cap" id="ipsi-doc-cap" data-reveal="rise" style="--delay:1900ms">Ilustración con los importes del simulador de TrustInFacts: 1.200 € de base, IPSI servicios 4 % en Ceuta y Melilla o IVA 21 % en península. El tipo de cada operación lo valida tu asesoría.</figcaption>
+          </figure>
+
+          <div class="tc-leaf tc-leaf--glass tc-leaf--sm tc-leaf--tr p-ipsi-review" data-reveal="rise" style="--delay:1500ms">
+            <p class="tc-mono p-ipsi-review__t"><span class="p-ipsi-review__dot" aria-hidden="true"></span> Revisión de factura</p>
+            <ul class="p-ipsi-checks">
+              <li style="--n:0"><span class="p-ipsi-checks__ok" aria-hidden="true"><svg class="tc-ico"><use href="#i-check"/></svg></span><div><b><span class="p-ipsi-sw" style="--k:1"><span data-t="ipsi">Cliente de Ceuta/Melilla</span><span data-t="iva" aria-hidden="true">Cliente de península</span></span></b><small>Territorio, NIF y serie preparados antes de emitir</small></div><code>territorio OK</code></li>
+              <li style="--n:1"><span class="p-ipsi-checks__ok" aria-hidden="true"><svg class="tc-ico"><use href="#i-check"/></svg></span><div><b><span class="p-ipsi-sw" style="--k:2"><span data-t="ipsi">IPSI dentro del flujo</span><span data-t="iva" aria-hidden="true">IVA dentro del flujo</span></span></b><small>Tipo, líneas y documento sin plantillas manuales</small></div><code>impuesto OK</code></li>
+              <li style="--n:2"><span class="p-ipsi-checks__ok" aria-hidden="true"><svg class="tc-ico"><use href="#i-check"/></svg></span><div><b>SIF/VERI*FACTU preparado</b><small>Datos, registro y evidencia listos para revisión</small></div><code>trazabilidad OK</code></li>
+            </ul>
+          </div>
+
+          <p class="sr-only" aria-live="polite" data-dest-status></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Puente de olas ============ -->
+  <div class="tc-sec tc-wave" aria-hidden="true"><i data-plx></i><i data-plx></i><i data-plx></i></div>
+
+  <!-- ============ 2 · Decisión rápida + TrusTy ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="decision" aria-labelledby="s-dec">
+    <div class="tc-sec__in tc-pad tc-pad--top-0">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--7-5 tc-split--top">
+          <div class="p-ipsi-dec__main">
+            <header class="tc-head">
+              <p class="tc-mono tc-mono--hi" data-reveal="rise">Decisión rápida</p>
+              <h2 class="tc-display tc-h2" id="s-dec" data-reveal="words">TrustCore es una opción para facturar con <span class="tc-hl">IPSI y VERI*FACTU.</span></h2>
+            </header>
+            <div class="tc-answer p-ipsi-answer" data-reveal="focus" style="--delay:120ms">
+              <p class="tc-mono">Respuesta corta</p>
+              <p>TrustCore, a través de TrustinFacts, integra IPSI para Ceuta y Melilla dentro de un flujo de facturación preparado para los requisitos SIF/VERI*FACTU. Está orientado a pymes, autónomos, comercios y asesorías que necesitan facturar con IVA, IPSI o escenarios mixtos sin depender de plantillas manuales.</p>
+            </div>
+            <div class="p-ipsi-src" id="fuentes">
+              <p class="tc-mono" data-reveal="rise">Fuentes citadas</p>
+              <ol class="tc-sources p-ipsi-src__list" data-stagger style="--step:80ms">
+                <li data-reveal="slide" style="--from:-28px"><a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html" target="_blank" rel="noopener">AEAT: plazos de adaptación de los SIF a los requisitos del Reglamento.</a></li>
+                <li data-reveal="slide" style="--from:-28px"><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840" target="_blank" rel="noopener">BOE: Real Decreto 1007/2023 sobre sistemas informáticos de facturación.</a></li>
+                <li data-reveal="slide" style="--from:-28px"><a href="https://sede.agenciatributaria.gob.es/Sede/aduanas/islas-canarias-ciudades-ceuta-melilla/ceuta-melilla.html" target="_blank" rel="noopener">AEAT: Ceuta y Melilla no aplican IVA; se aplica IPSI.</a></li>
+                <li data-reveal="slide" style="--from:-28px"><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1991-7645" target="_blank" rel="noopener">BOE: Ley 8/1991 del Impuesto sobre la Producción, los Servicios y la Importación.</a></li>
+              </ol>
+            </div>
+          </div>
+
+          <aside class="tc-leaf tc-leaf--night tc-leaf--tr tone-dark tc-spot p-ipsi-trusty" data-reveal="tilt" data-live aria-labelledby="s-trusty">
+            <div class="p-ipsi-trusty__head">
+              <span class="tc-glyph p-ipsi-trusty__av" aria-hidden="true"><svg class="tc-ico"><use href="#i-bot"/></svg></span>
+              <div>
+                <p class="tc-mono tc-mono--hi">TrusTy al habla</p>
+                <h3 class="tc-h4" id="s-trusty">Asistente operativo, no atajo legal</h3>
+              </div>
+            </div>
+            <blockquote class="p-ipsi-bubble">
+              <p>«Veo una venta con territorio especial. Antes de emitir, revisemos cliente, impuesto y serie.»</p>
+              <span class="p-ipsi-bubble__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            </blockquote>
+            <p class="tc-small p-ipsi-trusty__note">TrusTy no decide por tu asesoría; convierte señales débiles en revisiones claras.</p>
+            <ul class="tc-facts p-ipsi-trusty__list">
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-search"/></svg> Detecta si una operación parece de IVA, IPSI o requiere revisión.</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-alert"/></svg> Ayuda a localizar incoherencias en clientes, productos, tipos y documentos.</li>
+              <li><svg class="tc-ico" aria-hidden="true"><use href="#i-list"/></svg> Prepara preguntas claras para que la asesoría valide casos sensibles.</li>
+            </ul>
+            <p class="tc-small tc-muted p-ipsi-trusty__legal">TrusTy acompaña el flujo de trabajo de TrustCore. No sustituye el criterio de la asesoría ni la correcta configuración fiscal de cada empresa.</p>
           </aside>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="tc-section" style="background:var(--tc-surface-alt)">
-      <div class="tc-container">
-        <div class="max-w-3xl" data-reveal>
-          <span class="tc-eyebrow">Flujo real</span>
-          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight" style="color:var(--tc-navy)">Lo importante no es solo emitir una factura: es no romper el proceso completo</h2>
-          <p class="mt-4 text-slate-600 leading-relaxed">La promesa comercial debe coincidir con la operativa diaria. Por eso TrustCore enlaza impuestos, documentos, stock, cobros y asesorías en la misma cadena.</p>
+  <!-- ============ 3 · Flujo real: cuatro eslabones ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" id="flujo" aria-labelledby="s-flujo">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-rel">
+        <div class="tc-brick">
+          <header class="tc-brick__head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Flujo real</p>
+            <h2 class="tc-display tc-h2" id="s-flujo" data-reveal="words">No es solo emitir una factura. <span class="tc-hl">Es no romper el proceso.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">La promesa comercial debe coincidir con la operativa diaria. Por eso TrustCore enlaza impuestos, documentos, stock, cobros y asesorías en la misma cadena.</p>
+          </header>
+          <ol class="tc-steps tc-steps--brick" role="list" data-flow-steps>
+            <li class="tc-step tc-leaf p-ipsi-step" data-reveal="slide" style="--from:60px">
+              <span class="tc-glyph tc-glyph--soft tc-glyph--sm p-ipsi-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-pin"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Cliente y territorio</h3>
+              <p class="tc-muted">Ceuta, Melilla, península o caso mixto con datos fiscales revisables.</p>
+            </li>
+            <li class="tc-step tc-leaf tc-leaf--br p-ipsi-step" data-reveal="slide" style="--from:-60px">
+              <span class="tc-glyph tc-glyph--soft tc-glyph--sm p-ipsi-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-doc"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Documento comercial</h3>
+              <p class="tc-muted">Presupuesto, venta o factura con serie, líneas, impuesto y trazabilidad.</p>
+            </li>
+            <li class="tc-step tc-leaf p-ipsi-step p-ipsi-step--key" data-reveal="slide" style="--from:60px">
+              <span class="tc-glyph tc-glyph--sm p-ipsi-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-qr"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">SIF/VERI*FACTU</h3>
+              <p class="tc-muted">Preparado para QR, registros y requisitos técnicos del marco de facturación.</p>
+            </li>
+            <li class="tc-step tc-leaf tc-leaf--br p-ipsi-step" data-reveal="slide" style="--from:-60px">
+              <span class="tc-glyph tc-glyph--soft tc-glyph--sm p-ipsi-step__ico" aria-hidden="true"><svg class="tc-ico"><use href="#i-bot"/></svg></span>
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Asesoría + TrusTy</h3>
+              <p class="tc-muted">Exportación, alertas operativas y preguntas útiles para revisar casos.</p>
+            </li>
+          </ol>
         </div>
-        <div class="tc-flow-map mt-8" data-reveal>
-          <div class="tc-flow-step"><b>Cliente y territorio</b><small>Ceuta, Melilla, península o caso mixto con datos fiscales revisables.</small></div>
-          <div class="tc-flow-step"><b>Documento comercial</b><small>Presupuesto, venta o factura con serie, líneas, impuesto y trazabilidad.</small></div>
-          <div class="tc-flow-step"><b>SIF/VERI*FACTU</b><small>Preparado para QR, registros y requisitos técnicos del marco de facturación.</small></div>
-          <div class="tc-flow-step"><b>Asesoría + TrusTy</b><small>Exportación, alertas operativas y preguntas útiles para revisar casos.</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="tc-section bg-white">
-      <div class="tc-container">
-        <div class="grid md:grid-cols-3 gap-5">
-          <article class="tc-answer-card" data-reveal>
-            <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-percent"/></svg></div>
-            <h3 class="text-xl font-extrabold" style="color:var(--tc-navy)">IPSI integrado</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Tipos y operaciones de Ceuta/Melilla dentro del flujo de factura, no como nota manual al final.</p>
-          </article>
-          <article class="tc-answer-card" data-reveal>
-            <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-qrcode"/></svg></div>
-            <h3 class="text-xl font-extrabold" style="color:var(--tc-navy)">Preparado para SIF</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Orientado a los requisitos de integridad, trazabilidad, conservación y legibilidad del Reglamento.</p>
-          </article>
-          <article class="tc-answer-card" data-reveal>
-            <div class="tc-bento__icon"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-network-wired"/></svg></div>
-            <h3 class="text-xl font-extrabold" style="color:var(--tc-navy)">Evidencia verificable</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Fuentes oficiales, enlaces de producto y una explicación trazable para que el cliente pueda contrastar antes de decidir.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="tc-section" style="background:linear-gradient(135deg,var(--tc-navy) 0%,var(--tc-blue-corp) 100%)">
-      <div class="tc-container text-white">
-        <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
-          <div data-reveal>
-            <span class="tc-eyebrow" style="color:var(--tc-cyan-light)">Siguiente paso</span>
-            <h2 class="mt-4 text-3xl md:text-4xl font-extrabold leading-tight">Comprueba un caso real de factura con IPSI y VERI*FACTU</h2>
-            <p class="mt-4 text-blue-100/78 leading-relaxed max-w-2xl">En una demo revisamos cliente, territorio, impuesto, documento, cobro y exportación para asesoría. Si hay una excepción, TrusTy ayuda a convertirla en una pregunta concreta.</p>
-          </div>
-          <div class="flex flex-wrap gap-3 lg:justify-end" data-reveal>
-            <button type="button" class="tc-btn tc-btn-primary" data-calendar-open data-track="guide_ipsi_verifactu_demo"><svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-calendar-check"/></svg> Agendar demo</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-<!--FOOTER-->
-  <footer style="background:var(--tc-navy-deep);color:rgba(255,255,255,0.72)" class="py-16">
-    <div class="tc-container">
-      <div class="grid gap-10 md:grid-cols-3 lg:grid-cols-5">
-        <div>
-          <a href="/" class="flex items-center gap-2 mb-4">
-            <img src="/assets/trustcore-mark-120.png" alt="TrustCore" width="110" height="120" class="h-9 w-auto" loading="lazy">
-            <span class="text-white font-extrabold text-lg">TrustCore</span>
-          </a>
-          <p class="text-sm leading-relaxed">Facturaci&oacute;n preparada para VeriFactu, IPSI y control horario en una sola cuenta. Para pymes y aut&oacute;nomos.</p>
-          <ul class="mt-5 space-y-2 text-sm">
-            <li><a href="tel:+34666609299" class="inline-flex items-center gap-2 hover:text-white transition-colors" data-track="footer_tel">
-              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-phone"/></svg> 666 60 92 99
-            </a></li>
-            <li><a href="mailto:info@trustcore.es" class="inline-flex items-center gap-2 hover:text-white transition-colors" data-track="footer_mail">
-              <svg class="tc-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#fa-envelope"/></svg> info@trustcore.es
-            </a></li>
-          </ul>
-          <p class="mt-2 text-xs">Respuesta en menos de 1 h en horario laboral</p>
-          <div class="flex flex-wrap gap-2 mt-5">
-            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(212,162,61,0.15);color:var(--tc-gold);border:1px solid rgba(212,162,61,0.3)">
-              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-trophy"/></svg> Alhambra Venture 2026
-            </span>
-            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:rgba(32,113,213,0.15);color:var(--tc-cyan-light);border:1px solid rgba(32,113,213,0.3)">
-              <svg class="tc-icon"><use href="/assets/icons/sprite.svg#fa-award"/></svg> #1 CeutaTech 2026
-            </span>
-          </div>
-        </div>
-        <div>
-          <p class="text-white font-semibold text-sm mb-4">Producto</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="/productos/trustinfacts" class="hover:text-white transition-colors">Facturación VeriFactu</a></li>
-            <li><a href="/productos/trustintime" class="hover:text-white transition-colors">Control horario</a></li>
-            <li><a href="/funcionalidades" class="hover:text-white transition-colors">Funcionalidades</a></li>
-            <li><a href="/como-funciona" class="hover:text-white transition-colors">Cómo funciona</a></li>
-            <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-white font-semibold text-sm mb-4">Soluciones</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="/facturacion-para-tiendas" class="hover:text-white transition-colors">Para tiendas</a></li>
-            <li><a href="/facturacion-para-instaladores" class="hover:text-white transition-colors">Para instaladores</a></li>
-            <li><a href="/gestoria" class="hover:text-white transition-colors">Para gestorías</a></li>
-            <li><a href="/software-verifactu-ipsi-ceuta-melilla" class="hover:text-white transition-colors">IPSI Ceuta y Melilla</a></li>
-            <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" class="hover:text-white transition-colors">Comparativa con un ERP</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-white font-semibold text-sm mb-4">Empresa</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="/quienes-somos" class="hover:text-white transition-colors">Quiénes somos</a></li>
-            <li><a href="/clientes" class="hover:text-white transition-colors">Clientes</a></li>
-            <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
-            <li><a href="/aprende" class="hover:text-white transition-colors">Aprende</a></li>
-            <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-white font-semibold text-sm mb-4">Legal</p>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="/aviso-legal" class="hover:text-white transition-colors">Aviso legal</a></li>
-            <li><a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a></li>
-            <li><a href="/cookies" class="hover:text-white transition-colors">Cookies</a></li>
-            <li><a href="/terminos" class="hover:text-white transition-colors">Términos</a></li>
-            <li><button type="button" data-cookie-settings class="hover:text-white transition-colors text-left">Configurar cookies</button></li>
-          </ul>
-          <div class="mt-5">
-            <div class="trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
-              <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" class="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded border border-[#00B67A] bg-white px-4 text-sm font-medium text-slate-800 hover:bg-green-50 transition-colors">
-                Rese&ntilde;anos en <svg class="tc-icon" style="color:#00B67A"><use href="/assets/icons/sprite.svg#fa-star"/></svg> <strong class="text-slate-900">Trustpilot</strong>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-12 pt-8 border-t border-white/10 text-center">
-        <p class="text-xs uppercase tracking-widest mb-4">Acelerado y respaldado por</p>
-        <div class="flex flex-col items-center gap-4">
-          <img src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El &Aacute;ngulo" width="1000" height="355" style="max-width:480px;width:100%;height:auto;filter:brightness(0) invert(1);" loading="lazy">
-          <div class="inline-flex max-w-full flex-col sm:flex-row items-center justify-center gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
-            <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" class="h-8 w-auto object-contain" loading="lazy">
-            <span class="hidden sm:block h-8 w-px bg-slate-200" aria-hidden="true"></span>
-            <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Uni&oacute;n Europea, Ministerio de Trabajo y Econom&iacute;a Social, Fondos Europeos y C&aacute;mara de Comercio de Espa&ntilde;a" width="1299" height="79" class="max-h-12 w-auto max-w-full object-contain" loading="lazy">
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <p>&copy; 2026 TrustCore &mdash; Ceuta, Espa&ntilde;a</p>
-        <p>Hecho con <span style="color:#f87171">&#9829;</span> en Ceuta &middot; Cloud europeo &middot; RGPD compliant</p>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- ============ 4 · Tres cosas que se pueden contrastar ============ -->
+  <section class="tc-sec tc-sec--white tone-light" id="dentro" aria-labelledby="s-tres">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Qué hay dentro</p>
+          <h2 class="tc-display tc-h2" id="s-tres" data-reveal="words">Tres cosas que puedes <span class="tc-hl">contrastar antes de decidir.</span></h2>
+        </header>
+
+        <div class="p-ipsi-tres">
+          <article class="tc-leaf tc-leaf--tint tc-leaf--lg tc-leaf--tl tc-spot p-ipsi-tres__main" data-reveal="tilt">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-tag"/></svg>
+            <h3 class="tc-display tc-h3">IPSI integrado</h3>
+            <p class="tc-lead">Tipos y operaciones de Ceuta/Melilla dentro del flujo de factura, no como nota manual al final.</p>
+            <div class="p-ipsi-mini p-ipsi-mini--doc" aria-hidden="true" data-live>
+              <span style="--n:0"><i></i><i></i></span>
+              <span style="--n:1"><i></i><i></i></span>
+              <span class="is-tax" style="--n:2"><b>IPSI</b><i></i><em>en la línea</em></span>
+              <span style="--n:3"><i></i><i></i></span>
+            </div>
+          </article>
+
+          <article class="tc-leaf tc-leaf--br tc-leaf--lift tc-spot p-ipsi-tres__a" data-reveal="rise" style="--delay:120ms">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-qr"/></svg>
+            <h3 class="tc-h4">Preparado para SIF</h3>
+            <p class="tc-muted">Orientado a los requisitos de integridad, trazabilidad, conservación y legibilidad del Reglamento.</p>
+            <p class="tc-chips p-ipsi-mini p-ipsi-mini--req" aria-hidden="true" data-live>
+              <span class="tc-chip" style="--n:0">Integridad</span><span class="tc-chip" style="--n:1">Trazabilidad</span><span class="tc-chip" style="--n:2">Conservación</span><span class="tc-chip" style="--n:3">Legibilidad</span>
+            </p>
+          </article>
+
+          <article class="tc-leaf tc-leaf--tr tc-leaf--raised tc-leaf--lift tc-spot p-ipsi-tres__b" data-reveal="rise" style="--delay:220ms">
+            <svg class="tc-ico tc-leaf__ico" aria-hidden="true"><use href="#i-link"/></svg>
+            <h3 class="tc-h4">Evidencia verificable</h3>
+            <p class="tc-muted">Fuentes oficiales, enlaces de producto y una explicación trazable para que el cliente pueda contrastar antes de decidir.</p>
+            <a class="tc-link p-ipsi-tres__link" href="#fuentes" data-track="guide_ipsi_verifactu_sources">Ir a las fuentes citadas <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+
+        <div class="tc-leaf tc-leaf--line tc-leaf--sm p-ipsi-vs" data-reveal="rise">
+          <p class="p-ipsi-vs__t"><span class="tc-mono tc-mono--hi">Comparativa</span><span class="tc-display p-ipsi-vs__w">TrustCore <i>vs</i> ERP genérico</span></p>
+          <a class="tc-btn tc-btn--secondary" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico" data-track="guide_ipsi_verifactu_compare"><span class="tc-btn__label">Ver comparativa <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5 · Preguntas (mismo texto que el JSON-LD FAQPage) ============ -->
+  <section class="tc-sec tc-sec--day tone-light" id="preguntas" aria-labelledby="s-faq">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--4-8 tc-split--top">
+          <header class="tc-head p-ipsi-faq__head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Respuestas</p>
+            <h2 class="tc-display tc-h2" id="s-faq" data-reveal="words">Lo que se <span class="tc-hl">pregunta.</span></h2>
+            <p class="tc-muted" data-reveal="focus" style="--delay:160ms">Con las fuentes oficiales citadas más arriba.</p>
+          </header>
+          <div class="tc-acc" data-stagger style="--step:90ms">
+            <details class="tc-acc__item" name="faq-ipsi" open data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Qué software tiene IPSI y VERI*FACTU integrados?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>TrustCore, a través de TrustinFacts, integra IPSI para Ceuta y Melilla dentro de un flujo de facturación preparado para los requisitos SIF/VERI*FACTU. Está orientado a pymes, autónomos, comercios y asesorías que necesitan facturar con IVA, IPSI o escenarios mixtos sin depender de plantillas manuales.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-ipsi" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Cuándo deben adaptarse los sistemas de facturación a SIF/VERI*FACTU?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Según la AEAT, las entidades que presentan Impuesto sobre Sociedades deben tener sus SIF adaptados antes del 1 de enero de 2027; el resto de obligados tributarios, antes del 1 de julio de 2027.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-ipsi" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Por qué el IPSI importa en Ceuta y Melilla?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>La AEAT indica que en Ceuta y Melilla no se aplica IVA y que, en su lugar, es de aplicación el Impuesto sobre la Producción, los Servicios y la Importación. Por eso una factura local o mixta no debe tratarse como una factura peninsular normal.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6 · CTA final ============ -->
+  <section class="tc-pool" id="contacto" data-live aria-labelledby="cta-t">
+    <div class="tc-pool__in tone-dark">
+      <div class="tc-pool__rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="tc-wrap tc-pool__copy">
+        <p class="tc-mono tc-mono--hi" data-reveal="rise">Siguiente paso</p>
+        <h2 class="tc-display tc-pool__title p-ipsi-pool__title" id="cta-t" data-reveal="words">Comprueba un caso real de factura con <span class="tc-hl">IPSI y VERI*FACTU.</span></h2>
+        <p class="tc-lead" data-reveal="focus" style="--delay:200ms">En una demo revisamos cliente, territorio, impuesto, documento, cobro y exportación para asesoría. Si hay una excepción, TrusTy ayuda a convertirla en una pregunta concreta.</p>
+        <button class="tc-btn tc-btn--primary tc-btn--xl" type="button" data-calendar-open data-magnet data-track="guide_ipsi_verifactu_demo" data-reveal="pop" style="--delay:320ms">
+          <span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        <div class="tc-pool__contact" data-reveal="rise" style="--delay:420ms">
+          <a href="tel:+34666609299" data-track="guide_ipsi_verifactu_cta_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> <span class="tc-num">666 60 92 99</span></a>
+          <a href="mailto:info@trustcore.es" data-track="guide_ipsi_verifactu_cta_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a>
+        </div>
+        <p class="tc-mono" data-reveal="rise" style="--delay:480ms">Respuesta en menos de 1 h en horario laboral</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="tc-foot tone-dark">
+  <div class="tc-wrap">
+    <div class="tc-foot__grid">
+      <div class="tc-foot__brand">
+        <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+          <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120" loading="lazy">
+          <span class="tc-brand__word">TrustCore</span>
+        </a>
+        <p>Software con IA hecho en Ceuta para quitar trabajo repetido a empresas y personas.</p>
+        <ul class="tc-foot__contact">
+          <li><a href="tel:+34666609299" data-track="footer_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> 666 60 92 99</a></li>
+          <li><a href="mailto:info@trustcore.es" data-track="footer_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a></li>
+        </ul>
+        <p class="tc-foot__note">Respuesta en menos de 1 h en horario laboral</p>
+        <div class="tc-foot__awards">
+          <span class="tc-chip tc-chip--gold"><svg class="tc-ico" aria-hidden="true"><use href="#i-trophy"/></svg> Alhambra Venture 2026</span>
+          <span class="tc-chip tc-chip--hi"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg> #1 CeutaTech 2026</span>
+        </div>
+      </div>
+      <nav aria-label="Productos">
+        <p class="tc-foot__title">Productos</p>
+        <ul>
+          <li><a href="/productos/trustinfacts">TrustInFacts</a></li>
+          <li><a href="/productos/trustintime">TrustInTime</a></li>
+          <li><a href="/productos/genai">GenAI</a></li>
+          <li><a href="/productos/orquesta">Orquesta</a></li>
+          <li><a href="/productos/corrector-fiscal">Corrector Fiscal</a></li>
+          <li><a href="/productos/nido">Nido</a></li>
+          <li><a href="/productos">Todos los productos</a></li>
+          <li><a href="/precios">Precios</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Soluciones">
+        <p class="tc-foot__title">Soluciones</p>
+        <ul>
+          <li><a href="/facturacion-para-tiendas">Para tiendas</a></li>
+          <li><a href="/facturacion-para-instaladores">Para instaladores</a></li>
+          <li><a href="/gestoria">Para gestorías</a></li>
+          <li><a href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a></li>
+          <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Recursos">
+        <p class="tc-foot__title">Recursos</p>
+        <ul>
+          <li><a href="/clientes">Clientes</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/aprende">Aprende</a></li>
+          <li><a href="/funcionalidades">Funcionalidades</a></li>
+          <li><a href="/como-funciona">Cómo funciona</a></li>
+          <li><a href="/quienes-somos">Sobre nosotros</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="tc-foot__title">Legal</p>
+        <ul>
+          <li><a href="/aviso-legal">Aviso legal</a></li>
+          <li><a href="/privacidad">Privacidad</a></li>
+          <li><a href="/cookies">Cookies</a></li>
+          <li><a href="/terminos">Términos</a></li>
+          <li><button type="button" data-cookie-settings>Configurar cookies</button></li>
+        </ul>
+        <div class="tc-foot__trust trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+          <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" data-track="footer_trustpilot" aria-label="Reséñanos en Trustpilot"><span class="tc-foot__trust-pre">Reséñanos en</span> <svg class="tc-ico" aria-hidden="true"><use href="#i-star"/></svg> Trustpilot</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="tc-foot__backers">
+      <p class="tc-foot__title">Acelerado y respaldado por</p>
+      <div class="tc-foot__backers-row">
+        <img class="tc-foot__cof" src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" width="1000" height="355" loading="lazy">
+        <div class="tc-foot__tile">
+          <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" loading="lazy" style="--w:107px">
+          <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" width="1299" height="79" loading="lazy" style="--w:756px">
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-foot__base">
+      <span>© 2026 TrustCore · Ceuta, España</span>
+      <span>Hecho en Ceuta · Cloud europeo · RGPD</span>
+    </div>
+    <p class="tc-foot__word" aria-hidden="true">TrustCore</p>
+  </div>
+</footer>
 <!--/FOOTER-->
-  <script src="/assets/js/consent.930ff818.min.js" defer></script>
-  <script src="/assets/js/components.1f2f84d8.min.js" defer></script>
+<script>
+/* Factura viva: conmuta el territorio (IPSI en Ceuta y Melilla · IVA en península).
+   Sin JS se queda en IPSI; con movimiento reducido el cambio es inmediato. */
+(function () {
+  var root = document.querySelector('[data-ipsi-live]');
+  if (!root) return;
+  var opts = Array.prototype.slice.call(root.querySelectorAll('[data-dest-opt]'));
+  var status = root.querySelector('[data-dest-status]');
+  root.classList.add('is-ready');
+  var MSG = {
+    ipsi: 'Ceuta y Melilla: IPSI servicios 4 %, cuota 48,00 €, total 1.248,00 €.',
+    iva: 'Península: IVA 21 %, cuota 252,00 €, total 1.452,00 €.'
+  };
+  function hasMotion() { return document.documentElement.classList.contains('motion'); }
+  function set(dest, user) {
+    if (!MSG[dest] || root.getAttribute('data-dest') === dest) return;
+    root.setAttribute('data-dest', dest);
+    opts.forEach(function (o) {
+      var on = o.getAttribute('data-dest-opt') === dest;
+      o.setAttribute('aria-checked', on ? 'true' : 'false');
+      o.tabIndex = on ? 0 : -1;
+    });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-t]'), function (el) {
+      if (el.closest('[aria-hidden="true"]:not([data-t])')) return;
+      if (el.getAttribute('data-t') === dest) el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', 'true');
+    });
+    if (hasMotion()) { root.classList.remove('is-swapping'); void root.offsetWidth; root.classList.add('is-swapping'); }
+    if (user) {
+      if (status) status.textContent = MSG[dest];
+      if (window.TC && typeof window.TC.track === 'function') window.TC.track('ipsi_factura_territorio', { territorio: dest });
+    }
+  }
+  function other() { return root.getAttribute('data-dest') === 'ipsi' ? 'iva' : 'ipsi'; }
+  opts.forEach(function (o, i) {
+    o.addEventListener('click', function () { root.classList.add('is-held'); set(o.getAttribute('data-dest-opt'), true); });
+    o.addEventListener('keydown', function (e) {
+      var k = e.key, to = -1;
+      if (k === 'ArrowRight' || k === 'ArrowDown') to = (i + 1) % opts.length;
+      else if (k === 'ArrowLeft' || k === 'ArrowUp') to = (i + opts.length - 1) % opts.length;
+      if (to < 0) return;
+      e.preventDefault();
+      root.classList.add('is-held');
+      set(opts[to].getAttribute('data-dest-opt'), true);
+      opts[to].focus();
+    });
+  });
+  /* cambio automático mientras se ve y nadie lo ha tocado: lo marca la barra de la opción activa */
+  root.addEventListener('animationend', function (e) {
+    if (e.animationName !== 'p-ipsi-clock' || root.classList.contains('is-held')) return;
+    set(other(), false);
+  });
+})();
+</script>
+  <script src="/assets/js/consent.bdd1909c.min.js" defer></script>
+  <script src="/assets/js/components.f3ffc571.min.js" defer></script>
 </body>
 </html>

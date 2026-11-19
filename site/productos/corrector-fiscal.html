@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Corrector Fiscal — Revisa modelos AEAT con IA | TrustCore</title>
+  <meta name="description" content="App de escritorio para asesorías: revisa y corrige modelos de la AEAT con IA, casilla por casilla y con cita. Modelo 303 listo. No oficial.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#020A2A">
+  <link rel="canonical" href="https://www.trustcore.es/productos/corrector-fiscal">
+  <link rel="alternate" hreflang="es" href="https://www.trustcore.es/productos/corrector-fiscal">
+  <link rel="alternate" hreflang="x-default" href="https://www.trustcore.es/productos/corrector-fiscal">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.trustcore.es/productos/corrector-fiscal">
+  <meta property="og:title" content="Corrector Fiscal — Revisa modelos AEAT con IA | TrustCore">
+  <meta property="og:description" content="App de escritorio para asesorías: lee las casillas del modelo, devuelve una tabla de incidencias con su cita y el modelo corregido. Modelo 303 listo.">
+  <meta property="og:image" content="https://www.trustcore.es/assets/og-image-1200x630.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="TrustCore">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Corrector Fiscal — Revisa modelos AEAT con IA | TrustCore">
+  <meta name="twitter:description" content="App de escritorio para asesorías: tabla de incidencias con cita y modelo corregido. Herramienta de apoyo, no oficial.">
+  <meta name="twitter:image" content="https://www.trustcore.es/assets/og-image-1200x630.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Corrector Fiscal",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "macOS",
+    "inLanguage": "es-ES",
+    "description": "Aplicación de escritorio para asesorías y gestorías que revisa y corrige modelos tributarios de la AEAT con IA guiada por skills. Incluye la skill del modelo 303 de IVA para el ejercicio 2026. Herramienta de apoyo, no oficial y no afiliada a la AEAT.",
+    "url": "https://www.trustcore.es/productos/corrector-fiscal",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TrustCore",
+      "url": "https://www.trustcore.es/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.trustcore.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://www.trustcore.es/productos" },
+      { "@type": "ListItem", "position": 3, "name": "Corrector Fiscal", "item": "https://www.trustcore.es/productos/corrector-fiscal" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es Corrector Fiscal?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Corrector Fiscal es una aplicación de escritorio para asesorías y gestorías que revisa y corrige modelos tributarios de la AEAT con ayuda de una IA guiada por skills. Cada modelo es una skill; la del modelo 303 de IVA para el ejercicio 2026 ya está incluida." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es una aplicación oficial de la Agencia Tributaria?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Es una aplicación no oficial, que no está afiliada ni respaldada por la AEAT. Es una herramienta de apoyo: no presenta declaraciones, y la validación final y la firma corresponden al profesional." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde se guardan los datos de mis clientes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La base de datos y los ficheros adjuntos se guardan solo en tu Mac, sin nube y sin analítica. El único flujo de salida es lo que tu propia instalación de Claude envía a la IA durante cada revisión. Antes de usarla con datos de clientes, el despacho debe valorar su deber de confidencialidad y el RGPD." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué modelos revisa hoy?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Incluye la skill del modelo 303 de IVA para el ejercicio 2026, con 220 casillas mapeadas, 54 reglas con cita y una batería de 76 casos de prueba. Cada modelo nuevo se añade importando su skill, sin cambiar la aplicación." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué necesito para usarla?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Un Mac, Claude Code instalado con tu sesión iniciada y Python 3.9 o posterior. La app no pide ni guarda claves de API: usa la IA de tu propia suscripción." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa cuando las fuentes no cubren un caso?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La skill lo marca como NO VERIFICABLE, explica qué falta y qué documento lo resolvería, en lugar de inventar una respuesta. En el modelo 303 quedan fuera, por ejemplo, los tipos impositivos temporales distintos del 21, 10, 4 y 0 %, los recargos por presentación fuera de plazo y los cruces con los modelos 390 y 349." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/instrument-sans-latin-wght-normal.woff2">
+  <link rel="stylesheet" href="/assets/css/site.1d174431.min.css">
+  <script>/*tc-boot*/(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');setTimeout(function(){if(!window.TC){c.remove('motion','js','is-arriving');window.__tcLate=1}},4000);try{if(sessionStorage.getItem('tc:arrive')){sessionStorage.removeItem('tc:arrive');c.add('is-arriving')}}catch(e){}addEventListener('pagereveal',function(e){if(!e.viewTransition)return;c.add('vt-arrive');var s={},l=d.querySelectorAll('[data-vt]');l.forEach(function(el){var n=el.getAttribute('data-vt');if(n&&!s[n]){s[n]=1;el.style.viewTransitionName=n;el.style.viewTransitionClass=el.hasAttribute('data-vt-text')?'tc-vt-text':'tc-vt'}});var f=function(){c.remove('vt-arrive');l.forEach(function(el){el.style.viewTransitionName='';el.style.viewTransitionClass=''})};e.viewTransition.finished.then(f,f)})})(document);</script>
+</head>
+<body class="tc-body p-corrector">
+<!--NAV-->
+<svg class="tc-sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-external" viewBox="0 0 24 24"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16l-6 7.5V19l-4-2v-3.5z"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.8h-3.8M5.5 20.5v-3.8h3.8"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol><symbol id="i-spinner" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 1 0 8.5 8.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5l7.5 2.8v5.4c0 4.4-3 7.6-7.5 9-4.5-1.4-7.5-4.6-7.5-9V6.3z"/><path d="M8.8 12.2l2.3 2.3 4.2-4.4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 6.5l2.5 2.5M13.5 9l2 2"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.5"/><path d="M8.5 14l-1.5 7 5-2.6 5 2.6-1.5-7"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5.5H5a3 3 0 0 0 3 4M16 5.5h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol><symbol id="i-invoice" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol><symbol id="i-graph" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M11 7l-5 9M13 7l5 9M7.2 18h9.6"/></symbol><symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 14.5l2.2 2.2L15.5 12"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5L12 4l8 7.5"/><path d="M6.5 10v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9"/><path d="M10 20v-5h4v5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2L21 15v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M4 8l8 5.5L20 8"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M20.5 3.5L10 14M20.5 3.5l-6.3 17-4.2-6.5-6.5-4.2z"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.4"/><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0"/><path d="M15.5 5.3a3.4 3.4 0 0 1 0 6.4M18 14.6a6.5 6.5 0 0 1 3.5 4.9"/></symbol><symbol id="i-headset" viewBox="0 0 24 24"><path d="M4.5 13.5V12a7.5 7.5 0 0 1 15 0v1.5"/><rect x="3.5" y="13" width="4" height="6" rx="1.5"/><rect x="16.5" y="13" width="4" height="6" rx="1.5"/><path d="M19.5 19v.5a2 2 0 0 1-2 2H13"/></symbol><symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3.5"/><path d="M12 8V4.5M9 13v1.5M15 13v1.5"/><circle cx="12" cy="3.6" r="1"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 0 0-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.2-3.9-8.5s1.3-6.1 3.9-8.5z"/></symbol><symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.3-5h13.4l1.3 5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5.5 12.5V20h13v-7.5M10 20v-4.5h4V20"/></symbol><symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.2a4 4 0 0 0-5.3 5.2L3.8 16.8a1.9 1.9 0 0 0 2.7 2.7l5.4-5.4a4 4 0 0 0 5.2-5.3l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2.5"/><path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5M3.5 13h17"/></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 8h14"/><path d="M5 8l-2.5 6a2.7 2.7 0 0 0 5 0zM19 8l-2.5 6a2.7 2.7 0 0 0 5 0z"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 6.5a6.5 6.5 0 1 0 0 11M5 10.5h8M5 13.5h8"/></symbol><symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18M7 15h3"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 16.5v-5M12 16.5v-9M17 16.5v-12"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3.5l8 4.2v8.6l-8 4.2-8-4.2V7.7z"/><path d="M4 7.7l8 4.3 8-4.3M12 12v8.5"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.3V5A1.5 1.5 0 0 1 5 3.5h7.3l8.2 8.2a1.5 1.5 0 0 1 0 2.1l-6.7 6.7a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.2"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2.5v2.5M20 14v6h-3M14 20v-1"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H18M9 8.5h5"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 7h11M9 12h11M9 17h11M4.5 7h.01M4.5 12h.01M4.5 17h.01"/></symbol><symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 7C6.5 8 5 10.2 5 13v4h5v-5H7.5c0-1.6.8-2.6 2.5-3.2zM18.5 7c-3 1-4.5 3.2-4.5 6v4h5v-5h-2.5c0-1.6.8-2.6 2.5-3.2z"/></symbol><symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l4.8-4.5 3.5 3 3-2.6 4.7 4.1"/></symbol><symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4.5v-15L7 9H5a1 1 0 0 0-1 1z"/><path d="M18.5 9.5a3.5 3.5 0 0 1 0 5M8 15l1 4.5h2.5"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17.5" cy="6" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="M8.2 10.8l7-3.6M8.2 13.2l7 3.6"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l8.5 4.5L12 13 3.5 8.5z"/><path d="M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96 6 6 0 0 1 11.5 1.5A3.75 3.75 0 0 1 17 18.5z"/></symbol><symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><path d="M10 10h4v4h-4zM9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/></symbol><symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7.5L4 12l4.5 4.5M15.5 7.5L20 12l-4.5 4.5M13.5 5l-3 14"/></symbol><symbol id="i-desktop" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16.5V20"/></symbol><symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol><symbol id="i-apple" viewBox="0 0 24 24"><path d="M15.5 3.5c0 1.6-1.3 3-3 3 0-1.7 1.4-3 3-3z"/><path d="M12.4 8.3c.9 0 1.7-.8 3.2-.8 1.4 0 2.6.7 3.3 1.8-2.8 1.6-2.3 5.4.5 6.5-.7 1.9-2.2 4.7-4 4.7-1.1 0-1.5-.7-2.9-.7s-1.9.7-3 .7c-2 0-4.5-4.2-4.5-7.6 0-3.2 2.1-5 4.1-5 1.4 0 2.4.4 3.3.4z"/></symbol><symbol id="i-windows" viewBox="0 0 24 24"><path d="M4 6.2l7-1v6.3H4zM12.5 5L20 3.9v7.6h-7.5zM4 13h7v6.3l-7-1zM12.5 13H20v7.6l-7.5-1.1z"/></symbol></defs></svg>
+<a class="tc-skip" href="#main-content">Saltar al contenido</a>
+<header class="tc-nav" data-nav>
+  <div class="tc-nav__pill">
+    <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+      <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120">
+      <span class="tc-brand__word">TrustCore</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="tc-nav__links">
+        <li class="tc-nav__item tc-nav__item--mega">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-productos" data-menu-toggle>Productos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--mega" id="tc-menu-productos">
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Para tu empresa</p>
+            <a class="tc-menu__item" style="--i:0" href="/productos/trustinfacts"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-invoice"/></svg></span><span><span class="tc-menu__name">TrustInFacts</span><span class="tc-menu__desc">Facturación VeriFactu, IVA e IPSI</span></span></a>
+            <a class="tc-menu__item" style="--i:1" href="/productos/trustintime"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span><span class="tc-menu__name">TrustInTime</span><span class="tc-menu__desc">Control horario, fichaje y ausencias</span></span></a>
+            <a class="tc-menu__item" style="--i:2" href="/productos/genai"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-spark"/></svg></span><span><span class="tc-menu__name">GenAI</span><span class="tc-menu__desc">Contenido para redes, con tu aprobación</span></span></a>
+          </div>
+          <div class="tc-menu__group">
+            <p class="tc-menu__label">Apps del estudio</p>
+            <a class="tc-menu__item" style="--i:3" href="/productos/orquesta"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-graph"/></svg></span><span><span class="tc-menu__name">Orquesta</span><span class="tc-menu__desc">Dirige un equipo de IAs</span></span></a>
+            <a class="tc-menu__item" style="--i:4" href="/productos/corrector-fiscal"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-filecheck"/></svg></span><span><span class="tc-menu__name">Corrector Fiscal</span><span class="tc-menu__desc">Revisa modelos de la AEAT</span></span></a>
+            <a class="tc-menu__item" style="--i:5" href="/productos/nido"><span class="tc-menu__ico"><svg class="tc-ico" aria-hidden="true"><use href="#i-home"/></svg></span><span><span class="tc-menu__name">Nido</span><span class="tc-menu__desc">Buscador privado de vivienda</span></span></a>
+          </div>
+            <a class="tc-menu__all" style="--i:6" href="/productos">Ver todos los productos <svg class="tc-ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-soluciones" data-menu-toggle>Soluciones <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu" id="tc-menu-soluciones">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/facturacion-para-tiendas">Para tiendas</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/facturacion-para-instaladores">Para instaladores</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/gestoria">Para gestorías</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+          </div>
+        </li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/precios">Precios</a></li>
+        <li class="tc-nav__item"><a class="tc-nav__link" href="/aprende">Aprende</a></li>
+        <li class="tc-nav__item">
+          <button class="tc-nav__link" type="button" aria-expanded="false" aria-controls="tc-menu-recursos" data-menu-toggle>Recursos <svg class="tc-ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="tc-menu tc-menu--end" id="tc-menu-recursos">
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:0" href="/clientes">Clientes</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:1" href="/blog">Blog</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:2" href="/funcionalidades">Funcionalidades</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:3" href="/como-funciona">Cómo funciona</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:4" href="/quienes-somos">Sobre nosotros</a>
+            <a class="tc-menu__item tc-menu__item--plain" style="--i:5" href="/contacto">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="tc-btn tc-btn--primary tc-btn--sm tc-nav__cta" type="button" data-calendar-open data-magnet data-track="header_demo">
+      <span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-cal"/></svg> <span>Agendar<span class="tc-nav__cta-more"> demo</span></span></span>
+    </button>
+    <button class="tc-nav__burger" type="button" aria-expanded="false" aria-controls="tc-sheet" aria-label="Abrir menú" data-sheet-toggle>
+      <span></span><span></span>
+    </button>
+    <span class="tc-nav__progress" aria-hidden="true"></span>
+  </div>
+</header>
+<div class="tc-sheet" id="tc-sheet" data-sheet role="dialog" aria-modal="true" aria-label="Menú">
+  <p class="tc-sheet__label">Para tu empresa</p>
+  <a class="tc-sheet__link" href="/productos/trustinfacts">TrustInFacts <small>Facturación</small></a>
+  <a class="tc-sheet__link" href="/productos/trustintime">TrustInTime <small>Control horario</small></a>
+  <a class="tc-sheet__link" href="/productos/genai">GenAI <small>Redes sociales</small></a>
+  <p class="tc-sheet__label">Apps del estudio</p>
+  <a class="tc-sheet__link" href="/productos/orquesta">Orquesta <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/corrector-fiscal">Corrector Fiscal <small>Escritorio</small></a>
+  <a class="tc-sheet__link" href="/productos/nido">Nido <small>Escritorio</small></a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/productos">Ver todos los productos</a>
+  <p class="tc-sheet__label">Soluciones</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-tiendas">Para tiendas</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/facturacion-para-instaladores">Para instaladores</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/gestoria">Para gestorías</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a>
+  <p class="tc-sheet__label">TrustCore</p>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/precios">Precios</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/aprende">Aprende</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/clientes">Clientes</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/blog">Blog</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/funcionalidades">Funcionalidades</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/como-funciona">Cómo funciona</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/quienes-somos">Sobre nosotros</a>
+  <a class="tc-sheet__link tc-sheet__link--sm" href="/contacto">Contacto</a>
+  <button class="tc-btn tc-btn--primary" type="button" data-calendar-open data-track="mobile_menu_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+</div>
+<!--/NAV-->
+
+<main id="main-content">
+
+  <!-- ============ 1 · Hero: la revisión en marcha ============ -->
+  <section class="tc-sec tc-sec--night tc-phero tone-dark" aria-labelledby="hero-t">
+    <div class="tc-sec__in tc-phero__in" data-intro>
+      <div class="tc-glow tc-glow--a" aria-hidden="true"></div>
+      <div class="tc-glow tc-glow--b" aria-hidden="true"></div>
+      <!-- casillas a la deriva (decorativas) -->
+      <div class="p-corrector-drift" aria-hidden="true">
+        <i style="--x:52%;--y:236px;--d:.6" data-plx>27</i>
+        <i style="--x:56.5%;--y:372px;--d:1.3" data-plx>46</i>
+        <i style="--x:53%;--y:500px;--d:.9" data-plx>71</i>
+      </div>
+
+      <div class="tc-wrap tc-phero__top p-corrector-top">
+        <div class="tc-phero__copy">
+          <nav class="tc-mono tc-crumbs" aria-label="Migas de pan" data-reveal="rise" style="--delay:80ms">
+            <ol><li><a href="/">Inicio</a></li><li><a href="/productos">Productos</a></li><li><span aria-current="page">Corrector Fiscal</span></li></ol>
+          </nav>
+          <p class="tc-mono tc-mono--hi p-corrector-kicker" data-reveal="rise" style="--delay:120ms"><span class="tc-glyph tc-glyph--sm"><svg class="tc-ico" aria-hidden="true"><use href="#i-filecheck"/></svg></span> App de escritorio · macOS</p>
+          <h1 class="tc-display tc-phero__title p-corrector-title" id="hero-t" data-reveal="focus" style="--delay:160ms"><span data-vt="vt-corrector-fiscal-title" data-vt-text>Corrector Fiscal</span></h1>
+          <p class="tc-display tc-phero__claim" data-reveal="words" style="--delay:440ms">Revisa el modelo casilla por casilla, <span class="tc-hl">con la norma delante.</span></p>
+        </div>
+        <div class="tc-phero__side">
+          <p class="tc-lead" data-reveal="focus" style="--delay:640ms">Para asesorías y gestorías. Arrastras el PDF del modelo, confirmas la lectura de las casillas y recibes una tabla de incidencias, cada una con su cita, y el modelo corregido. El modelo 303 ya está listo.</p>
+          <div class="tc-cta-row p-corrector-cta">
+            <div class="tc-dl">
+              <a class="tc-btn tc-btn--primary" href="mailto:info@trustcore.es?subject=Instalador%20de%20Corrector%20Fiscal" data-download="corrector" data-magnet data-track="corrector_hero_dl" data-reveal="pop" style="--delay:840ms"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Corrector Fiscal</span></span></a>
+              <p class="tc-dl__note" data-download-note="corrector">macOS</p>
+            </div>
+            <button class="tc-btn tc-btn--ghost" type="button" data-calendar-open data-magnet data-track="corrector_hero_demo" data-reveal="pop" style="--delay:950ms"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+          </div>
+          <p class="p-corrector-legal" data-reveal="rise" style="--delay:1080ms"><svg class="tc-ico" aria-hidden="true"><use href="#i-scale"/></svg> <span>Herramienta de apoyo. No es oficial ni está afiliada a la AEAT: la validación final corresponde al profesional.</span></p>
+        </div>
+      </div>
+
+      <!-- Maqueta animada de una revisión (ilustración con cifras ficticias, no captura) -->
+      <div class="tc-wrap tc-phero__stage">
+        <div class="tc-phero__shot" data-rise>
+          <p class="sr-only">Ilustración de una revisión: entra el PDF de un modelo 303, la app lee sus casillas una a una, muestra la tabla de incidencias con dos errores y un aviso, y entrega el modelo corregido.</p>
+          <figure class="tc-win tc-win--dark tone-dark p-corrector-app" data-vt="vt-corrector-fiscal-shot" aria-hidden="true">
+            <div class="tc-win__bar"><span class="tc-win__dots"><i></i><i></i><i></i></span><span class="tc-win__title">Corrector Fiscal · Modelo 303 · 2026</span><span class="p-corrector-app__tag">No oficial</span></div>
+            <div class="tc-win__body p-corrector-app__body">
+
+              <div class="p-corrector-side">
+                <p class="p-corrector-side__brand"><b>CF</b> Corrector Fiscal</p>
+                <p class="p-corrector-side__search"><svg class="tc-ico tc-ico--sm"><use href="#i-search"/></svg> Buscar <kbd>⌘K</kbd></p>
+                <p class="p-corrector-side__h">Clientes</p>
+                <ul class="p-corrector-side__list"><li>Todos</li><li>Recientes</li><li>Etiquetas</li></ul>
+                <p class="p-corrector-side__h">Modelos</p>
+                <ul class="p-corrector-side__list"><li class="is-on">303 · 2026</li><li>Añadir modelo</li></ul>
+                <p class="p-corrector-side__ia"><i></i> Claude: OK</p>
+              </div>
+
+              <div class="p-corrector-doc">
+                <p class="p-corrector-drop">Arrastra aquí el PDF del modelo</p>
+                <p class="p-corrector-file"><svg class="tc-ico tc-ico--sm"><use href="#i-doc"/></svg> 303_3T_2026.pdf</p>
+                <div class="p-corrector-sheet tone-light">
+                  <p class="p-corrector-sheet__head"><b>Modelo 303</b><span>IVA · Autoliquidación</span><em>2026 · 3T</em></p>
+                  <p class="p-corrector-sheet__sec">IVA devengado</p>
+                  <div class="p-corrector-cells p-corrector-cells--lines">
+                    <span class="p-corrector-cell" style="--k:0;--s:3"><i>04</i><b>6.250,00</b></span>
+                    <span class="p-corrector-cell" style="--k:1;--s:1"><i>05</i><b>10</b></span>
+                    <span class="p-corrector-cell is-warn" style="--k:2;--s:2"><i>06</i><b>625,04</b></span>
+                    <span class="p-corrector-cell" style="--k:3;--s:3"><i>07</i><b>18.400,00</b></span>
+                    <span class="p-corrector-cell" style="--k:4;--s:1"><i>08</i><b>21</b></span>
+                    <span class="p-corrector-cell" style="--k:5;--s:2"><i>09</i><b>3.864,00</b></span>
+                    <span class="p-corrector-cell p-corrector-cell--sum is-err" style="--k:6;--s:6"><i>27</i><small>Total cuota devengada</small><b class="p-corrector-swap"><s>4.498,04</s><span>4.489,04</span></b></span>
+                  </div>
+                  <p class="p-corrector-sheet__sec">IVA deducible</p>
+                  <div class="p-corrector-cells">
+                    <span class="p-corrector-cell" style="--k:7;--s:3"><i>28</i><b>9.100,00</b></span>
+                    <span class="p-corrector-cell" style="--k:8;--s:3"><i>29</i><b>1.911,00</b></span>
+                    <span class="p-corrector-cell p-corrector-cell--sum" style="--k:9;--s:6"><i>45</i><small>Total a deducir</small><b>1.911,00</b></span>
+                  </div>
+                  <p class="p-corrector-sheet__sec">Resultado</p>
+                  <div class="p-corrector-cells">
+                    <span class="p-corrector-cell is-err" style="--k:10;--s:3"><i>46</i><b class="p-corrector-swap"><s>2.587,04</s><span>2.578,04</span></b></span>
+                    <span class="p-corrector-cell is-err" style="--k:11;--s:3"><i>71</i><b class="p-corrector-swap"><s>2.587,04</s><span>2.578,04</span></b></span>
+                  </div>
+                  <span class="p-corrector-scan"><i></i></span>
+                </div>
+                <p class="p-corrector-read"><span class="p-corrector-read__bar"><i></i></span><span class="p-corrector-read__ok"><svg class="tc-ico tc-ico--sm"><use href="#i-check"/></svg> Lectura confirmada · 12 casillas</span></p>
+              </div>
+
+              <div class="p-corrector-out">
+                <div class="p-corrector-out__head">
+                  <p class="p-corrector-out__who"><b>Cliente de ejemplo</b><small>Modelo 303 · 2026 · 3T</small></p>
+                  <ol class="p-corrector-track"><li>Leer</li><li>Confirmar</li><li>Validar</li><li>Corregir</li></ol>
+                </div>
+                <p class="p-corrector-tool"><i></i><span class="p-corrector-tool__msgs"><span>Esperando el PDF del modelo</span><span>303_3T_2026.pdf adjuntado</span><span>extraer.py · leyendo casillas</span><span>Lectura confirmada por el asesor</span><span>validar.py · 54 reglas con cita</span><span>corregir.py · totales recalculados</span></span></p>
+                <p class="p-corrector-out__t"><b>Tabla de incidencias</b><span>2 errores · 1 aviso</span></p>
+                <div class="p-corrector-rows">
+                  <p class="p-corrector-wait"><i></i><i></i><i></i></p>
+                  <p class="p-corrector-row" style="--k:0"><i>27</i><span class="p-corrector-row__d"><b>Total cuota devengada</b><small>R-303-005 · O303 Anexo I</small></span><span class="p-corrector-row__v"><small>4.498,04</small><b>4.489,04</b></span><span class="p-corrector-st p-corrector-swap"><s class="is-err">Error</s><span class="is-fix">Corregido</span></span></p>
+                  <p class="p-corrector-row" style="--k:1"><i>46</i><span class="p-corrector-row__d"><b>Resultado régimen general</b><small>R-303-007 · O303 Anexo I</small></span><span class="p-corrector-row__v"><small>2.587,04</small><b>2.578,04</b></span><span class="p-corrector-st p-corrector-swap"><s class="is-err">Error</s><span class="is-fix">Corregido</span></span></p>
+                  <p class="p-corrector-row" style="--k:2"><i>06</i><span class="p-corrector-row__d"><b>Cuota de la línea al 10 %</b><small>R-303-001 · Aviso</small></span><span class="p-corrector-row__v"><small>base × tipo</small><b>625,00</b></span><span class="p-corrector-st"><span class="is-rev">Revisar</span></span></p>
+                  <p class="p-corrector-row" style="--k:3"><i>45</i><span class="p-corrector-row__d"><b>Total a deducir</b><small>R-303-006 · O303 Anexo I</small></span><span class="p-corrector-row__v"><b>1.911,00</b></span><span class="p-corrector-st"><span class="is-ok">Correcto</span></span></p>
+                </div>
+                <p class="p-corrector-result"><span class="p-corrector-result__l">Resultado <i>71</i></span><b class="p-corrector-result__v">2.578,04 €</b><span class="p-corrector-result__f"><svg class="tc-ico tc-ico--sm"><use href="#i-filecheck"/></svg> corregida.json</span></p>
+              </div>
+
+            </div>
+            <p class="p-corrector-app__foot">Herramienta de apoyo · La validación final corresponde al profesional · No oficial</p>
+          </figure>
+          <div class="tc-float tc-float--a" data-reveal="pop" style="--delay:1500ms" aria-hidden="true"><span class="tc-num">303</span><span><b>Modelo 303 · IVA</b><small>Ejercicio 2026</small></span></div>
+          <div class="tc-float tc-float--b" data-reveal="pop" style="--delay:1650ms" aria-hidden="true"><span class="tc-float__check"><svg class="tc-ico"><use href="#i-check"/></svg></span><span><b>76 de 76 pruebas</b><small>Skill del 303</small></span></div>
+        </div>
+        <p class="tc-mono p-corrector-capt" data-reveal="rise" style="--delay:1700ms">Ilustración con cifras ficticias. No es una captura de la aplicación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Puente de olas ============ -->
+  <div class="tc-sec tc-wave" aria-hidden="true"><i data-plx></i><i data-plx></i><i data-plx></i></div>
+
+  <!-- ============ 2 · Cómo se usa: cinco pasos ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="como-se-usa" aria-labelledby="s-flujo">
+    <div class="tc-sec__in tc-pad tc-pad--top-0 p-corrector-steps">
+      <div class="tc-wrap">
+        <div class="tc-brick">
+          <header class="tc-brick__head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Cómo se usa</p>
+            <h2 class="tc-display tc-h2" id="s-flujo" data-reveal="words">Del PDF al modelo corregido, <span class="tc-hl">en cinco pasos.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">La app pone la interfaz y el orden. La fiscalidad vive en la skill del modelo. Tú decides qué se corrige.</p>
+          </header>
+          <ol class="tc-steps tc-steps--brick" role="list" data-flow-steps>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:60px">
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Eliges el modelo</h3>
+              <p class="tc-muted">En la barra lateral, «Modelos» y «303 · 2026». Se abre su panel con las revisiones anteriores y el botón «Nueva revisión».</p>
+              <div class="tc-chips p-corrector-step__x" aria-hidden="true"><span class="tc-chip tc-chip--solid">303 · 2026</span><span class="tc-chip">Nueva revisión</span></div>
+            </li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:-60px">
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Adjuntas lo que tengas</h3>
+              <p class="tc-muted">Cliente, ejercicio y periodo; si faltan, la skill los pregunta. Arrastras el PDF del 303 y, si los tienes, los libros registro o el 303 anterior.</p>
+              <div class="tc-chips p-corrector-step__x" aria-label="Formatos de adjunto aceptados"><span class="tc-chip tc-chip--hi">.pdf</span><span class="tc-chip">.json</span><span class="tc-chip">.csv</span><span class="tc-chip">.txt</span><span class="tc-chip">.xlsx</span></div>
+            </li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:60px">
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Confirmas la lectura</h3>
+              <p class="tc-muted">Antes de validar nada, la app te enseña la tabla de casillas que ha leído del documento y te pide que la confirmes.</p>
+              <div class="p-corrector-mini p-corrector-step__x" aria-hidden="true" data-live><span><i>04</i>6.250,00</span><span><i>05</i>10</span><span><i>06</i>625,04</span><span><i>27</i>4.498,04</span></div>
+            </li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:-60px">
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Recibes la tabla de incidencias</h3>
+              <p class="tc-muted">Cada observación con su casilla, el valor declarado, el correcto, la diferencia, la regla, la cita, la severidad y la corrección propuesta.</p>
+              <div class="tc-chips p-corrector-step__x" aria-hidden="true"><span class="p-corrector-sev p-corrector-sev--err">Error</span><span class="p-corrector-sev p-corrector-sev--warn">Aviso</span><span class="p-corrector-sev p-corrector-sev--tip">Mejora</span><span class="p-corrector-sev p-corrector-sev--nv">No verificable</span></div>
+            </li>
+            <li class="tc-step tc-leaf" data-reveal="slide" style="--from:60px">
+              <p class="tc-step__n" aria-hidden="true"></p>
+              <h3 class="tc-step__t">Te llevas el modelo corregido</h3>
+              <p class="tc-muted">Los datos solo cambian con las correcciones que confirmas; los totales se recalculan siempre. La revisión queda guardada y puedes exportarla o duplicarla para el trimestre siguiente.</p>
+              <div class="tc-chips p-corrector-step__x" aria-hidden="true"><span class="tc-chip tc-chip--ok"><span class="tc-chip__dot"></span> corregida.json</span><span class="tc-chip">PDF</span><span class="tc-chip">Markdown</span></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 · La tabla de incidencias ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" id="incidencias" aria-labelledby="s-tabla">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--7-5 tc-split--end">
+          <header class="tc-head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">El resultado</p>
+            <h2 class="tc-display tc-h2" id="s-tabla" data-reveal="words">Una tabla que se puede <span class="tc-hl">defender.</span></h2>
+            <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Ocho columnas, siempre las mismas. Cada fila dice qué casilla falla, cuánto, qué regla la comprueba y en qué página de qué norma está escrita.</p>
+          </header>
+          <ul class="p-corrector-legend" data-stagger style="--step:90ms" aria-label="Severidades del informe">
+            <li data-reveal="slide" style="--from:40px"><span class="p-corrector-sev p-corrector-sev--err">Error</span><span>Cuota o resultado incorrecto, o rechazo seguro.</span></li>
+            <li data-reveal="slide" style="--from:40px"><span class="p-corrector-sev p-corrector-sev--warn">Aviso</span><span>Incoherencia o riesgo de requerimiento.</span></li>
+            <li data-reveal="slide" style="--from:40px"><span class="p-corrector-sev p-corrector-sev--tip">Mejora</span><span>Una opción legal más favorable.</span></li>
+            <li data-reveal="slide" style="--from:40px"><span class="p-corrector-sev p-corrector-sev--nv">No verificable</span><span>Falta la fuente o hay ambigüedad: se dice qué documento lo resolvería.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tc-wrap p-corrector-inc-wrap">
+        <div class="tc-leaf tc-leaf--lg tc-leaf--tr tc-leaf--night tone-dark tc-spot p-corrector-inc" data-reveal="tilt">
+          <p class="tc-mono p-corrector-inc__bar"><span><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-list"/></svg> Tabla de incidencias</span><span>Modelo 303 · 2026 · 3T</span></p>
+          <div class="tc-table-wrap" tabindex="0" role="region" aria-label="Ejemplo de tabla de incidencias">
+            <table class="tc-table tc-table--stack p-corrector-table">
+              <caption>Ejemplo ilustrativo con cifras ficticias. Las reglas y las citas son las de la skill del modelo 303.</caption>
+              <thead>
+                <tr><th scope="col">Casilla</th><th scope="col">Valor declarado</th><th scope="col">Valor correcto</th><th scope="col">Diferencia</th><th scope="col">Regla</th><th scope="col">Cita</th><th scope="col">Severidad</th><th scope="col">Corrección propuesta</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="p-corrector-box">27</span> Total cuota devengada</th>
+                  <td class="tc-num" data-label="Valor declarado">4.498,04</td>
+                  <td class="tc-num" data-label="Valor correcto">4.489,04</td>
+                  <td class="tc-num" data-label="Diferencia">−9,00</td>
+                  <td class="tc-num" data-label="Regla">R-303-005</td>
+                  <td data-label="Cita">O303 Anexo I, pág. 1 del modelo (PDF BOE p.11)</td>
+                  <td data-label="Severidad"><span class="p-corrector-sev p-corrector-sev--err">Error</span></td>
+                  <td data-label="Corrección propuesta">Recalcular la suma de las cuotas devengadas.</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="p-corrector-box">46</span> Resultado régimen general</th>
+                  <td class="tc-num" data-label="Valor declarado">2.587,04</td>
+                  <td class="tc-num" data-label="Valor correcto">2.578,04</td>
+                  <td class="tc-num" data-label="Diferencia">−9,00</td>
+                  <td class="tc-num" data-label="Regla">R-303-007</td>
+                  <td data-label="Cita">O303 Anexo I, pág. 1 del modelo (PDF BOE p.11)</td>
+                  <td data-label="Severidad"><span class="p-corrector-sev p-corrector-sev--err">Error</span></td>
+                  <td data-label="Corrección propuesta">Casilla 27 menos casilla 45, con el total ya corregido.</td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="p-corrector-box">06</span> Cuota de la línea al 10 %</th>
+                  <td class="tc-num" data-label="Valor declarado">625,04</td>
+                  <td class="tc-num" data-label="Valor correcto">625,00</td>
+                  <td class="tc-num" data-label="Diferencia">−0,04</td>
+                  <td class="tc-num" data-label="Regla">R-303-001</td>
+                  <td data-label="Cita">O303 Anexo I, pág. 1 del modelo (PDF BOE p.11); LIVA art. 78.Uno y art. 90.Dos (PDF p.69, p.83)</td>
+                  <td data-label="Severidad"><span class="p-corrector-sev p-corrector-sev--warn">Aviso</span></td>
+                  <td data-label="Corrección propuesta">Comprobar si la diferencia viene del redondeo factura a factura.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="p-corrector-inc__foot"><svg class="tc-ico" aria-hidden="true"><use href="#i-eye"/></svg> <span>Cada informe se cierra con el bloque «Lo comprobado / lo no comprobado» y con el recordatorio de que la validación final corresponde al profesional.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4 · Un modelo = una skill ============ -->
+  <section class="tc-sec tc-sec--white tone-light" id="skills" aria-labelledby="s-skill">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap">
+        <div class="tc-split tc-split--5-7 p-corrector-skill">
+          <!-- Anatomía de una skill (diagrama; los nombres son los de la carpeta real) -->
+          <div class="tc-leaf tc-leaf--lg tc-leaf--tl tc-leaf--night tone-dark p-corrector-tree" data-reveal="tilt" data-live data-tilt="1.4">
+            <p class="tc-mono p-corrector-tree__root"><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-layers"/></svg> revisor-modelo-303-2026/</p>
+            <ul class="p-corrector-tree__list">
+              <li><code>SKILL.md</code><span>Flujo de revisión y principios</span></li>
+              <li><code>app.json</code><span>Modelo, ejercicio, periodos y sugerencias</span></li>
+              <li><code>references/</code><span>Fuentes oficiales, casillas, reglas y grafo</span></li>
+              <li><code>scripts/</code><span>validar, extraer, corregir y buscar</span></li>
+              <li><code>tests/</code><span>Batería de casos: debe dar el 100 %</span></li>
+              <li><code>CHANGELOG.md</code><span>Qué norma se incorporó y cuándo</span></li>
+            </ul>
+          </div>
+
+          <div>
+            <header class="tc-head">
+              <p class="tc-mono tc-mono--hi" data-reveal="rise">Cómo crece</p>
+              <h2 class="tc-display tc-h2" id="s-skill" data-reveal="words">Un modelo, <span class="tc-hl">una skill.</span></h2>
+              <p class="tc-lead" data-reveal="focus" style="--delay:160ms">La app no contiene lógica fiscal. Cada modelo es una carpeta con sus fuentes oficiales, sus reglas, sus scripts de cálculo y sus pruebas. Añadir un modelo es importar esa carpeta o su zip: aparece en «Modelos» sin cambiar la aplicación.</p>
+            </header>
+            <dl class="tc-stats" data-stagger style="--step:110ms">
+              <div class="tc-stat" data-reveal="rise"><dt class="tc-mono">Casillas mapeadas</dt><dd class="tc-stat__n"><span data-count="220">220</span></dd><dd class="tc-stat__d">Las del modelo oficial del 303.</dd></div>
+              <div class="tc-stat" data-reveal="rise"><dt class="tc-mono">Reglas con cita</dt><dd class="tc-stat__n"><span data-count="54">54</span></dd><dd class="tc-stat__d">43 se comprueban de forma automática.</dd></div>
+              <div class="tc-stat" data-reveal="rise"><dt class="tc-mono">Casos de prueba</dt><dd class="tc-stat__n"><span data-count="76">76</span></dd><dd class="tc-stat__d">La skill del 303 los supera todos.</dd></div>
+            </dl>
+            <p class="tc-mono tc-mt-4" data-reveal="rise">Fuentes de la skill del 303 · ejercicio 2026</p>
+            <div class="tc-chips tc-mt-2" data-stagger style="--step:50ms">
+              <span class="tc-chip" data-reveal="pop">Ley 37/1992 del IVA</span>
+              <span class="tc-chip" data-reveal="pop">RD 1624/1992 · Reglamento del IVA</span>
+              <span class="tc-chip" data-reveal="pop">Orden EHA/3786/2008 · modelo 303</span>
+              <span class="tc-chip" data-reveal="pop">Orden HAP/2194/2013</span>
+              <span class="tc-chip" data-reveal="pop">Orden HAC/1425/2025 · módulos 2026</span>
+              <span class="tc-chip" data-reveal="pop">AEAT · Ayuda técnica del 303</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Principios escritos en la skill -->
+        <h3 class="tc-display tc-h3 p-corrector-rules__t" data-reveal="words">Cuatro principios escritos en cada skill.</h3>
+        <ol class="tc-flowgrid tc-stair p-corrector-rules" style="--min:240px" role="list">
+          <li class="tc-leaf tc-leaf--lift tc-spot" data-reveal="rise">
+            <p class="tc-leaf__n" aria-hidden="true">01</p>
+            <h4 class="tc-h4">Una sola fuente de verdad</h4>
+            <p class="tc-muted">Solo valen las fuentes oficiales cargadas en la skill. Si un tipo, un plazo o una casilla no está en ellas, no existe para la revisión.</p>
+          </li>
+          <li class="tc-leaf tc-leaf--br tc-leaf--lift tc-spot" data-reveal="rise" style="--delay:90ms">
+            <p class="tc-leaf__n" aria-hidden="true">02</p>
+            <h4 class="tc-h4">Cita obligatoria</h4>
+            <p class="tc-muted">Cada observación lleva documento, artículo y página del PDF oficial.</p>
+            <p class="p-corrector-cite">LIVA art. 104.Dos (PDF p.96)</p>
+          </li>
+          <li class="tc-leaf tc-leaf--tr tc-leaf--tint tc-leaf--lift tc-spot" data-reveal="rise" style="--delay:180ms">
+            <p class="tc-leaf__n" aria-hidden="true">03</p>
+            <h4 class="tc-h4">No verificable antes que inventar</h4>
+            <p class="tc-muted">Si falta la fuente o hay ambigüedad, se marca así y se explica qué documento lo resolvería.</p>
+          </li>
+          <li class="tc-leaf tc-leaf--tl tc-leaf--lift tc-spot" data-reveal="rise" style="--delay:270ms">
+            <p class="tc-leaf__n" aria-hidden="true">04</p>
+            <h4 class="tc-h4">Las cuentas, por código</h4>
+            <p class="tc-muted">Sumas, porcentajes, prorratas y compensaciones se calculan con los scripts de la skill, nunca «de cabeza».</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5 · El despacho ordenado ============ -->
+  <section class="tc-sec tc-sec--day tone-light" id="clientes" aria-labelledby="s-orden">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--5-7 tc-split--flip">
+          <!-- Ficha de cliente (ilustración, no captura) -->
+          <div class="p-corrector-card-wrap" aria-hidden="true">
+            <div class="tc-leaf tc-leaf--br tc-leaf--raised p-corrector-card" data-reveal="tilt" data-tilt="1.6">
+              <p class="p-corrector-card__who"><b>CE</b><span><strong>Cliente de ejemplo</strong><small>Régimen general · Trimestral</small></span></p>
+              <ol class="p-corrector-card__line" data-stagger style="--step:120ms;--base:300ms">
+                <li data-reveal="slide" style="--from:30px"><i></i><b>1T 2026</b><span>Modelo 303</span><em class="is-ok">Sin incidencias</em></li>
+                <li data-reveal="slide" style="--from:30px"><i></i><b>2T 2026</b><span>Modelo 303</span><em class="is-rev">1 aviso</em></li>
+                <li data-reveal="slide" style="--from:30px"><i></i><b>3T 2026</b><span>Modelo 303</span><em class="is-fix">2 corregidas</em></li>
+                <li class="is-next" data-reveal="slide" style="--from:30px"><i></i><b>4T 2026</b><span>Duplicar del 3T</span></li>
+              </ol>
+            </div>
+            <p class="p-corrector-pill" data-reveal="pop" style="--delay:500ms"><svg class="tc-ico tc-ico--sm"><use href="#i-search"/></svg> Buscar cliente, revisión o texto <kbd>⌘K</kbd></p>
+          </div>
+
+          <div>
+            <header class="tc-head">
+              <p class="tc-mono tc-mono--hi" data-reveal="rise">El despacho</p>
+              <h2 class="tc-display tc-h2" id="s-orden" data-reveal="words">Lo que una conversación suelta <span class="tc-hl">no te da.</span></h2>
+              <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Con decenas de clientes, el problema no es revisar un modelo: es acordarte de qué revisaste, de quién y cuándo. La app guarda cada revisión en su sitio.</p>
+            </header>
+            <ul class="tc-facts" data-stagger style="--step:80ms">
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-users"/></svg> Cada revisión queda asignada a un cliente, un modelo, un ejercicio y un periodo.</li>
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-tag"/></svg> Ficha de cliente con nombre, NIF, régimen habitual, notas y etiquetas.</li>
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-search"/></svg> Búsqueda global en clientes, revisiones y texto de los mensajes.</li>
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-copy"/></svg> Exporta la revisión a PDF o Markdown, o duplícala para el trimestre siguiente.</li>
+              <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-clock"/></svg> El historial se consulta también sin conexión a internet.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6 · Datos y privacidad ============ -->
+  <section class="tc-sec tc-sec--mist tone-light" id="privacidad" aria-labelledby="s-priv">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <header class="tc-head">
+          <p class="tc-mono tc-mono--hi" data-reveal="rise">Datos y privacidad</p>
+          <h2 class="tc-display tc-h2" id="s-priv" data-reveal="words">Todo en tu Mac. <span class="tc-hl">Una sola salida.</span></h2>
+          <p class="tc-lead" data-reveal="focus" style="--delay:160ms">Las declaraciones son datos personales y fiscales de terceros. La base de datos y los adjuntos se guardan solo en tu equipo, sin nube ni analítica. Lo único que sale es lo que tu propia instalación de Claude envía a la IA durante cada revisión.</p>
+        </header>
+
+        <!-- Diagrama: dónde viven los datos y por dónde salen -->
+        <div class="p-corrector-flow" data-live data-reveal="focus">
+          <div class="tc-leaf tc-leaf--tl tc-leaf--raised p-corrector-flow__mac">
+            <p class="tc-mono"><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-desktop"/></svg> Tu Mac</p>
+            <p class="tc-h4">Se queda en local</p>
+            <ul class="p-corrector-flow__items">
+              <li>Base de datos</li><li>Adjuntos</li><li>Revisiones</li><li>Copias <code>.cfbackup</code></li>
+            </ul>
+            <p class="tc-small tc-muted">En <code>~/Library/Application Support/CorrectorFiscal/</code></p>
+          </div>
+          <div class="p-corrector-flow__pipe">
+            <p class="tc-mono tc-mono--hi">Única salida</p>
+            <span class="p-corrector-flow__line" aria-hidden="true"><i></i><i></i><i></i></span>
+            <p class="tc-small tc-muted">Lo que adjuntas y escribes en esa revisión</p>
+          </div>
+          <div class="tc-leaf tc-leaf--br tc-leaf--night tone-dark p-corrector-flow__ia">
+            <p class="tc-mono"><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-spark"/></svg> La IA</p>
+            <p class="tc-h4">La de tu suscripción</p>
+            <p class="tc-small tc-muted">La app lanza el Claude instalado en tu equipo, con tu sesión. No pide ni guarda claves.</p>
+          </div>
+          <ul class="p-corrector-flow__no" aria-label="Lo que la app no hace">
+            <li><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-close"/></svg> Sin nube</li>
+            <li><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-close"/></svg> Sin analítica</li>
+            <li><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-close"/></svg> Sin informes de fallos con contenido</li>
+            <li><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-close"/></svg> Sin credenciales guardadas</li>
+          </ul>
+        </div>
+
+        <div class="tc-split tc-split--7-5 tc-split--top p-corrector-priv">
+          <ul class="tc-ticks tc-ticks--2col" data-stagger style="--step:70ms">
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> <span><b class="tc-strong">Se ve qué se envía.</b> La app lo explica en el primer arranque y en Ajustes, en «Qué se envía a la IA».</span></li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> <span><b class="tc-strong">Registros sin contenido.</b> Solo eventos: nunca peticiones, nombres de cliente ni valores de casillas.</span></li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> <span><b class="tc-strong">Cifrado del sistema.</b> Se apoya en FileVault y Ajustes avisa si está desactivado.</span></li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> <span><b class="tc-strong">Borrado real.</b> Borrar un cliente o una revisión elimina también su carpeta de trabajo.</span></li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> <span><b class="tc-strong">Copia completa.</b> Exportas e importas un fichero <code>.cfbackup</code> con la base de datos y los adjuntos.</span></li>
+            <li data-reveal="rise"><svg class="tc-ico" aria-hidden="true"><use href="#i-check"/></svg> <span><b class="tc-strong">Skills sin datos.</b> Las skills no almacenan datos de clientes: viven solo en la carpeta de cada revisión.</span></li>
+          </ul>
+          <div class="tc-note" data-reveal="rise" style="--delay:120ms">
+            <svg class="tc-ico" aria-hidden="true"><use href="#i-info"/></svg>
+            <div><p><b>La decisión es del despacho.</b> Antes de enviar datos de clientes a una IA, valora tu deber de confidencialidad y el RGPD: encargado de tratamiento e información al cliente. La app deja el aviso en Ajustes; no decide por ti.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7 · Requisitos, descarga y aviso ============ -->
+  <section class="tc-sec tc-sec--paper tone-light" id="descarga" aria-labelledby="s-dl">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--5-7 tc-split--top">
+          <div>
+            <header class="tc-head">
+              <p class="tc-mono tc-mono--hi" data-reveal="rise">Para empezar</p>
+              <h2 class="tc-display tc-h2" id="s-dl" data-reveal="words">Lo que necesitas.</h2>
+            </header>
+            <ul class="tc-rows p-corrector-reqs" data-stagger style="--step:90ms">
+              <li data-reveal="rise"><b>Un Mac</b><span class="tc-muted">La aplicación está disponible para macOS.</span></li>
+              <li data-reveal="rise"><b>Claude Code</b><span class="tc-muted">Instalado y con tu sesión iniciada. La IA la pones tú, con tu propia suscripción.</span></li>
+              <li data-reveal="rise"><b>Python 3.9</b><span class="tc-muted">O posterior. Las skills hacen los cálculos con scripts que se ejecutan en tu equipo.</span></li>
+            </ul>
+          </div>
+
+          <div class="tc-leaf tc-leaf--lg tc-leaf--tr tc-leaf--tint tc-spot p-corrector-get" data-reveal="tilt">
+            <p class="tc-mono"><svg class="tc-ico tc-ico--sm" aria-hidden="true"><use href="#i-apple"/></svg> App de escritorio · macOS</p>
+            <h3 class="tc-display tc-h3">Descarga Corrector Fiscal.</h3>
+            <p class="tc-muted">Incluye la skill del modelo 303 de IVA para el ejercicio 2026. Si prefieres verla antes funcionando, te la enseñamos en una demo.</p>
+            <div class="p-corrector-get__cta">
+              <div class="tc-dl">
+                <a class="tc-btn tc-btn--primary" href="mailto:info@trustcore.es?subject=Instalador%20de%20Corrector%20Fiscal" data-download="corrector" data-magnet data-track="corrector_descarga_dl"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Corrector Fiscal</span></span></a>
+                <p class="tc-dl__note" data-download-note="corrector">macOS</p>
+              </div>
+              <button class="tc-btn tc-btn--secondary" type="button" data-calendar-open data-track="corrector_descarga_demo"><span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            </div>
+            <div class="tc-note tc-note--warn p-corrector-aviso" role="note">
+              <svg class="tc-ico" aria-hidden="true"><use href="#i-alert"/></svg>
+              <div>
+                <p><b>Herramienta de apoyo.</b> La validación final y la firma corresponden al profesional. No presenta declaraciones.</p>
+                <p><b>Aplicación no oficial.</b> No está afiliada ni respaldada por la AEAT.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8 · Preguntas ============ -->
+  <section class="tc-sec tc-sec--day tone-light" id="preguntas" aria-labelledby="s-faq">
+    <div class="tc-sec__in tc-pad">
+      <div class="tc-wrap tc-wrap--spine">
+        <div class="tc-split tc-split--4-8 tc-split--top">
+          <header class="tc-head p-corrector-faq__head">
+            <p class="tc-mono tc-mono--hi" data-reveal="rise">Preguntas</p>
+            <h2 class="tc-display tc-h2" id="s-faq" data-reveal="words">Antes de instalarla.</h2>
+          </header>
+          <div class="tc-acc" data-stagger style="--step:70ms">
+            <details class="tc-acc__item" name="faq-corrector" open data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Qué es Corrector Fiscal?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Corrector Fiscal es una aplicación de escritorio para asesorías y gestorías que revisa y corrige modelos tributarios de la AEAT con ayuda de una IA guiada por skills. Cada modelo es una skill; la del modelo 303 de IVA para el ejercicio 2026 ya está incluida.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-corrector" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Es una aplicación oficial de la Agencia Tributaria?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>No. Es una aplicación no oficial, que no está afiliada ni respaldada por la AEAT. Es una herramienta de apoyo: no presenta declaraciones, y la validación final y la firma corresponden al profesional.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-corrector" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Dónde se guardan los datos de mis clientes?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>La base de datos y los ficheros adjuntos se guardan solo en tu Mac, sin nube y sin analítica. El único flujo de salida es lo que tu propia instalación de Claude envía a la IA durante cada revisión. Antes de usarla con datos de clientes, el despacho debe valorar su deber de confidencialidad y el RGPD.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-corrector" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Qué modelos revisa hoy?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Incluye la skill del modelo 303 de IVA para el ejercicio 2026, con 220 casillas mapeadas, 54 reglas con cita y una batería de 76 casos de prueba. Cada modelo nuevo se añade importando su skill, sin cambiar la aplicación.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-corrector" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Qué necesito para usarla?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>Un Mac, Claude Code instalado con tu sesión iniciada y Python 3.9 o posterior. La app no pide ni guarda claves de API: usa la IA de tu propia suscripción.</p></div>
+            </details>
+            <details class="tc-acc__item" name="faq-corrector" data-reveal="rise">
+              <summary class="tc-acc__q"><h3>¿Qué pasa cuando las fuentes no cubren un caso?</h3><span class="tc-acc__plus" aria-hidden="true"></span></summary>
+              <div class="tc-acc__a"><p>La skill lo marca como NO VERIFICABLE, explica qué falta y qué documento lo resolvería, en lugar de inventar una respuesta. En el modelo 303 quedan fuera, por ejemplo, los tipos impositivos temporales distintos del 21, 10, 4 y 0 %, los recargos por presentación fuera de plazo y los cruces con los modelos 390 y 349.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9 · CTA final ============ -->
+  <section class="tc-pool" id="contacto" data-live aria-labelledby="cta-t">
+    <div class="tc-pool__in tone-dark">
+      <div class="tc-pool__rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="tc-wrap tc-pool__copy">
+        <p class="tc-mono tc-mono--hi" data-reveal="rise">Corrector Fiscal</p>
+        <h2 class="tc-display tc-pool__title" id="cta-t" data-reveal="words">Mira una revisión, de principio a fin.</h2>
+        <p class="tc-lead" data-reveal="focus" style="--delay:200ms">Demo directa con Rami, fundador de TrustCore: recorremos una revisión de principio a fin y vemos si encaja con la forma de trabajar de tu despacho.</p>
+        <button class="tc-btn tc-btn--primary tc-btn--xl" type="button" data-calendar-open data-magnet data-track="corrector_cta_demo" data-reveal="pop" style="--delay:320ms">
+          <span class="tc-btn__label">Agendar demo <svg class="tc-ico tc-ico--go" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        <div class="tc-pool__contact" data-reveal="rise" style="--delay:420ms">
+          <a href="tel:+34666609299" data-track="corrector_cta_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> <span class="tc-num">666 60 92 99</span></a>
+          <a href="mailto:info@trustcore.es" data-track="corrector_cta_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a>
+        </div>
+        <p class="tc-mono" data-reveal="rise" style="--delay:480ms">Respuesta en menos de 1 h en horario laboral</p>
+        <p class="p-corrector-pool__legal" data-reveal="rise" style="--delay:540ms">Herramienta de apoyo: la validación final corresponde al profesional. Aplicación no oficial, no afiliada a la AEAT.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--FOOTER-->
+<footer class="tc-foot tone-dark">
+  <div class="tc-wrap">
+    <div class="tc-foot__grid">
+      <div class="tc-foot__brand">
+        <a class="tc-brand" href="/" aria-label="TrustCore, inicio">
+          <img src="/assets/trustcore-mark-120.png" alt="" width="110" height="120" loading="lazy">
+          <span class="tc-brand__word">TrustCore</span>
+        </a>
+        <p>Software con IA hecho en Ceuta para quitar trabajo repetido a empresas y personas.</p>
+        <ul class="tc-foot__contact">
+          <li><a href="tel:+34666609299" data-track="footer_tel"><svg class="tc-ico" aria-hidden="true"><use href="#i-phone"/></svg> 666 60 92 99</a></li>
+          <li><a href="mailto:info@trustcore.es" data-track="footer_mail"><svg class="tc-ico" aria-hidden="true"><use href="#i-mail"/></svg> info@trustcore.es</a></li>
+        </ul>
+        <p class="tc-foot__note">Respuesta en menos de 1 h en horario laboral</p>
+        <div class="tc-foot__awards">
+          <span class="tc-chip tc-chip--gold"><svg class="tc-ico" aria-hidden="true"><use href="#i-trophy"/></svg> Alhambra Venture 2026</span>
+          <span class="tc-chip tc-chip--hi"><svg class="tc-ico" aria-hidden="true"><use href="#i-award"/></svg> #1 CeutaTech 2026</span>
+        </div>
+      </div>
+      <nav aria-label="Productos">
+        <p class="tc-foot__title">Productos</p>
+        <ul>
+          <li><a href="/productos/trustinfacts">TrustInFacts</a></li>
+          <li><a href="/productos/trustintime">TrustInTime</a></li>
+          <li><a href="/productos/genai">GenAI</a></li>
+          <li><a href="/productos/orquesta">Orquesta</a></li>
+          <li><a href="/productos/corrector-fiscal">Corrector Fiscal</a></li>
+          <li><a href="/productos/nido">Nido</a></li>
+          <li><a href="/productos">Todos los productos</a></li>
+          <li><a href="/precios">Precios</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Soluciones">
+        <p class="tc-foot__title">Soluciones</p>
+        <ul>
+          <li><a href="/facturacion-para-tiendas">Para tiendas</a></li>
+          <li><a href="/facturacion-para-instaladores">Para instaladores</a></li>
+          <li><a href="/gestoria">Para gestorías</a></li>
+          <li><a href="/software-verifactu-ipsi-ceuta-melilla">IPSI Ceuta y Melilla</a></li>
+          <li><a href="/comparativa/verifactu-ipsi-trustcore-vs-erp-generico">Comparativa con un ERP</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Recursos">
+        <p class="tc-foot__title">Recursos</p>
+        <ul>
+          <li><a href="/clientes">Clientes</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/aprende">Aprende</a></li>
+          <li><a href="/funcionalidades">Funcionalidades</a></li>
+          <li><a href="/como-funciona">Cómo funciona</a></li>
+          <li><a href="/quienes-somos">Sobre nosotros</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="tc-foot__title">Legal</p>
+        <ul>
+          <li><a href="/aviso-legal">Aviso legal</a></li>
+          <li><a href="/privacidad">Privacidad</a></li>
+          <li><a href="/cookies">Cookies</a></li>
+          <li><a href="/terminos">Términos</a></li>
+          <li><button type="button" data-cookie-settings>Configurar cookies</button></li>
+        </ul>
+        <div class="tc-foot__trust trustpilot-widget" data-locale="es-ES" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69ccd4d8492775765d89c81b" data-style-height="52px" data-style-width="100%" data-token="210d26f3-dae6-47ce-9378-aa7d0c10d633">
+          <a href="https://es.trustpilot.com/review/trustcore.es" target="_blank" rel="noopener" data-track="footer_trustpilot" aria-label="Reséñanos en Trustpilot"><span class="tc-foot__trust-pre">Reséñanos en</span> <svg class="tc-ico" aria-hidden="true"><use href="#i-star"/></svg> Trustpilot</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="tc-foot__backers">
+      <p class="tc-foot__title">Acelerado y respaldado por</p>
+      <div class="tc-foot__backers-row">
+        <img class="tc-foot__cof" src="/COF_Logo.png" alt="Acelerado por Ceuta Open Future y El Ángulo" width="1000" height="355" loading="lazy">
+        <div class="tc-foot__tile">
+          <img src="/assets/logo-impulsa-startup.png" alt="Impulsa Startup" width="297" height="128" loading="lazy" style="--w:107px">
+          <img src="/assets/logos-camara-fondos-europeos.png" alt="Cofinanciado por la Unión Europea, Ministerio de Trabajo y Economía Social, Fondos Europeos y Cámara de Comercio de España" width="1299" height="79" loading="lazy" style="--w:756px">
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-foot__base">
+      <span>© 2026 TrustCore · Ceuta, España</span>
+      <span>Hecho en Ceuta · Cloud europeo · RGPD</span>
+    </div>
+    <p class="tc-foot__word" aria-hidden="true">TrustCore</p>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script>
+/* Corrector Fiscal: secuencia de la maqueta del hero (PDF → lectura → incidencias → corrección).
+   Sin JS o con movimiento reducido la maqueta se queda en su estado final, entera. */
+document.addEventListener('DOMContentLoaded', function () {
+  var TC = window.TC, app = document.querySelector('.p-corrector-app');
+  if (!TC || !TC.motion || !TC.task || !app || !('IntersectionObserver' in window)) return;
+  var HOLD = [1100, 1200, 3300, 1300, 2500, 6400];   /* ms que dura cada estado: vacío, PDF, lectura, confirmada, tabla, corregido */
+  var CL = ['s1', 's2', 's3', 's4', 's5'];
+  var i = 0, since = 0;
+  function set(n) { for (var k = 0; k < CL.length; k++) app.classList.toggle(CL[k], k < n); }
+  app.classList.add('is-run'); set(0);
+  var job = TC.task(function (t) {
+    if (!since) since = t;
+    if (t - since >= HOLD[i]) { i = (i + 1) % HOLD.length; set(i); since = t; }
+  });
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { since = 0; job.start(); } else job.stop(); });
+  }, { threshold: 0.15 }).observe(app);
+});
+</script>
+<script src="/assets/js/consent.bdd1909c.min.js" defer></script>
+<script src="/assets/js/components.f3ffc571.min.js" defer></script>
+</body>
+</html>
