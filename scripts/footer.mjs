@@ -98,6 +98,7 @@ const FOOTER = `<!--FOOTER-->
         </ul>
         <p class="tc-foot__note">Respuesta en menos de 1 h en horario laboral</p>
         <div class="tc-foot__awards">
+          <span class="tc-chip tc-chip--gold">${ico('award')} TOP101 Spain Up Nation 2026</span>
           <span class="tc-chip tc-chip--gold">${ico('trophy')} Alhambra Venture 2026</span>
           <span class="tc-chip tc-chip--hi">${ico('award')} #1 CeutaTech 2026</span>
         </div>
