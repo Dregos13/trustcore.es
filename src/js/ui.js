@@ -169,9 +169,6 @@ function initBilling() {
    Los instaladores pueden subirse a mano a s3://trustcore.es/descargas/ (el
    despliegue no borra esa carpeta) y enlazarse como "/descargas/archivo.dmg". */
 export const DOWNLOADS = {
-  'nido-mac-arm64':      { app: 'Nido', os: 'mac', label: 'macOS (Apple Silicon)', url: '' },
-  'nido-mac-x64':        { app: 'Nido', os: 'mac', label: 'macOS (Intel)', url: '' },
-  'nido-win':            { app: 'Nido', os: 'win', label: 'Windows', url: '' },
   'orquesta-mac-arm64':  { app: 'Orquesta', os: 'mac', label: 'macOS (Apple Silicon)', url: '' },
   'orquesta-mac-x64':    { app: 'Orquesta', os: 'mac', label: 'macOS (Intel)', url: '' },
   'orquesta-win':        { app: 'Orquesta', os: 'win', label: 'Windows', url: '' },
