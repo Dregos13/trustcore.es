@@ -114,7 +114,7 @@
   </script>
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/instrument-sans-latin-wght-normal.woff2">
-  <link rel="stylesheet" href="/assets/css/site.9f7801dc.min.css">
+  <link rel="stylesheet" href="/assets/css/site.e3fb3c00.min.css">
   <script>/*tc-boot*/(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('motion');setTimeout(function(){if(!window.TC){c.remove('motion','js','is-arriving');window.__tcLate=1}},4000);try{if(sessionStorage.getItem('tc:arrive')){sessionStorage.removeItem('tc:arrive');c.add('is-arriving')}}catch(e){}addEventListener('pagereveal',function(e){if(!e.viewTransition)return;c.add('vt-arrive');var s={},l=d.querySelectorAll('[data-vt]');l.forEach(function(el){var n=el.getAttribute('data-vt');if(n&&!s[n]){s[n]=1;el.style.viewTransitionName=n;el.style.viewTransitionClass=el.hasAttribute('data-vt-text')?'tc-vt-text':'tc-vt'}});var f=function(){c.remove('vt-arrive');l.forEach(function(el){el.style.viewTransitionName='';el.style.viewTransitionClass=''})};e.viewTransition.finished.then(f,f)})})(document);</script>
 </head>
 <body class="tc-body p-nido">
@@ -234,7 +234,7 @@
             <p class="tc-mono tc-mono--hi p-nido-get__k"><span class="p-nido-get__pulse" aria-hidden="true"></span> App de escritorio · macOS y Windows</p>
             <div class="tc-dl">
               <a class="tc-btn tc-btn--primary" href="#descargas" data-magnet data-track="nido_hero_dl">
-                <span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Nido</span></span></a>
+                <span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span>Descargar Nido</span></span></a>
               <p class="tc-dl__note">macOS (Apple Silicon e Intel) y Windows</p>
             </div>
             <ul class="p-nido-get__facts">
@@ -668,48 +668,48 @@
           <h2 class="tc-display tc-h2" id="dl-t" data-reveal="words">Descarga <span class="tc-hl">Nido.</span></h2>
         </header>
 
-        <div class="p-nido-dl">
+        <div class="tc-appdl">
           <!-- Nido Básico -->
-          <article class="tc-leaf tc-leaf--raised tc-leaf--tl p-nido-dl__card" data-reveal="rise" aria-labelledby="dl-basic-t">
-            <p class="tc-mono p-nido-dl__k">Gratis</p>
-            <h3 class="tc-h3 p-nido-dl__t" id="dl-basic-t">Nido Básico</h3>
-            <p class="p-nido-dl__d">Buscar en los portales, tablero, ficha, mapa, visitas y comparador.</p>
-            <div class="p-nido-dl__btns">
+          <article class="tc-leaf tc-leaf--raised tc-leaf--tl tc-appdl__card" data-reveal="rise" aria-labelledby="dl-basic-t">
+            <p class="tc-mono tc-appdl__k">Gratis</p>
+            <h3 class="tc-h3 tc-appdl__t" id="dl-basic-t">Nido Básico</h3>
+            <p class="tc-appdl__d">Buscar en los portales, tablero, ficha, mapa, visitas y comparador.</p>
+            <div class="tc-appdl__btns">
               <a class="tc-btn tc-btn--primary" href="/descargas/Nido-Basico-mac.dmg" download data-track="nido_basico_dl_mac"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg> Descargar para macOS</span></a>
               <a class="tc-btn tc-btn--secondary" href="/descargas/Nido-Basico-windows.zip" download data-track="nido_basico_dl_win"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-windows"/></svg> Descargar para Windows</span></a>
             </div>
           </article>
 
           <!-- Nido completo -->
-          <article class="tc-leaf tc-leaf--raised tc-leaf--tr p-nido-dl__card" data-reveal="rise" style="--delay:120ms" aria-labelledby="dl-full-t">
-            <p class="tc-mono tc-mono--hi p-nido-dl__k">Si ya lo has comprado</p>
-            <h3 class="tc-h3 p-nido-dl__t" id="dl-full-t">Nido completo</h3>
-            <p class="p-nido-dl__d">Escribe el correo con el que compraste y tu clave de activación.</p>
-            <form class="tc-form" method="post" action="#" novalidate data-nido-full aria-labelledby="dl-full-t">
+          <article class="tc-leaf tc-leaf--raised tc-leaf--tr tc-appdl__card" data-reveal="rise" style="--delay:120ms" aria-labelledby="dl-full-t">
+            <p class="tc-mono tc-mono--hi tc-appdl__k">Si ya lo has comprado</p>
+            <h3 class="tc-h3 tc-appdl__t" id="dl-full-t">Nido completo</h3>
+            <p class="tc-appdl__d">Escribe el correo con el que compraste y tu clave de activación.</p>
+            <form class="tc-form" method="post" action="#" novalidate data-appdl-form data-api="https://ivhofgxcwhtvrxokzpnt.supabase.co/functions/v1/license-download" aria-labelledby="dl-full-t">
               <div class="tc-field">
                 <label for="full-email">Correo de la compra</label>
-                <input class="tc-input" id="full-email" type="email" autocomplete="email" inputmode="email" required>
+                <input class="tc-input" id="full-email" type="email" data-appdl-email autocomplete="email" inputmode="email" required>
               </div>
               <div class="tc-field">
                 <label for="full-key">Clave</label>
-                <input class="tc-input p-nido-dl__key" id="full-key" type="text" placeholder="NIDO-XXXXX-XXXXX-XXXXX-XXXXX" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" required>
+                <input class="tc-input tc-appdl__key" id="full-key" type="text" data-appdl-key placeholder="NIDO-XXXXX-XXXXX-XXXXX-XXXXX" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" required>
               </div>
-              <button class="tc-btn tc-btn--primary p-nido-dl__submit" type="submit"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-full-label>Descargar</span></span></button>
-              <p class="p-nido-dl__err" id="full-err" role="alert" data-full-err hidden></p>
+              <button class="tc-btn tc-btn--primary tc-appdl__submit" type="submit"><span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-appdl-label>Descargar</span></span></button>
+              <p class="tc-appdl__err" id="full-err" role="alert" data-appdl-err hidden></p>
             </form>
-            <div class="p-nido-dl__done" role="status" data-full-done hidden>
-              <p class="p-nido-dl__ok" data-full-msg></p>
-              <div class="p-nido-dl__btns">
-                <a class="tc-btn tc-btn--secondary tc-btn--sm" data-full-file="mac" rel="noopener noreferrer"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg> Descargar para macOS</span></a>
-                <a class="tc-btn tc-btn--secondary tc-btn--sm" data-full-file="windows" rel="noopener noreferrer"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-windows"/></svg> Descargar para Windows</span></a>
+            <div class="tc-appdl__done" role="status" data-appdl-done hidden>
+              <p class="tc-appdl__ok" data-appdl-msg></p>
+              <div class="tc-appdl__btns">
+                <a class="tc-btn tc-btn--secondary tc-btn--sm" data-appdl-file="mac" rel="noopener noreferrer"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg> Descargar para macOS</span></a>
+                <a class="tc-btn tc-btn--secondary tc-btn--sm" data-appdl-file="windows" rel="noopener noreferrer"><span class="tc-btn__label"><svg class="tc-ico" aria-hidden="true"><use href="#i-windows"/></svg> Descargar para Windows</span></a>
               </div>
-              <p class="tc-mono p-nido-dl__exp" data-full-exp>Los enlaces caducan en 10 minutos</p>
+              <p class="tc-mono tc-appdl__exp" data-appdl-exp>Los enlaces caducan en 10 minutos</p>
             </div>
-            <p class="p-nido-dl__buy"><a href="https://buy.stripe.com/eVqeVd0wm3e42I13CGcs80a" rel="noopener" data-track="nido_comprar">¿Aún no tienes Nido completo? Cómpralo (399 €)</a></p>
+            <p class="tc-appdl__more"><a href="https://buy.stripe.com/eVqeVd0wm3e42I13CGcs80a" rel="noopener" data-track="nido_comprar">¿Aún no tienes Nido completo? Cómpralo (399 €)</a></p>
           </article>
         </div>
 
-        <ul class="tc-facts p-nido-dl__steps" data-reveal="rise">
+        <ul class="tc-facts tc-appdl__steps" data-reveal="rise">
           <li><svg class="tc-ico" aria-hidden="true"><use href="#i-apple"/></svg> <span><b>Mac:</b> abre el .dmg y arrastra Nido a Aplicaciones.</span></li>
           <li><svg class="tc-ico" aria-hidden="true"><use href="#i-windows"/></svg> <span><b>Windows:</b> descomprime el .zip y abre Nido.exe. Si Windows avisa con SmartScreen, pulsa «Más información» → «Ejecutar de todas formas».</span></li>
           <li><svg class="tc-ico" aria-hidden="true"><use href="#i-key"/></svg> <span><b>Nido completo:</b> al abrirlo te pedirá tu clave. Cada clave sirve para un solo ordenador.</span></li>
@@ -790,7 +790,7 @@
         <p class="tc-lead" data-reveal="focus" style="--delay:200ms">Descarga Nido, define tu búsqueda una vez y deja que recorra los portales por ti. Lo que guardes se queda en tu ordenador.</p>
         <div class="tc-dl p-nido-pool-dl">
           <a class="tc-btn tc-btn--primary tc-btn--xl" href="#descargas" data-magnet data-track="nido_cta_dl" data-reveal="pop" style="--delay:320ms">
-            <span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span data-download-label>Descargar Nido</span></span></a>
+            <span class="tc-btn__label"><svg class="tc-ico tc-ico--dl" aria-hidden="true"><use href="#i-dl"/></svg> <span>Descargar Nido</span></span></a>
           <p class="tc-dl__note">macOS (Apple Silicon e Intel) y Windows</p>
         </div>
         <ul class="p-nido-pool-facts" data-reveal="rise" style="--delay:400ms">
@@ -900,7 +900,7 @@
 <!--/FOOTER-->
 
 <script src="/assets/js/consent.bdd1909c.min.js" defer></script>
-<script src="/assets/js/components.e591623b.min.js" defer></script>
+<script src="/assets/js/components.fe0a4dcf.min.js" defer></script>
 <script>
 /* Nido · recorrido por la app (pestañas propias con avance automático) y sello de la ilustración */
 (function () {
@@ -975,69 +975,6 @@
         if (window.TC && TC.track) TC.track('nido_tour_theme', { theme: dark ? 'oscuro' : 'claro' });
       });
     } catch (err) { /* la página funciona sin este guion */ }
-  });
-})();
-</script>
-<script>
-/* Nido completo · descarga para compradores: correo + clave → license-download → enlaces firmados de S3 (10 min).
-   Sin claves ni secretos en la página. El correo y la clave solo van en el cuerpo de ese POST. */
-(function () {
-  var API = 'https://ivhofgxcwhtvrxokzpnt.supabase.co/functions/v1/license-download';
-  var d = document;
-  function ready(fn) { if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', fn); else fn(); }
-  /* Mac o Windows por el userAgent; en móvil, tableta o Linux no se descarga sola */
-  function myPlatform() {
-    var ua = navigator.userAgent || '';
-    if (/Windows NT/i.test(ua)) return 'windows';
-    if (/Macintosh|Mac OS X/i.test(ua) && !(navigator.maxTouchPoints > 1) && !/iPhone|iPad|iPod/i.test(ua)) return 'mac';
-    return null;
-  }
-  ready(function () {
-    var form = d.querySelector('[data-nido-full]');
-    if (!form) return;
-    var email = d.getElementById('full-email'), key = d.getElementById('full-key');
-    var btn = form.querySelector('button[type="submit"]'), label = form.querySelector('[data-full-label]');
-    var err = form.querySelector('[data-full-err]'), done = d.querySelector('[data-full-done]');
-    var msg = d.querySelector('[data-full-msg]'), exp = d.querySelector('[data-full-exp]');
-    var links = { mac: d.querySelector('[data-full-file="mac"]'), windows: d.querySelector('[data-full-file="windows"]') };
-    var idle = label.textContent, timer = null;
-
-    function showErr(text) {
-      err.textContent = text || ''; err.hidden = !text;
-      [email, key].forEach(function (i) {
-        i.setAttribute('aria-invalid', text ? 'true' : 'false');
-        if (text) i.setAttribute('aria-describedby', 'full-err'); else i.removeAttribute('aria-describedby');
-      });
-    }
-    function busy(on) { btn.disabled = on; label.textContent = on ? 'Preparando la descarga…' : idle; }
-    function clearLinks() { Object.keys(links).forEach(function (p) { links[p].removeAttribute('href'); links[p].hidden = true; }); }
-    [email, key].forEach(function (i) { i.addEventListener('input', function () { if (!err.hidden) showErr(''); }); });
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (btn.disabled) return;
-      var em = email.value.trim(), k = key.value.trim();
-      if (!em) { showErr('Escribe el correo con el que compraste.'); email.focus(); return; }
-      if (!k) { showErr('Escribe tu clave de activación.'); key.focus(); return; }
-      showErr(''); clearTimeout(timer); clearLinks(); done.hidden = true; busy(true);
-      fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: em, key: k }),
-                   credentials: 'omit', cache: 'no-store', referrerPolicy: 'no-referrer' })
-        .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
-        .then(function (data) {
-          busy(false);
-          if (!data || data.ok !== true) { showErr((data && data.message) || 'No se ha podido preparar la descarga. Prueba en un momento.'); return; }
-          var by = {};
-          (Array.isArray(data.files) ? data.files : []).forEach(function (f) { if (f && f.url && links[f.platform]) by[f.platform] = f; });
-          Object.keys(links).forEach(function (p) { var f = by[p]; links[p].hidden = !f; if (f) links[p].href = f.url; });
-          var plat = myPlatform(), mine = plat && by[plat];
-          msg.textContent = mine ? 'Compra comprobada. Empieza la descarga de ' + mine.name + '. ¿Quieres el otro sistema?' : 'Compra comprobada. Elige tu sistema:';
-          exp.hidden = false; done.hidden = false;
-          var ttl = (typeof data.expiresIn === 'number' && data.expiresIn > 0 ? data.expiresIn : 600) * 1000 - 5000;
-          timer = setTimeout(function () { clearLinks(); exp.hidden = true; msg.textContent = 'Los enlaces han caducado. Pulsa «Descargar» otra vez.'; }, ttl);
-          if (mine) window.location = mine.url;
-        })
-        .catch(function () { busy(false); showErr('No hay conexión con el servidor. Prueba en un momento.'); });
-    });
   });
 })();
 </script>

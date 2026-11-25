@@ -171,8 +171,7 @@ function initBilling() {
 export const DOWNLOADS = {
   'orquesta-mac-arm64':  { app: 'Orquesta', os: 'mac', label: 'macOS (Apple Silicon)', url: '' },
   'orquesta-mac-x64':    { app: 'Orquesta', os: 'mac', label: 'macOS (Intel)', url: '' },
-  'orquesta-win':        { app: 'Orquesta', os: 'win', label: 'Windows', url: '' },
-  'corrector-mac':       { app: 'Corrector Fiscal', os: 'mac', label: 'macOS', url: '' }
+  'orquesta-win':        { app: 'Orquesta', os: 'win', label: 'Windows', url: '' }
 };
 function detectOS() {
   const ua = navigator.userAgent || '';
@@ -272,6 +271,72 @@ function initDownloads() {
 }
 
 /* ---------- Cinta: duplica el contenido para que el bucle no tenga costura ---------- */
+/* ---------- Zona de descargas de una app con versión completa (.tc-appdl) ----------
+   Formulario `[data-appdl-form]` con `data-api` = función license-download del
+   servidor de licencias de la app. Correo de la compra + clave → enlaces firmados
+   del bucket privado (caducan a los 10 min). En Mac o Windows empieza sola la
+   descarga del sistema del visitante y se enseñan los dos botones.
+   Privacidad: los campos no tienen `name` (sin JS no se envía nada), y el correo
+   y la clave solo van en el cuerpo de ese POST: ni analítica, ni URL, ni logs. */
+function appdlPlatform() {
+  const os = detectOS();
+  return os === 'mac' ? 'mac' : os === 'win' ? 'windows' : null;
+}
+function initAppDownloads() {
+  $$('[data-appdl-form]').forEach((form) => {
+    const api = form.getAttribute('data-api');
+    const zone = form.closest('.tc-appdl__card') || form.parentElement;
+    const email = $('[data-appdl-email]', form), key = $('[data-appdl-key]', form);
+    const btn = $('button[type="submit"]', form), label = $('[data-appdl-label]', form);
+    const err = $('[data-appdl-err]', form), done = $('[data-appdl-done]', zone);
+    const msg = $('[data-appdl-msg]', zone), exp = $('[data-appdl-exp]', zone);
+    const links = { mac: $('[data-appdl-file="mac"]', zone), windows: $('[data-appdl-file="windows"]', zone) };
+    if (!api || !email || !key || !btn || !label || !err || !done || !msg) return;
+    const idle = label.textContent;
+    let timer = 0;
+    const showErr = (text) => {
+      err.textContent = text || '';
+      err.hidden = !text;
+      [email, key].forEach((i) => {
+        i.setAttribute('aria-invalid', text ? 'true' : 'false');
+        if (text) i.setAttribute('aria-describedby', err.id); else i.removeAttribute('aria-describedby');
+      });
+    };
+    const busy = (on) => { btn.disabled = on; label.textContent = on ? 'Preparando la descarga…' : idle; };
+    const clearLinks = () => Object.keys(links).forEach((p) => { if (links[p]) { links[p].removeAttribute('href'); links[p].hidden = true; } });
+    [email, key].forEach((i) => i.addEventListener('input', () => { if (!err.hidden) showErr(''); }));
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (btn.disabled) return;
+      const em = email.value.trim(), k = key.value.trim();
+      if (!em) { showErr('Escribe el correo con el que compraste.'); email.focus(); return; }
+      if (!k) { showErr('Escribe tu clave de activación.'); key.focus(); return; }
+      showErr(''); clearTimeout(timer); clearLinks(); done.hidden = true; busy(true);
+      fetch(api, {
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: em, key: k }),
+        credentials: 'omit', cache: 'no-store', referrerPolicy: 'no-referrer'
+      })
+        .then((r) => r.json().catch(() => ({ ok: false })))
+        .then((data) => {
+          busy(false);
+          if (!data || data.ok !== true) { showErr((data && data.message) || 'No se ha podido preparar la descarga. Prueba en un momento.'); return; }
+          const by = {};
+          (Array.isArray(data.files) ? data.files : []).forEach((f) => { if (f && f.url && links[f.platform]) by[f.platform] = f; });
+          Object.keys(links).forEach((p) => { const a = links[p], f = by[p]; if (!a) return; a.hidden = !f; if (f) a.href = f.url; });
+          const plat = appdlPlatform(), mine = plat && by[plat];
+          msg.textContent = mine ? 'Compra comprobada. Empieza la descarga de ' + mine.name + '. ¿Quieres el otro sistema?' : 'Compra comprobada. Elige tu sistema:';
+          if (exp) exp.hidden = false;
+          done.hidden = false;
+          const ttl = (typeof data.expiresIn === 'number' && data.expiresIn > 0 ? data.expiresIn : 600) * 1000 - 5000;
+          timer = setTimeout(() => { clearLinks(); if (exp) exp.hidden = true; msg.textContent = 'Los enlaces han caducado. Pulsa «Descargar» otra vez.'; }, ttl);
+          if (mine) window.location = mine.url;
+        })
+        .catch(() => { busy(false); showErr('No hay conexión con el servidor. Prueba en un momento.'); });
+    });
+  });
+}
+
 function initBelt() {
   $$('[data-belt]').forEach((belt) => {
     const trackEl = $('.tc-belt__track', belt);
@@ -513,6 +578,7 @@ export function initUI() {
   initAccordion();
   initBilling();
   initDownloads();
+  initAppDownloads();
   initBelt();
   initSimFactura();
   initSimFichaje();
